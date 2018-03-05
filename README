@@ -1,14 +1,14 @@
 *****************************************
 *                                       *
-*          Welcome to knoda4            *  
+*          Welcome to knoda5            *  
 *              README                   *
 *               File                    *
 *                                       *
 *****************************************
 
 
-knoda4 is KDE4 port of knoda, a KDE-database frontend based on the hk_classes library.
-This package includes also hk_kde4classes, the KDE-widget 
+knoda5 is KDE5 port of knoda, a KDE-database frontend based on the hk_classes library.
+This package includes also hk_kde5classes, the KDE-widget 
 collection of hk_classes.
 
 hk_classes is a set of non-visual routines which allow you to develop
@@ -31,7 +31,7 @@ Available drivers are
 
 Read INSTALL how to install.
 
-June 2015
+March 2018
 Patrik Hanak <knoda4-admins@lists.sourceforge.net>
 
 
