@@ -1,0 +1,40 @@
+*****************************************
+*                                       *
+*          Welcome to knoda4            *  
+*              README                   *
+*               File                    *
+*                                       *
+*****************************************
+
+
+knoda4 is KDE4 port of knoda, a KDE-database frontend based on the hk_classes library.
+This package includes also hk_kde4classes, the KDE-widget 
+collection of hk_classes.
+
+hk_classes is a set of non-visual routines which allow you to develop
+database frontend applications as easy as possible.Optionally you also
+can use graphical frontend libraries (e.g. hk_kdeclasses, which is part 
+of this package) to write intermediate X-database-applications with just 
+a few lines.
+
+You need also a database driver (which is included in the hk_classes 
+library) to run applications.
+
+Available drivers are
+* mdb (M$ Access),
+* Mysql,
+* Postgresql,
+* SQLite version 2.x,
+* SQLite version 3.x and
+* ODBC
+
+
+Read INSTALL how to install.
+
+June 2015
+Patrik Hanak <knoda4-admins@lists.sourceforge.net>
+
+
+Munich in March 2005
+Horst Knorr <hk_classes@knoda.org>
+Homepage: http://hk-classes.sourceforge.net
