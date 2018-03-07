@@ -1,0 +1,640 @@
+<book id="installation" lang="&language;">
+
+
+<bookinfo>
+<title>The &knoda; Handbook</title>
+
+<authorgroup>
+<author>
+<firstname>Horst</firstname>
+<surname>Knorr</surname>
+<affiliation>
+<address><email>hk_classes@knoda.org</email></address>
+</affiliation>
+</author>
+<author>
+<firstname>Patrik</firstname>
+<surname>Hanak</surname>
+<affiliation>
+<address><email><ulink url="knoda4-admins@lists.sourceforge.net">knoda4-admins@lists.sourceforge.net</ulink></email></address>
+</affiliation>
+</author>
+</authorgroup>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+
+<copyright>
+<year>2004</year>
+<holder>Horst Knorr</holder>
+</copyright>
+<legalnotice>&FDLNotice;</legalnotice>
+
+<date>01/09/2016</date>
+<releaseinfo>0.00.03</releaseinfo>
+
+
+<abstract>
+<para>
+</para>
+</abstract>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>DBMS</keyword>
+<keyword>Kapp</keyword>
+<keyword>database</keyword>
+<keyword>frontend</keyword>
+<keyword>mysql</keyword>
+<keyword>odbc</keyword>
+<keyword>postgres</keyword>
+<keyword>postgresql</keyword>
+<keyword>sqlite</keyword>
+<keyword>sqlite2</keyword>
+<keyword>sqlite3</keyword>
+<keyword>dbase</keyword>
+<keyword>xbase</keyword>
+<keyword>firebird</keyword>
+<keyword>paradox</keyword>
+<keyword>corel</keyword>
+<keyword>Access</keyword>
+<keyword>Microsoft</keyword>
+<keyword>ms</keyword>
+<keyword>python</keyword>
+<keyword>knoda</keyword>
+</keywordset>
+
+</bookinfo>
+<chapter id="introduction"  xreflabel="driveroverview">
+<title>Introduction</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+
+<para>
+&knoda; is a database frontend and comprises tables,queries,views, forms and reports, which are scriptable via Python.
+There are <ulink url="http://hk-classes.sourceforge.net/documentation.html">&knoda;tutorials</ulink>) and API references available in the internet <ulink url="http://hk-classes.sourceforge.net/documentation.html">&knoda; documentation</ulink>). Please see the &knoda; tutorial for further information.
+</para>
+<para>
+Drivers for the following backends are available:
+<itemizedlist>
+<listitem><para><ulink url="http://www.firebirdsql.org">Firebird</ulink></para></listitem>
+<listitem><para><ulink url="http://www.mysql.com/">Mysql</ulink></para></listitem>
+<listitem><para><ulink url="http://www.postgresql.org">Postgres</ulink></para></listitem>
+<listitem><para><ulink url="http://www.unixodbc.org">ODBC</ulink></para></listitem>
+<listitem><para><ulink url="http://www.sqlite.org">SQLite</ulink> (local file format)</para></listitem>
+<listitem><para><ulink url="http://mdbtools.sourceforge.net">mdb (M$ Access)</ulink> (local file format)</para></listitem>
+<listitem><para><ulink url="http://pxlib.sourceforge.net">Paradox (Corel)</ulink> (local file format)</para></listitem>
+<listitem><para><ulink url="http://linux.techass.com/projects/xdb/">DBase (XBase)</ulink> (local file format)</para></listitem>
+</itemizedlist>
+See <xref linkend="driverspecific"/> information for details.
+</para>
+</chapter>
+
+<chapter id="allinstallation">
+<title>Installation</title>
+<para>
+Knoda itself needs 2 packages, &hk_classes; and KDE.
+</para>
+
+ <sect1 id="hkclassesinstall">
+ <title>&hk_classes;</title>
+ <para>
+Requirements:
+<itemizedlist>
+<listitem><para>Firebird, Mysql, Mdbtools (a current CVS version is strongly recommended), pxlib (Paradox), Postgresql, Sqlite, XBase or ODBC (either unixODBC or iodbc) has to be installed. If &hk_classes; claims that your database server does not exist on your system, make sure that the 'database'-devel.rpm package of your distribution is installed (the name of this package slightly differs from distribution to distribution , e.g. on Mandrake 8.2 the mysql-devel package is called 'libmysql10-devel-3.23.47-5mdk.i586.rpm').</para></listitem>
+<listitem><para>Python and its '-devel' packages have to be installed to use the scripting support</para></listitem>
+</itemizedlist>
+<programlisting>
+
+# ./configure [options]
+
+For different Firebird directories on your machine, use the following options:
+  --with-firebird-dir=PATH   Path to the Firebird directory
+  --with-firebird-incdir=PATH   Path to the Firebird header files
+  --with-firebird-libdir=PATH   Path to the Firebird library
+
+For different Mysql directories on your machine, use the following options:
+  --with-mysql-dir=PATH   Path to the Mysql directory
+  --with-mysql-incdir=PATH   Path to the Mysql header files
+  --with-mysql-libdir=PATH   Path to the Mysql library
+  --without-mysql          disable mysql plugins
+
+For different Postgres directories on your machine, use the following options:
+  --with-postgres-dir=PATH   Path to the postgres directory
+  --with-postgres-incdir=PATH   Path to the postgres header files
+  --with-postgres-libdir=PATH   Path to the postgres library
+  --without-postgres          disable postgres plugins
+
+For different ODBC directories on your machine, use the following options:
+  --with-odbc-dir=PATH   Path to the odbc directory
+  --with-odbc-incdir=PATH   Path to the odbc header files
+  --with-odbc-libdir=PATH   Path to the odbc library
+  --without-odbc          disable odbc plugins
+
+For different SQLite version 2.x directories on your machine, use the following options:
+   --without-sqlite        disable sqlite2 plugins
+  --with-sqlite-dir=PATH   Path to the sqlite2 directory
+  --with-sqlite-incdir=PATH   Path to the sqlite2 header files
+  --with-sqlite-libdir=PATH   Path to the sqlite2 library
+
+For different SQLite version 3.x directories on your machine, use the following options:
+  --without-sqlite3       disable sqlite3 plugins
+  --with-sqlite3-dir=PATH   Path to the sqlite3 directory
+  --with-sqlite3-incdir=PATH   Path to the sqlite3 header files
+  --with-sqlite3-libdir=PATH   Path to the sqlite3 library
+
+For different mdbtools directories on your machine, use the following options:
+  --without-mdb           disable mdb (M$Access) plugins
+  --with-mdb-dir=PATH   Path to the mdbtools directory
+  --with-mdb-incdir=PATH   Path to the mdb header files
+  --with-mdb-libdir=PATH   Path to the mdb library
+
+For different xbase directories on your machine, use the following options:
+  --without-xbase         disable xbase plugins
+  --with-xbase-dir=PATH   Path to the xbasetools directory
+  --with-xbase-incdir=PATH   Path to the xbase header files
+  --with-xbase-libdir=PATH   Path to the xbase library
+
+For different pxlib directories on your machine, use the following options:
+  --without-paradox       disable paradox plugins
+  --with-paradox-dir=PATH   Path to the pxlibs directory
+  --with-paradox-incdir=PATH   Path to the paradox header files
+  --with-paradox-libdir=PATH   Path to the paradox library
+
+
+
+
+After starting ./configure as described in section 3, call
+# make
+# su
+# make install
+</programlisting>
+
+ </para>
+ </sect1>
+
+
+ <sect1 id="knodainstall">
+ <title>&knoda;</title>
+ <para>
+&knoda; needs &hk_classes; and KDE installed. Then you can compile &knoda; with:</para>
+<programlisting>
+ # ./configure
+ # cd build
+ # make
+ # su
+ # make install
+</programlisting>
+ </sect1>
+
+
+</chapter>
+
+<chapter id="options">
+<title>The Options dialog</title>
+<para>
+&knoda; can be highly configured to fit your needs.To do so press the "Options"-button in the main window.
+</para>
+
+ <sect1 id="generaloptions">
+ <title>General options</title>
+ <para>
+In the 'General'- options menu you can set:
+<itemizedlist>
+<listitem><para>the <emphasis>driverpath</emphasis>: the directory where the database drivers are located</para></listitem>
+<listitem><para>the <emphasis>default driver</emphasis>: the driver which is displayed in the &knoda; main window as default</para></listitem>
+<listitem><para><emphasis>snap to grid x</emphasis>: used in forms and reports for positioning objects</para></listitem>
+<listitem><para><emphasis>snap to grid y</emphasis>: used in forms and reports for positioning objects</para></listitem>
+<listitem><para><emphasis>Metric system</emphasis>: If 'Relative' forms and reports size and position values are from 1% to 100% and 'Absolute' 
+the values are in pixels. The advantage of 'Relative' is when you resize forms or reports the fields resize and keep their relative size. Example: Switch the page format of a report from "Portrait" to "Landscape" and the layout remains usable.</para></listitem>
+<listitem><para><emphasis>Store password</emphasis>: per default the password will not be stored in connection files (which are used to allow a more convenient login), if set the password will be stored (might be a security problem!)</para></listitem>
+<listitem>
+<para><emphasis>Automatic data update</emphasis>: If set (default) the datasources will store changes automatically, otherwise it will be asked before storing the changes</para>
+</listitem>
+</itemizedlist>
+
+
+
+ </para>
+
+ </sect1>
+
+ <sect1 id="appearanceoption">
+ <title>Appearance options</title>
+ <para>
+<itemizedlist>
+<listitem><para><emphasis>show maximised</emphasis>: Tables, queries, forms and reports can either be shown in their construction size or maximized</para></listitem>
+<listitem><para><emphasis>Show all questions</emphasis>:Per default &knoda; asks questions like "Are you sure?" before executing actions</para></listitem>
+
+<listitem><para><emphasis>Use single click</emphasis>: &knoda; uses double click in the database window (the left listview). If set you can use single click (not when using knoda --classic) </para></listitem>
+</itemizedlist>
+
+ </para>
+ </sect1>
+
+
+<sect1 id="defaultsoptions">
+<title>Defaults options</title>
+<para>
+The 'Defaults'- section allows you to define the look of your data.
+<itemizedlist>
+<listitem><para><emphasis>Default font</emphasis>: the font which is used to display grids, forms and reports</para></listitem>
+<listitem><para><emphasis>Text alignment</emphasis>: the alignment of text data</para></listitem>
+<listitem><para><emphasis>Number alignment</emphasis>: the alignment of numeric data</para></listitem>
+<listitem><para><emphasis>Separator</emphasis>: whether numbers should include the thousands separator (only valid if this is supported by locale)</para></listitem>
+<listitem><para><emphasis>Precision</emphasis>: the numeric precision of floating data</para></listitem>
+</itemizedlist>
+</para>
+</sect1>
+
+<sect1 id="regionaloptions">
+<title>Regional options</title>
+<para>
+<itemizedlist>
+<listitem><para>&knoda; uses the German format for displaying the date and time.  If you want or need to change it,
+ no problem.
+If you are not happy with the date "31.12.2001" and prefer "2001-12-31", enter Y-M-D in the date
+ field.  The 'Date &amp; Time format' is needed for fields which have both, date and time data.
+<itemizedlist>
+<listitem><para>D - Day</para></listitem>
+<listitem><para>M - Month</para></listitem>
+<listitem><para>Y - Year</para></listitem>
+<listitem><para>h - hour</para></listitem>
+<listitem><para>m - minute</para></listitem>
+<listitem><para>s - second</para></listitem>
+</itemizedlist></para>
+
+</listitem>
+<listitem>
+<para>Locale: Sets the used local charset in case you need to run knoda under an other locale than your computer has</para>
+</listitem>
+<listitem>
+<para>Measure system:</para>
+</listitem>
+</itemizedlist>
+</para>
+</sect1>
+
+
+<sect1 id="reportoptions">
+<title>Report options</title>
+<para>
+<emphasis>Printcommand:</emphasis>Needed for the command line tools of hk_classes. In most cases 'lpr' is the correct value.</para>
+<para>
+<emphasis>Embed fonts:</emphasis>If the printed text does not look like the preview, set this value to "yes"</para>
+</sect1>
+
+
+
+
+</chapter>
+
+<chapter id="databasesettings" >
+<title>The database settings dialog</title>
+<sect1 id="dbsave">
+<title>Open and store files</title>
+<para>
+<emphasis>Automatic data update</emphasis>: If set (default) the datasources will store changes automatically, otherwise it will be asked before storing the changes
+</para>
+<para>
+<emphasis>Object handling</emphasis>: &knoda; (exactly &hk_classes;) is able to store queries,forms and reports within 
+the database. Per default they are stored locally in a subdirectory called 
+~/.hk_classes.
+
+<figure id="objecthandlingfigure"><title>Object handling</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="objecthandling.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+</para>
+<para>
+To do so, you need first to create a system table in the knoda menu with 
+'Create system table'. Then you can switch the storage 
+points in the same dialog to "Central" (meaning "store and in the database, and not 
+locally in files").
+</para>
+<para>
+Then you will have to upload your previously designed forms and reports with
+ Settings->Object handler. From now on, everybody will be able to access the 
+centrally stored files 
+(under the condition that on the clients the load and store mode is also set 
+to "Central").
+</para>
+<para>
+
+To restrict the write access you will have to use either the privilege system 
+of Postgres (on table "HKCLASSES"), or let the users call this database by 
+using knoda-rt (the runtime version of knoda). 
+
+</para>
+</sect1>
+
+<sect1 id="dbregional">
+<title>Regional</title>
+<para>
+The following tab is only available for databases that don't have their own charset handling (like Xbase and SQLite).
+You can set the original charset of the database. &hk_classes; uses 'iconv' to convert charsets, use 'iconv --list' to get a full list of all available charsets.
+<figure id="dbregionalfigure"><title>Regional</title>
+<screenshot>
+<mediaobject>
+<imageobject>  
+<imagedata fileref="dbregional.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+
+</para>
+</sect1>
+</chapter>
+
+
+
+
+
+<chapter id="driverspecific" xreflabel="driverspecific">
+<title>Driver specific information</title>
+
+<sect1 id="firebird">
+<title>Firebird</title>
+<para>
+The password dialog has an entry called "Emulate boolean". Firebird itself does not support internally a boolean field type (even if you can use boolean  in CREATE TABLE statements). If "Emulate boolean" is set to 'yes', &knoda; interpretes the field type CHAR(1) as a boolean field.
+</para>
+<para>
+Firebird needs a database name with its full path  as connect parameter. Another strange "feature" of Firebird is that it has no possibility to query for available databases on the server, so the database list remains empty.
+</para>
+</sect1>
+
+<sect1 id="mysql">
+<title>Mysql</title>
+<para>
+The password dialog has an entry called "Emulate boolean". Mysql itself does not support internally a boolean field type (even if you can use boolean  in CREATE TABLE statements). If "Emulate boolean" is set to 'yes', &knoda; interpretes the Mysql specific field type TINYINT as a boolean field. If you want to use a socket for the connection, leave the "Host" field empty. &hk_classes; will then read from ~/.my.cnf. You can set the socket name in the section [hk_classes]. Example:
+<programlisting>
+[hk_classes]
+socket		= /var/lib/mysql/hk_classesmysql.sock
+</programlisting>
+</para>
+</sect1>
+
+<sect1 id="postgres">
+<title>Postgres</title>
+<para>
+Depending on the way Postgres is configured, the login parameters differ. Try to leave "hostname" empty.
+</para>
+<para>
+Postgres has one -well- bit strange behaviour. It needs a database name as connect parameter, even to get a list of the existing database names on a server. Per default &hk_classes; uses 'template1' as name. If you don't have permission to connect to this database, you must enter an existing  database name where you have the permission to connect. In all other cases you can leave the database name field empty.
+</para>
+
+</sect1>
+
+<sect1 id="odbc">
+<title>ODBC</title>
+<para>
+For those wanting to connect to M$ SQLServer the project <ulink url="http://www.freetds.org">FreeTDS</ulink> is recommended.
+</para>
+</sect1>
+
+<sect1 id="sqlite">
+<title>SQLite</title>
+<para>
+SQLite is a file based database system. Per default the files are stored in ~/.hk_classes/sqlite2/localhost (SQLite 2.x) and ~/.hk_classes/sqlite3/localhost (SQLite 3.x) respectively and have the extenstions .hk_sqlite(2|3). &knoda; can handle database files in other directories. You need to enter the full path in addition to the name (Menu point 'Open local database').
+</para>
+<para>
+SQLite does not support to alter an existing table, so the table design window is disabled. The only exception is from SQLite version 3.2.0 on, which supports adding new columns.
+</para>
+</sect1>
+
+<sect1 id="mdb">
+<title>mdb - M$ Access</title>
+<para>
+mdb is the Microsoft Access&copy; database format. It is a file based database system. As the underlying <ulink url="http://mdbtools.sourceforge.net">mdbtools</ulink> does not support writing data yet, this driver is read only.The SQL support is also very basic and error-prone, so SQL-support is deactivated. When mdbtools evolves, &knoda; will support these features.
+</para>
+<para>
+ &knoda; can handle database files in other directories.  You need to enter the full path in addition to the name (Menu point 'Open local database').
+</para>
+</sect1>
+
+<sect1 id="paradox">
+<title>paradox - Corel Paradox</title>
+<para>
+Paradox is a file based database system used by Corel&copy; Paradox (former Borland&copy; Paradox). To write data you need <ulink url="http://pxlib.sourceforge.net">pxlib</ulink> version 0.6 or higher. There is no SQL support.
+</para>
+<para>
+ &knoda; can handle database files in other directories.  You need to enter the full path in addition to the name (Menu point 'Open local database').
+</para>
+</sect1>
+<sect1 id="xbase">
+<title>xbase (DBase)</title>
+<para>
+DBase is a file based database system. Per default the files are stored in ~/.hk_classes/xbase/localhost/&lt;DATABASENAME&gt; and have the extenstions .dbf. &knoda; can handle database files in other directories. You need to enter the full path in addition to the name (Menu point 'Open local database').
+</para>
+</sect1>
+
+
+</chapter>
+
+
+
+<chapter id="sqlsyntax">
+<title>SQL syntax</title>
+<para>
+You can use the SQL syntax of your backend server. There is one major difference you have to
+take account of: only use the ANSI SQL delimiters (both textdelimiters and identifier delimiters),
+which are
+<itemizedlist>
+<listitem><para><emphasis>textdelimiter</emphasis>: a single quote '</para></listitem>
+<listitem><para><emphasis>identifier delimiter</emphasis>: a double quote "</para></listitem>
+</itemizedlist>
+The advantage of this is that you can copy whole databases between backends
+(e.g. from Mysql to Postgres) via drag&amp;drop and the query still works.
+
+So a correct SQL statement would be:
+<example><title>Sample SQL statement</title>
+<programlisting>
+SELECT "mytablealias"."fieldname" 
+ FROM "testtable" AS "mytablealias"
+WHERE "myfield"='mystring'
+</programlisting>
+</example>
+You can use all functions your SQL backend provides, but it is up to you to make sure that your
+ SQL statement is compatible between backends.
+Do not use TRUE or FALSE in your query statements.  Use %TRUE% and %FALSE% instead.  Some SQL database servers do not support the use of
+ boolean fields, so the &hk_classes; have to simulate boolean fields.  A valid SQL statement would be:
+<screen>
+select * from mytable where myboolfield=%TRUE%
+</screen>
+For dates you can use the preset hk_classes date format in "#". If your date format is 'D.M.Y' a valid SQL statement would be
+<screen>
+select * from mytable where mydatefield=#31.12.2006#
+</screen>
+The date format will be automatically changed in your backends date format.
+</para>
+</chapter>
+
+
+
+<chapter id="pythondocumentation">
+<title>Scripting &knoda;</title>
+<para>
+&knoda; can be scripted using <ulink url="http://www.python.org">Python</ulink>. See <xref linkend="scriptingtutorial"/> ( or in the internet <ulink url="http://hk-classes.sourceforge.net/tutorials/knodascriptingtutorial/index.html">&knoda; scripting tutorial</ulink>). If you need a reference see <xref linkend="pythonreference"/> ( or in the internet <ulink url="http://hk-classes.sourceforge.net/tutorials/pythonreference/index.html">&knoda; scripting reference</ulink>).
+</para>
+
+</chapter>
+
+<chapter id="tipstricks">
+<title>Tips and tricks</title>
+
+<sect1 id="tutorialdocumentation">
+<title>How can I learn using &knoda;?</title>
+<para>
+See the <xref linkend="knodatutorial"/> ( or in the internet <ulink url="http://hk-classes.sourceforge.net/tutorials/knoda/index.html">&knoda; tutorial</ulink>).
+</para>
+
+</sect1>
+
+
+<sect1 id="development">
+<title>Which database backend should I use / do you recommend?</title>
+<para>
+It depends totally on what you want to do. If you did use Access or if you want to exchange the whole database with others, the database should be stored in a single file. Then SQLite is your choice.
+</para>
+<para>
+Multi user databases should prefer either Mysql or Postgres.
+</para>
+
+</sect1>
+
+
+<sect1 id="installation1">
+<title>&knoda; does not find my database driver!</title>
+<para>
+Probably it is not compiled. &hk_classes; tries to autodetect the database backends. If your database
+server is installed, but &hk_classes; does not find it, you probably have to install the "database devel-rpm" of your distribution. Example: For Mysql it is called mysql-devel.rpm (exact name is distribution specific). Then you can re-configure and recompile &hk_classes;.
+</para>
+
+</sect1>
+
+
+
+
+
+
+
+<sect1 id="centralstorage">
+<title>Where are queries, forms and reports stored?</title>
+<para>
+Per default all files are stored in the directory ~/.hk_classes/&lt;SQLSERVER&gt;/&lt;HOST&gt;/&lt;DATABASENAME&gt;.
+</para>
+<para>
+Example: If you have a Mysql database named exampledb on your local host, it would be
+ /home/horst/.hk_classes/mysql/localhost/exampledb
+</para>
+<para>
+It is possible to store these objects within your database. Open the database and select 'Administration'->'Database settings'.
+There you first have to create a hidden system table called 'HKCLASSES' and then you can select which objects have to be
+stored where.
+
+</para>
+</sect1>
+
+
+
+
+<sect1 id="copy" xreflabel="eximportdatabase">
+<title>How to copy databases and tables between different database backends</title>
+<para >
+You want to convert a Mysql database to a Postgres database or vice versa? No problem, open the Mysql database you want to copy and any Postgres database. Drag the database name from the left window (there where you can see the tables, queries, forms and reports) and drop it in the left window of the target window, see and stun. A new database will be created and the data converted. This works from/to any backend.
+</para>
+<para>
+Another possibility is to use the 'Export to database' menu or the 'Import from database' menu, which you can find in the 'File' menu.
+<figure id="copydatabase"><title>The export/import manager</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="exportimportmanager.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot></figure>
+
+</para>
+</sect1>
+
+
+
+
+
+
+
+
+</chapter>
+
+<!--
+<chapter id="dummychapter">
+<title>Dummy chapter</title>
+
+<sect1 id="dummysection">
+<title>Dummy section</title>
+<para>
+</para>
+</sect1>
+
+</chapter>
+-->
+
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title>Credits and License</title>
+
+
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+
+&underFDL;               <!-- FDL: do not remove. Commercial development should -->
+<!-- replace this with their copyright and either remove it or re-set this.-->
+
+<!-- Determine which license your application is licensed under,
+     and delete all the remaining licenses below:
+
+     (NOTE:  All documentation are licensed under the FDL,
+     regardless of what license the application uses) -->
+
+&underGPL;        	 <!-- GPL License -->
+
+</chapter>
+
+
+</book>
+<!--/book-->
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+

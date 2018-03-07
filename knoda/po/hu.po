@@ -1,0 +1,5114 @@
+# translation of knoda-0.8.1.po to hungarian
+# Marcel Hilzinger <marcel.hilzinger@suselinux.hu>, 2004.
+# Marcel Hilzinger <marcel@hilzinger.hu>, 2004, 2005, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: knoda-0.8.1\n"
+"Report-Msgid-Bugs-To: http://sourceforge.net/p/knoda4/bugs/\n"
+"POT-Creation-Date: 2016-08-10 16:42+0200\n"
+"PO-Revision-Date: 2006-04-03 22:10+0200\n"
+"Last-Translator: Marcel Hilzinger <marcel@hilzinger.hu>\n"
+"Language-Team: hungarian\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.2\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Marcel Hilzinger"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "marcel@hilzinger.hu"
+
+#. i18n: file: hk_kdeclasses/hk_kdedbdesigner.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdeclasses/hk_kdeform.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdeclasses/hk_kdeinterpreterdialog.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdeclasses/hk_kdemodule.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdeclasses/hk_kdequery.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdeclasses/hk_kdereport.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdeclasses/hk_kdetable.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdeclasses/knodamaindockwindowbase.rc:4
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdeformpart/hk_kdeformpartdesign.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdeformpart/hk_kdeformpartview.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdemodulepart/hk_kdemodulepart.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdequerypart/hk_kdequerypartqbe.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdequerypart/hk_kdequerypart.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdequerypart/hk_kdequerypartsql.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdereportpart/hk_kdereportpartdesign.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdereportpart/hk_kdereportpartview.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdetablepart/hk_kdetablepart.rc:5
+#. i18n: ectx: Menu (file)
+#, fuzzy
+msgid "&File"
+msgstr "Fájlnév"
+
+#. i18n: file: hk_kdeclasses/hk_kdeform.rc:11
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdeclasses/hk_kdereport.rc:10
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdedbdesigner/hk_kdedbdesignerpart.rc:5
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdeformpart/hk_kdeformpartdesign.rc:9
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdegridpart/hk_kdegridpart.rc:5
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdemodulepart/hk_kdemodulepart.rc:10
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdeqbepart/hk_kdeqbepart.rc:5
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdequerypart/hk_kdequerypart.rc:10
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdequerypart/hk_kdequerypartsql.rc:10
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdereportpart/hk_kdereportpartdesign.rc:10
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdetablepart/hk_kdetablepart.rc:11
+#. i18n: ectx: Menu (edit)
+#, fuzzy
+msgid "&Edit"
+msgstr "Szerkesztés"
+
+#. i18n: file: hk_kdeclasses/hk_kdeform.rc:15
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdeclasses/hk_kdemodule.rc:11
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdeclasses/hk_kdequery.rc:11
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdeclasses/hk_kdereport.rc:15
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdeclasses/hk_kdetable.rc:10
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdeformpart/hk_kdeformpartdesign.rc:39
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdeformpart/hk_kdeformpartview.rc:9
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdegridpart/hk_kdegridpart.rc:11
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdemodulepart/hk_kdemodulepart.rc:27
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdequerypart/hk_kdequerypartqbe.rc:10
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdequerypart/hk_kdequerypart.rc:29
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdequerypart/hk_kdequerypartsql.rc:28
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdereportpart/hk_kdereportpartdesign.rc:20
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdereportpart/hk_kdereportpartview.rc:10
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdetablepart/hk_kdetablepart.rc:16
+#. i18n: ectx: Menu (view)
+#, fuzzy
+msgid "&View"
+msgstr "&Nézetek"
+
+#. i18n: file: hk_kdeclasses/hk_kdereport.rc:18
+#. i18n: ectx: Menu (settings)
+#. i18n: file: hk_kdeclasses/knodamaindockwindowbase.rc:30
+#. i18n: ectx: Menu (settings)
+#. i18n: file: hk_kdemodulepart/hk_kdemodulepart.rc:30
+#. i18n: ectx: Menu (settings)
+#. i18n: file: hk_kdequerypart/hk_kdequerypartsql.rc:35
+#. i18n: ectx: Menu (settings)
+#. i18n: file: hk_kdereportpart/hk_kdereportpartdesign.rc:27
+#. i18n: ectx: Menu (settings)
+#. i18n: file: hk_kdereportpart/hk_kdereportpartview.rc:17
+#. i18n: ectx: Menu (settings)
+#, fuzzy
+msgid "&Settings"
+msgstr "&Beállítások mentése"
+
+#. i18n: file: hk_kdeclasses/knodamaindockwindowbase.rc:22
+#. i18n: ectx: Menu (database)
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:87
+msgid "&Database"
+msgstr "&Adatbázis"
+
+#. i18n: file: hk_kdeformpart/hk_kdeformpartdesign.rc:23
+#. i18n: ectx: Menu (insert)
+#, fuzzy
+msgid "&Insert"
+msgstr "Sor beillesztése"
+
+#: hk_classes/hk_button.cpp:116
+msgid "No datasource set!"
+msgstr "Nem adott meg adatforrást!"
+
+#: hk_classes/hk_button.cpp:167
+msgid "Error while executing actionquery"
+msgstr "Hiba keletkezett a lekérdezés végrehajtásakor"
+
+#: hk_classes/hk_button.cpp:564
+msgid "No such field %FIELD% in datasource %DATASOURCE%!"
+msgstr "Nincs ilyen mező (%FIELD%) a(z) %DATASOURCE% adatforrásban!"
+
+#: hk_classes/hk_class.cpp:191
+msgid "Question:"
+msgstr "Kérdés:"
+
+#: hk_classes/hk_class.cpp:193 hk_classes/hk_connection.cpp:318
+msgid "n=No            all other keys = yes"
+msgstr "n=Nem         minden egyéb kulcs = igen"
+
+#: hk_classes/hk_class.cpp:617
+msgid "Warning! Your local charset '%1' could not be set!"
+msgstr "Figyelem! A '%1' karakterkészlet beállítása nem sikerült!"
+
+#: hk_classes/hk_class.cpp:682
+msgid "Load file"
+msgstr "Fájl megnyitása"
+
+#: hk_classes/hk_class.cpp:682
+msgid "Save file"
+msgstr "Fájl mentése"
+
+#: hk_classes/hk_class.cpp:684 hk_classes/hk_class.cpp:745
+msgid "Change directory (%1)"
+msgstr "Könvytár módosítása (%1)"
+
+#: hk_classes/hk_class.cpp:685
+msgid "Change file (%1)"
+msgstr "Fájl módosítása (%1)"
+
+#: hk_classes/hk_class.cpp:686 hk_classes/hk_class.cpp:746
+msgid "End input"
+msgstr "Bevitel befejezése"
+
+#: hk_classes/hk_class.cpp:698 hk_classes/hk_class.cpp:758
+msgid "Enter directory:"
+msgstr "Adja meg a könyvtár nevét:"
+
+#: hk_classes/hk_class.cpp:704 hk_classes/hk_class.cpp:764
+msgid "No valid directory name"
+msgstr "A könyvtánév nem érvényes"
+
+#: hk_classes/hk_class.cpp:712
+msgid "Enter filename:"
+msgstr "Adja meg a fájl nevét:"
+
+#: hk_classes/hk_class.cpp:716
+msgid "No valid file name"
+msgstr "A fájlnév nem érvényes"
+
+#: hk_classes/hk_class.cpp:743
+msgid "Select directory:"
+msgstr "Válasszon könyvtárat:"
+
+#: hk_classes/hk_colour.cpp:134 hk_classes/hk_colour.cpp:141
+msgid "red: "
+msgstr "piros: "
+
+#: hk_classes/hk_colour.cpp:134 hk_classes/hk_colour.cpp:141
+msgid "green: "
+msgstr "zöld: "
+
+#: hk_classes/hk_colour.cpp:134 hk_classes/hk_colour.cpp:141
+msgid "blue: "
+msgstr "kék: "
+
+#: hk_classes/hk_column.cpp:267 hk_kdeclasses/hk_kdetabledesign.cpp:358
+msgid "Float"
+msgstr "lebegőpontos (float)"
+
+#: hk_classes/hk_column.cpp:268 hk_kdeclasses/hk_kdetabledesign.cpp:368
+msgid "Small Float"
+msgstr "kis lebegőpontos"
+
+#: hk_classes/hk_column.cpp:269 hk_kdeclasses/hk_kdetabledesign.cpp:331
+msgid "Integer"
+msgstr "szám"
+
+#: hk_classes/hk_column.cpp:270 hk_kdeclasses/hk_kdetabledesign.cpp:339
+msgid "Small Integer"
+msgstr "kis szám"
+
+#: hk_classes/hk_column.cpp:271 hk_kdeclasses/hk_kdetabledesign.cpp:294
+#: hk_kdeclasses/hk_kdetabledesign.cpp:623
+msgid "Text"
+msgstr "szöveg"
+
+#: hk_classes/hk_column.cpp:272 hk_kdeclasses/hk_kdetabledesign.cpp:411
+msgid "Datetime"
+msgstr "dátum/idő"
+
+#: hk_classes/hk_column.cpp:273 hk_kdeclasses/hk_kdetabledesign.cpp:422
+msgid "Timestamp"
+msgstr "időbélyeg"
+
+#: hk_classes/hk_column.cpp:274 hk_kdeclasses/hk_kdetabledesign.cpp:400
+msgid "Time"
+msgstr "idő"
+
+#: hk_classes/hk_column.cpp:275 hk_kdeclasses/hk_kdetabledesign.cpp:389
+msgid "Date"
+msgstr "dátum"
+
+#: hk_classes/hk_column.cpp:276 hk_kdeclasses/hk_kdetabledesign.cpp:378
+msgid "Bool"
+msgstr "igen/nem"
+
+#: hk_classes/hk_column.cpp:277 hk_classes/hk_column.cpp:363
+#: hk_kdeclasses/hk_kdetabledesign.cpp:433
+msgid "Binary"
+msgstr "bináris"
+
+#: hk_classes/hk_column.cpp:278 hk_kdeclasses/hk_kdetabledesign.cpp:322
+msgid "Memo"
+msgstr "feljegyzés"
+
+#: hk_classes/hk_column.cpp:279 hk_kdeclasses/hk_kdetabledesign.cpp:349
+msgid "Auto Increment"
+msgstr "számláló"
+
+#: hk_classes/hk_column.cpp:280
+msgid "Unknown columntype"
+msgstr "Ismeretlen oszloptípus"
+
+#: hk_classes/hk_connection.cpp:200 hk_classes/hk_connection.cpp:454
+#: hk_classes/hk_connection.cpp:485 hk_classes/hk_connection.cpp:620
+#: hk_classes/hk_database.cpp:523 hk_classes/hk_database.cpp:582
+#: hk_classes/hk_datasource.cpp:297 hk_classes/hk_datasource.cpp:311
+#: hk_classes/hk_datasource.cpp:1430 hk_classes/hk_datasource.cpp:1612
+#: hk_classes/hk_datasource.cpp:1720 hk_classes/hk_datasource.cpp:4283
+#: hk_classes/hk_report.cpp:541 hk_dbaseclasses/hk_dbasedatabase.cpp:139
+#: hk_dbaseclasses/hk_dbasetable.cpp:385 hk_dbaseclasses/hk_dbasetable.cpp:528
+#: hk_dbaseclasses/hk_dbasetable.cpp:650 hk_dbaseclasses/hk_dbasetable.cpp:761
+#: hk_firebirdclasses/hk_firebirddatasource.cpp:871
+#: hk_firebirdclasses/hk_firebirddatasource.cpp:1094
+#: hk_mdbclasses/hk_mdbdatabase.cpp:93
+#: hk_paradoxclasses/hk_paradoxdatabase.cpp:143
+#: hk_paradoxclasses/hk_paradoxtable.cpp:675
+#: hk_paradoxclasses/hk_paradoxtable.cpp:810
+#: hk_paradoxclasses/hk_paradoxtable.cpp:1029
+#: hk_paradoxclasses/hk_paradoxtable.cpp:1147
+#: hk_sqlite3classes/hk_sqlite3database.cpp:148
+#: hk_sqlite3classes/hk_sqlite3datasource.cpp:782
+#: hk_sqlite3classes/hk_sqlite3datasource.cpp:947
+#: hk_sqliteclasses/hk_sqlitedatabase.cpp:152
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:358
+#: hk_kdeclasses/hk_kdeindexeditwindow.cpp:237
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:534
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:564
+#: hk_kdeclasses/hk_kdetabledesign.cpp:561
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:256
+msgid "Servermessage: "
+msgstr "A szerver üzenete:"
+
+#: hk_classes/hk_connection.cpp:214
+msgid "Unable to connect to the SQL-Server!"
+msgstr "Nem sikerült az SQL szerverhez kapcsolódni!"
+
+#: hk_classes/hk_connection.cpp:267
+msgid "Please give me the following information:"
+msgstr "Kérem, adja meg a következő információkat:"
+
+#: hk_classes/hk_connection.cpp:272
+msgid "Host: "
+msgstr "Gép:"
+
+#: hk_classes/hk_connection.cpp:278
+msgid "User: "
+msgstr "Felhasználó:"
+
+#: hk_classes/hk_connection.cpp:284
+msgid "Database name: "
+msgstr "Az adatbázis neve:"
+
+#: hk_classes/hk_connection.cpp:290
+msgid "Password (will not be displayed): "
+msgstr "Jelszó (nem látszik):"
+
+#: hk_classes/hk_connection.cpp:304
+msgid "TCP Port: "
+msgstr "TCP kapu: "
+
+#: hk_classes/hk_connection.cpp:311
+msgid "SQL Delimiter: "
+msgstr "SQL elválasztó: "
+
+#: hk_classes/hk_connection.cpp:317
+msgid "Emulate Boolean: "
+msgstr "Boolean emulálása: "
+
+#: hk_classes/hk_connection.cpp:426
+#: hk_firebirdclasses/hk_firebirdconnection.cpp:312
+msgid "The driver does not support creating new databases!"
+msgstr "A meghajtó nem támogatja az új adatbázisok létrehozását!"
+
+#: hk_classes/hk_connection.cpp:432
+#: hk_firebirdclasses/hk_firebirdconnection.cpp:327
+msgid "Not connected to the server"
+msgstr "Nincs kapcsolat a szerverrel!"
+
+#: hk_classes/hk_connection.cpp:438
+#: hk_firebirdclasses/hk_firebirdconnection.cpp:333
+msgid "Bug: Actionquery could not be created"
+msgstr "Hiba: A lekérkezés létrehozása nem sikerült"
+
+#: hk_classes/hk_connection.cpp:454
+msgid "Database could not be created!"
+msgstr "Az adatbázis létrehozása nem sikerült!"
+
+#: hk_classes/hk_connection.cpp:466 hk_dbaseclasses/hk_dbaseconnection.cpp:200
+#: hk_paradoxclasses/hk_paradoxconnection.cpp:242
+#: hk_sqlite3classes/hk_sqlite3connection.cpp:264
+#: hk_sqliteclasses/hk_sqliteconnection.cpp:257
+#: hk_xbaseclasses/hk_xbaseconnection.cpp:200
+msgid "Delete the database \"%DBNAME%\"?"
+msgstr "Törölni akarja a(z) \"%DBNAME%\" adatbázist?"
+
+#: hk_classes/hk_connection.cpp:485
+msgid "Database could not be deleted!"
+msgstr "Az adatbázis törlése nem sikerült!"
+
+#: hk_classes/hk_connection.cpp:620
+msgid "Password could not be changed!"
+msgstr "A jelszó megváltoztatása nem sikerült!"
+
+#: hk_classes/hk_connection.cpp:649
+msgid "New password (will not be displayed): "
+msgstr "Új jelszó (nem látszik):"
+
+#: hk_classes/hk_connection.cpp:654
+msgid "Reenter new password:"
+msgstr "Ismételje meg a jelszót:"
+
+#: hk_classes/hk_connection.cpp:680
+msgid "Unknown driver"
+msgstr "Ismeretlen meghajtó"
+
+#: hk_classes/hk_connection.cpp:850 utilities/hk_dbcopyutility.cpp:24
+msgid "Copying tabledefinition: %FILE%"
+msgstr "%FILE% tábladefiníció másolása"
+
+#: hk_classes/hk_connection.cpp:851 utilities/hk_dbcopyutility.cpp:25
+msgid "Copying query: %FILE%"
+msgstr "%FILE% lekérdezés másolása"
+
+#: hk_classes/hk_connection.cpp:852 utilities/hk_dbcopyutility.cpp:26
+msgid "Copying form: %FILE%"
+msgstr "%FILE% űrlap másolása"
+
+#: hk_classes/hk_connection.cpp:853 utilities/hk_dbcopyutility.cpp:27
+msgid "Copying report: %FILE%"
+msgstr "%FILE% jelentés másolása"
+
+#: hk_classes/hk_connection.cpp:876
+msgid "Please enter the name of the database:"
+msgstr "Kérem, adja meg az adatbázis nevét:"
+
+#: hk_classes/hk_connection.cpp:971
+msgid "Can't create a new target database"
+msgstr "Nem lehet az új céladatbázist létrehozni"
+
+#: hk_classes/hk_connection.cpp:972
+msgid "Can't create new tables"
+msgstr "Nem lehet új táblákat létrehozni"
+
+#: hk_classes/hk_connection.cpp:973
+msgid "Field names will be truncated to %1 characters"
+msgstr "A mező hosszának csonkítása %1 karakterre"
+
+#: hk_classes/hk_connection.cpp:974
+msgid "Source database may contain proprietary field types"
+msgstr "A forrásadabázis zárt forrású (proprietary) mezőtípusokat tartalmazhat"
+
+#: hk_classes/hk_connection.cpp:975
+msgid "Field names with other characters than [A-Za-z0-9] are not allowed"
+msgstr "A mezőnév csak ezekből a karakterekből állhat: [A-Za-z0-9] "
+
+#: hk_classes/hk_connection.cpp:976
+msgid "Field names with non-ASCII characters are not supported"
+msgstr "A mezőnév csak ASCII-karakterekből állhat"
+
+#: hk_classes/hk_connection.cpp:977
+msgid "Field names with space characters are not supported"
+msgstr "A mezőnév nem tartalmazhat szóközt"
+
+#: hk_classes/hk_connection.cpp:980
+msgid "No 'char' field type"
+msgstr "Nincs 'char' mezőtípus"
+
+#: hk_classes/hk_connection.cpp:981
+msgid "No 'integer' field type"
+msgstr "Nincs 'integer' mezőtípus"
+
+#: hk_classes/hk_connection.cpp:982
+msgid "No 'smallinteger' field type"
+msgstr "Nincs 'smallinteger' mezőtípus"
+
+#: hk_classes/hk_connection.cpp:983
+msgid "No 'floating' field type"
+msgstr "Nincs 'floating' mezőtípus"
+
+#: hk_classes/hk_connection.cpp:984
+msgid "No 'smallfloating' field type"
+msgstr "Nincs 'smallfloating' mezőtípus"
+
+#: hk_classes/hk_connection.cpp:986
+msgid "No 'autoincrement' field type"
+msgstr "Nincs 'autoincrement' mezőtípus"
+
+#: hk_classes/hk_connection.cpp:987
+msgid "No 'boolean' field type"
+msgstr "Nincs 'boolean' mezőtípus"
+
+#: hk_classes/hk_connection.cpp:988
+msgid "No 'date' field type"
+msgstr "Nincs 'data' mezőtípus"
+
+#: hk_classes/hk_connection.cpp:989
+msgid "No 'time' field type"
+msgstr "Nincs 'time' mezőtípus"
+
+#: hk_classes/hk_connection.cpp:990
+msgid "No 'datetime' field type"
+msgstr "Nincs 'datetime' mezőtípus"
+
+#: hk_classes/hk_connection.cpp:991
+msgid "No 'binary' field type"
+msgstr "Nincs 'binary' mezőtípus"
+
+#: hk_classes/hk_connection.cpp:992
+msgid "No 'memo' field type"
+msgstr "Nincs 'memo' mezőtípus"
+
+#: hk_classes/hk_connection.cpp:993
+msgid "No 'timestamp' field type"
+msgstr "Nincs 'timestamp' mezőtípus"
+
+#: hk_classes/hk_connection.cpp:994
+msgid "Target does not support SQL"
+msgstr "A cél nem támogatja az SQL-t"
+
+#: hk_classes/hk_connection.cpp:997
+msgid "SQL does not support 'GROUP BY' statement"
+msgstr "A használt SQL nem támogatja a 'GROUP BY' függvényt"
+
+#: hk_classes/hk_connection.cpp:998
+msgid "SQL does not support 'ORDER BY' statement"
+msgstr "A használt SQL nem támogatja az 'ORDER BY' függvényt"
+
+#: hk_classes/hk_connection.cpp:999
+msgid "SQL does not support 'HAVING' statement"
+msgstr "A használt SQL nem támogatja a 'HAVING' függvényt"
+
+#: hk_classes/hk_connection.cpp:1000
+msgid "SQL does not support 'WHERE' statement"
+msgstr "A használt SQL nem támogatja a 'WHERE' függvényt"
+
+#: hk_classes/hk_connection.cpp:1001
+msgid "SQL does not support 'ALIAS' statement"
+msgstr "A használt SQL nem támogatja az 'ALIAS' függvényt"
+
+#: hk_classes/hk_connection.cpp:1003
+msgid "Referential integrity not supported"
+msgstr "Nincs 'referential integrity' támogatás"
+
+#: hk_classes/hk_connection.cpp:1004
+msgid "Indices are not supported"
+msgstr "Nincs indextámogatás"
+
+#: hk_classes/hk_connection.cpp:1007
+msgid "Views are not supported"
+msgstr "Nincs nézettámogatás"
+
+#: hk_classes/hk_connection.cpp:1010
+msgid "Copying data from '%1' to '%2':\n"
+msgstr "Adatok másolása innen: '%1' ide: '%2'\n"
+
+#: hk_classes/hk_database.cpp:279
+msgid "Bug: hk_database::driver_specific_new_table returned empty table!"
+msgstr ""
+"Programhiba: a hk_database::driver_specific_new_table üres táblát adott "
+"vissza!"
+
+#: hk_classes/hk_database.cpp:300
+msgid "Bug: hk_database::driver_specific_new_view returned empty view!"
+msgstr ""
+"Programhiba: a hk_database::driver_specific_new_view üres táblát adott "
+"vissza!"
+
+#: hk_classes/hk_database.cpp:420
+msgid "No such Database '%1'!"
+msgstr "Nem létező adatbázis ('%1')!"
+
+#: hk_classes/hk_database.cpp:427
+msgid "Not connected to server!"
+msgstr "Nincs kapcsolat a szerverrel!"
+
+#: hk_classes/hk_database.cpp:492
+msgid "Delete the table \"%TBLNAME%\"?"
+msgstr "Törölni akarja a(z) \"%TBLNAME%\" táblát?"
+
+#: hk_classes/hk_database.cpp:523 hk_dbaseclasses/hk_dbasedatabase.cpp:139
+#: hk_paradoxclasses/hk_paradoxdatabase.cpp:143
+msgid "Table could not be deleted!"
+msgstr "A tábla törlése nem sikerült!"
+
+#: hk_classes/hk_database.cpp:551
+msgid "Delete the view \"%TBLNAME%\"?"
+msgstr "Törölni akarja a(z) \"%TBLNAME%\" nézetet?"
+
+#: hk_classes/hk_database.cpp:582
+msgid "View could not be deleted!"
+msgstr "A nézet törlése nem sikerült!"
+
+#: hk_classes/hk_database.cpp:684
+msgid "Error: hk_database::save_central could not get a new table"
+msgstr "Hiba: hk_database::save_central nincs hozzá új tábla"
+
+#: hk_classes/hk_database.cpp:697
+msgid "Error: hk_database::save_central could not find system columns!"
+msgstr "Hiba: hk_database::save_central rendszeroszlopok nem találhatók!"
+
+#: hk_classes/hk_database.cpp:719 hk_classes/hk_database.cpp:819
+msgid "Enter new query name:"
+msgstr "Kérem, adja meg az új lekérdezés nevét:"
+
+#: hk_classes/hk_database.cpp:720 hk_classes/hk_database.cpp:820
+msgid "Enter new form name:"
+msgstr "Adja meg az új űrlap nevét:"
+
+#: hk_classes/hk_database.cpp:721 hk_classes/hk_database.cpp:821
+msgid "Enter new report name:"
+msgstr "Adja meg az új jelentés nevét:"
+
+#: hk_classes/hk_database.cpp:722 hk_classes/hk_database.cpp:822
+#, fuzzy
+msgid "Enter new module name:"
+msgstr "Kérem, adja meg az új lekérdezés nevét:"
+
+#: hk_classes/hk_database.cpp:723 hk_classes/hk_database.cpp:823
+#: hk_kdeclasses/knodamaindockwindow.cpp:618
+msgid "Enter new name:"
+msgstr "Adja meg az új nevet:"
+
+#: hk_classes/hk_database.cpp:775
+msgid "Query '%1' already exists. Overwrite it?"
+msgstr "A(z) '%1' lekérdezés már létezik. Felülírja?"
+
+#: hk_classes/hk_database.cpp:776
+msgid "Form '%1' already exists. Overwrite it?"
+msgstr "A(z) '%1' űrlap már létezik. Felülírja?"
+
+#: hk_classes/hk_database.cpp:777
+msgid "Report '%1' already exists. Overwrite it?"
+msgstr "A(z) '%1' jelentés már létezik. Felülírja?"
+
+#: hk_classes/hk_database.cpp:778
+#, fuzzy
+msgid "Module '%1' already exists. Overwrite it?"
+msgstr "A(z) %1 fájl már létezik. Felülírja?"
+
+#: hk_classes/hk_database.cpp:779
+msgid "File '%1' already exists. Overwrite it?"
+msgstr "A(z) %1 fájl már létezik. Felülírja?"
+
+#: hk_classes/hk_database.cpp:783
+msgid "Query '%1' has changed. Store changes?"
+msgstr "A lekérdezés '%1' megváltozott. Menti-e a módosításokat?"
+
+#: hk_classes/hk_database.cpp:784
+msgid "Form '%1' has changed. Store changes?"
+msgstr "Az űrlap '%1' megváltozott. Menti-e a módosításokat?"
+
+#: hk_classes/hk_database.cpp:785
+msgid "Report '%1' has changed. Store changes?"
+msgstr "A jelentés '%1' megváltozott. Menti-e a módosításokat?"
+
+#: hk_classes/hk_database.cpp:786
+#, fuzzy
+msgid "Module '%1' has changed. Store changes?"
+msgstr "A fájl '%1' megváltozott. Menti-e a módosításokat?"
+
+#: hk_classes/hk_database.cpp:787
+msgid "File '%1' has changed. Store changes?"
+msgstr "A fájl '%1' megváltozott. Menti-e a módosításokat?"
+
+#: hk_classes/hk_database.cpp:842
+msgid "Error: File '%1' could not be created"
+msgstr "Hiba: a(z) '%1' tábla létrehozása nem sikerült"
+
+#: hk_classes/hk_database.cpp:942 hk_classes/hk_database.cpp:1023
+msgid "Error: hk_database::load_central could not get a new table"
+msgstr "Hiba: hk_database::load_central nincs hozzá új tábla"
+
+#: hk_classes/hk_database.cpp:954 hk_classes/hk_database.cpp:1035
+msgid "Error: hk_database::load_central could not find system columns!"
+msgstr "Hiba: hk_database::load_central a rendszeroszlopok nincsenek meg!"
+
+#: hk_classes/hk_database.cpp:1142
+msgid "Error: hk_database::central_filelist could not get a new resultquery"
+msgstr "Hiba: hk_database::central_filelist nincs új eredemény lekérdezés"
+
+#: hk_classes/hk_database.cpp:1163
+msgid "Warning: hk_database::central_filelist, unknown filetype"
+msgstr "Figyelem: hk_database::central_filelist, ismeretlen fájltípus"
+
+#: hk_classes/hk_database.cpp:1231
+msgid "Delete the query:%FNAME%?"
+msgstr "Törölni akarja a(z) %FNAME% lekérdezést?"
+
+#: hk_classes/hk_database.cpp:1234
+msgid "Delete the report:%FNAME%?"
+msgstr "Törölni akarja a(z) %FNAME% jelentést?"
+
+#: hk_classes/hk_database.cpp:1237
+msgid "Delete the form:%FNAME%?"
+msgstr "Törölni akarja a(z) %FNAME% űrlapot?"
+
+#: hk_classes/hk_database.cpp:1240
+#, fuzzy
+msgid "Delete the module:%FNAME%?"
+msgstr "Törölni akarja a(z) %FNAME% lekérdezést?"
+
+#: hk_classes/hk_database.cpp:1242
+msgid "Delete the file:%FNAME%"
+msgstr "Törölni akarja a(z) %FNAME% fájlt?"
+
+#: hk_classes/hk_database.cpp:1260
+msgid "Error: hk_database::delete_centralfile could not get a new table"
+msgstr "Hiba: hk_database::delete_centralfile nincs hozza új tábla"
+
+#: hk_classes/hk_database.cpp:1272
+msgid "Error: hk_database::delete_centralfile could not find system columns!"
+msgstr "Hiba: hk_database::delete_centralfile nincsenek rendszeroszlopok!"
+
+#: hk_classes/hk_database.cpp:1279
+msgid "Error: hk_database::delete_centralfile object '%1' not found"
+msgstr "Hiba: hk_database::delete_centralfile a(z) '%1' objektum nem található"
+
+#: hk_classes/hk_database.cpp:1606
+msgid "hk_database::copy_table: bug newds has no columns!"
+msgstr "hk_database::copy_table: hiba: az új tábla nem tartalmaz oszlopokat!"
+
+#: hk_classes/hk_database.cpp:1644
+msgid "Copying table %TABLE%"
+msgstr "%TABLE% tábla másolása"
+
+#: hk_classes/hk_database.cpp:1647
+msgid "Continue loading data?"
+msgstr "Folytassa a Knoda az adatok betőltését?"
+
+#: hk_classes/hk_database.cpp:1688
+msgid "Error copy_view: target database does not support views!"
+msgstr "copy_view hiba: a céladatbázis nem támogatja a nézeteket!"
+
+#: hk_classes/hk_database.cpp:1697
+msgid "View '%1' already exists. Replace it?"
+msgstr "A(z) %1 nézet már létezik. Felülírja?"
+
+#: hk_classes/hk_database.cpp:1711 hk_classes/hk_datasource.cpp:4152
+msgid "Please enter the viewname:"
+msgstr "Kérem, adja meg a nézet nevét:"
+
+#: hk_classes/hk_database.cpp:1894
+msgid "Error: hk_database::rename_file could not get a new table"
+msgstr "Hiba: hk_database::rename_file - nincs hozzá új tábla"
+
+#: hk_classes/hk_database.cpp:1905
+msgid "Error: hk_database::rename_file could not find system columns!"
+msgstr "Hiba: hk_database::rename_file - nem található rendszeroszlop!"
+
+#: hk_classes/hk_database.cpp:1912
+msgid "Error: hk_database::rename file: No such file!"
+msgstr "Hiba: hk_database::rename file - nincs ilyen fájl!"
+
+#: hk_classes/hk_database.cpp:1988
+msgid ""
+"Error: hk_database::create_centralstoragetable could not get a new table"
+msgstr "Hiba: hk_database::create_centralstoragetable - nincs hozzá új tábla."
+
+#: hk_classes/hk_database.cpp:2219 hk_classes/hk_definitions.cpp:129
+#: hk_classes/hk_definitions.cpp:201
+msgid "Overwrite '%1'?"
+msgstr "A(z) '%1' felülírása?"
+
+#: hk_classes/hk_datasource.cpp:297
+msgid "Table %NAME% could not be created."
+msgstr "A(z) %NAME% tábla létrehozása nem sikerült."
+
+#: hk_classes/hk_datasource.cpp:311
+msgid "View could not be created!"
+msgstr "A nézet létrehozása nem sikerült!"
+
+#: hk_classes/hk_datasource.cpp:611
+msgid "Store changed data in table '%1'?"
+msgstr "Menti a(z) '%1' táblázat adatait?"
+
+#: hk_classes/hk_datasource.cpp:805
+msgid "hk_datasource::set_query: Datasource is not of type query or view!"
+msgstr "hk_datasource::set_query: Az adatforrás nem egy lekérdezés vagy nézet!"
+
+#: hk_classes/hk_datasource.cpp:1297 hk_dbaseclasses/hk_dbasetable.cpp:490
+#: hk_firebirdclasses/hk_firebirddatasource.cpp:915
+#: hk_paradoxclasses/hk_paradoxtable.cpp:861
+#: hk_sqlite3classes/hk_sqlite3datasource.cpp:824
+msgid ""
+"Row in datasource '%1' could not be changed due to depending datasource(s)"
+msgstr ""
+"A(z) '%1' adatforráshoz tartozó sor módosítása adatforrás függőségek miatt "
+"nem lehetséges."
+
+#: hk_classes/hk_datasource.cpp:1394
+#: hk_firebirdclasses/hk_firebirddatasource.cpp:973
+#: hk_sqlite3classes/hk_sqlite3datasource.cpp:880
+msgid "Bug: datasource has changed, but no column has changed"
+msgstr "Hiba: az adatforrás megváltozott, de egyik oszlop sem változott meg"
+
+#: hk_classes/hk_datasource.cpp:1430 hk_dbaseclasses/hk_dbasetable.cpp:528
+#: hk_paradoxclasses/hk_paradoxtable.cpp:1029
+#: hk_sqlite3classes/hk_sqlite3datasource.cpp:947
+msgid "Table %NAME%: Row could NOT be changed!"
+msgstr "%NAME% tábla: a sor módosítása NEM sikerült!"
+
+#: hk_classes/hk_datasource.cpp:1612 hk_dbaseclasses/hk_dbasetable.cpp:385
+#: hk_firebirdclasses/hk_firebirddatasource.cpp:871
+#: hk_firebirdclasses/hk_firebirddatasource.cpp:1094
+#: hk_paradoxclasses/hk_paradoxtable.cpp:675
+#: hk_sqlite3classes/hk_sqlite3datasource.cpp:782
+msgid "Table %NAME%: Row could NOT be inserted!"
+msgstr "%NAME% tábla: a sor beillesztése NEM sikerült!"
+
+#: hk_classes/hk_datasource.cpp:1640 hk_dbaseclasses/hk_dbasetable.cpp:686
+#: hk_paradoxclasses/hk_paradoxtable.cpp:739
+msgid "Delete this record?"
+msgstr "Töröljem ezt a bejegyzést?"
+
+#: hk_classes/hk_datasource.cpp:1667 hk_dbaseclasses/hk_dbasetable.cpp:713
+#: hk_paradoxclasses/hk_paradoxtable.cpp:766
+msgid "Row could not be deleted due to depending datasource(s)"
+msgstr "A sor törlése adatforrás függőségek miatt nem lehetséges"
+
+#: hk_classes/hk_datasource.cpp:1720 hk_dbaseclasses/hk_dbasetable.cpp:650
+#: hk_dbaseclasses/hk_dbasetable.cpp:761
+#: hk_paradoxclasses/hk_paradoxtable.cpp:810
+#: hk_paradoxclasses/hk_paradoxtable.cpp:1147
+msgid "Table %NAME%: Row was NOT deleted!"
+msgstr "%NAME% tábla: a sor törlése NEM sikerült!"
+
+#: hk_classes/hk_datasource.cpp:1804 hk_classes/hk_datasource.cpp:1854
+msgid "Error: Master and depending datasource are the same!"
+msgstr "Hiba: A fő adatforrás nem lehet ugyanaz, mint a függő adatforrás!"
+
+#: hk_classes/hk_datasource.cpp:1864
+msgid ""
+"Error: setting this masterdatasource would lead to a circular dependency!"
+msgstr ""
+"Hiba: ennek a főforrásnak beállítása egy végtelen függőségi ciklushoz "
+"vezetne!"
+
+#: hk_classes/hk_datasource.cpp:2105
+msgid "row %ROW% column %COL% :"
+msgstr "%ROW% sor %COL% oszlop :"
+
+#: hk_classes/hk_datasource.cpp:2106
+msgid "Too many closing brackets\n"
+msgstr "Túl sok záró zárójel\n"
+
+#: hk_classes/hk_datasource.cpp:2107
+msgid "Too many open brackets\n"
+msgstr "Túl sok nyitó zárójel\n"
+
+#: hk_classes/hk_datasource.cpp:4151
+msgid "Please enter the queryname:"
+msgstr "Kérem, adja meg a lekérdezés nevét:"
+
+#: hk_classes/hk_datasource.cpp:4153
+msgid "Please enter the tablename:"
+msgstr "Kérem, adja meg a tábla nevét:"
+
+#: hk_classes/hk_datasource.cpp:4283
+msgid "Error while dropping the index!"
+msgstr "Hiba keletkezett az index eldobásakor!"
+
+#: hk_classes/hk_datasource.cpp:4489 hk_dbaseclasses/hk_dbasetable.cpp:559
+#: hk_paradoxclasses/hk_paradoxtable.cpp:1057
+msgid "Delete the records %FROM% to %TO% ?"
+msgstr "Töröljem ezeket a bejegyzéseket: %FROM% - %TO% ?"
+
+#: hk_classes/hk_datasource.cpp:4514 hk_dbaseclasses/hk_dbasetable.cpp:584
+#: hk_paradoxclasses/hk_paradoxtable.cpp:1082
+msgid ""
+"Rows could not be deleted due to depending datasource(s).\n"
+"\t  Use single row deletion instead!"
+msgstr ""
+"A sorok törlése adatforrás függőségek miatt nem lehetséges.\n"
+"\t Törölje meg egyesével!"
+
+#: hk_classes/hk_datasource.cpp:4925
+msgid "Table already exists!"
+msgstr "A tábla már létezik!"
+
+#: hk_classes/hk_datasource.cpp:5150 hk_mysqlclasses/hk_mysqlview.cpp:61
+msgid "Bug: View-SQL is empty!"
+msgstr "Programhiba: Az SQL-nézet üres!"
+
+#: hk_classes/hk_datasource.cpp:5190
+msgid "Server does not support referential integrity!"
+msgstr "A szerver nem támogatja a referenciális integritást!"
+
+#: hk_classes/hk_datasource.cpp:5194
+msgid ""
+"Error adding reference!\n"
+"Servermessage: "
+msgstr ""
+"Hiba keletkezett a hivatkozás hozzáadásakor!\n"
+"A szerver üzenete:"
+
+#: hk_classes/hk_definitions.cpp:111
+msgid "File '%1' does not exist"
+msgstr "'%1': A fájl nem létezik"
+
+#: hk_classes/hk_drivermanager.cpp:181
+msgid ""
+"\n"
+"Old driver with no version information!"
+msgstr ""
+"\n"
+"Régi meghajtó. Verziószám nem elérhető!"
+
+#: hk_classes/hk_drivermanager.cpp:182
+msgid "Internal error: Database driver not compatible"
+msgstr "Belső hiba: Nem kompatibilis adatbázismeghajtó"
+
+#: hk_classes/hk_drivermanager.cpp:195
+msgid ""
+"Wrong driver version: %1\n"
+"You need driver version %2"
+msgstr ""
+"Hibás meghajtóverzió: %1\n"
+"Szüksége van a következő verzióra: %2"
+
+#: hk_classes/hk_drivermanager.cpp:208
+msgid ""
+"Database driver '%DRIVER%' could not be loaded.\n"
+"Reason: "
+msgstr ""
+"A(z) %DRIVER% adatbázismeghajtó betöltése nem sikerült.\n"
+"Oka: "
+
+#: hk_classes/hk_drivermanager.cpp:208
+msgid "Unknown reason"
+msgstr "Ismeretlen ok"
+
+#: hk_classes/hk_drivermanager.cpp:308
+msgid "The following database drivers were found:"
+msgstr "A következő adatbázismeghajtókat találtam:"
+
+#: hk_classes/hk_drivermanager.cpp:317
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:528
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:818
+msgid "Select directory"
+msgstr "Válasszon könyvtárat"
+
+#: hk_classes/hk_drivermanager.cpp:319
+msgid "Please select: "
+msgstr "Kérem, válasszon:"
+
+#: hk_classes/hk_drivermanager.cpp:336
+msgid "Enter new Driver Path"
+msgstr "Adja meg az új meghajtó elérési útvonalát"
+
+#: hk_classes/hk_drivermanager.cpp:337
+msgid "Actual Path is: "
+msgstr "Jelenlegi útvonal:"
+
+#: hk_classes/hk_drivermanager.cpp:339
+msgid "New Path: "
+msgstr "Új útvonal:"
+
+#: hk_classes/hk_drivermanager.cpp:514
+#, fuzzy
+msgid "Error parsing connectionfile(%1)!"
+msgstr "Nincs ilyen kapcsolatfájl (%1)!"
+
+#: hk_classes/hk_drivermanager.cpp:520
+msgid "No such connectionfile(%1)!"
+msgstr "Nincs ilyen kapcsolatfájl (%1)!"
+
+#: hk_classes/hk_dscombobox.cpp:192 hk_classes/hk_dscombobox.cpp:212
+#: hk_classes/hk_dscombobox.cpp:365
+msgid "Error: listdatasource and datasource in the combobox are identical!"
+msgstr "Hiba: egyforma lista-adatforrás és adatforrás érték!"
+
+#: hk_classes/hk_dsdatavisible.cpp:416
+msgid "[Auto]"
+msgstr "[automatikus]"
+
+#: hk_classes/hk_dsquery.cpp:95
+msgid "View '%1' has changed. Store changes?"
+msgstr "A nézet '%1' megváltozott: Menti-e a módosításokat?"
+
+#: hk_classes/hk_dsquery.cpp:95
+msgid "View '%1' already exists. Overwrite it?"
+msgstr "A(z) %1 nézet már létezik. Felülírja?"
+
+#: hk_classes/hk_font.cpp:822 hk_classes/hk_font.cpp:829
+msgid "font: "
+msgstr "Betűtípus: "
+
+#: hk_classes/hk_form.cpp:404 hk_classes/hk_form.cpp:444
+#: hk_classes/hk_report.cpp:1256 hk_kdeclasses/hk_kdeform.cpp:377
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:693
+msgid "Form error: No database defined!"
+msgstr "Űrlap hiba: Nem adott meg adatbázist!"
+
+#: hk_classes/hk_importcsv.cpp:63
+msgid "Cannot import as you run in runtime only mode !"
+msgstr "Nincs importálás, mivel a program runtime only módban fut!"
+
+#: hk_classes/hk_importcsv.cpp:101
+msgid "Importing data ..."
+msgstr "Adatok beolvasása ..."
+
+#: hk_classes/hk_importcsv.cpp:160
+msgid "Could not import the following rows:\n"
+msgstr ""
+
+#: hk_classes/hk_importcsv.cpp:205
+msgid "No datasource defined!"
+msgstr "Nem adott meg adatforrást!"
+
+#: hk_classes/hk_importcsv.cpp:213
+msgid "No such CSV file: "
+msgstr "Nincs ilyen CSV fájl:"
+
+#: hk_classes/hk_importcsv.cpp:242 hk_classes/hk_importcsv.cpp:419
+msgid "Datasource could not be enabled"
+msgstr "Az adatforrás hozzákapcsolása nem sikerült"
+
+#: hk_classes/hk_importcsv.cpp:254 hk_kdeclasses/hk_kdetabledesign.cpp:508
+msgid "Table already exists"
+msgstr "A tábla már létezik"
+
+#: hk_classes/hk_importcsv.cpp:688
+msgid "The following columns could not be found in the table:\n"
+msgstr "Az alábbi oszlopok nem találhatók a táblázatban:\n"
+
+#: hk_classes/hk_importcsv.cpp:725 hk_classes/hk_presentation.cpp:564
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:358
+msgid "field_"
+msgstr "mező_"
+
+#: hk_classes/hk_interpreter.cpp:73
+msgid "No interpreter installed"
+msgstr "Nincs telepítve értelmező"
+
+#: hk_classes/hk_interpreter.cpp:218
+msgid "No interpreter language installed!"
+msgstr "Nincs telepítve értelmező nyelv!"
+
+#: hk_classes/hk_interpreter.cpp:480
+msgid "Error in line %1 while loading module '%2'\\nError message:'%3'"
+msgstr ""
+
+#: hk_classes/hk_interpreter.cpp:538
+msgid ""
+"\n"
+"This is due to an installation error. If you did install hk_classes from "
+"and .rpm or .deb package you should check if there is also a hk_classes-"
+"python package"
+msgstr ""
+"\n"
+"Ennek oka egy telepítési probléma. Ha RPM- vagy DEB-csomagból telepítette a "
+"hk_classes-t, akkor ellenőrizze, hogy a hk_classes-python is telepítve van-e"
+
+#: hk_classes/hk_module.cpp:80 hk_classes/hk_module.cpp:117
+#: hk_kdeclasses/hk_kdemodule.cpp:199
+#, fuzzy
+msgid "Module error: No database defined!"
+msgstr "Űrlap hiba: Nem adott meg adatbázist!"
+
+#: hk_classes/hk_module.cpp:183
+#, fuzzy
+msgid "Please enter the name of the module"
+msgstr "Kérem, adja meg az űrlap nevét:"
+
+#: hk_classes/hk_presentation.cpp:155
+msgid "Bug: tried to add empty datasource!"
+msgstr "Programhiba: üres adatforrást akart hozzáadni!"
+
+#: hk_classes/hk_presentation.cpp:293
+msgid "hk_presentation::savedata No datasources defined!"
+msgstr "hk_presentation::savedata Nem adott meg adatforrást!"
+
+#: hk_classes/hk_presentation.cpp:346
+msgid ""
+"hk_presentation::loaddata: Error creating/loading datasource! This is "
+"probably a bug"
+msgstr ""
+"hk_presentation::loaddata:Hiba keletkezett az adatforrás létrehozásakor/"
+"betöltésekor! Ez valószínűleg programhiba"
+
+#: hk_classes/hk_presentation.cpp:466
+msgid "Please enter the name of the form:"
+msgstr "Kérem, adja meg az űrlap nevét:"
+
+#: hk_classes/hk_presentation.cpp:467
+msgid "Please enter the name of the report"
+msgstr "Kérem, adja meg a jelentés nevét:"
+
+#: hk_classes/hk_qbe.cpp:687 hk_classes/hk_qbe.cpp:726
+msgid ""
+"Error!\n"
+"No output fields selected"
+msgstr ""
+"Hiba!\n"
+"Nem adott meg kimeneti mezőt"
+
+#: hk_classes/hk_qbe.cpp:694 hk_classes/hk_qbe.cpp:733
+#: hk_classes/hk_qbe.cpp:778 hk_classes/hk_qbe.cpp:816
+msgid ""
+"Error!\n"
+"No tables defined"
+msgstr "Hiba!n Nem adott meg táblát"
+
+#: hk_classes/hk_qbe.cpp:744
+msgid ""
+"Error!\n"
+"No 'group by' fields selected"
+msgstr ""
+"Hiba!\n"
+"Nem adott meg mezőt a csoportosításhoz"
+
+#: hk_classes/hk_qbe.cpp:786
+msgid ""
+"Error!\n"
+"No new values defined"
+msgstr ""
+"Hiba!\n"
+"Nem adott meg új értéket"
+
+#: hk_classes/hk_report.cpp:175
+msgid "unnamed"
+msgstr "névtelen"
+
+#: hk_classes/hk_report.cpp:540
+msgid "Datasource of this report could not be enabled"
+msgstr "A jelentéshez szükséges adatforráshoz nem lehet hozzáférni"
+
+#: hk_classes/hk_report.cpp:592
+msgid "Creating output ..."
+msgstr "Az eredmény készítése..."
+
+#: hk_classes/hk_report.cpp:1415
+msgid "Report error: No database defined!"
+msgstr "Jelentés hiba: Nem adott meg adatbázist!"
+
+#: hk_classes/hk_report.cpp:1438
+msgid "No such report!"
+msgstr "Nincs ilyen jelentés!"
+
+#: hk_classes/hk_report.cpp:1779
+#, c-format
+msgid "Borders too large! At least 20% have to be left for the data section"
+msgstr ""
+"Túl nagy margók! Legalább 20 százalékot az adatok számára kell fenntartani"
+
+#: hk_classes/hk_report.cpp:1788
+msgid "Borders too large!"
+msgstr "Túl nagy margók!"
+
+#: hk_classes/hk_report.cpp:2103
+msgid "Reportconfigurefunction not found"
+msgstr "Nem található jelentésbeállító funkció"
+
+#: hk_classes/hk_report.cpp:2134
+msgid "Reporttype not found"
+msgstr "Nem található jelentés típus"
+
+#: hk_classes/hk_report.cpp:2202
+msgid "Recodetype not found"
+msgstr "Recode típus nem található"
+
+#: hk_classes/hk_report.cpp:2227
+msgid "Replacefunctiontype not found"
+msgstr "Replacefunctiontype nem található"
+
+#: hk_classes/hk_report.cpp:2613
+msgid "Error calling print command. Perhaps you have to add the full path."
+msgstr ""
+"Hiba keletkezett a nyomtatáskor. Talán meg kell adnia a teljes elérési "
+"útvonalat."
+
+#: hk_classes/hk_reportdata.cpp:475
+#, fuzzy
+msgid "replacefunction '%1' not found"
+msgstr "csere funkció nem található"
+
+#: hk_classes/hk_reportdata.cpp:502
+msgid "Data Countfunction not found"
+msgstr "Adatszámolási funkció nem található"
+
+#: hk_classes/hk_reportdata.cpp:838
+msgid "Dataconfigurefunction not found"
+msgstr "Adatbeállító funkció nem található"
+
+#: hk_classes/hk_reportsection.cpp:276
+msgid "sectionreplacefunction not found"
+msgstr "szekciócsere funkció nem található"
+
+#: hk_classes/hk_reportsection.cpp:301
+msgid "Section Countfunction not found"
+msgstr "Szekciószámolási funkció nem található"
+
+#: hk_classes/hk_storagedatasource.cpp:303
+msgid ""
+"Datasource too big. Try to limit the number of rows by defining a filter."
+msgstr ""
+"Túl nagy adatforrás. Próbálja az oszlopok számát egy szűrő segítségével "
+"csökkenteni."
+
+#: hk_classes/hk_visible.cpp:455 hk_classes/hk_visible.cpp:463
+msgid "Identifier '%1' already in use"
+msgstr "A(z) '%1' azonosítót már használja"
+
+#: hk_dbaseclasses/hk_dbasedatabase.cpp:123
+#: hk_paradoxclasses/hk_paradoxdatabase.cpp:125
+#, fuzzy
+msgid "Delete table \"%TBLNAME%\"?"
+msgstr "Törölni akarja a(z) \"%TBLNAME%\" táblát?"
+
+#: hk_dbaseclasses/hk_dbasedatasource.cpp:63
+#: hk_firebirdclasses/hk_firebirddatasource.cpp:71
+#: hk_mdbclasses/hk_mdbtable.cpp:58 hk_mysqlclasses/hk_mysqldatasource.cpp:247
+#: hk_odbcclasses/hk_odbcdatasource.cpp:313
+#: hk_paradoxclasses/hk_paradoxtable.cpp:73
+#: hk_postgresclasses/hk_postgresqldatasource.cpp:205
+#: hk_sqlite3classes/hk_sqlite3datasource.cpp:277
+#: hk_sqliteclasses/hk_sqlitedatasource.cpp:337
+#: hk_xbaseclasses/hk_xbasedatasource.cpp:67
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:1014
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:428
+#, fuzzy
+msgid "Executing query ..."
+msgstr "Lekérdezés végrehajtása"
+
+#: hk_firebirdclasses/hk_firebirdtable.cpp:475
+#: hk_mysqlclasses/hk_mysqltable.cpp:132 hk_odbcclasses/hk_odbctable.cpp:138
+#: hk_postgresclasses/hk_postgresqltable.cpp:132
+#: hk_sqlite3classes/hk_sqlite3table.cpp:127
+#: hk_sqliteclasses/hk_sqlitetable.cpp:127
+#: hk_xbaseclasses/hk_xbasetable.cpp:178
+msgid "Warning: Column with no name!"
+msgstr "Figyelem: Az oszlopnak nincs neve!"
+
+#: hk_firebirdclasses/hk_firebirdview.cpp:43
+#: hk_mysqlclasses/hk_mysqlview.cpp:44
+#: hk_postgresclasses/hk_postgresqlview.cpp:43
+#: hk_sqlite3classes/hk_sqlite3view.cpp:43
+#: hk_sqliteclasses/hk_sqliteview.cpp:43
+msgid "View definition could not be loaded"
+msgstr "A nézet betöltése nem sikerült"
+
+#: hk_mdbclasses/hk_mdbdatabase.cpp:93
+#: hk_sqlite3classes/hk_sqlite3database.cpp:148
+#: hk_sqliteclasses/hk_sqlitedatabase.cpp:152
+msgid "Driver error!\n"
+msgstr "Meghajtó hiba!\n"
+
+#: hk_mdbclasses/hk_mdbdatabase.cpp:100
+#, fuzzy
+msgid "File does not appear to be an Access database"
+msgstr "A meghajtó nem támogatja az új adatbázisok létrehozását"
+
+#: hk_mdbclasses/hk_mdbtable.cpp:261
+#, fuzzy
+msgid "MDBTools - Table could not be opened!"
+msgstr "A tábla törlése nem sikerült!"
+
+#: hk_odbcclasses/hk_odbcconnection.cpp:83
+msgid "Connection not possible (wrong user and/or password?)"
+msgstr "A kapcsolat létesítése nem sikerült (hibás felhasználónév / jelszó?"
+
+#: hk_odbcclasses/hk_odbcview.cpp:57
+msgid "View definition could not be loaded,no such column 'viewselect'"
+msgstr "A nézet betöltése nem sikerült. Nincs ilyen oszlop 'viewselect'."
+
+#: hk_postgresclasses/hk_postgresqltable.cpp:202
+#, fuzzy
+msgid "Error: Postgres does not have the ability to modify the primary key!"
+msgstr ""
+"Hiba: a Postgres nem rendelkezik azzal a tulajdonsággal, hogy "
+"megváltoztathatná az oszloptípust illetve az elsődleges kulcsot, vagy "
+"oszlopokat törölhetne!"
+
+#: hk_postgresclasses/hk_postgresqltable.cpp:323
+#, c-format
+msgid "Column '%COLUMN%' could not be renamed"
+msgstr "Az '%COLUMN%'oszlop átnevezése nem sikerült."
+
+#: hk_postgresclasses/hk_postgresqltable.cpp:342
+#, c-format
+msgid "Column '%COLUMN%' has NULL values, so NOTNULL is not possible"
+msgstr ""
+"Az '%COLUMN%' oszlopban vannak NULL értékek, a NOTNULL tehát nem lehetséges"
+
+#: hk_sqlite3classes/hk_sqlite3table.cpp:188
+msgid "hk_sqlite3table::  Driver does not support the deletion of columns!\n"
+msgstr ""
+
+#: hk_sqlite3classes/hk_sqlite3table.cpp:197
+msgid "hk_sqlite3table::No columns to add!"
+msgstr ""
+
+#: hk_sqlite3classes/hk_sqlite3table.cpp:292
+#: hk_sqliteclasses/hk_sqlitetable.cpp:248
+msgid "ERROR hk_sqlitetable::driver_specific_indices System columns not found!"
+msgstr ""
+"HIBA: hk_sqlitetable::driver_specific_indices Nincsenek rendszeroszlopok!"
+
+#: hk_xbaseclasses/hk_xbasedatasource.cpp:276
+msgid "Query is no valid SELECT query!"
+msgstr ""
+
+#: hk_xbaseclasses/hk_xbasedatasource.cpp:281
+#, fuzzy
+msgid "Error! Query could not be executed!"
+msgstr "A lekérdezés végrehajtása nem sikerült"
+
+#: utilities/hk_actionqueryutility.cpp:90 utilities/hk_dbcopyutility.cpp:184
+#: utilities/hk_exportcsvutility.cpp:121
+#: utilities/hk_exporthtmlutility.cpp:102 utilities/hk_exportxmlutility.cpp:96
+#: utilities/hk_importcsvutility.cpp:138 utilities/hk_reportutility.cpp:78
+#, fuzzy
+msgid "Error creating connection"
+msgstr "Kapcsolat mentése"
+
+#: utilities/hk_actionqueryutility.cpp:106 utilities/hk_dbcopyutility.cpp:201
+#: utilities/hk_exportcsvutility.cpp:137
+#: utilities/hk_exporthtmlutility.cpp:118
+#: utilities/hk_exportxmlutility.cpp:112 utilities/hk_importcsvutility.cpp:154
+#: utilities/hk_reportutility.cpp:94
+#, fuzzy
+msgid "No such database"
+msgstr "Nem létező adatbázis ('%1')!"
+
+#: utilities/hk_actionqueryutility.cpp:115
+#, fuzzy
+msgid "query could not be created"
+msgstr "A nézet létrehozása nem sikerült!"
+
+#: utilities/hk_actionqueryutility.cpp:132
+msgid "Queryfile couldn't be loaded or is empty"
+msgstr ""
+
+#: utilities/hk_actionqueryutility.cpp:142
+#, fuzzy
+msgid "Query couldn't be executed"
+msgstr "A lekérdezés végrehajtása nem sikerült"
+
+#: utilities/hk_exportcsvutility.cpp:145
+#: utilities/hk_exporthtmlutility.cpp:129
+#: utilities/hk_exportxmlutility.cpp:120 utilities/hk_reportutility.cpp:102
+#, fuzzy
+msgid "Report couldn't be created"
+msgstr "A nézet létrehozása nem sikerült!"
+
+#: utilities/hk_exportcsvutility.cpp:163 utilities/hk_importcsvutility.cpp:181
+#, fuzzy
+msgid "csv couldn't be executed"
+msgstr "A lekérdezés végrehajtása nem sikerült"
+
+#: utilities/hk_exporthtmlutility.cpp:156
+#, fuzzy
+msgid "HTML couldn't be executed"
+msgstr "A lekérdezés végrehajtása nem sikerült"
+
+#: utilities/hk_exportxmlutility.cpp:139
+#, fuzzy
+msgid "XML couldn't be executed"
+msgstr "A lekérdezés végrehajtása nem sikerült"
+
+#: utilities/hk_importcsvutility.cpp:162
+#, fuzzy
+msgid "IMPORTCSV couldn't be created"
+msgstr "A nézet létrehozása nem sikerült!"
+
+#: utilities/hk_importcsvutility.cpp:168
+#, fuzzy
+msgid "Datasource couldn't be created"
+msgstr "Az adatforrás hozzákapcsolása nem sikerült"
+
+#: utilities/hk_reportutility.cpp:115
+#, fuzzy
+msgid "Reportfile couldn't be loaded"
+msgstr "Az adatbázis betöltése nem sikerült!"
+
+#: utilities/hk_reportutility.cpp:131
+#, fuzzy
+msgid "Report couldn't be executed"
+msgstr "A lekérdezés végrehajtása nem sikerült"
+
+#: hk_kdeclasses/hk_kde4simplegrid.cpp:138
+msgid "Page"
+msgstr "Oldal"
+
+#: hk_kdeclasses/hk_kde4simplegrid.cpp:147
+msgid "Query: "
+msgstr "Lekérdezés:"
+
+#: hk_kdeclasses/hk_kde4simplegrid.cpp:147
+msgid "Table: "
+msgstr "Tábla:"
+
+#: hk_kdeclasses/hk_kde4simplegrid.cpp:151
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:168
+msgid "Database: "
+msgstr "Válasszon adatbázist:"
+
+#: hk_kdeclasses/hk_kdeaddtabledialogbase.cpp:99
+msgid "Add-table dialog"
+msgstr "Új tábla párbeszédablak"
+
+#: hk_kdeclasses/hk_kdeaddtabledialogbase.cpp:100
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:346
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:89
+msgid "&Add"
+msgstr "&Hozzáadás"
+
+#: hk_kdeclasses/hk_kdeaddtabledialogbase.cpp:101
+msgid "Alt+A"
+msgstr "Alt+A"
+
+#: hk_kdeclasses/hk_kdeaddtabledialogbase.cpp:102
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:1388 hk_kdeclasses/hk_kdeform.cpp:96
+#: hk_kdeclasses/hk_kdeinterpreterdialog.cpp:91
+#: hk_kdeclasses/hk_kdemodule.cpp:93 hk_kdeclasses/hk_kdequery.cpp:77
+#: hk_kdeclasses/hk_kdereport.cpp:82 hk_kdeclasses/hk_kdetable.cpp:72
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:158
+msgid "&Close"
+msgstr "&Bezár"
+
+#: hk_kdeclasses/hk_kdeaddtabledialogbase.cpp:103
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:312
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:337
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:500
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:207
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:207
+#: knoda/hk_kdedriverselectbase.cpp:131
+msgid "Alt+C"
+msgstr "Alt+C"
+
+#: hk_kdeclasses/hk_kdeaddtabledialog.cpp:47
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:71
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:129
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:550
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:71
+msgid "table"
+msgstr "tábla"
+
+#: hk_kdeclasses/hk_kdeaddtabledialog.cpp:49
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:73
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:179
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:346
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:552
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:73
+msgid "view"
+msgstr "nézet"
+
+#: hk_kdeclasses/hk_kdeaddtabledialog.cpp:51
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:72
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:135
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:172
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:341
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:551
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:72
+msgid "query"
+msgstr "lekérdezés"
+
+#: hk_kdeclasses/hk_kdeboolean.cpp:289 hk_kdeclasses/hk_kdelabel.cpp:55
+msgid "label"
+msgstr "címke"
+
+#: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:80
+#: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:118
+msgid "Entry"
+msgstr "Bejegyzés"
+
+#: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:82
+#: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:119
+msgid "1"
+msgstr "1"
+
+#: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:113
+msgid "Combobox textlist dialog"
+msgstr "Combobox textlist párbeszédablak"
+
+#: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:114
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:309
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:334
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:83
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:276
+#: hk_kdeclasses/hk_kdedblistview.cpp:83
+#: hk_kdeclasses/hk_kdefilterdialogbase.cpp:100
+#: hk_kdeclasses/hk_kdefinddialogbase.cpp:137
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:588
+#: hk_kdeclasses/hk_kdemessages.cpp:135
+#: hk_kdeclasses/hk_kdenewdatabasebase.cpp:126
+#: hk_kdeclasses/hk_kdenewpassworddialogbase.cpp:140
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:371
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:498
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:197
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:204
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:224
+msgid "&OK"
+msgstr "&OK"
+
+#: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:116
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:311
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:336
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:84
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:278
+#: hk_kdeclasses/hk_kdedblistview.cpp:91
+#: hk_kdeclasses/hk_kdefilterdialogbase.cpp:101
+#: hk_kdeclasses/hk_kdefilterdialog.cpp:34
+#: hk_kdeclasses/hk_kdefinddialogbase.cpp:138
+#: hk_kdeclasses/hk_kdefinddialog.cpp:39
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:349
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:92
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:589
+#: hk_kdeclasses/hk_kdemessages.cpp:136
+#: hk_kdeclasses/hk_kdenewdatabasebase.cpp:128
+#: hk_kdeclasses/hk_kdenewpassworddialogbase.cpp:141
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:378
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:499
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:199
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:206
+#: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:340
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:57
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:206
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:226
+#: knoda/hk_kdedriverselectbase.cpp:130
+msgid "&Cancel"
+msgstr "&Mégsem"
+
+#: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:120
+msgid "Combobox sourcetextlist"
+msgstr "Combobox sourcetextlist"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:287
+msgid "Text File Export Dialog"
+msgstr "Szöveges fájl exportálása párbeszédablak"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:288
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:364
+msgid "Filename"
+msgstr "Fájlnév"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:289
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:365
+msgid "The data to import."
+msgstr "Beolvasandó adatok."
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:290
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:366
+#: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:215
+#: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:218
+#: hk_kdeclasses/hk_kdenewdatabasebase.cpp:125
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:455
+#: hk_kdeclasses/hk_kdepropertybase.cpp:955
+#: hk_kdeclasses/hk_kdepropertybase.cpp:963
+#: hk_kdeclasses/hk_kdepropertybase.cpp:968
+#: hk_kdeclasses/hk_kdepropertybase.cpp:969
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1004
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:607
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:220
+msgid "..."
+msgstr "..."
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:291
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:215
+msgid "Datasource type"
+msgstr "Adatforrás típusa:"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:292
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:357
+msgid "Tablename"
+msgstr "Táblanév"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:293
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:368
+msgid "Pick the character that separates columns in text file."
+msgstr ""
+"Válassza ki azt a karaktert, mely elválasztja az egyes oszlopokat a szöveges "
+"fájlban."
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:294
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:367
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:70
+msgid "Column Separator"
+msgstr "Oszlop elválasztó"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:296
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:344
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:361
+msgid "First row contains field names."
+msgstr "Az első sor a mezőneveket tartalmazza."
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:297
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:355
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:67
+msgid "Text delimiter"
+msgstr "Szövegelválasztó"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:298
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:354
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:68
+msgid "Field names in first row"
+msgstr "Mezőnevek az első sor alapján"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:299
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:358
+msgid "\""
+msgstr "\""
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:300
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:359
+msgid "The character that surrounds text (can be blank)."
+msgstr "A szöveget meghatározó karakter (üresen is maradhat)."
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:301
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:353
+msgid "Date format"
+msgstr "Dátumformátum"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:302
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:303
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:304
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:345
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:346
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:349
+msgid "Name of new or existing table."
+msgstr "A meglévő illetve. az új tábla neve."
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:305
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:350
+msgid "Charset"
+msgstr "Kódolás (charset)"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:306
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:348
+msgid "Locale"
+msgstr "Helyi beállítások (locale)"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:307
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:351
+msgid "Time format"
+msgstr "Időformátum"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:308
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:347
+msgid "Datetime format"
+msgstr "'Dátum és idő' formátum"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:310
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:335
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:205
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:205
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:225
+#: knoda/hk_kdedriverselectbase.cpp:129
+msgid "Alt+O"
+msgstr "Alt+O"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:313
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:338
+#: knoda/hk_kdedriverselectbase.cpp:134
+msgid "O&ptions"
+msgstr "Beá&llítások"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:314
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:339
+#: knoda/hk_kdedriverselectbase.cpp:135
+msgid "Alt+P"
+msgstr "Alt+P"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:315
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:340
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:85
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:274
+#: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:219
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:496
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:227
+#: knoda/hk_kdedriverselectbase.cpp:136
+msgid "&Help"
+msgstr "&Segítség"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:316
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:341
+#: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:220
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:228
+#: knoda/hk_kdedriverselectbase.cpp:137
+msgid "Alt+H"
+msgstr "Alt+H"
+
+#: hk_kdeclasses/hk_kdecsvexportdialog.cpp:58
+msgid "CSV export Dialog"
+msgstr "CSV export párbeszédablak"
+
+#: hk_kdeclasses/hk_kdecsvexportdialog.cpp:80
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:71
+msgid "Tab"
+msgstr "Tab"
+
+#: hk_kdeclasses/hk_kdecsvexportdialog.cpp:154
+#: hk_kdeclasses/hk_kdexmlexportdialog.cpp:79
+msgid "Exporting data..."
+msgstr "Adatok exportálása..."
+
+#: hk_kdeclasses/hk_kdecsvexportdialog.cpp:188
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:183
+msgid "Select a CSV file"
+msgstr "Válasszon CSV fájlt"
+
+#: hk_kdeclasses/hk_kdecsvexportdialog.cpp:227
+#: hk_kdeclasses/hk_kdexmlexportdialog.cpp:198
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:209
+#: hk_kdeclasses/knodamaindockwindow.cpp:487
+msgid "Table"
+msgstr "Tábla"
+
+#: hk_kdeclasses/hk_kdecsvexportdialog.cpp:228
+#: hk_kdeclasses/hk_kdexmlexportdialog.cpp:199
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:212
+#: hk_kdeclasses/knodamaindockwindow.cpp:516
+msgid "Query"
+msgstr "Lekérdezés"
+
+#: hk_kdeclasses/hk_kdecsvexportdialog.cpp:232
+#: hk_kdeclasses/hk_kdexmlexportdialog.cpp:203
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:215
+msgid "View"
+msgstr "Nézet"
+
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:333
+msgid "Text File Import Dialog"
+msgstr "Szöveges fájl importálás párbeszédablak"
+
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:342
+msgid "Preview:"
+msgstr "Előnézet:"
+
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:352
+msgid "Detect \"Autoincrement\" "
+msgstr "\"Számláló\" felismerése"
+
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:356
+msgid "Append data"
+msgstr "Adatok hozzáfűzése"
+
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:363
+msgid "Don't overwrite data in table."
+msgstr "Ne írja felül a táblában lévő adatokat."
+
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:65
+msgid "CSV Import Dialog"
+msgstr "CSV import párbeszédablak"
+
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:66
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:219
+msgid "Filename:"
+msgstr "Fájlnév:"
+
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:69
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:217
+#: hk_kdeclasses/hk_kdexmlexportdialog.cpp:153
+msgid "Tablename:"
+msgstr "Tábla neve:"
+
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:207
+msgid "Importing data..."
+msgstr "Adatok beolvasása..."
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:272
+msgid "Database settings"
+msgstr "Adatbázis beállítások"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:273
+#: hk_kdeclasses/hk_kdedatabasesetting.cpp:161
+msgid "Open and store files:"
+msgstr "Fájlok megnyitása és tárolása"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:275
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:497
+msgid "F1"
+msgstr "F1"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:281
+msgid "Create system table:"
+msgstr "Rendszertábla létrehozása:"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:282
+msgid "C&reate"
+msgstr "Lét&rehozás"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:283
+msgid "Alt+R"
+msgstr "Alt+R"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:285
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:466
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:491
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:85 hk_kdeclasses/hk_kdeqbe.cpp:56
+msgid "Yes"
+msgstr "Igen"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:286
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:467
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:492
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:86 hk_kdeclasses/hk_kdeqbe.cpp:56
+msgid "No"
+msgstr "Nem"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:287
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:464
+msgid "Automatic data update:"
+msgstr "Az adatok automatikus frissítése:"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:288
+#, fuzzy
+msgid "Load/Store"
+msgstr "Betöltés/Mentés"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:289
+msgid "Queries:"
+msgstr "Lekérdezések:"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:290
+msgid "Forms:"
+msgstr "Űrlapok:"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:291
+msgid "Set all:"
+msgstr "Az összes elem igazítása:"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:292
+msgid "Reports:"
+msgstr "Jelentések:"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:293
+msgid "Modules:"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:294
+msgid "Encoding:"
+msgstr "Karakterkészlet:"
+
+#: hk_kdeclasses/hk_kdedatabasesetting.cpp:46
+#: hk_kdeclasses/hk_kdeobjecthandler.cpp:50
+msgid "Local"
+msgstr "Helyileg"
+
+#: hk_kdeclasses/hk_kdedatabasesetting.cpp:47
+#: hk_kdeclasses/hk_kdeobjecthandler.cpp:49
+msgid "Central"
+msgstr "Központilag"
+
+#: hk_kdeclasses/hk_kdedatabasesetting.cpp:61
+msgid "Load/Save"
+msgstr "Betöltés/Mentés"
+
+#: hk_kdeclasses/hk_kdedatabasesetting.cpp:66
+#: hk_kdeclasses/hk_kdedatabasesetting.cpp:161
+msgid "Regional"
+msgstr "Regionális"
+
+#: hk_kdeclasses/hk_kdedatabasesetting.cpp:118
+msgid ""
+"Error: could not create central storage table\n"
+" Check your permissions"
+msgstr ""
+"Hiba: a központi tárolótábla létrehozása nem sikerült.\n"
+"Kérem, ellenőrizze a jogosultságokat."
+
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:78
+msgid "Add datasource"
+msgstr "Adatforrás hozzáadása"
+
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:372
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:1341
+msgid "Edit"
+msgstr "Szerkesztés"
+
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:374
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:1343
+msgid "Delete"
+msgstr "Törlés"
+
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:439
+msgid "Remove datasource '%1'?"
+msgstr "Törli a(z) '%1' adatforrást?"
+
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:1193
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:192
+msgid "On update:"
+msgstr "Frissítéskor:"
+
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:1193
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:1194
+#: hk_kdeclasses/hk_kderelationdialog.cpp:99
+msgid "Cascade"
+msgstr "Fekvő (cascade)"
+
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:1193
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:1194
+#: hk_kdeclasses/hk_kderelationdialog.cpp:100
+msgid "Restrict"
+msgstr "Korlátozott"
+
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:1194
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:193
+msgid "On delete:"
+msgstr "Törléskor:"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:52
+msgid "Please select"
+msgstr "Kérem, válasszon"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:196
+msgid "&Schema only"
+msgstr "&Csak séma"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:197
+msgid "Schema and &data"
+msgstr "Séma és &adat"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:201
+msgid "Active database:"
+msgstr "Jelenlegi adatbázis:"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:233
+#: hk_kdeclasses/hk_kdedblistview.cpp:318
+msgid "<No database>"
+msgstr "<Nincs adatbázis>"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:236
+#: hk_kdeclasses/hk_kdedblistview.cpp:463
+msgid "Modules"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:240
+#: hk_kdeclasses/hk_kdedblistview.cpp:432
+msgid "Reports"
+msgstr "Jelentések"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:244
+#: hk_kdeclasses/hk_kdedblistview.cpp:397
+msgid "Forms"
+msgstr "Űrlapok"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:250
+#: hk_kdeclasses/hk_kdedblistview.cpp:363
+msgid "Queries"
+msgstr "Lekérdezések"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:260
+msgid "Views"
+msgstr "Nézetek"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:268
+msgid "Tables"
+msgstr "Táblák"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:369
+#: hk_kdeclasses/hk_kdedblistview.cpp:403
+#: hk_kdeclasses/hk_kdedblistview.cpp:438
+#: hk_kdeclasses/hk_kdedblistview.cpp:469
+msgid " (Central)"
+msgstr " (központilag)"
+
+#: hk_kdeclasses/hk_kdedriverdialog.cpp:62
+msgid "Directory"
+msgstr "Könyvtár"
+
+#: hk_kdeclasses/hk_kdedriverdialog.cpp:78
+msgid "Found database drivers:"
+msgstr "Talált adatbázis-meghajtók:"
+
+#: hk_kdeclasses/hk_kdedriverdialog.cpp:79
+msgid "SQL Driver Selection"
+msgstr "SQL meghajtó kiválasztása"
+
+#: hk_kdeclasses/hk_kdedriverdialog.cpp:110
+msgid "Connect"
+msgstr "Kapcsolódás"
+
+#: hk_kdeclasses/hk_kdedriverdialog.cpp:111
+#: hk_kdeclasses/hk_kdeindexeditwindow.cpp:168
+msgid "Exit"
+msgstr "Kilépés"
+
+#: hk_kdeclasses/hk_kdedriverdialog.cpp:147
+msgid "Please select a driver"
+msgstr "Kérem, válasszon meghajtót"
+
+#: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:209
+#: hk_kdeclasses/hk_kdeobjecthandlerbase.cpp:120
+msgid "Form1"
+msgstr "Űrlap1"
+
+#: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:210
+#: hk_kdeclasses/hk_kdeobjecthandlerbase.cpp:123
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:155
+msgid "E&xit"
+msgstr "K&ilépés"
+
+#: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:211
+msgid "Alt+X"
+msgstr "Alt+X"
+
+#: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:212
+msgid "Copy structure and data"
+msgstr "Adatok és váz másolása"
+
+#: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:216
+msgid "Overwrite"
+msgstr "Felülírás"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:80
+msgid ""
+"Error while creating export/importdb dialog!\n"
+"Database or connection not set!"
+msgstr ""
+"Hiba az adatbázis importálásakor/exportálásakor!\n"
+"Nem adott meg adatbázist vagy kapcsolatot."
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:109
+msgid "Import database dialog"
+msgstr "Adatbázis importálása párbeszédablak"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:109
+msgid "Export database dialog"
+msgstr "Adatbázis exportálása párbeszédablak"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:133
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:379
+#: hk_kdeclasses/knodamaindockwindow.cpp:146
+msgid "Driver does not support creating new tables"
+msgstr "A meghajtó nem támogatja az új táblák létrehozását"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:146
+#: hk_kdeclasses/knodamaindockwindow.cpp:270
+msgid "Driver does not support creating new views"
+msgstr "A meghajtó nem támogatja az új nézetek létrehozását"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:344
+msgid "Driver does not support creating new databases"
+msgstr "A meghajtó nem támogatja az új adatbázisok létrehozását"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:347
+msgid "Copy whole database?"
+msgstr "Teljes adatbázis másolása?"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:358
+msgid "Copy whole database failed!"
+msgstr "A teljes adatbázis másolása nem sikerült!"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:382
+msgid "Copy all tables?"
+msgstr "Az összes tábla másolása?"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:423
+msgid "Copy all queries?"
+msgstr "Minden lekérdezés másolása?"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:424
+msgid "Copy all forms?"
+msgstr "Minden űrlap másolása?"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:425
+msgid "Copy all reports?"
+msgstr "Minden jelentés másolása?"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:468
+msgid "Target database does not support views!"
+msgstr "A céladatbázis nem támogatja a nézeteket!"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:471
+msgid "Copy all views?"
+msgstr "Minden nézet másolása?"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:564
+#: hk_kdeclasses/knodamaindockwindow.cpp:122
+msgid "Database could not be created"
+msgstr "Az adatbázis létrehozása nem sikerült!"
+
+#: hk_kdeclasses/hk_kdefilterdialogbase.cpp:97
+#: hk_kdeclasses/hk_kdefinddialogbase.cpp:135
+#: hk_kdeclasses/hk_kdemessages.cpp:133
+msgid "MyDialog"
+msgstr "MyDialog"
+
+#: hk_kdeclasses/hk_kdefilterdialog.cpp:32
+msgid "Filter Dialog"
+msgstr "Szűrő párbeszédablak"
+
+#: hk_kdeclasses/hk_kdefilterdialog.cpp:33
+#: hk_kdeclasses/hk_kdefinddialog.cpp:38
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:204
+msgid "&Ok"
+msgstr "&OK"
+
+#: hk_kdeclasses/hk_kdefilterdialog.cpp:43
+msgid "Editor"
+msgstr "Szerkesztő"
+
+#: hk_kdeclasses/hk_kdefinddialogbase.cpp:136
+#: hk_kdeclasses/hk_kdefinddialog.cpp:31
+msgid "Search"
+msgstr "Keresés"
+
+#: hk_kdeclasses/hk_kdefinddialogbase.cpp:139
+#: hk_kdeclasses/hk_kdefinddialog.cpp:32
+msgid "Options"
+msgstr "Beállítások"
+
+#: hk_kdeclasses/hk_kdefinddialogbase.cpp:140
+#: hk_kdeclasses/hk_kdefinddialog.cpp:33
+msgid "C&ase sensitive"
+msgstr "N&agy/kisbetűérzékeny"
+
+#: hk_kdeclasses/hk_kdefinddialogbase.cpp:141
+msgid "All &columns"
+msgstr "Minden o&szlop"
+
+#: hk_kdeclasses/hk_kdefinddialogbase.cpp:142
+#: hk_kdeclasses/hk_kdefinddialog.cpp:30
+msgid "&Part of column"
+msgstr "Az oszlo&pnak egy része"
+
+#: hk_kdeclasses/hk_kdefinddialogbase.cpp:143
+#: hk_kdeclasses/hk_kdefinddialog.cpp:35
+msgid "Find &backwards"
+msgstr "Visszafe&lé"
+
+#: hk_kdeclasses/hk_kdefinddialog.cpp:34
+msgid "All c&olumns"
+msgstr "Minden s&orban"
+
+#: hk_kdeclasses/hk_kdefinddialog.cpp:37
+msgid "Search Dialog"
+msgstr "Keresési párbeszédablak"
+
+#: hk_kdeclasses/hk_kdeform.cpp:86 hk_kdeclasses/hk_kdemodule.cpp:84
+#: hk_kdeclasses/knodamaindockwindow.cpp:532
+msgid ""
+"Fatal error! Form part could not be loaded!\n"
+"This is a installation error. Check your installation! Did you install knoda "
+"into the correct directory? Program will exit now..."
+msgstr ""
+"Súlyos hiba! Nem sikerült betölteni a részűrlapot.\n"
+"Valószínűleg hibás a telepítés. Kérem, ellenőrizze a telepítést, és hogy jó "
+"helyre telepítette-e a Knoda programot. A program most kilép..."
+
+#: hk_kdeclasses/hk_kdeform.cpp:437 hk_kdeclasses/hk_kdeformpartwidget.cpp:822
+msgid "Form - "
+msgstr "Űrlap: - "
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:345
+msgid "new formdatasource dialog"
+msgstr "új űrlapadatforrás párbeszédablak"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:347
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:90
+msgid "A&lter"
+msgstr "Módosí&tás"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:348
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:91
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:234
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:240
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1280
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1602
+#: hk_kdeclasses/hk_kdesimplereport.cpp:212
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1197
+#: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:339
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:56
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:237
+msgid "&Delete"
+msgstr "&Törlés"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:350
+msgid "based on:"
+msgstr "alapja:"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:351
+msgid "Sql:"
+msgstr "Sql:"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:352
+msgid "filter:"
+msgstr "szűrő:"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:354
+msgid "sortingfield"
+msgstr "szortírozó mező"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:356
+msgid "depending mode:"
+msgstr "függőség módja:"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:358
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:84
+msgid "depending on"
+msgstr "ettől függ"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:359
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:70
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:86
+msgid "thisfield"
+msgstr "ez a mező"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:360
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:70
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:85
+#: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:343
+msgid "masterfield"
+msgstr "főmező"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:361
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:81
+msgid "react on master changes?"
+msgstr "reagáljon fő változásokra?"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:362
+msgid "Is read only?"
+msgstr "Csak olvasható?"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:363
+msgid "Automatic data update?"
+msgstr "Az adatok automatikus frissítése?"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:75
+msgid "standard"
+msgstr "alapértelmezett"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:76
+msgid "no handle"
+msgstr "ne kezelje"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:77
+msgid "change"
+msgstr "változtatás"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:78
+msgid "delete"
+msgstr "törlés"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:79
+msgid "change+delete"
+msgstr "változtatás+törlés"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:80
+msgid "depending mode"
+msgstr "függőségek"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:82
+msgid "is readonly?"
+msgstr "csak olvasható?"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:83
+msgid "based on"
+msgstr "Alapja:"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:87
+msgid "filter"
+msgstr "szűrő"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:88
+msgid "sorting"
+msgstr "szortírozás"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:97
+msgid "Datasource dialog"
+msgstr "Adatforrás párbeszédablak"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:84
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:218
+#: hk_kdeclasses/knodamaindockwindow.cpp:544
+msgid "Form"
+msgstr "Űrlap"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:118
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:193
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:169
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:131
+msgid "&Design mode"
+msgstr "&Tervezési módban"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:122
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:197
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:173
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:136
+msgid "&View mode"
+msgstr "&Nézeti módban"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:130
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:121
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:220
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:189
+msgid "&Save"
+msgstr "&Mentés"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:135
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:127
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:225
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:193
+msgid "Save &as"
+msgstr "Mentés má&sként"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:140
+#, fuzzy
+msgid "Lineedit"
+msgstr "sorszerkesztő mező"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:143
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:198
+#, fuzzy
+msgid "Pointer"
+msgstr "&Nyomtató"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:146
+#, fuzzy
+msgid "Label"
+msgstr "Címke:"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:149
+#, fuzzy
+msgid "Multiline"
+msgstr "Többszörös fájlok:"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:152
+#, fuzzy
+msgid "Boolean"
+msgstr "igen/nem"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:155
+#, fuzzy
+msgid "Combobox"
+msgstr "&Combobox mező"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:158
+msgid "Grid"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:161
+#: hk_kdeclasses/hk_kdeproperty.cpp:539
+msgid "Selector"
+msgstr "Sorválasztó"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:164
+#, fuzzy
+msgid "Button"
+msgstr "gomb"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:167
+#, fuzzy
+msgid "Subform"
+msgstr "Részűrlap:"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:170
+#, fuzzy
+msgid "Image"
+msgstr "Kép elérési útja:"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:173
+msgid "Tabwidget"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:176
+msgid "date"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:195
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:204
+msgid "select"
+msgstr "válasszon"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:196
+msgid "textlabel"
+msgstr "szöveges címke"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:197
+msgid "lineeditfield"
+msgstr "sorszerkesztő mező"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:198
+msgid "memofield"
+msgstr "memo mező"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:199
+msgid "booleanfield"
+msgstr "boolean mező"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:200
+msgid "comboboxfield"
+msgstr "combox mező"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:201
+msgid "gridfield"
+msgstr "rácsmező"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:202
+#: hk_kdeclasses/hk_kdetaborder.cpp:84 hk_kdeclasses/hk_kdetaborder.cpp:148
+msgid "rowselector"
+msgstr "sorválasztó"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:203
+#: hk_kdeclasses/hk_kdetaborder.cpp:83 hk_kdeclasses/hk_kdetaborder.cpp:147
+msgid "button"
+msgstr "gomb"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:207
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:211
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1237
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1187
+msgid "Set to all"
+msgstr "Beállítás az összes elemhez"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:209
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:213
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1239
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1188
+msgid "Font"
+msgstr "Betűtípus"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:212
+#: hk_kdeclasses/hk_kdeproperty.cpp:188
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:216
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1243
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1190
+msgid "Foregroundcolour"
+msgstr "Előtérszín"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:215
+#: hk_kdeclasses/hk_kdeproperty.cpp:189
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:219
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1247
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1192
+msgid "Backgroundcolour"
+msgstr "Háttérszín"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:223
+msgid "Tab order"
+msgstr "Tabulátorrok sorrendje"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:227 hk_kdeclasses/hk_kdegrid.cpp:531
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:208
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:150
+msgid "Reload"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:238
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:166
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:268
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:244
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1604
+#: hk_kdeclasses/hk_kdesimplereport.cpp:216
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:169
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:283
+#: hk_kdegridpart/hk_kdegridpart.cpp:59
+msgid "&Copy"
+msgstr "&Másolás"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:242
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:177
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:276
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:248
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1606
+#: hk_kdeclasses/hk_kdesimplereport.cpp:220
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:174
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:287
+#: hk_kdegridpart/hk_kdegridpart.cpp:64
+msgid "&Paste"
+msgstr "&Beillesztés"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:246
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:133
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:245
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:252
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1608
+#: hk_kdeclasses/hk_kdesimplereport.cpp:224
+msgid "Cu&t"
+msgstr "Kivá&gás"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:250
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:236
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1610
+msgid "&Propertyeditor"
+msgstr "&Tulajdonságok szerkesztő"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:254
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:256
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1613
+#: hk_kdeclasses/hk_kdesimplereport.cpp:228
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1163
+msgid "Adjust &size"
+msgstr "Méret beállítá&sa"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:256
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:258
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1615
+#: hk_kdeclasses/hk_kdesimplereport.cpp:230
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1166
+msgid "Minimum width"
+msgstr "Minimális szélesség"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:259
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:261
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1616
+#: hk_kdeclasses/hk_kdesimplereport.cpp:233
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1168
+msgid "Maximum width"
+msgstr "maximális szélesség"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:262
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:264
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1617
+#: hk_kdeclasses/hk_kdesimplereport.cpp:236
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1170
+msgid "Minimum height"
+msgstr "Minimális magasság"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:265
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:267
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1618
+#: hk_kdeclasses/hk_kdesimplereport.cpp:239
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1172
+msgid "Maximum height"
+msgstr "Maximális magasság"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:268
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:270
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1619
+#: hk_kdeclasses/hk_kdesimplereport.cpp:242
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1174
+msgid "Minimum size"
+msgstr "Minimális méret"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:271
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:273
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1620
+#: hk_kdeclasses/hk_kdesimplereport.cpp:245
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1176
+msgid "Maximum size"
+msgstr "maximális méret"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:281
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:283
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1627
+#: hk_kdeclasses/hk_kdesimplereport.cpp:255
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1164
+msgid "&Align"
+msgstr "Ig&azítás"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:283
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:285
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1629
+#: hk_kdeclasses/hk_kdesimplereport.cpp:257
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1178
+msgid "&Left"
+msgstr "&Bal"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:286
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:288
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1630
+#: hk_kdeclasses/hk_kdesimplereport.cpp:260
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1180
+msgid "&Right"
+msgstr "&Jobb"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:289
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:291
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1631
+#: hk_kdeclasses/hk_kdesimplereport.cpp:263
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1182
+msgid "&Top"
+msgstr "&Fent"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:292
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:294
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1632
+#: hk_kdeclasses/hk_kdesimplereport.cpp:266
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1184
+msgid "&Bottom"
+msgstr "&Alul"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:299
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1637
+msgid "Database designer"
+msgstr "Adatbázis tervező"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:303
+msgid "with label"
+msgstr "címkével"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:307 hk_kdeclasses/hk_kdegrid.cpp:529
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1294
+msgid "Define columns"
+msgstr "Oszlopok definiálása"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:313
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:154
+msgid "Filterdefinition"
+msgstr "Szűrő definiálása"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:316
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:158
+msgid "Filterexecution"
+msgstr "Szűrés végrehajtása"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:321
+#, fuzzy
+msgid "Clear filter"
+msgstr "szűrő"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:923
+msgid ""
+"hk_kdeformpartwidget::taborder_clicked error: taborder dialog could not be "
+"created!"
+msgstr ""
+"hk_kdeformpartwidget::taborder_clicked error: a tabulátorsorrend "
+"párbeszédablak létrehozása nem sikerült!"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:581
+msgid "Column Select"
+msgstr "Oszlop kiválasztása"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:582
+msgid "Visible columns:"
+msgstr "Látható oszlopok:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:583
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:56
+msgid "Invisible columns:"
+msgstr "Láthatatlan oszlopok:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:586
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:86
+msgid "Columndefinition:"
+msgstr "Oszlop definiálása:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:590
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:83
+msgid "Displayname:"
+msgstr "Megjelenített név:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:591
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:84
+msgid "Columntype:"
+msgstr "Oszloptípus:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:592
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:85
+msgid "Digits:"
+msgstr "Számok:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:593
+#: hk_kdeclasses/hk_kdepropertybase.cpp:988
+#: hk_kdeclasses/hk_kdeproperty.cpp:173
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:622
+#: hk_kdeclasses/hk_kdereportproperty.cpp:520
+#: hk_kdeclasses/hk_kdereportproperty.cpp:532
+msgid "Alignment:"
+msgstr "Igazítás:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:594
+msgid "Separators:"
+msgstr "Elválasztók:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:595
+#: hk_kdeclasses/hk_kdepropertybase.cpp:966
+msgid "Readonly:"
+msgstr "Csak olvasható:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:596
+#: hk_kdeclasses/hk_kdepropertybase.cpp:954
+#: hk_kdeclasses/hk_kdeproperty.cpp:144 hk_kdeclasses/hk_kdeproperty.cpp:507
+msgid "Default value:"
+msgstr "Alapértelmezett érték:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:597
+#: hk_kdeclasses/hk_kdepropertybase.cpp:959
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:610
+msgid "Identifier:"
+msgstr "Azonosító:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:598
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:88
+#: hk_kdeclasses/hk_kdepropertybase.cpp:994
+#: hk_kdeclasses/hk_kdeproperty.cpp:85
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:631
+#: hk_kdeclasses/hk_kdereportproperty.cpp:166
+#: hk_kdeclasses/hk_kdereportproperty.cpp:217
+msgid "&Format"
+msgstr "&Formátum"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:599
+#: hk_kdeclasses/hk_kdepropertybase.cpp:965
+#: hk_kdeclasses/hk_kdeproperty.cpp:153
+msgid "Viewcolumn:"
+msgstr "Megmutatott mező:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:600
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:87
+msgid "Listdatasourcetype:"
+msgstr "Listaadatforrás típusa:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:601
+#: hk_kdeclasses/hk_kdepropertybase.cpp:962
+#: hk_kdeclasses/hk_kdeproperty.cpp:152
+msgid "Listcolumn:"
+msgstr "Listamező:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:602
+#: hk_kdeclasses/hk_kdepropertybase.cpp:964
+#: hk_kdeclasses/hk_kdeproperty.cpp:151
+msgid "Listdatasource:"
+msgstr "Listaadatforrás:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:603
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:89
+msgid "&Combobox"
+msgstr "&Combobox mező"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:604
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1007
+msgid "On click:"
+msgstr "Kattintáskor:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:607
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1008
+msgid "On doubleclick:"
+msgstr "Duplakattintáskor:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:608
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1030
+msgid "On loosefocus:"
+msgstr "Ha elveszíti a fókuszt:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:611
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1010
+msgid "On getfocus:"
+msgstr "Ha megkapja a fókuszt:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:614
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1021
+msgid "Before insert:"
+msgstr "Beillesztés előtt:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:616
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1017
+msgid "Before update:"
+msgstr "Frissítés előtt:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:617
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1029
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:648
+msgid "On open:"
+msgstr "Megnyitáskor:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:620
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1012
+msgid "Before delete:"
+msgstr "Törlés előtt:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:621
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1016
+msgid "After update:"
+msgstr "Frissítés után:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:622
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1018
+msgid "After delete:"
+msgstr "Törlés után:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:623
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1028
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:646
+msgid "Before row change:"
+msgstr "Sormódosítás előtt:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:624
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1024
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:649
+msgid "On close:"
+msgstr "Bezáráskor:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:629
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1019
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:645
+msgid "After row change:"
+msgstr "Sormódosítás után:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:631
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1033
+msgid "On key:"
+msgstr "Kulcs esetében:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:632
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1036
+msgid "After insert:"
+msgstr "Beillesztés után:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:634
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1034
+msgid "On select:"
+msgstr "Kiválasztáskor:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:636
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1040
+#: hk_kdeclasses/hk_kdeproperty.cpp:100
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:655
+#: hk_kdeclasses/hk_kdereportproperty.cpp:219
+msgid "&Action"
+msgstr "&Művelet"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:51
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:342
+#: hk_kdeclasses/hk_kdeproperty.cpp:104
+#: hk_kdeclasses/hk_kdereportproperty.cpp:123
+#: hk_kdeclasses/hk_kdereportproperty.cpp:492
+#: hk_kdeclasses/hk_kdetabledesign.cpp:624
+#: hk_kdeclasses/hk_kdetabledesign.cpp:656
+#: hk_kdeclasses/hk_kdetabledesign.cpp:668
+#: hk_kdeclasses/hk_kdetabledesign.cpp:831
+#: hk_kdeclasses/hk_kdetabledesign.cpp:832
+#: hk_kdeclasses/hk_kdetabledesign.cpp:956
+msgid "no"
+msgstr "nem"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:52
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:341
+#: hk_kdeclasses/hk_kdeproperty.cpp:105
+#: hk_kdeclasses/hk_kdereportproperty.cpp:122
+#: hk_kdeclasses/hk_kdereportproperty.cpp:491
+#: hk_kdeclasses/hk_kdetabledesign.cpp:656
+#: hk_kdeclasses/hk_kdetabledesign.cpp:668
+#: hk_kdeclasses/hk_kdetabledesign.cpp:753
+#: hk_kdeclasses/hk_kdetabledesign.cpp:831
+#: hk_kdeclasses/hk_kdetabledesign.cpp:832
+#: hk_kdeclasses/hk_kdetabledesign.cpp:956
+msgid "yes"
+msgstr "igen"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:57
+msgid "Shown columns:"
+msgstr "Látható oszlopok:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:59
+msgid "Column"
+msgstr "Oszlop"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:59
+msgid "Columntype"
+msgstr "Oszloptípus"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:62
+msgid "Column select"
+msgstr "Oszlop kiválasztása"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:65
+#: hk_kdeclasses/hk_kdeproperty.cpp:206
+#: hk_kdeclasses/hk_kdereportproperty.cpp:207
+msgid "set"
+msgstr "válasszon"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:66
+#: hk_kdeclasses/hk_kdegrid.cpp:116 hk_kdeclasses/hk_kdegrid.cpp:120
+#: hk_kdeclasses/hk_kdeproperty.cpp:207
+#: hk_kdeclasses/hk_kdereportproperty.cpp:208
+msgid "not set"
+msgstr "nincs beállítva"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:68
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:122
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:272
+msgid "edit"
+msgstr "szerkesztés"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:69
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:268
+msgid "bool"
+msgstr "igen/nem"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:70
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:270
+msgid "combo"
+msgstr "kombinált"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:74
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:71
+#: hk_kdeclasses/hk_kdeproperty.cpp:174
+#: hk_kdeclasses/hk_kdereportproperty.cpp:525
+msgid "Left"
+msgstr "Balra"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:75
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:73
+#: hk_kdeclasses/hk_kdeproperty.cpp:175
+#: hk_kdeclasses/hk_kdereportproperty.cpp:525
+msgid "Center"
+msgstr "Középen"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:76
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:72
+#: hk_kdeclasses/hk_kdeproperty.cpp:176
+#: hk_kdeclasses/hk_kdereportproperty.cpp:526
+msgid "Right"
+msgstr "Jobbra"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:81
+msgid "Read only:"
+msgstr "Csak olvasható:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:82
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:476
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:83
+#: hk_kdeclasses/hk_kdeproperty.cpp:181
+msgid "Separator:"
+msgstr "Elválasztó:"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:66 hk_kdeclasses/hk_kdegrid.cpp:544
+msgid "Copy"
+msgstr "Másolás"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:101
+msgid "Datasource: "
+msgstr "Adatforrás:"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:107 hk_kdeclasses/hk_kdegrid.cpp:114
+msgid "readonly"
+msgstr "csak olvasható"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:109 hk_kdeclasses/hk_kdegrid.cpp:114
+msgid "readwrite"
+msgstr "olvasható és írható"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:110
+msgid " Column: "
+msgstr " Oszlop:"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:533 hk_kdeclasses/hk_kdeproperty.cpp:126
+#: hk_kdeclasses/hk_kderowselector.cpp:79
+msgid "Delete row"
+msgstr "Sor törlése"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:535 hk_kdeclasses/hk_kdelineedit.cpp:418
+msgid "Find"
+msgstr "Keresés"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:537 hk_kdeclasses/hk_kdelineedit.cpp:420
+#: hk_kdeclasses/hk_kdememo.cpp:419
+msgid "set 'NULL' value"
+msgstr "érték beállítása 'NULL'-ra"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:540
+msgid "Load from file"
+msgstr "Betöltés fájlból"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:542
+msgid "Save to file"
+msgstr "Mentés fájlba"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:547
+msgid "Paste"
+msgstr "Beillesztés"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:725 hk_kdeclasses/hk_kdelineedit.cpp:509
+#: hk_kdeclasses/hk_kdememo.cpp:495
+msgid "Not found."
+msgstr "Nincs találat."
+
+#: hk_kdeclasses/hk_kdeimage.cpp:49
+msgid "&Fit to size"
+msgstr "&Igazítás a mérethez"
+
+#: hk_kdeclasses/hk_kdeimage.cpp:50
+msgid "O&riginal size"
+msgstr "E&redeti méret"
+
+#: hk_kdeclasses/hk_kdeimage.cpp:51
+msgid "Zoom &in"
+msgstr "Nag&yítás"
+
+#: hk_kdeclasses/hk_kdeimage.cpp:52
+msgid "Zoom &out"
+msgstr "Ki&csinyítés"
+
+#: hk_kdeclasses/hk_kdeimage.cpp:56
+msgid "&Load image"
+msgstr "Kép betö&ltése"
+
+#: hk_kdeclasses/hk_kdeimage.cpp:58
+msgid "&Save image"
+msgstr "Kép menté&se"
+
+#: hk_kdeclasses/hk_kdeimage.cpp:183 hk_kdeclasses/hk_kdeimage.cpp:300
+msgid "No image"
+msgstr "Nincs kép"
+
+#: hk_kdeclasses/hk_kdeimage.cpp:354 hk_kdeclasses/hk_kdeimage.cpp:365
+#, fuzzy
+msgid "No image "
+msgstr " Nincs kép "
+
+#: hk_kdeclasses/hk_kdeindexeditwindow.cpp:50
+msgid "Index Edit - Table:"
+msgstr "Index szerkesztése - tábla:"
+
+#: hk_kdeclasses/hk_kdeindexeditwindow.cpp:62
+msgid "Free fields:"
+msgstr "Szabad mezők:"
+
+#: hk_kdeclasses/hk_kdeindexeditwindow.cpp:101
+msgid "Used fields:"
+msgstr "Használt mezők:"
+
+#: hk_kdeclasses/hk_kdeindexeditwindow.cpp:120
+msgid "Indexname:"
+msgstr "Index neve:"
+
+#: hk_kdeclasses/hk_kdeindexeditwindow.cpp:134
+#: hk_kdeclasses/hk_kdetabledesign.cpp:72
+msgid "Unique"
+msgstr "Egyedüli"
+
+#: hk_kdeclasses/hk_kdeindexeditwindow.cpp:162
+msgid "OK"
+msgstr "OK"
+
+#: hk_kdeclasses/hk_kdeindexeditwindow.cpp:237
+msgid "Index could not be altered"
+msgstr "Az index módosítása nem sikerült"
+
+#: hk_kdeclasses/hk_kdeinterpreterdialog.cpp:89
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:95
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:590
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:830
+msgid ""
+"A KDE text-editor component could not be found;\n"
+"please check your KDE installation."
+msgstr ""
+
+#: hk_kdeclasses/hk_kdemessages.cpp:134
+msgid "Please enter:"
+msgstr "Kérem, válasszon:"
+
+#: hk_kdeclasses/hk_kdemessages.cpp:149
+msgid "Information"
+msgstr "Információ"
+
+#: hk_kdeclasses/hk_kdemessages.cpp:156
+msgid "Please decide"
+msgstr "Megerősítés"
+
+#: hk_kdeclasses/hk_kdemodule.cpp:253
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:360
+msgid "Module - "
+msgstr ""
+
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:117
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:205
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:181
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:120
+msgid "&Print"
+msgstr "&Nyomtatás"
+
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:144
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:253
+msgid "&Undo"
+msgstr "&Visszavonás"
+
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:155
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:261
+msgid "Re&do"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:188
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:283
+msgid "&Replace"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:199
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:290
+#, fuzzy
+msgid "&Find"
+msgstr "Keresés"
+
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:210
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:298
+msgid "Find &Next"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:221
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:305
+#, fuzzy
+msgid "Find Pre&vious"
+msgstr "Keresés az &oszlopokban"
+
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:232
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:313
+#, fuzzy
+msgid "Select &All"
+msgstr "Sorválasztó"
+
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:243
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:321
+#, fuzzy
+msgid "Configure &editor"
+msgstr "Adatforrás szerkesztő"
+
+#: hk_kdeclasses/hk_kdenewdatabasebase.cpp:123
+msgid "New database dialog"
+msgstr "Új adatbázis párbeszédablak"
+
+#: hk_kdeclasses/hk_kdenewdatabasebase.cpp:124
+msgid "New database name:"
+msgstr "Új adatbázisnév:"
+
+#: hk_kdeclasses/hk_kdenewdatabase.cpp:73
+msgid "New local database file"
+msgstr "Új helyi adatbázis"
+
+#: hk_kdeclasses/hk_kdenewpassworddialogbase.cpp:137
+#: hk_kdeclasses/hk_kdenewpassworddialog.cpp:36
+msgid "Password dialog"
+msgstr "Jelszó párbeszédablak"
+
+#: hk_kdeclasses/hk_kdenewpassworddialogbase.cpp:138
+msgid "Repeat: "
+msgstr "Ismétlés: "
+
+#: hk_kdeclasses/hk_kdenewpassworddialogbase.cpp:139
+msgid "New Password: "
+msgstr "Új jelszó: "
+
+#: hk_kdeclasses/hk_kdenewpassworddialogbase.cpp:142
+#: hk_kdeclasses/hk_kdenewpassworddialog.cpp:33
+msgid "Enter new password"
+msgstr "Adja meg az út jelszót"
+
+#: hk_kdeclasses/hk_kdenewpassworddialog.cpp:34
+msgid "New password:"
+msgstr "Új jelszó:"
+
+#: hk_kdeclasses/hk_kdenewpassworddialog.cpp:35
+msgid "Repeat:"
+msgstr "Ismétlés:"
+
+#: hk_kdeclasses/hk_kdenewpassworddialog.cpp:64
+msgid "The two entries are different!"
+msgstr "A két érték nem egyforma!"
+
+#: hk_kdeclasses/hk_kdeobjecthandler.cpp:51
+msgid "Database object handler"
+msgstr "Objektumkezelő"
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:128
+msgid "Password Dialog"
+msgstr "Jelszó párbeszédablak"
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:135
+msgid "Mandatory login details:"
+msgstr "Kötelező bejelentkezési adatok:"
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:172
+msgid "&Host:"
+msgstr "&Gépnév:"
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:194
+msgid "Database &name:"
+msgstr "Az adatbázis &neve:"
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:235
+msgid "&User:"
+msgstr "&Felhasználó:"
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:267
+msgid "&Password:"
+msgstr "&Jelszó:"
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:290
+msgid "&TCP Port:"
+msgstr "&TCP kapu:"
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:313
+msgid "S&QL Delimiter:"
+msgstr "&SQL elválasztó:"
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:338
+msgid "&Emulate Boolean:"
+msgstr "Boolean &emulálása:"
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:366
+msgid "&Save settings"
+msgstr "&Beállítások mentése"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:453
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:47
+msgid "Preferences"
+msgstr "Beállítások"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:454
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:51
+msgid "Driverpath:"
+msgstr "Meghajtó(k) könyvtára:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:456
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:57
+msgid "Default driver:"
+msgstr "Alapértelmezett meghajtó:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:457
+msgid "Snap to grid x:"
+msgstr "Igazítás az x rácshoz: "
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:458
+msgid "Snap to grid y:"
+msgstr "Igazítás az y rácshoz: "
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:459
+msgid "Metric system:"
+msgstr "Metrikus rendszer:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:461
+msgid "Relative"
+msgstr "Relatív"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:462
+msgid "Absolute"
+msgstr "Abszolút"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:463
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:55
+msgid "Store password:"
+msgstr "Jelszó tárolása:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:468
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:50
+msgid "&General"
+msgstr "Álta&lános"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:469
+msgid "show maximized: "
+msgstr "maximális nézet:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:470
+msgid "be pedantic:"
+msgstr " ragaszkodjon ehhez "
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:471
+msgid "Use single click:"
+msgstr "Egykattintásos módszer:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:472
+msgid "&Appearance"
+msgstr "&Kinézet"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:473
+msgid "Default font:"
+msgstr "Alapértelmezett betűtípus:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:474
+msgid "Textalignment:"
+msgstr "Szöveg igazítása:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:475
+msgid "Numberalignment:"
+msgstr "Számok igazítása:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:477
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:84
+#: hk_kdeclasses/hk_kdeproperty.cpp:180
+#: hk_kdeclasses/hk_kdereportproperty.cpp:169
+msgid "Precision:"
+msgstr "Pontosság:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:478
+msgid "&Defaults"
+msgstr "&Alapértelmezett"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:479
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:44
+msgid "Date format:"
+msgstr "Dátumformátum:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:480
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:45
+msgid "Time format:"
+msgstr "Időformátum:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:481
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:46
+msgid "Date&Time format:"
+msgstr "'Dátum és idő' formátum:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:483
+msgid "cm"
+msgstr "cm"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:484
+msgid "inch"
+msgstr "hüvelyk"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:485
+msgid "Measure system:"
+msgstr "Mértékegység:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:486
+msgid "Locale:"
+msgstr "Országkód:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:487
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:48
+msgid "&Regional"
+msgstr "&Regionális beállítások"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:488
+msgid "Print command:"
+msgstr "Nyomtatási parancs:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:494
+msgid "Embed fonts:"
+msgstr "Betűkészletek beágyzása:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:495
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:49
+msgid "&Printer"
+msgstr "&Nyomtató"
+
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:52
+msgid "Printcommand:"
+msgstr "Nyomtatási parancs:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:53
+msgid "Show all questions:"
+msgstr "Minden kérdés megjelenítése:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:54
+msgid "Show maximized:"
+msgstr "Maximális nézet:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:56
+msgid "Default Font:"
+msgstr "Alapértelmezett betűtípus:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:81
+msgid "Text alignment:"
+msgstr "Szöveg igazítása:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:82
+msgid "Number alignment:"
+msgstr "Számok igazítása:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:96
+msgid "Singleclick"
+msgstr "Egy kattintás"
+
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:97
+msgid "Doubleclick"
+msgstr "Duplakattintás"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:951
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:605
+msgid "Property Editor"
+msgstr "Tulajdonságok szerkesztő"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:952
+#: hk_kdeclasses/hk_kdeproperty.cpp:534
+msgid "Combomode:"
+msgstr "Kombinált mód:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:953
+#: hk_kdeclasses/hk_kdeproperty.cpp:133
+msgid "Label:"
+msgstr "Címke:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:956
+#: hk_kdeclasses/hk_kdeproperty.cpp:140
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:614
+msgid "Datasource:"
+msgstr "Adatforrás:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:957
+msgid "Tooltip:"
+msgstr "Felbukkanó magyarázat:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:958
+#: hk_kdeclasses/hk_kdeproperty.cpp:141
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:608
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:83
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:194
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:203
+msgid "Column:"
+msgstr "Oszlop:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:960
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:615
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:83
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:191
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:200
+msgid "Id:"
+msgstr "Id:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:961
+msgid "Subform:"
+msgstr "Részűrlap:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:967
+msgid "Use textlist:"
+msgstr "Széveglista használata:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:970
+#: hk_kdeclasses/hk_kdeproperty.cpp:77
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:616
+#: hk_kdeclasses/hk_kdereportproperty.cpp:167
+#: hk_kdeclasses/hk_kdereportproperty.cpp:218
+msgid "&Data"
+msgstr "&Adat"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:972
+#: hk_kdeclasses/hk_kdeproperty.cpp:134
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:625
+#: hk_kdeclasses/hk_kdereportproperty.cpp:505
+msgid "X:"
+msgstr "X:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:973
+#: hk_kdeclasses/hk_kdeproperty.cpp:186
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:623
+msgid "Bold:"
+msgstr "Kövér:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:974
+#: hk_kdeclasses/hk_kdereportproperty.cpp:191
+msgid "Backgroundcolour:"
+msgstr "Háttérszín:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:975
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:628
+#: hk_kdeclasses/hk_kdereportsectiondialogbase.cpp:187
+msgid "TextLabel2"
+msgstr "szöveges címke 2"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:976
+#: hk_kdeclasses/hk_kdeproperty.cpp:139
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:620
+msgid "Fontsize:"
+msgstr "Betűméret:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:977
+#: hk_kdeclasses/hk_kdeproperty.cpp:138
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:618
+msgid "Font:"
+msgstr "Betűtípus:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:978
+#: hk_kdeclasses/hk_kdeproperty.cpp:137 hk_kdeclasses/hk_kdeproperty.cpp:470
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:626
+#: hk_kdeclasses/hk_kdereportproperty.cpp:172
+#: hk_kdeclasses/hk_kdereportproperty.cpp:478
+msgid "Height:"
+msgstr "Magassága:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:979
+#: hk_kdeclasses/hk_kdeproperty.cpp:135
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:619
+#: hk_kdeclasses/hk_kdereportproperty.cpp:517
+msgid "Y:"
+msgstr "Y:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:981
+#: hk_kdeclasses/hk_kdereportproperty.cpp:178
+msgid "Foregroundcolour:"
+msgstr "Előtérszín:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:982
+#: hk_kdeclasses/hk_kdeproperty.cpp:136 hk_kdeclasses/hk_kdeproperty.cpp:469
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:617
+msgid "Width:"
+msgstr "Szélessége:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:983
+#: hk_kdeclasses/hk_kdeproperty.cpp:187
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:624
+msgid "Italic:"
+msgstr "Kurzív:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:984
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:627
+#: hk_kdeclasses/hk_kdereportsectiondialogbase.cpp:182
+msgid "TextLabel1"
+msgstr "szöveges címke 1"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:985
+msgid "Scale:"
+msgstr "Átméretezés:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:986
+msgid "%"
+msgstr "%"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:987
+msgid "Fit to frame"
+msgstr "Igazítás a kerethez"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:989
+msgid "Enabled:"
+msgstr "Engedélyezve:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:990
+#: hk_kdeclasses/hk_kdeproperty.cpp:643
+msgid "Local image:"
+msgstr "Helyi kép:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:992
+msgid "Is togglebutton:"
+msgstr "Igen/nem gomb:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:993
+msgid "Is pushed:"
+msgstr "Le van nyomva:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:995
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:632
+msgid "TopLine:"
+msgstr "Felső vonal:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:996
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:633
+msgid "BottomLine:"
+msgstr "Alsó vonal:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:997
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:636
+#: hk_kdeclasses/hk_kdereportproperty.cpp:155
+msgid "DiagonalLURO:"
+msgstr "DiagonálLURO:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:998
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:637
+#: hk_kdeclasses/hk_kdereportproperty.cpp:156
+msgid "DiagonalLORU:"
+msgstr "DiagonálLORU:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:999
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:634
+msgid "LeftLine:"
+msgstr "Baloldali vonal:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1000
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:635
+msgid "RightLine:"
+msgstr "Jobboldali vonal:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1001
+#: hk_kdeclasses/hk_kdeproperty.cpp:92
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:642
+#: hk_kdeclasses/hk_kdereportproperty.cpp:168
+#: hk_kdeclasses/hk_kdereportproperty.cpp:220
+msgid "F&rame"
+msgstr "Ke&ret"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1002
+msgid "Action"
+msgstr "Művelet"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1003
+msgid "Object"
+msgstr "Objektum"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1005
+#: hk_kdeclasses/hk_kdeproperty.cpp:155
+msgid "show maximized:"
+msgstr "Maximális nézet:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1038
+msgid "On value changed:"
+msgstr "Értékek módosításakor:"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:115
+msgid "Open form"
+msgstr "Űrlap megnyitása"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:116
+msgid "Close form"
+msgstr "Űrlap bezárása"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:117
+msgid "Open table"
+msgstr "Tábla megnyitása"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:118
+msgid "Open query"
+msgstr "Lekérdezés megnyitása"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:119
+msgid "Preview report"
+msgstr "Jelentés előnézete"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:120
+msgid "Print report"
+msgstr "Jelentés nyomtatása"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:121
+msgid "Goto first row"
+msgstr "Ugrás az első sorra"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:122
+msgid "Goto last row"
+msgstr "Ugrás az utolsó sorra"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:123
+msgid "Goto next row"
+msgstr "Ugrás a következő sorra"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:124
+msgid "Goto previous row"
+msgstr "Ugrás az előző sorra"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:125
+msgid "Insert row"
+msgstr "Sor beillesztése"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:127
+msgid "Store row"
+msgstr "Sor tárolása"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:128
+msgid "Execute actionquery"
+msgstr "Lekérdezés végrehajtása"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:129
+msgid "Close application"
+msgstr "Alkalmazás bezárása"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:130
+msgid "Open view"
+msgstr "Nézet megnyitása"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:142
+msgid "Action:"
+msgstr "Szerkesztés:"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:143
+msgid "Object:"
+msgstr "Objektum:"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:177
+#: hk_kdeclasses/hk_kdereportproperty.cpp:526
+msgid "Default"
+msgstr "Alapértelmezett"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:213
+#: hk_kdeclasses/hk_kdereportproperty.cpp:213
+msgid "Press <F2> for a larger editor window"
+msgstr "Nagyobb szerkesztőablakhoz nyomja az <F2> billentyűt"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:441
+#: hk_kdeclasses/hk_kdereportproperty.cpp:445
+msgid "Property editor ("
+msgstr "Tulajdonságok szerkesztője ("
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:537
+msgid "Combo"
+msgstr "Kombinált"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:538
+msgid "Combo (nonwritable)"
+msgstr "Kombinált (csak-olvasható)"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:582
+#: hk_kdeclasses/hk_kdereportproperty.cpp:563
+msgid "relative"
+msgstr "relatív"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:583
+#: hk_kdeclasses/hk_kdereportproperty.cpp:564
+msgid "absolute"
+msgstr "abszolút"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:584
+#: hk_kdeclasses/hk_kdereportproperty.cpp:568
+msgid "Sizetype:"
+msgstr "Mérettípus:"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:593
+msgid "Form width:"
+msgstr "Űrlap szélessége"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:594
+msgid "Form height:"
+msgstr "Űrlap magassága:"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:614
+msgid "Icon:"
+msgstr "Ikon:"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:653
+msgid "Image path:"
+msgstr "Kép elérési útja:"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:2149
+msgid "Image '%1' could not be loaded"
+msgstr "A(z) '%1' kép betöltése nem sikerült"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:53
+msgid "Group"
+msgstr "Csoport"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:53
+msgid "Sum"
+msgstr "Sum"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:53
+msgid "Count"
+msgstr "Szám"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:53
+msgid "Min"
+msgstr "Min"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:54
+msgid "Max"
+msgstr "Max"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:54
+msgid "Average"
+msgstr "Átlag"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:54
+msgid "Condition"
+msgstr "Feltétel"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:55
+msgid "none"
+msgstr "nincs"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:55
+msgid "ascending"
+msgstr "növekvő"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:55
+msgid "descending"
+msgstr "csökkenő"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:302
+msgid "Table:"
+msgstr "Tábla:"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:303 hk_kdeclasses/hk_kdetabledesign.cpp:173
+msgid "Fieldname:"
+msgstr "Mezőnév:"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:304
+msgid "Alias:"
+msgstr "Alias:"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:305
+msgid "Function:"
+msgstr "Funkció:"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:306
+msgid "Order:"
+msgstr "Rendezés:"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:307
+msgid "Show:"
+msgstr "Megjelenít:"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:308
+msgid "Updatevalue:"
+msgstr "Érték frissítése:"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:309
+msgid "Criteria:"
+msgstr "Feltétel:"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:310
+msgid "Or:"
+msgstr "Vagy:"
+
+#: hk_kdeclasses/hk_kdequery.cpp:67 hk_kdeclasses/knodamaindockwindow.cpp:501
+msgid ""
+"Fatal error! Query part could not be loaded!\n"
+"This is a installation error. Check your installation! Did you install knoda "
+"into the correct directory? Program will exit now..."
+msgstr ""
+"Súlyos hiba! Nem sikerült betölteni a részjelentést.\n"
+"Valószínűleg hibás a telepítés. Kérem, ellenőrizze a telepítést, és hogy jó "
+"helyre telepítette-e a Knoda programot. A program most kilép..."
+
+#: hk_kdeclasses/hk_kdequery.cpp:194
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:759
+msgid "View - "
+msgstr "Nézet - "
+
+#: hk_kdeclasses/hk_kdequery.cpp:194
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:759
+msgid "Query - "
+msgstr "Lekérdezés - "
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:119
+#: hk_kdeclasses/hk_kdesimpleform.cpp:218
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:80
+msgid ""
+"Fatal error! Grid part could not be loaded!\n"
+"This is a installation error. Check your installation! Did you install knoda "
+"into the correct directory? Program will exit now..."
+msgstr ""
+"Súlyos hiba! Nem sikerült betölteni a grid részt.\n"
+"Valószínűleg hibás a telepítés. Kérem, ellenőrizze a telepítést, és hogy jó\n"
+"helyre telepítette-e a Knoda programot. A program most kilép..."
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:127
+#, fuzzy
+msgid ""
+"Fatal error! QBE part could not be loaded!\n"
+"This is a installation error. Check your installation! Did you install knoda "
+"into the correct directory? Program will exit now..."
+msgstr ""
+"Súlyos hiba! Nem sikerült betölteni a részjelentést.\n"
+"Valószínűleg hibás a telepítés. Kérem, ellenőrizze a telepítést, és hogy jó "
+"helyre telepítette-e a Knoda programot. A program most kilép..."
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:212
+msgid "use &QBE"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:229
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:332
+#: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:63
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:69 hk_kdeqbepart/hk_kdeqbepart.cpp:81
+msgid "&Add datasource"
+msgstr "&Adatforrás hozzáadása"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:231
+msgid "&Copy backend SQL"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:236
+#, fuzzy
+msgid "Store result"
+msgstr "Sor tárolása"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:240
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:72
+msgid "&Distinct rows"
+msgstr "Sorok &megkülön"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:328
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:77
+msgid "Select query"
+msgstr "Select lekérdezés"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:329
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:78
+msgid "Groupselect query"
+msgstr "Groupselect lekérdezés"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:330
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:79
+msgid "Update query"
+msgstr "Update lekérdezés"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:331
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:80
+msgid "Delete query"
+msgstr "Delete lekérdezés"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:534
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:564
+msgid "Query could not be executed"
+msgstr "A lekérdezés végrehajtása nem sikerült"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:555
+msgid ""
+"Warning: This function is not stable:\n"
+"Are you sure that you want to execute the following SQL code?\n"
+"\n"
+msgstr ""
+"Figyelem: Ez a funkció még nem stabil:\n"
+"Biztos benne, hogy futtatni akarja a következő SQL kódot?\n"
+"\n"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:562
+msgid "Query was successful"
+msgstr "A lekérdezés sikerült"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:838
+msgid ""
+"If you change to the QBE window your SQL statement will be lost. Continue?"
+msgstr ""
+"Ha átvált a grafikus QBE lekérdezéskezelőre, akkor újonnan kell létrehoznia "
+"a lekérdezést. Folytatja?"
+
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:163
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:202
+msgid "Master"
+msgstr "Master"
+
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:163
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:201
+msgid "Slave"
+msgstr "Slave"
+
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:190
+msgid "hk_kderelationdialog"
+msgstr "hk_kderelationdialog"
+
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:191
+msgid "Referential Integrity"
+msgstr "Referenciális integritás"
+
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:194
+msgid "Relationship method"
+msgstr "Reláció módszere"
+
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:195
+msgid "Equivalent rows in both datasources"
+msgstr "Azonos sorok mindkét adatforrásban"
+
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:196
+msgid "All of 'master' and equivalent rows of 'slave'"
+msgstr "Mindent a 'master' táblából, azonos sorok a 'slave' táblából"
+
+#: hk_kdeclasses/hk_kderelationdialog.cpp:58
+msgid "All of '%1' and equivalent rows of '%2'"
+msgstr "Mindent a(z) '%1' táblából, azonos sorok a(z) '%2' táblából"
+
+#: hk_kdeclasses/hk_kderelationdialog.cpp:280
+msgid "The relation between '%1' and '%2' is in the way. Remove it?"
+msgstr "Nincs reláció a következő táblák között: '%1', '%2'. Eltávolítja?"
+
+#: hk_kdeclasses/hk_kderelationdialog.cpp:313
+msgid "Error: could not delete old reference"
+msgstr "Hiba: a régi reláció törlése nem sikerült"
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:203
+msgid "hk_kdereportconditiondialogbase"
+msgstr "hk_kdereportconditiondialogbase"
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:209
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:88
+msgid "Condition:"
+msgstr "Feltétel:"
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:212
+msgid "="
+msgstr "="
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:213
+msgid "<"
+msgstr "<"
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:214
+msgid "<="
+msgstr "<="
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:215
+msgid ">"
+msgstr ">"
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:216
+msgid ">="
+msgstr ">="
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:217
+msgid "<>"
+msgstr "<>"
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:218
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:89
+msgid "Reportfield:"
+msgstr "Jelentésmező:"
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:219
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:37
+msgid "Formdatasource:"
+msgstr "Űrlapadatforrás:"
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:220
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:38
+msgid "Formfield:"
+msgstr "Űrlapmező:"
+
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:84
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:89
+msgid "Masterfield"
+msgstr "Főmező"
+
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:85
+msgid "Reportfield"
+msgstr "Jelentésmező:"
+
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:85
+msgid "condition"
+msgstr "feltétel"
+
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:86
+msgid "formdatasource"
+msgstr "űrlapadatforrás"
+
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:86
+msgid "formfield"
+msgstr "űrlapmező"
+
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:87
+msgid "Formconditiondialog"
+msgstr "Formconditiondialog"
+
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:87
+msgid "Reportconditiondialog"
+msgstr "Jelentésfeltételek párbeszédablak"
+
+#: hk_kdeclasses/hk_kdereport.cpp:73 hk_kdeclasses/knodamaindockwindow.cpp:562
+msgid ""
+"Fatal error! Report part could not be loaded!\n"
+"This is a installation error. Check your installation! Did you install knoda "
+"into the correct directory? Program will exit now..."
+msgstr ""
+"Súlyos hiba! Nem sikerült betölteni a részjelentést.\n"
+"Valószínűleg hibás a telepítés. Kérem, ellenőrizze a telepítést, és hogy jó "
+"helyre telepítette-e a Knoda programot. A program most kilép..."
+
+#: hk_kdeclasses/hk_kdereport.cpp:251
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:645
+msgid "Report - "
+msgstr "Jelentés: -"
+
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:111
+msgid "Could not find a preview part!"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:185
+msgid "Sectionselect"
+msgstr "Szekcióválasztás"
+
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:188
+msgid "sections"
+msgstr "szekciók"
+
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:201
+#, fuzzy
+msgid "Field"
+msgstr "mező_"
+
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:208
+msgid "new field"
+msgstr "új mező"
+
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:401
+msgid "Cannot close now, because the report '%1' is executing. Cancel it first"
+msgstr ""
+"Most nem lehet kilépni, mert a(z) '%1' jelentés készítése fut. Szakítsa meg "
+"előbb."
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:606
+#: hk_kdeclasses/hk_kdereportproperty.cpp:162
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:54
+msgid "Subreport:"
+msgstr "Részjelentés:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:611
+msgid "RunningCount:"
+msgstr "Folyamatos számolás:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:612
+#: hk_kdeclasses/hk_kdereportproperty.cpp:163
+msgid "Value:"
+msgstr "Érték:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:613
+#: hk_kdeclasses/hk_kdereportproperty.cpp:171
+msgid "Sorting:"
+msgstr "Szortírozás:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:621
+#: hk_kdeclasses/hk_kdereportproperty.cpp:161
+msgid "Reporttype:"
+msgstr "Jelentés típusa:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:629
+msgid "Linebreak:"
+msgstr "Új sor:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:630
+msgid "Dynamic height:"
+msgstr "Dinamikus magasság:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:638
+#: hk_kdeclasses/hk_kdereportproperty.cpp:160
+msgid "Border Right:"
+msgstr "Jobboldali margó"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:639
+#: hk_kdeclasses/hk_kdereportproperty.cpp:159
+msgid "Border Left:"
+msgstr "Baloldali margó"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:640
+#: hk_kdeclasses/hk_kdereportproperty.cpp:158
+msgid "Border Bottom:"
+msgstr "Alsó margó"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:641
+#: hk_kdeclasses/hk_kdereportproperty.cpp:157
+msgid "Border Top:"
+msgstr "Felső margó"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:643
+msgid "On print:"
+msgstr "Nyomtatáskor:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:650
+msgid "On new page:"
+msgstr "Új oldalon:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:137
+msgid "Ascending"
+msgstr "Csökkenő"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:138
+msgid "Descending"
+msgstr "Növekvő"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:151
+msgid "Top line:"
+msgstr "Felül:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:152
+msgid "Bottom line:"
+msgstr "Alul:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:153
+msgid "Left line:"
+msgstr "Baloldalt:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:154
+msgid "Right line:"
+msgstr "Jobboldalt:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:164
+#: hk_kdeclasses/hk_kdereportproperty.cpp:535
+msgid "Wordbreak:"
+msgstr "Szóelválasztás:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:165
+#: hk_kdeclasses/hk_kdereportproperty.cpp:493
+#: hk_kdeclasses/hk_kdereportproperty.cpp:536
+msgid "Running count:"
+msgstr "Folyamatos számolás:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:543
+msgid "New page:"
+msgstr "Új oldal:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:544
+msgid "Offset:"
+msgstr "Offset:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:575
+msgid "Userdefined"
+msgstr "Felhasználó által definiált"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:581
+msgid "Pageformat:"
+msgstr "Oldalméret:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:588
+msgid "Portrait"
+msgstr "Álló"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:589
+msgid "Landscape"
+msgstr "Fekvő"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:609
+msgid "First pagenumber:"
+msgstr "Első oldal száma:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:610
+msgid "Orientation:"
+msgstr "Tájolás:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:613
+msgid "Multiple files:"
+msgstr "Többszörös fájlok:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:852
+#: hk_kdeclasses/hk_kdereportproperty.cpp:1195
+msgid "None"
+msgstr "nincs"
+
+#: hk_kdeclasses/hk_kdereportsectiondialogbase.cpp:181
+msgid "hk_kdereportsectiondialogbase"
+msgstr "hk_kdereportconditiondialogbase"
+
+#: hk_kdeclasses/hk_kdereportsectiondialogbase.cpp:188
+msgid "&Exit"
+msgstr "&Kilépés"
+
+#: hk_kdeclasses/hk_kdereportsectiondialog.cpp:38
+msgid "Section to add:"
+msgstr "Hozzáadandó szekció:"
+
+#: hk_kdeclasses/hk_kdereportsectiondialog.cpp:39
+msgid "Existing sections"
+msgstr "Létező szekciók"
+
+#: hk_kdeclasses/hk_kderowselector.cpp:74
+msgid "Goto first"
+msgstr "Ugrás az elsőhöz"
+
+#: hk_kdeclasses/hk_kderowselector.cpp:75
+msgid "Goto previous"
+msgstr "Ugrás az előzőhöz"
+
+#: hk_kdeclasses/hk_kderowselector.cpp:76
+msgid "Goto next"
+msgstr "Ugrás a következőhöz"
+
+#: hk_kdeclasses/hk_kderowselector.cpp:77
+msgid "Goto last"
+msgstr "Ugrás az utolsóhoz"
+
+#: hk_kdeclasses/hk_kderowselector.cpp:78
+msgid "Store changes"
+msgstr "Módosítások mentése"
+
+#: hk_kdeclasses/hk_kderowselector.cpp:80
+msgid "Insert new row"
+msgstr "Új sor beillesztése"
+
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1257
+#, fuzzy
+msgid "Don't debug"
+msgstr "nyomkövető"
+
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1257
+#, fuzzy
+msgid "Debug"
+msgstr "nyomkövető"
+
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1285
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1200
+msgid "Into background"
+msgstr "A háttérbe"
+
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1289
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1202
+msgid "Into foreground"
+msgstr "Előtérbe"
+
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1301
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1206
+msgid "Show &property editor"
+msgstr "Szer&kesztőablak megjelenítése"
+
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1305
+msgid "&Save form"
+msgstr "Űrlap menté&se"
+
+#: hk_kdeclasses/hk_kdesimpleform.cpp:2044
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1775
+msgid "Line %LINENUMBER%: "
+msgstr "%LINENUMBER%. sor: "
+
+#: hk_kdeclasses/hk_kdesimpleform.cpp:2050
+msgid "Gridcolumn '%1':\n"
+msgstr "Rácsoszlop '%1':\n"
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1020
+msgid "Sectionheader"
+msgstr "Szekciófejléc"
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1036
+msgid "Datasection"
+msgstr "A szekció adatai"
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1051
+msgid "Sectionfooter"
+msgstr "Szekciólábléc"
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1069
+msgid "Pageheader"
+msgstr "Oldalfejléc"
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1072
+msgid "Pagefooter"
+msgstr "Oldallábléc"
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1075
+msgid "Reportheader"
+msgstr "Jelentésfejléc"
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1078
+msgid "Reportfooter"
+msgstr "Jelentéslábléc"
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1112
+msgid "Generating report..."
+msgstr "Jelentés készítése..."
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1208
+msgid "&Save report"
+msgstr "Jelentés menté&se"
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1552
+msgid "Error while paste action: No reportsection!!!"
+msgstr "Hiba keletkezett a beillesztéskor: Nincs jelentéskiválasztás"
+
+#: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:337
+msgid "subreport dialog"
+msgstr "Részjelentés párbeszédablak"
+
+#: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:338
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:55
+msgid "&Set"
+msgstr "Beállítá&s"
+
+#: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:341
+msgid "subreport:"
+msgstr "Részjelentés:"
+
+#: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:344
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:49
+msgid "subreportfield"
+msgstr "részjelentés mező"
+
+#: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:346
+msgid "CheckBox1"
+msgstr "CheckBox1"
+
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:49
+msgid "masterreportfield"
+msgstr "főjelentés mező"
+
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:52
+msgid "masterreportfield:"
+msgstr "főjelentés mező:"
+
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:53
+msgid "subreportfield:"
+msgstr "részjelentés mező:"
+
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:58
+msgid "Before sectiondata?"
+msgstr "A szekció adatok előtt?"
+
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:66
+msgid "Subreport dialog"
+msgstr "Részjelentés párbeszédablak"
+
+#: hk_kdeclasses/hk_kdetable.cpp:64 hk_kdeclasses/knodamaindockwindow.cpp:476
+msgid ""
+"Fatal error! Table part could not be loaded!\n"
+"This is a installation error. Check your installation! Did you install knoda "
+"into the correct directory? Program will exit now..."
+msgstr ""
+"Súlyos hiba! Nem sikerült betölteni a résztáblát.\n"
+"Valószínűleg hibás a telepítés. Kérem, ellenőrizze a telepítést, és hogy jó "
+"helyre telepítette-e a Knoda programot. A program most kilép..."
+
+#: hk_kdeclasses/hk_kdetable.cpp:137
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:355
+msgid "Table - "
+msgstr "Tábla - "
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:63
+msgid "Tabledesign"
+msgstr "Táblanézet"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:72
+msgid "Index"
+msgstr "Index"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:82
+msgid "Name"
+msgstr "Név"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:82
+msgid "Type"
+msgstr "Típus"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:82
+msgid "Size"
+msgstr "Méret"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:82
+msgid "Primary"
+msgstr "Elsődleges"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:82
+#: hk_kdeclasses/hk_kdetabledesign.cpp:193
+msgid "Not Null"
+msgstr "Nem lehet nulla"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:118
+msgid "Alter Table"
+msgstr "Tábla módosítása"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:123
+msgid "New Field"
+msgstr "Új mező"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:128
+msgid "Delete Field"
+msgstr "Mező törlése"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:138
+msgid "New Index"
+msgstr "Új index"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:144
+msgid "Delete Index"
+msgstr "Index törlése"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:150
+msgid "Alter Index"
+msgstr "Index módosítása"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:178
+msgid "columntype:"
+msgstr "Oszloptípus:"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:184
+msgid "Size:"
+msgstr "Méret:"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:189
+msgid "Primary Index"
+msgstr "Elsődleges index"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:489
+msgid "Do you want to alter the table?"
+msgstr "Módosítja a táblát?"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:497
+msgid "Please enter the tablename: "
+msgstr "Kérem, adja meg a tábla nevét:"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:561
+msgid "Table %NAME% could not be changed!"
+msgstr "A(z) %NAME% tábla módosítása nem sikerült!"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:613
+msgid "newfield_"
+msgstr "névtelen_"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:737
+msgid "Fieldname already exists or is of length 0. Alter it to a unique one!"
+msgstr "A mezőnév már létezik vagy 0 bájt hosszú. Kérem, módosítsa!"
+
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:144
+#, fuzzy
+msgid "Save"
+msgstr "&Mentés"
+
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:164
+#: hk_kdegridpart/hk_kdegridpart.cpp:54
+msgid "&Gridcolumns"
+msgstr "&Rácsoszlopok"
+
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:179
+#: hk_kdegridpart/hk_kdegridpart.cpp:69
+msgid "&Find in columns"
+msgstr "Keresés az &oszlopokban"
+
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:256
+#, fuzzy
+msgid "Table could not be executed"
+msgstr "A tábla törlése nem sikerült!"
+
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:358
+msgid "Unnamed"
+msgstr "névtelen"
+
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:83
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:192
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:201
+msgid "Name:"
+msgstr "Név:"
+
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:83
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:193
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:202
+#, fuzzy
+msgid "Type:"
+msgstr "Típus"
+
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:189
+msgid "Taborder selection dialog"
+msgstr "Tabulátorsorrend párbeszédablak"
+
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:190
+msgid "Base list:"
+msgstr "Alaplista:"
+
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:199
+msgid "Taborder list:"
+msgstr "Tabulátorsorrend lista:"
+
+#: hk_kdeclasses/hk_kdetaborder.cpp:85 hk_kdeclasses/hk_kdetaborder.cpp:149
+#, fuzzy
+msgid "boolean"
+msgstr "boolean mező"
+
+#: hk_kdeclasses/hk_kdetaborder.cpp:86 hk_kdeclasses/hk_kdetaborder.cpp:150
+#, fuzzy
+msgid "lineedit"
+msgstr "sorszerkesztő mező"
+
+#: hk_kdeclasses/hk_kdetaborder.cpp:87 hk_kdeclasses/hk_kdetaborder.cpp:151
+#, fuzzy
+msgid "memo"
+msgstr "memo mező"
+
+#: hk_kdeclasses/hk_kdetaborder.cpp:88 hk_kdeclasses/hk_kdetaborder.cpp:152
+#, fuzzy
+msgid "combobox"
+msgstr "&Combobox mező"
+
+#: hk_kdeclasses/hk_kdetaborder.cpp:89 hk_kdeclasses/hk_kdetaborder.cpp:153
+#, fuzzy
+msgid "grid"
+msgstr "rácsmező"
+
+#: hk_kdeclasses/hk_kdetaborder.cpp:90 hk_kdeclasses/hk_kdetaborder.cpp:154
+#, fuzzy
+msgid "subform"
+msgstr "Részűrlap:"
+
+#: hk_kdeclasses/hk_kdetaborder.cpp:91 hk_kdeclasses/hk_kdetaborder.cpp:155
+#, fuzzy
+msgid "image"
+msgstr "Nincs kép"
+
+#: hk_kdeclasses/hk_kdetaborder.cpp:92 hk_kdeclasses/hk_kdetaborder.cpp:156
+msgid "tabvisible"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdetaborder.cpp:93 hk_kdeclasses/hk_kdetaborder.cpp:157
+msgid "unknown"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdetoolbar.cpp:258
+msgid "Filter definition"
+msgstr "Szűrő definiálása"
+
+#: hk_kdeclasses/hk_kdetoolbar.cpp:261
+msgid "Filter execution"
+msgstr "Szűrés végrehajtása"
+
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:213
+msgid "XML Export Dialog"
+msgstr "XML export párbeszédablak"
+
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:216
+msgid "Main document tag:"
+msgstr "Dokumentum tag:"
+
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:218
+msgid "Row element tag:"
+msgstr "Sor tag:"
+
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:221
+#: hk_kdeclasses/hk_kdexmlexportdialog.cpp:51
+msgid "include tableschema?"
+msgstr "táblaséma alapján?"
+
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:222
+msgid "fieldname as attribute?"
+msgstr "mezőnév attribútumként?"
+
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:223
+msgid "Export as Excel XML?"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdexmlexportdialog.cpp:115
+msgid "Select a XML file"
+msgstr "Válasszon XML fájlt"
+
+#: hk_kdeclasses/hk_kdexmlexportdialog.cpp:159
+msgid "Queryname:"
+msgstr "Lekérdezés neve:"
+
+#: hk_kdeclasses/hk_kdexmlexportdialog.cpp:165
+msgid "Viewname:"
+msgstr "A nézet neve:"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:140
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:142
+msgid "Elements"
+msgstr "Elemek"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:172
+msgid "Select database"
+msgstr "Válasszon adatbázist"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:182
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:235
+msgid "&New"
+msgstr "&Új"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:187
+msgid "&Connect to"
+msgstr "Új &kapcsolat:"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:189
+msgid "Disconnect"
+msgstr "Kapcsolat bontása"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:200
+msgid "Load connection"
+msgstr "Kapcsolat megnyitása"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:203
+msgid "Store connection"
+msgstr "Kapcsolat mentése"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:206
+msgid "Database"
+msgstr "Adatbázis"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:221
+#: hk_kdeclasses/knodamaindockwindow.cpp:573
+msgid "Report"
+msgstr "Jelentés"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:224
+#: hk_kdeclasses/knodamaindockwindow.cpp:602
+msgid "Module"
+msgstr ""
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:239
+msgid "&Start"
+msgstr "&Indítás"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:241
+msgid "&Modify"
+msgstr "&Módosítás"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:248
+msgid "&Rename"
+msgstr "Át&nevezés"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:252
+msgid "E&xport"
+msgstr "E&xportálás"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:254
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:270
+msgid "&CSV"
+msgstr "&CSV"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:257
+msgid "&XML"
+msgstr "&XML"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:262
+msgid "To &database"
+msgstr "A&datbázisba"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:268
+msgid "I&mport"
+msgstr "I&mportálás"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:274
+msgid "From &database"
+msgstr "Adatbázis&ból"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:280
+msgid "&Change password"
+msgstr "&Jelszó megváltoztatása"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:291
+msgid "&Database settings"
+msgstr "&Adatbázis beállítások"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:294
+msgid "&Object handler"
+msgstr "&Objektumkezelő"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:298
+msgid "&New databasewindow"
+msgstr "Új &adatbázisablak"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:301
+msgid "&Options"
+msgstr "&Beállítások"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:304
+msgid "Open &local database"
+msgstr "He&lyi adatbázis megnyitása"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:308
+msgid "Referential integrity"
+msgstr "Referenciális integritás"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:480
+msgid "Database '%1' not found"
+msgstr "%1: az adatbázis nem található"
+
+#: hk_kdeclasses/knodamaindockwindow.cpp:482
+msgid "Warning! Tablepartwiget could not be created!"
+msgstr "Figyelem! A tablepartwidget létrehozása nem sikerült!"
+
+#: hk_kdeclasses/knodamaindockwindow.cpp:508
+msgid "Warning! Querypartwiget could not be created!"
+msgstr "Figyelem! A querypartwidget létrehozása nem sikerült!"
+
+#: hk_kdeclasses/knodamaindockwindow.cpp:539
+msgid "Warning! Formpartwiget could not be created!"
+msgstr "Figyelem! A formpartwidget létrehozása nem sikerült!"
+
+#: hk_kdeclasses/knodamaindockwindow.cpp:569
+msgid "Warning! Reportpartwiget could not be created!"
+msgstr "Figyelem! A reportpartwidget létrehozása nem sikerült!"
+
+#: hk_kdeclasses/knodamaindockwindow.cpp:590
+#, fuzzy
+msgid ""
+"Fatal error! Module part could not be loaded!\n"
+"This is a installation error. Check your installation! Did you install knoda "
+"into the correct directory? Program will exit now..."
+msgstr ""
+"Súlyos hiba! Nem sikerült betölteni a résztáblát.\n"
+"Valószínűleg hibás a telepítés. Kérem, ellenőrizze a telepítést, és hogy jó "
+"helyre telepítette-e a Knoda programot. A program most kilép..."
+
+#: hk_kdeclasses/knodamaindockwindow.cpp:597
+#, fuzzy
+msgid "Warning! Modulepartwiget could not be created!"
+msgstr "Figyelem! A tablepartwidget létrehozása nem sikerült!"
+
+#: hk_kdeclasses/knodamaindockwindow.cpp:635
+msgid "Could not rename object!"
+msgstr "Az objektum átnevezése nem sikerült!"
+
+#: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:110
+#, fuzzy
+msgid "hk_kde4dbdesignerpart"
+msgstr "hk_kdeqbepart"
+
+#: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:111
+#, fuzzy
+msgid "Database editor"
+msgstr "Adatforrás szerkesztő"
+
+#: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:113
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:170 hk_kdequerypart/hk_kdequerypart.cpp:168
+#: hk_kdereportpart/hk_kdereportpart.cpp:129
+#: hk_kdetablepart/hk_kdetablepart.cpp:114
+msgid ""
+"(c) 2002-2004, Horst Knorr\n"
+"(c) 2010-2016 Patrik Hanak"
+msgstr ""
+
+#: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:115
+#: hk_kdeformpart/hk_kdeformpart.cpp:137 hk_kdegridpart/hk_kdegridpart.cpp:151
+#: hk_kdemodulepart/hk_kdemodulepart.cpp:118
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:172 hk_kdequerypart/hk_kdequerypart.cpp:170
+#: hk_kdereportpart/hk_kdereportpart.cpp:131
+#: hk_kdetablepart/hk_kdetablepart.cpp:116 knoda/main.cpp:51
+#: knoda/main-rt.cpp:48
+msgid "Horst Knorr"
+msgstr ""
+
+#: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:115
+#: hk_kdeformpart/hk_kdeformpart.cpp:137 hk_kdegridpart/hk_kdegridpart.cpp:151
+#: hk_kdemodulepart/hk_kdemodulepart.cpp:118
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:172 hk_kdequerypart/hk_kdequerypart.cpp:170
+#: hk_kdereportpart/hk_kdereportpart.cpp:131
+#: hk_kdetablepart/hk_kdetablepart.cpp:116 knoda/main.cpp:51
+#: knoda/main-rt.cpp:48
+msgid "Author of original version"
+msgstr ""
+
+#: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:116
+#: hk_kdeformpart/hk_kdeformpart.cpp:138 hk_kdegridpart/hk_kdegridpart.cpp:152
+#: hk_kdemodulepart/hk_kdemodulepart.cpp:119
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:173 hk_kdequerypart/hk_kdequerypart.cpp:171
+#: hk_kdereportpart/hk_kdereportpart.cpp:132
+#: hk_kdetablepart/hk_kdetablepart.cpp:117 knoda/main.cpp:52
+#: knoda/main-rt.cpp:49
+msgid "Patrik Hanak"
+msgstr ""
+
+#: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:116
+#: hk_kdeformpart/hk_kdeformpart.cpp:138 hk_kdegridpart/hk_kdegridpart.cpp:152
+#: hk_kdemodulepart/hk_kdemodulepart.cpp:119
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:173 hk_kdequerypart/hk_kdequerypart.cpp:171
+#: hk_kdereportpart/hk_kdereportpart.cpp:132
+#: hk_kdetablepart/hk_kdetablepart.cpp:117 knoda/main.cpp:52
+#: knoda/main-rt.cpp:49
+msgid "Author of KDE4 port"
+msgstr ""
+
+#: hk_kdeformpart/hk_kdeformpart.cpp:132
+#, fuzzy
+msgid "hk_kde4formpart"
+msgstr "hk_kdegridpart"
+
+#: hk_kdeformpart/hk_kdeformpart.cpp:133
+#, fuzzy
+msgid "database form editor"
+msgstr "Adatforrás szerkesztő"
+
+#: hk_kdeformpart/hk_kdeformpart.cpp:135
+msgid ""
+"(c) 2002-2004, Horst Knorr\n"
+"(c) 2010-2015 Patrik Hanak"
+msgstr ""
+
+#: hk_kdegridpart/hk_kdegridpart.cpp:146
+#, fuzzy
+msgid "hk_kde4gridpart"
+msgstr "hk_kdegridpart"
+
+#: hk_kdegridpart/hk_kdegridpart.cpp:147
+msgid "Datasource editor"
+msgstr "Adatforrás szerkesztő"
+
+#: hk_kdegridpart/hk_kdegridpart.cpp:149
+msgid ""
+"(c) 2002-2003, Horst Knorr\n"
+"(c) 2010-2016 Patrik Hanak"
+msgstr ""
+
+#: hk_kdemodulepart/hk_kdemodulepart.cpp:113
+#, fuzzy
+msgid "hk_kde4modulepart"
+msgstr "hk_kdeqbepart"
+
+#: hk_kdemodulepart/hk_kdemodulepart.cpp:114
+#, fuzzy
+msgid "database module editor"
+msgstr "Adatforrás szerkesztő"
+
+#: hk_kdemodulepart/hk_kdemodulepart.cpp:116
+msgid ""
+"(c) 2002-2006, Horst Knorr\n"
+"(c) 2010-2016 Patrik Hanak"
+msgstr ""
+
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:167
+#, fuzzy
+msgid "hk_kde4qbepart"
+msgstr "hk_kdeqbepart"
+
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:168
+msgid "Query by Example editor"
+msgstr "Grafikus lekérdezéskezelő (QBE)"
+
+#: hk_kdequerypart/hk_kdequerypart.cpp:165
+#, fuzzy
+msgid "hk_kde4querypart"
+msgstr "hk_kdeqbepart"
+
+#: hk_kdequerypart/hk_kdequerypart.cpp:166
+#, fuzzy
+msgid "database query editor"
+msgstr "Adatforrás szerkesztő"
+
+#: hk_kdereportpart/hk_kdereportpart.cpp:126
+#, fuzzy
+msgid "hk_kde4reportpart"
+msgstr "hk_kdeqbepart"
+
+#: hk_kdereportpart/hk_kdereportpart.cpp:127
+#, fuzzy
+msgid "database report editor"
+msgstr "Adatforrás szerkesztő"
+
+#: hk_kdetablepart/hk_kdetablepart.cpp:111
+#, fuzzy
+msgid "hk_kde4tablepart"
+msgstr "hk_kdeqbepart"
+
+#: hk_kdetablepart/hk_kdetablepart.cpp:112
+#, fuzzy
+msgid "database table editor"
+msgstr "Adatforrás szerkesztő"
+
+#: knoda/hk_kdedriverselectbase.cpp:127
+msgid "Driver select dialog"
+msgstr "Meghajtó kiválasztása"
+
+#: knoda/hk_kdedriverselectbase.cpp:128
+msgid "C&onnect"
+msgstr "Kapcs&olódás"
+
+#: knoda/hk_kdedriverselectbase.cpp:132
+msgid "&Drivers"
+msgstr "&Meghajtók"
+
+#: knoda/hk_kdedriverselectbase.cpp:133
+msgid "&Connections"
+msgstr "&Kapcsolatok"
+
+#: knoda/main.cpp:46
+#, fuzzy
+msgid "knoda4"
+msgstr "knoda"
+
+#: knoda/main.cpp:47
+#, fuzzy
+msgid "knoda4 is a database management system"
+msgstr "A Knoda egy adatbáziskezelő rendszer"
+
+#: knoda/main.cpp:49
+msgid ""
+"(c) 2000-2005 Horst Knorr\n"
+"(c) 2010-2016 Patrik Hanak"
+msgstr ""
+
+#: knoda/main.cpp:53 knoda/main-rt.cpp:50
+msgid "Anirban Biswas"
+msgstr ""
+
+#: knoda/main.cpp:53 knoda/main-rt.cpp:50
+msgid "Postgresql driver"
+msgstr "PostgreSQL meghajtó"
+
+#: knoda/main.cpp:54 knoda/main-rt.cpp:51
+msgid "Tilman Linneweh"
+msgstr ""
+
+#: knoda/main.cpp:54 knoda/main-rt.cpp:51
+msgid "FreeBSD port"
+msgstr "Átdolgozás FreeBSD-re"
+
+#: knoda/main.cpp:60 knoda/main-rt.cpp:56
+msgid "Specifies the database driver"
+msgstr "Meghatározza az adatbázis meghajtók:"
+
+#: knoda/main.cpp:61 knoda/main-rt.cpp:57
+msgid "Specifies a database"
+msgstr "Meghatározza az adatbázist"
+
+#: knoda/main.cpp:62 knoda/main-rt.cpp:58
+msgid "Specifies a form (only in combination with -b)"
+msgstr "Meghatároz egy űrlapot (csak a -b opcióval együtt)"
+
+#: knoda/main.cpp:63
+msgid "No design mode"
+msgstr "Tervezési mód nélkül"
+
+#: knoda/main.cpp:64
+msgid "No design mode and no database control window"
+msgstr "Tervezési mód és adatbáziskezelő ablak nélkül"
+
+#: knoda/main.cpp:65
+msgid "SDI look"
+msgstr "SDI kinézet"
+
+#: knoda/main.cpp:66 knoda/main-rt.cpp:59
+msgid "prints the SQL statements to the standard ouput"
+msgstr "az SQL lekérdezések megjelenítése az alapértelmezett kimeneten"
+
+#: knoda/main.cpp:68 knoda/main-rt.cpp:61
+msgid "debug"
+msgstr "nyomkövető"
+
+#: knoda/main.cpp:70 knoda/main-rt.cpp:63
+msgid "local database file (SQLite)"
+msgstr "Új helyi adatbázis (SQLite)"
+
+#: knoda/main.cpp:114
+msgid "Please specifiy a database driver!"
+msgstr "Kérem, válasszon adatbázis meghajtót!"
+
+#: knoda/main.cpp:120 knoda/main-rt.cpp:111
+msgid "Specifying a form only works in combination with specifying a database"
+msgstr "Űrlapokat csak akkor lehet létrehozni, ha már van egy adatbázis"
+
+#: knoda/main.cpp:141
+msgid "classic user interface is not supported anymore."
+msgstr ""
+
+#: knoda/main-rt.cpp:43
+#, fuzzy
+msgid "knoda4 - Runtime version"
+msgstr "knoda - Futtatási verzió"
+
+#: knoda/main-rt.cpp:44
+#, fuzzy
+msgid "knoda4-rt is the runtime version of knoda -a database management system"
+msgstr "A knoda-rt a Knoda adatbáziskezelőrendszer futtatási verziója"
+
+#: knoda/main-rt.cpp:46
+msgid ""
+"(c) 2000-2004 Horst Knorr\n"
+"(c) 2010-2016 Patrik Hanak"
+msgstr ""
+
+#: knoda/main-rt.cpp:106
+msgid ""
+"\n"
+"\n"
+"*******\n"
+"Please specifiy a database driver,a database name and a form name!\n"
+"Correct syntax:\n"
+" knoda-rt -d mysql -b mydatabase -f myform\n"
+"\n"
+"You can leave the form name away if the database contains a form named "
+"'Autoform'\n"
+"*******\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+"*******\n"
+"Kérem, adja meg az adatbázis meghajtóját és nevét, valamint az űrlap nevét!\n"
+"Helyes írásmód:\n"
+" knoda-rt -d meghajtó -b adatbázis -f űrlap\n"
+"\n"
+"Amennyiben az adatbázis tartalmaz egy 'Autoform' nevű űrlapot, akkor az "
+"űrlap megadása nem kötelező\n"
+"*******\n"
+"\n"
+
+#~ msgid "Bug: form is empty!"
+#~ msgstr "Programhiba: Az űrlap üres!"
+
+#~ msgid "textLabel2"
+#~ msgstr "textLabel2"
+
+#~ msgid "Load"
+#~ msgstr "Betöltés"
+
+#~ msgid "Store"
+#~ msgstr "Tárolás"
+
+#~ msgid "Optionen"
+#~ msgstr "Beállítások"
+
+#~ msgid "Toggle &Insert"
+#~ msgstr "&Beillesztés átbillenése"
+
+#~ msgid "Dese&lect"
+#~ msgstr "Kivá&lasztás megszüntetése"
+
+#~ msgid ""
+#~ "KGhostview could not be found!\n"
+#~ "Please install the kdegraphics package"
+#~ msgstr ""
+#~ "A KGhostscript nem található!\n"
+#~ "Kérem, telepítse a kdegraphics3 csomagot."
+
+#~ msgid "New"
+#~ msgstr "Új"
+
+#~ msgid "Modify"
+#~ msgstr "Módosítás"
+
+#~ msgid "Start"
+#~ msgstr "Indítás"
+
+#~ msgid "Displaymode"
+#~ msgstr "Megjelenítés módja"
+
+#~ msgid "IDEAL Mode"
+#~ msgstr "IDEAL mód"
+
+#~ msgid "Tabpage Mode"
+#~ msgstr "Regiszterlap mód"
+
+#~ msgid "Childframe Mode"
+#~ msgstr "Ablak az ablakban mód"
+
+#~ msgid "New Database Dialog"
+#~ msgstr "Új adatbázis párbeszédablak"
+
+#~ msgid "Enter name of new database:"
+#~ msgstr "Adja meg az új adatbázis nevét:"
+
+#~ msgid "&Connect"
+#~ msgstr "&Kapcsolódás"
+
+#~ msgid "&Load"
+#~ msgstr "&Betöltés"
+
+#~ msgid "&Quit"
+#~ msgstr "Ki&lépés"
+
+#~ msgid "&About"
+#~ msgstr "&Névjegy"
+
+#~ msgid "No such driver: %DRIVER%"
+#~ msgstr "Nincs ilyen meghajtó: %DRIVER%"
+
+#~ msgid "Adm&inistration"
+#~ msgstr "Ad&minisztráció"
+
+#~ msgid "&Tables"
+#~ msgstr "&Táblák"
+
+#~ msgid "&Queries"
+#~ msgstr "&Lekérdezések"
+
+#~ msgid "F&orms"
+#~ msgstr "Űr&lapok"
+
+#~ msgid "&Reports"
+#~ msgstr "&Jelentések"
+
+#~ msgid "Databases"
+#~ msgstr "Adatbázisok"
+
+#~ msgid "D&atabases"
+#~ msgstr "Ad&atbázisok"
+
+#~ msgid "Functions"
+#~ msgstr "Funkciók"
+
+#~ msgid "Actions"
+#~ msgstr "Szerkesztés"
+
+#~ msgid ""
+#~ "Fatal error: File 'knodaui.rc' could not be located. Probably Knoda is "
+#~ "installed incorrectly\n"
+#~ "Are you sure you have used\n"
+#~ " ./configure --prefix=/your_KDE_directory ? \n"
+#~ " See the http://hk-classes.sourceforge.net/download.html for details. "
+#~ msgstr ""
+#~ "Súlyos hiba: Nem található a 'knodaui.rc' fájl. Ellenőrizze, hogy a Knoda "
+#~ "telepítése rendben zajlott le.\n"
+#~ "Biztos benne, hogy az alábbi parancsot használta?\n"
+#~ " ./configure --prefix=/ahol_a_KDE_található \n"
+#~ "Kérem olvassa el a http://hk-classes.sourceforge.net/download.html oldalt "
+#~ "további részletekért. "
+
+#~ msgid "no object selected"
+#~ msgstr "nincs kiválasztva objektum"
+
+#~ msgid "use MDI (deprecated)"
+#~ msgstr "MDI használata (elavult)"
+
+#~ msgid "Author"
+#~ msgstr "Szerző"

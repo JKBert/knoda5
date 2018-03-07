@@ -1,0 +1,16 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<kpartgui name="hk_kdedbdesigner" version="1">
+
+<MenuBar>
+	<Menu name="edit"  noMerge="1"><text>&amp;Edit</text>
+		<Action name="add"/>
+	   <Merge/>
+	</Menu>
+<Merge/>
+</MenuBar>
+<ToolBar name="mainToolBar">
+		<Action name="add"/>
+
+</ToolBar>
+
+</kpartgui>

@@ -1,0 +1,26 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<kpartgui name="hk_kdegrid" version="1">
+
+<MenuBar>
+	<Menu name="edit" noMerge="1"><text>&amp;Edit</text>
+		<Action name="copy"/>
+		<Action name="paste"/>
+		<Action name="findcolumn"/>
+	   <Merge/>
+	</Menu>
+	<Menu name="view" noMerge="1"><text>&amp;View</text>
+		<Action name="gridcolumn"/>
+	   <Merge/>
+	</Menu>
+<Merge/>
+</MenuBar>
+<ToolBar name="mainToolBar">
+		<Action name="gridcolumn"/>
+		<Action name="findcolumn"/>
+		<Separator lineSeparator="true"/>
+		<Action name="copy"/>
+		<Action name="paste"/>
+
+</ToolBar>
+
+</kpartgui>

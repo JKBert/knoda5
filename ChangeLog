@@ -1,0 +1,524 @@
+September 2016 - Hanak Patrik <knoda4-admins@lists.sourceforge.net>
+    o V 0.11.1 knoda4 & hk_kde4classes
+     =============================
+        o message l10n tool chain fixed
+    o Bugfixes
+        o #10 Segmentation fault when kate part not installed and try to open a module
+        o #11 Wrong character shown as thousands separator in grid
+        o #12 Wrong control layout in property window
+        o #13 Missing units (px, %, cm) in some spinbox controls of property window
+
+January 2016 - Hanak Patrik <knoda4-admins@lists.sourceforge.net>
+    o V 0.11.0 knoda4 & hk_kde4classes
+     =============================
+        o no dependency on Qt3 library
+
+June 2015 - Hanak Patrik <knoda4-admins@lists.sourceforge.net>
+    o V 0.10.0 knoda4 & hk_kde4classes
+     =============================
+        o rewriting the code to get rid of Q3 and K3 classes
+        o libhk_kde4classes goes to v8.0.1 due to binary incompabilities
+        o Italian translation added (thanks to Livio Tomasi <archimede@tomasil.it>)
+
+November 2014 - Hanak Patrik <knoda4-admins@lists.sourceforge.net>
+    o V 0.9.1 knoda4 & hk_kde4classes
+     =============================
+    o Bugfixes
+        o #2 Segmentation fault in hk_kdelabel.cpp
+        o #5 unnecessary dependency on libkatepartinterfaces.so
+        o #6 NULL value of boolean column shown in grid as FALSE 
+        o #7 not possible to print reports 
+        o #8 Modified record is stored automatically when form is closed 
+
+February 2014 - Hanak Patrik <knoda4-admins@lists.sourceforge.net>
+    o V 0.9 knoda4 & hk_kde4classes
+     =============================
+        o targets renamed: knoda -> knoda4, hk_kdeclasses -> hk_kde4classes
+        o migrated to cmake build system
+        o code rewritten to use KDE4 and Qt4 libraries with Qt3 support
+        o classic GUI not supported anymore
+
+    o Known issues
+        o 'make uninstall' does not remove symbolic links
+        o message l10n tool chain not tested
+
+
+
+December 17 MET 2006 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.8.3 knoda & hk_kdeclasses
+      =============================
+	o A "reload"-button added to tables, queries and views
+
+    o Bugfixes
+	o hk_kdedate: delimiter '#' was not only used in filtermode, but also in viewmode, fixed
+
+
+
+
+
+October 27 MET 2006 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.8.2 knoda & hk_kdeclasses
+      =============================
+	o hk_kdecsvimportdialog and hk_kdecsvexportdialog remember their entries
+	o hk_kdedate widget is new designed
+	o hk_kdequerypartwidget: displays a progress dialog when executing queries
+	o hk_kdereportpartwidget: uses kdepdf part if installed
+	o hk_kdetaborder: displays additional infos to identify the widgets
+	o hk_kdexmlexportdialog: optionally exports MS Excel XML format 
+	o hk_kdeformpartwidget: allows form-based filter definition
+
+
+	
+    o Bugfixes
+	o hk_kdememo: does not overwrite NULL values when form is set to viewmode
+	o hk_kdeeximportdialog: mouse cursor will be reset after copying whole database
+	o hk_kdecombobox: when using textlist the correct values are displayed now
+	o hk_kdecombobox: when datasource is readonly, data can't be changed any more
+	o hk_kdecombobox: set_value does not lead to a endless loop
+	o hk_kdecombobox: valuelists will be only loaded when necessary
+	o hk_kdeinterpreterdialog: uses the katepart actions now
+	o an obscure crash fixed, which happened when closing knoda while opening a form
+
+
+April 21 MET 2006 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.8.1 knoda & hk_kdeclasses
+      =============================
+	o QBE window supports Outer joins
+	o QBE window handling improved
+	o Reports support dynamic height fields
+	o Russian translation added (thanks to Иван Бобров <ibobrik@gmail.com>)
+	
+    o Bugfixes
+	o report datasource dialog did not display 'query' when a query is used, fixed
+	o hk_kdegridcolumndialog, hk_kdedbdesigner and hk_kdetabledesign: compilation problems removed and 
+	  iterator handling fixed.
+	o hk_kdeinterpreterdialog: i18n handling corrected
+	o does not crash any more in --classic mode when dragging a local opened database file
+	o hk_kdeqbe window does not freeze any more when drag&drop a non-existing column name
+
+
+
+October 23 MET 2005 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.8 knoda & hk_kdeclasses
+      =============================
+      	o hk_kdebutton: toggle behaviour added, set_is_togglebutton() and set_is_pushed() added
+      	o knoda-classic remembers size
+      	o referential integrity handling added
+      	o lot of dialogs show context specific help
+      	o CSV import dialog allows to add a user defined column delimiter
+      	o hk_kdesimpleform: the gridcolumn dialog can be edited in designmode now
+      	o hk_kdeeximportdialog, knodamaindockwindow: error messages improved
+      	o hk_kdesimpleform: moving all selected objects at once implemented
+
+    o Bugfixes
+	o hk_kderelationdialog remembers its size
+	o hk_kdesimplegrid: does not crash any more when neither a column or a row is displayed
+	o knoda-rt/knodamaindockwindowbase: creating a new main window keeps the information whether or not
+	  to show the listview  and read-only state
+	o hk_kdequerypartwidget: sqleditor will clear the undo-list when loaded, so the (non-changed) sql statement
+	  will not be cleared when Undo is called
+	o hk_kdeproperty: the form property had a disabled button to add dependencies. Now enabled
+	o hk_kdelineedit: when used in a grid, it did not display the changed value during insert mode, fixed
+	o hk_kdedbdesigner: when scrolled, the datasource windows can be moved now without any unexpected move actions
+	o hk_kdeproperty: when image is clicked, the columnlabel was not displayed
+	o hk_kdedbdesigner: no crash any more when master datasource will be removed
+	o only one instance can be opened of each table, query,view, form and report
+
+June 25 MET 2005 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.7.4 knoda & hk_kdeclasses
+      =============================
+	o export/import between databases is possible now
+	o Storing and loading connection information added
+	o hk_kdecombobox: on_select action added
+	o hk_kdequerypartwidget: it is possible to store the query result in a table
+	o hk_kdebutton: supports icons now
+	o knodamainwindow: user can select whether a single-click or a double-click opens objects
+	  can be set in the preferences menu
+	o hk_kdedbdesigner: has a new 'add datasource' dialog
+	o hk_kdequerypartwidget: in SQL mode there is a new copy option for the backend SQL statement
+	  (with correct field delimiters)
+	o hk_kdeimage added
+	o hk_kdedate added
+	o Full documentation added (<F1>-key)
+
+    o Bugfixes
+	o hk_kdequery does not crash any more when closed with the toolbar button
+	o hk_kdeqbe when namefield is editable the "Enter" key works correctly
+	o hk_kdememo: handles locale correctly again
+	o hk_kdesimplegrid: resizes rowheight to fontsize
+	o hk_kdepassworddialog: sets the database name even if the list is empty
+	o hk_kdesimpleform: when on_enable action fails, the window changes into designmode
+	o hk_kdesimplegrid: comboboxes in forms work again
+	o hk_kdesimplegrid: contextmenu is only available in viewmode
+
+
+March 23 MET 2005 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.7.3 knoda & hk_kdeclasses
+      =============================
+	o taborder handling added
+	o interpreter window remembers its size
+	o A form named "Autoform" will be automatically opened when the database is opened
+	o hk_kdeproperty and hk_kdereportproperty: QScrollView is used to embed the tab windows
+	o new actions on_getfocus() ,on_loosefocus()  and on_key() added
+	o set_tooltip(), tooltip() added
+	o a new binary 'knoda-rt' added, a runtime version of knoda
+	o the -classic-mdi command line option is deprecated and will not be supported any more
+	o bulgarian translation added (thanks to Roman Rachkov)
+
+    o Bugfixes
+	o hk_kdemessages: new_form() and new_report() set the database correctly
+	o hk_kdebutton: open_form works now when the opened already exists as a subform
+	o hk_kdecsvimport: append row will be work again
+	o hk_kdesimpleform: ctrl-key for marking objects works permanently
+	o hk_kdelineedit: remains disabled when set in a form for the first time
+	o hk_kdespinbox: numbers like 7.01 will be displayed correctly (before was 7.1)
+	o hk_kdeinterpreterdialog: undo is reset when the python code is set at the beginning
+	o hk_kdesimplegrid: active cell editor will be deactivated before row changes
+	o hk_kdesimplegrid: resizing of rows works again for all rows (also for very large tables)
+	o hk_kdesimpleform and hk_kdesimplereport: snap2grid works again
+	o hk_kdeqbe: editing text in the "field" cell when "table" is empty does not need a terminating
+	  <Enter>-key press
+
+
+
+November 28 MET 2004 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.7.2 knoda & hk_kdeclasses
+      =============================
+	o View support added
+	o hk_kdeboolean,hk_kdesimplegrid: boolean fields  handle
+	  tristate now (true,false,NULL)
+	o local database files can be opened
+	o Query SQL editor supports the default functions CUT,PASTE,FIND and REPLACE
+	o Query SQL editor is configurable now
+
+
+    o Bugfixes
+	o Flickering removed, when opening forms in viewmode
+	o hk_kdebutton: does not crash any more when a form tries to open itself
+	o hk_kdedblistview: handles "new_database" doubleclick correctly when database supports no
+	  views (did try to start a view)
+	o hk_kdesimplegrid: does not delete changed data any more when inserting data fails. Escape
+	  key allows to stop this mode.
+	o hk_kdesimplereport: does not crash any more when a Python action fails
+	o hk_kdereportpartwidget: does not crash any more when knoda is closed while a report is executing
+
+
+
+September 16 MET 2004 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.7.1 knoda & hk_kdeclasses
+      =============================
+    	o French translation added
+	o hk_kdepassworddialog: portfield etc removed from tab order
+	o hk_kdeqbe: double click on a field name will add the field
+	o hk_kdeqbe: asterics (*) added
+	o hk_kdebutton: opens forms depending on current values of the containing form.
+
+
+    o API changes
+	o subforms added
+	o hk_kdetablepart, hk_kdequerypart, hk_kdeformpart and hk_kdereportpart added
+
+    o Bugfixes
+	o hk_kdesimplegrid: row icon will be set to first row when datasource enables
+	o hk_kdequery: does not crash any more when database closes
+	o hk_kdereportproperty: datasourcefield and columnfield are correctly enabled/disabled
+	  when starting the property editor
+	o hk_kdeproperty: viewcolumn will not be cleared any more when an action is set
+	o hk_kdeformpartwidget, hk_kdequerypartwidget, hk_kdereportpartwidget
+	  savebutton handling improved
+	o hk_kdesimplegrid: resizing of rows disabled, because Qt's Qtable behaves terrible
+	  for large tables.
+	o hk_kdesimpleform: is reacting on double_click actions
+	o hk_kdereportproperty: compiles with gcc 3.4
+	o hk_kdecombobox: default value for insert mode works again
+
+
+
+July 11 MET 2004 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.7 knoda & hk_kdeclasses
+      =============================
+	o new look: knoda gets more KDE like and changes to kmdi look , the previous
+	  appearence can be still reached via the command line option --classic and
+	  --classic-mdi (the previous --mdi option)
+	o A query GUI has been added, it is not necessary any more to write SQL statements
+
+    o API changes
+	o
+
+    o Bugfixes
+	o drag & drop protocol: knodamainwindow and database designer part, does not crash any more
+	  when not supported drops are made
+	o hk_kdesimplegrid does not crash any more when no datasource is set and a mouse click happens in
+	   the dark coloured area
+	o hk_kdequery: knoda on exit does not crash any more when a query was closed in designmode
+	o support for gcc 3.4 (thanks to Treeve Jelbert <treeve01@pi.be>)
+	o hk_kdeinterpreterdialog: katepart does not crash any more when closed
+	o hk_kdememo: does not fill in HTML code any more
+
+
+
+April 04 MET 2004 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.6.3 knoda & hk_kdeclasses
+      =============================
+   	o hk_kdereportdata: displays diagonal lines in design mode
+	o hk_kdelabel: displays border lines
+	o hk_kdeformdatasourcedialog:: presentation local datasources can be defined in the datasource dialog
+	o knoda main window contains a toolbar
+	o Icons updated and made more "KDE standard"
+	o Spanish translation added (thanks to Nacho Alonso <ignacio4@usuarios.retecal.es>)
+
+
+    o Bugfixes
+   	o hk_kdesimpleform: it was possible to move objects in viewmode, fixed
+	o knodamainwindow in MDI mode: will stay in normal size, even when maximized is tried
+	o hk_kdeproperty: actions and objects are set correctly for tables and queries now
+	o hk_kdesimpleform, hk_kdesimplereport: if objects in designmode are moved by key, the property editor updates
+	   the values now
+	o hk_kdetabledesign: sizefield will be correctly enabled/disabled and the default NotNULL field when adding a new field
+	   will be displayed now
+
+
+  November 16 MET 2003 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.6.2 knoda & hk_kdeclasses
+      =============================
+	o hk_kdelineedit: is not readonly anymore when no column is set
+
+
+  October 19 MET 2003 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.6.1 knoda & hk_kdeclasses
+      =============================
+    	o snap to grid added to forms and reports
+    	o moving selected objects with keyboard
+    	o Python scripting support added
+    	o grids in forms integrate their GUI elements in the toolbar
+	o the property editor of forms and reports is now positioned in the lower right corner
+	o renaming of tables, forms, reports and queries implemented
+	o grid highlights resultin row of the finddialog
+
+    o Bugfixes
+   	o hk_kdesimplegrid: will not crash any more after changing datasource in a grid with predefined columns
+	o knoda: starting window will not raise into front when a dialog or a report opens.
+	o hk_kdereport: part GUI merge in combination with kghostview doesn't lead to multiple kghostview entries any more
+	o hk_kdeinterpreterdialog: toggles insertmode
+	o hk_kdesimplegrid: paste values does not suppress last value
+	o workaround for a bug in the Suse 9.0 X-Server
+
+
+
+  April 28 MET 2003 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.6 knoda & hk_kdeclasses
+      =============================
+    o hk_kdesimplegrid: Drag&Drop and Copy&Paste  of multiple cells is possible now
+
+    o bugfixes
+      o hk_kdegrid: find works also for columns with comboboxes
+      o hk_kdeproperty, hk_kdereportproperty: works now with qt-3.1.2
+      o hk_kdeformdatasourcedialog: depending_on datasource can be deleted now
+      o hk_kdegridcolumndialog: works correctly with queries
+      o hk_kdesimplegrid: uses comboboxes as editor in queries
+      o hk_kdememo: find dialog added
+      o hk_kdegridpart Makefile.am: the gridpart will be stored in the correct plugin directory now
+
+
+
+
+  January 19 MET 2003 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.5.6 knoda & hk_kdeclasses
+      =============================
+    o hk_kdereportsection:offset handling added (additional space at the end of the section)
+    o finddialog for hk_kdelineeditfield added
+    o hk_kdesimplegrid: finddialog can be started with ctrl-F
+    o colourmanagement added to forms
+    o hk_kdeform and hk_kdereport: method bulk_operations added to allow a central change of
+      font,foreground and background colour to all widgets of a presentation.
+    o widgets in forms and reports can be moved into background/ into front
+    o hk_kdetoolbar: filter can be changed while filter is activated
+    o hk_kdespinbox added: hk_kdeproperty and hk_kdereportproperty show position values now as percent
+
+
+    o bugfixes
+    	o copy/paste in forms and reports does not eliminate space characters any more
+	o hk_kdeproperty, hk_kdereportproperty: does not remove focus when clicking on the property editor
+	o hk_kdesimplegrid: does not hang if there are columns with much text
+	o hk_kdememo in forms: first storage of data does not reset the data
+	o hk_kdesimplegrid uses hk_memofields to edit memo data now
+
+
+  November 22 MET 2002 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.5.5 knoda & hk_kdeclasses
+      =============================
+  o labels in forms have the property "alignment" now
+  o many default values can be set in the preferences dialog now (default font,
+    default alignment, default numberformat etc.)
+  o hk_kdereport: it is possible to select the sorting order for sections now
+
+
+
+  September 22 MET 2002 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.5.4 knoda & hk_kdeclasses
+      =============================
+    o hk_kdesimplegrid supports now copy & paste and drag&drop for single cells
+    o hk_kdeproperty, hk_kdereportproperty: columnnames of queries will be preset
+    o queries, forms and reports have a 'Save as' dialog now.
+    o filters in forms and tables are stored now
+    o hk_kdesimpleform,hk_kdesimplereport: supports now copy & paste
+
+
+    o bugfixes
+    	o translation with other character sets than latin1 work now
+	o comboboxes in grids react now without manually selecting a datasource
+	o configure skript: enable-final works now
+	o hk_kdesimplegrid: does not crash any more when insertion of a row fails
+	o hk_kdesimplegrid: Del-Key works correctly now
+	o hk_kdelineedit: fieldsize is reduced to hk_column::fieldsize if column is of type text
+	o hk_kdetabledesign: allows now to alter size of fields correctly now
+	o hk_kdeformfocus: objects don't vanish suddenly
+	o hk_kdesimplereport: maxsize of pageheader and pagefooter are limited correctly now
+	o hk_kdecombobox,hk_kdegrid: reacts on fontchanges now
+	o hk_kdememo: does not crash any more if it is part of a depending datasource
+    o API changes
+	o hk_kdetabledesign: now derived from hk_dsvisible (instead of hk_dsgrid)
+
+
+
+  June 16 MET 2002 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.5.3 knoda & hk_kdeclasses
+      =============================
+    o LICENSE change: hk_kdeclasses is now LGPL'd
+    o fieldalignment in forms can be defined now
+    o datasources in forms can be set to readonly now
+    o fields in forms and columns in grids can be set to readonly
+    o all field types: support number formatting now
+      (set_numberformat,use_numberseparator,commadigits)
+    o hk_kdecomboboxes support rowselection in forms now
+    o all icons/pixmaps removed from sourcecode and are stored now externally to avoid redundancy
+    o dynamic Knoda logo
+    o configure script updated: parameters added
+       --with-hk_classes-dir
+       --with-hk_classes-incdir
+
+    o API changes
+    	o hk_kdeform,hk_kdetable, hk_kdequery: is now child of KParts::MainWindow
+	o hk_kdegridpart added
+
+    o bugfixes
+    	o hk_kdesimpleform: does not crash while closing any more when a grid has been deleted
+	o knoda: if started with the commandline options -d -b and -f the main window was shown
+	  in front of the form window. fixed
+	o hk_kdegrid: does not hang any more when pressing a key other than space in a boolean field
+	o hk_kdetabledesign: SQL keywords are not allowed any more as keywords for column names
+
+
+
+
+
+
+  May 21 MET 2002 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.5.2 knoda & hk_kdeclasses
+      =============================
+    o Tables remember the column sizes now
+    o hk_kdesimplegrid totally rewritten
+    o hk_kdelineedit,hk_kdememo,hk_kdeboolean, hk_kdecombobox:
+       react on adding/deleting rows in other widgets now
+    o hk_kdecombobox: autocompletion added, data can be added when no listcolumn is defined
+    o KDE 2 support removed
+    o bugfixes
+    	o hk_kdecomboboxes: sublists will be searched for unique values now
+	o knoda: does not crash any more when installed incorrectly.
+	o hk_kdesimpleform, hk_kdesimplereport: Save-dialog appears only once when database will be destroyed
+
+
+
+
+ March 17 MET 2002 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.5.1 knoda & hk_kdeclasses
+      =============================
+    o XML export dialog added
+    o ex-and importfilters: filedialogs changed from QFileDialog to KFileDialog
+    o bugfixes
+    	o hk_kdesimpleform /hk_kdesimplereport: no crash any more when selecting multiple objects
+	  with the ctrl key pushed at the very first object.
+	o hk_tabledesign: no crash any more when first field isn't selected
+
+
+ February 12 MET 2002 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.5 knoda & hk_kdeclasses
+      =============================
+    o preferences: fontencoding added, used for reports
+    o reports added
+    o local charset support improved, other charsets than iso8859-1 supported now
+    o hk_kdequery: accepts GRANT,REVOKE,FLUSH will be accepted as actionquery now
+    o knodawin reparented to KMainWindow
+    o knoda is now more KDE conform, menus added to the database main window
+    o new command line options: -b and -f to preselect the database and a form
+    o bugfixes
+    	o hk_kdeform/hk_kdeproperty: the properties of row selectors are correctly displayed now
+	o hk_kdegrid: improved messages whether column is readonly
+	o hk_kdecsvimport: filedialog will not appear twice any more
+
+
+
+ October 09 MET 2001 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.4.3 knoda & hk_kdeclasses
+      =============================
+    o new command line option --runtime. It hides all design windows.
+    o default values %NOW%, %NOWDATE% and %NOWTIME% added
+    o new toolbar in hk_kdetable, hk_kdequery and hk_kdeform
+    o hk_kdegrid hk_kdesimplegrid reparented
+    o bugfixes
+    	o forms will not crash any more after deleting a field and after that setting form properties
+	o grids in forms do not shrink any more when the form is stored
+	o hk_kdeindexeditwindow does only show columns which are set to "notnull" now
+
+
+
+ September 03 MET 2001 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.4.2 knoda & hk_kdeclasses
+      =============================
+    o bugfixes
+    	o a wrong drivername as command line option will be ignored now
+    o default values in forms now possible (except of gridcolumns, this will follow)
+    o defaults for date and time format can be stored now
+    o hk_kdelineedit, hk_kdememo, hk_kdeboolean: if readonly values can't be changed any more
+
+
+
+ July 07 MET 2001 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.4.1 knoda & hk_kdeclasses
+      ==============================
+    o knoda open forms now maximized
+    o hk_kdegridcolumn management changed.Defining gridcolumns interactively is possible now
+    o hk_kdeclasses is part of the knoda package now, so the knoda package jumps from v0.2 to 0.4.1
+    o API changed:
+        o hk_kdeform,hk_kdetable and hk_kdequery have now set_designmode and set_viewmode
+	o hk_kde_set_standarddialogs renamed to set_kdestandardialogs
+    o hk_kdeform button pictures for design mode updated
+    o hk_kdesimplegrid bugfixes:
+       o painting problem of the actual cell fixed
+       o no crashes any more when a column is empty
+    o combobox support in forms
+    o memofield with word wrap in forms
+    o memory leak in hk_kdetabledesign fixed
+    o memofields and booleanfields are cleared when inserting a row
+
+
+
+ June 21 MET 2001 - Horst Knorr <hk_classes@knoda.org>
+    o V 0.4
+      =====
+    o API updated
+    o form support added
+    o bugfixes
+
+
+
+ April  8 MET 2001 - Horst Knorr <hk_classes@knoda.org>
+    o V0.3.1
+      ======
+    o fixed compilation problems
+    o forms should be able to load their definition now
+
+
+
+ April  4 MET 2001 - Horst Knorr <hk_classes@knoda.org>
+    o V0.3 fi

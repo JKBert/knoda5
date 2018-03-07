@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=MimeType
+MimeType=application/x-sqlite2
+Icon=knoda.png
+Patterns=*.hk_sqlite
+Comment=Sqlite2 database (knoda)
+Comment[de]=Sqlite2 Datenbank (knoda)
+Comment[fr]=Sqlite2 base de données (knoda)
+Comment[es]=Sqlite2 base de datos (knoda)

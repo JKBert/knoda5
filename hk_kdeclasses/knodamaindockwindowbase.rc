@@ -1,0 +1,65 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<kpartgui name="knodamaindockwindowbase" version="1">
+<MenuBar>
+	<Menu name="file"><text>&amp;File</text>
+		<Action name="newconnection"/>
+		<Action name="disconnect"/>
+		<Action name="openlocaldb"/>
+		<Action name="newobject"/>
+		<Separator lineSeparator="true"/>
+		<Action name="loadconnection"/>
+		<Action name="storeconnection"/>
+		<Separator lineSeparator="true"/>
+		<Action name="import"/>
+		<Action name="export"/>
+		<Merge/>
+		<Separator lineSeparator="true"/>
+
+		<Action name="close"/>
+		<Action name="quit"/>
+	</Menu>
+	<Merge/>
+	<Menu name="database"><text>&amp;Database</text>
+		<Action name="referentialintegrity"/>
+		<Separator lineSeparator="true"/>
+		<Action name="dbsettings"/>
+		<Action name="objecthandler"/>
+		<Separator lineSeparator="true"/>
+		<Action name="changepassword"/>
+	</Menu>
+	<Menu name="settings" ><text>&amp;Settings</text>
+		<Action name="settings"/>
+	</Menu>
+
+</MenuBar>
+<ToolBar name="mainToolBar" >
+	<Action name="newconnection"/>
+<!--	<Action name="openlocaldb"/>
+	<Action name="loadconnection"/>-->
+	<Action name="databaselabel"/>
+	<Action name="openlocaldb"/>
+	<Action name="databaseselect"/>
+	<Action name="quit"/>
+	<Separator lineSeparator="true"/>
+	<Action name="close"/>
+	<Separator lineSeparator="true"/>
+	<Merge/>
+
+</ToolBar>
+<Menu name="popup">
+	<Action name="startclicked"/>
+	<Action name="alterclicked"/>
+	<Action name="newclicked"/>
+	<Action name="deleteclicked"/>
+	<Action name="renameclicked"/>
+	<Separator lineSeparator="true"/>
+	<Action name="copy"/>
+	<Action name="paste"/> 
+	<Separator lineSeparator="true"/>
+</Menu>
+
+</kpartgui>
+
+
+
+

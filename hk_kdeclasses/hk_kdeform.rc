@@ -1,0 +1,26 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<kpartgui name="hk_kdeform" version="1">
+
+<MenuBar>
+	<Menu name="file"><text>&amp;File</text>
+		
+		<merge/>
+		<Separator lineSeparator="true"/>
+		<Action name="closeform"/>
+	</Menu>
+	<Menu name="edit"><text>&amp;Edit</text>
+	      		<merge/>
+
+	</Menu>
+	<Menu name="view" noMerge="1"><text>&amp;View</text>
+	   <merge/>
+	</Menu>
+<Merge/>
+</MenuBar>
+<ToolBar name="mainToolBar">
+		<merge/>
+		<Action name="closeform"/>
+
+</ToolBar>
+
+</kpartgui>

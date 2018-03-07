@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=knoda4
+Exec=knoda4
+Icon=knoda4.png
+Type=Application
+MimeType=application/x-sqlite3;application/x-sqlite2;application/x-hk_classes-sqlite3;application/x-hk_classes-sqlite2;application/x-msaccess;application/x-dbase;application/x-hk_connection;application/x-paradox;
+DocPath=knoda4/index.html
+X-DocPath=knoda4/index.html
+Comment=A database frontend
+Comment[de]=Datenbankprogramm
+Comment[es]=Una Aplicación base de datos
+Comment[fi]=Tietokantakäyttöliittymä
+Comment[fr]=Application base de données
+Comment[it]=Un'applicazione base di dati
+Terminal=false
+Encoding=UTF-8
+Categories=Qt;KDE;Office;Database;

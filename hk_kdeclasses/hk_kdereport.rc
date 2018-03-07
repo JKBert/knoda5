@@ -1,0 +1,29 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<kpartgui name="hk_kdereport" version="1">
+
+<MenuBar>
+	<Menu name="file"><text>&amp;File</text>
+		<Merge/>	        
+		<Separator lineSeparator="true"/>
+		<Action name="closereport"/>
+	</Menu>
+	<Menu name="edit"><text>&amp;Edit</text>
+      		<Merge/>
+	
+	</Menu>
+	
+	<Menu name="view"><text>&amp;View</text>
+	   <Merge/>
+	</Menu>
+	<Menu name="settings" ><text>&amp;Settings</text>
+	  <Merge/>
+	</Menu>
+<Merge/>
+</MenuBar>
+<ToolBar name="mainToolBar">
+		<Merge/>
+		<Action name="closereport"/>
+
+</ToolBar>
+
+</kpartgui>

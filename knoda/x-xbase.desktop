@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=MimeType
+MimeType=application/x-dbase
+Icon=knoda.png
+Patterns=*.DBF;*.dbf
+Comment=Dbase database (knoda)
+Comment[de]=Dbase Datenbank (knoda)
+Comment[fr]=Dbase base de données (knoda)
+Comment[es]=Dbase base de datos (knoda)

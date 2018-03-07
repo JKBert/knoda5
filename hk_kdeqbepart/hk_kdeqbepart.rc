@@ -1,0 +1,20 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<kpartgui name="hk_kdeqbe" version="1">
+
+<MenuBar>
+	<Menu name="edit"  noMerge="1"><text>&amp;Edit</text>
+		<Action name="add"/>
+		<Action name="distinct"/>
+	   <Merge/>
+	</Menu>
+<Merge/>
+</MenuBar>
+<ToolBar name="mainToolBar">
+		<Separator lineSeparator="true"/>
+		<Action name="add"/>
+		<Action name="distinct"/>
+		<Action name="qbetypeselect"/>
+
+</ToolBar>
+
+</kpartgui>

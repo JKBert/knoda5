@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=MimeType
+MimeType=application/x-paradox
+Icon=knoda.png
+Patterns=*.DB;*.db
+Comment=Paradox database (knoda)
+Comment[de]=Paradox Datenbank (knoda)
+Comment[fr]=Paradox base de données (knoda)
+Comment[es]=Paradox base de datos (knoda)

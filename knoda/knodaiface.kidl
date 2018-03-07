@@ -1,0 +1,13 @@
+<!DOCTYPE DCOP-IDL><DCOP-IDL>
+<SOURCE>./knodaiface.h</SOURCE>
+<INCLUDE>dcopobject.h</INCLUDE>
+<CLASS>
+    <NAME>knodaIface</NAME>
+    <SUPER>DCOPObject</SUPER>
+    <FUNC>
+        <TYPE>void</TYPE>
+        <NAME>openURL</NAME>
+        <ARG><TYPE>QString</TYPE><NAME>url</NAME></ARG>
+     </FUNC>
+</CLASS>
+</DCOP-IDL>

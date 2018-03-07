@@ -1,0 +1,66 @@
+#!/bin/bash
+# ****************************************************************************
+# copyright (c) 2010-2013 Patrik Hanak <hanakp@users.sourceforge.net>
+#
+# This file is part of the knoda4 package.
+# This file may be distributed and/or modified under the terms of the
+# GNU General Public License version 2 as published by the Free Software
+# Foundation and appearing in the file COPYING included in the
+# packaging of this file.
+# This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+# WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+# ****************************************************************************
+
+# default prefix
+PREFIX=`kde4-config --prefix`
+
+# possible configurations: None Release Debug RelWithDebInfo MinSizeRel
+# default configuration
+CONFIGURATION=Release
+
+function print_help {
+  cat <<_HLPEOF
+'configure' configures this package to adapt to the system. Use cmake command directly for detailed configuration.
+
+Usage: ./configure [OPTION]
+
+Options:
+  -h,--help         display this help and exit
+  -d,--default      populate cmake cache with default values
+  -i,--interactive  populate cmake cache if empty and run interactive cmake 
+
+Default option is -d.
+  
+_HLPEOF
+ 
+}
+
+mkdir -p build
+cd build 
+
+if [ "$#" = "0" ]; then
+  CMD=-d
+else
+  CMD=$1
+fi
+
+case "$CMD" in
+  -d | --default) 
+    cmake -DCMAKE_INSTALL_PREFIX:PATH=$PREFIX -DCMAKE_BUILD_TYPE=$CONFIGURATION ..
+    ;;
+  -i | --interactive)
+    if ! [ -f CMakeCache.txt ]; then 
+# no cache has been built, build it now
+      cmake -DCMAKE_INSTALL_PREFIX:PATH=$PREFIX -DCMAKE_BUILD_TYPE=$CONFIGURATION ..
+    fi
+    ccmake ..
+    ;;
+  -h | --help) 
+    print_help
+    ;;
+  *) 
+    echo Unknown comand: $CMD
+    print_help
+    ;;
+esac
+

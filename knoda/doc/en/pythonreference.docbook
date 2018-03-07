@@ -1,0 +1,4711 @@
+<book id="pythonreference" lang="&language;">
+  <bookinfo>
+    <title>The &hk_classes; Python reference</title>
+    <authorgroup>
+ <author>
+	<firstname></firstname>
+	<surname>Horst Knorr</surname>
+	<affiliation>
+	  <address><email><ulink url="mailto:hk_classes@knoda.org">hk_classes@knoda.org</ulink></email></address>
+	</affiliation>
+ </author>
+     </authorgroup>
+    <date>07/03/2005</date>
+    <releaseinfo>Version 0.0.2</releaseinfo>
+    <abstract>
+ 	<para>
+&knoda;, or more exactly the &hk_classes; library, has an integrated Python interpreter.  For further information about Python see <ulink url="http://www.python.org">http://www.python.org</ulink>.
+</para>
+<para>
+This documentation describes version 0.8 of the &hk_classes; Python interface.
+</para>
+</abstract>
+
+<keywordset>
+ 	<keyword>hk_classes</keyword>
+ 	<keyword>python</keyword>
+ 	<keyword>scripting</keyword>
+ 	<keyword>reference</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter  id="pschapter1">
+<title>The &hk_classes; Python reference</title>
+<section id="overview">
+<title>Overview</title>
+<para>
+Below you see the  structure of &hk_classes;.  There are classes
+that handle the contact to the database (see the left side of the graphic), while others handle the interaction with the user (we have already
+seen the hk_visible class in the previous section).
+<figure id="hk_classesoverview_a"><title>&hk_classes; overview</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="hk_classes-overview.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<figure id="hk_classesoverview_b"><title>description of the most important classes</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="class-overview2.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+
+</para>
+</section>
+<section id="scripting">
+<title>Using Python as a scripting language within &hk_classes;</title>
+<para>
+The following global variables are defined
+<itemizedlist mark="bullet">
+<listitem><para><emphasis>hk_this:</emphasis> represents the current object, of which this function is called</para></listitem>
+<listitem><para><emphasis>hk_thisform:</emphasis> represents the form which contains the current object</para></listitem>
+<listitem><para><emphasis>hk_thisreport:</emphasis> represents the report which contains the current object</para></listitem>
+</itemizedlist>
+</para>
+</section>
+
+
+<section id="pythonmodule">
+<title>Using &hk_classes; as a Python module</title>
+<para>
+You can use &hk_classes; within Python. You can write your own Python applications using all the elements of &hk_classes; or interactively
+explore your data.
+
+<example><title>Using &hk_classes; as a Python module</title>
+<programlisting>
+horst@horstnotebook:~> python
+Python 2.2.2 (#1, Mar 17 2003, 15:17:58)
+[GCC 3.3 20030226 (prerelease) (SuSE Linux)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from hk_classes import *
+>>> dr=hk_drivermanager()
+>>> con=dr.new_connection("mysql")
+>>> con.set_password("mypassword")
+>>> con.connect()
+1
+>>> db=con.new_database("exampledb")
+>>> mytable=db.new_table("authors")
+>>> mytable.enable()
+</programlisting>
+</example>
+
+</para>
+
+
+</section>
+
+
+</chapter>
+
+
+
+
+<chapter  id="alphabeticalchapter">
+<title>Classes in alphabetical order</title>
+
+
+<section id="hk_actionquery" xreflabel="hk_actionquery">
+<title>hk_actionquery</title>
+<para>
+</para><para>
+Inherits from <xref linkend="hk_data"/>.
+
+In contrary to Result Queries (queries with a SELECT - SQL-statement) action queries manipulate data
+ like ALTER TABLE or INSERT INTO.  There is no resulting data. Such a query is either successful or fails.
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>set_sql(sqlstatement [,convertdelimiter])</glossterm>
+ <glossdef>
+  <para>sets the SQL statement. If convertdelimiter is False (the default) the identifier delimiters and text delimiters have to fit your SQL backend definitions. If set to True, hk_classes will fix the delimiters if the backend needs non-standard delimiters. (Remember: ANSI SQL identifier delimiter is a double quote ", and the ANSI SQL text delimiter is a single quote ').
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>sql()</glossterm>
+ <glossdef>
+  <para>returns the used SQL statement
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>length()</glossterm>
+ <glossdef>
+  <para>the length in bytes of the SQL statement
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>execute()</glossterm>
+ <glossdef>
+  <para>executes the SQL statement and returns True if successful.
+  </para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="hk_button" xreflabel="hk_button">
+<title>hk_button</title>
+<para>Represents a button in a form. If set_is_togglebutton(True) was called, this button toggles, otherwise
+it will go to non-pushed state after being clicked</para>
+<para>
+Inherits from <xref linkend="hk_dsvisible"/>.
+
+
+<glosslist>
+
+<glossentry>
+ <glossterm>set_action(action,object[,showmaximized[, registerchange]])</glossterm>
+ <glossdef>
+  <para>.
+ when the button is pushed the action will be executed on the object
+Allowed actions are:
+<itemizedlist mark="bullet">
+   <listitem><para>open_form</para></listitem>
+   <listitem><para>close_form</para></listitem>
+   <listitem><para>open_table</para></listitem>
+   <listitem><para>open_query</para></listitem>
+   <listitem><para>preview_report</para></listitem>
+   <listitem><para>print_report</para></listitem>
+   <listitem><para>goto_firstrow</para></listitem>
+<listitem><para>goto_lastrow</para></listitem>
+<listitem><para>goto_nextrow</para></listitem>
+<listitem><para>goto_previousrow</para></listitem>
+<listitem><para>insert_row</para></listitem>
+<listitem><para>delete_row</para></listitem>
+<listitem><para>store_row</para></listitem>
+<listitem><para>action_query</para></listitem>
+</itemizedlist>
+The parameter 'object' is the name of the used object e.g. a form name (if you want to open a form).</para><para>
+The parameter 'showmaximized': if true show the window maximized else show the new window in its origin or default size.</para><para>
+The parameter 'registerchange': if this button is part of a form and any registerchange is true, the changes will be stored when you close the window</para><para>
+Example: to open the form "test" use
+
+<example><title>Open a form when pushing a button</title>
+<programlisting>
+button.set_action("open_form","test")
+</programlisting>
+</example>
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_action(action,object[,showmaximized[, registerchange]])</glossterm>
+ <glossdef>
+  <para>.
+ The same as the function above, except that 'action' is  anumeric value. Allowed values are:
+<itemizedlist mark="bullet">
+<listitem><para>0:  open_form</para></listitem>
+   <listitem><para>1: close_form</para></listitem>
+   <listitem><para>2: open_table</para></listitem>
+   <listitem><para>3: open_query</para></listitem>
+   <listitem><para>4: preview_report</para></listitem>
+   <listitem><para>5: print_report</para></listitem>
+   <listitem><para>6: goto_firstrow</para></listitem>
+   <listitem><para>7: goto_lastrow</para></listitem>
+<listitem><para>8: goto_nextrow</para></listitem>
+<listitem><para>9: goto_previousrow</para></listitem>
+<listitem><para>10: insert_row</para></listitem>
+<listitem><para>11: delete_row</para></listitem>
+<listitem><para>12: store_row</para></listitem>
+<listitem><para>13: action_query</para></listitem>
+</itemizedlist>
+
+<example><title>Open a form when pushing a button</title>
+<programlisting>
+button.set_action(0,"test")
+</programlisting>
+</example>
+
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>object()</glossterm>
+ <glossdef>
+  <para>
+  returns the set object name.
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>action()</glossterm>
+ <glossdef>
+  <para>
+  returns the set action number. For a detailled list see set_action
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>show_maximized()</glossterm>
+ <glossdef>
+  <para>
+  returns wether the used object will be displayed maximized. This value is set with set_object()
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_database(database)</glossterm>
+ <glossdef>
+  <para>At least a database object of type <xref linkend="hk_database"/> has to be set to be able to automatically load forms etc.
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>database()</glossterm>
+ <glossdef>
+  <para>
+  returns the set <xref linkend="hk_database"/> object.
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_is_togglebutton(istoggle [,registerchange [,forcesetting]])</glossterm>
+ <glossdef>
+  <para>
+if istoggle is True, the button will remain in its pushed or non-pushed state after clicking, else
+it will always switch back to non-pushed state
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>is_togglebutton()</glossterm>
+ <glossdef>
+  <para>
+returns whether or not this is a toggle button
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_is_pushed(ispushed [,registerchange [,forcesetting]])</glossterm>
+ <glossdef>
+  <para>
+if this is a togglebutton you can set its default state. If ispushed is True it will start as a pushed button
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>is_pushed()</glossterm>
+ <glossdef>
+  <para>
+returns whether or not this togglebutton is in pushed state. If this button is not a togglebutton the result
+is undefined.
+  </para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section id="hk_class" xreflabel="hk_class">
+  <title>hk_class</title>
+  <para>
+hk_class is the basic class for all other defined classes.
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>show_warningmessage(message)</glossterm>
+ <glossdef>
+  <para>Prints a warning message by using a dialog window. If none is set the message
+ will be print to standard error (cerr). (Info: if you use it in &knoda;, such a dialog window is set)
+ </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>hk_translate(text)</glossterm>
+ <glossdef>
+  <para>tries to translate the message t by using implemented translatingfunction of the underlying OS.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>show_yesnodialog(question, default_value)</glossterm>
+ <glossdef>
+  <para>prints a question. The user has either to answer the question with yes or no.
+ </para><para>Parameter 'question': the shown question
+ </para><para>Parameter 'default_value': if  &hk_classes; should not show nerving questions (can be set in &knoda;'s preferences dialog), the default_value will be returned without
+ asking.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>show_stringvaluedialog(question)</glossterm>
+ <glossdef>
+  <para>prints the question 'question' and returns the user input.
+  The user has to answer the question by entering a string (i.e. a filename).
+</para><para>Parameter 'question': the shown question
+ </para><para>returns the string the user gave as an answer
+ </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>hk_string show_filedialog( default_filename,operation_mode)</glossterm>
+ <glossdef>
+  <para>prints a file dialog. The user adds a file name that will be returned as a string.
+ </para><para>Parameter 'default_filename': a preset filename</para>
+ <para>Parameter 'operation_mode': either file_open (default) or file_save.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>hk_string show_directorydialog( default_directory)</glossterm>
+ <glossdef>
+  <para>prints a directory selection dialog. The user selects a directory  that will be returned as a string.
+ </para><para>Parameter 'default_directory': a preset directory</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>save_preferences()</glossterm>
+ <glossdef>
+  <para>This function stores all preferences of the &hk_classes; library in the file ~/.hk_classes/preferences
+  </para>
+ </glossdef>
+</glossentry>
+</glosslist>
+
+</blockquote>
+
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="hk_colour" xreflabel="hk_colour">
+<title>hk_colour</title>
+<para>
+represents a RGB-colour.
+</para><para>
+Inherits from <xref linkend="hk_class"/>.
+<figure><title>hk_colour methods</title>
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>hk_colour( red, green, blue)</glossterm>
+ <glossdef>
+  <para>Constructor. Creates a new hk_colour object and sets the RGB values of the colour </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_colour( red,  green,  blue)</glossterm>
+ <glossdef>
+  <para> sets the RGB colour. Valid values are in the range 0 to 255.
+ returns True if successful, False if the colour could not be set (out of range).
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>red()</glossterm>
+ <glossdef>
+  <para>returns the RGB red value</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>green()</glossterm>
+ <glossdef>
+  <para>returns the RGB green value</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>blue()</glossterm>
+ <glossdef>
+  <para>returns the RGB blue value</para>
+ </glossdef>
+</glossentry>
+</glosslist>
+</blockquote>
+</figure>
+
+</para>
+<para>
+<figure><title>Predefined colour names</title>
+<blockquote>
+<itemizedlist mark="bullet">
+ <listitem><para>hk_aqua</para></listitem>
+ <listitem><para>hk_beige</para></listitem>
+ <listitem><para>hk_black</para></listitem>
+ <listitem><para>hk_blue</para></listitem>
+ <listitem><para>hk_brown</para></listitem>
+ <listitem><para>hk_fuchsia</para></listitem>
+ <listitem><para>hk_darkgrey</para></listitem>
+ <listitem><para>hk_green</para></listitem>
+ <listitem><para>hk_grey</para></listitem>
+ <listitem><para>hk_lightgrey</para></listitem>
+ <listitem><para>hk_lime</para></listitem>
+ <listitem><para>hk_maroon</para></listitem>
+ <listitem><para>hk_navy</para></listitem>
+ <listitem><para>hk_olive</para></listitem>
+ <listitem><para>hk_orange</para></listitem>
+ <listitem><para>hk_pink</para></listitem>
+ <listitem><para>hk_purple</para></listitem>
+ <listitem><para>hk_red</para></listitem>
+ <listitem><para>hk_silver</para></listitem>
+ <listitem><para>hk_teal</para></listitem>
+ <listitem><para>hk_white</para></listitem>
+ <listitem><para>hk_yellow</para></listitem>
+</itemizedlist>
+</blockquote>
+</figure>
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section id="hk_column" xreflabel="hk_column">
+<title>hk_column</title>
+<para>
+ Represents one column of a datasource. The data of the current row (set in <xref linkend="hk_datasource"/>)
+ can be modified by using the functions set_asstring(),  set_asbool(),set_asdouble, set_asinteger and set_asbinary().
+ and read by using the functions asstring(), asbool(), asdouble(), asinteger() and asbinary().
+</para><para>
+ If the the datasource is in alter or create mode you can change the column definition by using the following
+ functions: set_name(), set_columntype(), set_size(), set_notnull(), set_primary()
+</para><para>
+Inherits from <xref linkend="hk_class"/>.
+<figure><title>hk_column  data methods</title>
+<blockquote>
+
+<glosslist>
+<glossentry>
+ <glossterm>set_asstring(value)</glossterm>
+ <glossdef>
+  <para>lets you set a new value for this object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+<glossterm>asstring()</glossterm>
+<glossdef>
+<para>returns the current value as a string value</para>
+</glossdef>
+</glossentry>
+
+<glossentry>
+	<glossterm>set_asdouble(value)</glossterm>
+	<glossdef>
+		<para>lets you set a new value for this object</para>
+	</glossdef>
+</glossentry>
+
+<glossentry>
+	<glossterm>asdouble()</glossterm>
+	<glossdef>
+		<para>returns the current value as a double value</para>
+	</glossdef>
+</glossentry>
+
+<glossentry>
+	<glossterm>set_asinteger(value)</glossterm>
+	<glossdef>
+		<para>lets you set a new value for this object</para>
+	</glossdef>
+</glossentry>
+
+<glossentry>
+	<glossterm>asinteger()</glossterm>
+	<glossdef>
+		<para>returns the current value as  a integer value</para>
+	</glossdef>
+</glossentry>
+
+<glossentry>
+	<glossterm>is_readonly()</glossterm>
+	<glossdef>
+		<para>returns true if this column is read-only; if data can be changed it returns false</para>
+	</glossdef>
+</glossentry>
+
+<glossentry>
+	<glossterm>find(from_rownumber,to_rownumber,searchtext[,wholephrase[,casesensitive[,backwards]]])</glossterm>
+	<glossdef>
+		<para>searches for a specific value in a column, returns the row number if found, hk_datasource.max_rows()+1 if not found</para>
+	</glossdef>
+</glossentry>
+
+<glossentry>
+	<glossterm>find(searchtext[,wholephrase[,casesensitive[,backwards]]])</glossterm>
+	<glossdef>
+		<para>searches for a specific value in a column, returns the row number if found, hk_datasource.max_rows()+1 if not found.
+		This version searches all rows of a datasource.
+ </para>
+	</glossdef>
+</glossentry>
+
+<glossentry>
+	<glossterm>datasource()</glossterm>
+	<glossdef>
+		<para>returns the <xref linkend="hk_datasource"/> object, to which this hk_column belongs to.</para>
+	</glossdef>
+</glossentry>
+<glossentry>
+	<glossterm>count()</glossterm>
+	<glossdef>
+		<para>returns the number of rows that contain 'Not NULL' values</para>
+	</glossdef>
+</glossentry>
+<glossentry>
+	<glossterm>count(from,to)</glossterm>
+	<glossdef>
+		<para>returns the number of rows that contain 'Not NULL' values, starting at position 'from' and counting to position 'to'</para>
+	</glossdef>
+</glossentry>
+<glossentry>
+	<glossterm>sum()</glossterm>
+	<glossdef>
+		<para>returns the sum of all rows</para>
+	</glossdef>
+</glossentry>
+<glossentry>
+	<glossterm>sum(from,to)</glossterm>
+	<glossdef>
+		<para>returns the sum of all rows, starting at position 'from' and counting to position 'to'</para>
+	</glossdef>
+</glossentry>
+</glosslist>
+</blockquote>
+</figure>
+
+
+
+<example><title>Read data</title>
+<programlisting>
+col=hk_this.datasource().column_by_name("name")
+hk_this.show_warningmessage(col.asstring())
+</programlisting>
+</example>
+
+
+<example><title>Write data</title>
+<programlisting>
+col=hk_this.datasource().column_by_name("name")
+col.set_asstring("my new value")
+</programlisting>
+</example>
+This changes the value of the current column.  The data is saved either when
+<itemizedlist mark="bullet">
+         <listitem><para>the row position changes (e.g. by calling hk_datasource.goto_row())</para></listitem>
+         <listitem><para>the datasource is disabled (e.g. by calling hk_datasource.disable())</para></listitem>
+         <listitem><para>the changes are manually stored by calling hk_datasource.store_changed_data()</para></listitem>
+</itemizedlist>
+<example><title>Search data</title>
+<programlisting>
+col=hk_this.datasource().column_by_name("name")
+result=col.find("Schiller")
+if result > hk_this.datasource().max_rows():
+     hk_this.show_warningmessage("value not found")
+else:
+     hk_this.show_warningmessage("Value found at row position: "+str(result))
+</programlisting>
+</example>
+
+
+
+
+
+<figure><title>hk_column type methods</title>
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>name()</glossterm>
+ <glossdef>
+  <para>returns the name of this column</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_name(name)</glossterm>
+ <glossdef>
+  <para>sets the column name</para>
+ </glossdef>
+</glossentry>
+
+ <glossentry>
+ <glossterm>set_columntype(type)</glossterm>
+ <glossdef>
+<para>
+sets the type of the column
+     </para><para>
+    Possible values are
+    <itemizedlist mark="bullet">
+    <listitem><para>textcolumn</para></listitem>
+    <listitem><para>auto_inccolumn</para></listitem>
+    <listitem><para>smallintegercolumn</para></listitem>
+    <listitem><para>integercolumn</para></listitem>
+    <listitem><para>smallfloatingcolumn</para></listitem>
+    <listitem><para>floatingcolumn</para></listitem>
+    <listitem><para>datecolumn</para></listitem>
+    <listitem><para>datetimecolumn</para></listitem>
+    <listitem><para>timecolumn</para></listitem>
+    <listitem><para>timestampcolumn</para></listitem>
+    <listitem><para>binarycolumn</para></listitem>
+    <listitem><para>memocolumn</para></listitem>
+    <listitem><para>boolcolumn</para></listitem>
+    <listitem><para>othercolumn</para></listitem>
+    </itemizedlist>
+    </para>
+</glossdef>
+ </glossentry>
+
+ <glossentry>
+ <glossterm>columntype()</glossterm>
+ <glossdef>
+  <para>returns the type of the column.
+    </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_size()</glossterm>
+ <glossdef>
+  <para>sets the column size (e.g. if this column was should be a textcolumn with 10 characters set the type with set_type and the size with this function)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>size()</glossterm>
+ <glossdef>
+  <para>returns the column size (e.g. if this column was created as CHAR(10) it will return 10)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_primary(primary)</glossterm>
+ <glossdef>
+  <para> if 'primary' is true the column will be part of the primary key (primary index).
+  Can only be edited if the datasource is in the mode ALTER or CREATE.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>is_primary()</glossterm>
+ <glossdef>
+  <para>returns true if this column is part of a primary key</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_notnull(notnull)</glossterm>
+ <glossdef>
+  <para>if 'notnull' true the column needs a value</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>is_notnull()</glossterm>
+ <glossdef>
+  <para>returns True if this column has to have a value</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+</figure>
+
+
+
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="hk_connection" xreflabel="hk_connection">
+<title>hk_connection</title>
+
+<para>
+hk_connection connects to the SQL Server.  The most important functions are set_host(), set_user(),
+set_password() and connect().
+</para><para>
+Inherits from <xref linkend="hk_class"/>.
+
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>set_host(hostname)</glossterm>
+ <glossdef>
+  <para>sets the host name or host IP number</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm> host()</glossterm>
+ <glossdef>
+  <para>returns the host name</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_user(username )</glossterm>
+ <glossdef>
+  <para>sets the user name used on the host</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>user()</glossterm>
+ <glossdef>
+  <para>returns the user name</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_password(password)</glossterm>
+ <glossdef>
+  <para>sets the password for the user</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_tcp_port(port)</glossterm>
+ <glossdef>
+  <para>sets the TCP port</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>tcp_port()</glossterm>
+ <glossdef>
+  <para>returns the TCP port</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>default_tcp_port() </glossterm>
+ <glossdef>
+  <para>returns the default TCP port for this database server</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>connect([interactive])</glossterm>
+ <glossdef>
+  <para>connects to the server using the user, host and TCP data. Returns True if connecting was successful, else False.
+</para><para>Parameter 'interactive': if set to interactive and the connection fails, a login dialog appears. Possible values
+<itemizedlist mark="bullet">
+<listitem><para>hk_class.noninteractive</para></listitem>
+<listitem><para>hk_class.interactive</para></listitem>
+</itemizedlist>
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>disconnect()</glossterm>
+ <glossdef>
+  <para>disconnects from the server</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>is_connected()</glossterm>
+ <glossdef>
+  <para>returns true if this connection is connected to the server</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>dblist()</glossterm>
+ <glossdef>
+  <para>returns a list of all existing databases in this connection</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_database([name])</glossterm>
+ <glossdef>
+  <para>creates a new <xref linkend="hk_database"/> object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>delete_database(databasename)</glossterm>
+ <glossdef>
+  <para>deletes an exisiting database</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>database_exists(databasename)</glossterm>
+ <glossdef>
+  <para>returns true if the database "databasename" exists</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>mimetype()</glossterm>
+ <glossdef>
+  <para>returns the mimetype of a local database format, if it is not a local database format it returns an empty string</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="hk_data" xreflabel="hk_data">
+<title>hk_data</title>
+<para>
+Internal base class for <xref linkend="hk_datasource"/> and <xref linkend="hk_actionquery"/>.
+
+</para><para>
+Inherits from <xref linkend="hk_class"/>.
+<blockquote>
+<glosslist>
+
+<glossentry>
+ <glossterm>set_name(name)</glossterm>
+ <glossdef>
+  <para>sets the name of the datasource</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>name()</glossterm>
+ <glossdef>
+  <para>returns the name of this datasource</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>type()</glossterm>
+ <glossdef>
+  <para>
+  returns the type of this datasource. Possible values are:
+ <itemizedlist mark="bullet">
+ <listitem><para>ds_table</para></listitem>
+ <listitem><para>ds_query</para></listitem>
+ <listitem><para>ds_actionquery</para></listitem>
+ <listitem><para>ds_unknown</para></listitem>
+ </itemizedlist>
+  </para>
+ </glossdef>
+</glossentry>
+
+
+</glosslist>
+</blockquote>
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section id="hk_database" xreflabel="hk_database">
+<title>hk_database</title>
+<para>
+Represents a particular existing database on the SQL Server. To use
+ it set the name of an existing database with  set_name().
+ To create a new database use <xref linkend="hk_connection"/>.create_database().
+</para><para>
+Inherits from <xref linkend="hk_class"/>.
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>tablelist()</glossterm>
+ <glossdef>
+  <para>returns a list of all existing tables in this database</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>querylist()</glossterm>
+ <glossdef>
+  <para>returns a list of all existing queries in this database</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>formlist()</glossterm>
+ <glossdef>
+  <para>returns a list of all existing forms in this database</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>reportlist()</glossterm>
+ <glossdef>
+  <para>returns a list of all existing reports in this database</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_table([name[,presentation]])</glossterm>
+ <glossdef>
+  <para>returns a new table object of type <xref linkend="hk_datasource"/> (read and write)
+</para><para>Parameter 'name': the name of the table
+</para><para>Parameter 'presentation': a presentation object (either a form or a report) that administers this table.
+In most cases you don't have to set this parameter.
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_resultquery([presentation])</glossterm>
+ <glossdef>
+<para>returns a new resultquery object of type <xref linkend="hk_datasource"/> (readonly)
+</para><para>Parameter 'presentation': a presentation object (either a form or a report) that administers this query.
+In most cases you don't have to set this parameter.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_actionquery()</glossterm>
+ <glossdef>
+  <para>returns a <xref linkend="hk_actionquery"/> object. It can execute SQL statements that don't return data and are only successful or not successful (e.g. CREATE TABLE)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>load_datasource(name[,query [,presentation]])</glossterm>
+ <glossdef>
+  <para> a convenience function for new_table and new_resultquery, that loads an existing datasource</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>delete_table(tablename [,interactive])</glossterm>
+ <glossdef>
+  <para>deletes a table. Returns True if successful.
+</para><para>Parameter 'tablename': the name of the table
+</para><para>Parameter 'interactive': if set to interactive and the function fails, warning message appears. Possible values
+<itemizedlist mark="bullet">
+<listitem><para>hk_class.noninteractive</para></listitem>
+<listitem><para>hk_class.interactive</para></listitem>
+</itemizedlist>
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>table_exists(tablename)</glossterm>
+ <glossdef>
+  <para>returns true if the table 'tablename' exists</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>query_exists(queryname)</glossterm>
+ <glossdef>
+  <para>returns true if the query 'queryname' exists</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>new_formvisible()</glossterm>
+ <glossdef>
+  <para>returns a new form object for the current GUI. If you want to display a new form within the GUI, use this function. If the application is a MDI application, the form will be embedded within the main application window.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_dialogformvisible()</glossterm>
+ <glossdef>
+  <para>nearly the same as the above function, but the form will not be embedded in the main application window. Such a form can be used as a dialog in combination with <xref linkend="hk_form"/>'s show_asdialog() method.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_reportvisible()</glossterm>
+ <glossdef>
+  <para>returns a new report object for the current GUI. If you want to display a new report within the GUI, use this function. If the application is a MDI application, the report will be embedded within the main application window.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_tablevisible()</glossterm>
+ <glossdef>
+  <para>returns a new table object for the current GUI. If you want to display a new table within the GUI, use this function. If the application is a MDI application, the table will be embedded within the main application window.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_queryvisible()</glossterm>
+ <glossdef>
+  <para>returns a new query object for the current GUI. If you want to display a new query within the GUI, use this function. If the application is a MDI application, the query will be embedded within the main application window.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>copy_table(fromdatasource,[schema_and_data[,replacetable[,ask]]])</glossterm>
+ <glossdef>
+  <para> creates a new table and uses an existing datasource as a template
+<itemizedlist mark="bullet">
+<listitem><para><emphasis>fromdatasource</emphasis> the datasource object of type <xref linkend="hk_datasource"/> which is used as a template</para></listitem>
+<listitem><para><emphasis>schema_and_data</emphasis> if true the table will be created and the data copied, if false the data will be not copied</para></listitem>
+<listitem><para><emphasis>replacetable</emphasis> see parameter ask for details</para></listitem>
+<listitem><para><emphasis>ask</emphasis> ask=true and replacetable=true   => you will be warned before overwriting an old table</para><para>ask=true and replacetable=false  => a new name will be asked</para><para>
+         ask=false and replacetable=true  => an old table will be overwritten without warning</para><para>
+         ask=false and replacetable=false => copy_table immediately stops and returns false, if a table already exists
+</para></listitem>
+</itemizedlist>
+
+
+
+
+</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section id="hk_datasource" xreflabel="hk_datasource">
+<title>hk_datasource</title>
+<para>
+ hk_datasource is the basic class which represents a resultquery or a table of a database.
+  Never create this table directly. Use the hk_database.new_table() method instead.
+</para><para>
+Inherits from <xref linkend="hk_data"/>.
+</para>
+<para>
+  Two types of this class can be distinguished. Tables and resultqueries.
+</para>
+<para>
+
+ Resultqueries are queries with
+  a SELECT - SQL-statement. The resulting data is readonly.
+</para>
+<para>
+
+ Tables are a special form of resultqueries. The SQL-statement is fixed ("SELECT * FROM &lt;tablename>),
+  but the resulting dataset can be edited. To reduce the number of rows you can use the function set_filter() and set_temporaryfilter().
+  To order the rows use the functions set_sorting() and set_temporarysorting().
+</para>
+<para>
+A datasource manages <xref linkend="hk_column"/> objects, which allows you to modify the data of the datasource.
+See function column_by_name() for more information.</para><para>
+The datasource can be enabled with enable() and disabled by calling disable().
+
+<figure><title>hk_datasource data methods</title>
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>set_name(n)</glossterm>
+ <glossdef>
+  <para>sets the name of the datasource</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>name()</glossterm>
+ <glossdef>
+  <para>returns the name of the datasource</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_sql(statement [,rawsql [,registerchange]])</glossterm>
+ <glossdef>
+  <para>set your own SQL statement, that will be executed when you enable the datasource. If this datasource is of type "table" the SQL statement will be automatically created.
+ Parameters:</para>
+<para>
+ 's' is the sql statement, 'rawsql': if true the sql statement will used unmodified (otherwise it may be changed,e.g identifier delimiters, text delimiters etc. ),
+ 'registerchange': if this class is part of a hk_presentation object (i.e. a form or a report) and registerchange
+ is true, then the changes will be stored when the hk_presentation object is closed.
+ sorting, filtering or depending on statements). So it is possible to execute driver specific
+ Returns true, if it is a valid SQL-Select statement and false if it is a query which does not contain the "SELECT" statement, i.e. SHOW FIELDS in Mysql.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>sql()</glossterm>
+ <glossdef>
+  <para>returns the name of the datasource</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>backendsql()</glossterm>
+ <glossdef>
+  <para>returns the SQL statement as it is sent to the SQL server</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>is_rawsql()</glossterm>
+ <glossdef>
+  <para>returns true if the SQL statement is used unmodified</para>
+ </glossdef>
+</glossentry>
+
+
+
+
+
+<glossentry>
+ <glossterm>goto_row(rownumber)</glossterm>
+ <glossdef>
+  <para>moves the row selector (row cursor) to 'rownumber'</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>goto_first()</glossterm>
+ <glossdef>
+  <para> move the row selector to the first row. All depending objects
+ will be informed (visible objects, depending datasources etc)
+  True if success, else False.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>goto_last()</glossterm>
+ <glossdef>
+  <para> move the row selector to the last row. All depending objects
+ will be informed (visible objects, depending datasources etc)
+  True if success, else False.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>goto_next()</glossterm>
+ <glossdef>
+  <para> move the row selector to the next row. All depending objects
+ will be informed (visible objects, depending datasources etc)
+  True if success, else False.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>goto_previous()</glossterm>
+ <glossdef>
+   <para> move the row selector to the previous row. All depending objects
+ will be informed (visible objects, depending datasources etc)
+  True if success, else False.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>row_position()</glossterm>
+ <glossdef>
+  <para>returns the row number of the current row</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>max_rows()</glossterm>
+ <glossdef>
+  <para>returns the total number of existing rows </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>enable()</glossterm>
+ <glossdef>
+  <para> If hk_connection is connected, this method will enable the datasource. The SQL-Statement in @ref SQL
+ will be executed. If the SQL-statement is ok, the resulting data can be reached via the columns returned by columns(). You can browse
+ the data by using the methods goto_row(), goto_first(),
+ goto_last(), goto_next() and goto_previous().
+ returns True if enable() was successful.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>disable()</glossterm>
+ <glossdef>
+  <para> if the datasource is enabled, this function will disable it. The columnlist will be deleted.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_enabled(e)</glossterm>
+ <glossdef>
+  <para>convenience function: if e is true the datasource will be enabled by calling enable()
+ else it will disable the datasource by calling disable().
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>is_enabled()</glossterm>
+ <glossdef>
+  <para> returns True if  the datasource is enabled.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>column_by_name(name)</glossterm>
+ <glossdef>
+  <para>returns an <xref linkend="hk_column"/> object of the column with the name 'name'</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>store_changed_data()</glossterm>
+ <glossdef>
+  <para>if the data of the actual row has changed you can manually send the changes to the SQL Server
+ by calling this function. The function will be called automatically before the datasource disables
+ or the row selector will be moved to another row.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>database()</glossterm>
+ <glossdef>
+  <para>returns the <xref linkend="hk_database"/> object, to which this datasource belongs</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>datasource_used()</glossterm>
+ <glossdef>
+  <para> returns True if a <xref linkend="hk_visible"/> object or a depending datasource is using this datasource,
+ else returns False
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>setmode_insertrow()</glossterm>
+ <glossdef>
+  <para> brings the datasource in insertmode. To add a new row call this function, set the data of the new row
+ as usual in the columns (i.e.with hk_column::as_string ) and finally call
+ either setmode_normal or store_changed_data.
+
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>setmode_normal()</glossterm>
+ <glossdef>
+  <para> This is the usual mode, where you can browse the data and if the data is not readonly change the data.
+</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>is_readonly()</glossterm>
+ <glossdef>
+  <para> Returns True if the datasource is read-only. If data can be written this function returns False.
+</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>set_readonly(r)</glossterm>
+ <glossdef>
+  <para>If the datasource is of type ds_table you can allow or disallow data changes.
+</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+</figure>
+
+The following example shows how to move between rows in a datasource.  For this, create a button in the form and set a datasource.  Add the script
+to the "On click"-action.
+
+<example><title>rowposition</title>
+<programlisting>
+ds=hk_this.datasource()
+ds.goto_row(ds.row_position() + 2)
+</programlisting>
+</example>
+
+How to get a specific hk_column object can be seen in the following example.  For what you can do with this object, please see the next chapter.
+
+
+<example><title>find  a specific column</title>
+<programlisting>
+col=hk_this.datasource().column_by_name("author")
+</programlisting>
+</example>
+
+
+
+
+
+
+<figure><title>hk_datasource filter and sorting methods</title>
+<blockquote>
+
+<glosslist>
+
+<glossentry>
+ <glossterm>set_filter(filter[,registerchange])</glossterm>
+ <glossdef>
+  <para>It is possible to filter only specific rows from a datasource by setting this filter.
+ just add the conditions with this function.
+ The parameter 'filter has the same syntax as a SQL statement in the 'WHERE' section, but without the word 'WHERE'
+ </para><para>
+ The parameter 'registerchange' : if this class is part of a hk_presentation object (i.e. a form or a report) and registerchange
+ is True, then the changes will be stored when the hk_presentation object is closed.
+ </para><para>
+ Example: SELECT * from addresses WHERE city="Mnchen", so you would call set_filter("city=\"Mnchen\"");
+ </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>filter()</glossterm>
+ <glossdef>
+  <para>returns the filter string set with set_filter()</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_temporaryfilter(temporaryfilter)</glossterm>
+ <glossdef>
+  <para> a temporary filter just work like a normal filter (see set_filter() ), but have to be manually activated with
+ set_use_temporaryfilter(). When the datasource is loaded with loaddata() temporaryfilters are deactivated by default.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>temporaryfilter()</glossterm>
+ <glossdef>
+  <para>returns the temporary filter string</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_use_temporaryfilter(use)</glossterm>
+ <glossdef>
+  <para>If 'use' is set to True the temporary filter is used, else it it is not used. Attention: this will be only used next time when the datasource will be enabled.
+  If the datasource is already enabled, first disable() the datasource and then enable() it again.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>use_temporaryfilter()</glossterm>
+ <glossdef>
+  <para>returns True if the temporary filter is used, else False is returned</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>clear_filter([registerchange])</glossterm>
+ <glossdef>
+  <para>deletes the filter, which was set with set_filter()</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_sorting(order[,registerchange])</glossterm>
+ <glossdef>
+  <para>It is possible to sort the datasource. Just add the conditions with this function.
+ 'order' has the same syntax as a SQL statement in the "ORDER BY" section, but without the words "ORDER BY".
+</para><para>
+ 'registerchange': if this class is part of a hk_presentation object (i.e. a form or a report) and registerchange
+ is true, then the changes will be stored when the hk_presentation object is closed.
+</para><para>
+ Example: SELECT * from addresses ORDER BY city DESC , so you would call set_sorting("city DESC");
+ </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>sorting()</glossterm>
+ <glossdef>
+  <para>returns the sorting string set with set_sorting()</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_temporarysorting(temporarysorting)</glossterm>
+ <glossdef>
+<para>temporary sorting just works like normal sorting (see set_sorting() ), but has to be manually activated with
+ set_use_temporarysorting().
+</para>
+  </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>temporarysorting()</glossterm>
+ <glossdef>
+  <para>returns the temporary sorting string set with set_temporarystring()</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_use_temporarysorting(use)</glossterm>
+ <glossdef>
+  <para>If 'use' is set to True the temporary sorting string is used, else it it is not used. Attention: this will be only used next time when the datasource will be enabled.
+  If the datasource is already enabled, first disable() the datasource and then enable() it again.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>use_temporarysorting()</glossterm>
+ <glossdef>
+  <para>returns True if the temporary sorting string is used, else False is returned</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>clear_sorting([registerchange])</glossterm>
+ <glossdef>
+  <para>deletes the sorting order, which was set with set_order()</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+</figure>
+
+
+
+<figure><title>hk_datasource  structure definition methods</title>
+<blockquote>
+
+
+<glosslist>
+<glossentry>
+ <glossterm>setmode_createtable</glossterm>
+ <glossdef>
+  <para>If you want to create a new table first  bring the table in createmode. Define new columns with
+ new_column. Afterwards you can create the table by calling create_table_now
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>setmode_altertable</glossterm>
+ <glossdef>
+  <para>If you want to alter an existing table first  bring the table in altermode. Define new columns with
+ new_column. Alter it with alter_column and delete a column by calling alter_column.
+ Afterwards you can alter the table by calling @ref alter_table_now
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_column</glossterm>
+ <glossdef>
+  <para> if this datasource is of type "table" and in mode "create" or "alter" you can
+ create a new column to define its parameters.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>alter_column(col [, name=NULL [,hk_column::enum_columntype* newtype=NULL [,long* size=NULL [,const hk_string* defaultvalue=NULL [,const bool* primary=NULL, [const bool* notnull=NULL ]]]]]])</glossterm>
+ <glossdef>
+  <para> if this datasource is of type "table" and in mode "alter" you can
+ alter an existing column. NULL values mean, that this part will not be changed
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>delete_column(col)</glossterm>
+ <glossdef>
+  <para>if this datasource is of type "table" and in mode "alter" you can
+ delete an existing column.Just enter the name here.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>create_table_now(void);</glossterm>
+ <glossdef>
+  <para> After defining a new table with setmode_createtable and new_column this function
+ creates physically the table
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>alter_table_now()</glossterm>
+ <glossdef>
+  <para> After altering an existing table with setmode_altertable, new_column
+ ,alter_column and delete_column this function
+ alters physically the table
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>mode()</glossterm>
+ <glossdef>
+  <para>returns the mode in which the datasource is. Valid values are:{mode_normal,mode_createtable,mode_altertable,mode_disabled,mode_insertrow,mode_deleterow,mode_unknown}
+</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+</figure>
+
+</para>
+
+
+
+<para>
+To create a table, first get  a new table object, set a name and set the mode to "createtable".
+</para>
+<para>
+After that you can define new columns.  First create it with new_column() and then set the type, name etc.
+When finished, create the table with create_table_now().
+<example><title>create table</title>
+<programlisting>
+>>> table = db.new_table()
+>>> table.set_name("my new table")
+>>> table.setmode_createtable()
+>>> col=table.new_column()
+>>> col.set_columntype(hk_column.auto_inccolumn)
+>>> col.set_name("id")
+>>> col=table.new_column()
+>>> col.set_name("name")
+>>> table.create_table_now()
+CREATE TABLE `my new table` ( `id` BIGINT(1) NOT NULL AUTO_INCREMENT ,
+ BIGINT, PRIMARY KEY ( `id` ) )
+Table created
+1
+</programlisting>
+</example>
+</para>
+
+<para>
+<figure><title>hk_datasource Index definition methods</title>
+<blockquote>
+
+
+<glosslist>
+<glossentry>
+ <glossterm>create_index(name [,unique [, list&lt;hk_string&gt;&amp; fields]])</glossterm>
+ <glossdef>
+  <para>Creates an index of a table. returns true if successful otherwise false. Make sure you have set the tablename first.
+ 'name' is the name of the new index, if 'unique' the index will be a unique index, and finally 'fields' is a string list of the field names, this index uses.
+ Function returns True if successful otherwise False;
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>alter_index(name [,unique [,list&lt;hk_string&gt;&amp; fields]])</glossterm>
+ <glossdef>
+  <para> Alters an existing index by first dropping it with drop_index() and then by trying to recreate it
+ with create_index().
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>drop_index(name)</glossterm>
+ <glossdef>
+  <para> Deletes an index of a table. Returns true if successful otherwise false;
+</para>
+ </glossdef>
+</glossentry>
+</glosslist>
+
+</blockquote>
+</figure>
+
+</para>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section id="hk_datetime" xreflabel="hk_datetime">
+<title>hk_datetime</title>
+<para>
+Transforms date and/or time formats to any other format
+</para>
+<para>
+Inherits from <xref linkend="hk_class"/>.
+
+<blockquote>
+<glosslist>
+
+<glossentry>
+ <glossterm>set_date(day,month,year)</glossterm>
+ <glossdef>
+  <para>sets the date as numbers</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>set_time(hour,minute,second)</glossterm>
+ <glossdef>
+  <para>sets the time as numbers</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>set_datetime(day,month,year,hour,minute,second)</glossterm>
+ <glossdef>
+  <para>sets the date and the time as numbers</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>set_date_asstring(s)</glossterm>
+ <glossdef>
+  <para>sets the date as a string formatted as set in set_dateformat</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>set_time_asstring(s)</glossterm>
+ <glossdef>
+  <para>sets the time as a string formatted as set in set_timeformat</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>set_datetime_asstring(s)</glossterm>
+ <glossdef>
+  <para>sets the datetime as a string formatted as set in set_datetimeformat</para>
+ </glossdef>
+</glossentry>
+
+
+
+<glossentry>
+ <glossterm>date_asstring()</glossterm>
+ <glossdef>
+  <para>returns the date as a string formatted as set in set_dateformat</para>
+ </glossdef>
+</glossentry>
+
+
+
+<glossentry>
+ <glossterm>datetime_asstring()</glossterm>
+ <glossdef>
+  <para>returns the datetime as a string formatted as set in set_datetimeformat</para>
+ </glossdef>
+</glossentry>
+
+
+
+<glossentry>
+ <glossterm>time_asstring()</glossterm>
+ <glossdef>
+  <para>returns the time as a string formatted as set in set_timeformat</para>
+ </glossdef>
+</glossentry>
+
+
+
+<glossentry>
+ <glossterm>set_dateformat(f)</glossterm>
+ <glossdef>
+  <para> Any string is valid. The values have to be separated with at least one character. The variables are
+ <simplelist columns="1">
+<member>D for the day</member> 
+ <member>M for the month</member>
+ <member>Y for the year</member>
+</simplelist>
+ example : "D.M.Y h:m:s"  shows the 4th of November 2001 at noon as 04.11.2001 12:00:00 and "Y-M-D h/m" as 2001-11-04 12/00
+</para>
+ </glossdef>
+</glossentry>
+
+
+
+<glossentry>
+ <glossterm>set_timeformat(f)</glossterm>
+ <glossdef>
+  <para> Any string is valid. The values have to be separated with at least one character. The variables are
+ <simplelist columns="1">
+ <member>h for the hour</member>
+ <member>m for the minute</member>
+ <member>s for the second</member>
+</simplelist>
+ example : "D.M.Y h:m:s"  shows the 4th of November 2001 at noon as 04.11.2001 12:00:00 and "Y-M-D h/m" as 2001-11-04 12/00
+</para>
+ </glossdef>
+</glossentry>
+
+
+
+<glossentry>
+ <glossterm>set_datetimeformat(f)</glossterm>
+ <glossdef>
+  <para> Any string is valid. The values have to be separated with at least one character. The variables are
+ <simplelist columns="1">
+<member>D for the day</member> 
+ <member>M for the month</member>
+ <member>Y for the year</member>
+ <member>h for the hour</member>
+ <member>m for the minute</member>
+ <member>s for the second</member>
+</simplelist>
+ example : "D.M.Y h:m:s"  shows the 4th of November 2001 at noon as 04.11.2001 12:00:00 and "Y-M-D h/m" as 2001-11-04 12/00
+</para>
+ </glossdef>
+</glossentry>
+
+
+
+
+
+
+<glossentry>
+ <glossterm>day()</glossterm>
+ <glossdef>
+  <para>returns the day</para>
+ </glossdef>
+</glossentry>
+
+
+
+<glossentry>
+ <glossterm>month()</glossterm>
+ <glossdef>
+  <para>returns the month</para>
+ </glossdef>
+</glossentry>
+
+
+
+<glossentry>
+ <glossterm>year()</glossterm>
+ <glossdef>
+  <para>returns the year</para>
+ </glossdef>
+</glossentry>
+
+
+
+<glossentry>
+ <glossterm>hour()</glossterm>
+ <glossdef>
+  <para>returns the hour</para>
+ </glossdef>
+</glossentry>
+
+
+
+
+<glossentry>
+ <glossterm>minute()</glossterm>
+ <glossdef>
+  <para>returns the minute</para>
+ </glossdef>
+</glossentry>
+
+
+
+<glossentry>
+ <glossterm>second()</glossterm>
+ <glossdef>
+  <para>returns the second</para>
+ </glossdef>
+</glossentry>
+
+
+
+
+<glossentry>
+ <glossterm>difference(datetime)</glossterm>
+ <glossdef>
+  <para>returns the difference in seconds,negative values say that this object is contains a time before 'datetime'</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+
+
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="hk_drivermanager" xreflabel="hk_drivermanager">
+<title>hk_drivermanager</title>
+<para>
+hk_drivermanager handles the database drivers. You need just one object of this type for your whole application.
+</para><para>
+Inherits from <xref linkend="hk_class"/>.
+<blockquote>
+<glosslist>
+
+<glossentry>
+ <glossterm>driverlist()</glossterm>
+ <glossdef><para>returns a list of all available database drivers</para>
+</glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_connection(drivername)</glossterm>
+ <glossdef><para>creates a new object of type <xref linkend="hk_connection"/>.
+ If 'drivername' is not set a dialog appears to ask for the database driver.
+ </para>
+</glossdef>
+</glossentry>
+
+
+</glosslist>
+
+</blockquote>
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section id="hk_dsboolean" xreflabel="hk_dsboolean">
+<title>hk_dsboolean</title>
+<para>Base class for boolean fields.
+</para>
+<para>
+Inherits from <xref linkend="hk_dsdatavisible"/>.
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section id="hk_dscombobox" xreflabel="hk_dscombobox">
+<title>hk_dscombobox</title>
+<para>
+ Base class for combobox fields. Just set the datasource and the column (defined in the parent class <xref linkend="hk_dsdatavisible"/>).
+ To fill the listbox with values set the datasource which contains the wished values with
+ set_listdatasource. The columnname of the row which should be displayed in the listbox
+ Must be set with set_viewcolumn(). The row which contains the data to be written has to
+ be specified with set_listcolumn().
+
+</para>
+<para>
+Inherits from <xref linkend="hk_dsdatavisible"/>.
+</para>
+<para>
+
+
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>set_listdatasource(list)</glossterm>
+ <glossdef>
+  <para>
+   Comboboxes need 2 datasources. One (the normal) datasource is set with set_datasource() and stores the values in a field.
+   The second datasource contains a list of possible values for this field.
+
+</para><para>'list': the <xref linkend="hk_datasource"/> object, which contains the values displayed in the combobox
+
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>listdatasource()</glossterm>
+ <glossdef>
+  <para>returns the list datasource <xref linkend="hk_datasource"/> object.
+</para>
+ </glossdef>
+</glossentry>
+
+
+ <glossentry>
+ <glossterm>set_listpresentationdatasource(list)</glossterm>
+ <glossdef>
+  <para>
+if this combobox is part of a hk_presentation object (i.e. a  form) you can set the listdatasource by its unique presentation number
+</para>
+ </glossdef>
+</glossentry>
+
+
+ <glossentry>
+ <glossterm>listpresentationdatasource()</glossterm>
+ <glossdef>
+  <para>
+  returns the unique presentation number.
+</para>
+ </glossdef>
+</glossentry>
+
+
+
+
+
+<glossentry>
+ <glossterm>set_viewcolumnname()</glossterm>
+ <glossdef>
+  <para>The column of the listdatasource which will be displayed in the combobox
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>viewcolumnname()</glossterm>
+ <glossdef>
+  <para>returns the view columnname.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_listcolumnname()</glossterm>
+ <glossdef>
+  <para>The column containing the equivalent key to the column set with set_column()
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>listcolumnname()</glossterm>
+ <glossdef>
+  <para>returns the list column name.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_mode()</glossterm>
+ <glossdef>
+  <para>If the comboboxmode is set to 'combo' it reacts like a normal datasource. If set to 'selector' the datasource will be moved
+  to the selected row in the datasource. You then just have to add the listcolumnname
+ <itemizedlist mark="bullet">
+ <listitem><para>combo</para></listitem>
+ <listitem><para>selector</para></listitem>
+ </itemizedlist>
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>mode()</glossterm>
+ <glossdef>
+  <para>returns the mode
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>viewcolumn()</glossterm>
+ <glossdef>
+  <para>returns the hk_column object representing the viewcolumn
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>listcolumn()</glossterm>
+ <glossdef>
+  <para>returns the hk_column object representing the listcolumn
+</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+
+
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section id="hk_dsdatavisible" xreflabel="hk_dsdatavisible">
+<title>hk_dsdatavisible</title>
+<para>
+This is the base class for visible widgets that provides
+ access to a specific column and its data. To use visible
+ objects you have to set the datasource with set_datasource() and the column with set_columnname().
+</para><para>
+Inherits from <xref linkend="hk_dsvisible"/>.
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>set_columnname(columnname [,registerchange])</glossterm>
+ <glossdef>
+  <para>column name in the datasource(). If there is no column with this name the widget will not be enabled
+ </para><para>
+ Parameter 'column': the wished column
+ </para><para>
+ Parameter 'registerchange': If this object will be displayed on a form you can decide whether changing the column name
+ should mark the form as changed (then it will be saved when closed). Default is "true".
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>columnname()</glossterm>
+ <glossdef>
+  <para>returns the column name string</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>column()</glossterm>
+ <glossdef>
+  <para>returns the used <xref linkend="hk_column"/> object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_defaultvalue(def[,registerchange])</glossterm>
+ <glossdef>
+  <para>Sets the default value. The default value will be used in insert mode.
+</para><para>Parameter 'def': the new default value
+</para><para>Parameter 'registerchange': if true and this widget is part of a form the new default value
+ will be stored when closing the form.
+ The following variables are available:
+<itemizedlist mark="bullet">
+<listitem><para>%NOW% the actual date, time or datetime, depending on the fieldtype. Default ist datetime</para></listitem>
+<listitem><para> %NOWDATE% the actual date</para></listitem>
+<listitem><para> %NOWTIME% the actual time</para></listitem>
+<listitem><para> %TRUE% the driver specific true value.</para></listitem>
+<listitem><para> %FALSE% the driver specific false value.</para></listitem>
+</itemizedlist>
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>defaultvalue()</glossterm>
+ <glossdef>
+  <para>returns the default value, but variables are replaced by its values
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>raw_defaultvalue()</glossterm>
+ <glossdef>
+  <para>returns the default value as set with set_defaultvalue, without replacing the variables</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>reset_default([registerchange])</glossterm>
+ <glossdef>
+  <para>resets the default value. After that no default value will be used</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_numberformat([use_numberseparator[, precision[,registerchange]]])</glossterm>
+ <glossdef>
+  <para>Sets the definition how to format number strings.
+  </para><para>Parameter 'use_numberseparator': True or False. If true, this will use a thousand separator if your locale set
+  defines one. E.g. in Germany the number 3.000,5  means three thousand and a half. The dot is the thousands separator. Of course
+  the used character is depending on your locale definition.
+  </para><para>Parameter 'precision': The number of digits used to represent values smaller than 1.
+
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>use_numberseparator()</glossterm>
+ <glossdef>
+  <para>returns True if the number separator is used</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>precision()</glossterm>
+ <glossdef>
+  <para>returns the number of digits</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>value_at(row)</glossterm>
+ <glossdef>
+  <para>returns the formatted string in  the column at row position 'row'</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>value()</glossterm>
+ <glossdef>
+  <para>returns the displayed string (the current value)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_value(value)</glossterm>
+ <glossdef>
+  <para>sets the current value,where 'value' is a string. If  a column is set, the datasource will be changed, if not it will be only displayed</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+	<glossterm>find(from_rownumber,to_rownumber,searchtext[,wholephrase[,casesensitive[,backwards]]])</glossterm>
+	<glossdef>
+		<para>searches for a specific value in a column, returns the row number if found, hk_datasource.max_rows()+1 if not found</para>
+	</glossdef>
+</glossentry>
+
+<glossentry>
+	<glossterm>find(searchtext[,wholephrase[,casesensitive[,backwards]]])</glossterm>
+	<glossdef>
+		<para>searches for a specific value in a column, returns the row number if found, hk_datasource.max_rows()+1 if not found.
+		This version searches all rows of a datasource.
+ </para>
+	</glossdef>
+</glossentry>
+
+
+</glosslist>
+</blockquote>
+
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+<section id="hk_dsgrid" xreflabel="hk_dsgrid">
+<title>hk_dsgrid</title>
+<para>base class  for widgets which show multi column and multi row data in a grid. Its main task is to manage
+gridcolumns of type <xref linkend="hk_dsgridcolumn"/> objects.
+</para><para>
+The grid can either automatically handle which gridcolumns should be shown. The exact handling can be
+defined with set_enablingbehaviour().  If you want to define the gridcolumns yourself use
+set_hold_rowdefinition(),clear_gridcolumn() and set_gridcolumns().
+
+</para>
+<para>
+Inherits from <xref linkend="hk_dsvisible"/>.
+</para>
+<para>
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>gridcolumn(col)</glossterm>
+ <glossdef>
+  <para> returns the <xref linkend="hk_dsgridcolumn"/> object at position number 'col'
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>gridcolumn(identifiername)</glossterm>
+ <glossdef>
+  <para> returns the <xref linkend="hk_dsgridcolumn"/> object with the identifier name 'identifiername'. Per default the gridcolumn does not have an identifier name, it has to be set manually.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>columnscount(void)</glossterm>
+ <glossdef>
+  <para>returns the number of columns shown in the grid</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_gridcolumnwidth(column, newwidth)</glossterm>
+ <glossdef>
+  <para>sets the new width 'newwidth' of gridcolumn number 'column'.
+ </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_gridcolumns(columnnamelist)</glossterm>
+ <glossdef>
+  <para>you can manually set the gridcolumn definition.
+ 'columnnamelist' is the new defintion of the gridcolumns, all values in this definition will be used</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>clear_gridcolumn()</glossterm>
+ <glossdef>
+  <para>deletes the gridcolumn definition.</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>set_hold_rowdefinition(hold)</glossterm>
+ <glossdef>
+  <para>If true and you change the row definitions (i.e. column size) after disabling and reenabling
+ your definitions still exist, if false the rows will be newly built. Default is true.
+ See also set_enablingbehaviour().
+</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>set_enablingbehaviour(add_col,del_col)</glossterm>
+ <glossdef>
+  <para> If set_hold_rowdefinition() is true, this function defines what exactly to do during enabling
+ If 'add_col' if true, columns of the datasource will be added to the grid if no equivalent gridcolumn exists.
+ Default is false.
+ If  'del_col' if true, gridcolumns will be removed if no equivalent columns in the datasource exist. Default is false.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>save_query([name[,ask]])</glossterm>
+ <glossdef>
+  <para>Saves the datasource and grid definition in a file in directory ~/.hk_classes/DRIVERNAME/HOST/DATABASENAME
+with the extenstion '.hk_query' and using the name 'name'. If 'ask' is True the user
+will be asked before overwriting an existing file.
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>load_query()</glossterm>
+ <glossdef>
+  <para>loads the query definition with the name that is defined with set_name()</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>save_table([name[,ask]])</glossterm>
+ <glossdef>
+  <para>Saves the grid definition in a file in directory ~/.hk_classes/DRIVERNAME/HOST/DATABASENAME
+with the extenstion '.hk_table' and using the name 'name'. If 'ask' is True the user
+will be asked before overwriting an existing file.
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>load_table()</glossterm>
+ <glossdef>
+  <para>loads the table with the name that is defined with set_name()</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>change_columnposition(from,to)</glossterm>
+ <glossdef>
+  <para>It's possible to change the order of the columns.
+  'from' is the original position of the gridcolumn,
+  'to' is the target position.
+ </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_rowheight(newheight [,registerchange])</glossterm>
+ <glossdef>
+  <para>Sets the height of all rows in the grid.
+ </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>rowheight()</glossterm>
+ <glossdef>
+  <para>returns the current rowheight.
+ </para>
+ </glossdef>
+</glossentry>
+
+
+
+
+</glosslist>
+</blockquote>
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section id="hk_dsgridcolumn" xreflabel="hk_dsgridcolumn">
+<title>hk_dsgridcolumn</title>
+<para>
+Represents a column in a <xref linkend="hk_dsgrid"/>.
+</para>
+<para>
+Inherits from <xref linkend="hk_dsdatavisible"/>.
+</para>
+<para>
+<glosslist>
+<glossentry>
+ <glossterm>	set_displayname(name[,registerchange)
+</glossterm>
+ <glossdef>
+  <para> the text displayed in the column header. If not set the columnname will be displayed
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>
+         displayname()
+</glossterm>
+ <glossdef>
+  <para>returns the text displayed in the column header</para>
+ </glossdef>
+</glossentry>
+
+ <glossentry>
+ <glossterm>       set_columntype(type[,registerchange])
+</glossterm>
+ <glossdef>
+  <para>Sets the gridcolumn type. The following values are possible:
+  <itemizedlist mark="bullet">
+  <listitem><para>columnedit</para></listitem>
+  <listitem><para>columnbool</para></listitem>
+  <listitem><para>columncombo</para></listitem>
+  </itemizedlist>
+If 'type' is columnedit the celldata will be shown as a string.
+If 'type' is columnbool the celldata will be shown as a boolean field.
+If 'type' is columcombo the celldata will be handled in a combobox during edit.
+
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>        columntype()
+</glossterm>
+ <glossdef>
+  <para>returns the gridcolumntype</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>        set_columnwidth(newwidth [,registerchange])
+</glossterm>
+ <glossdef>
+  <para>sets the displaywidth of the gridcolumn</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>        columnwidth()
+</glossterm>
+ <glossdef>
+  <para>returns the displaywidth</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>        set_listdatasource( datasourcename[,is_table[,registerchange]])
+</glossterm>
+ <glossdef>
+  <para>If type() is columncombo the cell will be handled in a combobox. See <xref linkend="hk_dscombobox"/> for details.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>        listdatasource()
+</glossterm>
+ <glossdef>
+  <para>If type() is columncombo the cell will be handled in a combobox. See <xref linkend="hk_dscombobox"/> for details.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>        listdatasourcename()
+</glossterm>
+ <glossdef>
+  <para>If type() is columncombo the cell will be handled in a combobox. See <xref linkend="hk_dscombobox"/> for details.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>        listdatasource_is_table()
+</glossterm>
+ <glossdef>
+  <para>returns True if the listdatasource is  a table (and thus read- and writeable)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>        set_viewcolumnname(viewcolumn[,registerchange])
+</glossterm>
+ <glossdef>
+  <para>If type() is columncombo the cell will be handled in a combobox. See <xref linkend="hk_dscombobox"/> for details.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>        viewcolumnname()
+</glossterm>
+ <glossdef>
+  <para>If type() is columncombo the cell will be handled in a combobox. See <xref linkend="hk_dscombobox"/> for details.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>        set_listcolumnname( listcolumn[,registerchange])
+</glossterm>
+ <glossdef>
+  <para>If type() is columncombo the cell will be handled in a combobox. See <xref linkend="hk_dscombobox"/> for details.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>        listcolumnname()
+</glossterm>
+ <glossdef>
+  <para>If type() is columncombo the cell will be handled in a combobox. See <xref linkend="hk_dscombobox"/> for details.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>        set_listpresentationdatasource(number [, registerchange])
+</glossterm>
+ <glossdef>
+  <para>If type() is columncombo the cell will be handled in a combobox. See <xref linkend="hk_dscombobox"/> for details.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>        listpresentationdatasource()
+</glossterm>
+ <glossdef>
+  <para>If type() is columncombo the cell will be handled in a combobox. See <xref linkend="hk_dscombobox"/> for details.</para>
+ </glossdef>
+</glossentry>
+</glosslist>
+
+</para>
+</section>
+
+
+
+
+<section id="hk_dsimage" xreflabel="hk_dsimage">
+<title>hk_dsimage</title>
+<para>
+hk_dsimage is a data-aware image object. It does not store the images in a database. It loads them from a directory. The column contains the name of the image. If the image name contains a full path, this will be used.
+If it is only the image name the path set with set_path() will be used. If this is empty, the image will be searched in the current directory.
+</para>
+<para>
+Inherits from <xref linkend="hk_dsdatavisible"/>.
+</para>
+<para>
+<glosslist>
+<glossentry>
+ <glossterm>	set_path(p[,registerchange [,force_setting]])
+</glossterm>
+ <glossdef>
+  <para>Sets the path where the images are stored.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>
+         path()
+</glossterm>
+ <glossdef>
+  <para>returns the path</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>
+         set_zoom(zoom[,registerchange[,force_setting]])
+</glossterm>
+ <glossdef>
+  <para>Zooms the image in percent. Values of 0 or smaller than 0 means 'fit to size',
+100 (%) is the original size
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>
+         zoom()
+</glossterm>
+ <glossdef>
+  <para>returns the current zoom</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="hk_dslineedit" xreflabel="hk_dslineedit">
+<title>hk_dslineedit</title>
+<para>
+Represents a lineedit field in a form.
+</para>
+<para>
+Inherits from <xref linkend="hk_dsdatavisible"/>.
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section id="hk_dsmemo" xreflabel="hk_dsmemo">
+<title>hk_dsmemo</title>
+<para>
+Represents a memo field in a form.
+</para>
+<para>
+Inherits from <xref linkend="hk_dsdatavisible"/>.
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="hk_dsmodevisible" xreflabel="hk_dsmodevisible">
+<title>hk_dsmodevisible</title>
+<para>
+Base class for  <xref linkend="hk_presentation"/>. It handles the modechange from designmode to viewmode.
+</para>
+<para>
+Inherits from <xref linkend="hk_dsvisible"/>.
+</para>
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>set_mode(mode)</glossterm>
+ <glossdef>
+  <para>
+ If mode is 'designmode' then you can define or alter a presentation else
+  the data will be shown. Possible values are:
+  <itemizedlist mark="bullet">
+  <listitem><para>designmode</para></listitem>
+  <listitem><para>viewmode</para></listitem>
+  </itemizedlist>
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_designmode()</glossterm>
+ <glossdef>
+  <para>convenience function for set_mode(hk_dsmodevisible.designmode)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_viewmode()</glossterm>
+ <glossdef>
+  <para>convenience function for set_mode(hk_dsmodevisible.viewmode)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>mode()</glossterm>
+ <glossdef>
+  <para>returns the current mode</para>
+ </glossdef>
+</glossentry>
+</glosslist>
+</blockquote>
+
+
+
+
+
+<para>
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="hk_dsrowselector" xreflabel="hk_dsrowselector">
+<title>hk_dsrowselector</title>
+<para>
+</para>
+<para>
+Inherits from <xref linkend="hk_dsvisible"/>.
+</para>
+</section>
+
+
+
+
+
+
+
+<section id="hk_dsvisible" xreflabel="hk_dsvisible">
+<title>hk_dsvisible</title>
+<para>
+ This is the base class for visible widgets which do not need access to the data,
+ but do have to know whether or not a datasource is enabled and which row is the actual one.
+</para><para>
+Inherits from <xref linkend="hk_visible"/>.
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>set_datasource(datasource)</glossterm>
+ <glossdef>
+  <para>Sets the datasource object of type <xref linkend="hk_datasource"/>.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>datasource()</glossterm>
+ <glossdef>
+  <para>return the datasource object of type <xref linkend="hk_datasource"/>.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_presentationdatasource(number [,registerchange])</glossterm>
+ <glossdef>
+  <para>presentation objects (either a form or a report) administer all datasources themselves. Datasources then can be
+  identified by  a unique number.
+  If this visible object is part of a presentation object, you can set this number with this function  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>presentationdatasource()</glossterm>
+ <glossdef>
+  <para>returns the number of the used presentation datasource, or -1 if none is set.</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+
+</para>
+</section>
+
+
+
+
+
+
+
+
+<section id="hk_font" xreflabel="hk_font">
+<title>hk_font</title>
+<para>
+Represents a font object.
+</para><para>
+Inherits from <xref linkend="hk_class"/>.
+<blockquote>
+<glosslist>
+
+<glossentry>
+ <glossterm>hk_font(fontname,fontsize)</glossterm>
+ <glossdef>
+  <para>Constructor to create a font object. E.g.  myfont=hk_font("Arial",12)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_font(fontname,fontsize)</glossterm>
+ <glossdef>
+  <para>Allows to change the fontdefinition. E.g. myfont.set_font("Courier",16)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>fontname()</glossterm>
+ <glossdef>
+  <para>returns the font name.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>fontsize()</glossterm>
+ <glossdef>
+  <para>returns the font size.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_bold()</glossterm>
+ <glossdef>
+  <para>If the font should be displayed in bold you can set it with myfont.set_bold(True)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>bold()</glossterm>
+ <glossdef>
+  <para>returns True if the font is displayed in bold.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_italic()</glossterm>
+ <glossdef>
+  <para>If the font should be displayed in italic you can set it with myfont.set_italic(True)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>italic()</glossterm>
+ <glossdef>
+  <para>returns True if the font is displayed in italic.</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+
+</para>
+</section>
+
+
+
+
+
+
+
+<section id="hk_form" xreflabel="hk_form">
+<title>hk_form</title>
+<para>
+Hk_form represents a form.
+</para><para>
+Inherits from <xref linkend="hk_presentation"/>.
+</para><para>
+
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>load_form([name])</glossterm>
+ <glossdef>
+  <para>Loads the form from a file, where
+'name' is the name of the form
+ </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>save_form([name[,ask]])</glossterm>
+ <glossdef>
+  <para> Saves the form to a file, where 'name' is the name of the file.
+ if 'ask'  is true and the form already exists you will be asked before the old form will be overwritten.
+ Returns True if successful else False.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>masterform()</glossterm>
+ <glossdef>
+  <para> if this is a subform it will return master form it belongs to.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_grid()</glossterm>
+ <glossdef>
+  <para>The form has to be in design mode to use this function! The function will create a new
+ <xref linkend="hk_dsgrid"/> in the upper left corner and returns it if successful.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_lineedit()</glossterm>
+ <glossdef>
+<para>The form has to be in design mode to use this function! The function will create a new
+ <xref linkend="hk_dslineedit"/> in the upper left corner and returns it if successful.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_bool()</glossterm>
+ <glossdef>
+<para>The form has to be in design mode to use this function! The function will create a new
+ <xref linkend="hk_dsboolean"/> in the upper left corner and returns it if successful.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_combobox()</glossterm>
+ <glossdef>
+<para>The form has to be in design mode to use this function! The function will create a new
+ <xref linkend="hk_dscombobox"/> in the upper left corner and returns it if successful.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_button()</glossterm>
+ <glossdef>
+<para>The form has to be in design mode to use this function! The function will create a new
+ <xref linkend="hk_button"/> in the upper left corner and returns it if successful.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_rowselector()</glossterm>
+ <glossdef>
+<para>The form has to be in design mode to use this function! The function will create a new
+ <xref linkend="hk_dsrowselector"/> in the upper left corner and returns it if successful.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_memo()</glossterm>
+ <glossdef>
+<para>The form has to be in design mode to use this function! The function will create a new
+ <xref linkend="hk_dsmemo"/> in the upper left corner and returns it if successful.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_label()</glossterm>
+ <glossdef>
+<para>The form has to be in design mode to use this function! The function will create a new
+ <xref linkend="hk_label"/> in the upper left corner and returns it if successful.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_designsize(width,height[,registerchange])</glossterm>
+ <glossdef>
+  <para> Sets the real size of the form. If you designed a form in i.e. 800x600 resolution and want to watch it
+  with 1024x768 resolution, set this to 1024x768. Dynamic sized visible objects will be resized. All objects
+  will be positioned new.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>get_visible(number)</glossterm>
+ <glossdef>
+  <para>returns an existing visible object of type <xref linkend="hk_visible"/> identified by a unique identifier number.
+You should use <xref linkend="get_pyvisible"/> instead, so typecasting is not required any more.
+<important>
+<para>To find this number, click on the object.  In the property editor you can see the number in field 'Id'.
+</para>
+</important>
+To change the <xref linkend="hk_visible"/> object to the type you need there are some type casting functions
+<figure><title>Type casting</title>
+<blockquote>
+<itemizedlist mark="bullet">
+ <listitem><para><xref linkend="hk_button"/> cast_button(<xref linkend="hk_visible"/>)</para></listitem>
+ <listitem><para><xref linkend="hk_dslineedit"/> cast_dslineedit(<xref linkend="hk_visible"/>)</para></listitem>
+ <listitem><para><xref linkend="hk_dsmemo"/> cast_dsmemo(<xref linkend="hk_visible"/>)</para></listitem>
+ <listitem><para><xref linkend="hk_dsgrid"/> cast_dsgrid(<xref linkend="hk_visible"/>)</para></listitem>
+ <listitem><para><xref linkend="hk_dscombobox"/> cast_dscombobox(<xref linkend="hk_visible"/>)</para></listitem>
+ <listitem><para><xref linkend="hk_dsboolean"/> cast_dsboolean(<xref linkend="hk_visible"/>)</para></listitem>
+ <listitem><para><xref linkend="hk_dsvisible"/> cast_dsvisible(<xref linkend="hk_visible"/>)</para></listitem>
+ <listitem><para><xref linkend="hk_form"/> cast_form(<xref linkend="hk_visible"/>)</para></listitem>
+ <listitem><para><xref linkend="hk_report"/> cast_report(<xref linkend="hk_visible"/>)</para></listitem>
+</itemizedlist>
+</blockquote>
+</figure>
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>get_visible(name)</glossterm>
+ <glossdef>
+  <para>returns an existing visible object of type <xref linkend="hk_visible"/> identified by a unique text identifier.
+  This is a user-defined unique identifier and can be set in the property editor.You should use <xref linkend="get_pyvisible"/> instead, so typecasting is not required any more.</para>
+ </glossdef>
+</glossentry>
+
+
+
+
+<glossentry>
+ <glossterm id="get_pyvisible" xreflabel="get_pyvisible">get_pyvisible(number)</glossterm>
+ <glossdef>
+  <para>returns an existing visible object identified by a unique identifier number. There is no need for typecasting.
+<important>
+<para>To find this number, click on the object.  In the property editor you can see the number in field 'Id'.
+</para>
+</important>
+
+  </para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>get_pyvisible(name)</glossterm>
+ <glossdef>
+  <para>returns an existing visible object identified by a unique text identifier. There is no need for typecasting.
+
+  </para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry id="set_focus" xreflabel="set_focus">
+ <glossterm >set_focus(widget)</glossterm>
+ <glossdef>
+  <para>will set the focus to 'widget'
+</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry id="set_taborder"  xreflabel="set_taborder">
+ <glossterm >set_taborder( taborder[,registerchange [, forcesetting]])</glossterm>
+ <glossdef>
+  <para>sets the tab order (the focus order) of the widgets.
+'taborder' is a  list of the presentation numbers of the widgets, which should get the focus
+</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>goto_taborder_next()</glossterm>
+ <glossdef>
+  <para>will move the the focus to the next widget (see <xref linkend="set_taborder"/> )
+</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>goto_taborder_previous()</glossterm>
+ <glossdef>
+  <para>will move the the focus to the previous widget (see <xref linkend="set_taborder"/> )
+</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>goto_taborder_first()</glossterm>
+ <glossdef>
+  <para>will move the the focus to the first widget (see <xref linkend="set_taborder"/> )
+</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>goto_taborder_last()</glossterm>
+ <glossdef>
+  <para>will move the the focus to the last widget (see <xref linkend="set_taborder"/> )
+</para>
+ </glossdef>
+</glossentry>
+
+
+
+
+<glossentry>
+ <glossterm>show_asdialog([parentform])</glossterm>
+ <glossdef>
+  <para> Displays this form as a modal dialog. Use this method only, if this form was created via the  hk_database.new_dialogformvisible() method. You can optionally set the parentform on which this form will always stay on top.
+</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>screen_width()</glossterm>
+ <glossdef>
+  <para> return the screen width
+</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>screen_height()</glossterm>
+ <glossdef>
+  <para> returns the screen height
+</para>
+ </glossdef>
+</glossentry>
+
+
+</glosslist>
+</blockquote>
+
+</para>
+<para>
+The next program shows you how to start a form:
+<example><title>displaying  a form</title>
+<programlisting>
+myform=hk_this.datasource().database().new_formvisible()
+myform.load_form("authorform")
+myform.set_mode(myform.viewmode)
+</programlisting>
+</example>
+</para>
+</section>
+
+
+
+
+
+
+
+
+<section id="hk_key" xreflabel="hk_key">
+<title>hk_key</title>
+<para>
+base class for a pressed key
+</para>
+<para>
+Inherits from <xref linkend="hk_class"/>.
+
+<blockquote>
+<glosslist>
+
+<glossentry>
+ <glossterm>keynumber key()</glossterm>
+ <glossdef>
+  <para>returns the key number. The key codes are compatible to Qt of Trolltech. See the <ulink  url="http://doc.trolltech.com/3.3/qkeyevent.html">QT documentation</ulink>for details.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>  int state() const;
+</glossterm>
+ <glossdef>
+  <para>the state codes can be combined via 'OR'. It returns whether the Alt or the Ctrl key is pressed. Possible values are state_normal,state_shift,state_ctrl, state_alt </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>string text()</glossterm>
+ <glossdef>
+  <para>if the key represents a printable key it will be returned as text()</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>accept_key()</glossterm>
+ <glossdef>
+  <para>returns whether or not this key will be accepted (and used as input)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_accept_key(bool)</glossterm>
+ <glossdef>
+  <para>if true the key will be accepted, if set to false the key will be ignored</para>
+ </glossdef>
+</glossentry>
+
+
+</glosslist>
+</blockquote>
+
+
+</para>
+</section>
+
+
+
+
+
+<section id="hk_label" xreflabel="hk_label">
+<title>hk_label</title>
+<para>
+Base class for labels in forms.
+</para>
+<para>
+Inherits from <xref linkend="hk_visible"/>.
+</para>
+</section>
+
+
+
+
+
+
+
+<section id="hk_mimetype" xreflabel="hk_mimetype">
+<title>hk_mimetype</title>
+<para>
+ tries to detect the mimetype of a file or a memory block.
+</para><para>
+Inherits from <xref linkend="hk_class"/>.
+</para>
+<para>
+
+<blockquote>
+<glosslist>
+
+<glossentry><glossterm>hk_mimetype()</glossterm>
+ <glossdef><para>in most cases you should use the static members 'mimetype' directly, so there should be no need 
+to create this object</para></glossdef></glossentry>
+
+<glossentry><glossterm>mimetype(data)</glossterm>
+ <glossdef><para>returns the mimetype of the memory block "data" of type struct_raw_data</para></glossdef></glossentry>
+
+<glossentry><glossterm>mimetype(filename)</glossterm>
+ <glossdef><para>returns the mimetype of the file "filename"</para></glossdef></glossentry>
+
+<glossentry><glossterm>set_mimetypedatabasefile(databasefile)</glossterm>
+ <glossdef><para>you can set the mimetype database file which includes the magic definitions, if not set '/usr/share/misc/magic' is used</para></glossdef></glossentry>
+
+<glossentry><glossterm>mimetypedatabasefile()</glossterm>
+ <glossdef><para>returns the used mimetype database filename, an empty string if non has set</para></glossdef></glossentry>
+
+
+
+</glosslist>
+</blockquote>
+
+
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+<section id="hk_presentation" xreflabel="hk_presentation">
+<title>hk_presentation</title>
+<para>
+Both forms and reports inherit from hk_presentation.  The most import function of hk_presentation  to manage all needed datasources.
+New datasources are created with <emphasis>new_datasource()</emphasis>, existing datasources can be found with <emphasis>get_datasource()</emphasis>.
+</para>
+<para>
+Inherits from <xref linkend="hk_dsmodevisible"/>.
+</para>
+<para>
+
+<glosslist>
+
+<glossentry>
+ <glossterm>set_database(database)</glossterm>
+ <glossdef>
+  <para>sets the database object of type <xref linkend="hk_database"/></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>presentationtype()</glossterm>
+ <glossdef>
+  <para>Returns the type of the presentation. The following values are possibe:
+  <itemizedlist mark="bullet">
+  <listitem><para>form</para></listitem>
+  <listitem><para>report</para></listitem>
+  </itemizedlist>
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_name(name)</glossterm>
+ <glossdef>
+  <para>sets the name of the presentation</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>name()</glossterm>
+ <glossdef>
+  <para>returns the name of the presentation</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_datasource(name,is_query)</glossterm>
+ <glossdef>
+  <para>returns a new <xref linkend="hk_datasource"/> object with name 'name'. If 'is_query' is True it is a query object, else a table</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>get_datasource(number)</glossterm>
+ <glossdef>
+  <para>gets an existing datasource with the identification number 'number'</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>get_datasource(uniquename)</glossterm>
+ <glossdef>
+  <para>gets an existing datasource with the identification name 'name'</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>unique_datasourcename(number)</glossterm>
+ <glossdef>
+  <para>returns the unique datasourcename for the datasource with the identification number 'number'</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>clear_datasourcelist()</glossterm>
+ <glossdef>
+  <para>deletes all existing datasource objects in the presentation</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_sizetype(sizetype[,registerchange])</glossterm>
+ <glossdef>
+  <para>This function defines which metric system should be used. Allowed values are:
+  <itemizedlist mark="bullet">
+  <listitem><para>relative: the visible objects use size values from 0 to 10000 (100.00%), relative to the design size
+  of the presentation.</para></listitem>
+  <listitem><para>absolute: the visible objects use absolute size values (either in pixels or in one tenth of a millimeter)</para></listitem>
+  </itemizedlist>
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>sizetype()</glossterm>
+ <glossdef>
+  <para>returns the set sizetype</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_designsize(width, height [,registerchange])
+</glossterm>
+ <glossdef>
+  <para> Sets the logic size of the presentation.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>designheight()</glossterm>
+ <glossdef>
+  <para>returns the design height of the presentation</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>designwidth()</glossterm>
+ <glossdef>
+  <para>returns the design width of the presentation</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>has_changed()</glossterm>
+ <glossdef>
+  <para>returns whether the definition of this presentation has changed</para>
+ </glossdef>
+</glossentry>
+
+
+
+<glossentry>
+ <glossterm>load_module(modulename)</glossterm>
+ <glossdef>
+  <para>returns true if the module "modulename" could be successfully loaded, else returns false</para>
+ </glossdef>
+</glossentry>
+
+
+</glosslist>
+
+
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+<section id="hk_report" xreflabel="hk_report">
+<title>hk_report</title>
+<para>
+hk_report represents a report. It is a general report generator, that means it is able to not only print Postscript, hk_report is able
+to create any kind of text output. See set_reporttype().
+</para><para>
+A report is split in sections of type <xref linkend="hk_reportsection"/>. These sections contain the
+displayed data of type <xref linkend="hk_reportdata"/>. There are predefined sections:
+<itemizedlist mark="bullet">
+<listitem><para>the datasection, which is the only section, that has not a sibling.</para></listitem>
+<listitem><para>the pageheader section and the pagefooter section,</para></listitem>
+<listitem><para>the reportheader section and the reportfooter section.</para></listitem>
+</itemizedlist>
+Self defined sections are grouped in pairs (a header and a footer section), which will be managed by a container object of type <xref linkend="hk_reportsectionpair"/>.
+To create a new sectionpair use new_sectionpair() and new_sectionpair_at().
+</para><para>
+Inherits from <xref linkend="hk_presentation"/>.
+
+<glosslist>
+
+<glossentry>
+ <glossterm>get_reportdatavisible(number)</glossterm>
+ <glossdef>
+  <para>returns a <xref linkend="hk_reportdata"/> object identified by a unique identifier number</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>get_reportdatavisible(name)</glossterm>
+ <glossdef>
+  <para>returns a <xref linkend="hk_reportdata"/> object identified by a unique text identifier </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>load_report([name])</glossterm>
+ <glossdef>
+  <para>loads the report definition from a file, where 'name' is the name of the report</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>save_report([name [,ask]])</glossterm>
+ <glossdef>
+  <para> Saves the report to a file, where 'name' is the name of the file.
+ if 'ask'  is true and the report already exists you will be asked before the old report will be overwritten.
+ Returns True if successful else False.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>datasection()</glossterm>
+ <glossdef>
+  <para>returns the <xref linkend="hk_reportsection"/> object which represents the data section.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_sectionpair()</glossterm>
+ <glossdef>
+  <para>returns a new  <xref linkend="hk_reportsectionpair"/> object which embraces the other sections.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>new_sectionpair_at(position)</glossterm>
+ <glossdef>
+  <para>returns a new  <xref linkend="hk_reportsectionpair"/> object at position 'position. The most outside position is 0.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>move_sectionpair(originalposition,steps)</glossterm>
+ <glossdef>
+  <para>moves an existing <xref linkend="hk_reportsectionpair"/> relative to the other existing <xref linkend="hk_reportsectionpair"/> objects.
+  The 'actualposition' is the current position of the sectionpair to be moved
+ Parameter 'steps':positive values move it closer to the datasection, negative values move it away.
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>page_header()</glossterm>
+ <glossdef>
+  <para>returns the page header section of type <xref linkend="hk_reportsection"/>. The page header section will be printed
+  once at the beginning of every page.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>page_footer()</glossterm>
+ <glossdef>
+  <para>returns the page footer section of type <xref linkend="hk_reportsection"/>. The page footer section will be printed
+  at the end of every page.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>report_header()</glossterm>
+ <glossdef>
+  <para>returns the report header section of type <xref linkend="hk_reportsection"/>. The report header section
+  is printed once at the beginning of the report.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>report_footer()</glossterm>
+ <glossdef>
+  <para>returns the report footer section of type <xref linkend="hk_reportsection"/>.The report footer section
+  is printed once at the end of the report.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_firstpagenumber(number)</glossterm>
+ <glossdef>
+  <para>Set the starting pagenumber if the first page should not start with 1.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>firstpagenumber()</glossterm>
+ <glossdef>
+  <para>returns the first page number.</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>set_filename(name)</glossterm>
+ <glossdef>
+  <para>Sets the filename of the report. It will be used for the output of the report. If you don't give the report a name the report and use_standard_storagepath() is false
+  will be printed at the standard output. See also set_fileextension().
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>filename()</glossterm>
+ <glossdef>
+  <para>returns the filename</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_fileextension(extension)</glossterm>
+ <glossdef>
+  <para>The output filename will be completed with this extension, i.e. '.ps' for postscript files</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>fileextension()</glossterm>
+ <glossdef>
+  <para>returns the file extension.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_reporttype(name)</glossterm>
+ <glossdef>
+  <para>sets the report type 'name'. </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>reporttype()</glossterm>
+ <glossdef>
+  <para>returns the set report type</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>reporttypelist()</glossterm>
+ <glossdef>
+  <para>returns a list of all available report types.</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+
+
+
+Here is how to start a report:
+<example><title>displaying  a report</title>
+<programlisting>
+myreport=hk_this.datasource().database().new_reportvisible()
+myreport.load_report("complexreport")
+myreport.set_mode(myreport.viewmode)
+</programlisting>
+</example>
+</para>
+<para>
+A visible object in a report is of type hk_reportdata, which inherits from hk_dsdatavisible.  The main methods are
+<itemizedlist>
+<listitem><para>set_data(const hk_string&amp; d)</para></listitem>
+<listitem><para>hk_string data(void)</para></listitem>
+</itemizedlist>
+
+The data property contains the value that is displayed.  See the knodatutorial chapter "The report field" for details.
+</para>
+<para>
+The following example shows how to print numbers in different colours.  For this we use the "onprint" action
+
+<example><title>reportdata onprint</title>
+<programlisting>
+value=hk_this.column().asdouble()
+if value&lt;0:
+   hk_this.set_foregroundcolour(hk_red)
+else:
+   if value==0:
+       hk_this.set_foregroundcolour(hk_black)
+   else:
+      hk_this.set_foregroundcolour(hk_blue)
+</programlisting>
+</example>
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="hk_reportdata" xreflabel="hk_reportdata">
+<title>hk_reportdata</title>
+<para>
+Represents the data of a field within a section.
+
+
+</para><para>
+Inherits from <xref linkend="hk_dsdatavisible"/>.
+</para><para>
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>set_data(data [,registerchange])</glossterm>
+ <glossdef>
+  <para>Sets the data string, that should be printed. Available variables for data:
+<itemizedlist mark="bullet">
+<listitem><para>columnnames delimited by #, eg. #mycolumn#</para></listitem>
+<listitem><para>%XPOS%		the absolute value of the x-coordinate</para></listitem>
+<listitem><para>%YPOS%  	the absolute value of the y-coordinate</para></listitem>
+<listitem><para>%WIDTH%         the absolute value of the width</para></listitem>
+<listitem><para>%HEIGHT%        the absolute value of the height</para></listitem>
+<listitem><para>%RELXPOS%       the relative value of the x-coordinate</para></listitem>
+<listitem><para>%RELYPOS%       the relative value of the y-coordinate</para></listitem>
+<listitem><para>%RELWIDTH%      the relative value of the width</para></listitem>
+<listitem><para>%RELHEIGHT%     the relative value of the height</para></listitem>
+<listitem><para>%PAGENUMBER%     the number of the page</para></listitem>
+<listitem><para>%ABSOLUTEPAGENUMBER%     physical number of the page in file</para></listitem>
+<listitem><para>%ROWNUMBER%      the actual row number of the datasource</para></listitem>
+</itemizedlist>
+If you have set a column with set_columnname()  you have additionally the following variable names
+<itemizedlist mark="bullet">
+<listitem><para>%VALUE%          the value of the column defined with @ref set_columnname recoded</para></listitem>
+<listitem><para>%COLUMNNAME%      the recoded (with @ref hk_report::set_recodefunction ) name of the column</para></listitem>
+<listitem><para>%DATASOURCENAME%      the recoded (with @ref hk_report::set_recodefunction ) name of the datasource</para></listitem>
+<listitem><para>%COUNT%          the number of values</para></listitem>
+<listitem><para>%SUM%            the sum of all values</para></listitem>
+<listitem><para>%MIN%            the minimum value</para></listitem>
+<listitem><para>%MAX%            the maximum value</para></listitem>
+<listitem><para>%STDDEV%         standard deviation</para></listitem>
+<listitem><para>%STDDEVSAMPLE%   standard deviation of a sample</para></listitem>
+<listitem><para>%AVERAGE%        the average of all values</para></listitem>
+</itemizedlist></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>data()</glossterm>
+ <glossdef>
+  <para>returns the data</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_beforedata(bdata [,registerchange])</glossterm>
+ <glossdef>
+  <para>The value that will be printed immediately before the data. That can be escape sequences, delimiters etc. Example:
+  CSV files (comma separated values) usually have the following format: "data1","data2"
+  In this case the '"' would be printed before and after the data, so this would be defined with set_beforedata("\"") and set_afterdata("\"").
+  The "," is set with hk_reportsection.set_betweendata(","). Use this function only if hk_report.reporttype() is set to "Userdefined".
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>beforedata()</glossterm>
+ <glossdef>
+  <para>returns the value that will be printed immedialtely before the data.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_afterdata(adata [,registerchange])</glossterm>
+ <glossdef>
+  <para>The value that will be printed immediately after the data. That can be escape sequences, delimiters etc. Example:
+  CSV files (comma separated values) usually have the following format: "data1","data2"
+  In this case the '"' would be printed before and after the data, so this would be defined with set_beforedata("\"") and set_afterdata("\"").
+  The "," is set with hk_reportsection.set_betweendata(","). Use this function only if hk_report.reporttype() is set to "Userdefined".
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>afterdata()</glossterm>
+ <glossdef>
+  <para>returns the value that will be printed immedialtely after the data.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>actual_string()</glossterm>
+ <glossdef>
+  <para>returns the printed string. This function shouldn't be called from the user!</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>count()</glossterm>
+ <glossdef>
+  <para>returns the value that should be added to hk_report.offset</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_runningcount([ do_count,[registerchange]])</glossterm>
+ <glossdef>
+  <para>The values of the variables %SUM% %COUNT% %AVERAGE% %STDDEV% etc. can be relatively to the section.
+e.g. if the section is a uniquesection and it changes, all variables can be reset to 0 (default).
+ if 'do_count' is true these variables will change to global variables in the report and are not set to 0 when
+ the section changes.
+ </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>runningcount()</glossterm>
+ <glossdef>
+  <para>returns true if runningcount is set</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_topline([set_it [,registerchange]])</glossterm>
+ <glossdef>
+  <para>If 'set_it' is True a line should be painted above the data </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_bottomline([set_it [,registerchange]])</glossterm>
+ <glossdef>
+  <para>If 'set_it' is True a line should be painted below the data </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_leftline([set_it [,registerchange]])</glossterm>
+ <glossdef>
+  <para>If 'set_it' is True a line should be painted left of the data </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_rightline([set_it [,registerchange]])</glossterm>
+ <glossdef>
+  <para>If 'set_it' is True a line should be painted right of the data </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_diagonalluro([set_it [,registerchange]])</glossterm>
+ <glossdef>
+  <para>If 'set_it' is true a diagonal will be  painted from _l_inks _u_nten to _r_echts _o_ben (left down to right up) </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_diagonalloru([set_it [,registerchange]])</glossterm>
+ <glossdef>
+  <para>If 'set_it' is true a diagonal will be  painted from _l_inks _o_ben to _r_echts _u_nten (left up to right down) </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>topline()</glossterm>
+ <glossdef>
+  <para>returns true if a line at the top of the data is printed</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>bottomline()</glossterm>
+ <glossdef>
+  <para>returns true if a line at the bottom of the data is printed</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>leftline()</glossterm>
+ <glossdef>
+  <para>returns true if a line at the left of the data is printed</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>rightline()</glossterm>
+ <glossdef>
+  <para>returns true if a line at the right of the data is printed</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>diagonalloru()</glossterm>
+ <glossdef>
+  <para>returns true if a diagonal line from left top to right bottom is printed</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>diagonalluro()</glossterm>
+ <glossdef>
+  <para>returns true if a diagonal line from left bottom to right top is printed</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_frame(set_it)</glossterm>
+ <glossdef>
+  <para>convenience function: calls set_leftline(set_it),set_rightline(set_it)set_topline(set_it)set_bottomline(set_it)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_wordbreak(set_it)</glossterm>
+ <glossdef>
+  <para>If 'set_it' is true and the reporttype supports it, text will be written in more than one line if the width of the data field is too small </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>wordbreak()</glossterm>
+ <glossdef>
+  <para>returns true is set_wordbreak() is set</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_configurefunction(functionname)</glossterm>
+ <glossdef>
+  <para>internal function</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>configurefunctionstring()</glossterm>
+ <glossdef>
+  <para>returns the name of the configure function</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section id="hk_reportsection" xreflabel="hk_reportsection">
+<title>hk_reportsection</title>
+<para>
+ hk_reportsection represents a section in a hk_report element. Within a section
+ you can define the outputdata,use it as headers for your data and so in
+ If it is needed as a section header or footer use set_unique() in combination with  set_uniquecolumn()
+ It also can contain subreports.</para><para>
+ Usually section come as "twins", a header section and a footer section belonging to each other,
+ see hk_reportsectionpair for details
+<example>
+<title>Creating  a CSV export file based on a report</title>
+<para> Example: Defining a CVS output (no first row with columnnames)</para>
+ <programlisting>
+ p_driver=hk_drivermanager()
+ connect=p_driver.new_connection("mysql")
+ connect.set_user("root")
+ connect.set_host("localhost")
+ connect.set_password("my_password")
+ connect.connect()
+ database=connect.new_database("exampledb")
+ e=hk_report()
+ e.set_reporttype("Userdefined")
+ datasrc =e.new_datasource("authors",True)#loads an existing query
+ e.set_presentationdatasource(datasrc)
+ section=e.datasection()
+ section.set_default_data("\"%VALUE%\"")# define " before and after the value of a column
+ section.set_betweendata(" , ")# a comma separated list
+ section.set_sectionend("\n")# one row per datarow
+ e.execute()
+ </programlisting>
+</example>
+</para><para>
+ You can use the variables
+
+<itemizedlist mark="bullet">
+<listitem><para>%PAGENUMBER%         the number of the page</para></listitem>
+<listitem><para>%ABSOLUTEPAGENUMBER% physical number of the page in file</para></listitem>
+</itemizedlist>
+
+</para><para>
+Inherits from <xref linkend="hk_dsdatavisible"/>.
+
+</para>
+<para>
+
+<blockquote>
+<glosslist>
+
+<glossentry><glossterm>set_unique([is_unique[,endsection]])</glossterm>
+ <glossdef><para> If the section should be printed just once per block and not for each datarow use this function.
+ If 'unique' true if this section should be printed once. If 'endsection' true if this section should
+ not be printed as a header. Instead it will be printed  at the end of the block. Sections created with <xref linkend="hk_reportsectionpair"/>
+ are already set correctly.
+</para></glossdef></glossentry>
+
+<glossentry><glossterm>unique()</glossterm>
+ <glossdef><para>returns True if this is a unique section.</para></glossdef></glossentry>
+
+<glossentry><glossterm>new_data()</glossterm>
+ <glossdef><para>returns a new object of type <xref linkend="hk_reportdata"/>.</para></glossdef></glossentry>
+
+<glossentry><glossterm>data_at(position)</glossterm>
+ <glossdef><para>returns  an existing object of type <xref linkend="hk_reportdata"/>.</para></glossdef></glossentry>
+
+<glossentry><glossterm>actual_string()</glossterm>
+ <glossdef><para>Internal function. Returns the string that will be printed.</para></glossdef></glossentry>
+
+<glossentry><glossterm>set_sectionbegin(sbegin)</glossterm>
+ <glossdef><para>The sectionbegin will be printed as a header of the section (before the data).</para></glossdef></glossentry>
+
+<glossentry><glossterm>sectionbegin()</glossterm>
+ <glossdef><para>returns the section begin string.</para></glossdef></glossentry>
+
+<glossentry><glossterm>set_sectionend()</glossterm>
+ <glossdef><para>The sectionend will be printed as a footer of the section (after the data)</para></glossdef></glossentry>
+
+<glossentry><glossterm>sectionend()</glossterm>
+ <glossdef><para>returns the section end string.</para></glossdef></glossentry>
+
+<glossentry><glossterm>set_betweendata()</glossterm>
+ <glossdef><para>A string that will be printed between two datasegments defined with new_data().
+ E.g. If you want a comma separated list you would need set_betweendata(" , ").
+</para></glossdef></glossentry>
+
+<glossentry><glossterm>betweendata()</glossterm>
+ <glossdef><para>returns the value that will be printed between 2 data fields</para></glossdef></glossentry>
+
+<glossentry><glossterm>new_uniquevalue(justcheck)</glossterm>
+ <glossdef><para>
+ returns True if this section is a unique section and this section has to be printed.
+ If 'justcheck' is True no variables(lastvalue) will be changed
+ </para></glossdef></glossentry>
+
+<glossentry><glossterm>endsection()</glossterm>
+ <glossdef><para>Returns True if this section is a unique section and will be printed behind the data.
+ </para></glossdef></glossentry>
+
+<glossentry><glossterm>set_automatic_create_data(automatic)</glossterm>
+ <glossdef><para>If set true and you haven't defined any data with new_data() it will automatically create the data
+ objects.</para></glossdef></glossentry>
+
+<glossentry><glossterm>set_new_page_after_section(npage)</glossterm>
+ <glossdef><para>If 'npage' is True  a new page will be started after printing this section. Usually this function should only be used
+ in combination with set_unique() as an  endsection.
+ </para></glossdef></glossentry>
+
+<glossentry><glossterm>new_page_after_section()</glossterm>
+ <glossdef><para>returns true if a new page at the end of the section will be started.</para></glossdef></glossentry>
+
+<glossentry><glossterm>set_subreport(reportname [,before_data])</glossterm>
+ <glossdef><para>A complete  report can be printed within a section. If 'before_data' is
+  true the subreport will be printed before the data of this section will be printed, else
+  it will be printed after the data.
+ </para></glossdef></glossentry>
+
+<glossentry><glossterm>subreportname()</glossterm>
+ <glossdef><para>returns the name of the subreport</para></glossdef></glossentry>
+
+<glossentry><glossterm>subreport()</glossterm>
+ <glossdef><para>returns the subreport as a object of type <xref linkend="hk_report"/>.</para></glossdef></glossentry>
+
+<glossentry><glossterm>add_depending_fields(thisreport_field,subreport_field)</glossterm>
+ <glossdef><para>If you set a subreport with set_subreport() add the fields which are connected between the reports
+ </para></glossdef></glossentry>
+
+<glossentry><glossterm>clear_depending_fields()</glossterm>
+ <glossdef><para>Clears the field definition for subreports.</para></glossdef></glossentry>
+
+<glossentry><glossterm>depending_on_thisreportfields()</glossterm>
+ <glossdef><para>Returns a list of the connected fields of this report, which are connected to the subreport.</para></glossdef></glossentry>
+
+<glossentry><glossterm>depending_on_subreportfields()</glossterm>
+ <glossdef><para>Returns a list of the connected fields of the subreport, which are connected to this report.</para></glossdef></glossentry>
+
+<glossentry><glossterm>print_subreport_before_data()</glossterm>
+ <glossdef><para>returns True if the subreport will be printed before the data.</para></glossdef></glossentry>
+
+<glossentry><glossterm>reset_count()</glossterm>
+ <glossdef><para>Will set all COUNT, SUM, AVERAGE and so on variables to 0, if they are not "running counts" (which mean global
+ for the whole report).See <xref linkend="hk_reportdata"/> for details. Usually you dont't have to call this function
+ </para></glossdef></glossentry>
+
+<glossentry><glossterm>counts_as()</glossterm>
+ <glossdef><para></para></glossdef></glossentry>
+
+<glossentry><glossterm>set_default_reportdata(value)</glossterm>
+ <glossdef><para>The 'value' will be used as a default when a new data will be created with new_data()
+ The preset value is @VALUE@.
+ </para></glossdef></glossentry>
+
+<glossentry><glossterm>default_reportdata()</glossterm>
+ <glossdef><para></para></glossdef></glossentry>
+
+<glossentry><glossterm>set_default_beforereportdata(value)</glossterm>
+ <glossdef><para>The 'value' will be used as a default when a new data will be created with new_data()
+ </para></glossdef></glossentry>
+
+<glossentry><glossterm>default_beforereportdata()</glossterm>
+ <glossdef><para></para></glossdef></glossentry>
+
+<glossentry><glossterm>set_default_afterreportdata()</glossterm>
+ <glossdef><para>The 'value' will be used as a default when a new data will be created with new_data()
+ </para></glossdef></glossentry>
+
+<glossentry><glossterm>default_afterreportdata()</glossterm>
+ <glossdef><para></para></glossdef></glossentry>
+
+<glossentry><glossterm>report()</glossterm>
+ <glossdef><para>Returns the <xref linkend="hk_report"/> object this section belongs to.</para></glossdef></glossentry>
+
+<glossentry><glossterm>reportsectionpair()</glossterm>
+ <glossdef><para>Returns the <xref linkend="hk_reportsectionpair"/> object this section belongs to.</para></glossdef></glossentry>
+
+<glossentry><glossterm>set_offset(value)</glossterm>
+ <glossdef><para>The offset is additional space at the end of the section (totalsectionsize= size needed by reportdata + offset)
+</para></glossdef></glossentry>
+
+<glossentry><glossterm>offset()</glossterm>
+ <glossdef><para>Returns the offset.</para></glossdef></glossentry>
+
+<glossentry><glossterm>get_reportdatavisible(number)</glossterm>
+ <glossdef><para>Returns a <xref linkend="hk_reportdata"/> object identified by a unique identifier number. Searches only within this section.</para></glossdef></glossentry>
+
+<glossentry><glossterm>get_reportdatavisible(identifier)</glossterm>
+ <glossdef><para>Returns a <xref linkend="hk_reportdata"/> object identified by a unique text identifier. Searches only within this section.</para></glossdef></glossentry>
+
+
+</glosslist>
+</blockquote>
+
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="hk_reportsectionpair" xreflabel="hk_reportsectionpair">
+<title>hk_reportsectionpair</title>
+<para>
+ Contains a header and a footer section.
+</para><para>
+Inherits from <xref linkend="hk_class"/>.
+</para>
+<para>
+
+<blockquote>
+<glosslist>
+
+<glossentry><glossterm>headersection()</glossterm>
+ <glossdef><para>Returns the headersection of type <xref linkend="hk_reportsection"/>.</para></glossdef></glossentry>
+
+<glossentry><glossterm>footersection()</glossterm>
+ <glossdef><para>Returns the footersection of type <xref linkend="hk_reportsection"/>.</para></glossdef></glossentry>
+
+<glossentry><glossterm>set_sections([use_headersection[,use_footersection]])</glossterm>
+ <glossdef><para> Sets the sections.
+  If 'use_headersection' is true a header section will be created else destroyed.
+  If 'use_footersection' is true a footer section will be created else destroyed.
+</para></glossdef></glossentry>
+
+<glossentry><glossterm>init_sections()</glossterm>
+ <glossdef><para> Brings the sections into their initial state.
+</para></glossdef></glossentry>
+
+<glossentry><glossterm>set_columnname(colname)</glossterm>
+ <glossdef><para>The column name that will be set for grouping of the reportsections
+</para></glossdef></glossentry>
+
+<glossentry><glossterm>columnname()</glossterm>
+ <glossdef><para>returns the grouping column name</para></glossdef></glossentry>
+
+<glossentry><glossterm>set_ascending_order(ascending)</glossterm>
+ <glossdef><para>Sets whether the grouped data should be sorted in ascending or in descending order. If 'ascending' is True it is ascending else descending.</para></glossdef></glossentry>
+
+<glossentry><glossterm>ascending_order()</glossterm>
+ <glossdef><para>returns True if the sorting order is ascending.</para></glossdef></glossentry>
+
+
+</glosslist>
+</blockquote>
+
+
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+<section id="hk_subform" xreflabel="hk_subform">
+<title>hk_subform</title>
+<para>
+Represents a subform in a form. The subform itself is represented by a hk_form object returned by the subform() function.
+</para><para>
+Inherits from <xref linkend="hk_dsvisible"/>.
+</para>
+<para>
+
+<blockquote>
+<glosslist>
+
+<glossentry><glossterm>set_name(subformname [,registerchange])</glossterm>
+ <glossdef><para></para></glossdef></glossentry>
+
+<glossentry><glossterm>name()</glossterm>
+ <glossdef><para>returns the name of the subform</para></glossdef></glossentry>
+
+<glossentry><glossterm>subform()</glossterm>
+ <glossdef><para>returns the form object of type <xref linkend="hk_form"/> that will internally be used to display the subform</para></glossdef></glossentry>
+
+<glossentry><glossterm>add_depending_fields( subfield,masterfield [,registerchange])</glossterm>
+ <glossdef><para> 'subfield' is the fieldname of a column of the main subform-datasource which has to be connected to the main datasource of the master form.</para><para>
+ 'masterfield' is the columnname of the main masterform-datasource which value has to be equal with the value of subfield.
+ </para><para>
+ 'registerchange' if this class is part of a hk_presentation object (i.e. a form or a report) and registerchange
+ *is true, then the changes will be stored when the hk_presentation object is closed.
+</para></glossdef></glossentry>
+
+<glossentry><glossterm>clear_depending_fields([registerchange])</glossterm>
+ <glossdef><para>clears the list of fields set with add_depending_fields</para></glossdef></glossentry>
+
+<glossentry><glossterm>activate_subform()</glossterm>
+ <glossdef><para>when the subform is set during runtime, the subform will be loaded and displayed when calling this function</para></glossdef></glossentry>
+
+
+
+</glosslist>
+</blockquote>
+
+  <example>
+  <title>Loading a subform</title>
+
+<programlisting>
+subform=hk_thisform.get_pyvisible("mysubform")
+subform.clear_depending_fields()
+subform.add_depending_fields("subfield","masterfield",False)
+subform.set_name("Subformname")
+subform.activate_subform()</programlisting>
+  </example>
+
+</para>
+</section>
+
+
+
+
+
+
+
+
+
+<section id="hk_visible" xreflabel="hk_visible">
+<title>hk_visible</title>
+<para>
+Base class for visible widgets. It handles the geometry and the look of the widgets.
+</para><para>
+Inherits from <xref linkend="hk_class"/>.
+
+<figure><title>Geometry specific methods</title>
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>set_size(x, y,width,height)</glossterm>
+ <glossdef>
+  <para>lets you to set position and size of an object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_size(width,height)</glossterm>
+ <glossdef>
+  <para>lets you to set size of an object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_position(x,y)</glossterm>
+ <glossdef>
+  <para>lets you to set position of an object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_x(x)</glossterm>
+ <glossdef>
+  <para>lets you to set the horizontal position of an object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_y(y)</glossterm>
+ <glossdef>
+  <para>lets you to set the vertical position of an object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_width(width)</glossterm>
+ <glossdef>
+  <para>see set_size()</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_height(height)</glossterm>
+ <glossdef>
+  <para>see set_size()</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>x()</glossterm>
+ <glossdef>
+  <para>returns the x co-ordinate of the object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>y()</glossterm>
+ <glossdef>
+  <para>returns the y co-ordinate of the object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>width()</glossterm>
+ <glossdef>
+  <para>returns the width of the object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>height()</glossterm>
+ <glossdef>
+  <para>returns the height of the object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>key()</glossterm>
+ <glossdef>
+  <para>returns a object of type <xref linkend="hk_key"/>. You can use this during the action_on_key() action. In combination with the hk_keys 'set_accept_key()' method you can handle whether or not this key will be accepted as input.</para>
+
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>action_on_click(void)</glossterm>
+ <glossdef>
+  <para>triggers the on_click action</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>action_on_doubleclick(void)</glossterm>
+ <glossdef>
+  <para>triggers the on_doubleclick action</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>action_on_close(void)</glossterm>
+ <glossdef>
+  <para>triggers the on_close action</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>action_on_open(void)</glossterm>
+ <glossdef>
+  <para>triggers the on_open action</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>action_on_getfocus(void)</glossterm>
+ <glossdef>
+  <para>triggers the on_getfocus action</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>action_on_loosefocus(void)</glossterm>
+ <glossdef>
+  <para>triggers the on_loosefocus action</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>action_on_key(void)</glossterm>
+ <glossdef>
+  <para>triggers the on_key action</para>
+ </glossdef>
+</glossentry>
+
+
+</glosslist>
+ </blockquote>
+</figure>
+
+<figure><title>Look and Feel methods</title>
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>set_font(fontname,size)</glossterm>
+ <glossdef>
+  <para>sets the font, e.g. set_font("Arial",12)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_font(font)</glossterm>
+ <glossdef>
+  <para>sets the font of type <xref linkend="hk_font"/>, e.g.
+  <example>
+  <title>Setting a font</title>
+
+<programlisting>
+  myfont=hk_font("Arial",12)
+  set_font(myfont)
+</programlisting>
+  </example>
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>hk_font font()</glossterm>
+ <glossdef>
+  <para>returns a font object of type <xref linkend="hk_font"/></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_foregroundcolour(colour)</glossterm>
+ <glossdef>
+  <para>sets the foreground colour. 'colour' is of type <xref linkend="hk_colour"/>. The foreground colour will be used for fonts, frames etc
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>foregroundcolour()</glossterm>
+ <glossdef>
+  <para>returns the foreground colour, which is of type <xref linkend="hk_colour"/>. </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_backgroundcolour(colour)</glossterm>
+ <glossdef>
+  <para>sets the background colour. 'colour' is of type <xref linkend="hk_colour"/>.  This colour will be used to fill the whole background.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>hk_colour backgroundcolour()</glossterm>
+ <glossdef>
+  <para>returns the background colour, which is of type <xref linkend="hk_colour"/>.</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+</figure>
+
+<figure><title>Miscelleanous methods</title>
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>set_label(labeltext)</glossterm>
+ <glossdef>
+  <para>Every visible object has a label which will be displayed when necessary, i.e. a button usually needs
+ a label
+ </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>label()</glossterm>
+ <glossdef>
+  <para>returns the label string.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>type() </glossterm>
+ <glossdef>
+  <para>returns the type of this object. Possible values are:
+  <itemizedlist mark="bullet">
+ <listitem><para>boolean</para></listitem>
+ <listitem><para>button</para></listitem>
+ <listitem><para>combobox</para></listitem>
+ <listitem><para>grid</para></listitem>
+ <listitem><para>image</para></listitem>
+ <listitem><para>lineedit</para></listitem>
+ <listitem><para>memo</para></listitem>
+ <listitem><para>report</para></listitem>
+ <listitem><para>reportsection</para></listitem>
+ <listitem><para>reportdata</para></listitem>
+ <listitem><para>rowselector</para></listitem>
+ <listitem><para>textlabel</para></listitem>
+ <listitem><para>other</para></listitem>
+  </itemizedlist>
+  </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>identifier()</glossterm>
+ <glossdef>
+  <para>the identifier is a unique name within a presentation (either a form or a report) with which this object can be identified and
+thus located
+</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>presentation()</glossterm>
+ <glossdef>
+  <para>returns the parent hk_presentation object (either a form or a report)</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>show_widget()</glossterm>
+ <glossdef>
+  <para>if the object isn't visible yet (hidden with hide_widget()) it will be shown</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>hide_widget()</glossterm>
+ <glossdef>
+  <para>if the object is visible it will be hidden</para>
+ </glossdef>
+</glossentry>
+
+
+
+<glossentry>
+ <glossterm>close_widget()</glossterm>
+ <glossdef>
+  <para>The object if possible, otherwise it will be hidden</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_tooltip(tip[,registerchange[,force_setting]])</glossterm>
+ <glossdef>
+  <para>sets a little help text that will be shown when the mouse moves over the widget</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>tooltip()</glossterm>
+ <glossdef>
+  <para>returns the tooltip text</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_enabled(enabled [,registerchange [,force_setting]])</glossterm>
+ <glossdef>
+  <para>sets the visible oject 'enabled', means that it can accept keyboard commands</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>is_enabled()</glossterm>
+ <glossdef>
+  <para>returns True if the object is enabled</para>
+ </glossdef>
+</glossentry>
+
+
+
+</glosslist>
+</blockquote>
+</figure>
+
+The following example shows how to move the button within the form, how to change the colour and how to display different text
+on the button.
+
+
+
+<example><title>Changing colour and position</title>
+<programlisting>
+redcolour =hk_colour(255,0,0)
+greencolour =hk_colour(0,255,0)
+if hk_this.foregroundcolour().red()!=255:
+	hk_this.set_foregroundcolour(redcolour)
+	hk_this.set_backgroundcolour(greencolour)
+	hk_this.set_label("green button")
+else:
+	hk_this.set_foregroundcolour(greencolour)
+	hk_this.set_backgroundcolour(redcolour)
+	hk_this.set_label("red button")
+
+hk_this.set_position(hk_this.x()+50,hk_this.y()+10)
+</programlisting>
+</example>
+
+</para>
+</section>
+
+
+
+</chapter>
+</book>
+

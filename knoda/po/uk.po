@@ -1,0 +1,5116 @@
+# translation of knoda-uk.po to Ukrainian
+# Led <ledest@gmail.com>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: knoda-uk\n"
+"Report-Msgid-Bugs-To: http://sourceforge.net/p/knoda4/bugs/\n"
+"POT-Creation-Date: 2016-08-10 16:42+0200\n"
+"PO-Revision-Date: 2006-07-23 19:45+0300\n"
+"Last-Translator: Led <ledest@gmail.com>\n"
+"Language-Team: Ukrainian <uk@li.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.2\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Led"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "led@linux.kiev.ua"
+
+#. i18n: file: hk_kdeclasses/hk_kdedbdesigner.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdeclasses/hk_kdeform.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdeclasses/hk_kdeinterpreterdialog.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdeclasses/hk_kdemodule.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdeclasses/hk_kdequery.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdeclasses/hk_kdereport.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdeclasses/hk_kdetable.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdeclasses/knodamaindockwindowbase.rc:4
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdeformpart/hk_kdeformpartdesign.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdeformpart/hk_kdeformpartview.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdemodulepart/hk_kdemodulepart.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdequerypart/hk_kdequerypartqbe.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdequerypart/hk_kdequerypart.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdequerypart/hk_kdequerypartsql.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdereportpart/hk_kdereportpartdesign.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdereportpart/hk_kdereportpartview.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: hk_kdetablepart/hk_kdetablepart.rc:5
+#. i18n: ectx: Menu (file)
+#, fuzzy
+msgid "&File"
+msgstr "Ім'я файлу"
+
+#. i18n: file: hk_kdeclasses/hk_kdeform.rc:11
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdeclasses/hk_kdereport.rc:10
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdedbdesigner/hk_kdedbdesignerpart.rc:5
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdeformpart/hk_kdeformpartdesign.rc:9
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdegridpart/hk_kdegridpart.rc:5
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdemodulepart/hk_kdemodulepart.rc:10
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdeqbepart/hk_kdeqbepart.rc:5
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdequerypart/hk_kdequerypart.rc:10
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdequerypart/hk_kdequerypartsql.rc:10
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdereportpart/hk_kdereportpartdesign.rc:10
+#. i18n: ectx: Menu (edit)
+#. i18n: file: hk_kdetablepart/hk_kdetablepart.rc:11
+#. i18n: ectx: Menu (edit)
+#, fuzzy
+msgid "&Edit"
+msgstr "Редагувати"
+
+#. i18n: file: hk_kdeclasses/hk_kdeform.rc:15
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdeclasses/hk_kdemodule.rc:11
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdeclasses/hk_kdequery.rc:11
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdeclasses/hk_kdereport.rc:15
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdeclasses/hk_kdetable.rc:10
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdeformpart/hk_kdeformpartdesign.rc:39
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdeformpart/hk_kdeformpartview.rc:9
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdegridpart/hk_kdegridpart.rc:11
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdemodulepart/hk_kdemodulepart.rc:27
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdequerypart/hk_kdequerypartqbe.rc:10
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdequerypart/hk_kdequerypart.rc:29
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdequerypart/hk_kdequerypartsql.rc:28
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdereportpart/hk_kdereportpartdesign.rc:20
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdereportpart/hk_kdereportpartview.rc:10
+#. i18n: ectx: Menu (view)
+#. i18n: file: hk_kdetablepart/hk_kdetablepart.rc:16
+#. i18n: ectx: Menu (view)
+#, fuzzy
+msgid "&View"
+msgstr "&Перегляди"
+
+#. i18n: file: hk_kdeclasses/hk_kdereport.rc:18
+#. i18n: ectx: Menu (settings)
+#. i18n: file: hk_kdeclasses/knodamaindockwindowbase.rc:30
+#. i18n: ectx: Menu (settings)
+#. i18n: file: hk_kdemodulepart/hk_kdemodulepart.rc:30
+#. i18n: ectx: Menu (settings)
+#. i18n: file: hk_kdequerypart/hk_kdequerypartsql.rc:35
+#. i18n: ectx: Menu (settings)
+#. i18n: file: hk_kdereportpart/hk_kdereportpartdesign.rc:27
+#. i18n: ectx: Menu (settings)
+#. i18n: file: hk_kdereportpart/hk_kdereportpartview.rc:17
+#. i18n: ectx: Menu (settings)
+#, fuzzy
+msgid "&Settings"
+msgstr "&Зберегти настройки"
+
+#. i18n: file: hk_kdeclasses/knodamaindockwindowbase.rc:22
+#. i18n: ectx: Menu (database)
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:87
+msgid "&Database"
+msgstr "&База даних"
+
+#. i18n: file: hk_kdeformpart/hk_kdeformpartdesign.rc:23
+#. i18n: ectx: Menu (insert)
+#, fuzzy
+msgid "&Insert"
+msgstr "Вставити рядок"
+
+#: hk_classes/hk_button.cpp:116
+msgid "No datasource set!"
+msgstr "Не встановлено джерела даних!"
+
+#: hk_classes/hk_button.cpp:167
+msgid "Error while executing actionquery"
+msgstr "Помилка при виконанні операції"
+
+#: hk_classes/hk_button.cpp:564
+msgid "No such field %FIELD% in datasource %DATASOURCE%!"
+msgstr "Поле %FIELD% не визначене в джерелі даних %DATASOURCE%!"
+
+#: hk_classes/hk_class.cpp:191
+msgid "Question:"
+msgstr "Питання:"
+
+#: hk_classes/hk_class.cpp:193 hk_classes/hk_connection.cpp:318
+msgid "n=No            all other keys = yes"
+msgstr "n=Ні           всі інші клавіші = Так"
+
+#: hk_classes/hk_class.cpp:617
+msgid "Warning! Your local charset '%1' could not be set!"
+msgstr "Увага! Ваш локальний набір символів '%1'неможливо встановити!"
+
+#: hk_classes/hk_class.cpp:682
+msgid "Load file"
+msgstr "Завантажити файл:"
+
+#: hk_classes/hk_class.cpp:682
+msgid "Save file"
+msgstr "Зберегти файл"
+
+#: hk_classes/hk_class.cpp:684 hk_classes/hk_class.cpp:745
+msgid "Change directory (%1)"
+msgstr "Змінити каталог (%1)"
+
+#: hk_classes/hk_class.cpp:685
+msgid "Change file (%1)"
+msgstr "Змінити файл (%1)"
+
+#: hk_classes/hk_class.cpp:686 hk_classes/hk_class.cpp:746
+msgid "End input"
+msgstr "Закінчити введення"
+
+#: hk_classes/hk_class.cpp:698 hk_classes/hk_class.cpp:758
+msgid "Enter directory:"
+msgstr "Введіть каталог:"
+
+#: hk_classes/hk_class.cpp:704 hk_classes/hk_class.cpp:764
+msgid "No valid directory name"
+msgstr "Недопустиме ім'я каталогу"
+
+#: hk_classes/hk_class.cpp:712
+msgid "Enter filename:"
+msgstr "Введіть ім'я фала:"
+
+#: hk_classes/hk_class.cpp:716
+msgid "No valid file name"
+msgstr "Недопустиме ім'я фалу"
+
+#: hk_classes/hk_class.cpp:743
+msgid "Select directory:"
+msgstr "Виберіть каталог:"
+
+#: hk_classes/hk_colour.cpp:134 hk_classes/hk_colour.cpp:141
+msgid "red: "
+msgstr "червоний: "
+
+#: hk_classes/hk_colour.cpp:134 hk_classes/hk_colour.cpp:141
+msgid "green: "
+msgstr "зелений: "
+
+#: hk_classes/hk_colour.cpp:134 hk_classes/hk_colour.cpp:141
+msgid "blue: "
+msgstr "синій: "
+
+#: hk_classes/hk_column.cpp:267 hk_kdeclasses/hk_kdetabledesign.cpp:358
+msgid "Float"
+msgstr "З плаваючою точкою"
+
+#: hk_classes/hk_column.cpp:268 hk_kdeclasses/hk_kdetabledesign.cpp:368
+msgid "Small Float"
+msgstr "Мале з плаваючою точкою"
+
+#: hk_classes/hk_column.cpp:269 hk_kdeclasses/hk_kdetabledesign.cpp:331
+msgid "Integer"
+msgstr "Ціле"
+
+#: hk_classes/hk_column.cpp:270 hk_kdeclasses/hk_kdetabledesign.cpp:339
+msgid "Small Integer"
+msgstr "Мале ціле"
+
+#: hk_classes/hk_column.cpp:271 hk_kdeclasses/hk_kdetabledesign.cpp:294
+#: hk_kdeclasses/hk_kdetabledesign.cpp:623
+msgid "Text"
+msgstr "Текст"
+
+#: hk_classes/hk_column.cpp:272 hk_kdeclasses/hk_kdetabledesign.cpp:411
+msgid "Datetime"
+msgstr "Дата/час"
+
+#: hk_classes/hk_column.cpp:273 hk_kdeclasses/hk_kdetabledesign.cpp:422
+msgid "Timestamp"
+msgstr "Часова мітка"
+
+#: hk_classes/hk_column.cpp:274 hk_kdeclasses/hk_kdetabledesign.cpp:400
+msgid "Time"
+msgstr "Час"
+
+#: hk_classes/hk_column.cpp:275 hk_kdeclasses/hk_kdetabledesign.cpp:389
+msgid "Date"
+msgstr "Дата"
+
+#: hk_classes/hk_column.cpp:276 hk_kdeclasses/hk_kdetabledesign.cpp:378
+msgid "Bool"
+msgstr "Логічне"
+
+#: hk_classes/hk_column.cpp:277 hk_classes/hk_column.cpp:363
+#: hk_kdeclasses/hk_kdetabledesign.cpp:433
+msgid "Binary"
+msgstr "Двійкове"
+
+#: hk_classes/hk_column.cpp:278 hk_kdeclasses/hk_kdetabledesign.cpp:322
+msgid "Memo"
+msgstr "Мемо"
+
+#: hk_classes/hk_column.cpp:279 hk_kdeclasses/hk_kdetabledesign.cpp:349
+msgid "Auto Increment"
+msgstr "Лічильник"
+
+#: hk_classes/hk_column.cpp:280
+msgid "Unknown columntype"
+msgstr "Невизначений тип поля"
+
+#: hk_classes/hk_connection.cpp:200 hk_classes/hk_connection.cpp:454
+#: hk_classes/hk_connection.cpp:485 hk_classes/hk_connection.cpp:620
+#: hk_classes/hk_database.cpp:523 hk_classes/hk_database.cpp:582
+#: hk_classes/hk_datasource.cpp:297 hk_classes/hk_datasource.cpp:311
+#: hk_classes/hk_datasource.cpp:1430 hk_classes/hk_datasource.cpp:1612
+#: hk_classes/hk_datasource.cpp:1720 hk_classes/hk_datasource.cpp:4283
+#: hk_classes/hk_report.cpp:541 hk_dbaseclasses/hk_dbasedatabase.cpp:139
+#: hk_dbaseclasses/hk_dbasetable.cpp:385 hk_dbaseclasses/hk_dbasetable.cpp:528
+#: hk_dbaseclasses/hk_dbasetable.cpp:650 hk_dbaseclasses/hk_dbasetable.cpp:761
+#: hk_firebirdclasses/hk_firebirddatasource.cpp:871
+#: hk_firebirdclasses/hk_firebirddatasource.cpp:1094
+#: hk_mdbclasses/hk_mdbdatabase.cpp:93
+#: hk_paradoxclasses/hk_paradoxdatabase.cpp:143
+#: hk_paradoxclasses/hk_paradoxtable.cpp:675
+#: hk_paradoxclasses/hk_paradoxtable.cpp:810
+#: hk_paradoxclasses/hk_paradoxtable.cpp:1029
+#: hk_paradoxclasses/hk_paradoxtable.cpp:1147
+#: hk_sqlite3classes/hk_sqlite3database.cpp:148
+#: hk_sqlite3classes/hk_sqlite3datasource.cpp:782
+#: hk_sqlite3classes/hk_sqlite3datasource.cpp:947
+#: hk_sqliteclasses/hk_sqlitedatabase.cpp:152
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:358
+#: hk_kdeclasses/hk_kdeindexeditwindow.cpp:237
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:534
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:564
+#: hk_kdeclasses/hk_kdetabledesign.cpp:561
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:256
+msgid "Servermessage: "
+msgstr "Повідомлення сервера:"
+
+#: hk_classes/hk_connection.cpp:214
+msgid "Unable to connect to the SQL-Server!"
+msgstr "Неможливо приєднатися до SQL-сервера!"
+
+#: hk_classes/hk_connection.cpp:267
+msgid "Please give me the following information:"
+msgstr "Будь ласка, надайте мені наступну інформацію:"
+
+#: hk_classes/hk_connection.cpp:272
+msgid "Host: "
+msgstr "Хост: "
+
+#: hk_classes/hk_connection.cpp:278
+msgid "User: "
+msgstr "Користувач: "
+
+#: hk_classes/hk_connection.cpp:284
+msgid "Database name: "
+msgstr "Назва бази данних: "
+
+#: hk_classes/hk_connection.cpp:290
+msgid "Password (will not be displayed): "
+msgstr "Пароль (не буде показуватись)"
+
+#: hk_classes/hk_connection.cpp:304
+msgid "TCP Port: "
+msgstr "TCP Порт: "
+
+#: hk_classes/hk_connection.cpp:311
+msgid "SQL Delimiter: "
+msgstr "SQL розділювач:"
+
+#: hk_classes/hk_connection.cpp:317
+msgid "Emulate Boolean: "
+msgstr "Емулювати логічне: "
+
+#: hk_classes/hk_connection.cpp:426
+#: hk_firebirdclasses/hk_firebirdconnection.cpp:312
+msgid "The driver does not support creating new databases!"
+msgstr "Драйвер не підтримує створення бази даних!"
+
+#: hk_classes/hk_connection.cpp:432
+#: hk_firebirdclasses/hk_firebirdconnection.cpp:327
+msgid "Not connected to the server"
+msgstr "Не приєднаний до сервера"
+
+#: hk_classes/hk_connection.cpp:438
+#: hk_firebirdclasses/hk_firebirdconnection.cpp:333
+msgid "Bug: Actionquery could not be created"
+msgstr "Помилка: запит дії неможливо створити"
+
+#: hk_classes/hk_connection.cpp:454
+msgid "Database could not be created!"
+msgstr "База даних не може бути створена!"
+
+#: hk_classes/hk_connection.cpp:466 hk_dbaseclasses/hk_dbaseconnection.cpp:200
+#: hk_paradoxclasses/hk_paradoxconnection.cpp:242
+#: hk_sqlite3classes/hk_sqlite3connection.cpp:264
+#: hk_sqliteclasses/hk_sqliteconnection.cpp:257
+#: hk_xbaseclasses/hk_xbaseconnection.cpp:200
+msgid "Delete the database \"%DBNAME%\"?"
+msgstr "Видалити базу даних \"%DBNAME%\" ?"
+
+#: hk_classes/hk_connection.cpp:485
+msgid "Database could not be deleted!"
+msgstr "База даних не може бути видалена!"
+
+#: hk_classes/hk_connection.cpp:620
+msgid "Password could not be changed!"
+msgstr "Пароль не можливо змінити!"
+
+#: hk_classes/hk_connection.cpp:649
+msgid "New password (will not be displayed): "
+msgstr "Новий пароль (не буде показуватись): "
+
+#: hk_classes/hk_connection.cpp:654
+msgid "Reenter new password:"
+msgstr "Повторіть введення нового пароля:"
+
+#: hk_classes/hk_connection.cpp:680
+msgid "Unknown driver"
+msgstr "Невідомий драйвер"
+
+#: hk_classes/hk_connection.cpp:850 utilities/hk_dbcopyutility.cpp:24
+msgid "Copying tabledefinition: %FILE%"
+msgstr "Копіювання таблиці: %FILE%"
+
+#: hk_classes/hk_connection.cpp:851 utilities/hk_dbcopyutility.cpp:25
+msgid "Copying query: %FILE%"
+msgstr "Копіювання запиту: %FILE%"
+
+#: hk_classes/hk_connection.cpp:852 utilities/hk_dbcopyutility.cpp:26
+msgid "Copying form: %FILE%"
+msgstr "Копіювання форми: %FILE%"
+
+#: hk_classes/hk_connection.cpp:853 utilities/hk_dbcopyutility.cpp:27
+msgid "Copying report: %FILE%"
+msgstr "Копіювання звіту: %FILE%"
+
+#: hk_classes/hk_connection.cpp:876
+msgid "Please enter the name of the database:"
+msgstr "Будь ласка введіть ім'я бази даних:"
+
+#: hk_classes/hk_connection.cpp:971
+msgid "Can't create a new target database"
+msgstr "Неможливо створити нову цільову базу даних"
+
+#: hk_classes/hk_connection.cpp:972
+msgid "Can't create new tables"
+msgstr "Неможливо створити нові таблиці"
+
+#: hk_classes/hk_connection.cpp:973
+msgid "Field names will be truncated to %1 characters"
+msgstr "Імена полів буде скорочено до %1 символів"
+
+#: hk_classes/hk_connection.cpp:974
+msgid "Source database may contain proprietary field types"
+msgstr "Вихідна база даних може містити приватні типи полів"
+
+#: hk_classes/hk_connection.cpp:975
+msgid "Field names with other characters than [A-Za-z0-9] are not allowed"
+msgstr "Імена полів з символами, відмінними від [A-Za-z0-9], не дозволені"
+
+#: hk_classes/hk_connection.cpp:976
+msgid "Field names with non-ASCII characters are not supported"
+msgstr "Імена полів з не-ASCII символами не підтримуються"
+
+#: hk_classes/hk_connection.cpp:977
+msgid "Field names with space characters are not supported"
+msgstr "Імена полів з символами пробілів не підтримуються"
+
+#: hk_classes/hk_connection.cpp:980
+msgid "No 'char' field type"
+msgstr "Не 'символ' тип поля"
+
+#: hk_classes/hk_connection.cpp:981
+msgid "No 'integer' field type"
+msgstr "Не 'ціле' тип поля"
+
+#: hk_classes/hk_connection.cpp:982
+msgid "No 'smallinteger' field type"
+msgstr "Не 'мале-ціле' тип поля"
+
+#: hk_classes/hk_connection.cpp:983
+msgid "No 'floating' field type"
+msgstr "Не 'плаваючий' тип поля"
+
+#: hk_classes/hk_connection.cpp:984
+msgid "No 'smallfloating' field type"
+msgstr "Не 'малий-плаваючий' тип поля"
+
+#: hk_classes/hk_connection.cpp:986
+msgid "No 'autoincrement' field type"
+msgstr "Не 'автозростаючий' тип поля"
+
+#: hk_classes/hk_connection.cpp:987
+msgid "No 'boolean' field type"
+msgstr "Не 'булевий' тип поля"
+
+#: hk_classes/hk_connection.cpp:988
+msgid "No 'date' field type"
+msgstr "Не 'дата' тип поля"
+
+#: hk_classes/hk_connection.cpp:989
+msgid "No 'time' field type"
+msgstr "Не 'час' тип поля"
+
+#: hk_classes/hk_connection.cpp:990
+msgid "No 'datetime' field type"
+msgstr "Не 'дата-час' тип поля"
+
+#: hk_classes/hk_connection.cpp:991
+msgid "No 'binary' field type"
+msgstr "Не 'двійковий' тип поля"
+
+#: hk_classes/hk_connection.cpp:992
+msgid "No 'memo' field type"
+msgstr "Не 'мемо' тип поля"
+
+#: hk_classes/hk_connection.cpp:993
+msgid "No 'timestamp' field type"
+msgstr "Не 'мітка-часу' тип поля"
+
+#: hk_classes/hk_connection.cpp:994
+msgid "Target does not support SQL"
+msgstr "Ціль не підтримує SQL"
+
+#: hk_classes/hk_connection.cpp:997
+msgid "SQL does not support 'GROUP BY' statement"
+msgstr "SQL не підтримує формулювання 'GROUP BY'"
+
+#: hk_classes/hk_connection.cpp:998
+msgid "SQL does not support 'ORDER BY' statement"
+msgstr "SQL не підтримує формулювання 'ORDER BY'"
+
+#: hk_classes/hk_connection.cpp:999
+msgid "SQL does not support 'HAVING' statement"
+msgstr "SQL не підтримує формулювання 'HAVING'"
+
+#: hk_classes/hk_connection.cpp:1000
+msgid "SQL does not support 'WHERE' statement"
+msgstr "SQL не підтримує формулювання 'WHERE'"
+
+#: hk_classes/hk_connection.cpp:1001
+msgid "SQL does not support 'ALIAS' statement"
+msgstr "SQL не підтримує формулювання 'ALIAS'"
+
+#: hk_classes/hk_connection.cpp:1003
+msgid "Referential integrity not supported"
+msgstr "Цілісність посилання не підтримується"
+
+#: hk_classes/hk_connection.cpp:1004
+msgid "Indices are not supported"
+msgstr "Індекси не підтримуються"
+
+#: hk_classes/hk_connection.cpp:1007
+msgid "Views are not supported"
+msgstr "Перегляди не підтримуються"
+
+#: hk_classes/hk_connection.cpp:1010
+msgid "Copying data from '%1' to '%2':\n"
+msgstr "Копіювання даних з '%1' до '%2':\n"
+
+#: hk_classes/hk_database.cpp:279
+msgid "Bug: hk_database::driver_specific_new_table returned empty table!"
+msgstr ""
+"Помилка: hk_database::driver_specific_new_table повернула пусту таблицю!"
+
+#: hk_classes/hk_database.cpp:300
+msgid "Bug: hk_database::driver_specific_new_view returned empty view!"
+msgstr ""
+"Бага: hk_database::driver_specific_new_view повернула порожній перегляд!"
+
+#: hk_classes/hk_database.cpp:420
+msgid "No such Database '%1'!"
+msgstr "Немає такої бази даних '%1'!"
+
+#: hk_classes/hk_database.cpp:427
+msgid "Not connected to server!"
+msgstr "Не приєднаний до сервера!"
+
+#: hk_classes/hk_database.cpp:492
+msgid "Delete the table \"%TBLNAME%\"?"
+msgstr "Видалити таблицю \"%TBLNAME%\"?"
+
+#: hk_classes/hk_database.cpp:523 hk_dbaseclasses/hk_dbasedatabase.cpp:139
+#: hk_paradoxclasses/hk_paradoxdatabase.cpp:143
+msgid "Table could not be deleted!"
+msgstr "Таблицю неможливо видалити!"
+
+#: hk_classes/hk_database.cpp:551
+msgid "Delete the view \"%TBLNAME%\"?"
+msgstr "Видалити перегляд \"%TBLNAME%\"?"
+
+#: hk_classes/hk_database.cpp:582
+msgid "View could not be deleted!"
+msgstr "Перегляд неможливо видалити!"
+
+#: hk_classes/hk_database.cpp:684
+msgid "Error: hk_database::save_central could not get a new table"
+msgstr "Помилка: hk_database::save_central не може повернути нову таблицю"
+
+#: hk_classes/hk_database.cpp:697
+msgid "Error: hk_database::save_central could not find system columns!"
+msgstr "Помилка: hk_database::save_central не може знайти системні стовпці!"
+
+#: hk_classes/hk_database.cpp:719 hk_classes/hk_database.cpp:819
+msgid "Enter new query name:"
+msgstr "Введіть ім'я нового запиту:"
+
+#: hk_classes/hk_database.cpp:720 hk_classes/hk_database.cpp:820
+msgid "Enter new form name:"
+msgstr "Введіть ім'я нової форми:"
+
+#: hk_classes/hk_database.cpp:721 hk_classes/hk_database.cpp:821
+msgid "Enter new report name:"
+msgstr "Введіть ім'я нового звіту: "
+
+#: hk_classes/hk_database.cpp:722 hk_classes/hk_database.cpp:822
+#, fuzzy
+msgid "Enter new module name:"
+msgstr "Введіть ім'я нового запиту:"
+
+#: hk_classes/hk_database.cpp:723 hk_classes/hk_database.cpp:823
+#: hk_kdeclasses/knodamaindockwindow.cpp:618
+msgid "Enter new name:"
+msgstr "Введіть нове ім'я:"
+
+#: hk_classes/hk_database.cpp:775
+msgid "Query '%1' already exists. Overwrite it?"
+msgstr "Запит '%1' вже існує. Переписати його?"
+
+#: hk_classes/hk_database.cpp:776
+msgid "Form '%1' already exists. Overwrite it?"
+msgstr "Форма '%1' вже існує. Переписати її?"
+
+#: hk_classes/hk_database.cpp:777
+msgid "Report '%1' already exists. Overwrite it?"
+msgstr "Звіт '%1' уже існує. Переписати його?"
+
+#: hk_classes/hk_database.cpp:778
+#, fuzzy
+msgid "Module '%1' already exists. Overwrite it?"
+msgstr "Файл '%1' вже існує. Переписати його?"
+
+#: hk_classes/hk_database.cpp:779
+msgid "File '%1' already exists. Overwrite it?"
+msgstr "Файл '%1' вже існує. Переписати його?"
+
+#: hk_classes/hk_database.cpp:783
+msgid "Query '%1' has changed. Store changes?"
+msgstr "Запит '%1' було змінено. Зберегти зміни?"
+
+#: hk_classes/hk_database.cpp:784
+msgid "Form '%1' has changed. Store changes?"
+msgstr "Форму '%1' було змінено. Зберегти зміни?"
+
+#: hk_classes/hk_database.cpp:785
+msgid "Report '%1' has changed. Store changes?"
+msgstr "Звіт '%1' було змінено. Зберегти зміни?"
+
+#: hk_classes/hk_database.cpp:786
+#, fuzzy
+msgid "Module '%1' has changed. Store changes?"
+msgstr "Файл '%1' було змінено. Зберегти зміни?"
+
+#: hk_classes/hk_database.cpp:787
+msgid "File '%1' has changed. Store changes?"
+msgstr "Файл '%1' було змінено. Зберегти зміни?"
+
+#: hk_classes/hk_database.cpp:842
+msgid "Error: File '%1' could not be created"
+msgstr "Помилка: файл %1 неможливо створити."
+
+#: hk_classes/hk_database.cpp:942 hk_classes/hk_database.cpp:1023
+msgid "Error: hk_database::load_central could not get a new table"
+msgstr "Помилка: hk_database::load_central не може повернути нову таблицю"
+
+#: hk_classes/hk_database.cpp:954 hk_classes/hk_database.cpp:1035
+msgid "Error: hk_database::load_central could not find system columns!"
+msgstr "Помилка: hk_database::load_central: не може знайти системні стовпці!"
+
+#: hk_classes/hk_database.cpp:1142
+msgid "Error: hk_database::central_filelist could not get a new resultquery"
+msgstr ""
+"Помилка: hk_database::central_filelist не може повернути нову результуючий "
+"запит"
+
+#: hk_classes/hk_database.cpp:1163
+msgid "Warning: hk_database::central_filelist, unknown filetype"
+msgstr "Увага: hk_database::central_filelist, невідомий тип файлу"
+
+#: hk_classes/hk_database.cpp:1231
+msgid "Delete the query:%FNAME%?"
+msgstr "Видалити запит \"%FNAME%\"?"
+
+#: hk_classes/hk_database.cpp:1234
+msgid "Delete the report:%FNAME%?"
+msgstr "Видалити звіт \"%FNAME%\"?"
+
+#: hk_classes/hk_database.cpp:1237
+msgid "Delete the form:%FNAME%?"
+msgstr "Видалити форму \"%FNAME%\" ?"
+
+#: hk_classes/hk_database.cpp:1240
+#, fuzzy
+msgid "Delete the module:%FNAME%?"
+msgstr "Видалити запит \"%FNAME%\"?"
+
+#: hk_classes/hk_database.cpp:1242
+msgid "Delete the file:%FNAME%"
+msgstr "Видалити файл \"%FNAME%\" ?"
+
+#: hk_classes/hk_database.cpp:1260
+msgid "Error: hk_database::delete_centralfile could not get a new table"
+msgstr ""
+"Помилка: hk_database::delete_centralfile не може повернути нову таблицю"
+
+#: hk_classes/hk_database.cpp:1272
+msgid "Error: hk_database::delete_centralfile could not find system columns!"
+msgstr ""
+"Помилка: hk_database::delete_centralfile не може знайти системні стовпці!"
+
+#: hk_classes/hk_database.cpp:1279
+msgid "Error: hk_database::delete_centralfile object '%1' not found"
+msgstr "Fehler: hk_database::delete_centralfile об'єкт '%1' не знайдено"
+
+#: hk_classes/hk_database.cpp:1606
+msgid "hk_database::copy_table: bug newds has no columns!"
+msgstr "hk_database::copy_table: bug 'newds' не має стовпців!"
+
+#: hk_classes/hk_database.cpp:1644
+msgid "Copying table %TABLE%"
+msgstr "Копіювання таблиці %TABLE%"
+
+#: hk_classes/hk_database.cpp:1647
+msgid "Continue loading data?"
+msgstr "Продовжити завантаження даних?"
+
+#: hk_classes/hk_database.cpp:1688
+msgid "Error copy_view: target database does not support views!"
+msgstr ""
+"Помилка копіювання перегляду: цільова база даних не підтримує перегляди!"
+
+#: hk_classes/hk_database.cpp:1697
+msgid "View '%1' already exists. Replace it?"
+msgstr "Перегляд '%1' вже існує. Переписати його?"
+
+#: hk_classes/hk_database.cpp:1711 hk_classes/hk_datasource.cpp:4152
+msgid "Please enter the viewname:"
+msgstr "Будь ласка, введіть ім'я перегляду:"
+
+#: hk_classes/hk_database.cpp:1894
+msgid "Error: hk_database::rename_file could not get a new table"
+msgstr "Помилка: hk_database::rename_file не може повернути нову таблицю"
+
+#: hk_classes/hk_database.cpp:1905
+msgid "Error: hk_database::rename_file could not find system columns!"
+msgstr ""
+"Помилка: hk_database::rename_file konnte не може знайти системні стовпці!"
+
+#: hk_classes/hk_database.cpp:1912
+msgid "Error: hk_database::rename file: No such file!"
+msgstr "Fehler: hk_database::rename_file: Немає такого файлу!"
+
+#: hk_classes/hk_database.cpp:1988
+msgid ""
+"Error: hk_database::create_centralstoragetable could not get a new table"
+msgstr ""
+"Помилка: hk_database::create:centralstoragetable не може повернути нову "
+"таблицю"
+
+#: hk_classes/hk_database.cpp:2219 hk_classes/hk_definitions.cpp:129
+#: hk_classes/hk_definitions.cpp:201
+msgid "Overwrite '%1'?"
+msgstr "Переписати '%1'?"
+
+#: hk_classes/hk_datasource.cpp:297
+msgid "Table %NAME% could not be created."
+msgstr "Таблицю %NAME% неможливо створити."
+
+#: hk_classes/hk_datasource.cpp:311
+msgid "View could not be created!"
+msgstr "Перегляд неможливо створити!"
+
+#: hk_classes/hk_datasource.cpp:611
+msgid "Store changed data in table '%1'?"
+msgstr "Зберегти змінені дані в таблиці '%1'?"
+
+#: hk_classes/hk_datasource.cpp:805
+msgid "hk_datasource::set_query: Datasource is not of type query or view!"
+msgstr ""
+"hk_datasource::set_query: джерело даних не відповідає типу запиту чи "
+"перегляду!"
+
+#: hk_classes/hk_datasource.cpp:1297 hk_dbaseclasses/hk_dbasetable.cpp:490
+#: hk_firebirdclasses/hk_firebirddatasource.cpp:915
+#: hk_paradoxclasses/hk_paradoxtable.cpp:861
+#: hk_sqlite3classes/hk_sqlite3datasource.cpp:824
+msgid ""
+"Row in datasource '%1' could not be changed due to depending datasource(s)"
+msgstr ""
+"Рядок в джерелі даних '%1' неможливо змінити через залежність джерел(а) даних"
+
+#: hk_classes/hk_datasource.cpp:1394
+#: hk_firebirdclasses/hk_firebirddatasource.cpp:973
+#: hk_sqlite3classes/hk_sqlite3datasource.cpp:880
+msgid "Bug: datasource has changed, but no column has changed"
+msgstr "Bug: джерело даних змінено, але стовпці не змінились"
+
+#: hk_classes/hk_datasource.cpp:1430 hk_dbaseclasses/hk_dbasetable.cpp:528
+#: hk_paradoxclasses/hk_paradoxtable.cpp:1029
+#: hk_sqlite3classes/hk_sqlite3datasource.cpp:947
+msgid "Table %NAME%: Row could NOT be changed!"
+msgstr "Таблиця %NAME%: Рядок неможливо змінити!"
+
+#: hk_classes/hk_datasource.cpp:1612 hk_dbaseclasses/hk_dbasetable.cpp:385
+#: hk_firebirdclasses/hk_firebirddatasource.cpp:871
+#: hk_firebirdclasses/hk_firebirddatasource.cpp:1094
+#: hk_paradoxclasses/hk_paradoxtable.cpp:675
+#: hk_sqlite3classes/hk_sqlite3datasource.cpp:782
+msgid "Table %NAME%: Row could NOT be inserted!"
+msgstr "Таблиця %NAME%: Рядок неможливо вставити!"
+
+#: hk_classes/hk_datasource.cpp:1640 hk_dbaseclasses/hk_dbasetable.cpp:686
+#: hk_paradoxclasses/hk_paradoxtable.cpp:739
+msgid "Delete this record?"
+msgstr "Видалити цей запис?"
+
+#: hk_classes/hk_datasource.cpp:1667 hk_dbaseclasses/hk_dbasetable.cpp:713
+#: hk_paradoxclasses/hk_paradoxtable.cpp:766
+msgid "Row could not be deleted due to depending datasource(s)"
+msgstr "Рядок неможливо видалити через залежність джерел(а) даних"
+
+#: hk_classes/hk_datasource.cpp:1720 hk_dbaseclasses/hk_dbasetable.cpp:650
+#: hk_dbaseclasses/hk_dbasetable.cpp:761
+#: hk_paradoxclasses/hk_paradoxtable.cpp:810
+#: hk_paradoxclasses/hk_paradoxtable.cpp:1147
+msgid "Table %NAME%: Row was NOT deleted!"
+msgstr "Таблиця %NAME%: Рядок неможливо видалити!"
+
+#: hk_classes/hk_datasource.cpp:1804 hk_classes/hk_datasource.cpp:1854
+msgid "Error: Master and depending datasource are the same!"
+msgstr "Помилка: Головне і залежне джерела даних - однакові!"
+
+#: hk_classes/hk_datasource.cpp:1864
+msgid ""
+"Error: setting this masterdatasource would lead to a circular dependency!"
+msgstr ""
+"Помилка: встановлення цього джерела даних головним  призведе до циклічної "
+"залежності!"
+
+#: hk_classes/hk_datasource.cpp:2105
+msgid "row %ROW% column %COL% :"
+msgstr "рядок %ROW% стовпчик %COL%"
+
+#: hk_classes/hk_datasource.cpp:2106
+msgid "Too many closing brackets\n"
+msgstr "Забагато дужок, що закриваються\n"
+
+#: hk_classes/hk_datasource.cpp:2107
+msgid "Too many open brackets\n"
+msgstr "Забагато дужок, що відкриваються\n"
+
+#: hk_classes/hk_datasource.cpp:4151
+msgid "Please enter the queryname:"
+msgstr "Будь ласка введіть ім'я запиту:"
+
+#: hk_classes/hk_datasource.cpp:4153
+msgid "Please enter the tablename:"
+msgstr "Будь ласка введіть ім'я таблиці:"
+
+#: hk_classes/hk_datasource.cpp:4283
+msgid "Error while dropping the index!"
+msgstr "Помилка під час знищення індексу!"
+
+#: hk_classes/hk_datasource.cpp:4489 hk_dbaseclasses/hk_dbasetable.cpp:559
+#: hk_paradoxclasses/hk_paradoxtable.cpp:1057
+msgid "Delete the records %FROM% to %TO% ?"
+msgstr "Видалити запис %FROM% до %TO%?"
+
+#: hk_classes/hk_datasource.cpp:4514 hk_dbaseclasses/hk_dbasetable.cpp:584
+#: hk_paradoxclasses/hk_paradoxtable.cpp:1082
+msgid ""
+"Rows could not be deleted due to depending datasource(s).\n"
+"\t  Use single row deletion instead!"
+msgstr ""
+"Рядки неможливо видалити через залежності в джерелі даних\n"
+"\t Замість цього вікористовуйте однорядкове видалення!"
+
+#: hk_classes/hk_datasource.cpp:4925
+msgid "Table already exists!"
+msgstr "Таблиця вже існує!"
+
+#: hk_classes/hk_datasource.cpp:5150 hk_mysqlclasses/hk_mysqlview.cpp:61
+msgid "Bug: View-SQL is empty!"
+msgstr "Бага: Перегляд-SQL порожній!"
+
+#: hk_classes/hk_datasource.cpp:5190
+msgid "Server does not support referential integrity!"
+msgstr "Сервер не підтримує цілісності посилань"
+
+#: hk_classes/hk_datasource.cpp:5194
+msgid ""
+"Error adding reference!\n"
+"Servermessage: "
+msgstr ""
+"Помилка додавання посилання!\n"
+"Повідомлення сервера: "
+
+#: hk_classes/hk_definitions.cpp:111
+msgid "File '%1' does not exist"
+msgstr "Файл '%1' не існує"
+
+#: hk_classes/hk_drivermanager.cpp:181
+msgid ""
+"\n"
+"Old driver with no version information!"
+msgstr ""
+"\n"
+"Старий драйвер без інформації про версію!"
+
+#: hk_classes/hk_drivermanager.cpp:182
+msgid "Internal error: Database driver not compatible"
+msgstr "Внутрішня помилка: драйвер бази даних несумісний"
+
+#: hk_classes/hk_drivermanager.cpp:195
+msgid ""
+"Wrong driver version: %1\n"
+"You need driver version %2"
+msgstr ""
+"Невірна версія драйвера: %1\n"
+"Вам потрібна версія драйвера %2"
+
+#: hk_classes/hk_drivermanager.cpp:208
+msgid ""
+"Database driver '%DRIVER%' could not be loaded.\n"
+"Reason: "
+msgstr ""
+"Драйвер бази даних %DRIVER% неможливо завантажити.\n"
+"Причина: "
+
+#: hk_classes/hk_drivermanager.cpp:208
+msgid "Unknown reason"
+msgstr "Невідома причина"
+
+#: hk_classes/hk_drivermanager.cpp:308
+msgid "The following database drivers were found:"
+msgstr "Наступні драйвери бази даних було знайдено:"
+
+#: hk_classes/hk_drivermanager.cpp:317
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:528
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:818
+msgid "Select directory"
+msgstr "Виберіть каталог"
+
+#: hk_classes/hk_drivermanager.cpp:319
+msgid "Please select: "
+msgstr "Будь ласка виберіть:"
+
+#: hk_classes/hk_drivermanager.cpp:336
+msgid "Enter new Driver Path"
+msgstr "Введіть новий шлях до драйвера: "
+
+#: hk_classes/hk_drivermanager.cpp:337
+msgid "Actual Path is: "
+msgstr "Поточний шлях: "
+
+#: hk_classes/hk_drivermanager.cpp:339
+msgid "New Path: "
+msgstr "Новий шлях: "
+
+#: hk_classes/hk_drivermanager.cpp:514
+#, fuzzy
+msgid "Error parsing connectionfile(%1)!"
+msgstr "Немає такого файлу з'єднання (%1)!"
+
+#: hk_classes/hk_drivermanager.cpp:520
+msgid "No such connectionfile(%1)!"
+msgstr "Немає такого файлу з'єднання (%1)!"
+
+#: hk_classes/hk_dscombobox.cpp:192 hk_classes/hk_dscombobox.cpp:212
+#: hk_classes/hk_dscombobox.cpp:365
+msgid "Error: listdatasource and datasource in the combobox are identical!"
+msgstr ""
+"Помилка:список джерел даних та джерело даних у випадаючому списку ідентичні!"
+
+#: hk_classes/hk_dsdatavisible.cpp:416
+msgid "[Auto]"
+msgstr "[Авто]"
+
+#: hk_classes/hk_dsquery.cpp:95
+msgid "View '%1' has changed. Store changes?"
+msgstr "Перегляд '%1' змінено. Зберегти зміни?"
+
+#: hk_classes/hk_dsquery.cpp:95
+msgid "View '%1' already exists. Overwrite it?"
+msgstr "Перегляд '%1' вже існує. Переписати його?"
+
+#: hk_classes/hk_font.cpp:822 hk_classes/hk_font.cpp:829
+msgid "font: "
+msgstr "шрифт: "
+
+#: hk_classes/hk_form.cpp:404 hk_classes/hk_form.cpp:444
+#: hk_classes/hk_report.cpp:1256 hk_kdeclasses/hk_kdeform.cpp:377
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:693
+msgid "Form error: No database defined!"
+msgstr "Помилка в формі: Не визначено базу даних!"
+
+#: hk_classes/hk_importcsv.cpp:63
+msgid "Cannot import as you run in runtime only mode !"
+msgstr "Неможливо імпортувати, бо ви запустили в режимі \"runtime-only\"!"
+
+#: hk_classes/hk_importcsv.cpp:101
+msgid "Importing data ..."
+msgstr "Імпортування даних ..."
+
+#: hk_classes/hk_importcsv.cpp:160
+msgid "Could not import the following rows:\n"
+msgstr ""
+
+#: hk_classes/hk_importcsv.cpp:205
+msgid "No datasource defined!"
+msgstr "Не визначено джерело даних!"
+
+#: hk_classes/hk_importcsv.cpp:213
+msgid "No such CSV file: "
+msgstr "Не знайдено CSV файлу: "
+
+#: hk_classes/hk_importcsv.cpp:242 hk_classes/hk_importcsv.cpp:419
+msgid "Datasource could not be enabled"
+msgstr "Джерело даних не може бути включено"
+
+#: hk_classes/hk_importcsv.cpp:254 hk_kdeclasses/hk_kdetabledesign.cpp:508
+msgid "Table already exists"
+msgstr "Таблиця вже існує"
+
+#: hk_classes/hk_importcsv.cpp:688
+msgid "The following columns could not be found in the table:\n"
+msgstr "Наступні стовпці неможливо знайти в таблиці:\n"
+
+#: hk_classes/hk_importcsv.cpp:725 hk_classes/hk_presentation.cpp:564
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:358
+msgid "field_"
+msgstr "поле_"
+
+#: hk_classes/hk_interpreter.cpp:73
+msgid "No interpreter installed"
+msgstr "Не встановлено інтерпретатор"
+
+#: hk_classes/hk_interpreter.cpp:218
+msgid "No interpreter language installed!"
+msgstr "Не встановлено інтерпретатор мови!"
+
+#: hk_classes/hk_interpreter.cpp:480
+msgid "Error in line %1 while loading module '%2'\\nError message:'%3'"
+msgstr ""
+
+#: hk_classes/hk_interpreter.cpp:538
+msgid ""
+"\n"
+"This is due to an installation error. If you did install hk_classes from "
+"and .rpm or .deb package you should check if there is also a hk_classes-"
+"python package"
+msgstr ""
+"\n"
+"Це через помилку інсталяції. Якщо ви встанвили hk_classes з пакету .rpm або ."
+"deb, ви маєте перевірити наявність пакету hk_classes-python"
+
+#: hk_classes/hk_module.cpp:80 hk_classes/hk_module.cpp:117
+#: hk_kdeclasses/hk_kdemodule.cpp:199
+#, fuzzy
+msgid "Module error: No database defined!"
+msgstr "Помилка в формі: Не визначено базу даних!"
+
+#: hk_classes/hk_module.cpp:183
+#, fuzzy
+msgid "Please enter the name of the module"
+msgstr "Будь ласка введіть ім'я форми:"
+
+#: hk_classes/hk_presentation.cpp:155
+msgid "Bug: tried to add empty datasource!"
+msgstr "Бага: спробуйте додати пусте джерело даних!"
+
+#: hk_classes/hk_presentation.cpp:293
+msgid "hk_presentation::savedata No datasources defined!"
+msgstr "hk_presentation::savedata Не визначено джерело даних!"
+
+#: hk_classes/hk_presentation.cpp:346
+msgid ""
+"hk_presentation::loaddata: Error creating/loading datasource! This is "
+"probably a bug"
+msgstr ""
+"hk_presentation::loaddata: Помилка створення/завантаження джерела даних! "
+"Можливо це бага "
+
+#: hk_classes/hk_presentation.cpp:466
+msgid "Please enter the name of the form:"
+msgstr "Будь ласка введіть ім'я форми:"
+
+#: hk_classes/hk_presentation.cpp:467
+msgid "Please enter the name of the report"
+msgstr "Будь ласка введіть ім'я звіту"
+
+#: hk_classes/hk_qbe.cpp:687 hk_classes/hk_qbe.cpp:726
+msgid ""
+"Error!\n"
+"No output fields selected"
+msgstr ""
+"Помилка!\n"
+"Не вибрані поля для виведення"
+
+#: hk_classes/hk_qbe.cpp:694 hk_classes/hk_qbe.cpp:733
+#: hk_classes/hk_qbe.cpp:778 hk_classes/hk_qbe.cpp:816
+msgid ""
+"Error!\n"
+"No tables defined"
+msgstr ""
+"Помилка!\n"
+"Таблиці не визначені!"
+
+#: hk_classes/hk_qbe.cpp:744
+msgid ""
+"Error!\n"
+"No 'group by' fields selected"
+msgstr ""
+"Fehler!\n"
+"Не вибрані поля для 'group by'"
+
+#: hk_classes/hk_qbe.cpp:786
+msgid ""
+"Error!\n"
+"No new values defined"
+msgstr ""
+"Помилка!\n"
+"Не визначені нові значення"
+
+#: hk_classes/hk_report.cpp:175
+msgid "unnamed"
+msgstr "безіменний"
+
+#: hk_classes/hk_report.cpp:540
+msgid "Datasource of this report could not be enabled"
+msgstr "Джерело даних для цього звіту не може бути включене"
+
+#: hk_classes/hk_report.cpp:592
+msgid "Creating output ..."
+msgstr "Генерація виводу ..."
+
+#: hk_classes/hk_report.cpp:1415
+msgid "Report error: No database defined!"
+msgstr "Помилка звіту: Не визначено базу даних"
+
+#: hk_classes/hk_report.cpp:1438
+msgid "No such report!"
+msgstr "Немає такого звіту!"
+
+#: hk_classes/hk_report.cpp:1779
+#, c-format
+msgid "Borders too large! At least 20% have to be left for the data section"
+msgstr "Borders too large! At least 20% have to be left for the data section"
+
+#: hk_classes/hk_report.cpp:1788
+msgid "Borders too large!"
+msgstr "Межі завеликі!"
+
+#: hk_classes/hk_report.cpp:2103
+msgid "Reportconfigurefunction not found"
+msgstr "Reportconfigurefunction не знайдено"
+
+#: hk_classes/hk_report.cpp:2134
+msgid "Reporttype not found"
+msgstr "Reporttype не знайдено"
+
+#: hk_classes/hk_report.cpp:2202
+msgid "Recodetype not found"
+msgstr "Recodetyp не знайдено"
+
+#: hk_classes/hk_report.cpp:2227
+msgid "Replacefunctiontype not found"
+msgstr "Replacefunctiontype не знайдено"
+
+#: hk_classes/hk_report.cpp:2613
+msgid "Error calling print command. Perhaps you have to add the full path."
+msgstr "Помилка, викликана командою друку. Можливо треба задати повний шлях."
+
+#: hk_classes/hk_reportdata.cpp:475
+#, fuzzy
+msgid "replacefunction '%1' not found"
+msgstr "replacefunction не знайдено"
+
+#: hk_classes/hk_reportdata.cpp:502
+msgid "Data Countfunction not found"
+msgstr "Data Countfunction не знайдено"
+
+#: hk_classes/hk_reportdata.cpp:838
+msgid "Dataconfigurefunction not found"
+msgstr "Dataconfigurefunction не знайдено"
+
+#: hk_classes/hk_reportsection.cpp:276
+msgid "sectionreplacefunction not found"
+msgstr "sectionreplacefunction не знайдено"
+
+#: hk_classes/hk_reportsection.cpp:301
+msgid "Section Countfunction not found"
+msgstr "Section Countfunction не знайдено"
+
+#: hk_classes/hk_storagedatasource.cpp:303
+msgid ""
+"Datasource too big. Try to limit the number of rows by defining a filter."
+msgstr ""
+"Джерело даних завелике. Спробуйте обмежити кількість рядків за допомогою "
+"фільтра. "
+
+#: hk_classes/hk_visible.cpp:455 hk_classes/hk_visible.cpp:463
+msgid "Identifier '%1' already in use"
+msgstr "Ідентифікатор '%1' вже використовується"
+
+#: hk_dbaseclasses/hk_dbasedatabase.cpp:123
+#: hk_paradoxclasses/hk_paradoxdatabase.cpp:125
+#, fuzzy
+msgid "Delete table \"%TBLNAME%\"?"
+msgstr "Видалити таблицю \"%TBLNAME%\"?"
+
+#: hk_dbaseclasses/hk_dbasedatasource.cpp:63
+#: hk_firebirdclasses/hk_firebirddatasource.cpp:71
+#: hk_mdbclasses/hk_mdbtable.cpp:58 hk_mysqlclasses/hk_mysqldatasource.cpp:247
+#: hk_odbcclasses/hk_odbcdatasource.cpp:313
+#: hk_paradoxclasses/hk_paradoxtable.cpp:73
+#: hk_postgresclasses/hk_postgresqldatasource.cpp:205
+#: hk_sqlite3classes/hk_sqlite3datasource.cpp:277
+#: hk_sqliteclasses/hk_sqlitedatasource.cpp:337
+#: hk_xbaseclasses/hk_xbasedatasource.cpp:67
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:1014
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:428
+#, fuzzy
+msgid "Executing query ..."
+msgstr "Виконання дії запиту"
+
+#: hk_firebirdclasses/hk_firebirdtable.cpp:475
+#: hk_mysqlclasses/hk_mysqltable.cpp:132 hk_odbcclasses/hk_odbctable.cpp:138
+#: hk_postgresclasses/hk_postgresqltable.cpp:132
+#: hk_sqlite3classes/hk_sqlite3table.cpp:127
+#: hk_sqliteclasses/hk_sqlitetable.cpp:127
+#: hk_xbaseclasses/hk_xbasetable.cpp:178
+msgid "Warning: Column with no name!"
+msgstr "Увага: Поле без імені!"
+
+#: hk_firebirdclasses/hk_firebirdview.cpp:43
+#: hk_mysqlclasses/hk_mysqlview.cpp:44
+#: hk_postgresclasses/hk_postgresqlview.cpp:43
+#: hk_sqlite3classes/hk_sqlite3view.cpp:43
+#: hk_sqliteclasses/hk_sqliteview.cpp:43
+msgid "View definition could not be loaded"
+msgstr "Визначення перегляду не можна завантажити"
+
+#: hk_mdbclasses/hk_mdbdatabase.cpp:93
+#: hk_sqlite3classes/hk_sqlite3database.cpp:148
+#: hk_sqliteclasses/hk_sqlitedatabase.cpp:152
+msgid "Driver error!\n"
+msgstr "Помилка драйвера!\n"
+
+#: hk_mdbclasses/hk_mdbdatabase.cpp:100
+#, fuzzy
+msgid "File does not appear to be an Access database"
+msgstr "Драйвер не підтримує створення нових баз даних"
+
+#: hk_mdbclasses/hk_mdbtable.cpp:261
+#, fuzzy
+msgid "MDBTools - Table could not be opened!"
+msgstr "Таблицю неможливо видалити!"
+
+#: hk_odbcclasses/hk_odbcconnection.cpp:83
+msgid "Connection not possible (wrong user and/or password?)"
+msgstr "З'єднання неможливе (невірний користувач і/або пароль?)"
+
+#: hk_odbcclasses/hk_odbcview.cpp:57
+msgid "View definition could not be loaded,no such column 'viewselect'"
+msgstr ""
+"Визначення перегляду не може бути завантажене, немає такого стовпця "
+"'viewselect'"
+
+#: hk_postgresclasses/hk_postgresqltable.cpp:202
+#, fuzzy
+msgid "Error: Postgres does not have the ability to modify the primary key!"
+msgstr ""
+"Error: Postgres не має можливості ні змінити тип поля або первинного ключа, "
+"ні видалити поле!"
+
+#: hk_postgresclasses/hk_postgresqltable.cpp:323
+#, c-format
+msgid "Column '%COLUMN%' could not be renamed"
+msgstr "Стовпець '%COLUMN%' не може бути переіменований"
+
+#: hk_postgresclasses/hk_postgresqltable.cpp:342
+#, c-format
+msgid "Column '%COLUMN%' has NULL values, so NOTNULL is not possible"
+msgstr "Поле '%COLUMN%' має значення NULL, таким чином NOTNULL неможливе"
+
+#: hk_sqlite3classes/hk_sqlite3table.cpp:188
+msgid "hk_sqlite3table::  Driver does not support the deletion of columns!\n"
+msgstr ""
+
+#: hk_sqlite3classes/hk_sqlite3table.cpp:197
+msgid "hk_sqlite3table::No columns to add!"
+msgstr ""
+
+#: hk_sqlite3classes/hk_sqlite3table.cpp:292
+#: hk_sqliteclasses/hk_sqlitetable.cpp:248
+msgid "ERROR hk_sqlitetable::driver_specific_indices System columns not found!"
+msgstr ""
+"Помилка hk_sqlitetable::driver_specific_indices Системних стовпців не "
+"знайдено!"
+
+#: hk_xbaseclasses/hk_xbasedatasource.cpp:276
+msgid "Query is no valid SELECT query!"
+msgstr ""
+
+#: hk_xbaseclasses/hk_xbasedatasource.cpp:281
+#, fuzzy
+msgid "Error! Query could not be executed!"
+msgstr "Запит неможливо виконати"
+
+#: utilities/hk_actionqueryutility.cpp:90 utilities/hk_dbcopyutility.cpp:184
+#: utilities/hk_exportcsvutility.cpp:121
+#: utilities/hk_exporthtmlutility.cpp:102 utilities/hk_exportxmlutility.cpp:96
+#: utilities/hk_importcsvutility.cpp:138 utilities/hk_reportutility.cpp:78
+#, fuzzy
+msgid "Error creating connection"
+msgstr "Зберегти з'єднання"
+
+#: utilities/hk_actionqueryutility.cpp:106 utilities/hk_dbcopyutility.cpp:201
+#: utilities/hk_exportcsvutility.cpp:137
+#: utilities/hk_exporthtmlutility.cpp:118
+#: utilities/hk_exportxmlutility.cpp:112 utilities/hk_importcsvutility.cpp:154
+#: utilities/hk_reportutility.cpp:94
+#, fuzzy
+msgid "No such database"
+msgstr "Немає такої бази даних '%1'!"
+
+#: utilities/hk_actionqueryutility.cpp:115
+#, fuzzy
+msgid "query could not be created"
+msgstr "Перегляд неможливо створити!"
+
+#: utilities/hk_actionqueryutility.cpp:132
+msgid "Queryfile couldn't be loaded or is empty"
+msgstr ""
+
+#: utilities/hk_actionqueryutility.cpp:142
+#, fuzzy
+msgid "Query couldn't be executed"
+msgstr "Запит неможливо виконати"
+
+#: utilities/hk_exportcsvutility.cpp:145
+#: utilities/hk_exporthtmlutility.cpp:129
+#: utilities/hk_exportxmlutility.cpp:120 utilities/hk_reportutility.cpp:102
+#, fuzzy
+msgid "Report couldn't be created"
+msgstr "Перегляд неможливо створити!"
+
+#: utilities/hk_exportcsvutility.cpp:163 utilities/hk_importcsvutility.cpp:181
+#, fuzzy
+msgid "csv couldn't be executed"
+msgstr "Запит неможливо виконати"
+
+#: utilities/hk_exporthtmlutility.cpp:156
+#, fuzzy
+msgid "HTML couldn't be executed"
+msgstr "Запит неможливо виконати"
+
+#: utilities/hk_exportxmlutility.cpp:139
+#, fuzzy
+msgid "XML couldn't be executed"
+msgstr "Запит неможливо виконати"
+
+#: utilities/hk_importcsvutility.cpp:162
+#, fuzzy
+msgid "IMPORTCSV couldn't be created"
+msgstr "Перегляд неможливо створити!"
+
+#: utilities/hk_importcsvutility.cpp:168
+#, fuzzy
+msgid "Datasource couldn't be created"
+msgstr "Джерело даних не може бути включено"
+
+#: utilities/hk_reportutility.cpp:115
+#, fuzzy
+msgid "Reportfile couldn't be loaded"
+msgstr "База даних не може бути завантажена"
+
+#: utilities/hk_reportutility.cpp:131
+#, fuzzy
+msgid "Report couldn't be executed"
+msgstr "Запит неможливо виконати"
+
+#: hk_kdeclasses/hk_kde4simplegrid.cpp:138
+msgid "Page"
+msgstr "Сторінка"
+
+#: hk_kdeclasses/hk_kde4simplegrid.cpp:147
+msgid "Query: "
+msgstr "Запит: "
+
+#: hk_kdeclasses/hk_kde4simplegrid.cpp:147
+msgid "Table: "
+msgstr "Таблиця: "
+
+#: hk_kdeclasses/hk_kde4simplegrid.cpp:151
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:168
+msgid "Database: "
+msgstr "База даних: "
+
+#: hk_kdeclasses/hk_kdeaddtabledialogbase.cpp:99
+msgid "Add-table dialog"
+msgstr "Діалог додавання таблиці"
+
+#: hk_kdeclasses/hk_kdeaddtabledialogbase.cpp:100
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:346
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:89
+msgid "&Add"
+msgstr "&Додати"
+
+#: hk_kdeclasses/hk_kdeaddtabledialogbase.cpp:101
+msgid "Alt+A"
+msgstr "Alt+A"
+
+#: hk_kdeclasses/hk_kdeaddtabledialogbase.cpp:102
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:1388 hk_kdeclasses/hk_kdeform.cpp:96
+#: hk_kdeclasses/hk_kdeinterpreterdialog.cpp:91
+#: hk_kdeclasses/hk_kdemodule.cpp:93 hk_kdeclasses/hk_kdequery.cpp:77
+#: hk_kdeclasses/hk_kdereport.cpp:82 hk_kdeclasses/hk_kdetable.cpp:72
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:158
+msgid "&Close"
+msgstr "&Закрити"
+
+#: hk_kdeclasses/hk_kdeaddtabledialogbase.cpp:103
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:312
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:337
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:500
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:207
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:207
+#: knoda/hk_kdedriverselectbase.cpp:131
+msgid "Alt+C"
+msgstr "Alt+C"
+
+#: hk_kdeclasses/hk_kdeaddtabledialog.cpp:47
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:71
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:129
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:550
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:71
+msgid "table"
+msgstr "Таблиця"
+
+#: hk_kdeclasses/hk_kdeaddtabledialog.cpp:49
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:73
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:179
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:346
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:552
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:73
+msgid "view"
+msgstr "Перегляд"
+
+#: hk_kdeclasses/hk_kdeaddtabledialog.cpp:51
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:72
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:135
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:172
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:341
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:551
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:72
+msgid "query"
+msgstr "Запит"
+
+#: hk_kdeclasses/hk_kdeboolean.cpp:289 hk_kdeclasses/hk_kdelabel.cpp:55
+msgid "label"
+msgstr "Мітка"
+
+#: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:80
+#: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:118
+msgid "Entry"
+msgstr "Запис"
+
+#: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:82
+#: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:119
+msgid "1"
+msgstr "1"
+
+#: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:113
+msgid "Combobox textlist dialog"
+msgstr "Діалог Combobox·textlist"
+
+#: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:114
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:309
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:334
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:83
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:276
+#: hk_kdeclasses/hk_kdedblistview.cpp:83
+#: hk_kdeclasses/hk_kdefilterdialogbase.cpp:100
+#: hk_kdeclasses/hk_kdefinddialogbase.cpp:137
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:588
+#: hk_kdeclasses/hk_kdemessages.cpp:135
+#: hk_kdeclasses/hk_kdenewdatabasebase.cpp:126
+#: hk_kdeclasses/hk_kdenewpassworddialogbase.cpp:140
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:371
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:498
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:197
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:204
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:224
+msgid "&OK"
+msgstr "&Гаразд"
+
+#: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:116
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:311
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:336
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:84
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:278
+#: hk_kdeclasses/hk_kdedblistview.cpp:91
+#: hk_kdeclasses/hk_kdefilterdialogbase.cpp:101
+#: hk_kdeclasses/hk_kdefilterdialog.cpp:34
+#: hk_kdeclasses/hk_kdefinddialogbase.cpp:138
+#: hk_kdeclasses/hk_kdefinddialog.cpp:39
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:349
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:92
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:589
+#: hk_kdeclasses/hk_kdemessages.cpp:136
+#: hk_kdeclasses/hk_kdenewdatabasebase.cpp:128
+#: hk_kdeclasses/hk_kdenewpassworddialogbase.cpp:141
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:378
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:499
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:199
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:206
+#: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:340
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:57
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:206
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:226
+#: knoda/hk_kdedriverselectbase.cpp:130
+msgid "&Cancel"
+msgstr "&Відмінити"
+
+#: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:120
+msgid "Combobox sourcetextlist"
+msgstr "Combobox·sourcetextlist"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:287
+msgid "Text File Export Dialog"
+msgstr "Діалог імпорту текстового файлу"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:288
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:364
+msgid "Filename"
+msgstr "Ім'я файлу"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:289
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:365
+msgid "The data to import."
+msgstr "Дані для імпортування"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:290
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:366
+#: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:215
+#: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:218
+#: hk_kdeclasses/hk_kdenewdatabasebase.cpp:125
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:455
+#: hk_kdeclasses/hk_kdepropertybase.cpp:955
+#: hk_kdeclasses/hk_kdepropertybase.cpp:963
+#: hk_kdeclasses/hk_kdepropertybase.cpp:968
+#: hk_kdeclasses/hk_kdepropertybase.cpp:969
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1004
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:607
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:220
+msgid "..."
+msgstr "..."
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:291
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:215
+msgid "Datasource type"
+msgstr "Тип джерела даних"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:292
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:357
+msgid "Tablename"
+msgstr "Ім'я таблиці"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:293
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:368
+msgid "Pick the character that separates columns in text file."
+msgstr "Виберіть символ, що розділяє поля в текстовому файлі"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:294
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:367
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:70
+msgid "Column Separator"
+msgstr "Розділювач стовпців"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:296
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:344
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:361
+msgid "First row contains field names."
+msgstr "Перший рядок містить імена полів."
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:297
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:355
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:67
+msgid "Text delimiter"
+msgstr "Розділювач тексту"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:298
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:354
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:68
+msgid "Field names in first row"
+msgstr "Імена полів у першому рядку"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:299
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:358
+msgid "\""
+msgstr "\""
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:300
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:359
+msgid "The character that surrounds text (can be blank)."
+msgstr "Символ оточення тексту (може бути пробіл)"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:301
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:353
+msgid "Date format"
+msgstr "Формат дати"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:302
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:303
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:304
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:345
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:346
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:349
+msgid "Name of new or existing table."
+msgstr "Ім'я нової або існуючої таблиці"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:305
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:350
+msgid "Charset"
+msgstr "Набір символів"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:306
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:348
+msgid "Locale"
+msgstr "Локаль"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:307
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:351
+msgid "Time format"
+msgstr "Формат часу"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:308
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:347
+msgid "Datetime format"
+msgstr "Формат дати-часу"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:310
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:335
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:205
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:205
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:225
+#: knoda/hk_kdedriverselectbase.cpp:129
+msgid "Alt+O"
+msgstr "Alt+O"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:313
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:338
+#: knoda/hk_kdedriverselectbase.cpp:134
+msgid "O&ptions"
+msgstr "&Параметри"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:314
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:339
+#: knoda/hk_kdedriverselectbase.cpp:135
+msgid "Alt+P"
+msgstr "Alt+P"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:315
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:340
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:85
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:274
+#: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:219
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:496
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:227
+#: knoda/hk_kdedriverselectbase.cpp:136
+msgid "&Help"
+msgstr "&Допомога"
+
+#: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:316
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:341
+#: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:220
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:228
+#: knoda/hk_kdedriverselectbase.cpp:137
+msgid "Alt+H"
+msgstr "Alt+H"
+
+#: hk_kdeclasses/hk_kdecsvexportdialog.cpp:58
+msgid "CSV export Dialog"
+msgstr "CSV Експорт діалог"
+
+#: hk_kdeclasses/hk_kdecsvexportdialog.cpp:80
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:71
+msgid "Tab"
+msgstr "Таб"
+
+#: hk_kdeclasses/hk_kdecsvexportdialog.cpp:154
+#: hk_kdeclasses/hk_kdexmlexportdialog.cpp:79
+msgid "Exporting data..."
+msgstr "Експортування даних..."
+
+#: hk_kdeclasses/hk_kdecsvexportdialog.cpp:188
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:183
+msgid "Select a CSV file"
+msgstr "Виберіть CSV файл"
+
+#: hk_kdeclasses/hk_kdecsvexportdialog.cpp:227
+#: hk_kdeclasses/hk_kdexmlexportdialog.cpp:198
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:209
+#: hk_kdeclasses/knodamaindockwindow.cpp:487
+msgid "Table"
+msgstr "Таблиця"
+
+#: hk_kdeclasses/hk_kdecsvexportdialog.cpp:228
+#: hk_kdeclasses/hk_kdexmlexportdialog.cpp:199
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:212
+#: hk_kdeclasses/knodamaindockwindow.cpp:516
+msgid "Query"
+msgstr "Запит"
+
+#: hk_kdeclasses/hk_kdecsvexportdialog.cpp:232
+#: hk_kdeclasses/hk_kdexmlexportdialog.cpp:203
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:215
+msgid "View"
+msgstr "Вид"
+
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:333
+msgid "Text File Import Dialog"
+msgstr "Text Імпорт діалог"
+
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:342
+msgid "Preview:"
+msgstr "Перегляд:"
+
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:352
+msgid "Detect \"Autoincrement\" "
+msgstr "Визначити \"Автозростаючий\" "
+
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:356
+msgid "Append data"
+msgstr "Приєднати дані"
+
+#: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:363
+msgid "Don't overwrite data in table."
+msgstr "Не переписувати дані в таблиці."
+
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:65
+msgid "CSV Import Dialog"
+msgstr "CSV Імпорт діалог"
+
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:66
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:219
+msgid "Filename:"
+msgstr "Ім'я файлу:"
+
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:69
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:217
+#: hk_kdeclasses/hk_kdexmlexportdialog.cpp:153
+msgid "Tablename:"
+msgstr "Ім'я таблиці:"
+
+#: hk_kdeclasses/hk_kdecsvimportdialog.cpp:207
+msgid "Importing data..."
+msgstr "Імпортування даних..."
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:272
+msgid "Database settings"
+msgstr "Установки бази даних"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:273
+#: hk_kdeclasses/hk_kdedatabasesetting.cpp:161
+msgid "Open and store files:"
+msgstr "Відкрити і зберегти файли:"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:275
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:497
+msgid "F1"
+msgstr "F1"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:281
+msgid "Create system table:"
+msgstr "Створити системну таблицю:"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:282
+msgid "C&reate"
+msgstr "С&творити"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:283
+msgid "Alt+R"
+msgstr "Alt+R"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:285
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:466
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:491
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:85 hk_kdeclasses/hk_kdeqbe.cpp:56
+msgid "Yes"
+msgstr "Так"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:286
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:467
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:492
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:86 hk_kdeclasses/hk_kdeqbe.cpp:56
+msgid "No"
+msgstr "Ні"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:287
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:464
+msgid "Automatic data update:"
+msgstr "Автоматичне поновлення даних:"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:288
+#, fuzzy
+msgid "Load/Store"
+msgstr "Завантажити/Зберегти"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:289
+msgid "Queries:"
+msgstr "Запити:"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:290
+msgid "Forms:"
+msgstr "Форми:"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:291
+msgid "Set all:"
+msgstr "Включити все:"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:292
+msgid "Reports:"
+msgstr "Звіти:"
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:293
+msgid "Modules:"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:294
+msgid "Encoding:"
+msgstr "Кодування:"
+
+#: hk_kdeclasses/hk_kdedatabasesetting.cpp:46
+#: hk_kdeclasses/hk_kdeobjecthandler.cpp:50
+msgid "Local"
+msgstr "Локальний"
+
+#: hk_kdeclasses/hk_kdedatabasesetting.cpp:47
+#: hk_kdeclasses/hk_kdeobjecthandler.cpp:49
+msgid "Central"
+msgstr "Головні"
+
+#: hk_kdeclasses/hk_kdedatabasesetting.cpp:61
+msgid "Load/Save"
+msgstr "Завантажити/Зберегти"
+
+#: hk_kdeclasses/hk_kdedatabasesetting.cpp:66
+#: hk_kdeclasses/hk_kdedatabasesetting.cpp:161
+msgid "Regional"
+msgstr "Регіональні"
+
+#: hk_kdeclasses/hk_kdedatabasesetting.cpp:118
+msgid ""
+"Error: could not create central storage table\n"
+" Check your permissions"
+msgstr ""
+"Fehler: неможливо створити таблицю центрального сховища\n"
+" Перевірте свої права доступу"
+
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:78
+msgid "Add datasource"
+msgstr "Додати джерело даних"
+
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:372
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:1341
+msgid "Edit"
+msgstr "Редагувати"
+
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:374
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:1343
+msgid "Delete"
+msgstr "Видалити"
+
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:439
+msgid "Remove datasource '%1'?"
+msgstr "Видалити джерело даних '%1'?"
+
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:1193
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:192
+msgid "On update:"
+msgstr "При оновленні:"
+
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:1193
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:1194
+#: hk_kdeclasses/hk_kderelationdialog.cpp:99
+msgid "Cascade"
+msgstr "Каскадна"
+
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:1193
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:1194
+#: hk_kdeclasses/hk_kderelationdialog.cpp:100
+msgid "Restrict"
+msgstr "Обмежений"
+
+#: hk_kdeclasses/hk_kdedbdesigner.cpp:1194
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:193
+msgid "On delete:"
+msgstr "При видаленні:"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:52
+msgid "Please select"
+msgstr "Будь ласка виберіть:"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:196
+msgid "&Schema only"
+msgstr "&Тільки схема"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:197
+msgid "Schema and &data"
+msgstr "Схема і &дані"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:201
+msgid "Active database:"
+msgstr "Активна база даних:"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:233
+#: hk_kdeclasses/hk_kdedblistview.cpp:318
+msgid "<No database>"
+msgstr "<Немає бази даних>"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:236
+#: hk_kdeclasses/hk_kdedblistview.cpp:463
+msgid "Modules"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:240
+#: hk_kdeclasses/hk_kdedblistview.cpp:432
+msgid "Reports"
+msgstr "Звіти"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:244
+#: hk_kdeclasses/hk_kdedblistview.cpp:397
+msgid "Forms"
+msgstr "Форми"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:250
+#: hk_kdeclasses/hk_kdedblistview.cpp:363
+msgid "Queries"
+msgstr "Запити"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:260
+msgid "Views"
+msgstr "Перегляди"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:268
+msgid "Tables"
+msgstr "Таблиці"
+
+#: hk_kdeclasses/hk_kdedblistview.cpp:369
+#: hk_kdeclasses/hk_kdedblistview.cpp:403
+#: hk_kdeclasses/hk_kdedblistview.cpp:438
+#: hk_kdeclasses/hk_kdedblistview.cpp:469
+msgid " (Central)"
+msgstr " (Головні)"
+
+#: hk_kdeclasses/hk_kdedriverdialog.cpp:62
+msgid "Directory"
+msgstr "Каталог"
+
+#: hk_kdeclasses/hk_kdedriverdialog.cpp:78
+msgid "Found database drivers:"
+msgstr "Знайти драйвери бази даних:"
+
+#: hk_kdeclasses/hk_kdedriverdialog.cpp:79
+msgid "SQL Driver Selection"
+msgstr "Вибіл SQL-драйверів"
+
+#: hk_kdeclasses/hk_kdedriverdialog.cpp:110
+msgid "Connect"
+msgstr "З'єднатися"
+
+#: hk_kdeclasses/hk_kdedriverdialog.cpp:111
+#: hk_kdeclasses/hk_kdeindexeditwindow.cpp:168
+msgid "Exit"
+msgstr "Вихід"
+
+#: hk_kdeclasses/hk_kdedriverdialog.cpp:147
+msgid "Please select a driver"
+msgstr "Будь ласка виберіть драйвер:"
+
+#: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:209
+#: hk_kdeclasses/hk_kdeobjecthandlerbase.cpp:120
+msgid "Form1"
+msgstr "Форма1"
+
+#: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:210
+#: hk_kdeclasses/hk_kdeobjecthandlerbase.cpp:123
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:155
+msgid "E&xit"
+msgstr "В&ихід"
+
+#: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:211
+msgid "Alt+X"
+msgstr "Alt+X"
+
+#: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:212
+msgid "Copy structure and data"
+msgstr "Копіювати структуру та дані"
+
+#: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:216
+msgid "Overwrite"
+msgstr "Переписати"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:80
+msgid ""
+"Error while creating export/importdb dialog!\n"
+"Database or connection not set!"
+msgstr ""
+"Помилка під час створення діалогу експорту/імпорту бази даних!\n"
+"Базу даних або з'єднання не встановлено!"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:109
+msgid "Import database dialog"
+msgstr "Діалог імпорту бази даних"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:109
+msgid "Export database dialog"
+msgstr "Діалог експорту бази даних"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:133
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:379
+#: hk_kdeclasses/knodamaindockwindow.cpp:146
+msgid "Driver does not support creating new tables"
+msgstr "Драйвер не підтримує створення нових таблиць"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:146
+#: hk_kdeclasses/knodamaindockwindow.cpp:270
+msgid "Driver does not support creating new views"
+msgstr "Драйвер не підтримує створення нових переглядів"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:344
+msgid "Driver does not support creating new databases"
+msgstr "Драйвер не підтримує створення нових баз даних"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:347
+msgid "Copy whole database?"
+msgstr "Копіювати всю базу даних?"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:358
+msgid "Copy whole database failed!"
+msgstr "Копіювати все поле бази даних!"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:382
+msgid "Copy all tables?"
+msgstr "Копіювати всі таблиці?"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:423
+msgid "Copy all queries?"
+msgstr "Копіювати всі запити?"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:424
+msgid "Copy all forms?"
+msgstr "Копіювати всі форми?"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:425
+msgid "Copy all reports?"
+msgstr "Копіювати всі звіти?"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:468
+msgid "Target database does not support views!"
+msgstr "Цільова база даних не підтримую перегляди!"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:471
+msgid "Copy all views?"
+msgstr "Копіювати всі перегляди?"
+
+#: hk_kdeclasses/hk_kdeeximportdatabase.cpp:564
+#: hk_kdeclasses/knodamaindockwindow.cpp:122
+msgid "Database could not be created"
+msgstr "База даних не може бути створена!"
+
+#: hk_kdeclasses/hk_kdefilterdialogbase.cpp:97
+#: hk_kdeclasses/hk_kdefinddialogbase.cpp:135
+#: hk_kdeclasses/hk_kdemessages.cpp:133
+msgid "MyDialog"
+msgstr "MійДіалог"
+
+#: hk_kdeclasses/hk_kdefilterdialog.cpp:32
+msgid "Filter Dialog"
+msgstr "Ділог Фільтру"
+
+#: hk_kdeclasses/hk_kdefilterdialog.cpp:33
+#: hk_kdeclasses/hk_kdefinddialog.cpp:38
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:204
+msgid "&Ok"
+msgstr "&Гаразд"
+
+#: hk_kdeclasses/hk_kdefilterdialog.cpp:43
+msgid "Editor"
+msgstr "Редактор"
+
+#: hk_kdeclasses/hk_kdefinddialogbase.cpp:136
+#: hk_kdeclasses/hk_kdefinddialog.cpp:31
+msgid "Search"
+msgstr "Пошук"
+
+#: hk_kdeclasses/hk_kdefinddialogbase.cpp:139
+#: hk_kdeclasses/hk_kdefinddialog.cpp:32
+msgid "Options"
+msgstr "Параметри"
+
+#: hk_kdeclasses/hk_kdefinddialogbase.cpp:140
+#: hk_kdeclasses/hk_kdefinddialog.cpp:33
+msgid "C&ase sensitive"
+msgstr "Виберіть &точність"
+
+#: hk_kdeclasses/hk_kdefinddialogbase.cpp:141
+msgid "All &columns"
+msgstr "Всі с&товпці"
+
+#: hk_kdeclasses/hk_kdefinddialogbase.cpp:142
+#: hk_kdeclasses/hk_kdefinddialog.cpp:30
+msgid "&Part of column"
+msgstr "&Частина стовпця"
+
+#: hk_kdeclasses/hk_kdefinddialogbase.cpp:143
+#: hk_kdeclasses/hk_kdefinddialog.cpp:35
+msgid "Find &backwards"
+msgstr "Ш&укати в зворотньому напрямку"
+
+#: hk_kdeclasses/hk_kdefinddialog.cpp:34
+msgid "All c&olumns"
+msgstr "Всі с&товпці:"
+
+#: hk_kdeclasses/hk_kdefinddialog.cpp:37
+msgid "Search Dialog"
+msgstr "Діалог пошуку"
+
+#: hk_kdeclasses/hk_kdeform.cpp:86 hk_kdeclasses/hk_kdemodule.cpp:84
+#: hk_kdeclasses/knodamaindockwindow.cpp:532
+msgid ""
+"Fatal error! Form part could not be loaded!\n"
+"This is a installation error. Check your installation! Did you install knoda "
+"into the correct directory? Program will exit now..."
+msgstr ""
+"Фатальна помилка! Частину форм неможливо завантажити!\n"
+"Це помилка інсталяції. Перевірте свою інсталяцію! Чи коректоно ви обрали "
+"директорію установки? Програму буде завершено зараз..."
+
+#: hk_kdeclasses/hk_kdeform.cpp:437 hk_kdeclasses/hk_kdeformpartwidget.cpp:822
+msgid "Form - "
+msgstr "Форма - "
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:345
+msgid "new formdatasource dialog"
+msgstr "Нова форма діалогу джерела даних"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:347
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:90
+msgid "A&lter"
+msgstr "З&мінити"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:348
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:91
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:234
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:240
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1280
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1602
+#: hk_kdeclasses/hk_kdesimplereport.cpp:212
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1197
+#: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:339
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:56
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:237
+msgid "&Delete"
+msgstr "&Видалити"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:350
+msgid "based on:"
+msgstr "основано на:"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:351
+msgid "Sql:"
+msgstr "Sql:"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:352
+msgid "filter:"
+msgstr "фільтр:"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:354
+msgid "sortingfield"
+msgstr "поле сортування"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:356
+msgid "depending mode:"
+msgstr "Режим залежностей:"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:358
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:84
+msgid "depending on"
+msgstr "залежить від"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:359
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:70
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:86
+msgid "thisfield"
+msgstr "ЦеПоле"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:360
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:70
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:85
+#: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:343
+msgid "masterfield"
+msgstr "МайстерПоле"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:361
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:81
+msgid "react on master changes?"
+msgstr "Реагувати на зміни майстра?"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:362
+msgid "Is read only?"
+msgstr "Тільки для читання?"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:363
+msgid "Automatic data update?"
+msgstr "Автоматично поновлювати дані?"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:75
+msgid "standard"
+msgstr "стандарт"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:76
+msgid "no handle"
+msgstr "не підтримується"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:77
+msgid "change"
+msgstr "заміна"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:78
+msgid "delete"
+msgstr "видалення"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:79
+msgid "change+delete"
+msgstr "заміна+видалення"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:80
+msgid "depending mode"
+msgstr "Режим залежностей"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:82
+msgid "is readonly?"
+msgstr "Тільки для читання?"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:83
+msgid "based on"
+msgstr "оснований на"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:87
+msgid "filter"
+msgstr "фільтр"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:88
+msgid "sorting"
+msgstr "сортування"
+
+#: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:97
+msgid "Datasource dialog"
+msgstr "Діалог джерела даних"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:84
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:218
+#: hk_kdeclasses/knodamaindockwindow.cpp:544
+msgid "Form"
+msgstr "Форма"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:118
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:193
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:169
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:131
+msgid "&Design mode"
+msgstr "&Режим конструктора"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:122
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:197
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:173
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:136
+msgid "&View mode"
+msgstr "&Режим перегляду"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:130
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:121
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:220
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:189
+msgid "&Save"
+msgstr "&Зберегти"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:135
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:127
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:225
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:193
+msgid "Save &as"
+msgstr "Зберегти &як"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:140
+#, fuzzy
+msgid "Lineedit"
+msgstr "поле редагування рядків"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:143
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:198
+#, fuzzy
+msgid "Pointer"
+msgstr "&Принтер"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:146
+#, fuzzy
+msgid "Label"
+msgstr "Мітка:"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:149
+#, fuzzy
+msgid "Multiline"
+msgstr "Множинні файли:"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:152
+#, fuzzy
+msgid "Boolean"
+msgstr "Логічне"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:155
+#, fuzzy
+msgid "Combobox"
+msgstr "&Стовпець підстановки"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:158
+msgid "Grid"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:161
+#: hk_kdeclasses/hk_kdeproperty.cpp:539
+msgid "Selector"
+msgstr "Перемикач"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:164
+#, fuzzy
+msgid "Button"
+msgstr "кнопка"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:167
+#, fuzzy
+msgid "Subform"
+msgstr "Підформа:"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:170
+#, fuzzy
+msgid "Image"
+msgstr "Шлях до образу:"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:173
+msgid "Tabwidget"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:176
+msgid "date"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:195
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:204
+msgid "select"
+msgstr "вибрати"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:196
+msgid "textlabel"
+msgstr "текстова мітка"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:197
+msgid "lineeditfield"
+msgstr "поле редагування рядків"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:198
+msgid "memofield"
+msgstr "поле мемо"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:199
+msgid "booleanfield"
+msgstr "логічне поле"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:200
+msgid "comboboxfield"
+msgstr "стовпець підстановки"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:201
+msgid "gridfield"
+msgstr "ґрати"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:202
+#: hk_kdeclasses/hk_kdetaborder.cpp:84 hk_kdeclasses/hk_kdetaborder.cpp:148
+msgid "rowselector"
+msgstr "відбір рядків"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:203
+#: hk_kdeclasses/hk_kdetaborder.cpp:83 hk_kdeclasses/hk_kdetaborder.cpp:147
+msgid "button"
+msgstr "кнопка"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:207
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:211
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1237
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1187
+msgid "Set to all"
+msgstr "Встановити для всіх"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:209
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:213
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1239
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1188
+msgid "Font"
+msgstr "Шрифт"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:212
+#: hk_kdeclasses/hk_kdeproperty.cpp:188
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:216
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1243
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1190
+msgid "Foregroundcolour"
+msgstr "Колір"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:215
+#: hk_kdeclasses/hk_kdeproperty.cpp:189
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:219
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1247
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1192
+msgid "Backgroundcolour"
+msgstr "Колір фону"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:223
+msgid "Tab order"
+msgstr "Таб-порядок"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:227 hk_kdeclasses/hk_kdegrid.cpp:531
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:208
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:150
+msgid "Reload"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:238
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:166
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:268
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:244
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1604
+#: hk_kdeclasses/hk_kdesimplereport.cpp:216
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:169
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:283
+#: hk_kdegridpart/hk_kdegridpart.cpp:59
+msgid "&Copy"
+msgstr "&Копіювати"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:242
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:177
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:276
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:248
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1606
+#: hk_kdeclasses/hk_kdesimplereport.cpp:220
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:174
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:287
+#: hk_kdegridpart/hk_kdegridpart.cpp:64
+msgid "&Paste"
+msgstr "&Вставити"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:246
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:133
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:245
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:252
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1608
+#: hk_kdeclasses/hk_kdesimplereport.cpp:224
+msgid "Cu&t"
+msgstr "&Вирізати"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:250
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:236
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1610
+msgid "&Propertyeditor"
+msgstr "&Редактор властивостей"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:254
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:256
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1613
+#: hk_kdeclasses/hk_kdesimplereport.cpp:228
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1163
+msgid "Adjust &size"
+msgstr "&Підігнати розмір"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:256
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:258
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1615
+#: hk_kdeclasses/hk_kdesimplereport.cpp:230
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1166
+msgid "Minimum width"
+msgstr "Мінімальна ширина"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:259
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:261
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1616
+#: hk_kdeclasses/hk_kdesimplereport.cpp:233
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1168
+msgid "Maximum width"
+msgstr "Максимальна ширина"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:262
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:264
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1617
+#: hk_kdeclasses/hk_kdesimplereport.cpp:236
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1170
+msgid "Minimum height"
+msgstr "Мінімальна висота"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:265
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:267
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1618
+#: hk_kdeclasses/hk_kdesimplereport.cpp:239
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1172
+msgid "Maximum height"
+msgstr "Максимальна висота"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:268
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:270
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1619
+#: hk_kdeclasses/hk_kdesimplereport.cpp:242
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1174
+msgid "Minimum size"
+msgstr "Мінімальний розмір"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:271
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:273
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1620
+#: hk_kdeclasses/hk_kdesimplereport.cpp:245
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1176
+msgid "Maximum size"
+msgstr "Максимальний розмір"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:281
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:283
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1627
+#: hk_kdeclasses/hk_kdesimplereport.cpp:255
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1164
+msgid "&Align"
+msgstr "&Вирівняти"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:283
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:285
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1629
+#: hk_kdeclasses/hk_kdesimplereport.cpp:257
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1178
+msgid "&Left"
+msgstr "З&ліва"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:286
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:288
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1630
+#: hk_kdeclasses/hk_kdesimplereport.cpp:260
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1180
+msgid "&Right"
+msgstr "С&права"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:289
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:291
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1631
+#: hk_kdeclasses/hk_kdesimplereport.cpp:263
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1182
+msgid "&Top"
+msgstr "З&верху"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:292
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:294
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1632
+#: hk_kdeclasses/hk_kdesimplereport.cpp:266
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1184
+msgid "&Bottom"
+msgstr "З&низу"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:299
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1637
+msgid "Database designer"
+msgstr "Конструктор бази даних"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:303
+msgid "with label"
+msgstr "з міткою"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:307 hk_kdeclasses/hk_kdegrid.cpp:529
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1294
+msgid "Define columns"
+msgstr "Визначити стовпці"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:313
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:154
+msgid "Filterdefinition"
+msgstr "Критерії фільтру"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:316
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:158
+msgid "Filterexecution"
+msgstr "Виконання фільтрації"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:321
+#, fuzzy
+msgid "Clear filter"
+msgstr "фільтр"
+
+#: hk_kdeclasses/hk_kdeformpartwidget.cpp:923
+msgid ""
+"hk_kdeformpartwidget::taborder_clicked error: taborder dialog could not be "
+"created!"
+msgstr ""
+"hk_kdeformpartwidget::taborder_clicked помилка: taborder діалог не може бути "
+"створений!"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:581
+msgid "Column Select"
+msgstr "Вибраний стовпець"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:582
+msgid "Visible columns:"
+msgstr "Видимі стовпці:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:583
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:56
+msgid "Invisible columns:"
+msgstr "Невидимі стовпці:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:586
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:86
+msgid "Columndefinition:"
+msgstr "Визначення поля:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:590
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:83
+msgid "Displayname:"
+msgstr "Ім'я для відображення:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:591
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:84
+msgid "Columntype:"
+msgstr "Тип поля:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:592
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:85
+msgid "Digits:"
+msgstr "Цифри:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:593
+#: hk_kdeclasses/hk_kdepropertybase.cpp:988
+#: hk_kdeclasses/hk_kdeproperty.cpp:173
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:622
+#: hk_kdeclasses/hk_kdereportproperty.cpp:520
+#: hk_kdeclasses/hk_kdereportproperty.cpp:532
+msgid "Alignment:"
+msgstr "Вирівнювання:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:594
+msgid "Separators:"
+msgstr "Розділювачі:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:595
+#: hk_kdeclasses/hk_kdepropertybase.cpp:966
+msgid "Readonly:"
+msgstr "Тільки читання:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:596
+#: hk_kdeclasses/hk_kdepropertybase.cpp:954
+#: hk_kdeclasses/hk_kdeproperty.cpp:144 hk_kdeclasses/hk_kdeproperty.cpp:507
+msgid "Default value:"
+msgstr "Стандартне значення:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:597
+#: hk_kdeclasses/hk_kdepropertybase.cpp:959
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:610
+msgid "Identifier:"
+msgstr "Ідентифікатор:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:598
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:88
+#: hk_kdeclasses/hk_kdepropertybase.cpp:994
+#: hk_kdeclasses/hk_kdeproperty.cpp:85
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:631
+#: hk_kdeclasses/hk_kdereportproperty.cpp:166
+#: hk_kdeclasses/hk_kdereportproperty.cpp:217
+msgid "&Format"
+msgstr "&Формат"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:599
+#: hk_kdeclasses/hk_kdepropertybase.cpp:965
+#: hk_kdeclasses/hk_kdeproperty.cpp:153
+msgid "Viewcolumn:"
+msgstr "Стовпці перегляду:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:600
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:87
+msgid "Listdatasourcetype:"
+msgstr "Список типів джерел даних:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:601
+#: hk_kdeclasses/hk_kdepropertybase.cpp:962
+#: hk_kdeclasses/hk_kdeproperty.cpp:152
+msgid "Listcolumn:"
+msgstr "Стовпці списку:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:602
+#: hk_kdeclasses/hk_kdepropertybase.cpp:964
+#: hk_kdeclasses/hk_kdeproperty.cpp:151
+msgid "Listdatasource:"
+msgstr "Список джерел даних:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:603
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:89
+msgid "&Combobox"
+msgstr "&Стовпець підстановки"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:604
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1007
+msgid "On click:"
+msgstr "Клацання:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:607
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1008
+msgid "On doubleclick:"
+msgstr "Подвійне клацання:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:608
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1030
+msgid "On loosefocus:"
+msgstr "При втраті фокусу:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:611
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1010
+msgid "On getfocus:"
+msgstr "При отриманні фокусу"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:614
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1021
+msgid "Before insert:"
+msgstr "Перед вставкою:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:616
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1017
+msgid "Before update:"
+msgstr "Перед оновленням:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:617
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1029
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:648
+msgid "On open:"
+msgstr "При відкритті:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:620
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1012
+msgid "Before delete:"
+msgstr "Перед видаленням:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:621
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1016
+msgid "After update:"
+msgstr "Після оновлення:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:622
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1018
+msgid "After delete:"
+msgstr "Після видалення:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:623
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1028
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:646
+msgid "Before row change:"
+msgstr "Перед зміною рядка:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:624
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1024
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:649
+msgid "On close:"
+msgstr "При закритті:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:629
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1019
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:645
+msgid "After row change:"
+msgstr "Після зміни рядка:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:631
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1033
+msgid "On key:"
+msgstr "При ключі:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:632
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1036
+msgid "After insert:"
+msgstr "Після вставки:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:634
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1034
+msgid "On select:"
+msgstr "При виборі:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:636
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1040
+#: hk_kdeclasses/hk_kdeproperty.cpp:100
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:655
+#: hk_kdeclasses/hk_kdereportproperty.cpp:219
+msgid "&Action"
+msgstr "&Дія"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:51
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:342
+#: hk_kdeclasses/hk_kdeproperty.cpp:104
+#: hk_kdeclasses/hk_kdereportproperty.cpp:123
+#: hk_kdeclasses/hk_kdereportproperty.cpp:492
+#: hk_kdeclasses/hk_kdetabledesign.cpp:624
+#: hk_kdeclasses/hk_kdetabledesign.cpp:656
+#: hk_kdeclasses/hk_kdetabledesign.cpp:668
+#: hk_kdeclasses/hk_kdetabledesign.cpp:831
+#: hk_kdeclasses/hk_kdetabledesign.cpp:832
+#: hk_kdeclasses/hk_kdetabledesign.cpp:956
+msgid "no"
+msgstr "ні"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:52
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:341
+#: hk_kdeclasses/hk_kdeproperty.cpp:105
+#: hk_kdeclasses/hk_kdereportproperty.cpp:122
+#: hk_kdeclasses/hk_kdereportproperty.cpp:491
+#: hk_kdeclasses/hk_kdetabledesign.cpp:656
+#: hk_kdeclasses/hk_kdetabledesign.cpp:668
+#: hk_kdeclasses/hk_kdetabledesign.cpp:753
+#: hk_kdeclasses/hk_kdetabledesign.cpp:831
+#: hk_kdeclasses/hk_kdetabledesign.cpp:832
+#: hk_kdeclasses/hk_kdetabledesign.cpp:956
+msgid "yes"
+msgstr "так"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:57
+msgid "Shown columns:"
+msgstr "Показані стовпці:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:59
+msgid "Column"
+msgstr "Стовпець"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:59
+msgid "Columntype"
+msgstr "Тип поля"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:62
+msgid "Column select"
+msgstr "Вибраний стовпець"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:65
+#: hk_kdeclasses/hk_kdeproperty.cpp:206
+#: hk_kdeclasses/hk_kdereportproperty.cpp:207
+msgid "set"
+msgstr "включено"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:66
+#: hk_kdeclasses/hk_kdegrid.cpp:116 hk_kdeclasses/hk_kdegrid.cpp:120
+#: hk_kdeclasses/hk_kdeproperty.cpp:207
+#: hk_kdeclasses/hk_kdereportproperty.cpp:208
+msgid "not set"
+msgstr "виключено"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:68
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:122
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:272
+msgid "edit"
+msgstr "редагування"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:69
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:268
+msgid "bool"
+msgstr "логічне"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:70
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:270
+msgid "combo"
+msgstr "Підстановка"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:74
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:71
+#: hk_kdeclasses/hk_kdeproperty.cpp:174
+#: hk_kdeclasses/hk_kdereportproperty.cpp:525
+msgid "Left"
+msgstr "Вліво"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:75
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:73
+#: hk_kdeclasses/hk_kdeproperty.cpp:175
+#: hk_kdeclasses/hk_kdereportproperty.cpp:525
+msgid "Center"
+msgstr "По центру"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:76
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:72
+#: hk_kdeclasses/hk_kdeproperty.cpp:176
+#: hk_kdeclasses/hk_kdereportproperty.cpp:526
+msgid "Right"
+msgstr "Вправо"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:81
+msgid "Read only:"
+msgstr "Тільки для читання:"
+
+#: hk_kdeclasses/hk_kdegridcolumndialog.cpp:82
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:476
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:83
+#: hk_kdeclasses/hk_kdeproperty.cpp:181
+msgid "Separator:"
+msgstr "розділювач:"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:66 hk_kdeclasses/hk_kdegrid.cpp:544
+msgid "Copy"
+msgstr "Копіювати"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:101
+msgid "Datasource: "
+msgstr "Джерело даних:"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:107 hk_kdeclasses/hk_kdegrid.cpp:114
+msgid "readonly"
+msgstr "тільки для читання"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:109 hk_kdeclasses/hk_kdegrid.cpp:114
+msgid "readwrite"
+msgstr "для читання і запису"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:110
+msgid " Column: "
+msgstr " Поле:"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:533 hk_kdeclasses/hk_kdeproperty.cpp:126
+#: hk_kdeclasses/hk_kderowselector.cpp:79
+msgid "Delete row"
+msgstr "Видалити рядок"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:535 hk_kdeclasses/hk_kdelineedit.cpp:418
+msgid "Find"
+msgstr "Шукати"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:537 hk_kdeclasses/hk_kdelineedit.cpp:420
+#: hk_kdeclasses/hk_kdememo.cpp:419
+msgid "set 'NULL' value"
+msgstr "встановлено значення 'NULL'"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:540
+msgid "Load from file"
+msgstr "Завантажити з файлу"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:542
+msgid "Save to file"
+msgstr "Зберегти до файлу"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:547
+msgid "Paste"
+msgstr "Вставити"
+
+#: hk_kdeclasses/hk_kdegrid.cpp:725 hk_kdeclasses/hk_kdelineedit.cpp:509
+#: hk_kdeclasses/hk_kdememo.cpp:495
+msgid "Not found."
+msgstr "Не знайдено."
+
+#: hk_kdeclasses/hk_kdeimage.cpp:49
+msgid "&Fit to size"
+msgstr "&Підігнати до розміру"
+
+#: hk_kdeclasses/hk_kdeimage.cpp:50
+msgid "O&riginal size"
+msgstr "&Оригінальній розмір"
+
+#: hk_kdeclasses/hk_kdeimage.cpp:51
+msgid "Zoom &in"
+msgstr "З&меншити"
+
+#: hk_kdeclasses/hk_kdeimage.cpp:52
+msgid "Zoom &out"
+msgstr "З&більшити"
+
+#: hk_kdeclasses/hk_kdeimage.cpp:56
+msgid "&Load image"
+msgstr "&Завантажити образ"
+
+#: hk_kdeclasses/hk_kdeimage.cpp:58
+msgid "&Save image"
+msgstr "З&берегти образ"
+
+#: hk_kdeclasses/hk_kdeimage.cpp:183 hk_kdeclasses/hk_kdeimage.cpp:300
+msgid "No image"
+msgstr "Немає образу"
+
+#: hk_kdeclasses/hk_kdeimage.cpp:354 hk_kdeclasses/hk_kdeimage.cpp:365
+#, fuzzy
+msgid "No image "
+msgstr " Немає образу "
+
+#: hk_kdeclasses/hk_kdeindexeditwindow.cpp:50
+msgid "Index Edit - Table:"
+msgstr "Index Edit - Table:"
+
+#: hk_kdeclasses/hk_kdeindexeditwindow.cpp:62
+msgid "Free fields:"
+msgstr "Вільні поля:"
+
+#: hk_kdeclasses/hk_kdeindexeditwindow.cpp:101
+msgid "Used fields:"
+msgstr "Використані поля:"
+
+#: hk_kdeclasses/hk_kdeindexeditwindow.cpp:120
+msgid "Indexname:"
+msgstr "Ім'я індексу:"
+
+#: hk_kdeclasses/hk_kdeindexeditwindow.cpp:134
+#: hk_kdeclasses/hk_kdetabledesign.cpp:72
+msgid "Unique"
+msgstr "Унікальне"
+
+#: hk_kdeclasses/hk_kdeindexeditwindow.cpp:162
+msgid "OK"
+msgstr "Гаразд"
+
+#: hk_kdeclasses/hk_kdeindexeditwindow.cpp:237
+msgid "Index could not be altered"
+msgstr "Індекс не можна змінити"
+
+#: hk_kdeclasses/hk_kdeinterpreterdialog.cpp:89
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:95
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:590
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:830
+msgid ""
+"A KDE text-editor component could not be found;\n"
+"please check your KDE installation."
+msgstr ""
+
+#: hk_kdeclasses/hk_kdemessages.cpp:134
+msgid "Please enter:"
+msgstr "Будь ласка введіть:"
+
+#: hk_kdeclasses/hk_kdemessages.cpp:149
+msgid "Information"
+msgstr "Інформація"
+
+#: hk_kdeclasses/hk_kdemessages.cpp:156
+msgid "Please decide"
+msgstr "Будь ласка вирішіть"
+
+#: hk_kdeclasses/hk_kdemodule.cpp:253
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:360
+msgid "Module - "
+msgstr ""
+
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:117
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:205
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:181
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:120
+msgid "&Print"
+msgstr "&Друкувати"
+
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:144
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:253
+msgid "&Undo"
+msgstr "Від&мінити"
+
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:155
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:261
+msgid "Re&do"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:188
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:283
+msgid "&Replace"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:199
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:290
+#, fuzzy
+msgid "&Find"
+msgstr "Шукати"
+
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:210
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:298
+msgid "Find &Next"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:221
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:305
+#, fuzzy
+msgid "Find Pre&vious"
+msgstr "&Шукати в стовпчику"
+
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:232
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:313
+#, fuzzy
+msgid "Select &All"
+msgstr "Перемикач"
+
+#: hk_kdeclasses/hk_kdemodulepartwidget.cpp:243
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:321
+#, fuzzy
+msgid "Configure &editor"
+msgstr "Редактор джерела даних:"
+
+#: hk_kdeclasses/hk_kdenewdatabasebase.cpp:123
+msgid "New database dialog"
+msgstr "Діалог Нова база даних"
+
+#: hk_kdeclasses/hk_kdenewdatabasebase.cpp:124
+msgid "New database name:"
+msgstr "Ім'я нової бази даних:"
+
+#: hk_kdeclasses/hk_kdenewdatabase.cpp:73
+msgid "New local database file"
+msgstr "Новий файл локальної бази даних"
+
+#: hk_kdeclasses/hk_kdenewpassworddialogbase.cpp:137
+#: hk_kdeclasses/hk_kdenewpassworddialog.cpp:36
+msgid "Password dialog"
+msgstr "Діалог паролю"
+
+#: hk_kdeclasses/hk_kdenewpassworddialogbase.cpp:138
+msgid "Repeat: "
+msgstr "Повторити: "
+
+#: hk_kdeclasses/hk_kdenewpassworddialogbase.cpp:139
+msgid "New Password: "
+msgstr "Новий пароль: "
+
+#: hk_kdeclasses/hk_kdenewpassworddialogbase.cpp:142
+#: hk_kdeclasses/hk_kdenewpassworddialog.cpp:33
+msgid "Enter new password"
+msgstr "Ввести новий пароль:"
+
+#: hk_kdeclasses/hk_kdenewpassworddialog.cpp:34
+msgid "New password:"
+msgstr "Новий пароль:"
+
+#: hk_kdeclasses/hk_kdenewpassworddialog.cpp:35
+msgid "Repeat:"
+msgstr "Повторити:"
+
+#: hk_kdeclasses/hk_kdenewpassworddialog.cpp:64
+msgid "The two entries are different!"
+msgstr "Ці два входження - різні!"
+
+#: hk_kdeclasses/hk_kdeobjecthandler.cpp:51
+msgid "Database object handler"
+msgstr "Оброблювач об'єктів бази даних"
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:128
+msgid "Password Dialog"
+msgstr "Діалог паролю"
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:135
+msgid "Mandatory login details:"
+msgstr "Обов'язкові деталі реєстрації:"
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:172
+msgid "&Host:"
+msgstr "&Хост:"
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:194
+msgid "Database &name:"
+msgstr "Ім'я &бази даних: "
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:235
+msgid "&User:"
+msgstr "&Користувач:"
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:267
+msgid "&Password:"
+msgstr "&Пароль:"
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:290
+msgid "&TCP Port:"
+msgstr "&TCP Порт:"
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:313
+msgid "S&QL Delimiter:"
+msgstr "S&QL Розділювач:"
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:338
+msgid "&Emulate Boolean:"
+msgstr "&Емуляція бульового:"
+
+#: hk_kdeclasses/hk_kdepassworddialog.cpp:366
+msgid "&Save settings"
+msgstr "&Зберегти настройки"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:453
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:47
+msgid "Preferences"
+msgstr "Параметри"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:454
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:51
+msgid "Driverpath:"
+msgstr "Шлях до драйверу:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:456
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:57
+msgid "Default driver:"
+msgstr "Стандартний драйвер:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:457
+msgid "Snap to grid x:"
+msgstr "Вирівняти по сітці x:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:458
+msgid "Snap to grid y:"
+msgstr "Вирівняти по сітці y:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:459
+msgid "Metric system:"
+msgstr "Метрична система:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:461
+msgid "Relative"
+msgstr "Відносна"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:462
+msgid "Absolute"
+msgstr "Абсолютна"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:463
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:55
+msgid "Store password:"
+msgstr "Зберегти пароль:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:468
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:50
+msgid "&General"
+msgstr "&Головні"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:469
+msgid "show maximized: "
+msgstr "показати збільшеним: "
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:470
+msgid "be pedantic:"
+msgstr "бути прискіпливим:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:471
+msgid "Use single click:"
+msgstr "Використовувати один клік:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:472
+msgid "&Appearance"
+msgstr "&Вигляд"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:473
+msgid "Default font:"
+msgstr "Стандартний шрифт:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:474
+msgid "Textalignment:"
+msgstr "Вирівнювання тексту:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:475
+msgid "Numberalignment:"
+msgstr "Вирівнювання чисел:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:477
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:84
+#: hk_kdeclasses/hk_kdeproperty.cpp:180
+#: hk_kdeclasses/hk_kdereportproperty.cpp:169
+msgid "Precision:"
+msgstr "Точність:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:478
+msgid "&Defaults"
+msgstr "&Стандартні"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:479
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:44
+msgid "Date format:"
+msgstr "Формат дати:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:480
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:45
+msgid "Time format:"
+msgstr "Формат часу:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:481
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:46
+msgid "Date&Time format:"
+msgstr "Формат Дата/&Час:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:483
+msgid "cm"
+msgstr "см"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:484
+msgid "inch"
+msgstr "дюйм"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:485
+msgid "Measure system:"
+msgstr "Система мір:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:486
+msgid "Locale:"
+msgstr "Локаль:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:487
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:48
+msgid "&Regional"
+msgstr "&Регіональні"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:488
+msgid "Print command:"
+msgstr "Команда друку:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:494
+msgid "Embed fonts:"
+msgstr "Вставляти шрифти:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:495
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:49
+msgid "&Printer"
+msgstr "&Принтер"
+
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:52
+msgid "Printcommand:"
+msgstr "Команда друку:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:53
+msgid "Show all questions:"
+msgstr "Показати всі запитання:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:54
+msgid "Show maximized:"
+msgstr "Показати збільшеним:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:56
+msgid "Default Font:"
+msgstr "Стандартний шрифт:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:81
+msgid "Text alignment:"
+msgstr "Вирівнювання тексту:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:82
+msgid "Number alignment:"
+msgstr "Вирівнювання чисел:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:96
+msgid "Singleclick"
+msgstr "Один клік:"
+
+#: hk_kdeclasses/hk_kdepreferencesdialog.cpp:97
+msgid "Doubleclick"
+msgstr "Подвійний клік:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:951
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:605
+msgid "Property Editor"
+msgstr "Редактор властивостей"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:952
+#: hk_kdeclasses/hk_kdeproperty.cpp:534
+msgid "Combomode:"
+msgstr "Combomode:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:953
+#: hk_kdeclasses/hk_kdeproperty.cpp:133
+msgid "Label:"
+msgstr "Мітка:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:956
+#: hk_kdeclasses/hk_kdeproperty.cpp:140
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:614
+msgid "Datasource:"
+msgstr "Джерело даних:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:957
+msgid "Tooltip:"
+msgstr "Підказка:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:958
+#: hk_kdeclasses/hk_kdeproperty.cpp:141
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:608
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:83
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:194
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:203
+msgid "Column:"
+msgstr "Стовпець:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:960
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:615
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:83
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:191
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:200
+msgid "Id:"
+msgstr "Id:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:961
+msgid "Subform:"
+msgstr "Підформа:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:967
+msgid "Use textlist:"
+msgstr "Використати textlist:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:970
+#: hk_kdeclasses/hk_kdeproperty.cpp:77
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:616
+#: hk_kdeclasses/hk_kdereportproperty.cpp:167
+#: hk_kdeclasses/hk_kdereportproperty.cpp:218
+msgid "&Data"
+msgstr "&Дані"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:972
+#: hk_kdeclasses/hk_kdeproperty.cpp:134
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:625
+#: hk_kdeclasses/hk_kdereportproperty.cpp:505
+msgid "X:"
+msgstr "X:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:973
+#: hk_kdeclasses/hk_kdeproperty.cpp:186
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:623
+msgid "Bold:"
+msgstr "Жирний:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:974
+#: hk_kdeclasses/hk_kdereportproperty.cpp:191
+msgid "Backgroundcolour:"
+msgstr "Колір фону:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:975
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:628
+#: hk_kdeclasses/hk_kdereportsectiondialogbase.cpp:187
+msgid "TextLabel2"
+msgstr "TextLabel2"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:976
+#: hk_kdeclasses/hk_kdeproperty.cpp:139
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:620
+msgid "Fontsize:"
+msgstr "Розмір шрифту:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:977
+#: hk_kdeclasses/hk_kdeproperty.cpp:138
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:618
+msgid "Font:"
+msgstr "Шрифт:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:978
+#: hk_kdeclasses/hk_kdeproperty.cpp:137 hk_kdeclasses/hk_kdeproperty.cpp:470
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:626
+#: hk_kdeclasses/hk_kdereportproperty.cpp:172
+#: hk_kdeclasses/hk_kdereportproperty.cpp:478
+msgid "Height:"
+msgstr "Висота:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:979
+#: hk_kdeclasses/hk_kdeproperty.cpp:135
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:619
+#: hk_kdeclasses/hk_kdereportproperty.cpp:517
+msgid "Y:"
+msgstr "Y:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:981
+#: hk_kdeclasses/hk_kdereportproperty.cpp:178
+msgid "Foregroundcolour:"
+msgstr "Колір тексту"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:982
+#: hk_kdeclasses/hk_kdeproperty.cpp:136 hk_kdeclasses/hk_kdeproperty.cpp:469
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:617
+msgid "Width:"
+msgstr "Ширина:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:983
+#: hk_kdeclasses/hk_kdeproperty.cpp:187
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:624
+msgid "Italic:"
+msgstr "Курсив:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:984
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:627
+#: hk_kdeclasses/hk_kdereportsectiondialogbase.cpp:182
+msgid "TextLabel1"
+msgstr "TextLabel1"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:985
+msgid "Scale:"
+msgstr "Масштаб:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:986
+msgid "%"
+msgstr "%"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:987
+msgid "Fit to frame"
+msgstr "Підігнати до рамки"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:989
+msgid "Enabled:"
+msgstr "Включено:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:990
+#: hk_kdeclasses/hk_kdeproperty.cpp:643
+msgid "Local image:"
+msgstr "Локальний образ:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:992
+msgid "Is togglebutton:"
+msgstr "Кнопка перемикання:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:993
+msgid "Is pushed:"
+msgstr "Натиснуто:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:995
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:632
+msgid "TopLine:"
+msgstr "ВерхняЛінія:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:996
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:633
+msgid "BottomLine:"
+msgstr "НижняЛінія:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:997
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:636
+#: hk_kdeclasses/hk_kdereportproperty.cpp:155
+msgid "DiagonalLURO:"
+msgstr "ДіагональLURO:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:998
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:637
+#: hk_kdeclasses/hk_kdereportproperty.cpp:156
+msgid "DiagonalLORU:"
+msgstr "ДіагональLORU:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:999
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:634
+msgid "LeftLine:"
+msgstr "ЛіваЛінія:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1000
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:635
+msgid "RightLine:"
+msgstr "ПраваЛінія:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1001
+#: hk_kdeclasses/hk_kdeproperty.cpp:92
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:642
+#: hk_kdeclasses/hk_kdereportproperty.cpp:168
+#: hk_kdeclasses/hk_kdereportproperty.cpp:220
+msgid "F&rame"
+msgstr "&Кадр"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1002
+msgid "Action"
+msgstr "Дія"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1003
+msgid "Object"
+msgstr "Об'єкт"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1005
+#: hk_kdeclasses/hk_kdeproperty.cpp:155
+msgid "show maximized:"
+msgstr "Показати збільшеним:"
+
+#: hk_kdeclasses/hk_kdepropertybase.cpp:1038
+msgid "On value changed:"
+msgstr "При зміні значення:"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:115
+msgid "Open form"
+msgstr "Відкрити форму"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:116
+msgid "Close form"
+msgstr "Закрити форму"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:117
+msgid "Open table"
+msgstr "Відкрити таблицю"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:118
+msgid "Open query"
+msgstr "Відкрити запит"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:119
+msgid "Preview report"
+msgstr "Попередній перегляд звіту"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:120
+msgid "Print report"
+msgstr "Друкувати звіт"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:121
+msgid "Goto first row"
+msgstr "Перейти до першого рядка"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:122
+msgid "Goto last row"
+msgstr "Перейти до останнього рядка"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:123
+msgid "Goto next row"
+msgstr "Перейти до наступного рядка"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:124
+msgid "Goto previous row"
+msgstr "Перейти до попереднього рядка"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:125
+msgid "Insert row"
+msgstr "Вставити рядок"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:127
+msgid "Store row"
+msgstr "Записати рядок"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:128
+msgid "Execute actionquery"
+msgstr "Виконання дії запиту"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:129
+msgid "Close application"
+msgstr "Закрити програму"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:130
+msgid "Open view"
+msgstr "Відкрити перегляд"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:142
+msgid "Action:"
+msgstr "Дія:"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:143
+msgid "Object:"
+msgstr "Об'єкт:"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:177
+#: hk_kdeclasses/hk_kdereportproperty.cpp:526
+msgid "Default"
+msgstr "Стандартний"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:213
+#: hk_kdeclasses/hk_kdereportproperty.cpp:213
+msgid "Press <F2> for a larger editor window"
+msgstr "Натисніть <F2> для збельшення вікна редактора"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:441
+#: hk_kdeclasses/hk_kdereportproperty.cpp:445
+msgid "Property editor ("
+msgstr "Редактор властивостей ("
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:537
+msgid "Combo"
+msgstr "Combo"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:538
+msgid "Combo (nonwritable)"
+msgstr "Combo (без запису)"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:582
+#: hk_kdeclasses/hk_kdereportproperty.cpp:563
+msgid "relative"
+msgstr "відносний"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:583
+#: hk_kdeclasses/hk_kdereportproperty.cpp:564
+msgid "absolute"
+msgstr "абсолютний"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:584
+#: hk_kdeclasses/hk_kdereportproperty.cpp:568
+msgid "Sizetype:"
+msgstr "Тип розміру:"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:593
+msgid "Form width:"
+msgstr "Ширина форми:"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:594
+msgid "Form height:"
+msgstr "Висота форми:"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:614
+msgid "Icon:"
+msgstr "Іконка:"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:653
+msgid "Image path:"
+msgstr "Шлях до образу:"
+
+#: hk_kdeclasses/hk_kdeproperty.cpp:2149
+msgid "Image '%1' could not be loaded"
+msgstr "Образ '%1' неможливо завантажити"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:53
+msgid "Group"
+msgstr "Група"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:53
+msgid "Sum"
+msgstr "Сума"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:53
+msgid "Count"
+msgstr "Кількість"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:53
+msgid "Min"
+msgstr "Мінімум"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:54
+msgid "Max"
+msgstr "Максимум"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:54
+msgid "Average"
+msgstr "Середнє"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:54
+msgid "Condition"
+msgstr "Умова"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:55
+msgid "none"
+msgstr "жодний"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:55
+msgid "ascending"
+msgstr "по зростанню"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:55
+msgid "descending"
+msgstr "по спаданню"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:302
+msgid "Table:"
+msgstr "Таблиця:"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:303 hk_kdeclasses/hk_kdetabledesign.cpp:173
+msgid "Fieldname:"
+msgstr "Поле:"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:304
+msgid "Alias:"
+msgstr "Псевдонім:"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:305
+msgid "Function:"
+msgstr "Функція:"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:306
+msgid "Order:"
+msgstr "Порядок:"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:307
+msgid "Show:"
+msgstr "Показати:"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:308
+msgid "Updatevalue:"
+msgstr "Оновити значення:"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:309
+msgid "Criteria:"
+msgstr "Критерій:"
+
+#: hk_kdeclasses/hk_kdeqbe.cpp:310
+msgid "Or:"
+msgstr "Або:"
+
+#: hk_kdeclasses/hk_kdequery.cpp:67 hk_kdeclasses/knodamaindockwindow.cpp:501
+msgid ""
+"Fatal error! Query part could not be loaded!\n"
+"This is a installation error. Check your installation! Did you install knoda "
+"into the correct directory? Program will exit now..."
+msgstr ""
+"Фатальна помилка! Частину звіту неможливо завантажити!\n"
+"Це помилка інсталяції. Перевірте свою інсталяцію! Чи коректоно ви обрали "
+"директорію установки? Програму буде завершено зараз..."
+
+#: hk_kdeclasses/hk_kdequery.cpp:194
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:759
+msgid "View - "
+msgstr "Перегляд - "
+
+#: hk_kdeclasses/hk_kdequery.cpp:194
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:759
+msgid "Query - "
+msgstr "Запит - "
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:119
+#: hk_kdeclasses/hk_kdesimpleform.cpp:218
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:80
+msgid ""
+"Fatal error! Grid part could not be loaded!\n"
+"This is a installation error. Check your installation! Did you install knoda "
+"into the correct directory? Program will exit now..."
+msgstr ""
+"Фатальна помилка! Частину сітки неможливо завантажити!\n"
+"Це помилка інсталяції. Перевірте свою інсталяцію. Чи коректно ви вибрали "
+"директорію установки? Програму буде завершено зараз..."
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:127
+#, fuzzy
+msgid ""
+"Fatal error! QBE part could not be loaded!\n"
+"This is a installation error. Check your installation! Did you install knoda "
+"into the correct directory? Program will exit now..."
+msgstr ""
+"Фатальна помилка! Частину звіту неможливо завантажити!\n"
+"Це помилка інсталяції. Перевірте свою інсталяцію! Чи коректоно ви обрали "
+"директорію установки? Програму буде завершено зараз..."
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:212
+msgid "use &QBE"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:229
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:332
+#: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:63
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:69 hk_kdeqbepart/hk_kdeqbepart.cpp:81
+msgid "&Add datasource"
+msgstr "Додати &джерело даних"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:231
+msgid "&Copy backend SQL"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:236
+#, fuzzy
+msgid "Store result"
+msgstr "Записати рядок"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:240
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:72
+msgid "&Distinct rows"
+msgstr "В&ідмінні рядки"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:328
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:77
+msgid "Select query"
+msgstr "Запит на вибірку"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:329
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:78
+msgid "Groupselect query"
+msgstr "Підсумковий запит"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:330
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:79
+msgid "Update query"
+msgstr "Запит на оновлення"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:331
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:80
+msgid "Delete query"
+msgstr "Запит на видалення"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:534
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:564
+msgid "Query could not be executed"
+msgstr "Запит неможливо виконати"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:555
+msgid ""
+"Warning: This function is not stable:\n"
+"Are you sure that you want to execute the following SQL code?\n"
+"\n"
+msgstr ""
+"Увага: Ця функція не стабільна:\n"
+"Ви впевнені що хочете виконати нижченаведений SQL код?\n"
+"\n"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:562
+msgid "Query was successful"
+msgstr "Запит успішно виконаний"
+
+#: hk_kdeclasses/hk_kdequerypartwidget.cpp:838
+msgid ""
+"If you change to the QBE window your SQL statement will be lost. Continue?"
+msgstr ""
+"Якщо ви змінете QBE вікно, ваша SQL-інструкція буде втрачена. Продовжити?"
+
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:163
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:202
+msgid "Master"
+msgstr "Майстер"
+
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:163
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:201
+msgid "Slave"
+msgstr "Підлеглий"
+
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:190
+msgid "hk_kderelationdialog"
+msgstr "hk_kderelationdialog"
+
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:191
+msgid "Referential Integrity"
+msgstr "Цілісність посилань"
+
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:194
+msgid "Relationship method"
+msgstr "Метод взаємозв'язку"
+
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:195
+msgid "Equivalent rows in both datasources"
+msgstr "Еквівалентні рядки в обох джерелах даних"
+
+#: hk_kdeclasses/hk_kderelationdialogbase.cpp:196
+msgid "All of 'master' and equivalent rows of 'slave'"
+msgstr "Всі з 'головного' та еквівалентні рядки з 'підлеглого'"
+
+#: hk_kdeclasses/hk_kderelationdialog.cpp:58
+msgid "All of '%1' and equivalent rows of '%2'"
+msgstr "Всі з '%1' та еквівалентні рядки з '%2'"
+
+#: hk_kdeclasses/hk_kderelationdialog.cpp:280
+msgid "The relation between '%1' and '%2' is in the way. Remove it?"
+msgstr "Залежність між '%1' та '%2' перешкоджає. Видалити її?"
+
+#: hk_kdeclasses/hk_kderelationdialog.cpp:313
+msgid "Error: could not delete old reference"
+msgstr "Помилка: неможливо видалити старе посилання"
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:203
+msgid "hk_kdereportconditiondialogbase"
+msgstr "hk_kdereportconditiondialogbase"
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:209
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:88
+msgid "Condition:"
+msgstr "Умова:"
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:212
+msgid "="
+msgstr "="
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:213
+msgid "<"
+msgstr "<"
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:214
+msgid "<="
+msgstr "<="
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:215
+msgid ">"
+msgstr ">"
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:216
+msgid ">="
+msgstr ">="
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:217
+msgid "<>"
+msgstr "<>"
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:218
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:89
+msgid "Reportfield:"
+msgstr "Reportfield:"
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:219
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:37
+msgid "Formdatasource:"
+msgstr "Formdatasource:"
+
+#: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:220
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:38
+msgid "Formfield:"
+msgstr "Formfield:"
+
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:84
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:89
+msgid "Masterfield"
+msgstr "Masterfield"
+
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:85
+msgid "Reportfield"
+msgstr "Reportfield"
+
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:85
+msgid "condition"
+msgstr "Умова"
+
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:86
+msgid "formdatasource"
+msgstr "formdatasource"
+
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:86
+msgid "formfield"
+msgstr "formfield"
+
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:87
+msgid "Formconditiondialog"
+msgstr "Formconditiondialog"
+
+#: hk_kdeclasses/hk_kdereportconditiondialog.cpp:87
+msgid "Reportconditiondialog"
+msgstr "Reportconditiondialog"
+
+#: hk_kdeclasses/hk_kdereport.cpp:73 hk_kdeclasses/knodamaindockwindow.cpp:562
+msgid ""
+"Fatal error! Report part could not be loaded!\n"
+"This is a installation error. Check your installation! Did you install knoda "
+"into the correct directory? Program will exit now..."
+msgstr ""
+"Фатальна помилка! Частину звіту неможливо завантажити!\n"
+"Це помилка інсталяції. Перевірте свою інсталяцію! Чи коректоно ви обрали "
+"директорію установки? Програму буде завершено зараз..."
+
+#: hk_kdeclasses/hk_kdereport.cpp:251
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:645
+msgid "Report - "
+msgstr "Звіт - "
+
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:111
+msgid "Could not find a preview part!"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:185
+msgid "Sectionselect"
+msgstr "Sectionselect"
+
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:188
+msgid "sections"
+msgstr "Секції"
+
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:201
+#, fuzzy
+msgid "Field"
+msgstr "поле_"
+
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:208
+msgid "new field"
+msgstr "нове поле"
+
+#: hk_kdeclasses/hk_kdereportpartwidget.cpp:401
+msgid "Cannot close now, because the report '%1' is executing. Cancel it first"
+msgstr ""
+"Неможливо зараз закрити, бо виконується звіт '%1'. Спочатку відмініть його"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:606
+#: hk_kdeclasses/hk_kdereportproperty.cpp:162
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:54
+msgid "Subreport:"
+msgstr "Підзвіт:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:611
+msgid "RunningCount:"
+msgstr "ХідВідліку:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:612
+#: hk_kdeclasses/hk_kdereportproperty.cpp:163
+msgid "Value:"
+msgstr "Значення:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:613
+#: hk_kdeclasses/hk_kdereportproperty.cpp:171
+msgid "Sorting:"
+msgstr "Сортування:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:621
+#: hk_kdeclasses/hk_kdereportproperty.cpp:161
+msgid "Reporttype:"
+msgstr "Тип звіту:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:629
+msgid "Linebreak:"
+msgstr "Розрив рядка:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:630
+msgid "Dynamic height:"
+msgstr "Динамічна висота:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:638
+#: hk_kdeclasses/hk_kdereportproperty.cpp:160
+msgid "Border Right:"
+msgstr "Права границя:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:639
+#: hk_kdeclasses/hk_kdereportproperty.cpp:159
+msgid "Border Left:"
+msgstr "Ліва границя:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:640
+#: hk_kdeclasses/hk_kdereportproperty.cpp:158
+msgid "Border Bottom:"
+msgstr "Нижня границя:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:641
+#: hk_kdeclasses/hk_kdereportproperty.cpp:157
+msgid "Border Top:"
+msgstr "Верхня границя:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:643
+msgid "On print:"
+msgstr "На друк:"
+
+#: hk_kdeclasses/hk_kdereportpropertybase.cpp:650
+msgid "On new page:"
+msgstr "На нову сторінку:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:137
+msgid "Ascending"
+msgstr "По зростанню"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:138
+msgid "Descending"
+msgstr "По спаданню"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:151
+msgid "Top line:"
+msgstr "Верхня лінія:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:152
+msgid "Bottom line:"
+msgstr "Нижня лінія:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:153
+msgid "Left line:"
+msgstr "Ліва лінія:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:154
+msgid "Right line:"
+msgstr "Права лінія:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:164
+#: hk_kdeclasses/hk_kdereportproperty.cpp:535
+msgid "Wordbreak:"
+msgstr "Розрив слова:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:165
+#: hk_kdeclasses/hk_kdereportproperty.cpp:493
+#: hk_kdeclasses/hk_kdereportproperty.cpp:536
+msgid "Running count:"
+msgstr "Хід відліку:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:543
+msgid "New page:"
+msgstr "Нова сторінка:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:544
+msgid "Offset:"
+msgstr "Зміщення:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:575
+msgid "Userdefined"
+msgstr "Визначено користувачем"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:581
+msgid "Pageformat:"
+msgstr "Формат сторінки:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:588
+msgid "Portrait"
+msgstr "Книжна"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:589
+msgid "Landscape"
+msgstr "Альбомна"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:609
+msgid "First pagenumber:"
+msgstr "Номер першої сторінки:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:610
+msgid "Orientation:"
+msgstr "Орієнтація:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:613
+msgid "Multiple files:"
+msgstr "Множинні файли:"
+
+#: hk_kdeclasses/hk_kdereportproperty.cpp:852
+#: hk_kdeclasses/hk_kdereportproperty.cpp:1195
+msgid "None"
+msgstr "Жоден"
+
+#: hk_kdeclasses/hk_kdereportsectiondialogbase.cpp:181
+msgid "hk_kdereportsectiondialogbase"
+msgstr "hk_kdereportsectiondialogbase"
+
+#: hk_kdeclasses/hk_kdereportsectiondialogbase.cpp:188
+msgid "&Exit"
+msgstr "&Вихід"
+
+#: hk_kdeclasses/hk_kdereportsectiondialog.cpp:38
+msgid "Section to add:"
+msgstr "Секція для додавання:"
+
+#: hk_kdeclasses/hk_kdereportsectiondialog.cpp:39
+msgid "Existing sections"
+msgstr "Існуючі секції:"
+
+#: hk_kdeclasses/hk_kderowselector.cpp:74
+msgid "Goto first"
+msgstr "Перейти до першого"
+
+#: hk_kdeclasses/hk_kderowselector.cpp:75
+msgid "Goto previous"
+msgstr "перейти до попереднього"
+
+#: hk_kdeclasses/hk_kderowselector.cpp:76
+msgid "Goto next"
+msgstr "Перейти до наступного"
+
+#: hk_kdeclasses/hk_kderowselector.cpp:77
+msgid "Goto last"
+msgstr "Перейти до останнього"
+
+#: hk_kdeclasses/hk_kderowselector.cpp:78
+msgid "Store changes"
+msgstr "Записати зміни"
+
+#: hk_kdeclasses/hk_kderowselector.cpp:80
+msgid "Insert new row"
+msgstr "Встановити новий рядок"
+
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1257
+#, fuzzy
+msgid "Don't debug"
+msgstr "відлагодити"
+
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1257
+#, fuzzy
+msgid "Debug"
+msgstr "відлагодити"
+
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1285
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1200
+msgid "Into background"
+msgstr "На задній план"
+
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1289
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1202
+msgid "Into foreground"
+msgstr "На передній план"
+
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1301
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1206
+msgid "Show &property editor"
+msgstr "Показати &редактор властивостей"
+
+#: hk_kdeclasses/hk_kdesimpleform.cpp:1305
+msgid "&Save form"
+msgstr "&Зберегти форму"
+
+#: hk_kdeclasses/hk_kdesimpleform.cpp:2044
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1775
+msgid "Line %LINENUMBER%: "
+msgstr "Лінія %LINENUMBER%: "
+
+#: hk_kdeclasses/hk_kdesimpleform.cpp:2050
+msgid "Gridcolumn '%1':\n"
+msgstr "Сітка стовців '%1':\n"
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1020
+msgid "Sectionheader"
+msgstr "Заголовок секції"
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1036
+msgid "Datasection"
+msgstr "Секція данних"
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1051
+msgid "Sectionfooter"
+msgstr "Виноска секції"
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1069
+msgid "Pageheader"
+msgstr "Заголовок сторінки"
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1072
+msgid "Pagefooter"
+msgstr "Виноска сторінки"
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1075
+msgid "Reportheader"
+msgstr "Заголовок звіту"
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1078
+msgid "Reportfooter"
+msgstr "Виноска звіту"
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1112
+msgid "Generating report..."
+msgstr "Генерація звіту..."
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1208
+msgid "&Save report"
+msgstr " &Зберегти звіт"
+
+#: hk_kdeclasses/hk_kdesimplereport.cpp:1552
+msgid "Error while paste action: No reportsection!!!"
+msgstr "Помилка при встаці: Немає секції звіту!!!"
+
+#: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:337
+msgid "subreport dialog"
+msgstr "діалог підзвіту"
+
+#: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:338
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:55
+msgid "&Set"
+msgstr "&Встановити"
+
+#: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:341
+msgid "subreport:"
+msgstr "підзвіт:"
+
+#: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:344
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:49
+msgid "subreportfield"
+msgstr "subreportfield"
+
+#: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:346
+msgid "CheckBox1"
+msgstr "CheckBox1"
+
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:49
+msgid "masterreportfield"
+msgstr "masterreportfield"
+
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:52
+msgid "masterreportfield:"
+msgstr "masterreportfield:"
+
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:53
+msgid "subreportfield:"
+msgstr "subreportfield:"
+
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:58
+msgid "Before sectiondata?"
+msgstr "Перед данними секції?"
+
+#: hk_kdeclasses/hk_kdesubreportdialog.cpp:66
+msgid "Subreport dialog"
+msgstr "Діалог підзвіту"
+
+#: hk_kdeclasses/hk_kdetable.cpp:64 hk_kdeclasses/knodamaindockwindow.cpp:476
+msgid ""
+"Fatal error! Table part could not be loaded!\n"
+"This is a installation error. Check your installation! Did you install knoda "
+"into the correct directory? Program will exit now..."
+msgstr ""
+"Фатальна помилка! Частину таблиці неможливо завантажити!\n"
+"Це помилка інсталяції. Перевірте свою інсталяцію! Чи коректно ви вказали "
+"директорію установки? Програму буде завершено зараз..."
+
+#: hk_kdeclasses/hk_kdetable.cpp:137
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:355
+msgid "Table - "
+msgstr "Таблиця - "
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:63
+msgid "Tabledesign"
+msgstr "Конструктор таблиць"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:72
+msgid "Index"
+msgstr "Індекс"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:82
+msgid "Name"
+msgstr "Ім'я"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:82
+msgid "Type"
+msgstr "Тип"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:82
+msgid "Size"
+msgstr "Розмір"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:82
+msgid "Primary"
+msgstr "Первинний"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:82
+#: hk_kdeclasses/hk_kdetabledesign.cpp:193
+msgid "Not Null"
+msgstr "Не може бути порожнім"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:118
+msgid "Alter Table"
+msgstr "Змінити Таблицю"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:123
+msgid "New Field"
+msgstr "Нове Поле"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:128
+msgid "Delete Field"
+msgstr "Видалити Поле"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:138
+msgid "New Index"
+msgstr "Новий Індекс"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:144
+msgid "Delete Index"
+msgstr "Видалити Індекс"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:150
+msgid "Alter Index"
+msgstr "Змінити Індекс"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:178
+msgid "columntype:"
+msgstr "Тип поля:"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:184
+msgid "Size:"
+msgstr "Розмір:"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:189
+msgid "Primary Index"
+msgstr "Первинний ключ"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:489
+msgid "Do you want to alter the table?"
+msgstr "Ви хочете змінити таблицю?"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:497
+msgid "Please enter the tablename: "
+msgstr "Будь ласка введіть ім'я таблиці:"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:561
+msgid "Table %NAME% could not be changed!"
+msgstr "Таблицю %NAME% неможливо змінити!"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:613
+msgid "newfield_"
+msgstr "новеполе_"
+
+#: hk_kdeclasses/hk_kdetabledesign.cpp:737
+msgid "Fieldname already exists or is of length 0. Alter it to a unique one!"
+msgstr ""
+"Ім'я поля вже існує або має нульову довжину. Змініть його на унікальне!"
+
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:144
+#, fuzzy
+msgid "Save"
+msgstr "&Зберегти"
+
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:164
+#: hk_kdegridpart/hk_kdegridpart.cpp:54
+msgid "&Gridcolumns"
+msgstr "Сітка стовців"
+
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:179
+#: hk_kdegridpart/hk_kdegridpart.cpp:69
+msgid "&Find in columns"
+msgstr "&Шукати в стовпчику"
+
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:256
+#, fuzzy
+msgid "Table could not be executed"
+msgstr "Таблицю неможливо видалити!"
+
+#: hk_kdeclasses/hk_kdetablepartwidget.cpp:358
+msgid "Unnamed"
+msgstr "Безіменна"
+
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:83
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:192
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:201
+msgid "Name:"
+msgstr "Ім'я:"
+
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:83
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:193
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:202
+#, fuzzy
+msgid "Type:"
+msgstr "Тип"
+
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:189
+msgid "Taborder selection dialog"
+msgstr "Діалог вибору Таб-порядку"
+
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:190
+msgid "Base list:"
+msgstr "Список баз"
+
+#: hk_kdeclasses/hk_kdetaborderbase.cpp:199
+msgid "Taborder list:"
+msgstr "Список Таб-порядку:"
+
+#: hk_kdeclasses/hk_kdetaborder.cpp:85 hk_kdeclasses/hk_kdetaborder.cpp:149
+#, fuzzy
+msgid "boolean"
+msgstr "логічне поле"
+
+#: hk_kdeclasses/hk_kdetaborder.cpp:86 hk_kdeclasses/hk_kdetaborder.cpp:150
+#, fuzzy
+msgid "lineedit"
+msgstr "поле редагування рядків"
+
+#: hk_kdeclasses/hk_kdetaborder.cpp:87 hk_kdeclasses/hk_kdetaborder.cpp:151
+#, fuzzy
+msgid "memo"
+msgstr "поле мемо"
+
+#: hk_kdeclasses/hk_kdetaborder.cpp:88 hk_kdeclasses/hk_kdetaborder.cpp:152
+#, fuzzy
+msgid "combobox"
+msgstr "&Стовпець підстановки"
+
+#: hk_kdeclasses/hk_kdetaborder.cpp:89 hk_kdeclasses/hk_kdetaborder.cpp:153
+#, fuzzy
+msgid "grid"
+msgstr "ґрати"
+
+#: hk_kdeclasses/hk_kdetaborder.cpp:90 hk_kdeclasses/hk_kdetaborder.cpp:154
+#, fuzzy
+msgid "subform"
+msgstr "Підформа:"
+
+#: hk_kdeclasses/hk_kdetaborder.cpp:91 hk_kdeclasses/hk_kdetaborder.cpp:155
+#, fuzzy
+msgid "image"
+msgstr "Немає образу"
+
+#: hk_kdeclasses/hk_kdetaborder.cpp:92 hk_kdeclasses/hk_kdetaborder.cpp:156
+msgid "tabvisible"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdetaborder.cpp:93 hk_kdeclasses/hk_kdetaborder.cpp:157
+msgid "unknown"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdetoolbar.cpp:258
+msgid "Filter definition"
+msgstr "Визначення фільтра"
+
+#: hk_kdeclasses/hk_kdetoolbar.cpp:261
+msgid "Filter execution"
+msgstr "Застосування фільтра"
+
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:213
+msgid "XML Export Dialog"
+msgstr "XML Експорт діалог"
+
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:216
+msgid "Main document tag:"
+msgstr "Ознака головного документа:"
+
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:218
+msgid "Row element tag:"
+msgstr "Ознака елемента рядка:"
+
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:221
+#: hk_kdeclasses/hk_kdexmlexportdialog.cpp:51
+msgid "include tableschema?"
+msgstr "включити схему таблиці?"
+
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:222
+msgid "fieldname as attribute?"
+msgstr "ім'я поля як атрибут?"
+
+#: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:223
+msgid "Export as Excel XML?"
+msgstr ""
+
+#: hk_kdeclasses/hk_kdexmlexportdialog.cpp:115
+msgid "Select a XML file"
+msgstr "Виберіть XML файл"
+
+#: hk_kdeclasses/hk_kdexmlexportdialog.cpp:159
+msgid "Queryname:"
+msgstr "Ім'я запиту:"
+
+#: hk_kdeclasses/hk_kdexmlexportdialog.cpp:165
+msgid "Viewname:"
+msgstr "Ім'я перегляду:"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:140
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:142
+msgid "Elements"
+msgstr "Елементи"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:172
+msgid "Select database"
+msgstr "Вибрати базу даних"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:182
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:235
+msgid "&New"
+msgstr "&Створити"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:187
+msgid "&Connect to"
+msgstr "&З'єднати з"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:189
+msgid "Disconnect"
+msgstr "Роз'єднати"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:200
+msgid "Load connection"
+msgstr "Завантажити з'єднання"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:203
+msgid "Store connection"
+msgstr "Зберегти з'єднання"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:206
+msgid "Database"
+msgstr "База даних"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:221
+#: hk_kdeclasses/knodamaindockwindow.cpp:573
+msgid "Report"
+msgstr "Звіт"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:224
+#: hk_kdeclasses/knodamaindockwindow.cpp:602
+msgid "Module"
+msgstr ""
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:239
+msgid "&Start"
+msgstr "&Пуск"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:241
+msgid "&Modify"
+msgstr "&Змінити"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:248
+msgid "&Rename"
+msgstr "&Перейменувати"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:252
+msgid "E&xport"
+msgstr "Е&кспорт"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:254
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:270
+msgid "&CSV"
+msgstr "&CSV"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:257
+msgid "&XML"
+msgstr "&XML"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:262
+msgid "To &database"
+msgstr "До &бази даних"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:268
+msgid "I&mport"
+msgstr "І&мпорт"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:274
+msgid "From &database"
+msgstr "З &бази даних"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:280
+msgid "&Change password"
+msgstr "&Змінити пароль"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:291
+msgid "&Database settings"
+msgstr "&Параметри бази даних"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:294
+msgid "&Object handler"
+msgstr "О&броблювач об'єктів"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:298
+msgid "&New databasewindow"
+msgstr "&Нове вікно бази даних"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:301
+msgid "&Options"
+msgstr "&Параметри"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:304
+msgid "Open &local database"
+msgstr "Відкрити локальну базу даних"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:308
+msgid "Referential integrity"
+msgstr "Цілісність посилань"
+
+#: hk_kdeclasses/knodamaindockwindowbase.cpp:480
+msgid "Database '%1' not found"
+msgstr "База даних '%1' не знайдена"
+
+#: hk_kdeclasses/knodamaindockwindow.cpp:482
+msgid "Warning! Tablepartwiget could not be created!"
+msgstr "Увага! Tablepartwidget неможливо створити!"
+
+#: hk_kdeclasses/knodamaindockwindow.cpp:508
+msgid "Warning! Querypartwiget could not be created!"
+msgstr "Увага! Querypart неможливо створити!"
+
+#: hk_kdeclasses/knodamaindockwindow.cpp:539
+msgid "Warning! Formpartwiget could not be created!"
+msgstr "Увага! Formpartwidget неможливо створити!"
+
+#: hk_kdeclasses/knodamaindockwindow.cpp:569
+msgid "Warning! Reportpartwiget could not be created!"
+msgstr "Увага! Reportpartwidget неможливо створити!"
+
+#: hk_kdeclasses/knodamaindockwindow.cpp:590
+#, fuzzy
+msgid ""
+"Fatal error! Module part could not be loaded!\n"
+"This is a installation error. Check your installation! Did you install knoda "
+"into the correct directory? Program will exit now..."
+msgstr ""
+"Фатальна помилка! Частину таблиці неможливо завантажити!\n"
+"Це помилка інсталяції. Перевірте свою інсталяцію! Чи коректно ви вказали "
+"директорію установки? Програму буде завершено зараз..."
+
+#: hk_kdeclasses/knodamaindockwindow.cpp:597
+#, fuzzy
+msgid "Warning! Modulepartwiget could not be created!"
+msgstr "Увага! Tablepartwidget неможливо створити!"
+
+#: hk_kdeclasses/knodamaindockwindow.cpp:635
+msgid "Could not rename object!"
+msgstr "Неможливо перейменувати об'єкт!"
+
+#: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:110
+#, fuzzy
+msgid "hk_kde4dbdesignerpart"
+msgstr "hk_kdeqbepart"
+
+#: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:111
+#, fuzzy
+msgid "Database editor"
+msgstr "Редактор джерела даних:"
+
+#: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:113
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:170 hk_kdequerypart/hk_kdequerypart.cpp:168
+#: hk_kdereportpart/hk_kdereportpart.cpp:129
+#: hk_kdetablepart/hk_kdetablepart.cpp:114
+msgid ""
+"(c) 2002-2004, Horst Knorr\n"
+"(c) 2010-2016 Patrik Hanak"
+msgstr ""
+
+#: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:115
+#: hk_kdeformpart/hk_kdeformpart.cpp:137 hk_kdegridpart/hk_kdegridpart.cpp:151
+#: hk_kdemodulepart/hk_kdemodulepart.cpp:118
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:172 hk_kdequerypart/hk_kdequerypart.cpp:170
+#: hk_kdereportpart/hk_kdereportpart.cpp:131
+#: hk_kdetablepart/hk_kdetablepart.cpp:116 knoda/main.cpp:51
+#: knoda/main-rt.cpp:48
+msgid "Horst Knorr"
+msgstr ""
+
+#: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:115
+#: hk_kdeformpart/hk_kdeformpart.cpp:137 hk_kdegridpart/hk_kdegridpart.cpp:151
+#: hk_kdemodulepart/hk_kdemodulepart.cpp:118
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:172 hk_kdequerypart/hk_kdequerypart.cpp:170
+#: hk_kdereportpart/hk_kdereportpart.cpp:131
+#: hk_kdetablepart/hk_kdetablepart.cpp:116 knoda/main.cpp:51
+#: knoda/main-rt.cpp:48
+msgid "Author of original version"
+msgstr ""
+
+#: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:116
+#: hk_kdeformpart/hk_kdeformpart.cpp:138 hk_kdegridpart/hk_kdegridpart.cpp:152
+#: hk_kdemodulepart/hk_kdemodulepart.cpp:119
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:173 hk_kdequerypart/hk_kdequerypart.cpp:171
+#: hk_kdereportpart/hk_kdereportpart.cpp:132
+#: hk_kdetablepart/hk_kdetablepart.cpp:117 knoda/main.cpp:52
+#: knoda/main-rt.cpp:49
+msgid "Patrik Hanak"
+msgstr ""
+
+#: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:116
+#: hk_kdeformpart/hk_kdeformpart.cpp:138 hk_kdegridpart/hk_kdegridpart.cpp:152
+#: hk_kdemodulepart/hk_kdemodulepart.cpp:119
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:173 hk_kdequerypart/hk_kdequerypart.cpp:171
+#: hk_kdereportpart/hk_kdereportpart.cpp:132
+#: hk_kdetablepart/hk_kdetablepart.cpp:117 knoda/main.cpp:52
+#: knoda/main-rt.cpp:49
+msgid "Author of KDE4 port"
+msgstr ""
+
+#: hk_kdeformpart/hk_kdeformpart.cpp:132
+#, fuzzy
+msgid "hk_kde4formpart"
+msgstr "hk_kdegridpart"
+
+#: hk_kdeformpart/hk_kdeformpart.cpp:133
+#, fuzzy
+msgid "database form editor"
+msgstr "Редактор джерела даних:"
+
+#: hk_kdeformpart/hk_kdeformpart.cpp:135
+msgid ""
+"(c) 2002-2004, Horst Knorr\n"
+"(c) 2010-2015 Patrik Hanak"
+msgstr ""
+
+#: hk_kdegridpart/hk_kdegridpart.cpp:146
+#, fuzzy
+msgid "hk_kde4gridpart"
+msgstr "hk_kdegridpart"
+
+#: hk_kdegridpart/hk_kdegridpart.cpp:147
+msgid "Datasource editor"
+msgstr "Редактор джерела даних:"
+
+#: hk_kdegridpart/hk_kdegridpart.cpp:149
+msgid ""
+"(c) 2002-2003, Horst Knorr\n"
+"(c) 2010-2016 Patrik Hanak"
+msgstr ""
+
+#: hk_kdemodulepart/hk_kdemodulepart.cpp:113
+#, fuzzy
+msgid "hk_kde4modulepart"
+msgstr "hk_kdeqbepart"
+
+#: hk_kdemodulepart/hk_kdemodulepart.cpp:114
+#, fuzzy
+msgid "database module editor"
+msgstr "Редактор джерела даних:"
+
+#: hk_kdemodulepart/hk_kdemodulepart.cpp:116
+msgid ""
+"(c) 2002-2006, Horst Knorr\n"
+"(c) 2010-2016 Patrik Hanak"
+msgstr ""
+
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:167
+#, fuzzy
+msgid "hk_kde4qbepart"
+msgstr "hk_kdeqbepart"
+
+#: hk_kdeqbepart/hk_kdeqbepart.cpp:168
+msgid "Query by Example editor"
+msgstr "Запит редактора прикладів"
+
+#: hk_kdequerypart/hk_kdequerypart.cpp:165
+#, fuzzy
+msgid "hk_kde4querypart"
+msgstr "hk_kdeqbepart"
+
+#: hk_kdequerypart/hk_kdequerypart.cpp:166
+#, fuzzy
+msgid "database query editor"
+msgstr "Редактор джерела даних:"
+
+#: hk_kdereportpart/hk_kdereportpart.cpp:126
+#, fuzzy
+msgid "hk_kde4reportpart"
+msgstr "hk_kdeqbepart"
+
+#: hk_kdereportpart/hk_kdereportpart.cpp:127
+#, fuzzy
+msgid "database report editor"
+msgstr "Редактор джерела даних:"
+
+#: hk_kdetablepart/hk_kdetablepart.cpp:111
+#, fuzzy
+msgid "hk_kde4tablepart"
+msgstr "hk_kdeqbepart"
+
+#: hk_kdetablepart/hk_kdetablepart.cpp:112
+#, fuzzy
+msgid "database table editor"
+msgstr "Редактор джерела даних:"
+
+#: knoda/hk_kdedriverselectbase.cpp:127
+msgid "Driver select dialog"
+msgstr "Діалог вибор драйверу"
+
+#: knoda/hk_kdedriverselectbase.cpp:128
+msgid "C&onnect"
+msgstr "З'&єднатися"
+
+#: knoda/hk_kdedriverselectbase.cpp:132
+msgid "&Drivers"
+msgstr "Д&райвери"
+
+#: knoda/hk_kdedriverselectbase.cpp:133
+msgid "&Connections"
+msgstr "&З'єднання"
+
+#: knoda/main.cpp:46
+#, fuzzy
+msgid "knoda4"
+msgstr "knoda"
+
+#: knoda/main.cpp:47
+#, fuzzy
+msgid "knoda4 is a database management system"
+msgstr "knoda - це система управління базами даних"
+
+#: knoda/main.cpp:49
+msgid ""
+"(c) 2000-2005 Horst Knorr\n"
+"(c) 2010-2016 Patrik Hanak"
+msgstr ""
+
+#: knoda/main.cpp:53 knoda/main-rt.cpp:50
+msgid "Anirban Biswas"
+msgstr ""
+
+#: knoda/main.cpp:53 knoda/main-rt.cpp:50
+msgid "Postgresql driver"
+msgstr "Драйвер Postgresql"
+
+#: knoda/main.cpp:54 knoda/main-rt.cpp:51
+msgid "Tilman Linneweh"
+msgstr ""
+
+#: knoda/main.cpp:54 knoda/main-rt.cpp:51
+msgid "FreeBSD port"
+msgstr "FreeBSD порт"
+
+#: knoda/main.cpp:60 knoda/main-rt.cpp:56
+msgid "Specifies the database driver"
+msgstr "Конкретизуйте драйвер бази даних"
+
+#: knoda/main.cpp:61 knoda/main-rt.cpp:57
+msgid "Specifies a database"
+msgstr "Конкретизуйте базу даних:"
+
+#: knoda/main.cpp:62 knoda/main-rt.cpp:58
+msgid "Specifies a form (only in combination with -b)"
+msgstr "конкретизуйте форму (тільки в комбінації з -b)"
+
+#: knoda/main.cpp:63
+msgid "No design mode"
+msgstr "Не режим конструктора"
+
+#: knoda/main.cpp:64
+msgid "No design mode and no database control window"
+msgstr "Не режим конструктора і не вікно керування базою даних"
+
+#: knoda/main.cpp:65
+msgid "SDI look"
+msgstr "SDI-вигляд"
+
+#: knoda/main.cpp:66 knoda/main-rt.cpp:59
+msgid "prints the SQL statements to the standard ouput"
+msgstr "друкувати SQL-інструкції на стандартний вивід"
+
+#: knoda/main.cpp:68 knoda/main-rt.cpp:61
+msgid "debug"
+msgstr "відлагодити"
+
+#: knoda/main.cpp:70 knoda/main-rt.cpp:63
+msgid "local database file (SQLite)"
+msgstr "файл локальной бази даних (SQLite)"
+
+#: knoda/main.cpp:114
+msgid "Please specifiy a database driver!"
+msgstr "Будь ласка конкретизуйте драйвер бази даних!"
+
+#: knoda/main.cpp:120 knoda/main-rt.cpp:111
+msgid "Specifying a form only works in combination with specifying a database"
+msgstr "Конкретна форма працює тільки в комбінації з конкретною базою даних"
+
+#: knoda/main.cpp:141
+msgid "classic user interface is not supported anymore."
+msgstr ""
+
+#: knoda/main-rt.cpp:43
+#, fuzzy
+msgid "knoda4 - Runtime version"
+msgstr "knoda - версія \"runtime\""
+
+#: knoda/main-rt.cpp:44
+#, fuzzy
+msgid "knoda4-rt is the runtime version of knoda -a database management system"
+msgstr ""
+"knoda-rt - це \"runtime\"-версія knoda - системи управління базами даних"
+
+#: knoda/main-rt.cpp:46
+msgid ""
+"(c) 2000-2004 Horst Knorr\n"
+"(c) 2010-2016 Patrik Hanak"
+msgstr ""
+
+#: knoda/main-rt.cpp:106
+msgid ""
+"\n"
+"\n"
+"*******\n"
+"Please specifiy a database driver,a database name and a form name!\n"
+"Correct syntax:\n"
+" knoda-rt -d mysql -b mydatabase -f myform\n"
+"\n"
+"You can leave the form name away if the database contains a form named "
+"'Autoform'\n"
+"*******\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+"*******\n"
+"Будь ласка, вкажіть драйвер бази даних, ім'я бази даних та ім'я форми!\n"
+"Вірний синтаксис:\n"
+" knoda-rt -d mysql -b mydatabase -f myform\n"
+"\n"
+"Ви можете не вказувати ім'я форми, якщо база даних містить форму з іменем "
+"'Autoform'\n"
+"*******\n"
+"\n"
+
+#~ msgid "Bug: form is empty!"
+#~ msgstr "Бага: Форма порожня!"
+
+#~ msgid "textLabel2"
+#~ msgstr "textLabel2"
+
+#~ msgid "Load"
+#~ msgstr "Завантажити"
+
+#~ msgid "Store"
+#~ msgstr "Зберегти"
+
+#~ msgid "Optionen"
+#~ msgstr "Параметри"
+
+#~ msgid "Toggle &Insert"
+#~ msgstr "Перемикач В&ставка"
+
+#~ msgid "Dese&lect"
+#~ msgstr "Зняти виділення"
+
+#~ msgid ""
+#~ "KGhostview could not be found!\n"
+#~ "Please install the kdegraphics package"
+#~ msgstr ""
+#~ "KGhostview не знайдено!\n"
+#~ "Будь ласка встановіть пакет kdegraphics"
+
+#~ msgid "New"
+#~ msgstr "Створити"
+
+#~ msgid "Modify"
+#~ msgstr "Змінити"
+
+#~ msgid "Start"
+#~ msgstr "Пуск"
+
+#~ msgid "Displaymode"
+#~ msgstr "Режим перегляду"
+
+#~ msgid "IDEAL Mode"
+#~ msgstr "IDEAL-режим"
+
+#~ msgid "Tabpage Mode"
+#~ msgstr "Режим Таб-сторінок"
+
+#~ msgid "Childframe Mode"
+#~ msgstr "Режим дочірних кадрів"
+
+#~ msgid "New Database Dialog"
+#~ msgstr "Діалог нова бази даних"
+
+#~ msgid "Enter name of new database:"
+#~ msgstr "Введіть ім'я нової бази даних:"
+
+#~ msgid "&Connect"
+#~ msgstr "&З'єднатися"
+
+#~ msgid "&Load"
+#~ msgstr "За&вантажити"
+
+#~ msgid "&Quit"
+#~ msgstr "&Вихід"
+
+#~ msgid "&About"
+#~ msgstr "&Про"
+
+#~ msgid "No such driver: %DRIVER%"
+#~ msgstr "Нема такого драйвера: %DRIVER%"
+
+#~ msgid "Adm&inistration"
+#~ msgstr "Ад&міністрування"
+
+#~ msgid "&Tables"
+#~ msgstr "&Таблиці"
+
+#~ msgid "&Queries"
+#~ msgstr "&Запити"
+
+#~ msgid "F&orms"
+#~ msgstr "Ф&орми"
+
+#~ msgid "&Reports"
+#~ msgstr "З&віти"
+
+#~ msgid "Databases"
+#~ msgstr "База даних"
+
+#~ msgid "D&atabases"
+#~ msgstr "Бази &даних"
+
+#~ msgid "Functions"
+#~ msgstr "Функції"
+
+#~ msgid "Actions"
+#~ msgstr "Дії"
+
+#~ msgid ""
+#~ "Fatal error: File 'knodaui.rc' could not be located. Probably Knoda is "
+#~ "installed incorrectly\n"
+#~ "Are you sure you have used\n"
+#~ " ./configure --prefix=/your_KDE_directory ? \n"
+#~ " See the http://hk-classes.sourceforge.net/download.html for details. "
+#~ msgstr ""
+#~ "Фатальна помилка: Файл 'knodaui.rc' не може бути розміщений. Можливо "
+#~ "Knoda невірно встановлено\n"
+#~ "Ви впевнені що використовуєте ./configure --prefix=/ваш_KDE_каталог?. "
+#~ "Деталі дивись на http://hk-classes.sourceforge.net/download.html"
+
+#~ msgid "no object selected"
+#~ msgstr "не вибрано об'єкт"
+
+#~ msgid "use MDI (deprecated)"
+#~ msgstr "використовувати MDI (застарілий)"
+
+#~ msgid "Author"
+#~ msgstr "Автор"

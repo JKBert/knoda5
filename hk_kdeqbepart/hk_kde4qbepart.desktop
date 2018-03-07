@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Service
+Name=hk_kde4classes qbe
+MimeType=database/qbedesigner;
+ServiceTypes=KParts/ReadWritePart
+X-KDE-Library=libhk_kde4qbepart

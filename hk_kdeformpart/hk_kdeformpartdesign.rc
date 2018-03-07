@@ -1,0 +1,84 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<kpartgui name="hk_kdeformpartwidget" version="1">
+
+<MenuBar>
+	<Menu name="file"><text>&amp;File</text>
+		<Action name="save"/>
+		<Action name="saveas"/>
+	</Menu>
+	<Menu name="edit"><text>&amp;Edit</text>
+		<Action name="copy"/>
+		<Action name="paste"/>
+		<Action name="cutclicked"/>
+		<Action name="deleteclicked"/>
+		<Action name="bulk"/>
+		<Separator lineSeparator="true"/>
+		<Action name="gridcolumndialog"/>
+		<Separator lineSeparator="true"/>
+		<Action name="size"/>
+		<Action name="align"/>
+		<Action name="dbdesigner"/>
+		<Action name="taborder"/>
+	</Menu>
+	<Menu name="insert"><text>&amp;Insert</text>
+		<Action name="label"/>
+		<Action name="lineedit"/>
+		<Action name="grid"/>
+		<Action name="multiline"/>
+		<Action name="boolean"/>
+		<Action name="combobox"/>
+		<Action name="button"/>
+		<Action name="selector"/>
+		<Action name="subform"/>
+		<Action name="image"/>
+		<!--<Action name="tabwidget"/>-->
+		<Action name="date"/>
+		<Separator lineSeparator="true"/>
+		<Action name="withlabel"/>
+	</Menu>
+	<Menu name="view" noMerge="1"><text>&amp;View</text>
+		<Action name="designmode"/>
+		<Action name="viewmode"/>
+		<Separator lineSeparator="true"/>
+		<Action name="viewproperty"/>
+		<Action name="filterdefinition"/>
+		<Action name="filterexec"/>
+	   <Merge/>
+	</Menu>
+<Merge/>
+</MenuBar>
+<ToolBar name="mainToolBar">
+		<Action name="designmode"/>
+		<Action name="viewmode"/>
+		<Separator lineSeparator="true"/>
+		<Action name="save"/>
+		<Action name="saveas"/>
+		<Separator lineSeparator="true"/>
+		<Action name="dbdesigner"/>
+		<Action name="taborder"/>
+		<Merge/>
+		<Action name="viewproperty"/>
+		<Action name="filterdefinition"/>
+		<Action name="filterexec"/>
+		<Separator lineSeparator="true"/>
+		<Action name="pointer"/>
+		<Action name="label"/>
+		<Action name="lineedit"/>
+		<Action name="grid"/>
+		<Action name="multiline"/>
+		<Action name="boolean"/>
+		<Action name="combobox"/>
+		<Action name="button"/>
+		<Action name="selector"/>
+		<Action name="subform"/>
+		<Action name="image"/>
+		<!--<Action name="tabwidget"/>-->
+		<Action name="date"/>
+		<Separator lineSeparator="true"/>
+		<Action name="withlabel"/>
+		<Separator lineSeparator="true"/>
+
+
+</ToolBar>
+
+</kpartgui>

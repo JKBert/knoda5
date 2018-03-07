@@ -1,0 +1,81 @@
+*****************************************
+*                                       *
+*               knoda4                  *
+*              INSTALL                  *
+*                                       *
+*****************************************
+
+
+=========
+CONTENTS
+=========
+1. SOFTWARE REQUIREMENTS
+2. KNODA CONFIGURATION OPTIONS
+3. CONFIGURATION
+4. BUILDING THE PROGRAM AND INSTALL
+5. UNINSTALL
+
+
+=========================
+1. SOFTWARE REQUIREMENTS
+=========================
+
+
+* hk_classes (http://hk-classes.sourceforge.net)
+* KDE4
+* qt4
+* cmake buid system (http://www.cmake.org)
+
+
+==============================
+2. KNODA CONFIGURATION OPTIONS
+==============================
+Usage: ./configure [OPTION]
+
+Options:
+  -h,--help         display this help and exit
+  -d,--default      populate cmake cache with default values
+  -i,--interactive  populate cmake cache if empty and run interactive cmake 
+
+Default option is -d.
+
+Use cmake command directly for detailed configuration
+
+=================
+3. CONFIGURATION
+=================
+
+# ./configure 
+
+For non-standard hk_classes installation, run ./configure -i and change the following variables:
+  HK_CLASSES_INCLUDE  Path to the hk_classes header files
+  HK_CLASSES_LIB      The hk_classes library with full path
+
+===================================
+4. BUILDING THE PROGRAM AND INSTALL
+===================================
+
+once the program is configured, then just execute the
+following commands:
+
+# cd build
+# make
+# su
+# make install
+
+============
+5. UNINSTALL
+============
+
+'make install' generates build/install_manifest.txt file. 
+Once the program is installed, you can uninstall it by executing the following commands:
+
+# cd build
+# su
+# make uninstall
+
+Warning: 'make uninstall' does not remove symbolic links
+
+===================================================
+Patrik Hanak  <knoda4-admins@lists.sourceforge.net>
+===================================================

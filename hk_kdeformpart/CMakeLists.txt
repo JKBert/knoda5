@@ -1,0 +1,20 @@
+
+include_directories(${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} )
+
+
+########### next target ###############
+
+set(hk_kdeformpart_PART_SRCS hk_kdeformpart.cpp)
+
+kde4_add_plugin(hk_kde4formpart WITH_PREFIX ${hk_kdeformpart_PART_SRCS})
+
+target_link_libraries(hk_kde4formpart ${KDE4_KDECORE_LIBS} ${KDE4_KPARTS_LIBS} ${HK_CLASSES_LIB} hk_kde4classes)
+
+install(TARGETS hk_kde4formpart DESTINATION ${PLUGIN_INSTALL_DIR})
+
+
+########### install files ###############
+
+install(FILES  hk_kde4formpart.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(FILES  hk_kdeformpartdesign.rc hk_kdeformpartview.rc  DESTINATION ${DATA_INSTALL_DIR}/hk_kde4classes)
+install(FILES  hk_kdeformpart.h DESTINATION ${INCLUDE_INSTALL_DIR}/hk_kde4classes CONFIGURATIONS Debug)

@@ -1,0 +1,1841 @@
+<book id="scriptingtutorial" lang="&language;">
+  <bookinfo>
+    <title>The &knoda; scripting tutorial</title>
+    <authorgroup>
+ <author>
+	<firstname></firstname>
+	<surname>Horst Knorr</surname>
+	<affiliation>
+	  <address><email><ulink url="mailto:hk_classes@knoda.org">hk_classes@knoda.org</ulink></email></address>
+	</affiliation>
+ </author>
+     </authorgroup>
+    <date>11/29/2004</date>
+    <releaseinfo>Version 0.0.3</releaseinfo>
+    <abstract>
+ 	<para>
+&knoda;, or more exactly the &hk_classes; library, has an integrated Python interpreter.  For further information about Python see <ulink url="http://www.python.org">http://www.python.org</ulink>.
+This tutorial will not teach Python, it will only show the hk_classes/python interface.  This tutorial is by no means complete, it only exists
+now because the final documentation hasn't been written yet.
+</para>
+<para>
+The examples in this tutorial are based on the tables as described in the &knoda; tutorial.
+	</para>
+    </abstract>
+    <keywordset>
+ <keyword>hk_classes</keyword>
+ <keyword>python</keyword>
+ <keyword>scripting</keyword>
+    </keywordset>
+  </bookinfo>
+<chapter  id="chapter1">
+<title>The various actions</title>
+<para>
+Each object in a form has its own programmable actions.  General actions are
+<glosslist>
+<glossentry>
+ <glossterm>On click</glossterm>
+ <glossdef>
+  <para>script that will be executed when a mouse click on this object occurs</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>On doubleclick</glossterm>
+ <glossdef>
+  <para>script that will be executed when a mouse doubleclick on this object occurs</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>On open</glossterm>
+ <glossdef>
+  <para>script that will be executed when the form is created or put into viewmode</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>On close</glossterm>
+ <glossdef>
+  <para>script that will be executed when the form is closed or put into designmode</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>On getfocus</glossterm>
+ <glossdef>
+  <para>script that will be executed when this object gets the keyboard focus</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>On loosefocus</glossterm>
+ <glossdef>
+  <para>script that will be executed when this object looses the keyboard focus</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>On key</glossterm>
+ <glossdef>
+  <para>script that will be executed when this object has the keyboard focus and a key on the keyboard is pressed</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+Let's write a 'hello world' program.  Create a new form and add a button.  Select the button and click on the 'On click'-actionbutton
+in the property editor.  Now add the following program into the program editor
+<example><title>Hello world-program</title>
+<programlisting>
+hk_this.show_warningmessage("Hello world")
+
+</programlisting>
+</example>
+Now close the window and change to viewmode.  When you push the button you will see a dialog window with "Hello world".
+</para>
+<para>
+The global variable <emphasis>hk_this</emphasis> is set from &hk_classes; and represents the current object, in this case the button.
+<emphasis>show_warningmessage()</emphasis> is a method of this object, that allows you to display a string in a GUI independent way (as &knoda; is a KDE application
+it will be displayed as  a KDE window but if you start it within a command line program it will be displayed on the standard output).
+<important>
+<para>
+Other GUI-independent ways for user interaction are
+
+<glosslist>
+<glossentry>
+ <glossterm>show_warningmessage(message)</glossterm>
+ <glossdef>
+  <para>displays 'message'</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>bool show_yesnodialog(message, bool default_value)</glossterm>
+ <glossdef>
+  <para>displays 'message' and returns true if you answer 'yes'.  The
+parameter 'default_value' is used for convenience to preselect 'yes' or 'no' in dialog boxes</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>hk_string show_stringvaluedialog(text)</glossterm>
+ <glossdef>
+  <para>displays 'text' as a question and returns your response</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+
+
+</para>
+</important>
+In forms another global variable is <emphasis>hk_thisform</emphasis>. It represents the form.
+In reports the variable name is <emphasis>hk_thisreport</emphasis>.
+</para>
+</chapter>
+<chapter id="chapter2">
+<title>General object methods- the class hk_visible</title>
+<para>
+Each visible object of &hk_classes; is inherited from a class called hk_visible, so we will now have a look on the general available methods
+<figure><title>Geometry specific methods</title>
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>set_size(x, y,width,height)</glossterm>
+ <glossdef>
+  <para>lets you to set position and size of an object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_size(width,height)</glossterm>
+ <glossdef>
+  <para>lets you to set size of an object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_position(x,y)</glossterm>
+ <glossdef>
+  <para>lets you to set position of an object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_x(x)</glossterm>
+ <glossdef>
+  <para>lets you to set the horizontal position of an object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_y(y)</glossterm>
+ <glossdef>
+  <para>lets you to set the vertical position of an object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_width(width)</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_height(height)</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>x()</glossterm>
+ <glossdef>
+  <para>returns the x co-ordinate of the object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>y()</glossterm>
+ <glossdef>
+  <para>returns the y co-ordinate of the object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>width()</glossterm>
+ <glossdef>
+  <para>returns the width of the object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>height()</glossterm>
+ <glossdef>
+  <para>returns the height of the object</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+ </blockquote>
+</figure>
+
+<figure><title>Look and Feel methods</title>
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>set_font(fontname,size)</glossterm>
+ <glossdef>
+  <para>sets the font, e.g. set_font("Arial",12)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_font(font)</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>hk_font font()</glossterm>
+ <glossdef>
+  <para>returns a font object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_foregroundcolour(colour)</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>foregroundcolour()</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_backgroundcolour(colour)</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>hk_colour backgroundcolour()</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+</figure>
+
+<figure><title>Miscelleanous methods</title>
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>set_label(labeltext)</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>label()</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>enum enum_visibletype {textlabel,button,rowselector,boolean,lineedit,memo,combobox,grid,form,report,reportsection,reportdata,other}</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>enum_visibletype  type(void) </glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>identifier()</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>hk_presentation* presentation()</glossterm>
+ <glossdef>
+  <para>returns the parent presentation object (either a form or a report)</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+</figure>
+
+The following example shows how to move the button within the form, how to change the colour and how to display different text
+on the button.
+
+
+
+<example><title>Changing colour and position</title>
+<programlisting>
+redcolour =hk_colour(255,0,0)
+greencolour =hk_colour(0,255,0)
+if hk_this.foregroundcolour().red()!=255:
+	hk_this.set_foregroundcolour(redcolour)
+	hk_this.set_backgroundcolour(greencolour)
+	hk_this.set_label("green button")
+else:
+	hk_this.set_foregroundcolour(greencolour)
+	hk_this.set_backgroundcolour(redcolour)
+	hk_this.set_label("red button")
+
+hk_this.set_position(hk_this.x()+50,hk_this.y()+10)
+
+</programlisting>
+</example>
+
+</para>
+<para>
+<figure><title>Predefined colour names</title>
+<blockquote>
+<itemizedlist mark="bullet">
+ <listitem><para>hk_aqua</para></listitem>
+ <listitem><para>hk_beige</para></listitem>
+ <listitem><para>hk_black</para></listitem>
+ <listitem><para>hk_blue</para></listitem>
+ <listitem><para>hk_brown</para></listitem>
+ <listitem><para>hk_fuchsia</para></listitem>
+ <listitem><para>hk_darkgrey</para></listitem>
+ <listitem><para>hk_green</para></listitem>
+ <listitem><para>hk_grey</para></listitem>
+ <listitem><para>hk_lightgrey</para></listitem>
+ <listitem><para>hk_lime</para></listitem>
+ <listitem><para>hk_maroon</para></listitem>
+ <listitem><para>hk_navy</para></listitem>
+ <listitem><para>hk_olive</para></listitem>
+ <listitem><para>hk_orange</para></listitem>
+ <listitem><para>hk_pink</para></listitem>
+ <listitem><para>hk_purple</para></listitem>
+ <listitem><para>hk_red</para></listitem>
+ <listitem><para>hk_silver</para></listitem>
+ <listitem><para>hk_teal</para></listitem>
+ <listitem><para>hk_white</para></listitem>
+ <listitem><para>hk_yellow</para></listitem>
+</itemizedlist>
+</blockquote>
+</figure>
+</para>
+</chapter >
+<chapter id="chapter3">
+<title>Data sensitive methods</title>
+<para>
+Before we start writing programs, we will first have some theory.  Below you see the (c++)- structure of &hk_classes;.  There are classes
+that handle the contact to the database (see the left side of the graphic), while others handle the interaction with the user (we have already
+seen the hk_visible class in the previous section).
+<figure id="hk_classesoverview"><title>hk_classes overview</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="hk_classes-overview.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<figure id="hk_classesoverview2"><title>description of the most important classes</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="class-overview2.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+</para>
+
+<section id="kshk_dsvisible">
+<title>Objects of type hk_dsvisible - the class hk_datasource</title>
+<para>
+All data-sensitive objects are of type <emphasis>hk_dsvisible</emphasis> (or its child hk_dsdatavisible).  hk_dsvisible inherits from hk_visible.
+The most important method of hk_dsvisible is <emphasis>datasource()</emphasis>.  This method returns a class of type hk_datasource, representing
+the whole datasource (either a table or a query)</para>
+<para>
+<figure><title>hk_datasource methods</title>
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>name()</glossterm>
+ <glossdef>
+  <para>returns the name of the datasource</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>goto_row(rownumber)</glossterm>
+ <glossdef>
+  <para>moves the row selector (row cursor) to 'rownumber'</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>goto_first()</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>goto_last()</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>goto_next()</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>goto_previous()</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>row_position()</glossterm>
+ <glossdef>
+  <para>returns the row number of the current row</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>max_rows()</glossterm>
+ <glossdef>
+  <para>returns the total number of existing rows </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>enable()</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>disable()</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_enabled(e)</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>is_enabled()</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>hk_column*column_by_name(name)</glossterm>
+ <glossdef>
+  <para>returns an hk_column object of the column with the name 'name'</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>store_changed_data()</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>hk_database*database()</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+</figure>
+The following example shows how to move between rows in a datasource.  For this, create a button in the form and set a datasource.  Add the script
+to the "On click"-action.
+
+<example><title>rowposition</title>
+<programlisting>
+ds=hk_this.datasource()
+ds.goto_row(ds.row_position() + 2)
+</programlisting>
+</example>
+
+How to get a specific hk_column object can be seen in the following example.  For what you can do with this object, please see the next chapter.
+
+
+<example><title>find  a specific column</title>
+<programlisting>
+col=hk_this.datasource().column_by_name("author")
+</programlisting>
+</example>
+
+
+</para>
+</section>
+
+
+<section id="kshk_dsdatavisible">
+<title>Objects of type hk_dsdatavisible - the class hk_column</title>
+<para>
+For the next example, create a form, set a datasource, create a lineedit field and connect it to a column of the datasource (for details see the
+&knoda; tutorial at http://hk-classes.sourceforge.net/tutorials.</para>
+<para>
+A lineeditfield is of type <emphasis>hk_dsdatavisible</emphasis>.  hk_dsdatavisible inherits from hk_dsvisible.
+The most important method of hk_dsdatavisible is <emphasis>column()</emphasis>.  This method returns a class of type hk_column, representing
+a specific column of a table.</para>
+<para>
+<figure><title>hk_column  data methods</title>
+<blockquote>
+
+<glosslist>
+<glossentry>
+ <glossterm>set_asstring(value)</glossterm>
+ <glossdef>
+  <para>lets you set a new value for this object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+<glossterm>asstring</glossterm>
+<glossdef>
+<para>returns the current value as a string value</para>
+</glossdef>
+</glossentry>
+
+<glossentry>
+	<glossterm>set_asdouble(value)</glossterm>
+	<glossdef>
+		<para>lets you set a new value for this object</para>
+	</glossdef>
+</glossentry>
+
+<glossentry>
+	<glossterm>asdouble()</glossterm>
+	<glossdef>
+		<para>returns the current value as a double value</para>
+	</glossdef>
+</glossentry>
+
+<glossentry>
+	<glossterm>set_asinteger(value)</glossterm>
+	<glossdef>
+		<para>lets you set a new value for this object</para>
+	</glossdef>
+</glossentry>
+
+<glossentry>
+	<glossterm>asinteger()</glossterm>
+	<glossdef>
+		<para>returns the current value as  a integer value</para>
+	</glossdef>
+</glossentry>
+
+<glossentry>
+	<glossterm>is_readonly()</glossterm>
+	<glossdef>
+		<para>returns true if this column is read-only; if data can be changed it returns false</para>
+	</glossdef>
+</glossentry>
+
+<glossentry>
+	<glossterm>unsigned int find(from_rownumber,to_rownumber,searchtext,bool wholephrase=false,bool casesensitive=false,bool backwards=false)</glossterm>
+	<glossdef>
+		<para>searches for a specific value in a column, returns the row number if found, hk_datasource.max_rows()+1 if not found</para>
+	</glossdef>
+</glossentry>
+
+<glossentry>
+	<glossterm>unsigned int find(searchtext,bool wholephrase=false,bool casesensitive=false,bool backwards=false)</glossterm>
+	<glossdef>
+		<para>searches for a specific value in a column, returns the row number if found, hk_datasource.max_rows()+1 if not found.
+		This version searches all rows of a datasource.
+ </para>
+	</glossdef>
+</glossentry>
+
+<glossentry>
+	<glossterm>hk_datasource* datasource()</glossterm>
+	<glossdef>
+		<para></para>
+	</glossdef>
+</glossentry>
+</glosslist>
+</blockquote>
+</figure>
+hk_dsdatavisible contains the convenience function <emphasis>set_value(const hk_string&amp;)</emphasis>
+which displays the value and sets the value by calling hk_column.set_asstring(const hk_string&amp;) if the column is set.
+The convenience function <emphasis>hk_string value()</emphasis> returns the currently displayed value.
+<figure><title>hk_column type methods</title>
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>hk_string    name(void)</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>void    set_name(const hk_string&amp;n)</glossterm>
+ <glossdef>
+  <para>sets the column name</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>enum_columntype {textcolumn,auto_inccolumn,smallintegercolumn,integercolumn,smallfloatingcolumn,
+ floatingcolumn,datecolumn,datetimecolumn,timecolumn,timestampcolumn,binarycolumn,
+ memocolumn,boolcolumn,othercolumn}</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>columntype()</glossterm>
+ <glossdef>
+  <para>returns the type of the column</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>size()</glossterm>
+ <glossdef>
+  <para>returns the column size (e.g. if this column was created as CHAR(10) it will return 10)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>bool    is_primary(void)</glossterm>
+ <glossdef>
+  <para>returns true if this column is part of a primary key</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>bool    set_primary(bool i)</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>bool    is_notnull(void)</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>bool    set_notnull(bool i)</glossterm>
+ <glossdef>
+  <para>if true the column needs a value</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+</figure>
+<example><title>Read data</title>
+<programlisting>
+col=hk_this.datasource().column_by_name("name")
+hk_this.show_warningmessage(col.asstring())
+</programlisting>
+</example>
+
+
+<example><title>Write data</title>
+<programlisting>
+col=hk_this.datasource().column_by_name("name")
+col.set_asstring("my new value")
+</programlisting>
+</example>
+This changes the value of the current column.  The data is saved either when
+<itemizedlist mark="bullet">
+         <listitem><para>the row position changes (e.g. by calling hk_datasource.goto_row())</para></listitem>
+         <listitem><para>the datasource is disabled (e.g. by calling hk_datasource.disable())</para></listitem>
+         <listitem><para>the changes are manually stored by calling hk_datasource.store_changed_data()</para></listitem>
+</itemizedlist>
+<example><title>Search data</title>
+<programlisting>
+col=hk_this.datasource().column_by_name("name")
+result=col.find("Schiller")
+if result > hk_this.datasource().max_rows():
+     hk_this.show_warningmessage("value not found")
+else:
+     hk_this.show_warningmessage("Value found at row position: "+str(result))
+</programlisting>
+</example>
+
+
+As this is working well, it is a bit inconvenient to handle. For this hk_dsdatavisible provides some convenience functions:
+
+
+<figure><title>hk_dsdatavisible methods</title>
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>set_value(newvalue)</glossterm>
+ <glossdef>
+  <para>sets the current value,where 'value' is a string. If  a column is set, the datasource will be changed, if not it will be only displayed</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>value()</glossterm>
+ <glossdef>
+  <para>returns the displayed string (the current value)</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+	<glossterm>find(from_rownumber,to_rownumber,searchtext[,wholephrase[,casesensitive[,backwards]]])</glossterm>
+	<glossdef>
+		<para>searches for a specific value in a column, returns the row number if found, hk_datasource.max_rows()+1 if not found</para>
+	</glossdef>
+</glossentry>
+
+<glossentry>
+	<glossterm>find(searchtext[,wholephrase[,casesensitive[,backwards]]])</glossterm>
+	<glossdef>
+		<para>searches for a specific value in a column, returns the row number if found, hk_datasource.max_rows()+1 if not found.
+		This version searches all rows of a datasource.
+ </para>
+	</glossdef>
+</glossentry>
+</glosslist>
+</blockquote>
+</figure>
+
+
+The same examples as before, but now only using the hk_dsdatavisible functions:
+
+<example><title>Read data</title>
+<programlisting>
+hk_this.show_warningmessage(hk_this.value())
+</programlisting>
+</example>
+
+
+<example><title>Write data</title>
+<programlisting>
+hk_this.set_value("my new value")
+</programlisting>
+</example>
+
+<example><title>Search data</title>
+<programlisting>
+result=hk_this.find("Schiller")
+if result > hk_this.datasource().max_rows():
+     hk_this.show_warningmessage("value not found")
+else:
+     hk_this.show_warningmessage("Value found at row position: "+str(result))
+</programlisting>
+</example>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</para>
+</section>
+<section id="kshk_presentation">
+<title>Objects of type hk_presentation - forms and reports</title>
+<para>
+Both forms and reports inherit from hk_presentation.  The most import function of hk_presentation is <emphasis>set_mode(mode)</emphasis>.
+The two possible modes are <emphasis>hk_presentation.designmode</emphasis> and <emphasis>hk_presentation.viewmode</emphasis>
+</para>
+<section id="kshk_form">
+<title>Handling forms</title>
+<para>
+If you want to get a reference to a specific object in a form you have two possibilities
+<itemizedlist mark="bullet">
+         <listitem><para> get_pyvisible(unique_number)</para></listitem>
+         <listitem><para> get_pyvisible(const hk_string&amp;identifier)</para></listitem>
+</itemizedlist>
+The first function needs the unique identifier number of the wanted object.  Each visible object of type hk_visible has a unique number as an identifier, which can't be changed.
+<important>
+<para>To find this number, click on the object.  In the caption of the property editor you can see the number in brackets.
+</para>
+</important>
+The second function uses a unique text identifier.  This is a user-defined unique identifier and can be set in the property editor.
+</para>
+<para>
+Both functions return a reference to the object.
+<important>
+<para>
+In versions prior to 0.7.4 the usage of the function get_visible() was recommended. This function is still valid. Nevertheless you should use get_pyvisible(), because there is no need for type casting any more (the whole range of cast_* function are not required any more)
+</para>
+</important>
+</para>
+
+<para>
+The next program shows you how to start a form:
+<example><title>displaying  a form</title>
+<programlisting>
+myform=hk_this.datasource().database().new_formvisible()
+myform.load_form("authorform")
+myform.set_mode(myform.viewmode)
+</programlisting>
+</example>
+</para>
+</section>
+<section id="kshk_report">
+<title>Handling reports</title>
+<para>
+Here is how to start a report:
+<example><title>displaying  a report</title>
+<programlisting>
+myreport=hk_this.datasource().database().new_reportvisible()
+myreport.load_report("complexreport")
+myreport.set_mode(myreport.viewmode)
+
+</programlisting>
+</example>
+</para>
+<para>
+A visible object in a report is of type hk_reportdata, which inherits from hk_dsdatavisible.  The main methods are
+<itemizedlist>
+<listitem><para>set_data(const hk_string&amp; d)</para></listitem>
+<listitem><para>hk_string data(void)</para></listitem>
+</itemizedlist>
+
+The data property contains the value that is displayed.  See the knodatutorial chapter "The report field" for details.
+</para>
+<para>
+The following example shows how to print numbers in different colours.  For this we use the "onprint" action
+
+<example><title>reportdata onprint</title>
+<programlisting>
+value=hk_this.column().asdouble()
+if value&lt;0:
+   hk_this.set_foregroundcolour(hk_red)
+else:
+   if value==0:
+       hk_this.set_foregroundcolour(hk_black)
+   else:
+      hk_this.set_foregroundcolour(hk_blue)
+</programlisting>
+</example>
+</para>
+</section>
+</section>
+</chapter>
+<chapter id="chapter4">
+<title>using &hk_classes; as a Python module</title>
+<para>
+You can use &hk_classes; within Python. You can write your own Python applications using all the elements of &hk_classes; or interactively
+explore your data.
+
+<example><title>Python module basics</title>
+<programlisting>
+horst@horstnotebook:~> python
+Python 2.2.2 (#1, Mar 17 2003, 15:17:58)
+[GCC 3.3 20030226 (prerelease) (SuSE Linux)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from hk_classes import *
+>>> dr=hk_drivermanager()
+>>> con=dr.new_connection("mysql")
+>>> con.set_password("mypassword")
+>>> con.connect()
+1
+>>> db=con.new_database("exampledb")
+>>> mytable=db.new_table("authors")
+>>> mytable.enable()
+</programlisting>
+</example>
+
+</para>
+<section id="kshk_drivermanager">
+<title>hk_drivermanager</title>
+<para>
+hk_drivermanager handles the database drivers. You need just one object of this type for your whole application.
+<blockquote>
+<itemizedlist mark="bullet">
+         <listitem><para> vector&lt;hk_string>* driverlist(void): returns a list of all available database drivers</para></listitem>
+        <listitem><para> hk_connection* new_connection(const hk_string&amp;drivername): creates a new object of type hk_connection;
+</para></listitem>
+</itemizedlist>
+</blockquote>
+</para>
+</section>
+<section id="kshk_connection">
+<title>hk_connection</title>
+<para>
+
+hk_connection connects to the SQL Server.  The most important functions are set_host(), set_user(),
+set_password() and connect().
+
+
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>void    set_host(const hk_string&amp;)</glossterm>
+ <glossdef>
+  <para>sets the host name or host IP number</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>hk_string   host(void)</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>void    set_user(const hk_string&amp; )</glossterm>
+ <glossdef>
+  <para>sets the user name used on the host</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>hk_string   user(void)</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>void    set_password(const hk_string&amp;p)</glossterm>
+ <glossdef>
+  <para>sets the password for the user</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>void set_tcp_port(unsigned int t)</glossterm>
+ <glossdef>
+  <para>sets the TCP port</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>unsigned int    tcp_port(void)</glossterm>
+ <glossdef>
+  <para></para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>virtual unsigned int    default_tcp_port(void) const</glossterm>
+ <glossdef>
+  <para>returns the default TCP port for this database server</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>bool    connect(enum_interaction c=interactive)</glossterm>
+ <glossdef>
+  <para>connects to the server using the user, host and TCP data</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>bool    disconnect(void)</glossterm>
+ <glossdef>
+  <para>disconnects from the server</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>bool    is_connected(void)</glossterm>
+ <glossdef>
+  <para>returns true if this connection is connected to the server</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>vector&lt;hk_string>* dblist(void)</glossterm>
+ <glossdef>
+  <para>returns a list of all existing databases in this connection</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>hk_database* new_database(const hk_string&amp;name="")</glossterm>
+ <glossdef>
+  <para>creates a new hk_database object</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>bool    delete_database(const hk_string&amp;dbase)</glossterm>
+ <glossdef>
+  <para>deletes an exisiting database</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>bool    database_exists(const hk_string&amp;databasename)</glossterm>
+ <glossdef>
+  <para>returns true if the database "databasename" exists</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+
+</para>
+</section>
+<section id="kshk_database">
+<title>hk_database</title>
+<para>
+hk_database represents a particular database on the SQL Server
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>vector&lt;hk_string>* tablelist(void)</glossterm>
+ <glossdef>
+  <para>returns a list of all existing tables in this database</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>vector&lt;hk_string>* querylist(void)</glossterm>
+ <glossdef>
+  <para>returns a list of all existing queries in this database</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>vector&lt;hk_string>* formlist(void)</glossterm>
+ <glossdef>
+  <para>returns a list of all existing forms in this database</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>vector&lt;hk_string>* reportlist(void)</glossterm>
+ <glossdef>
+  <para>returns a list of all existing reports in this database</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>hk_datasource* new_table(const hk_string&amp;name="",hk_presentation* p=NULL)</glossterm>
+ <glossdef>
+  <para>gets a new table object of type hk_datasource (read and write)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>hk_datasource* new_resultquery(hk_presentation* p=NULL)</glossterm>
+ <glossdef>
+  <para>gets a new query object of type hk_datasource (readonly)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>hk_actionquery*   new_actionquery(void)</glossterm>
+ <glossdef>
+  <para>gets a hk_actionquery object. It can execute SQL statements that don't return data and are only successful or not successful (e.g. CREATE TABLE)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>hk_datasource*  load_datasource(const hk_string&amp;name,bool query=false,hk_presentation* p=NULL)</glossterm>
+ <glossdef>
+  <para> a convenience function for new_table and new_resultquery, that loads an existing datasource</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>bool    delete_table(const hk_string&amp;table,enum_interaction x=interactive)</glossterm>
+ <glossdef>
+  <para>deletes a table</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>bool    table_exists(const hk_string&amp;tablename)</glossterm>
+ <glossdef>
+  <para>returns true if the table 'tablename' exists</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>bool    query_exists(const hk_string&amp;queryname)</glossterm>
+ <glossdef>
+  <para>returns true if the query 'queryname' exists</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+
+</para>
+</section>
+</chapter>
+<chapter  id="chapter5">
+<title>Tips and tricks</title>
+<para>
+</para>
+<section id="showdata">
+<title>How to display the data</title>
+<para>
+<example><title>Show data</title>
+<programlisting>
+horst@horstnotebook:~> python
+Python 2.2.2 (#1, Mar 17 2003, 15:17:58)
+[GCC 3.3 20030226 (prerelease) (SuSE Linux)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from hk_classes import *
+>>> dr=hk_drivermanager()
+>>> con=dr.new_connection("mysql")
+>>> con.set_password("secret")
+>>> con.connect()
+1
+>>> db=con.new_database("exampledb")
+>>> table=db.new_table("authors")
+>>> i=0
+>>> table.enable()
+SQL : SELECT  *  FROM  `authors`
+1
+>>> table.goto_first()
+1
+>>> while i&lt; table.max_rows():
+    ...    table.show_currentrow()
+    ...    table.goto_next()
+    ...    i=i+1
+['1', 'Goethe,Johann Wolfgang', '1749', '1832', 'FALSE']
+1
+['2', 'Schiller, Friedrich von', '1759', '1805', 'TRUE']
+1
+['3', 'Lessing, Gotthold Ephraim', '1729', '1781', 'TRUE']
+1
+['4', 'Kleist', '1400', '0', 'FALSE']
+</programlisting>
+</example>
+</para>
+</section>
+
+
+
+
+<section id="querydata">
+<title>How to execute a query</title>
+<para>
+Result queries (SELECT statement) return data when they are executed.
+<example><title>Execute a "SELECT" query</title>
+<programlisting>
+horst@horstnotebook:~> python
+Python 2.2.2 (#1, Mar 17 2003, 15:17:58)
+[GCC 3.3 20030226 (prerelease) (SuSE Linux)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from hk_classes import *
+d>>> dr=hk_drivermanager()
+>>> con=dr.new_connection("mysql")
+>>> con.set_password("secret")
+>>> con.connect()
+1
+>>> db=con.new_database("exampledb")
+>>> query=db.new_resultquery()
+>>> query.set_sql("SELECT * FROM authors")
+1
+>>> query.enable()
+SQL : SELECT  *  FROM  authors
+1
+</programlisting>
+</example>
+
+
+Many queries, such as data definition queries, don't return data.  They only report whether execution of the
+query was successful or whether it failed.
+<example><title>Execute an action query</title>
+<programlisting>
+horst@horstnotebook:~> python
+Python 2.2.2 (#1, Mar 17 2003, 15:17:58)
+[GCC 3.3 20030226 (prerelease) (SuSE Linux)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from hk_classes import *
+d>>> dr=hk_drivermanager()
+>>> con=dr.new_connection("mysql")
+>>> con.set_password("secret")
+>>> con.connect()
+1
+>>> db=con.new_database("exampledb")
+>>> query=db.new_actionquery()
+>>> query.set_sql("CREATE TABLE `another new table`
+( `id` BIGINT(1) NOT NULL AUTO_INCREMENT , `name` BIGINT, PRIMARY KEY ( `id` ) )")
+>>> query.execute()
+CREATE TABLE `another new table` ( `id` BIGINT(1) NOT NULL AUTO_INCREMENT ,
+ `name` BIGINT, PRIMARY KEY ( `id` ) )
+1
+</programlisting>
+</example>
+
+
+</para>
+</section>
+
+
+
+<section id="createtable">
+<title>How to create a table</title>
+<para>
+To create a table, first get  a new table object, set a name and set the mode to "createtable".</para>
+<para>
+After that you can define new columns.  First create it with new_column() and then set the type, name etc.
+When finished, create the table with create_table_now().
+<example><title>create table</title>
+<programlisting>
+>>> table = db.new_table()
+>>> table.set_name("my new table")
+>>> table.setmode_createtable()
+>>> col=table.new_column()
+>>> col.set_columntype(hk_column.auto_inccolumn)
+>>> col.set_name("id")
+>>> col=table.new_column()
+>>> col.set_name("name")
+>>> table.create_table_now()
+CREATE TABLE `my new table` ( `id` BIGINT(1) NOT NULL AUTO_INCREMENT ,
+ BIGINT, PRIMARY KEY ( `id` ) )
+Table created
+1
+</programlisting>
+</example>
+And here are the creation relevant methods of hk_column
+</para>
+<para>
+<figure><title>hk_column type methods</title>
+<blockquote>
+<glosslist>
+<glossentry>
+ <glossterm>name()</glossterm>
+ <glossdef>
+  <para>returns the name of this column</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_name(name)</glossterm>
+ <glossdef>
+  <para>sets the column name</para>
+ </glossdef>
+</glossentry>
+
+ <glossentry>
+ <glossterm>set_columntype(type)</glossterm>
+ <glossdef>
+<para>
+sets the type of the column
+     </para><para>
+    Possible values are
+    <itemizedlist mark="bullet">
+    <listitem><para>textcolumn</para></listitem>
+    <listitem><para>auto_inccolumn</para></listitem>
+    <listitem><para>smallintegercolumn</para></listitem>
+    <listitem><para>integercolumn</para></listitem>
+    <listitem><para>smallfloatingcolumn</para></listitem>
+    <listitem><para>floatingcolumn</para></listitem>
+    <listitem><para>datecolumn</para></listitem>
+    <listitem><para>datetimecolumn</para></listitem>
+    <listitem><para>timecolumn</para></listitem>
+    <listitem><para>timestampcolumn</para></listitem>
+    <listitem><para>binarycolumn</para></listitem>
+    <listitem><para>memocolumn</para></listitem>
+    <listitem><para>boolcolumn</para></listitem>
+    <listitem><para>othercolumn</para></listitem>
+    </itemizedlist>
+    </para>
+</glossdef>
+ </glossentry>
+
+ <glossentry>
+ <glossterm>columntype()</glossterm>
+ <glossdef>
+  <para>returns the type of the column.
+    </para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_size()</glossterm>
+ <glossdef>
+  <para>sets the column size (e.g. if this column was should be a textcolumn with 10 characters set the type with set_type and the size with this function)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>size()</glossterm>
+ <glossdef>
+  <para>returns the column size (e.g. if this column was created as CHAR(10) it will return 10)</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_primary(primary)</glossterm>
+ <glossdef>
+  <para> if 'primary' is true the column will be part of the primary key (primary index).
+  Can only be edited if the datasource is in the mode ALTER or CREATE.</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>is_primary()</glossterm>
+ <glossdef>
+  <para>returns true if this column is part of a primary key</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>set_notnull(notnull)</glossterm>
+ <glossdef>
+  <para>if 'notnull' true the column needs a value</para>
+ </glossdef>
+</glossentry>
+
+<glossentry>
+ <glossterm>is_notnull()</glossterm>
+ <glossdef>
+  <para>returns True if this column has to have a value</para>
+ </glossdef>
+</glossentry>
+
+</glosslist>
+</blockquote>
+</figure>
+</para>
+</section>
+
+
+
+
+
+<section id="calculatedvalue">
+<title>How to create a calculated value field</title>
+<para>
+Create a lineedit field with the name "calculated_field" and don't set any datasource or field property. Put the following
+code in the onpush action of  a button. The value you want to display has first be formatted with <emphasis>format_number</emphasis>
+ and then be set with <emphasis>hk_dsdatavisible.set_value</emphasis>.
+</para>
+<para>
+<example><title>calculated values</title>
+<programlisting>
+col1=hk_this.datasource().column_by_name("field_1")
+col2=hk_this.datasource().column_by_name("field_2")
+result=(col1.curval_asdouble()*col2.curval_asdouble())
+calcfield=hk_thisform.get_pyvisible("calculated_field")
+calcfield.set_value(format_number(result,
+calcfield.use_numberseparator(),calcfield.precision()))
+</programlisting>
+</example>
+</para>
+<para>
+
+</para>
+</section>
+
+
+
+
+<section id="rememberinsertvalue">
+<title>How to use the last inserted value as a default for the next row that will be inserted</title>
+<para>
+Insert the following code into the <emphasis>after_insert</emphasis> action.
+</para>
+<para>
+<example><title>default values</title>
+<programlisting>
+hk_this.set_defaultvalue(hk_this.value())
+</programlisting>
+</example>
+</para>
+<para>
+
+</para>
+</section>
+
+
+
+
+<section id="modules">
+<title>How to define macros (I) - using modules</title>
+<para>
+You can define macros - that means global available Python functions - within your database as a module
+</para>
+<para>
+<example><title>Macro example</title>
+<programlisting>
+def mymakro(hk_this,v):
+  hk_this.show_warningmessage("Displaying the text: "+v)</programlisting>
+</example>
+Store the above code as a module named "mytestmodule".
+</para>
+<para>
+This can be loaded e.g. in the on_open action of  a form:
+<example><title>Macro example (part II)</title>
+<programlisting>
+hk_thisform.load_module("mytestmodule")
+</programlisting></example>
+
+</para>
+<para>
+This can then be called from a buttons onclick action:
+<example><title>Macro example (part III)</title>
+<programlisting>
+mymakro(hk_this," my text")</programlisting></example>
+
+</para>
+</section>
+
+
+<section id="macros">
+<title>How to define macros (II)</title>
+<para>
+You can alternatively define macros - that means global available Python functions - in the onopen() action of the form,
+and then call it from any other action:
+</para>
+<para>
+<example><title>Macro example</title>
+<programlisting>
+def mymakro(hk_this,v):
+  hk_this.show_warningmessage("Displaying the text: "+v)</programlisting>
+</example>
+</para>
+<para>
+This can be called from a buttons onclick action:
+<example><title>Macro example (part II)</title>
+<programlisting>
+mymakro(hk_this," my text")</programlisting></example>
+
+</para>
+</section>
+
+
+
+
+<section id="formatnumber">
+<title>How to format numbers</title>
+<para>
+To format a number you can use the function format_number(). It will return a string. The first
+parameter is the number you want to format, the second is a boolean value whether or not you want a thousands separator, the third parameter shows the number of digits, and with the last you can set the target locale.
+<example><title>Formatting a number</title>
+<programlisting>
+horst@horstnotebook:~> python
+Python 2.3.2 (#1, Oct 28 2003, 21:22:16)
+[GCC 3.3 20030226 (prerelease) (SuSE Linux)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from hk_classes import *
+>>> number=12345.6789
+>>> print number
+12345.6789
+>>> print format_number(number,1,2)
+12.345,68
+>>> print format_number(number,True,2)
+12.345,68
+>>> print format_number(number,True,2,"C")
+12345.68
+>>> print format_number(number,True,2,"de_DE")
+12.345,68
+>>> print format_number(number,False,2,"de_DE")
+12345,68
+>>>
+</programlisting>
+</example>
+
+</para>
+</section>
+
+
+<section id="printcolours">
+<title>How to print rows in alternating colours</title>
+<para>
+When printing a report it is often wanted to have every second row printed with a different colour
+to make it easier to read the output. To do so put the following code in the on_print action of  a report field
+<example><title>Printing alternate colours</title>
+<programlisting>
+if hk_thisreport.datasource().row_position() % 2 ==0:
+   hk_this.set_backgroundcolour(hk_white)
+else:
+   hk_this.set_backgroundcolour(hk_grey)
+</programlisting>
+</example>
+
+</para>
+</section>
+
+
+
+
+<section id="taborder2">
+<title>How to set the focus in a form</title>
+<para>
+Put the following code into the on_click action of  a button:
+<example><title>Setting the taborder</title>
+<programlisting>
+hk_this.datasource().setmode_insertrow()
+hk_thisform.goto_taborder_first()
+</programlisting>
+</example>
+
+When you push the button the datasource will allow you to insert a new row and move the focus from
+the button to the first field. Other possible functions are:
+
+<blockquote>
+<glosslist>
+
+<glossentry id="ksset_focus">
+ <glossterm >set_focus(widget)</glossterm>
+ <glossdef>
+  <para>will set the focus to 'widget'
+<example><title>Setting the taborder for a specific field</title>
+<programlisting>
+hk_thisform.set_focus(hk_thisform.get_pyvisible(2))
+</programlisting>
+</example>
+</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry id="ksset_taborder">
+ <glossterm >set_taborder( taborder[,registerchange [, forcesetting]])</glossterm>
+ <glossdef>
+  <para>sets the tab order (the focus order) of the widgets.
+'taborder' is a  list of the presentation numbers of the widgets, which should get the focus
+</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>goto_taborder_next()</glossterm>
+ <glossdef>
+  <para>will move the the focus to the next widget (see <xref linkend="set_taborder"/> )
+</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>goto_taborder_previous()</glossterm>
+ <glossdef>
+  <para>will move the the focus to the previous widget (see <xref linkend="set_taborder"/> )
+</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>goto_taborder_first()</glossterm>
+ <glossdef>
+  <para>will move the the focus to the first widget (see <xref linkend="set_taborder"/> )
+</para>
+ </glossdef>
+</glossentry>
+
+
+<glossentry>
+ <glossterm>goto_taborder_last()</glossterm>
+ <glossdef>
+  <para>will move the the focus to the last widget (see <xref linkend="set_taborder"/> )
+</para>
+ </glossdef>
+</glossentry>
+
+
+
+</glosslist>
+</blockquote>
+
+</para>
+</section>
+
+<section id="binarydata">
+<title>How to handle binary data in a Python script</title>
+<para>
+Put the following code into the on_click action of  a button:
+<example><title>Setting binary data to a column</title>
+<programlisting>
+myfile=open("/home/name/mypicture.jpg")
+mydata=myfile.read()
+x=struct_raw_data()
+x.length=myfile.tell()
+x.data=mydata
+
+mycol=hk_this.datasource().column_by_name("mybinarycolumn")
+mycol.set_asbinary(x)
+
+hk_this.datasource().store_changed_data()
+</programlisting>
+</example>
+</para>
+</section>
+
+
+
+
+
+
+
+<section id="keypress">
+<title>How to react on pressed keys</title>
+<para>
+Put the following code into the on_key action of  a lineedit field:
+<example><title>Reacting on keyboard input</title>
+<programlisting>
+key=hk_this.key()
+print "on_key=(",key.key(),")(",key.text(),")"
+if key.state()&amp;key.state_ctrl:
+  print "ctrl"
+if key.state()&amp;key.state_shift:
+  print "shift"
+if key.state()&amp;key.state_alt:
+  print "alt"
+
+if key.key()==key.key_F5:
+ show_warningmessage("F5 pressed. This will be ignored")
+ key.set_accept_key(False)
+
+if key.key()==key.key_M and key.state()&amp;key.state_ctrl:
+ show_warningmessage("ctrl m pressed") </programlisting>
+</example>
+
+when the on_key action is triggered an object of type hk_key is created and can be called via
+hk_this.key(). If you set the hk_key.set_accept_key() method to 'False', the key will not be accepted as input.
+
+</para>
+</section>
+
+
+<section id="loadfile">
+<title>How to load a file content into a field using a filedialog</title>
+<para>
+Put the following code into the on_click action of  a button:
+<example><title>Loading a file content into a field</title>
+<programlisting>
+filename=hk_this.show_filedialog()
+file=open(filename)
+data=file.read()
+datafield=hk_thisform.get_pyvisible("datafield")
+datafield.set_value(data)
+</programlisting>
+</example>
+
+This example lets the user select a file(line 1) and load its content (line 2 and 3) into a field (line 4 and 5).
+</para>
+</section>
+
+<section id="insertdata">
+<title>How to add or modify data, copy data between 2 datasources etc.</title>
+<para>
+There are different ways within hk_classes to add data to a table:
+<itemizedlist mark="bullet">
+<listitem><para>Using hk_classes commands</para></listitem>
+<listitem><para>Using SQL (INSERT, UPDATE etc.)</para></listitem>
+</itemizedlist>
+The advantage to use the hk_classes commands is, that you don't have to bother
+about correct SQL, gives you the possibility of a much finer grained data
+manipulation and it will also work over the frontiers of different
+database backends, even to those who don't understand SQL. I
+recommend to use this way.
+</para><para>
+
+<example><title>Copy data from an existing datasource to an existing table in the same database</title>
+<para>
+
+The following example copies all names of the authors into another,existing
+table "newauthors". It assumes that both datasources (tables) are not defined
+as form datasources and will be part of the same database (on the same SQL
+server). Of course it works the same way with form datasources (which you can
+access with the hk_thisform.get_datasource() function family),
+except the fact, that you don't need to enable them (lines 5 and 7).
+</para><para>
+
+Lines 1 to 7 are simple definition rows.
+Lines 8 and 9 define the source and the target columns. Of course you can use
+as many columns as needed, or write fixed text or whatever you want.
+</para><para>
+
+Copying happens in lines 10 to 15. The targettable must be in insertmode (line
+11) otherwise it will update the current row.
+</para><para>
+
+To copy only some rows, simply edit the while loop.
+</para>
+
+<programlisting>
+
+db=hk_thisform.database() (1)
+sourcetable=db.new_table("authors") (2)
+targettable=db.new_table("newauthors") (3)
+i=0 (4)
+sourcetable.enable() (5)
+sourcetable.goto_first() (6)
+targettable.enable() (7)
+sourcecolumn1=sourcetable.column_by_name("name") (8)
+targetcolumn1=targettable.column_by_name("name") (9)
+while i&lt; sourcetable.max_rows(): (10)
+    targettable.setmode_insertrow() (11)
+    targetcolumn1.set_asstring(sourcecolumn1.asstring()) (12)
+    targettable.store_changed_data() (13)
+    sourcetable.goto_next() (14)
+    i=i+1 (15)
+targettable.disable()(16)
+sourcetable.disable()(17)
+</programlisting>
+
+</example>
+
+
+<example><title>Copy data from an existing datasource to an existing table in different databases (also different server backends)</title>
+<para>
+
+To do the same, but store the data on a different server you simply have to
+replace line 3 from the previous example. Let's say your source data is on a
+Postgres server and the target data should be stored in a local format, e.g.
+SQLite3. It works the same with Mysql etc, simply replace the connection name
+in line 3. The connect() command in line 4 will open the password dialog when
+necessary.
+</para><programlisting>
+
+[Lines 1 to 2 as above] (1)
+dr=db.connection().drivermanager() (2)
+con=dr.new_connection("sqlite3") (3)
+con.connect() (4)
+sqlitedb=con.new_database("mysqlitedatabase") (5)
+targettable=sqlitedb.new_table("newauthors") (6)
+[Lines 4 to 17 as above] (7)
+</programlisting>
+</example>
+
+
+<example><title>Copy data from an existing datasource to a new table</title>
+<para>
+The last example copies the result a of query into a new table. In line 3 you
+can define the SQL statement. Be aware that you have to use the ANSI SQL
+delimiters, means " as identifier delimiter and ' as text delimiter.
+Particulary Mysql uses different delimiters. hk_classes will fix them in
+resultqueries (but not in actionqueries).
+Don't worry about the function name "copy_table" in line 5. It will also allow
+to copy data from resultqueries.
+</para><programlisting>
+
+targetdb=hk_thisform.database() (1)
+sourcequery=targetdb.new_resultquery() (2)
+sql="SELECT * from \"authors\"" (3)
+sourcequery.set_sql(sql) (4)
+targetdb.copy_table(sourcequery,True,False) (5)
+</programlisting>
+</example>
+
+</para>
+</section>
+
+
+<section id="loadsubform">
+<title>How to load a subform</title>
+<para>
+It may be necessary that you want to load a subform by clicking a button. To do so, add the following code to the on_click action of a button. Line 1 gets a handle to the subformobject named "mysubform". In line 2 old settings will be cleared, line 3 adds depending fields between the form and the subform. In line 4 the name of the (existing) subform is added, and last not least in line 5 the definition will be loaded and activated.
+<example><title>Load a subform</title>
+<programlisting>
+subform=hk_thisform.get_pyvisible("mysubform") (1)
+subform.clear_depending_fields() (2)
+subform.add_depending_fields("subfield","masterfield",False) (3)
+subform.set_name("Subformname") (4)
+subform.activate_subform() (5)
+</programlisting>
+</example>
+
+</para>
+</section>
+
+
+
+
+
+
+</chapter>
+</book>
+

@@ -1,0 +1,1399 @@
+<book id="knodatutorial" lang="&language;">
+  <bookinfo>
+    <title>The &knoda; user's tutorial</title>
+    <authorgroup>
+ <author>
+	<firstname></firstname>
+	<surname>Horst Knorr</surname>
+	<affiliation>
+	  <address><email><ulink url="mailto:hk_classes@knoda.org">hk_classes@knoda.org</ulink></email></address>
+	</affiliation>
+ </author>
+ <author>
+	<firstname></firstname>
+	<surname>Ian Powell</surname>
+	<affiliation>
+	  <address><email><ulink url="mailto:itsonlyian@tiscali.co.uk">itsonlyian@tiscali.co.uk</ulink></email></address>
+	</affiliation>
+ </author>
+ <author>
+	<firstname></firstname>
+	<surname>Peter Ruskin</surname>
+	<affiliation>
+	  <address><email><ulink url="mailto:aoyu93@dsl.pipex.com">aoyu93@dsl.pipex.com</ulink></email></address>
+	</affiliation>
+ </author>
+    </authorgroup>
+    <date>04/10/2005</date>
+    <releaseinfo>0.8</releaseinfo>
+ <abstract>
+<para>
+
+This  tutorial is based on &knoda; version 0.8.  &knoda; is a Graphical User Interface program for access to databases in the KDE
+ environment.  In this tutorial we will create a database that will consist of two tables.
+</para><para>
+Pre-requisites:
+It is assumed that you will have basic understanding of a "relational database" before starting this tutorial.  "MySQL" and "Microsoft
+ Access" are examples of relational database systems.  Practical experience of SQL is also an advantage.
+</para>
+ </abstract>
+    <keywordset>
+ <keyword>hk_classes</keyword>
+ <keyword>knoda</keyword>
+    </keywordset>
+ </bookinfo>
+<chapter id="Description">
+<title>The example database "exampledb"</title>
+      	<para>
+	The following chapters describe the example database that will be the basis for all &hk_classes; tutorials and manuals.</para>
+	<para>
+	The database is a literature database; it should store the author's names and the titles of their literary works.  The data I have
+ actually
+	used in this example database are the names of three famous 18th century German authors and some of their plays.</para>
+	<para>
+	database name:   exampledb
+	</para>
+	<para>
+	The database contains two tables
+	</para>
+	<itemizedlist mark="bullet">
+	<listitem><para>authors</para></listitem>
+	<listitem><para>literature</para></listitem>
+	</itemizedlist>
+	<para>
+	which are in a one-to-many relationship, which means that a author could have written one or more texts.
+      </para>
+<section id="authorstable">
+<title>The "authors" table</title>
+
+<table frame="all"><title>structure of the "authors" table</title>
+
+<tgroup cols="3" align="left" colsep="1" rowsep="1">
+<thead>
+<row><entry>Fieldname</entry><entry>Type</entry><entry>Description</entry></row>
+</thead>
+<tbody>
+<row><entry>author_id</entry><entry>auto increment</entry><entry>unique identification number for each author</entry></row>
+<row><entry>name</entry><entry>text 255</entry><entry>the name of the author</entry></row>
+<row><entry>birthyear</entry><entry>text 6</entry><entry>year of his birth</entry></row>
+<row><entry>deathyear</entry><entry>text 6</entry><entry>year of his death</entry></row>
+</tbody>
+</tgroup>
+
+</table>
+
+
+<table frame="all"><title>the data in the "authors" table</title>
+
+<tgroup cols="4" align="left" colsep="1" rowsep="1">
+<thead>
+<row><entry>author_id</entry><entry>name</entry><entry>birthyear</entry><entry>deathyear</entry></row>
+</thead>
+<tbody>
+<row><entry>1</entry><entry>Goethe, Johann Wolfgang von</entry><entry>1749</entry><entry>1832</entry></row>
+<row><entry>2</entry><entry>Schiller, Friedrich von</entry><entry>1759</entry><entry>1805</entry></row>
+<row><entry>3</entry><entry>Lessing, Gotthold Ephraim</entry><entry>1729</entry><entry>1781</entry></row>
+</tbody>
+</tgroup>
+</table>
+
+
+
+</section>
+
+
+
+
+
+<section id="literaturetable">
+	<title>The "literature" table</title>
+<para>
+
+<table frame="all"><title>structure of the "literature" table</title>
+
+<tgroup cols="3" align="left" colsep="1" rowsep="1">
+<thead>
+<row><entry>Fieldname</entry><entry>Type</entry><entry>Description</entry></row>
+</thead>
+<tbody>
+<row><entry>literature_id</entry><entry>auto increment</entry><entry>unique identification number for each book or poem</entry></row>
+<row><entry>author</entry><entry>integer</entry><entry>the author id</entry></row>
+<row><entry>title</entry><entry>memo</entry><entry>the title of the book</entry></row>
+</tbody>
+</tgroup>
+
+</table>
+
+
+<table frame="all"><title>the data in the "literature" table</title>
+
+<tgroup cols="3" align="left" colsep="1" rowsep="1">
+<thead>
+<row><entry>literature_id</entry><entry>author</entry><entry>title</entry></row>
+</thead>
+<tbody>
+<row><entry>1</entry><entry>1</entry><entry>G&ouml;tz von Berlichingen</entry></row>
+<row><entry>2</entry><entry>1</entry><entry>Faust</entry></row>
+<row><entry>3</entry><entry>1</entry><entry>Iphigenie auf Tauris</entry></row>
+<row><entry>4</entry><entry>2</entry><entry>Don Carlos</entry></row>
+<row><entry>5</entry><entry>2</entry><entry>Die R&auml;uber</entry></row>
+<row><entry>6</entry><entry>2</entry><entry>Wallenstein</entry></row>
+<row><entry>7</entry><entry>3</entry><entry>Nathan der Weise</entry></row>
+<row><entry>8</entry><entry>3</entry><entry>Minna von Barnhelm</entry></row>
+</tbody>
+</tgroup>
+
+</table>
+</para>
+</section>
+
+</chapter>
+
+<chapter id="knodastart">
+<title>Starting &knoda;</title>
+<para>
+The binary (program) is called 'knoda' and will be installed in your KDE-BINDIR directory.  When
+ you launch &knoda; you will be presented with the dialog shown on <xref linkend="knodamain"></xref>.  The
+ "Connect" button connects you to the selected SQL-database driver (either MySQL, PostgreSQL, SQLite or ODBC).
+<important><para>
+To use the ODBC driver you first have to setup an ODBC datasource. See <ulink url="http://www.unixodbc.org"> UnixODBC.org</ulink> for details.
+</para></important>
+<figure id="knodamain"><title>The knoda window</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="knoda.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot></figure>
+
+</para>
+<para>
+If you always use the same database driver you can either preselect it in the options menu (see
+<xref linkend="generaloptions"/>) or preselect it with the command line option -d.
+</para><para>
+A simple
+</para><para>
+<screen>
+horst@notebook:~ > knoda -d mysql
+</screen>
+
+</para><para>
+will connect &knoda; to the MySQL driver and bypass the above dialog.
+</para><para>
+Once connected to the driver, the password dialog will appear.  Here you have to enter your username,
+ password and the host where your SQL-database server is running.
+</para>
+<figure><title>The password dialog</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="passworddialog.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot></figure>
+</chapter>
+
+
+<chapter id="mainwindow">
+<title>The main window - creating a new database</title>
+<para>
+Once you have successfully logged in, the main window will be displayed, listing all your existing
+ databases on the server in the combobox in the top toolbar. The list view on the left side shows your already existing tables, queries, forms and reports of the
+ currently selected database.
+ The name of the selected database will be shown on top of the listview and in the combobox.
+
+</para>
+<figure><title>The main window</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="mainwindow.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot></figure><para>
+In our case, we want to create a new database.  Double-click the current database name in the list view or select it
+in the listview. After confirming the  new name by pressing the 'OK' button, the new database is inserted into the list of the combobox, from where you can select it.
+<important>
+<para>
+If you want to create a new object (a database, table, query, form or report ) in &knoda;, you have
+three possibilities
+<itemizedlist mark="bullet">
+<listitem><para>Double click the object you want to create in the listview. Example: To create a new table double-click on the word "Tables"</para></listitem>
+<listitem><para>Select the object you want to create in the listview, then select 'New' in the 'Actions' menu</para></listitem>
+<listitem><para>Select the object you want to create in the listview, then click on the very left button of the main tool bar</para></listitem>
+</itemizedlist>
+</para>
+</important>
+</para>
+</chapter>
+
+
+<chapter id="table">
+<title>Tables - creating a new table </title>
+<para>
+To create a new table, double-click "Tables" in the list view.
+</para><para>
+We will now create the "authors" table.  A tabledesign dialog will be displayed.  As
+ we define fields (columns), they will be listed in the box on the left hand side.  It should be empty at this point.  To create a column, press the
+ "New Field" button.  You will then be presented with default values in "Fieldname", "Fieldtype", "Size", "Primary Index" and "NOT
+ NULL" fields.  You should change the default values to describe the column you want to create.
+</para><para>
+Now define the columns for the "authors" table, using the values shown in the tabledesign window in <xref linkend="f3"/> </para>
+<para> To alter a definition of a column, select it in the left hand side list box and alter the values displayed in the upper right
+ fields.
+<figure id="f3"><title>The tabledesign window</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="tabledesign.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+</para><para><important><para>
+Always define a unique / primary index in each table, otherwise you will experience some ugly side-effects when updating
+ your data!  The most convenient way to create a unique primary index is to use the "Auto Increment" field.
+</para></important></para><para>
+The following fieldtypes are valid:
+<itemizedlist mark="bullet">
+<listitem><para>text:  fixed length (usually defined in SQL as CHAR(size))</para></listitem>
+
+<listitem><para>auto_inc:  if the databasedriver supports this fieldtype then it will get a unique number automatically
+whenever a new row is be added.  This is typically a readonly column</para></listitem>
+
+<listitem><para>small integer:  an integer in the range -32768 to 32767</para></listitem>
+
+<listitem><para>integer:  an integer with the maximum range the database server can handle</para></listitem>
+
+<listitem><para>small float:  a small (single-precision) floating point field.  Allowable
+ values in MySQL are '-3.402823466E+38' to '-1.175494351E-38', '0', and '1.175494351E-38' to '3.402823466E+38'.</para></listitem>
+
+<listitem><para>float:  a normal-size (double-precision) floating point field with the maximum range the database server can handle.
+  Allowable values in MySQL are '-1.7976931348623157E+308' to '-2.2250738585072014E-308', '0', and
+'2.2250738585072014E-308' to '1.7976931348623157E+308'.</para></listitem>
+
+<listitem><para>date:  a date field to store days, months and years</para></listitem>
+
+<listitem><para>datetime:  a date and time field to store days, months, years, hours, minutes and seconds.</para></listitem>
+
+<listitem><para>timestamp:  a date and time field to store days, months, years, hours, minutes and seconds.
+On some SQL servers the value will be automatically set and is read-only</para></listitem>
+
+<listitem><para>time:  a time field to store hours, minutes and seconds.</para></listitem>
+
+<listitem><para>binary:  a binary field to store data of more or less any size.</para></listitem>
+
+<listitem><para>memo:  a text field to store data of more or less any size.</para></listitem>
+
+<listitem><para>bool:  a field that is either 'true' or 'false'</para></listitem>
+</itemizedlist>
+
+</para><para>
+There are two buttons in the upper left hand corner known as the "View Mode" buttons.  The left hand button is the "Design" button,
+ which should already be pressed, and the right hand one is the "Table Data" button.  When you have completed your data-input, press
+ the right button ("Table Data" button) at the top of the window. </para><para>
+<important><para>
+All high level widgets like tables, queries and forms operate in two modes, a design mode and a view mode.  At the top of each window
+ is a horizontal toolbar with at least two buttons.  The left button selects the design mode and the right button the view mode.
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="modebuttons.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+</para></important>
+</para><para>
+After pressing the "Table Data" button, you will be asked if you want to alter the table.  Confirm this question with the 'OK' button.  The
+ next dialog will prompt you for the name of the new table to which you enter "authors" and confirm by pressing the 'OK' button.
+</para><para>
+After that an empty grid is shown where you can interactively enter the data for each row.  Start to enter the data in the row with
+ the arrow.  After the input of the first row, the last row will begin with a "*" and is empty.  This is a new row where you can enter
+ new data.
+<figure><title>The tabledata window</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="tabledata.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot></figure>
+</para><para>
+
+</para><para>
+Enter the values for the first three rows as shown in the example.  You will note that the vaules for the Auto Increment field
+ "author_id" will be automatically generated.
+</para><para>
+<important>
+<para>The bottom left hand corner of the table data window contains seven buttons and a field.  These are the
+<emphasis>row selector</emphasis> buttons.  The arrow buttons allow you to navigate between rows.  The extreme left button (the '-'
+ button) deletes the selected row.  The button with the check mark on the right stores the changes made and you can add a new row by using the '+'
+ button on the extreme right.
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="rowselector.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+</para></important>
+</para><para>
+
+Now you can create the second table, "literature", on your own.  Enter the first eight rows manually.
+
+As you can see, it is difficult to ensure that the manually input value in the field "author" of the "literature" table
+ has an equivalent value in "authors" table. </para>
+<para>
+The next figure shows how your "literature" table should look.
+<figure><title>The "literature" table </title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="literaturetable.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot></figure>
+</para>
+<important>
+<para>You can print the table contents with the <emphasis>print</emphasis> button.
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="printbutton.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+</para></important>
+</chapter>
+
+
+<chapter id="queries">
+<title>Queries</title>
+<para>
+One of the reasons of having a database full of data is that you would like to extract that data using various criteria.
+There are 2 ways to create queries: Either you create it with a graphical user interface - called 'Query by example' -
+or you write your SQL code into an editor.
+<important>
+<para>
+For all kinds of queries please keep the following in mind:
+If your column names contains non-ascii characters (e.g. German umlauts), or you need to delimit text,
+you have to use the following standard delimiters (independent from your SQL-server)
+<itemizedlist>
+
+<listitem><para>textdelimiter: ' (quote)</para></listitem>
+<listitem><para>identifiers: " (doublequote)</para></listitem>
+</itemizedlist>
+
+This way identifier names will be case-sensitive and much more important SQL-server independent. It is recommended to always use these delimiters.
+<example>
+<title>Using query delimiters</title>
+<programlisting>
+SELECT "my table"."my field" FROM "my table" WHERE "my field" > 'my search text'
+</programlisting>
+</example>
+</para>
+</important>
+</para>
+
+<section id="qbe">
+<title>Query by example</title>
+<para>
+First add the datasources with the help of the  'Add datasource'-button (the one with the small yellow '+').
+ The relation between the datasources can be created via drag&amp;drop. Now you can add the columns that should be displayed
+ in the result set. Conditions can be added in the rows starting with "Criteria". All conditions in the same row
+ will be 'AND'-combined, different rows will be 'OR'-combined.
+</para>
+<para>
+Now we want to add a calculated field. We want to display the age of the authors (the difference between the year of
+his birth and the year of his death). Leave the 'Table'-cell empty and add '"deathyear"-"birthyear"' in the "Fieldname"-cell.
+To have a better header for the result set, you can add 'age' into the 'Alias'-cell.
+<figure><title>Query by example window</title> <screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="qbe.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+</para>
+<para>
+Relations between two datasources can be created with 'drag and drop'. Click on the field of interest of the first table and while holding down the mouse button move the cursor to the field of interest in the second table and release the mouse button. A dialog will appear that let you set all equivalent column names. To edit a relation double-click the relation line (best is to click it on the arrow).
+</para>
+</section>
+<section id="SQL">
+<title>SQL statements</title>
+<para>
+  Create a new query as you did for the QBE-query. You can now change to the SQL window by clicking on the already
+  selected "use QBE"-button.
+
+<figure><title>Toggle button to switch between QBE and SQL window</title> <screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="qbetoggle.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+
+
+  Now you can enter the following SQL-statement
+ into the empty window that is displayed: </para><para>
+<screen>
+select name,title from authors, literature where author_id=author
+</screen>
+</para><para>
+
+and press the "View mode" button on the upper left corner.
+</para><para>
+
+The result looks similar to the table you created before, but with only two columns.  The difference here is that query results are always
+ read-only.
+</para>
+<para> To save your query click the 'x' in the upper right corner or the 'door-symbol' on the query-window toolbar.  A dialog is
+ opened giving you the opportunity to give your query a meaningful name, such as "name-and-title".  Confirm your input by pressing the 'OK' button.</para>
+<important>
+<para>
+Do not use TRUE or FALSE in your query statements.  Use %TRUE% and %FALSE% instead.  Some SQL database servers do not support the use of
+ boolean fields, so the &hk_classes; have to simulate boolean fields.  A valid SQL statement would be:
+<screen>
+select * from mytable where myboolfield=%TRUE%
+</screen>
+</para>
+</important>
+</section>
+</chapter>
+
+<chapter id="forms">
+<title>Forms</title>
+<para>
+Now let's create a new form.  We will design the form to allow us the ability to browse the authors and display the titles of their
+ literature.
+</para><para>
+Double-click "Forms" in the list view.  The formdesign dialog window
+ will then be displayed.  This window has a vertical toolbar on the left hand side.  The "Property editor" dialog is then also displayed.
+<figure><title>The formdesign window</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="formdesign.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+</para>
+<section id="toolbar"><title>The toolbar</title>
+<para>
+The toolbar is used to select objects for placing on the form.  Possible objects are:
+<itemizedlist mark="bullet">
+<listitem><para><emphasis>label:</emphasis>  a label displays (static) text on the form</para></listitem>
+<listitem><para><emphasis>lineeditfield:</emphasis>  shows the actual row data of a specific column of a datasource</para></listitem>
+<listitem><para><emphasis>gridfield:</emphasis>  shows all data of a datasource in a grid</para></listitem>
+<listitem><para><emphasis>memofield:</emphasis>  like a lineeditfield, but allows you to handle multiline data</para></listitem>
+<listitem><para><emphasis>booleanfield:</emphasis>  a datafield that has two states: true and false</para></listitem>
+<listitem><para><emphasis>combobox:</emphasis>  like a lineeditfield combined with a listbox to select from predefined
+ values</para></listitem>
+<listitem><para><emphasis>button:</emphasis>  starts an action when clicked</para></listitem>
+<listitem><para><emphasis>image:</emphasis>  shows an image, either data-aware or stored within the form</para></listitem>
+<listitem><para><emphasis>date:</emphasis>  lets the user select the date within a calendar style widget</para></listitem>
+<listitem><para><emphasis>row selector:</emphasis>  lets you browse the rows of a datasource</para></listitem>
+</itemizedlist>
+
+To place an object on the form, select the relevant button from the toolbar and then click on the position in the form where you want
+ the object to be displayed.
+</para><para>
+In our example we want to display the author's name, so we do this by using the lineeditfield object.  This object on its own will look
+ meaningless to the user.  So we will create a label with some meaningful text and put it in front of the lineeditfield.  To align these
+ two objects horizontally, click on the first one, while pressing and holding down the Control key and click on the second object.  This
+ will select both objects.  Now click the right mouse button and select "Align".
+<figure><title>The formdesign window</title> <screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="formdesign2.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+</para>
+<para>
+The next task is to change the properties of the objects.
+</para>
+</section>
+<section id="property">
+<title>The property editor</title>
+<para>
+We will first change the properties of the label.  Click on the Label object in the Form window and click on the "Data" tab in the
+ Property Editor window if it is not already selected.  Enter the text "Author" into the entry field to the right of "Label".  This text
+ will be displayed on the form. </para>
+<para>
+Now we need to provide a link from the lineeditfield object to a datasource in your database from where the data will be
+ extracted and displayed.  Click on the lineditfield and then click on the "Data" tab in the Property Editor window.  Click on the button
+ marked  "..." to the right of the Datasource field and select the datasource "based on table authors" (at the top of the
+ displayed formdatasource dialog).  The other fields are not of interest at this time.  Click the "Add" button.  Now you have linked the
+ form field to a column in your database.
+<figure><title>The form datasource dialog(1)</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="formdatasource.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<important><para>
+You can also use a graphical interface for defining the datasources. Click
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="qbetoggle.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</para></important>
+Select the newly created datasource in the datasource field (the value should be "authors(0)") and the column "name" in the column
+ field in the Property Editor window.
+<figure><title>The property editor</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="propertyeditor.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+
+Now let's try to browse your data in the database.  Click on the "view mode" button on the form window.  You can now see the
+ name of the first author in our list, namely Goethe.  Currently you can edit this field but you can't browse the author's catalogue of
+ literature.  There is a rowselector at the bottom of the form, but it is currently inactive.  To activate this button we change the
+ data properties of the form.  Change back to design mode (click "design mode" button).  To show the form's properties instead of the
+ properties of an object on the form we need to make the form the active object.  To do this, click on an open space on the form,
+ avoiding all the objects on the form.  The property editor now shows the properties of the form itself.  Change the datasource field
+ to "authors (0)" and revert back to "view mode".  Now you can browse the whole datasource.</para>
+<para>
+The next step in our objective is to display all the literature that the
+selected author, Goethe (or any other author), has written. To do this
+switch to design mode and place a gridfield object on the form. In order to
+make use of the selected gridfield you have to create a new datasource based
+on the "literature" table. --- But after clicking on the "..." button in the
+Property Editor window, stop! --- We only want to see the books of the
+selected author so there is more work to do before you push the "add"
+button.
+ </para>
+<para>
+The "literature" table depends on the "authors" table, i.e. any author in the "literature" table must exist in the "authors" table.  So
+ we select the already defined datasource "authors" in the "depending on" field (ignore the number in the brackets, it is a unique
+ number for each datasource in a form).  We have to tell the system how the datasources are connected, i.e. which columns are linked to
+ each other.  In the master datasource ( authors(0) ) it is the field "author_id" and in the actual datasource table (literature) it is
+ the field "author".  Select both fields and press the button with the two arrows.  The linked columns names are now displayed in the
+ listbox on the right.  Finally, click the "Add" button.
+
+<figure><title>The form datasource dialog(2)</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="formdatasource2.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+
+</para><para>
+Let's have a brief look at the remaining fields in the formdatasource dialog.  The <emphasis>sorting field</emphasis> allows you
+ to sort the datasource.  It has the same syntax as the "ORDER BY" syntax of SQL-statements.  If you want, for example, to display the
+ literature in ascending alphabetical order just add the field name "title" into the "sorting" field.  If you want a descending order add
+ "title DESC". </para>
+<para>
+If the <emphasis>"is readonly?" field</emphasis> is checked, no values of this datasource can be changed in the form.  A datasource that
+ is already readonly (e.g. all queries) will remain readonly, even if this field is not checked.
+</para>
+<para>
+The <emphasis>filter field</emphasis> allows you to display rows of the datasource if certain conditions are met.  It has the same
+ syntax as the "WHERE" syntax of SQL-statements. </para>
+<para>
+Finally, let's create a button on our form.  We will define it as a "Close" button so we can close the current form when clicked.  First
+ of all we have to store the form.  This can be done in two ways, either press the save button (the one with the disk) on the horizontal
+ toolbar or click the right mouse button in "design mode" and select "Save form".  When saved, create a button and change the label to
+ "&amp;Close".  If you have selected the button object, the Property Editor will be displaying the "Action" tab.  Select the action "Close
+ form" and select the name of the form to close in the object field.  Now let's test it. </para>
+
+</section>
+
+
+
+<section id="gridcolumns">
+<title>Defining grid columns</title>
+<para>
+In <xref linkend="formgrid1"/> you can see the result of our creation.  Nice, but the columns in the grid show
+ data we don't really need to see, such as the column "author".  The "title" column is also too narrow and
+ therefore, in certain circumstances, will not show the full title of the piece of literature. </para>
+
+<figure id="formgrid1"><title>The defined form</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="form.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<para>
+In this chapter you will learn how to modify the grid.</para>
+<para>
+To define the visible columns, stay in the form's viewmode and press the right mouse button
+ somewhere on the grid.  Select "Define columns" from the pop-up menu.  The "Column Select"
+ dialog window is displayed.  Select the "author" field in the right box and press the "left
+ arrow" button between the two boxes.  This will move the "author" field to the "Invisible
+ Columns" box.  Now press the "OK" button to confirm this action.  As you can now see the
+ "author" column has vanished. </para>
+<figure id="gridselect"><title>The column selection dialog</title> <screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gridcolumndefinition.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+
+<important><para>
+Defining the gridcolumns is the only design job permitted in viewmode.  You can only see the
+ data and the columns in this mode.  This operation is not possible in the form's
+ "designmode".  To save your changes, change back to "designmode" and save the form manually
+ as we did previously ("Save" button or right mouse button -> store form). </para></important>
+<para>
+Adjusting the width of the column is simpler.  Move the mouse cursor to the end of the "title"
+ column in the grid's header row.  When you are at the right position the mouse cursor will
+ change.  Press the left mouse button and hold it.  Now move the mouse.  The column will get
+ narrower or wider depending on the direction that you move the mouse. </para>
+<para>
+To store your changes, swich to "designmode" and save the form manually (right mouse button -> store form).
+</para>
+
+<figure id="formgrid2"><title>The form with changed gridcolumns</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="form2.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+
+<para>
+Another feature in "viewmode" mode is the ability to alter the order of the columns.  Click in
+ the header of the column you want to move while pressing the &lt;CTRL>-Button, press the left
+ mouse button and hold it down whilst dragging the column to its new position, then release the button.
+</para>
+
+</section>
+
+
+<section id="comboboxes">
+<title>Defining comboboxes</title>
+<para>
+In this chapter we will take a closer look at the combobox object.  For this exercise we create a
+ new form in which we can write reviews for the plays, books etc. held in our database.  Create
+ the form using the field definitions as shown in the following table.
+</para>
+<para>
+First we need to define a new table called "review", which will be the basis for our new form.
+<table frame="all"><title>table structure of the table "review"</title>
+
+<tgroup cols="3" align="left" colsep="1" rowsep="1">
+<thead>
+<row><entry>Fieldname</entry><entry>Type</entry><entry>Description</entry></row>
+</thead>
+<tbody>
+<row><entry>review_id</entry><entry>auto increment</entry><entry>unique identification number for each review</entry></row>
+<row><entry>author_id</entry><entry>integer</entry><entry>author identification number</entry></row>
+<row><entry>literature_id</entry><entry>integer</entry><entry>literature identification number</entry></row>
+<row><entry>reviewtext</entry><entry>memo</entry><entry>the review text</entry></row>
+</tbody>
+</tgroup>
+
+</table>
+
+</para>
+<para>
+Now we create a new form called "reviewform1" based on the "review" table.  Add two comboboxes
+ (you will find the detailed descriptions of the properties of the comboboxes in the following
+ text), two labels, two buttons and a memofield to the form as shown below.  Connect the
+ memofield with the column "reviewtext" and improve the buttons. </para>
+
+<figure><title>The form "reviewform1"</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="reviewform1.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+
+<section id="comboboxes1">
+<title>A simple combobox</title>
+<para>
+The "author" combobox shows the "author_id" column of the "review" table.  The column holds the
+ numeric value, but what we want to select is the name of the author as defined in the "author"
+ table. </para>
+<para>
+For this we will set the values as shown in the figure below.  Three extra fields are
+ used for a combobox:
+<itemizedlist mark="bullet">
+<listitem><para>listdatasource:  this is the datasource that contains the master list</para></listitem>
+<listitem><para>listcolumn:  the column in the listdatasource which contains the key value for
+ the column field.  Its data will be written in the column field.</para></listitem>
+<listitem><para>viewcolumn:  name of the column in the listdatasource that contains the values
+ that we want to display on the screen</para></listitem> </itemizedlist>
+</para>
+<para>
+<figure><title>A simple combobox</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="combobox1.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+</para>
+<para>
+The "author_id" field in the "authors" listdatasource has an equivalent field in the
+ "review" datasource, called "author_id".  Instead of displaying the identification numbers
+ we would rather see the author's names, so we set the viewcolumn to "name".  As you can see
+ in <xref linkend="fds3"/>, the formdatasource for the listfield contains nothing extraordinary.
+</para>
+<para>
+<figure id="fds3"><title>The form datasource dialog(3)</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="formdatasource3.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+</para>
+
+</section>
+
+
+<section id="comboboxes2">
+<title>A complex combobox</title>
+<para>
+The "Literature" combobox should list the literature written by the author who is selected in
+ the "Author" combobox and should immediately update its contents when a new author is selected.  This
+ requires a little bit more thought and planning.
+</para>
+<para>
+<figure><title>A complex combobox</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="combobox2.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+</para>
+<para>
+We need to access the "literature" table and set the "review" table as being the master
+ datasource.  This is so far "business as usual".  If this is all you set you will find
+ that the "Literature" combobox will only update its contents when you change the "Author"
+ combobox and store the changes.  To modify this behaviour, click the "react on master
+ changes?" checkbox in the datasource (should now contain an "x").
+<figure id="fds4"><title>The form datasource dialog(4)</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="formdatasource4.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+</para>
+<para>
+Now it almost works as designed.  But when you try to delete a row in the "review" form you get
+ prompted that you can't do this due to row dependency.  To modify this behaviour you can set
+ different depending modes.  In this case all we need to do is select "no handle" for
+ "depending mode".  That's all. </para>
+
+<para>
+However, if you enter a review and save it, you will discover that although selecting an author
+ selects his works, the same review comment is displayed.  That is clearly not satisfactory.  It
+ is left as an exercise for you to create the reviewform2 shown below.  This form is based on the
+ literature table, for it is the author's work that is to be reviewed.  The literature combo has
+ Combomode: Selector; Listdatasource: literature and Viewcolumn: title.  The datasource of the
+ author lineedit is authors depending on literature.  The datasource of the memofield is review
+ depending on literature.
+</para>
+<figure id="fds5"><title>The form "reviewform2"</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="reviewform2.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<para>
+
+<figure><title>The depending modes</title>
+<blockquote><itemizedlist mark="bullet">
+<listitem><para>standard - cannot delete a master row when there are depending rows in the depending datasource
+ and cannot change the value of a master connection field.</para></listitem>
+<listitem><para>nohandle - allows changes and deletion, but ignores changes to the key fields</para></listitem>
+<listitem><para>change - if a master connection field is changed, the equivalent depending fields will change their
+ values too.</para></listitem>
+<listitem><para>delete - if the master row is deleted then the depending rows will also be deleted</para></listitem>
+<listitem><para>change+delete - combination of the change and delete modes</para></listitem>
+</itemizedlist></blockquote>
+</figure>
+</para>
+
+</section>
+
+</section>
+
+<section id="images">
+<title>Defining images</title>
+<para>
+A data-aware image field can be added as easily as a line-edit field. Simply choose the image object (the Mona Lisa) and position it anywhere in your form. Set the column (if the column type is 'binarycolumn' images will be stored inside the table (not recommended!), otherwise (recommended) it will store the path and the name in the column ).
+<important><para>
+You should not store images inside the database. Instead only store the file location and the image name within the database. This way, memory management is much better.
+</para>
+</important>
+Let's say your images are located in '/opt/images'. Then set 'Image path' in the property editor to this value. Set 'Field' to a fieldname in your table that contains the file names. That's all. During viewmode you can set the image when you click the right mouse button on the image field and select 'Load image'.
+</para>
+<para>
+If you want to display a non-dataaware image field, you can set a permanent image in the property editor position 'Local image'.
+</para>
+</section>
+
+
+
+<section id="defaultvalues">
+<title>Setting default values</title>
+<para>
+Default values are values that are used in a field when inserting a new row where the user did
+ not give a specific value to that field.  For fields' you can edit the default values within the
+ property editor; for gridcolumns, default values can be set in the grid column selection dialog.
+</para>
+<para>
+In addition to all characters you can type with your keyboard, the following function names are possible
+<blockquote><itemizedlist mark="bullet">
+<listitem><para>%NOW%  the actual date, time or datetime, depending on the fieldtype.  Default is datetime</para></listitem>
+<listitem><para>%NOWDATE%  the actual date</para></listitem>
+<listitem><para>%NOWTIME%  the actual time</para></listitem>
+<listitem><para>%TRUE%  the driver-specific true value</para></listitem>
+<listitem><para>%FALSE%  the driver-specific false value</para></listitem>
+
+</itemizedlist></blockquote>
+
+</para>
+
+</section>
+<section id="taborder">
+<title>Setting the tab order of fields</title>
+<para>
+You can define the tab order of the fields. Open the dialog window by clicking the "Arrow down" button in the toolbar (see <xref linkend="tab1"/>).
+<figure id="tab1"><title>Starting the taborder</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="taborder1.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+Fields that are in the left part of the dialog are not in the keyboard tab order, fields in the right part of the dialog are in the ascending order as shown in this window (see <xref linkend="tab2"/>).
+<figure id="tab2"><title>The tab order window"</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="taborder2.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+
+
+</para>
+</section>
+</chapter>
+
+
+
+
+<chapter id="reports">
+<title>Reports</title>
+<para>
+A good database frontend is not complete without the ability to produce reports.  In this chapter
+ we will learn how to create neat reports.  Before starting, you should have a look at
+ <xref linkend="reportoptions"/> to set some important  preferences.
+</para>
+<para>
+Double-click "Reports" in the list view.  The
+ reportdesign window is displayed and the Property Editor dialog window is opened.  The reportdesign
+ window has a vertical toolbar on the left hand side.
+</para>
+<para>
+<figure><title>The reportdesign window</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="reportdesign.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+</para>
+<para>
+So far it looks similar the "formdesign" window, but with some differences.  Before you start
+ designing reports, you should already be knowledgeable on form creation.  See
+ <xref linkend="forms"/> for details.
+<blockquote><itemizedlist mark="bullet">
+<listitem><para>The left toolbar provides only one fieldtype</para></listitem>
+<listitem><para>The design area is divided into areas known as sections</para></listitem>
+</itemizedlist></blockquote>
+Reports are divided in sections in which reportdata can be displayed.  There are two section types:
+<blockquote><itemizedlist mark="bullet">
+<listitem><para>predefined sections with special meaning
+	<itemizedlist>
+	<listitem><para>the "reportbeginsection" and "reportendsection".  These will only will be shown
+	 once, the "reportbeginsection" is displayed BEFORE all the datasources' data is be displayed,
+	 and its equivalent "reportendsection" is displayed at the very end of the reportdata</para></listitem>
+	<listitem><para>the "pageheader" and a "pagefootersection": which, as the name suggests, will be
+	 displayed on each page as header or footer</para></listitem>
+	<listitem><para>the "datasection" (main data section and the only section without a sibling).  This
+	 section will be printed for every row in a datasource</para></listitem>
+	</itemizedlist> 	 </para>
+	</listitem>
+
+	<listitem><para>user defined sections, to group the data: they _always_ exist as pairs, a
+	 headersection and a footersection.  Headersections will be printed before the datasection,
+	 footersections after the datasection.  It is necessary to define a column for these
+	 sections.  The sections will be printed when the value of the column changes</para></listitem>
+</itemizedlist>
+</blockquote>
+
+First let's try to create a simple report.
+
+</para>
+<section id="simplereport">
+<title>A simple report</title>
+<para>
+First select the datasource ("literature" table) on which the report depends.  To do this you have
+ to change the report properties.  To access the report properties, nothing else must be
+ selected.  Click somewhere in the dark grey area outside the sections.  To set the datasource
+ see  <xref linkend="property"/> for details.
+</para>
+<para>
+Now let's create a new field.  Select 'new field' (on the toolbar on the left) and follow that
+ by clicking an area in the datasection (make sure it is the datasection and not one of the
+ others).  Set the 'title' column in the property editor.  To preview what we have done, change
+ to viewmode.  Congratulations.  You have created your first report.
+</para>
+</section>
+<section id="reportfield">
+<title>The report field</title>
+<para>
+A report field allows you to print formatted data.  So we will take a closer look at what we can
+ do with this field.  Within the 'format' tab you can select a lot of the usual format styles such
+ as fonts, alignment, number formatting etc.  In the 'frame' tab of the Property Editor you can
+ define lines to be painted.  The horizontal and vertical lines should become clear to you after
+ you have tried them out.  The diagonal lines are not so self-explanatory: "diagonalLuRo" paints
+ from the bottom left hand corner up to the top right hand corner and "diagonalLoRu" paints from
+ the top left hand corner down to the bottom right hand corner.  Note:  In case you are wondering
+ how "diagonalLuRo" translates to bottom left to top right, it's an abbreviation from the German
+ "Links Unten Rechts Oben" and I think you can work out "diagonalLoRu")</para>
+<para> You will be familiar with most of the fields on the "Data" tab from using Property Editor
+ during the creation of a form.  There are two new fields:
+<blockquote> <itemizedlist>
+<listitem><para>value field</para></listitem>
+<listitem><para>and the running count field</para></listitem>
+</itemizedlist>
+</blockquote>
+
+The value field contains the string that will be printed.  There are some variables you can use.  The
+ most important variable is the already set %VALUE% variable that will be replaced with the actual
+ data from the database column.  As the field value will contain a string, any string will be valid,
+ for example:  'Hi, my name is %VALUE% , blah bla this is the field %COLUMNNAME%' is a valid
+ string.  Other possible variables are
+<blockquote>
+<itemizedlist>
+<listitem><para>%PAGENUMBER% the relative pagenumber: use this variable to set the number of the first page (very useful in pageheader or
+footersection)</para></listitem>
+<listitem><para>%ABSOLUTEPAGENUMBER% the physical page number</para></listitem>
+<listitem><para>%ROWNUMBER%</para></listitem>
+<listitem><para>%DATE% the current date</para></listitem>
+<listitem><para>%TIME% the current time</para></listitem>
+
+</itemizedlist>
+</blockquote>
+if a column is set
+<blockquote>
+<itemizedlist>
+<listitem><para>%COUNT%</para></listitem>
+<listitem><para>%COLUMNNAME%</para></listitem>
+<listitem><para>%DATASOURCENAME%</para></listitem>
+<listitem><para>%VALUE%</para></listitem>
+</itemizedlist>
+</blockquote>
+
+
+
+if the field type is numeric you can also use
+
+<blockquote>
+<itemizedlist>
+<listitem><para>%SUM%</para></listitem>
+<listitem><para>%MIN%</para></listitem>
+<listitem><para>%MAX%</para></listitem>
+<listitem><para>%AVERAGE%</para></listitem>
+<listitem><para>%STDDEV% (standard deviation)</para></listitem>
+<listitem><para>%STDDEVSAMPLE%</para></listitem>
+</itemizedlist>
+</blockquote>
+</para>
+
+<para>
+With this knowledge, we can now try to format this report to make it more stylish and readable to
+ the user.  First we will create a new field that will print the static text 'My first report' at
+ the very beginning of the report.  Create this field in the reportheadersection,
+ moving it to the upper left hand corner and resizing it to the maximum width.  Now change the
+ fontsize of this field to 24 and overwrite the content of the value field with 'My first
+ report'.  Notice that  we left the column field empty. </para>
+<para>
+Next we want to see the page number centred on the bottom of each page.  Create a new field in the
+ pagefootersection, moving it to the upper left hand corner and resizing it to the maximum
+ width.  Overwrite the content of the value field with 'page -%PAGENUMBER%-', set the alignment
+ field to 'center' and in the "Frame" tab set the top line field to 'yes'.</para>
+<para>
+Save the report as 'literaturereport'.  We need it in a later exercise.  In the following figure
+ you can see the resulting report.  The parallel double lines were created as an empty field with
+ topline and bottom line enabled. </para>
+<para>
+<figure><title>A simple report</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="simplereport.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+</para>
+<important>
+<para>
+If the text size exceeds the width of the field, you can use the "linebreak" property. If the text exceeds the field height, you can use the "dynamic height" property. The field will then resize automatically to hold the whole text (make sure that the linebreak property is set, when the dynamic height property is set).
+</para>
+</important>
+</section>
+<section id="reportsections">
+<title>User defined report sections - a more complex report</title>
+<para>
+The objective for our next report is to see all the titles for each author.  Start by creating
+ a new query called 'examplequery' using the following SQL statement
+<screen>
+select name, title from authors, literature where author_id=author
+</screen>
+Create the new report based on this datasource.  Create one field in the datasection and connect
+ it to the column 'title'.  It now looks like our previous report.  Create a new userdefined
+ section by clicking on the 'Sections' button in the left toolbar.  A new dialog opens.
+<figure><title>the reportsection dialog</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="reportsectiondialog.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+Add 'name' into the field below 'Section to add' and press the button with the right arrow.  You
+ will see that a new pair of sections have now embraced the datasection.  Press the 'Exit' button
+ to close the dialog.  Add a field to the newly created 'name' sectionheader and set 'name' as the
+ column.  Now have a look at the result.  Looks neat, doesn't it?</para>
+<para>
+Add a new field to the 'name' sectionfooter and set 'name' as the column.  Replace the valuefield
+ entry with 'There are %COUNT% titles for the author "%VALUE%" in this database'.
+<figure><title>A complex report</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="complexreport.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+Some additional sectionfooter field properties have been set: the border lines and wordbreak set
+ to "yes".
+</para>
+</section>
+<section id="subreports">
+<title>Subreports</title>
+<para>
+Last, but not least, we create a report using a subreport.  It should do more or less the same as
+ the report in the previous section.  Create a new report based on the 'authors' table and a new
+ field in the datasection depending on the 'name' column.
+</para>
+<para>
+We are now going to change the datasection properties.  Click on the header of the datasection and then
+ click on the "Subreport" button in the "Data" tab.  The subreportdialog will be displayed.
+<figure><title>The subreport window</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="subreport.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot></figure>
+Set the report we created first, "literaturereport", as the subreport.  Remember that this report
+ is based on the 'literature' table.  The "literaturereport" (the subreport) should show only the
+ literature of the authors shown in the main report.  So set the fields as shown in the figure above.</para>
+<para>
+Using the 'before sectiondata' checkbox, you can control whether the subreport is printed before
+ or after the data of the main report section.
+</para>
+
+</section>
+
+<section id="formreport">
+<title>Show reports depending on form values</title>
+<para>
+When you open the report of the last section (the subreport section) you will see the data of all authors.
+But wouldn't it be nice to see and print only the data of the author currently displayed in the form?
+First create a "Report" button on the form "authorform". This button will open the report as shown below:
+<figure id="formreportpropertyfigure"><title>The form property showing the button values</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="formreportproperty.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+So far this is nothing special. Now click on the button with the 3 dots right of the 'object' field. The
+following dialog appears:
+<figure id="formreportfigure"><title>The reportcondition dialog</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="formreport.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+Here you can link the form data with the report. Select the column 'author_id' as report field, the form
+datasource 'authors' and the form field 'author_id'. Then press the button with the 2 arrows. That's all.
+Now the button opens the report as intended.
+</para>
+<important><para>
+This dialog allows you to connect report fields in two ways. Either with the value of a formdatasource-column
+as shown above or with a constant value. To do so let the 'form datasource' field empty and enter the constant
+value into the form field.
+</para></important>
+</section>
+
+
+</chapter>
+
+<chapter id="whatsnext">
+<title>What's next - Scripting &knoda;</title>
+<para>
+If you want to extend the features of forms and reports you can write your own scripts using Python.
+ How you can do this is described in the <xref linkend="scriptingtutorial"/> ( or in the internet <ulink url="http://hk-classes.sourceforge.net/documentation.html">&knoda; scripting tutorial</ulink>).
+  Database examples can be found at <ulink url="http://sourceforge.net/project/showfiles.php?group_id=23940&amp;package_id=141013">&hk_classes; download page</ulink>
+</para>
+</chapter>
+
+
+
+<chapter id="misc">
+<title>Miscellaneous</title>
+<section id="importcsv" xreflabel="importcsv">
+<title>Import a CSV file</title>
+<para>
+A CSV file (CSV = comma separated values) is a text file which contains table data.  Each line in
+ this file represents a row in the table and the fields are usually separated by commas.  The very
+ first row in this type of file can be a header row that contains the names of the field.</para> <para>
+To import data from a file, select the menu File->Import->CVS  The following window appears: <figure id="csvimportfigure"><title>The CSV import dialog</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="csvimport.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+After you have selected the filename and set the other properties to the correct values, press the
+ "OK" button.
+</para>
+<para>
+The entries 'Date format' to 'Locale' are only visible when you click the 'Options' button. These values allow you a fine grained definition of the data in the text file.
+
+</para>
+</section>
+<section id="exportcsv"  xreflabel="exportcsv">
+<title>Export a table or query to a CSV file</title>
+<para>
+To export a table, select the menu File->Export->CVS. The following window
+ appears: <figure id="csvexportfigure"><title>The CSV export dialog</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="csvexport.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+Enter the filename and set the other properties to the correct values and then press the "OK" button.
+The entries 'Date format' to 'Locale' are only visible when you click the 'Options' button. These values allow you a fine grained definition of the data in the text file.
+
+</para><para><important>
+<para>
+Of course it is also possible to export  queries and views.  
+</para>
+</important>
+</para>
+</section>
+
+<section id="exportxml"  xreflabel="exportxml">
+<title>Export a table or query to a XML file</title>
+<para>
+To export a table, select the menu File->Export->XML. The following window
+ appears: <figure id="xmlexportfigure"><title>The XML export dialog</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="xmlexport.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+Enter the filename and set the other properties to the correct values and then press the "OK" button.
+</para><para><important>
+<para>
+Of course it is also possible to export  queries and views.  
+</para>
+</important>
+</para>
+</section>
+
+<section id="filter">
+<title>Using the filter</title>
+<para>
+If you have too many datasets in your tables, queries or forms, it is possible to reduce them by
+ temporarily setting a filter.  The definition of the filter will not be saved.  To use it you have
+ to perform two steps
+<itemizedlist>
+<listitem><para>define the filter</para></listitem>
+<listitem><para>activate the filter</para></listitem>
+</itemizedlist>
+ The horizontal toolbar in every window contains the following 2 buttons
+<figure id="filterfigure"><title>The filter toolbuttons</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="filter.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+The left button is for defining a filter, the right one to activate/deactivate the filter.  
+</para>
+
+<section id="formfilter">
+<title>Form filter</title>
+<para>
+A form filter shows you the form and you can write condition for a field directly in field. (e.g. '&gt;15 and &lt;20').
+
+<figure id="formfilterfigure"><title>The form filter dialog</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="formfilter.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+
+</para>
+</section>
+<section id="tablefilter">
+<title>Table and query filter</title>
+<para>
+To define a filter, press the filter definition button and enter a conditional statement.  It
+ has the same syntax as the "WHERE" syntax of SQL-statements.
+
+<figure id="filterdefinitionfigure"><title>The filter definition dialog</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="filterdefinition.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+
+After you have closed the dialog, the filter activation button is enabled.  Press it to activate
+ the filter, press it again to deactivate the filter. </para>
+</section>
+
+</section>
+
+
+
+
+
+<section id="comboboxgrid">
+<title>Comboboxes in grids</title>
+<para>
+It is possible to define the columntype in grids.  To do so, open the column selection dialog as
+ shown in <xref linkend="gridselect2" />.  In the combobox "Columntype" you can define three different
+ representations of a column.
+<itemizedlist>
+<listitem><para>edit - the standard lineedit field</para></listitem>
+<listitem><para>bool - a boolean field</para></listitem>
+<listitem><para>combo - a combobox field</para></listitem>
+</itemizedlist>
+If you select the latter (combo) you can set the combobox properties.
+
+<figure id="gridselect2"><title>The column selection dialog</title> <screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gridcolumndefinition2.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+And here is an example grid:
+
+<figure id="gridwithcombo"><title>The column selection dialog</title> <screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="tablewithcombo.png" format="PNG"></imagedata>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+You will have to double-click the field in View Mode before you can see the combo control.
+</para>
+</section>
+<section id="colours">
+<title>Colours in forms and reports</title>
+<para>
+There are 2 different colours: foreground colours and background colour.
+<itemizedlist>
+<listitem><para><emphasis>foreground colour</emphasis> is used to paint text and frames</para></listitem>
+<listitem><para><emphasis>background colour</emphasis> is used to fill the background of the widget</para></listitem>
+</itemizedlist>
+To set and change colours for all objects in a form or report
+</para>
+</section>
+</chapter>
+
+</book>
+

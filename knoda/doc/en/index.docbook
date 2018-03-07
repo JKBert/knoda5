@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<!DOCTYPE set PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.0//EN" "/usr/share/kde4/apps/ksgmltools2/customization/dtd/kdex.dtd" [
+  <!ENTITY knoda '<application><emphasis>KNODA</emphasis></application>'>
+  <!ENTITY hk_classes '<application><emphasis>hk_classes</emphasis></application>'>
+  <!ENTITY kapp "&knoda;">
+  <!ENTITY kapp "&hk_classes;">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % English "INCLUDE"><!-- change language only here -->
+  <!ENTITY general SYSTEM "installation.docbook">
+  <!ENTITY knodatutorial SYSTEM "tutorial.docbook">
+  <!ENTITY scriptingtutorial SYSTEM "knodascriptingtutorial.docbook"> 
+  <!ENTITY pythonreference SYSTEM "pythonreference.docbook"> 
+
+]>
+<set lang="&language;"><title>&knoda; documentation</title>
+
+<setinfo>
+<corpauthor>Horst Knorr</corpauthor>
+</setinfo>
+
+
+
+
+
+
+
+&general;
+
+&knodatutorial; 
+
+&scriptingtutorial; 
+
+&pythonreference;
+
+
+
+
+
+
+
+</set>

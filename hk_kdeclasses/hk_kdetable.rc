@@ -1,0 +1,21 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<kpartgui name="hk_kdetable" version="1">
+
+<MenuBar>
+	<Menu name="file"><text>&amp;File</text>
+		<merge/>
+		<Action name="closetable"/>
+	</Menu>
+<Merge/>
+	<Menu name="view" noMerge="1"><text>&amp;View</text>
+	   <merge/>
+	</Menu>
+</MenuBar>
+<ToolBar name="mainToolBar">
+		<merge/>
+		<Action name="closetable"/>
+
+
+</ToolBar>
+
+</kpartgui>

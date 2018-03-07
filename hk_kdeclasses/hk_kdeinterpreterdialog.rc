@@ -1,0 +1,19 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<kpartgui name="hk_kdeinterpreterdialog" version="1">
+
+<MenuBar>
+	<Menu name="file"><text>&amp;File</text>
+		<merge/>
+		<Action name="closedialog"/>
+	</Menu>
+
+<merge/>
+</MenuBar>
+<ToolBar name="mainToolBar">
+		<merge/>
+		<Separator lineSeparator="true"/>
+		<Action name="closedialog"/>
+
+</ToolBar>
+
+</kpartgui>

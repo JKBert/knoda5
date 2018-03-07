@@ -1,0 +1,47 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<kpartgui name="hk_kdetable" version="1">
+
+<MenuBar>
+	<Menu name="file"><text>&amp;File</text>
+		<Action name="save"/>
+		<Action name="print"/>
+		<Separator lineSeparator="true"/>
+		<Action name="closetable"/>
+	</Menu>
+	<Menu name="edit"><text>&amp;Edit</text>
+		<Action name="copy"/>
+		<Action name="paste"/>
+	</Menu>
+<Merge/>
+<Menu name="view" noMerge="1"><text>&amp;View</text>
+		<Action name="designmode"/>
+		<Action name="viewmode"/>
+		<Separator lineSeparator="true"/>
+		<Action name="reload"/>
+		<Separator lineSeparator="true"/>
+		<Action name="filterdefinition"/>
+		<Action name="filterexec"/>
+	   <Merge/>
+	</Menu>
+</MenuBar>
+<ToolBar name="mainToolBar">
+		<Action name="designmode"/>
+		<Action name="viewmode"/>
+		<Separator lineSeparator="true"/>
+		<Action name="reload"/>
+		<Separator lineSeparator="true"/>
+		<Action name="save"/>
+		<Merge/>
+		<Action name="copy"/>
+		<Action name="paste"/>
+		<Action name="findcolumn"/>
+		<Action name="gridcolumn"/>
+		<Action name="print"/>
+		<Action name="filterdefinition"/>
+		<Action name="filterexec"/>
+		<Separator lineSeparator="true"/>
+		<Action name="closetable"/>
+
+</ToolBar>
+
+</kpartgui>

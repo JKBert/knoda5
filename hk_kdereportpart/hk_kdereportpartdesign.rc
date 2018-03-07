@@ -1,0 +1,48 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<kpartgui name="hk_kdereportpart" version="1">
+
+<MenuBar>
+	<Menu name="file"><text>&amp;File</text>
+		<Action name="savereport"/>
+		<Action name="saveas"/>
+		<Action name="printreport"/>
+	</Menu>
+	<Menu name="edit"><text>&amp;Edit</text>
+		<Action name="copy"/>
+		<Action name="paste"/>
+		<Action name="cut"/>
+		<Action name="delete"/>
+		<Action name="bulk"/>
+		<Separator lineSeparator="true"/>
+		<Action name="size"/>
+		<Action name="align"/>
+	</Menu>
+	<Menu name="view"><text>&amp;View</text>
+		<Action name="designmode"/>
+		<Action name="viewmode"/>
+		<Separator lineSeparator="true"/>
+		<Action name="viewproperty"/>
+	   <Merge/>
+	</Menu>
+	<Menu name="settings" ><text>&amp;Settings</text>
+	  <Merge/>
+	</Menu>
+<Merge/>
+</MenuBar>
+<ToolBar name="mainToolBar">
+		<Action name="designmode"/>
+		<Action name="viewmode"/>
+		<Separator lineSeparator="true"/>
+		<Action name="savereport"/>
+		<Action name="saveas"/>
+		<Action name="printreport"/>
+		<Separator lineSeparator="true"/>
+		<Action name="viewproperty"/>
+		<Separator lineSeparator="true"/>
+		<Action name="pointer"/>
+		<Action name="fieldbutton"/>
+		<Action name="sectionselect"/>
+		<Separator lineSeparator="true"/>
+</ToolBar>
+
+</kpartgui>

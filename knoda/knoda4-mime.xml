@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-hk_connection">
+         <comment xml:lang="en">Knoda database connection</comment>
+         <comment xml:lang="de">Knoda Datenbankverbindung</comment>
+         <comment xml:lang="fr">Knoda base de données</comment>
+         <comment xml:lang="es">Knoda base de datos</comment>
+         <glob pattern="*.hkc"/>
+	 <sub-class-of type="application/xml"/>
+  </mime-type>
+  <mime-type type="application/x-sqlite2">
+         <comment xml:lang="en">Sqlite2 database (knoda)</comment>
+         <comment xml:lang="de">Sqlite2 Datenbank (knoda)</comment>
+         <comment xml:lang="fr">Sqlite2 base de données (knoda)</comment>
+         <comment xml:lang="es">Sqlite2 base de datos (knoda)</comment>
+         <glob pattern="*.hk_sqlite"/>
+  </mime-type>
+  <mime-type type="application/x-sqlite3">
+         <comment xml:lang="en">Sqlite3 database (knoda)</comment>
+         <comment xml:lang="de">Sqlite3 Datenbank (knoda)</comment>
+         <comment xml:lang="fr">Sqlite3 base de données (knoda)</comment>
+         <comment xml:lang="es">Sqlite3 base de datos (knoda)</comment>
+         <glob pattern="*.hk_sqlite3"/>
+  </mime-type>
+  <mime-type type="application/x-dbase">
+         <comment xml:lang="en">Dbase database (knoda)</comment>
+         <comment xml:lang="de">Dbase Datenbank (knoda)</comment>
+         <comment xml:lang="fr">Dbase base de données (knoda)</comment>
+         <comment xml:lang="es">Dbase base de datos (knoda)</comment>
+         <glob pattern="*.dbf"/>
+  </mime-type>
+  <mime-type type="application/x-paradox">
+         <comment xml:lang="en">Paradox database (knoda)</comment>
+         <comment xml:lang="de">Paradox Datenbank (knoda)</comment>
+         <comment xml:lang="fr">Paradox base de données (knoda)</comment>
+         <comment xml:lang="es">Paradox base de datos (knoda)</comment>
+         <glob pattern="*.db"/>
+  </mime-type>
+</mime-info>

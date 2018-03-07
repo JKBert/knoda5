@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Service
+Name=hk_kde4classes dbdesigner
+MimeType=database/dbdesigner;
+ServiceTypes=KParts/ReadWritePart
+X-KDE-Library=libhk_kde4dbdesignerpart

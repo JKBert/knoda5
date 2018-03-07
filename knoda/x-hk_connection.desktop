@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=MimeType
+MimeType=application/x-hk_connection
+Icon=knoda.png
+Patterns=*.hkc
+Comment= knoda database connection
+Comment[de]=Knoda Datenbankverbindung
+Comment[fr]=Knoda base de données
+Comment[es]=Knoda base de datos
