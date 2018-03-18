@@ -105,7 +105,7 @@ hk_kdedriverselectbase::hk_kdedriverselectbase( QWidget* parent, const char* nam
     connect( connectbutton, SIGNAL( clicked() ), this, SLOT( accept() ) );
     connect( cancelbutton, SIGNAL( clicked() ), this, SLOT( reject() ) );
     connect( driverlist, SIGNAL( itemDoubleClicked(QListWidgetItem*)) , this, SLOT( accept() ) );
-    connect( tabwidget, SIGNAL( currentChanged(QWidget*) ), this, SLOT( tabwidget_changed() ) );
+    connect( tabwidget, SIGNAL( currentChanged(int) ), this, SLOT( tabwidget_changed() ) );
     connect( buttonHelp, SIGNAL( clicked() ), this, SLOT( help_clicked() ) );
     connect( optionbutton, SIGNAL( clicked() ), this, SLOT( option_clicked() ) );
 }

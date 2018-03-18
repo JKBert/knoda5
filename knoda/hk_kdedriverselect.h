@@ -43,7 +43,7 @@ public slots:
     virtual void list_clicked();
     virtual void connection_clicked();
     virtual void tabwidget_changed();
-    virtual void file_selected(const QString&);
+    virtual void file_selected(const QUrl&);
     virtual void help_clicked(void);
     virtual void option_clicked();
 

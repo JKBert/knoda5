@@ -117,7 +117,7 @@ hk_kdepreferencesdialog::hk_kdepreferencesdialog( QWidget* parent,  const char* 
     separatorfield->setCurrentIndex(hk_dsdatavisible::defaultuse_numberseparator()?0:1);
     sizetypefield->setCurrentIndex(hk_presentation::defaultsizetype()==hk_presentation::relative?0:1);
     measurefield->setCurrentIndex(hk_class::measuresystem()==hk_class::cm?0:1);
-    use_singleclickfield->setCurrentIndex(hk_kdedblistview::use_singleclick()?0:1);
+    //TBP use_singleclickfield->setCurrentIndex(hk_kdedblistview::use_singleclick()?0:1);
     snap2gridxfield->setValue(hk_presentation::snap2gridx());
     snap2gridyfield->setValue(hk_presentation::snap2gridy());
     automaticupdatefield->setCurrentIndex(hk_class::default_automatic_data_update()?0:1);
@@ -152,9 +152,6 @@ hk_kdepreferencesdialog::hk_kdepreferencesdialog( QWidget* parent,  const char* 
         default: i=0;
     }
     numberalignmentfield->setCurrentIndex(i);
-
-
-
 }
 
 
@@ -176,56 +173,55 @@ void hk_kdepreferencesdialog::driverpathbutton_clicked()
 
 void hk_kdepreferencesdialog::accept(void)
 {
-  KSharedConfigPtr c=KGlobal::config();
-  KConfigGroup cg =  c->group("Preferencesdialog");
-  cg.writeEntry("Geometry",geometry());
+    KSharedConfigPtr c=KGlobal::config();
+    KConfigGroup cg =  c->group("Preferencesdialog");
+    cg.writeEntry("Geometry",geometry());
 
-
-        hk_class::set_defaultdatetimeformat(
+    hk_class::set_defaultdatetimeformat(
             u2l(timefield->text().toUtf8().data()),
             u2l(datefield->text().toUtf8().data()),
             u2l(datetimefield->text().toUtf8().data())
             );
-	 hk_class::set_locale(u2l(localefield->text().toUtf8().data()));
+    hk_class::set_locale(u2l(localefield->text().toUtf8().data()));
         hk_class::set_showpedantic( bepedanticfield->currentIndex()==0);
         hk_visible::set_open_maximized_windows(maximizedfield->currentIndex()==0);
         hk_report::set_printcommand(u2l(printcommandfield->text().toUtf8().data()));
         hk_report::set_embedfonts(embedfontsfield->currentIndex()==0);
         hk_drivermanager::set_path(u2l(driverpathfield->text().toUtf8().data()));
         hk_font::set_defaultfont(u2l(fontfield->currentText().toUtf8().data()),fontsizefield->value());
-	hk_presentation::set_snap2gridx(snap2gridxfield->value());
-	hk_presentation::set_snap2gridy(snap2gridyfield->value());
-        hk_visible::alignmenttype a=hk_visible::alignleft;
-        hk_class::set_default_automatic_data_update(automaticupdatefield->currentIndex()==0);
+    hk_presentation::set_snap2gridx(snap2gridxfield->value());
+    hk_presentation::set_snap2gridy(snap2gridyfield->value());
+    hk_visible::alignmenttype a=hk_visible::alignleft;
+    hk_class::set_default_automatic_data_update(automaticupdatefield->currentIndex()==0);
 
-        switch (textalignmentfield->currentIndex())
+    switch (textalignmentfield->currentIndex())
         {
             case 1: a=hk_visible::aligncenter;break;
             case 2: a=hk_visible::alignright;break;
             default:;
         }
-        hk_visible::set_defaulttextalignment(a);
+    hk_visible::set_defaulttextalignment(a);
     hk_presentation::set_defaultsizetype(sizetypefield->currentIndex()==0?hk_presentation::relative:hk_presentation::absolute);
     hk_class::set_measuresystem(measurefield->currentIndex()==0?hk_class::cm:hk_class::inch);
 
-        a=hk_visible::alignleft;
-        switch (numberalignmentfield->currentIndex())
+    a=hk_visible::alignleft;
+    switch (numberalignmentfield->currentIndex())
         {
             case 1: a=hk_visible::aligncenter;break;
             case 2: a=hk_visible::alignright;break;
             default:;
         }
-        hk_visible::set_defaultnumberalignment(a);
-        hk_dsdatavisible::set_defaultnumberformat(separatorfield->currentIndex()==0,precisionfield->value());
-        hk_class::set_defaultdriver(u2l(defaultdriverfield->currentText().toUtf8().data()));
+    hk_visible::set_defaultnumberalignment(a);
+    hk_dsdatavisible::set_defaultnumberformat(separatorfield->currentIndex()==0,precisionfield->value());
+    hk_class::set_defaultdriver(u2l(defaultdriverfield->currentText().toUtf8().data()));
 
-        hk_class::save_preferences();
-        hk_kdedblistview::set_use_singleclick(use_singleclickfield->currentIndex()==0);
-  cg=c->group("Preferences");
-  cg.writeEntry("StorePassword",(storepasswordfield->currentIndex()==0));
-  cg.writeEntry("UseSingleclick",(use_singleclickfield->currentIndex()==0));
+    hk_class::save_preferences();
+    //TBP hk_kdedblistview::set_use_singleclick(use_singleclickfield->currentIndex()==0);
+    cg=c->group("Preferences");
+    cg.writeEntry("StorePassword",(storepasswordfield->currentIndex()==0));
+    cg.writeEntry("UseSingleclick",(use_singleclickfield->currentIndex()==0));
 
-  QDialog::accept();
+    QDialog::accept();
 }
 
 
@@ -238,6 +234,6 @@ void hk_kdepreferencesdialog::keyPressEvent ( QKeyEvent * e )
 
 void hk_kdepreferencesdialog::help_clicked()
 {
-KToolInvocation::invokeHelp("options");
+// TBP KToolInvocation::invokeHelp("options");
 }
 

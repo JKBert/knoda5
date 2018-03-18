@@ -6,7 +6,6 @@ set(PACKAGE_VERSION 0.12.0)
 set(QT_MIN_VERSION "5.3.0")
 set(KF5_MIN_VERSION "5.2.0")
 
-#find_package(KDE4 REQUIRED)
 find_package(LibXml2 REQUIRED)
 
 find_package(ECM 1.0.0 REQUIRED NO_MODULE)
@@ -33,8 +32,6 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
-#add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
-
 # STL needed for hk_string and assignments to/from QString
 remove_definitions(-DQT_NO_STL)
 
@@ -48,14 +45,9 @@ if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
   add_definitions(-D_DEBUG_ )
 endif()
 
-#include(KDE4Defaults)
-
 # defines update_xdg_mimetypes macro to update mimetypes after install
 include(FindSharedMimeInfo)
 
-#include(MacroLibrary)
-
-#include_directories(${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${LIBXML2_INCLUDE_DIR} ${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${LIBXML2_INCLUDE_DIR} 
     ${CMAKE_CURRENT_SOURCE_DIR}/hk_kdeclasses
     ${CMAKE_CURRENT_BINARY_DIR})
@@ -92,7 +84,7 @@ endif()
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 
 add_subdirectory(admin)
-#add_subdirectory(hk_kdeclasses)
+add_subdirectory(hk_kdeclasses)
 #add_subdirectory(hk_kdedbdesigner)
 #add_subdirectory(hk_kdeformpart)
 #add_subdirectory(hk_kdegridpart)

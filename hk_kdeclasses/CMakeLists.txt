@@ -1,13 +1,11 @@
 
-include_directories(${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} )
-
 ADD_DEFINITIONS(-DMAKE_KDECLASSES_LIB)
 
-add_subdirectory(pics)
+#add_subdirectory(pics)
 
 ########### next target ###############
 set(hk_kdeclasses_LIB_SRCS
-    hk_kdeaddtabledialog.cpp
+#[[    hk_kdeaddtabledialog.cpp
     hk_kdeaddtabledialogbase.cpp
     hk_kdeboolean.cpp
     hk_kdebutton.cpp
@@ -55,10 +53,10 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdenewpassworddialogbase.cpp
     hk_kdeobjecthandler.cpp
     hk_kdeobjecthandlerbase.cpp
-    hk_kdepassworddialog.cpp
+    hk_kdepassworddialog.cpp ]]
     hk_kdepreferencesdialog.cpp
     hk_kdepreferencesdialogbase.cpp
-    hk_kdeproperty.cpp
+ #[[   hk_kdeproperty.cpp
     hk_kdepropertybase.cpp
     hk_kdeqbe.cpp
     hk_kdequery.cpp
@@ -94,15 +92,19 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdexmlexportdialog.cpp
     hk_kdexmlexportdialogbase.cpp
     knodamaindockwindow.cpp
-    knodamaindockwindowbase.cpp
+    knodamaindockwindowbase.cpp ]]
 )
 
-kde4_add_library(hk_kde4classes SHARED ${hk_kdeclasses_LIB_SRCS})
+add_library(hk_kde5classes SHARED ${hk_kdeclasses_LIB_SRCS})
 
-target_link_libraries(hk_kde4classes LINK_PRIVATE ${KDE4_KDECORE_LIBS} xml2 ${HK_CLASSES_LIB} ${KDE4_KPARTS_LIBS} ${KDE4_KTEXTEDITOR_LIBS})
+target_link_libraries(hk_kde5classes 
+    Qt5::Widgets
+    KF5::CoreAddons
+    KF5::KDELibs4Support
+    ${HK_CLASSES_LIB})
 
-set_target_properties(hk_kde4classes PROPERTIES VERSION 8.0.3 SOVERSION 8)
-install(TARGETS hk_kde4classes ${INSTALL_TARGETS_DEFAULT_ARGS})
+set_target_properties(hk_kde5classes PROPERTIES VERSION 1.0.0 SOVERSION 1)
+install(TARGETS hk_kde5classes ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 
 ########### install files ###############
@@ -113,6 +115,4 @@ install(FILES  hk_kdedbdesigner.h hk_kdeformpartwidget.h hk_kdegrid.h hk_kdemess
                hk_kdemodulepartwidget.h hk_kdepreferencesdialog.h hk_kdeqbe.h hk_kdequerypartwidget.h
                hk_kdereportpartwidget.h hk_kdesimpleform.h hk_kdetablepartwidget.h 
                hk_kde4simplegrid.h knodamaindockwindow.h
-               DESTINATION ${INCLUDE_INSTALL_DIR}/hk_kde4classes CONFIGURATIONS Debug)
-
-
+               DESTINATION ${INCLUDE_INSTALL_DIR}/hk_kde5classes CONFIGURATIONS Debug)

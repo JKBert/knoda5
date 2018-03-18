@@ -1,6 +1,4 @@
 
-#include_directories(${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} )
-
 #add_subdirectory(po)
 #add_subdirectory(doc)
 #add_subdirectory(pics)
@@ -15,17 +13,14 @@ set(knoda_SRCS
 
 #kde4_add_app_icon(knoda_SRCS "hi*-app-knoda4.png")
 
-#kde4_add_executable(knoda4 ${knoda_SRCS})
 add_executable(knoda5 ${knoda_SRCS})
 
-#add_dependencies(knoda4 hk_kde4classes)
-
-#target_link_libraries(knoda4 ${KDE4_KDECORE_LIBS} ${LIBRARY_OUTPUT_PATH}/libhk_kde4classes.so ${HK_CLASSES_LIB} ${KDE4_KPARTS_LIBS})
 target_link_libraries(knoda5 
     Qt5::Widgets
     KF5::CoreAddons
     KF5::KDELibs4Support
-    ${HK_CLASSES_LIB})
+    ${HK_CLASSES_LIB}
+    ${LIBRARY_OUTPUT_PATH}/libhk_kde5classes.so)
 
 
 install(TARGETS knoda5 ${INSTALL_TARGETS_DEFAULT_ARGS})

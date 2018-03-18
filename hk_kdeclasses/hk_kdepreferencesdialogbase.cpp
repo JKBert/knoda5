@@ -57,7 +57,7 @@ hk_kdepreferencesdialogbase::hk_kdepreferencesdialogbase( QWidget* parent, const
     setModal(modal);
     initSizePolicy(this, QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
     setMinimumSize( QSize( 400, 200 ) );
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled( true );
     hk_kdepreferencesdialogbaseLayout = new QVBoxLayout(this);
     hk_kdepreferencesdialogbaseLayout->setMargin(11);
     hk_kdepreferencesdialogbaseLayout->setSpacing(6);
@@ -229,9 +229,9 @@ hk_kdepreferencesdialogbase::hk_kdepreferencesdialogbase( QWidget* parent, const
     fontfield->setObjectName(QString::fromAscii("fontfield"));
     initSizePolicy(fontfield, QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
     fontfield->setMinimumSize( QSize( 139, 0 ) );
-    fontfield->setEditable( TRUE );
-    fontfield->setAutoCompletion( TRUE );
-    fontfield->setDuplicatesEnabled( FALSE );
+    fontfield->setEditable( true );
+    fontfield->setAutoCompletion( true );
+    fontfield->setDuplicatesEnabled( false );
     Layout3->addWidget( fontfield );
 
     fontsizefield = new QSpinBox( defaults );
@@ -410,20 +410,20 @@ hk_kdepreferencesdialogbase::hk_kdepreferencesdialogbase( QWidget* parent, const
 
     buttonHelp = new QPushButton(this);
     buttonHelp->setObjectName("buttonHelp");
-    buttonHelp->setAutoDefault( TRUE );
+    buttonHelp->setAutoDefault( true );
     layout13->addWidget( buttonHelp );
     Horizontal_Spacing2 = new QSpacerItem( 310, 20, QSizePolicy::Expanding, QSizePolicy::Minimum );
     layout13->addItem( Horizontal_Spacing2 );
 
     buttonOk = new QPushButton(this);
     buttonOk->setObjectName("buttonOk");
-    buttonOk->setAutoDefault( TRUE );
-    buttonOk->setDefault( TRUE );
+    buttonOk->setAutoDefault( true );
+    buttonOk->setDefault( true );
     layout13->addWidget( buttonOk );
 
     buttonCancel = new QPushButton(this);
     buttonCancel->setObjectName("buttonCancel");
-    buttonCancel->setAutoDefault( TRUE );
+    buttonCancel->setAutoDefault( true );
     layout13->addWidget( buttonCancel );
     hk_kdepreferencesdialogbaseLayout->addLayout( layout13 );
     languageChange();

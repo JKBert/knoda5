@@ -109,8 +109,8 @@ hk_kdedriverselect::hk_kdedriverselect( QWidget* parent,  const char* name, bool
 
   tab2Layout->addWidget( p_filedialog );
 
-  connect(p_filedialog,SIGNAL(fileSelected(const QString&)),this,SLOT(connection_clicked()));
-  connect(p_filedialog,SIGNAL(fileHighlighted(const QString&)),this,SLOT(file_selected(const QString&)));
+  connect(p_filedialog,SIGNAL(fileSelected(const QUrl&)),this,SLOT(connection_clicked()));
+  connect(p_filedialog,SIGNAL(fileHighlighted(const QUrl&)),this,SLOT(file_selected(const QUrl&)));
 }
 
 /*
@@ -192,26 +192,23 @@ void hk_kdedriverselect::accept(void)
 
 void hk_kdedriverselect::tabwidget_changed()
 {
-if (tabwidget->currentWidget()==tab_2/*file dialog*/)
+    if (tabwidget->currentWidget()==tab_2/*file dialog*/)
         connectbutton->setEnabled(!p_filedialog->selectedFile().isEmpty());
-else
+    else
         connectbutton->setEnabled(hk_drivermanager::driverlist()->size() > 0);
-
 }
 
-void hk_kdedriverselect::file_selected(const QString& f)
+void hk_kdedriverselect::file_selected(const QUrl& f)
 {
-    QUrl url=f;
-    //TBT p_selectedfile=url.directory()+"/"+url.fileName();
-    p_selectedfile=url.path();
+    p_selectedfile=f.path();
     connectbutton->setEnabled(!p_selectedfile.isEmpty());
-
 }
 
 void hk_kdedriverselect::option_clicked()
 {
-   /* TBP hk_kdepreferencesdialog* p_dialog= new hk_kdepreferencesdialog(0,0,true);
+    hk_kdepreferencesdialog* p_dialog= new hk_kdepreferencesdialog(0,0,true);
+    
     p_dialog->exec();
-    delete p_dialog; */
+    delete p_dialog; 
 }
 

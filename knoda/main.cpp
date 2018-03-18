@@ -42,13 +42,13 @@ static KCmdLineOptions options;
 int main(int argc,char** argv)
 {
     umask(0077);
-    K4AboutData aboutData("knoda4","knoda4",ki18n("knoda4"),
+    K4AboutData aboutData("knoda5","knoda5",ki18n("knoda5"),
         VERSION, ki18n("knoda4 is a database management system"),
 	K4AboutData::License_GPL,
-        ki18n("(c) 2000-2005 Horst Knorr\n(c) 2010-2016 Patrik Hanak"),ki18n(NULL),"http://sourceforge.net/projects/knoda4/",
+        ki18n("(c) 2000-2005 Horst Knorr\n(c) 2010-2018 Patrik Hanak"),ki18n(NULL),"http://sourceforge.net/projects/knoda5/",
      "knoda4-bugs@lists.sourceforge.net");
     aboutData.addAuthor(ki18n("Horst Knorr"),ki18n("Author of original version"), "hk_classes@knoda.org","http://www.knoda.org");
-    aboutData.addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE4 port"), "knoda4-admins@lists.sourceforge.net");
+    aboutData.addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE5 port"), "knoda4-admins@lists.sourceforge.net");
     aboutData.addCredit (ki18n("Anirban Biswas"),ki18n("Postgresql driver"), "utpal@cal2.vsnl.net.in",NULL);
     aboutData.addCredit (ki18n("Tilman Linneweh"),ki18n("FreeBSD port"), "tilman@arved.de",NULL);
 

@@ -175,7 +175,7 @@ class hk_kdeschemadialog : public QDialog
     Q_OBJECT
 
         public:
-        hk_kdeschemadialog( QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+        hk_kdeschemadialog( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
         ~hk_kdeschemadialog();
 
         QGroupBox* ButtonGroup1;
