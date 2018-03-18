@@ -24,7 +24,7 @@ class KDECLASSES_EXPORT hk_kdepreferencesdialog : public hk_kdepreferencesdialog
     Q_OBJECT
 
         public:
-        hk_kdepreferencesdialog( QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+        hk_kdepreferencesdialog( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
         ~hk_kdepreferencesdialog();
     public slots:
         void driverpathbutton_clicked();

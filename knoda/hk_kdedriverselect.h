@@ -21,7 +21,7 @@ class internalfiledialog: public KFileDialog
 {
 Q_OBJECT
  public:
-     internalfiledialog(const KUrl& startDir, const QString& filter,
+     internalfiledialog(const QUrl& startDir, const QString& filter,
 		QWidget *parent);
 protected:
 virtual void accept();
@@ -34,7 +34,7 @@ class hk_kdedriverselect : public hk_kdedriverselectbase
     Q_OBJECT
 
 public:
-    hk_kdedriverselect( QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+    hk_kdedriverselect( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kdedriverselect();
      bool driver_selected(){return p_driverselected;}
      QString selected_file(){return p_selectedfile;}

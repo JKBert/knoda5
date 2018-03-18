@@ -27,10 +27,11 @@
 #include <kpushbutton.h>
 #include <qlayout.h>
 #include <kglobal.h>
+#include <kconfiggroup.h>
 #include <ktoolinvocation.h>
 #include "hk_kdedriverselect.moc"
 
-internalfiledialog::internalfiledialog(const KUrl& startDir, const QString& filter,
+internalfiledialog::internalfiledialog(const QUrl& startDir, const QString& filter,
 	QWidget *parent): KFileDialog(startDir,filter,parent)
 {
   QStringList l;
@@ -101,7 +102,7 @@ hk_kdedriverselect::hk_kdedriverselect( QWidget* parent,  const char* name, bool
   tab2Layout->setObjectName("tab2Layout");
 
 
-  p_filedialog=new internalfiledialog(KUrl("kfiledialog:///hkc"),QString::null,this);
+  p_filedialog=new internalfiledialog(QUrl("kfiledialog:///hkc"),QString::null,this);
 
   p_filedialog->setParent( tab_2, windowFlags() & ~Qt::WindowType_Mask );
   p_filedialog->setMinimumSize( QSize( 10, 10 ) );
@@ -170,7 +171,7 @@ void hk_kdedriverselect::keyPressEvent ( QKeyEvent * e )
 
 void hk_kdedriverselect::help_clicked(void)
 {
-  KToolInvocation::invokeHelp("introduction");
+  //TBP KToolInvocation::invokeHelp("introduction");
 }
 
 void hk_kdedriverselect::accept(void)
@@ -200,16 +201,17 @@ else
 
 void hk_kdedriverselect::file_selected(const QString& f)
 {
-KUrl url=f;
-p_selectedfile=url.directory()+"/"+url.fileName();
-        connectbutton->setEnabled(!p_selectedfile.isEmpty());
+    QUrl url=f;
+    //TBT p_selectedfile=url.directory()+"/"+url.fileName();
+    p_selectedfile=url.path();
+    connectbutton->setEnabled(!p_selectedfile.isEmpty());
 
 }
 
 void hk_kdedriverselect::option_clicked()
 {
-    hk_kdepreferencesdialog* p_dialog= new hk_kdepreferencesdialog(0,0,true);
+   /* TBP hk_kdepreferencesdialog* p_dialog= new hk_kdepreferencesdialog(0,0,true);
     p_dialog->exec();
-    delete p_dialog;
+    delete p_dialog; */
 }
 

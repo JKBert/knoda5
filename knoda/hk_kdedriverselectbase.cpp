@@ -52,7 +52,7 @@ hk_kdedriverselectbase::hk_kdedriverselectbase( QWidget* parent, const char* nam
 
     connectbutton = new QPushButton(this);
     connectbutton->setObjectName("connectbutton");
-    connectbutton->setEnabled( FALSE );
+    connectbutton->setEnabled( false );
 
     hk_kdedriverselectbaseLayout->addWidget( connectbutton, 0, 1 );
 
@@ -85,15 +85,15 @@ hk_kdedriverselectbase::hk_kdedriverselectbase( QWidget* parent, const char* nam
 
     optionbutton = new QPushButton(this);
     optionbutton->setObjectName("optionbutton");
-    optionbutton->setEnabled( TRUE );
-    optionbutton->setAutoDefault( TRUE );
+    optionbutton->setEnabled(true);
+    optionbutton->setAutoDefault(true);
 
     hk_kdedriverselectbaseLayout->addWidget( optionbutton, 2, 1 );
 
     buttonHelp = new QPushButton(this);
     buttonHelp->setObjectName("buttonHelp");
-    buttonHelp->setEnabled( TRUE );
-    buttonHelp->setAutoDefault( TRUE );
+    buttonHelp->setEnabled(true);
+    buttonHelp->setAutoDefault(true);
 
     hk_kdedriverselectbaseLayout->addWidget( buttonHelp, 3, 1 );
     spacer1 = new QSpacerItem( 20, 340, QSizePolicy::Minimum, QSizePolicy::Expanding );
@@ -156,4 +156,3 @@ void hk_kdedriverselectbase::option_clicked()
 {
     qWarning( "hk_kdedriverselectbase::option_clicked(): Not implemented yet" );
 }
-

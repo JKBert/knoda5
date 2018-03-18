@@ -15,8 +15,9 @@
 
 #include <hk_classes.h>
 #include <kapplication.h>
-#include <kaboutdata.h>
+#include <k4aboutdata.h>
 #include <kcmdlineargs.h>
+#include <kglobal.h>
 #include <qdialog.h>
 #include <qlistwidget.h>
 #include "hk_kdemessages.h"
@@ -40,12 +41,10 @@ static KCmdLineOptions options;
 
 int main(int argc,char** argv)
 {
-        umask(0077);
-
-    KAboutData aboutData("knoda4",
-    "knoda4",ki18n("knoda4"),
+    umask(0077);
+    K4AboutData aboutData("knoda4","knoda4",ki18n("knoda4"),
         VERSION, ki18n("knoda4 is a database management system"),
-	KAboutData::License_GPL,
+	K4AboutData::License_GPL,
         ki18n("(c) 2000-2005 Horst Knorr\n(c) 2010-2016 Patrik Hanak"),ki18n(NULL),"http://sourceforge.net/projects/knoda4/",
      "knoda4-bugs@lists.sourceforge.net");
     aboutData.addAuthor(ki18n("Horst Knorr"),ki18n("Author of original version"), "hk_classes@knoda.org","http://www.knoda.org");
@@ -106,7 +105,7 @@ int main(int argc,char** argv)
    }
 
 
-    if (driver=="")driver=mimetype2driver(u2l(mimename.toUtf8().data()));
+    // TBP if (driver=="")driver=mimetype2driver(u2l(mimename.toUtf8().data()));
     d=driver.size()>0;
 
     if (!d&&(db||f))
@@ -126,7 +125,7 @@ int main(int argc,char** argv)
 #ifdef HK_DEBUG
     if (args->isSet("debug")) hk_class::set_generaldebug(true);
 #endif
-    set_kdestandarddialogs();
+    // TBP set_kdestandarddialogs();
     struct_commandlinefields cp;
     cp.driver=driver;
     cp.database=u2l(database.toUtf8().data());
@@ -159,8 +158,8 @@ int main(int argc,char** argv)
       
     }
     if (result>0) return 1;
-    knodamaindockwindow* w=new knodamaindockwindow(&cp);
-    w->show();
+   /*TBP knodamaindockwindow* w=new knodamaindockwindow(&cp);
+    w->show(); */
     result=anwendung.exec();
     KGlobal::config()->sync();
 
