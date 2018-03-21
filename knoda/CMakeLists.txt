@@ -30,13 +30,12 @@ install(TARGETS knoda5 ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### next target ###############
 
-#TBP set(knoda_rt_SRCS main-rt.cpp)
+set(knoda_rt_SRCS main-rt.cpp)
 
 #TBP kde4_add_app_icon(knoda_rt_SRCS "hi*-app-knoda4.png")
+ecm_add_app_icon(knoda_rt_SRCS ICONS ${ICONS_SRCS})
 
 #TBP kde4_add_executable(knoda4_rt ${knoda_rt_SRCS})
-
-#TBP add_dependencies(knoda4_rt hk_kde4classes)
 
 #TBP target_link_libraries(knoda4_rt ${KDE4_KDECORE_LIBS} ${LIBRARY_OUTPUT_PATH}/libhk_kde4classes.so ${HK_CLASSES_LIB} ${KDE4_KPARTS_LIBS})
 

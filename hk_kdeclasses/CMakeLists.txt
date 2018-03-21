@@ -5,7 +5,7 @@ ADD_DEFINITIONS(-DMAKE_KDECLASSES_LIB)
 
 ########### next target ###############
 set(hk_kdeclasses_LIB_SRCS
-#[[    hk_kdeaddtabledialog.cpp
+#[[  TBP  hk_kdeaddtabledialog.cpp
     hk_kdeaddtabledialogbase.cpp
     hk_kdeboolean.cpp
     hk_kdebutton.cpp
@@ -56,7 +56,7 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdepassworddialog.cpp ]]
     hk_kdepreferencesdialog.cpp
     hk_kdepreferencesdialogbase.cpp
- #[[   hk_kdeproperty.cpp
+ #[[  TBP hk_kdeproperty.cpp
     hk_kdepropertybase.cpp
     hk_kdeqbe.cpp
     hk_kdequery.cpp
