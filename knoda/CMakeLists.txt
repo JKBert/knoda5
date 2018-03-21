@@ -1,6 +1,6 @@
 
 #TBP add_subdirectory(po)
-#TBP add_subdirectory(doc)
+add_subdirectory(doc)
 add_subdirectory(pics)
 
 
@@ -19,6 +19,7 @@ add_executable(knoda5 ${knoda_SRCS})
 target_link_libraries(knoda5 
     Qt5::Widgets
     KF5::CoreAddons
+    KF5::ConfigWidgets
     KF5::KDELibs4Support
     ${HK_CLASSES_LIB}
     ${LIBRARY_OUTPUT_PATH}/libhk_kde5classes.so)
@@ -46,6 +47,8 @@ install(TARGETS knoda5 ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES  hk_classes.magic DESTINATION ${CONFIG_INSTALL_DIR}/magic)
 install(FILES knoda5-mime.xml DESTINATION ${XDG_MIME_INSTALL_DIR})
-update_xdg_mimetypes(${XDG_MIME_INSTALL_DIR})
+
+#TBP do not update during development to speed up install/unistall processes
+#update_xdg_mimetypes(${XDG_MIME_INSTALL_DIR})
 
 install(FILES knoda5.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})

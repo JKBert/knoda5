@@ -35,7 +35,7 @@
 #include <kconfig.h>
 #include <kconfiggroup.h>
 #include <kglobal.h>
-#include <ktoolinvocation.h>
+#include <khelpclient.h>
 
 hk_kdepreferencesdialog::hk_kdepreferencesdialog( QWidget* parent,  const char* name, bool modal, Qt::WFlags fl )
 : hk_kdepreferencesdialogbase( parent, name, modal, fl )
@@ -234,6 +234,6 @@ void hk_kdepreferencesdialog::keyPressEvent ( QKeyEvent * e )
 
 void hk_kdepreferencesdialog::help_clicked()
 {
-// TBP KToolInvocation::invokeHelp("options");
+  KHelpClient::invokeHelp("options");
 }
 

@@ -28,7 +28,7 @@
 #include <qlayout.h>
 #include <kglobal.h>
 #include <kconfiggroup.h>
-#include <ktoolinvocation.h>
+#include <khelpclient.h>
 #include "hk_kdedriverselect.moc"
 
 internalfiledialog::internalfiledialog(const QUrl& startDir, const QString& filter,
@@ -171,7 +171,7 @@ void hk_kdedriverselect::keyPressEvent ( QKeyEvent * e )
 
 void hk_kdedriverselect::help_clicked(void)
 {
-  //TBP KToolInvocation::invokeHelp("introduction");
+  KHelpClient::invokeHelp("introduction");
 }
 
 void hk_kdedriverselect::accept(void)

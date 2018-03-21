@@ -30,6 +30,8 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     I18n            # KLocalizedString
     WidgetsAddons   # KMessageBox
     KDELibs4Support # Porting from KDE4
+    DocTools        # Handbook
+    ConfigWidgets # Help invokation
 )
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
