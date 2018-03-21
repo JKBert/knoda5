@@ -110,7 +110,7 @@ install(TARGETS hk_kde5classes ${INSTALL_TARGETS_DEFAULT_ARGS})
 ########### install files ###############
 
 install(FILES  hk_kdereport.rc hk_kdeform.rc hk_kdetable.rc hk_kdequery.rc hk_kdeinterpreterdialog.rc hk_kdedbdesigner.rc
-               knodamaindockwindowbase.rc hk_kdemodule.rc DESTINATION ${DATA_INSTALL_DIR}/hk_kde4classes)
+               knodamaindockwindowbase.rc hk_kdemodule.rc DESTINATION ${DATA_INSTALL_DIR}/hk_kde5classes)
 install(FILES  hk_kdedbdesigner.h hk_kdeformpartwidget.h hk_kdegrid.h hk_kdemessages.h 
                hk_kdemodulepartwidget.h hk_kdepreferencesdialog.h hk_kdeqbe.h hk_kdequerypartwidget.h
                hk_kdereportpartwidget.h hk_kdesimpleform.h hk_kdetablepartwidget.h 

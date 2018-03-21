@@ -1,11 +1,11 @@
 [Desktop Entry]
-Name=knoda4
-Exec=knoda4
-Icon=knoda4.png
+Name=knoda5
+Exec=knoda5
+Icon=knoda5
 Type=Application
 MimeType=application/x-sqlite3;application/x-sqlite2;application/x-hk_classes-sqlite3;application/x-hk_classes-sqlite2;application/x-msaccess;application/x-dbase;application/x-hk_connection;application/x-paradox;
-DocPath=knoda4/index.html
-X-DocPath=knoda4/index.html
+DocPath=knoda5/index.html
+X-DocPath=knoda5/index.html
 Comment=A database frontend
 Comment[de]=Datenbankprogramm
 Comment[es]=Una Aplicación base de datos

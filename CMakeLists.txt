@@ -15,6 +15,8 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(FeatureSummary)
+include(ECMInstallIcons)
+include(ECMAddAppIcon)
 
 # Find Qt modules
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS 
@@ -52,7 +54,7 @@ include_directories(${LIBXML2_INCLUDE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/hk_kdeclasses
     ${CMAKE_CURRENT_BINARY_DIR})
 
-#if(KDE4_KTEXTEDITOR_LIBS)
+#TBP if(KDE4_KTEXTEDITOR_LIBS)
 #  message(STATUS "Found ktexteditor libraries: " ${KDE4_KTEXTEDITOR_LIBS})
 #else()
 #  message(FATAL_ERROR "ktexteditor libraries not found !")
@@ -85,14 +87,14 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.cmake ${CMAKE_CURRENT_BINARY
 
 add_subdirectory(admin)
 add_subdirectory(hk_kdeclasses)
-#add_subdirectory(hk_kdedbdesigner)
-#add_subdirectory(hk_kdeformpart)
-#add_subdirectory(hk_kdegridpart)
-#add_subdirectory(hk_kdemodulepart)
-#add_subdirectory(hk_kdeqbepart)
-#add_subdirectory(hk_kdequerypart)
-#add_subdirectory(hk_kdereportpart)
-#add_subdirectory(hk_kdetablepart)
+#TBP add_subdirectory(hk_kdedbdesigner)
+#TBP add_subdirectory(hk_kdeformpart)
+#TBP add_subdirectory(hk_kdegridpart)
+#TBP add_subdirectory(hk_kdemodulepart)
+#TBP add_subdirectory(hk_kdeqbepart)
+#TBP add_subdirectory(hk_kdequerypart)
+#TBP add_subdirectory(hk_kdereportpart)
+#TBP add_subdirectory(hk_kdetablepart)
 add_subdirectory(knoda)
 
 message( STATUS "Configuration is " ${CMAKE_BUILD_TYPE} )
