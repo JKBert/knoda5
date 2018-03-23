@@ -603,6 +603,7 @@ hk_kdereportpropertybase::~hk_kdereportpropertybase()
 void hk_kdereportpropertybase::languageChange()
 {
     setWindowTitle( tr( "Property Editor" ) );
+    //TBP TBT translation tr()->i18n()
     subreportlabel->setText( tr( "Subreport:" ) );
     datasourcebutton->setText( tr( "..." ) );
     columnlabel->setText( tr( "Column:" ) );

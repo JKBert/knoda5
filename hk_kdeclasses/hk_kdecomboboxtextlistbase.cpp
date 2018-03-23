@@ -35,7 +35,7 @@
 #include <qimage.h>
 #include <qpixmap.h>
 
-
+//TBP TBT translation tr()->i18n()
 /*
  *  Constructs a hk_kdecomboboxtextlistbase as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.

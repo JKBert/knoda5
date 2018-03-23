@@ -36,7 +36,7 @@
 #include <qwhatsthis.h>
 #include <qtreewidget.h>
 #include <qheaderview.h>
-
+//TBP TBT translation tr()->i18n()
 /*
  *  Constructs a hk_kdedatabasesettingbase as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.

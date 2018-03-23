@@ -35,7 +35,7 @@
 #include <qlayout.h>
 #include <qtooltip.h>
 #include <qwhatsthis.h>
-
+//TBP TBT translation tr()->i18n()
 /*
  *  Constructs a hk_kdecsvexportdialogbase as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.

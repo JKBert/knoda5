@@ -451,6 +451,7 @@ hk_kdepreferencesdialogbase::~hk_kdepreferencesdialogbase()
 void hk_kdepreferencesdialogbase::languageChange()
 {
     setWindowTitle( tr( "Preferences" ) );
+    //TBP TBT translation tr()->i18n()
     driverpathlabel->setText( tr( "Driverpath:" ) );
     driverpathbutton->setText( tr( "..." ) );
     defaultdriverlabel->setText( tr( "Default driver:" ) );

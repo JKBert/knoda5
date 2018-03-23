@@ -201,6 +201,7 @@ hk_kdereportconditiondialogbase::~hk_kdereportconditiondialogbase()
 void hk_kdereportconditiondialogbase::languageChange()
 {
     setWindowTitle( tr( "hk_kdereportconditiondialogbase" ) );
+    //TBP TBT translation tr()->i18n()
     buttonOk->setText( tr( "&OK" ) );
     buttonOk->setShortcut( QKeySequence( tr( "Alt+O" ) ) );
     buttonCancel->setText( tr( "&Cancel" ) );

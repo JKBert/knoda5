@@ -118,6 +118,7 @@ hk_kdeobjecthandlerbase::~hk_kdeobjecthandlerbase()
 void hk_kdeobjecthandlerbase::languageChange()
 {
     setWindowTitle( tr( "Form1" ) );
+    //TBP TBT translation tr()->i18n()
     uploadbutton->setText( QString::null );
     downloadbutton->setText( QString::null );
     exitbutton->setText( tr( "E&xit" ) );

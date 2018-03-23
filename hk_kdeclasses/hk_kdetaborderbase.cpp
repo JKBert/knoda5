@@ -81,6 +81,7 @@ hk_kdetaborderdialogbase::hk_kdetaborderdialogbase( QWidget* parent, const char*
     baselist -> setSelectionMode(QAbstractItemView::SingleSelection);    
     QStringList header;
     header << tr( "Id:" ) << tr( "Name:" ) << tr( "Type:" ) << tr( "Column:" );
+    //TBP TBT translation tr()->i18n()
     baselist -> setHeaderLabels(header);
     layout7->addWidget( baselist );
     Frame14Layout->addLayout( layout7 );

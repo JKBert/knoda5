@@ -161,6 +161,7 @@ hk_kderelationdialogbase::hk_kderelationdialogbase( QWidget* parent, const char*
     grid -> setObjectName( "grid" );
     grid->setColumnCount( grid->columnCount() + 2 );
     grid->setHorizontalHeaderLabels(QStringList() << tr( "Master" )<< tr( "Slave" ) );
+    //TBP TBT translation tr()->i18n()
     grid->setRowCount( 0 );
     grid->setColumnCount( 2 );
 

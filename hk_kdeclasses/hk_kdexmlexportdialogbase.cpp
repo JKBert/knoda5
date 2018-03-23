@@ -211,6 +211,7 @@ hk_kdexmlexportdialogbase::~hk_kdexmlexportdialogbase()
 void hk_kdexmlexportdialogbase::languageChange()
 {
     setWindowTitle( tr( "XML Export Dialog" ) );
+    //TBP TBT translation tr()->i18n()
     rowelementfield->setText( QString::null );
     typelabel->setText( tr( "Datasource type" ) );
     maindocumenttaglabel->setText( tr( "Main document tag:" ) );

@@ -37,7 +37,7 @@
 #include <qtooltip.h>
 #include <qwhatsthis.h>
 #include <qheaderview.h>
-
+//TBP TBT translation tr()->i18n()
 /*
  *  Constructs a hk_kdeformdatasourcebasedialog as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.

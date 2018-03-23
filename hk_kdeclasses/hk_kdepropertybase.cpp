@@ -949,6 +949,7 @@ hk_kdepropertyeditorbase::~hk_kdepropertyeditorbase()
 void hk_kdepropertyeditorbase::languageChange()
 {
     setWindowTitle( tr( "Property Editor" ) );
+    //TBP TBT translation tr()->i18n()
     combomodelabel->setText( tr( "Combomode:" ) );
     labellabel->setText( tr( "Label:" ) );
     defaultlabel->setText( tr( "Default value:" ) );

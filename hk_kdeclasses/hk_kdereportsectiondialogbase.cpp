@@ -179,6 +179,7 @@ hk_kdereportsectiondialogbase::~hk_kdereportsectiondialogbase()
 void hk_kdereportsectiondialogbase::languageChange()
 {
     setWindowTitle( tr( "hk_kdereportsectiondialogbase" ) );
+    //TBP TBT translation tr()->i18n()
     fieldlabel->setText( tr( "TextLabel1" ) );
     addbutton->setText( QString::null );
     deletebutton->setText( QString::null );

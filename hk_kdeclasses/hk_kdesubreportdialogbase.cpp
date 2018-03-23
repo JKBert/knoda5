@@ -335,6 +335,7 @@ hk_kdesubreportdialogbase::~hk_kdesubreportdialogbase()
 void hk_kdesubreportdialogbase::languageChange()
 {
     setWindowTitle( tr( "subreport dialog" ) );
+    //TBP TBT translation tr()->i18n()
     setbutton->setText( tr( "&Set" ) );
     deletebutton->setText( tr( "&Delete" ) );
     buttonCancel->setText( tr( "&Cancel" ) );
