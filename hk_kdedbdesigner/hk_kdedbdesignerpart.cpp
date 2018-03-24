@@ -35,7 +35,7 @@
 #include <kactioncollection.h>
 
 K_PLUGIN_FACTORY(hk_kdedbdesignerpartfactory, registerPlugin<hk_kdedbdesignerpart>();)
-K_EXPORT_PLUGIN(hk_kdedbdesignerpartfactory("hk_kde4dbdesignerpart","hk_kde4dbdesignerpart"))
+K_EXPORT_PLUGIN(hk_kdedbdesignerpartfactory("hk_kde5dbdesignerpart","hk_kde5dbdesignerpart"))
 
 class hk_kdedbdesignerpartprivate
 {
@@ -57,8 +57,8 @@ hk_kdedbdesignerpart::hk_kdedbdesignerpart(QWidget* pWidget, QObject* parent, co
   p_private->p_dbdesigner = new hk_kdedbdesigner(pWidget);
   setWidget(p_private->p_dbdesigner);
   KIconLoader* loader=KIconLoader::global();
-  loader->addAppDir("hk_kde4classes");
-  setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdedbdesignerpart.rc"));
+  loader->addAppDir("hk_kde5classes");
+  setXMLFile(KStandardDirs::locate("data","hk_kde5classes/hk_kdedbdesignerpart.rc"));
 
   p_private->p_addaction = new KAction(i18n("&Add datasource"),actionCollection());
   p_private->p_addaction -> setIcon(loader->loadIcon("gridadd22x22",KIconLoader::NoGroup,KIconLoader::SizeSmall));
@@ -107,13 +107,13 @@ if (p_private->p_dbdesigner)p_private->p_dbdesigner->add_datasource();
 
 KAboutData* hk_kdedbdesignerpart::createAboutData()
 {
-    KAboutData* a= new KAboutData("hk_kde4dbdesignerpart", "hk_kde4dbdesignerpart",ki18n("hk_kde4dbdesignerpart"),
+    KAboutData* a= new KAboutData("hk_kde5dbdesignerpart", "hk_kde5dbdesignerpart",ki18n("hk_kde5dbdesignerpart"),
         "0.2", ki18n("Database editor"),
         KAboutData::License_GPL,
-        ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2016 Patrik Hanak"), ki18n(NULL),"http://sourceforge.net/projects/knoda4/",
+        ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2018 Patrik Hanak"), ki18n(NULL),"http://sourceforge.net/projects/knoda5/",
      "knoda4-bugs@lists.sourceforge.net");
     a -> addAuthor(ki18n("Horst Knorr"),ki18n("Author of original version"), "hk_classes@knoda.org","http://www.knoda.org");
-    a -> addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE4 port"), "knoda4-admins@lists.sourceforge.net");
+    a -> addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE5 port"), "knoda4-admins@lists.sourceforge.net");
 
     return a;
 

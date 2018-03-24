@@ -2,9 +2,9 @@
 // copyright (c) 2000-2005 Horst Knorr <hk_classes@knoda.org>  
 // Original version of the file for hk_kdeclasses library
 // copyright (c) 2010-2016 Patrik Hanak <hanakp@users.sourceforge.net>
-// KDE 4 port of the file for hk_kde4reportpart library
+// KDE 4 port of the file for hk_kde5reportpart library
 //
-// This file is part of the hk_kde4reportpart library.
+// This file is part of the hk_kde5reportpart library.
 // This file may be distributed and/or modified under the terms of the
 // GNU Library Public License version 2 as published by the Free Software
 // Foundation and appearing in the file LGPL included in the
@@ -38,7 +38,7 @@
 #include <hk_datasource.h>
 
 K_PLUGIN_FACTORY(hk_kdereportpartfactory,registerPlugin<hk_kdereportpart>();)
-K_EXPORT_PLUGIN(hk_kdereportpartfactory("hk_kde4reportpart","hk_kde4reportpart"))
+K_EXPORT_PLUGIN(hk_kdereportpartfactory("hk_kde5reportpart","hk_kde5reportpart"))
 
 class hk_kdereportpartprivate
 {
@@ -63,7 +63,7 @@ hk_kdereportpart::hk_kdereportpart(QWidget* pWidget, QObject* parent, const QVar
     // so we explicitly flag it with Qt::Widget
     p_private->p_report -> setWindowFlags(Qt::Widget);    
     setWidget(p_private->p_report);
-    setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdereportpartdesign.rc"));
+    setXMLFile(KStandardDirs::locate("data","hk_kde5classes/hk_kdereportpartdesign.rc"));
 }
 
 hk_kdereportpart::~hk_kdereportpart()
@@ -123,13 +123,13 @@ if (manager()&&manager()->activePart()==this &&! p_private->activate)
 
 KAboutData* hk_kdereportpart::createAboutData()
 {
-    KAboutData* a= new KAboutData("hk_kde4reportpart", "hk_kde4reportpart", ki18n("hk_kde4reportpart"),
+    KAboutData* a= new KAboutData("hk_kde5reportpart", "hk_kde5reportpart", ki18n("hk_kde5reportpart"),
         "0.2", ki18n("database report editor"),
         KAboutData::License_GPL,
-        ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2016 Patrik Hanak"), ki18n(NULL), "http://sourceforge.net/projects/knoda4/",
+        ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2018 Patrik Hanak"), ki18n(NULL), "http://sourceforge.net/projects/knoda5/",
      "knoda4-bugs@lists.sourceforge.net");
     a -> addAuthor(ki18n("Horst Knorr"),ki18n("Author of original version"), "hk_classes@knoda.org","http://www.knoda.org");
-    a -> addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE4 port"), "knoda4-admins@lists.sourceforge.net");    
+    a -> addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE5 port"), "knoda4-admins@lists.sourceforge.net");    
 
     return a;
 

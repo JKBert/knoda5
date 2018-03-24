@@ -1,3 +1,11 @@
+# to test translations:
+# 1. export LC_MESSAGES=de_DE.utf8
+# 2. run application
+#
+# to roll-back:
+# 1. unset LC_MESSAGES
+
+
 FIND_PROGRAM(GETTEXT_MSGFMT_EXECUTABLE msgfmt)
 
 IF(NOT GETTEXT_MSGFMT_EXECUTABLE)
@@ -8,7 +16,7 @@ IF(NOT GETTEXT_MSGFMT_EXECUTABLE)
 ENDIF(NOT GETTEXT_MSGFMT_EXECUTABLE)
 
 
-SET(catalogname knoda4)
+SET(catalogname knoda5)
 ADD_CUSTOM_TARGET(translations ALL)
 FILE(GLOB PO_FILES *.po)
 FOREACH(_poFile ${PO_FILES})
@@ -35,5 +43,3 @@ FOREACH(_poFile ${PO_FILES})
     ENDIF( _langCode )
 
 ENDFOREACH(_poFile ${PO_FILES})
-
-

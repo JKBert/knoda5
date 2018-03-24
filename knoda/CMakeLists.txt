@@ -1,5 +1,5 @@
 
-#TBP add_subdirectory(po)
+add_subdirectory(po)
 add_subdirectory(doc)
 add_subdirectory(pics)
 
@@ -20,6 +20,7 @@ target_link_libraries(knoda5
     Qt5::Widgets
     KF5::CoreAddons
     KF5::ConfigWidgets
+    KF5::I18n
     KF5::KDELibs4Support
     ${HK_CLASSES_LIB}
     ${LIBRARY_OUTPUT_PATH}/libhk_kde5classes.so)

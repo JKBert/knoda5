@@ -39,14 +39,14 @@ int main(int argc,char** argv)
 {
         umask(0077);
 
-    KAboutData aboutData("knoda4-rt", "knoda4-rt",
-    ki18n("knoda4 - Runtime version"),
-        VERSION, ki18n("knoda4-rt is the runtime version of knoda -a database management system"),
+    KAboutData aboutData("knoda5-rt", "knoda5-rt",
+    ki18n("knoda5 - Runtime version"),
+        VERSION, ki18n("knoda5-rt is the runtime version of knoda -a database management system"),
 	KAboutData::License_GPL,
-        ki18n("(c) 2000-2004 Horst Knorr\n(c) 2010-2016 Patrik Hanak"),ki18n(NULL),"http://sourceforge.net/projects/knoda4/",
+        ki18n("(c) 2000-2004 Horst Knorr\n(c) 2010-2018 Patrik Hanak"),ki18n(NULL),"http://sourceforge.net/projects/knoda5/",
      "knoda4-bugs@lists.sourceforge.net");
     aboutData.addAuthor(ki18n("Horst Knorr"),ki18n("Author of original version"), "hk_classes@knoda.org","http://www.knoda.org");
-    aboutData.addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE4 port"), "knoda4-admins@lists.sourceforge.net");
+    aboutData.addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE5 port"), "knoda4-admins@lists.sourceforge.net");
     aboutData.addCredit (ki18n("Anirban Biswas"),ki18n("Postgresql driver"), "utpal@cal2.vsnl.net.in");
     aboutData.addCredit (ki18n("Tilman Linneweh"),ki18n("FreeBSD port"), "tilman@arved.de");
 

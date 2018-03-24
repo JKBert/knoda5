@@ -23,7 +23,7 @@
 #include "hk_kdemessages.h"
 #include "knodamaindockwindow.h"
 #include "hk_kdedriverselect.h"
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kconfig.h>
 #include <kurl.h>
 #include <kmimetype.h>
@@ -43,7 +43,7 @@ int main(int argc,char** argv)
 {
     umask(0077);
     K4AboutData aboutData("knoda5","knoda5",ki18n("knoda5"),
-        VERSION, ki18n("knoda4 is a database management system"),
+        VERSION, ki18n("knoda5 is a database management system"),
 	K4AboutData::License_GPL,
         ki18n("(c) 2000-2005 Horst Knorr\n(c) 2010-2018 Patrik Hanak"),ki18n(NULL),"http://sourceforge.net/projects/knoda5/",
      "knoda4-bugs@lists.sourceforge.net");
@@ -73,7 +73,7 @@ int main(int argc,char** argv)
 
     KApplication anwendung;
     struct_commands commands;
-    
+    KLocalizedString::setApplicationDomain("knoda5");
     anwendung.setWindowIcon(QIcon::fromTheme(QStringLiteral("knoda5")));
     bool d =args->isSet("d");
     bool db = args->isSet("b");

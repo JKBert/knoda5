@@ -100,6 +100,7 @@ add_library(hk_kde5classes SHARED ${hk_kdeclasses_LIB_SRCS})
 target_link_libraries(hk_kde5classes 
     Qt5::Widgets
     KF5::CoreAddons
+    KF5::I18n
     KF5::KDELibs4Support
     ${HK_CLASSES_LIB})
 

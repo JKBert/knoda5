@@ -1,32 +1,29 @@
-# translation of it.po to italiano
-# translation of @knoda@.po to @italiano@
-# translation of it.po to Italiano
-# translation of knoda.po to Italiano
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Livio Tomasi <archimede@tomasil.it>, 2006, 2007.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: it\n"
+"Project-Id-Version: knoda5 0.12.0\n"
 "Report-Msgid-Bugs-To: http://sourceforge.net/p/knoda5/tickets/\n"
 "POT-Creation-Date: 2018-03-22 22:03+0100\n"
-"PO-Revision-Date: 2007-01-22 15:35+0100\n"
-"Last-Translator: Livio Tomasi <archimede@tomasil.it>\n"
-"Language-Team: italiano\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.2\n"
 
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Tomasi Livio - www.tomasil.it - Edolo (Bs)"
+msgstr ""
 
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "archimede@tomasil.it"
+msgstr ""
 
 #. i18n: file: hk_kdeclasses/hk_kdedbdesigner.rc:5
 #. i18n: ectx: Menu (file)
@@ -62,9 +59,8 @@ msgstr "archimede@tomasil.it"
 #. i18n: ectx: Menu (file)
 #. i18n: file: hk_kdetablepart/hk_kdetablepart.rc:5
 #. i18n: ectx: Menu (file)
-#, fuzzy
 msgid "&File"
-msgstr "Nome del File"
+msgstr ""
 
 #. i18n: file: hk_kdeclasses/hk_kdeform.rc:11
 #. i18n: ectx: Menu (edit)
@@ -88,9 +84,8 @@ msgstr "Nome del File"
 #. i18n: ectx: Menu (edit)
 #. i18n: file: hk_kdetablepart/hk_kdetablepart.rc:11
 #. i18n: ectx: Menu (edit)
-#, fuzzy
 msgid "&Edit"
-msgstr "Elabora"
+msgstr ""
 
 #. i18n: file: hk_kdeclasses/hk_kdeform.rc:15
 #. i18n: ectx: Menu (view)
@@ -122,9 +117,8 @@ msgstr "Elabora"
 #. i18n: ectx: Menu (view)
 #. i18n: file: hk_kdetablepart/hk_kdetablepart.rc:16
 #. i18n: ectx: Menu (view)
-#, fuzzy
 msgid "&View"
-msgstr "&Viste"
+msgstr ""
 
 #. i18n: file: hk_kdeclasses/hk_kdereport.rc:18
 #. i18n: ectx: Menu (settings)
@@ -138,156 +132,153 @@ msgstr "&Viste"
 #. i18n: ectx: Menu (settings)
 #. i18n: file: hk_kdereportpart/hk_kdereportpartview.rc:17
 #. i18n: ectx: Menu (settings)
-#, fuzzy
 msgid "&Settings"
-msgstr "&Salva impostazioni"
+msgstr ""
 
 #. i18n: file: hk_kdeclasses/knodamaindockwindowbase.rc:22
 #. i18n: ectx: Menu (database)
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:87
 msgid "&Database"
-msgstr "&Database"
+msgstr ""
 
 #. i18n: file: hk_kdeformpart/hk_kdeformpartdesign.rc:23
 #. i18n: ectx: Menu (insert)
-#, fuzzy
 msgid "&Insert"
-msgstr "Inserisci riga"
+msgstr ""
 
 #: hk_classes/hk_button.cpp:116
 msgid "No datasource set!"
-msgstr "Datasource non impostato"
+msgstr ""
 
 #: hk_classes/hk_button.cpp:167
 msgid "Error while executing actionquery"
-msgstr "Errore l'Interrogazione (Query) non può essere eseguita "
+msgstr ""
 
 #: hk_classes/hk_button.cpp:564
 msgid "No such field %FIELD% in datasource %DATASOURCE%!"
-msgstr " %FIELD% non è un Campo del  Datasource %DATASOURCE%!"
+msgstr ""
 
 #: hk_classes/hk_class.cpp:191
 msgid "Question:"
-msgstr "Domanda:"
+msgstr ""
 
 #: hk_classes/hk_class.cpp:193 hk_classes/hk_connection.cpp:318
 msgid "n=No            all other keys = yes"
-msgstr "n=No            tutti gli altri tasti=Si"
+msgstr ""
 
 #: hk_classes/hk_class.cpp:617
 msgid "Warning! Your local charset '%1' could not be set!"
 msgstr ""
-"Attenzione! Il vostro local charset %1 potrebbe non esser stato impostato"
 
 #: hk_classes/hk_class.cpp:682
 msgid "Load file"
-msgstr "Legge file"
+msgstr ""
 
 #: hk_classes/hk_class.cpp:682
 msgid "Save file"
-msgstr "Salva file "
+msgstr ""
 
 #: hk_classes/hk_class.cpp:684 hk_classes/hk_class.cpp:745
 msgid "Change directory (%1)"
-msgstr "Cambia cartella (directory) (%1)"
+msgstr ""
 
 #: hk_classes/hk_class.cpp:685
 msgid "Change file (%1)"
-msgstr "Cambia file (%1) "
+msgstr ""
 
 #: hk_classes/hk_class.cpp:686 hk_classes/hk_class.cpp:746
 msgid "End input"
-msgstr "Fine immissione"
+msgstr ""
 
 #: hk_classes/hk_class.cpp:698 hk_classes/hk_class.cpp:758
 msgid "Enter directory:"
-msgstr "Inserire cartella (directory)"
+msgstr ""
 
 #: hk_classes/hk_class.cpp:704 hk_classes/hk_class.cpp:764
 msgid "No valid directory name"
-msgstr "Nome di cartella (directory) non valido"
+msgstr ""
 
 #: hk_classes/hk_class.cpp:712
 msgid "Enter filename:"
-msgstr "Inserire nome file"
+msgstr ""
 
 #: hk_classes/hk_class.cpp:716
 msgid "No valid file name"
-msgstr "Nome file non valido"
+msgstr ""
 
 #: hk_classes/hk_class.cpp:743
 msgid "Select directory:"
-msgstr "Seleziona  cartella"
+msgstr ""
 
 #: hk_classes/hk_colour.cpp:134 hk_classes/hk_colour.cpp:141
 msgid "red: "
-msgstr "Rosso"
+msgstr ""
 
 #: hk_classes/hk_colour.cpp:134 hk_classes/hk_colour.cpp:141
 msgid "green: "
-msgstr "Verde"
+msgstr ""
 
 #: hk_classes/hk_colour.cpp:134 hk_classes/hk_colour.cpp:141
 msgid "blue: "
-msgstr "Blue"
+msgstr ""
 
 #: hk_classes/hk_column.cpp:267 hk_kdeclasses/hk_kdetabledesign.cpp:358
 msgid "Float"
-msgstr "Dcimale"
+msgstr ""
 
 #: hk_classes/hk_column.cpp:268 hk_kdeclasses/hk_kdetabledesign.cpp:368
 msgid "Small Float"
-msgstr "Decimale breve"
+msgstr ""
 
 #: hk_classes/hk_column.cpp:269 hk_kdeclasses/hk_kdetabledesign.cpp:331
 msgid "Integer"
-msgstr "Intero"
+msgstr ""
 
 #: hk_classes/hk_column.cpp:270 hk_kdeclasses/hk_kdetabledesign.cpp:339
 msgid "Small Integer"
-msgstr "Intero breve"
+msgstr ""
 
 #: hk_classes/hk_column.cpp:271 hk_kdeclasses/hk_kdetabledesign.cpp:294
 #: hk_kdeclasses/hk_kdetabledesign.cpp:623
 msgid "Text"
-msgstr "Testo"
+msgstr ""
 
 #: hk_classes/hk_column.cpp:272 hk_kdeclasses/hk_kdetabledesign.cpp:411
 msgid "Datetime"
-msgstr "Data-Ora"
+msgstr ""
 
 #: hk_classes/hk_column.cpp:273 hk_kdeclasses/hk_kdetabledesign.cpp:422
 msgid "Timestamp"
-msgstr "Timestamp "
+msgstr ""
 
 #: hk_classes/hk_column.cpp:274 hk_kdeclasses/hk_kdetabledesign.cpp:400
 msgid "Time"
-msgstr "Ora"
+msgstr ""
 
 #: hk_classes/hk_column.cpp:275 hk_kdeclasses/hk_kdetabledesign.cpp:389
 msgid "Date"
-msgstr "Data"
+msgstr ""
 
 #: hk_classes/hk_column.cpp:276 hk_kdeclasses/hk_kdetabledesign.cpp:378
 msgid "Bool"
-msgstr "Si/No"
+msgstr ""
 
 #: hk_classes/hk_column.cpp:277 hk_classes/hk_column.cpp:363
 #: hk_kdeclasses/hk_kdetabledesign.cpp:433
 msgid "Binary"
-msgstr "Binario"
+msgstr ""
 
 #: hk_classes/hk_column.cpp:278 hk_kdeclasses/hk_kdetabledesign.cpp:322
 msgid "Memo"
-msgstr "Memo"
+msgstr ""
 
 #: hk_classes/hk_column.cpp:279 hk_kdeclasses/hk_kdetabledesign.cpp:349
 msgid "Auto Increment"
-msgstr "Autoincremento"
+msgstr ""
 
 #: hk_classes/hk_column.cpp:280
 msgid "Unknown columntype"
-msgstr "Campo (Colonna) sconosciuto"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:200 hk_classes/hk_connection.cpp:454
 #: hk_classes/hk_connection.cpp:485 hk_classes/hk_connection.cpp:620
@@ -317,63 +308,62 @@ msgstr "Campo (Colonna) sconosciuto"
 #: hk_kdeclasses/hk_kdetabledesign.cpp:561
 #: hk_kdeclasses/hk_kdetablepartwidget.cpp:256
 msgid "Servermessage: "
-msgstr "Messaggio dal server: "
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:214
 msgid "Unable to connect to the SQL-Server!"
-msgstr "Impossibile connettersi al server SQL!"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:267
 msgid "Please give me the following information:"
-msgstr "Prego,digitare le seguenti informazioni:"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:272
 msgid "Host: "
-msgstr "Host:"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:278
 msgid "User: "
-msgstr "Utente:"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:284
 msgid "Database name: "
-msgstr "Nome del Database"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:290
 msgid "Password (will not be displayed): "
-msgstr "Parola o codice d'accesso (Password; non verrà visualizzata) "
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:304
 msgid "TCP Port: "
-msgstr "Porta TCP"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:311
 msgid "SQL Delimiter: "
-msgstr "Delimitatore SQL"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:317
 msgid "Emulate Boolean: "
-msgstr "Emulatore boleano"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:426
 #: hk_firebirdclasses/hk_firebirdconnection.cpp:312
 msgid "The driver does not support creating new databases!"
-msgstr "Il driver non è in grado di creare il nuovo Database"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:432
 #: hk_firebirdclasses/hk_firebirdconnection.cpp:327
 msgid "Not connected to the server"
-msgstr "Non connesso al server "
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:438
 #: hk_firebirdclasses/hk_firebirdconnection.cpp:333
 msgid "Bug: Actionquery could not be created"
 msgstr ""
-"Errore (Bug): l'Interrogazione (Query) di comando non può essere eseguita "
 
 #: hk_classes/hk_connection.cpp:454
 msgid "Database could not be created!"
-msgstr "Il Database non può essere creato"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:466 hk_dbaseclasses/hk_dbaseconnection.cpp:200
 #: hk_paradoxclasses/hk_paradoxconnection.cpp:242
@@ -381,405 +371,383 @@ msgstr "Il Database non può essere creato"
 #: hk_sqliteclasses/hk_sqliteconnection.cpp:257
 #: hk_xbaseclasses/hk_xbaseconnection.cpp:200
 msgid "Delete the database \"%DBNAME%\"?"
-msgstr "Cancella il database \"%DBNAME%\""
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:485
 msgid "Database could not be deleted!"
-msgstr "Il Database non può essere eliminato!"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:620
 msgid "Password could not be changed!"
-msgstr "Il codice d'accesso (Password) non pùò essere cambiato!"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:649
 msgid "New password (will not be displayed): "
-msgstr "Nuovo codice d'accesso (Password; non sarà visualizzata)"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:654
 msgid "Reenter new password:"
-msgstr "Digitare nuovamente il codice d'accesso (Password):"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:680
 msgid "Unknown driver"
-msgstr "Driver soconosciuto"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:850 utilities/hk_dbcopyutility.cpp:24
 msgid "Copying tabledefinition: %FILE%"
-msgstr "Sto copiando le specifiche della tabella %FILE%:"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:851 utilities/hk_dbcopyutility.cpp:25
 msgid "Copying query: %FILE%"
-msgstr "Sto copiando l'Interrogazione (Query) %FILE%:"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:852 utilities/hk_dbcopyutility.cpp:26
 msgid "Copying form: %FILE%"
-msgstr "Sto copiando la Scheda (Form) %FILE%:"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:853 utilities/hk_dbcopyutility.cpp:27
 msgid "Copying report: %FILE%"
-msgstr "Sto copiando il Prospetto (Report )%FILE%:"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:876
 msgid "Please enter the name of the database:"
-msgstr "Inserisci il nome del Database:"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:971
 msgid "Can't create a new target database"
-msgstr "Impossibile creare un nuovo Target Database"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:972
 msgid "Can't create new tables"
-msgstr "Impossibile creare nuova Tabella"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:973
 msgid "Field names will be truncated to %1 characters"
-msgstr "Il nome del file terminerà al carattere n. %1"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:974
 msgid "Source database may contain proprietary field types"
-msgstr "Il Database di origine potrebbe contenere files propietari"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:975
 msgid "Field names with other characters than [A-Za-z0-9] are not allowed"
 msgstr ""
-"Nomi di Files con altri caratteri eccetto: [A-Z-a-z-0-9] non sono permessi"
 
 #: hk_classes/hk_connection.cpp:976
 msgid "Field names with non-ASCII characters are not supported"
-msgstr "Nomi File con caratteri non-ASCII non sono supportati"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:977
 msgid "Field names with space characters are not supported"
-msgstr "Nomi di campo contenenti  spazi non sono ammessi "
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:980
 msgid "No 'char' field type"
-msgstr "File non di tipo Alfanumerico ('char' )"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:981
 msgid "No 'integer' field type"
-msgstr "File non di tipo Intero ('integer')"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:982
 msgid "No 'smallinteger' field type"
-msgstr "File non di tipo Intero Breve ('smallinteger')"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:983
 msgid "No 'floating' field type"
-msgstr "File non di tipo Decimale (floating')"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:984
 msgid "No 'smallfloating' field type"
-msgstr "File non di tipo Decimale Breve ('smallfloating')"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:986
 msgid "No 'autoincrement' field type"
-msgstr "File non di tipo Autoincremento ('autoincrement')"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:987
 msgid "No 'boolean' field type"
-msgstr "File non di tipo Si/No ('bolean')"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:988
 msgid "No 'date' field type"
-msgstr "File non di tipo Data ( 'date')"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:989
 msgid "No 'time' field type"
-msgstr "File non di tipo Tempo ('time')"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:990
 msgid "No 'datetime' field type"
-msgstr "File non di tipo Ora/Data ('datetime')"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:991
 msgid "No 'binary' field type"
-msgstr "File non di tipoBinario ('binary')"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:992
 msgid "No 'memo' field type"
-msgstr "File non di tipo 'memo'"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:993
 msgid "No 'timestamp' field type"
-msgstr "File non di tipo 'timestamp'"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:994
 msgid "Target does not support SQL"
-msgstr "Target non supporta SQL"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:997
 msgid "SQL does not support 'GROUP BY' statement"
-msgstr "SQL non supporta l'opzione 'GROUP BY'"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:998
 msgid "SQL does not support 'ORDER BY' statement"
-msgstr "SQL non supporta l'opzione 'ORDER BY'"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:999
 msgid "SQL does not support 'HAVING' statement"
-msgstr "SQL non supporta l'opzione 'HAVING'"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:1000
 msgid "SQL does not support 'WHERE' statement"
-msgstr "SQL non supporta l'opzione 'WHERE'"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:1001
 msgid "SQL does not support 'ALIAS' statement"
-msgstr "SQL non supporta l'opzione 'ALIAS'"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:1003
 msgid "Referential integrity not supported"
-msgstr "Integrità referenziale non supportata"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:1004
 msgid "Indices are not supported"
-msgstr "Indicizzazione non supportata"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:1007
 msgid "Views are not supported"
-msgstr "le Viste (Views) non sono supportate"
+msgstr ""
 
 #: hk_classes/hk_connection.cpp:1010
 msgid "Copying data from '%1' to '%2':\n"
-msgstr "Sto copiando i dati da %1 a %2 \n"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:279
 msgid "Bug: hk_database::driver_specific_new_table returned empty table!"
 msgstr ""
-"Errore (Bug): hk_database::driver_specific_new_table resituisce una tabella "
-"vuota!"
 
 #: hk_classes/hk_database.cpp:300
 msgid "Bug: hk_database::driver_specific_new_view returned empty view!"
 msgstr ""
-"Errore (Bug): hk_databas::driver_specific_new_view resituisce una vista "
-"vuota!"
 
 #: hk_classes/hk_database.cpp:420
 msgid "No such Database '%1'!"
-msgstr "Non esiste il database %1"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:427
 msgid "Not connected to server!"
-msgstr "Server non connesso!"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:492
 msgid "Delete the table \"%TBLNAME%\"?"
-msgstr "Eliminare la Tabella \"%TBLNAME%\"?"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:523 hk_dbaseclasses/hk_dbasedatabase.cpp:139
 #: hk_paradoxclasses/hk_paradoxdatabase.cpp:143
 msgid "Table could not be deleted!"
-msgstr "La Tabella non può essere eliminata!"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:551
 msgid "Delete the view \"%TBLNAME%\"?"
-msgstr "Eliminare la Vista \"%TBLNAME%\"?"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:582
 msgid "View could not be deleted!"
-msgstr "La Vista non può essere eliminata!"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:684
 msgid "Error: hk_database::save_central could not get a new table"
-msgstr "Errore: hk_database::save_central non può creare una nuova Tabella"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:697
 msgid "Error: hk_database::save_central could not find system columns!"
-msgstr "Errore: hk_database::save_central non trova il system-columns!"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:719 hk_classes/hk_database.cpp:819
 msgid "Enter new query name:"
-msgstr "Digitare il nome nuovo del'Interrogazione: "
+msgstr ""
 
 #: hk_classes/hk_database.cpp:720 hk_classes/hk_database.cpp:820
 msgid "Enter new form name:"
-msgstr "Digitare il nome della  nuova Scheda (Form):"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:721 hk_classes/hk_database.cpp:821
 msgid "Enter new report name:"
-msgstr "digitare il nome del nuovo Prospetto (Report):"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:722 hk_classes/hk_database.cpp:822
-#, fuzzy
 msgid "Enter new module name:"
-msgstr "Digitare il nome nuovo del'Interrogazione: "
+msgstr ""
 
 #: hk_classes/hk_database.cpp:723 hk_classes/hk_database.cpp:823
 #: hk_kdeclasses/knodamaindockwindow.cpp:618
 msgid "Enter new name:"
-msgstr "Digitare il nuovo nome: "
+msgstr ""
 
 #: hk_classes/hk_database.cpp:775
 msgid "Query '%1' already exists. Overwrite it?"
-msgstr "L'Interrogazione (Query) '%1' esiste già. Sovrascriverla?"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:776
 msgid "Form '%1' already exists. Overwrite it?"
-msgstr "La Scheda (Form) '%1' esiste già. Sovrascriverlo?"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:777
 msgid "Report '%1' already exists. Overwrite it?"
-msgstr "Il Prospetto (Report) '%1' esiste già. Sovrascriverlo?"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:778
-#, fuzzy
 msgid "Module '%1' already exists. Overwrite it?"
-msgstr "Il File  '%1' esiste già. Sovrascriverlo?"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:779
 msgid "File '%1' already exists. Overwrite it?"
-msgstr "Il File  '%1' esiste già. Sovrascriverlo?"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:783
 msgid "Query '%1' has changed. Store changes?"
 msgstr ""
-"L'Interrogazione (Query) '%1' è stata modificata. Salvare le modifiche?"
 
 #: hk_classes/hk_database.cpp:784
 msgid "Form '%1' has changed. Store changes?"
-msgstr "La Scheda (Form) '%1' è stato modificata. Salvare le modifiche?"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:785
 msgid "Report '%1' has changed. Store changes?"
-msgstr "Il Prospetto (Report) '%1' è stato modificato. Salvare le modifiche?"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:786
-#, fuzzy
 msgid "Module '%1' has changed. Store changes?"
-msgstr "Il File '%1' è stato modificato. Salvare le modifiche?"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:787
 msgid "File '%1' has changed. Store changes?"
-msgstr "Il File '%1' è stato modificato. Salvare le modifiche?"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:842
 msgid "Error: File '%1' could not be created"
-msgstr "Errore: Il File '%1' non può essere creato"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:942 hk_classes/hk_database.cpp:1023
 msgid "Error: hk_database::load_central could not get a new table"
-msgstr "Errore: hk_database::load_central non pùò creare una nuova tabella "
+msgstr ""
 
 #: hk_classes/hk_database.cpp:954 hk_classes/hk_database.cpp:1035
 msgid "Error: hk_database::load_central could not find system columns!"
 msgstr ""
-"Errore: hk_database::load_central non riesece a trovare system columns!"
 
 #: hk_classes/hk_database.cpp:1142
 msgid "Error: hk_database::central_filelist could not get a new resultquery"
 msgstr ""
-"errore: hk_database::central_filelist non possono elaborare il risultato "
-"della query "
 
 #: hk_classes/hk_database.cpp:1163
 msgid "Warning: hk_database::central_filelist, unknown filetype"
-msgstr "Attenzione: hk_database::central_filelist non riconosce il filetype "
+msgstr ""
 
 #: hk_classes/hk_database.cpp:1231
 msgid "Delete the query:%FNAME%?"
-msgstr "Eliminare l'Interrogazione (Query): %FNAME%?"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:1234
 msgid "Delete the report:%FNAME%?"
-msgstr "Eliminare il Prospetto (Report): %FNAME%?"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:1237
 msgid "Delete the form:%FNAME%?"
-msgstr "Eliminare la Scheda (Form): %FNAME%?"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:1240
-#, fuzzy
 msgid "Delete the module:%FNAME%?"
-msgstr "Eliminare l'Interrogazione (Query): %FNAME%?"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:1242
 msgid "Delete the file:%FNAME%"
-msgstr "Eliminare il file: %FNAME%?"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:1260
 msgid "Error: hk_database::delete_centralfile could not get a new table"
 msgstr ""
-"Errore: hk_database::delete_centralfile non può collegarsi ad una nuova "
-"tabella"
 
 #: hk_classes/hk_database.cpp:1272
 msgid "Error: hk_database::delete_centralfile could not find system columns!"
-msgstr "Errore: hk_database::delete_centralfile non trova system columns!"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:1279
 msgid "Error: hk_database::delete_centralfile object '%1' not found"
 msgstr ""
-"Errore: hk_database::delete_centralfile  non è stato trovato object '%1'"
 
 #: hk_classes/hk_database.cpp:1606
 msgid "hk_database::copy_table: bug newds has no columns!"
-msgstr "hk_database::copy_table: bug newds non possiede Campo (Colonna)!"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:1644
 msgid "Copying table %TABLE%"
-msgstr "Sto copiando la Tabella%TABLE%"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:1647
 msgid "Continue loading data?"
-msgstr "Continuo a caricare i dati?"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:1688
 msgid "Error copy_view: target database does not support views!"
 msgstr ""
-"Errore di copy_view: il database di destinazione non supporta le Viste "
-"(Views)!"
 
 #: hk_classes/hk_database.cpp:1697
 msgid "View '%1' already exists. Replace it?"
-msgstr "La Vista '%1' esiste già. Sovrascriverla!?"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:1711 hk_classes/hk_datasource.cpp:4152
 msgid "Please enter the viewname:"
-msgstr "Inserire il nome della Vista:"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:1894
 msgid "Error: hk_database::rename_file could not get a new table"
-msgstr "Errore: hk_database::rename_file non trova la nuova tabella"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:1905
 msgid "Error: hk_database::rename_file could not find system columns!"
-msgstr "Errore: hk_database::rename_file non trova il system columns!"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:1912
 msgid "Error: hk_database::rename file: No such file!"
-msgstr "Errore: hk_database::rename_file: file inesistente!"
+msgstr ""
 
 #: hk_classes/hk_database.cpp:1988
 msgid ""
 "Error: hk_database::create_centralstoragetable could not get a new table"
 msgstr ""
-"Errore: hk_database::cantralstoragetable non riesce a creare una nuova "
-"tabella"
 
 #: hk_classes/hk_database.cpp:2219 hk_classes/hk_definitions.cpp:129
 #: hk_classes/hk_definitions.cpp:201
 msgid "Overwrite '%1'?"
-msgstr "Supero capacità %1? "
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:297
 msgid "Table %NAME% could not be created."
-msgstr "La Tabella %NAME% non può esser creata"
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:311
 msgid "View could not be created!"
-msgstr "La Vista non può esser creata!"
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:611
 msgid "Store changed data in table '%1'?"
-msgstr "Salvare le modifiche nella Tabella %1? "
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:805
 msgid "hk_datasource::set_query: Datasource is not of type query or view!"
 msgstr ""
-"hk_datasource::set_query:  il Datasource non è una Vista o un'Interrogazione "
-"(Query)"
 
 #: hk_classes/hk_datasource.cpp:1297 hk_dbaseclasses/hk_dbasetable.cpp:490
 #: hk_firebirdclasses/hk_firebirddatasource.cpp:915
@@ -788,20 +756,18 @@ msgstr ""
 msgid ""
 "Row in datasource '%1' could not be changed due to depending datasource(s)"
 msgstr ""
-"La Riga (record) del datasource %1 non può essere modificata a causa di "
-"relazioni con altre tabelle"
 
 #: hk_classes/hk_datasource.cpp:1394
 #: hk_firebirdclasses/hk_firebirddatasource.cpp:973
 #: hk_sqlite3classes/hk_sqlite3datasource.cpp:880
 msgid "Bug: datasource has changed, but no column has changed"
-msgstr "Baco: il datasource è cambiato, ma nessuna Campo (Colonna) è cambiata "
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:1430 hk_dbaseclasses/hk_dbasetable.cpp:528
 #: hk_paradoxclasses/hk_paradoxtable.cpp:1029
 #: hk_sqlite3classes/hk_sqlite3datasource.cpp:947
 msgid "Table %NAME%: Row could NOT be changed!"
-msgstr "La Tabella %NAME%: la Riga (Record) non può essere modificata!"
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:1612 hk_dbaseclasses/hk_dbasetable.cpp:385
 #: hk_firebirdclasses/hk_firebirddatasource.cpp:871
@@ -809,66 +775,62 @@ msgstr "La Tabella %NAME%: la Riga (Record) non può essere modificata!"
 #: hk_paradoxclasses/hk_paradoxtable.cpp:675
 #: hk_sqlite3classes/hk_sqlite3datasource.cpp:782
 msgid "Table %NAME%: Row could NOT be inserted!"
-msgstr "La Tabella %NAME%: la Riga (Record) non può essere inserita!"
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:1640 hk_dbaseclasses/hk_dbasetable.cpp:686
 #: hk_paradoxclasses/hk_paradoxtable.cpp:739
 msgid "Delete this record?"
-msgstr "Eliiminare questa riga (Record)?"
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:1667 hk_dbaseclasses/hk_dbasetable.cpp:713
 #: hk_paradoxclasses/hk_paradoxtable.cpp:766
 msgid "Row could not be deleted due to depending datasource(s)"
 msgstr ""
-"La Riga (Record) non può essere eliminata a causa di relazioni con altre "
-"tabelle"
 
 #: hk_classes/hk_datasource.cpp:1720 hk_dbaseclasses/hk_dbasetable.cpp:650
 #: hk_dbaseclasses/hk_dbasetable.cpp:761
 #: hk_paradoxclasses/hk_paradoxtable.cpp:810
 #: hk_paradoxclasses/hk_paradoxtable.cpp:1147
 msgid "Table %NAME%: Row was NOT deleted!"
-msgstr "Nella Tabella %NAME% la RRiga (Record) non è stata cancellata!"
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:1804 hk_classes/hk_datasource.cpp:1854
 msgid "Error: Master and depending datasource are the same!"
-msgstr "Errore: Datasource principale e secondario sono uguali!"
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:1864
 msgid ""
 "Error: setting this masterdatasource would lead to a circular dependency!"
 msgstr ""
-"Errore: impostando questo Datasource come principale si innescherà una auto-"
-"dipendenza!"
 
 #: hk_classes/hk_datasource.cpp:2105
 msgid "row %ROW% column %COL% :"
-msgstr "Riga %ROW% Campo %COL% "
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:2106
 msgid "Too many closing brackets\n"
-msgstr "Troppe parentesi chiuse\n"
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:2107
 msgid "Too many open brackets\n"
-msgstr "Troppe parentesi aperte\n"
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:4151
 msgid "Please enter the queryname:"
-msgstr "Inserire il nome dell'Interrogazione (Query):"
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:4153
 msgid "Please enter the tablename:"
-msgstr "Inserire il nome della Tabella:"
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:4283
 msgid "Error while dropping the index!"
-msgstr "Errore durante l'eliminazione dell'indice! "
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:4489 hk_dbaseclasses/hk_dbasetable.cpp:559
 #: hk_paradoxclasses/hk_paradoxtable.cpp:1057
 msgid "Delete the records %FROM% to %TO% ?"
-msgstr "Eliminare le Righe (Records) da %FROM% a %TO%? "
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:4514 hk_dbaseclasses/hk_dbasetable.cpp:584
 #: hk_paradoxclasses/hk_paradoxtable.cpp:1082
@@ -876,139 +838,123 @@ msgid ""
 "Rows could not be deleted due to depending datasource(s).\n"
 "\t  Use single row deletion instead!"
 msgstr ""
-"La Righe (records) non sono state cancellate a causa di un correlato/i "
-"datasource(s)\n"
-"\t. Eliminare invece  una singola riga (Record)!"
 
 #: hk_classes/hk_datasource.cpp:4925
 msgid "Table already exists!"
-msgstr "La Tabella esiste già!"
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:5150 hk_mysqlclasses/hk_mysqlview.cpp:61
 msgid "Bug: View-SQL is empty!"
-msgstr "Baco: la Vista è vuota! "
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:5190
 msgid "Server does not support referential integrity!"
-msgstr "Il Server non contempla (supporta) l'integrità referenziale! "
+msgstr ""
 
 #: hk_classes/hk_datasource.cpp:5194
 msgid ""
 "Error adding reference!\n"
 "Servermessage: "
 msgstr ""
-"Errore nell'inserire le referenze!\n"
-"Servermessage: "
 
 #: hk_classes/hk_definitions.cpp:111
 msgid "File '%1' does not exist"
-msgstr "il File %1 non esiste"
+msgstr ""
 
 #: hk_classes/hk_drivermanager.cpp:181
 msgid ""
 "\n"
 "Old driver with no version information!"
 msgstr ""
-"\n"
-"Driver obsoleto senza versione informativa!"
 
 #: hk_classes/hk_drivermanager.cpp:182
 msgid "Internal error: Database driver not compatible"
-msgstr "Errore interno: il Driver del Database non è compatibile"
+msgstr ""
 
 #: hk_classes/hk_drivermanager.cpp:195
 msgid ""
 "Wrong driver version: %1\n"
 "You need driver version %2"
 msgstr ""
-"Errata versione del driver %1\n"
-" serve il driver versione %2 "
 
 #: hk_classes/hk_drivermanager.cpp:208
 msgid ""
 "Database driver '%DRIVER%' could not be loaded.\n"
 "Reason: "
 msgstr ""
-"Non si riesce a connettere Il driver del Database %DRIVER%\n"
-"Motivo:"
 
 #: hk_classes/hk_drivermanager.cpp:208
 msgid "Unknown reason"
-msgstr "Ragione sconosciuta"
+msgstr ""
 
 #: hk_classes/hk_drivermanager.cpp:308
 msgid "The following database drivers were found:"
-msgstr "Il seguente driver per database verrà cercato:"
+msgstr ""
 
 #: hk_classes/hk_drivermanager.cpp:317
 #: hk_kdeclasses/hk_kdeeximportdatabase.cpp:528
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:818
 msgid "Select directory"
-msgstr "Selezionare la directory"
+msgstr ""
 
 #: hk_classes/hk_drivermanager.cpp:319
 msgid "Please select: "
-msgstr "Selezionare:"
+msgstr ""
 
 #: hk_classes/hk_drivermanager.cpp:336
 msgid "Enter new Driver Path"
-msgstr "Inserire il nuovo Percorso del Driver"
+msgstr ""
 
 #: hk_classes/hk_drivermanager.cpp:337
 msgid "Actual Path is: "
-msgstr "L'attuale percorso è:"
+msgstr ""
 
 #: hk_classes/hk_drivermanager.cpp:339
 msgid "New Path: "
-msgstr "Nuovo percorso_"
+msgstr ""
 
 #: hk_classes/hk_drivermanager.cpp:514
-#, fuzzy
 msgid "Error parsing connectionfile(%1)!"
-msgstr "File di connessione (%1)inesistente!"
+msgstr ""
 
 #: hk_classes/hk_drivermanager.cpp:520
 msgid "No such connectionfile(%1)!"
-msgstr "File di connessione (%1)inesistente!"
+msgstr ""
 
 #: hk_classes/hk_dscombobox.cpp:192 hk_classes/hk_dscombobox.cpp:212
 #: hk_classes/hk_dscombobox.cpp:365
 msgid "Error: listdatasource and datasource in the combobox are identical!"
 msgstr ""
-"Errore: listdatasource e datasource nella Casella Combinata (Combobox) sono "
-"identici! "
 
 #: hk_classes/hk_dsdatavisible.cpp:416
 msgid "[Auto]"
-msgstr "[Auto] "
+msgstr ""
 
 #: hk_classes/hk_dsquery.cpp:95
 msgid "View '%1' has changed. Store changes?"
-msgstr "La Vista %1 è cambiata. Salvare le modifiche?"
+msgstr ""
 
 #: hk_classes/hk_dsquery.cpp:95
 msgid "View '%1' already exists. Overwrite it?"
-msgstr "La Vista %1 esiste già. Sovrascriverla?"
+msgstr ""
 
 #: hk_classes/hk_font.cpp:822 hk_classes/hk_font.cpp:829
 msgid "font: "
-msgstr "tipo di carattere (font):"
+msgstr ""
 
 #: hk_classes/hk_form.cpp:404 hk_classes/hk_form.cpp:444
 #: hk_classes/hk_report.cpp:1256 hk_kdeclasses/hk_kdeform.cpp:377
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:693
 msgid "Form error: No database defined!"
-msgstr "Errore nel Form: il database non è stato definito!"
+msgstr ""
 
 #: hk_classes/hk_importcsv.cpp:63
 msgid "Cannot import as you run in runtime only mode !"
 msgstr ""
-"Impossibile importare nel modo in cui è stato avviato: funziona solo il modo "
-"runtime! "
 
 #: hk_classes/hk_importcsv.cpp:101
 msgid "Importing data ..."
-msgstr "Si stanno acquisendo i dati..."
+msgstr ""
 
 #: hk_classes/hk_importcsv.cpp:160
 msgid "Could not import the following rows:\n"
@@ -1016,36 +962,36 @@ msgstr ""
 
 #: hk_classes/hk_importcsv.cpp:205
 msgid "No datasource defined!"
-msgstr "Il datasource non è stato definito!"
+msgstr ""
 
 #: hk_classes/hk_importcsv.cpp:213
 msgid "No such CSV file: "
-msgstr "Non è definito come file CSV:"
+msgstr ""
 
 #: hk_classes/hk_importcsv.cpp:242 hk_classes/hk_importcsv.cpp:419
 msgid "Datasource could not be enabled"
-msgstr "Il Datasource non può essere abilitato"
+msgstr ""
 
 #: hk_classes/hk_importcsv.cpp:254 hk_kdeclasses/hk_kdetabledesign.cpp:508
 msgid "Table already exists"
-msgstr "la Tabella esiste già"
+msgstr ""
 
 #: hk_classes/hk_importcsv.cpp:688
 msgid "The following columns could not be found in the table:\n"
-msgstr "Non si riesce a trovare il Campo (Colonna) nella tabella :\n"
+msgstr ""
 
 #: hk_classes/hk_importcsv.cpp:725 hk_classes/hk_presentation.cpp:564
 #: hk_kdeclasses/hk_kdecsvimportdialog.cpp:358
 msgid "field_"
-msgstr "Campo_"
+msgstr ""
 
 #: hk_classes/hk_interpreter.cpp:73
 msgid "No interpreter installed"
-msgstr "L'interprete non è installato!"
+msgstr ""
 
 #: hk_classes/hk_interpreter.cpp:218
 msgid "No interpreter language installed!"
-msgstr "L'interprete del linguaggio non è stato installato!"
+msgstr ""
 
 #: hk_classes/hk_interpreter.cpp:480
 msgid "Error in line %1 while loading module '%2'\\nError message:'%3'"
@@ -1058,53 +1004,43 @@ msgid ""
 "and .rpm or .deb package you should check if there is also a hk_classes-"
 "python package"
 msgstr ""
-"\n"
-"Questo è dovuto ad un errore di installazione: se è stato installato "
-"hk_classes da un pacchetto rpm o deb bisognerebbe controllare se vi è anche "
-"un pacchetto python di hk_classes"
 
 #: hk_classes/hk_module.cpp:80 hk_classes/hk_module.cpp:117
 #: hk_kdeclasses/hk_kdemodule.cpp:199
-#, fuzzy
 msgid "Module error: No database defined!"
-msgstr "Errore nel Form: il database non è stato definito!"
+msgstr ""
 
 #: hk_classes/hk_module.cpp:183
-#, fuzzy
 msgid "Please enter the name of the module"
-msgstr "Inserire il nome del Form:"
+msgstr ""
 
 #: hk_classes/hk_presentation.cpp:155
 msgid "Bug: tried to add empty datasource!"
-msgstr "Baco: si tenta di abbinare un datasource vuoto!"
+msgstr ""
 
 #: hk_classes/hk_presentation.cpp:293
 msgid "hk_presentation::savedata No datasources defined!"
-msgstr "hk_presentation::savedata nessun datasource è stato definito!"
+msgstr ""
 
 #: hk_classes/hk_presentation.cpp:346
 msgid ""
 "hk_presentation::loaddata: Error creating/loading datasource! This is "
 "probably a bug"
 msgstr ""
-"hk_presentation::load data: Errore in fase di creazione o caricamento del "
-"datasource! Questo è dovuto probabilmente ad un baco (bug)"
 
 #: hk_classes/hk_presentation.cpp:466
 msgid "Please enter the name of the form:"
-msgstr "Inserire il nome del Form:"
+msgstr ""
 
 #: hk_classes/hk_presentation.cpp:467
 msgid "Please enter the name of the report"
-msgstr "Inserire il nome del Report"
+msgstr ""
 
 #: hk_classes/hk_qbe.cpp:687 hk_classes/hk_qbe.cpp:726
 msgid ""
 "Error!\n"
 "No output fields selected"
 msgstr ""
-"Errore!\n"
-"Non è stato selezionato un file di uscita"
 
 #: hk_classes/hk_qbe.cpp:694 hk_classes/hk_qbe.cpp:733
 #: hk_classes/hk_qbe.cpp:778 hk_classes/hk_qbe.cpp:816
@@ -1112,116 +1048,101 @@ msgid ""
 "Error!\n"
 "No tables defined"
 msgstr ""
-"Errore!\n"
-"Nessuna tabella è stata definita"
 
 #: hk_classes/hk_qbe.cpp:744
 msgid ""
 "Error!\n"
 "No 'group by' fields selected"
 msgstr ""
-"Errore!\n"
-"Nessun campo di raggruppamento ('group by') è stato selezionato"
 
 #: hk_classes/hk_qbe.cpp:786
 msgid ""
 "Error!\n"
 "No new values defined"
 msgstr ""
-"Errore!\n"
-"Nessun nuovo valore è stato definito"
 
 #: hk_classes/hk_report.cpp:175
 msgid "unnamed"
-msgstr "Senza nome"
+msgstr ""
 
 #: hk_classes/hk_report.cpp:540
 msgid "Datasource of this report could not be enabled"
-msgstr "Il Datasource di questo report non può essere abilitato"
+msgstr ""
 
 #: hk_classes/hk_report.cpp:592
 msgid "Creating output ..."
-msgstr "File d'uscita in lavorazione"
+msgstr ""
 
 #: hk_classes/hk_report.cpp:1415
 msgid "Report error: No database defined!"
-msgstr "Errore nel Report: nessun Database è stato definito!"
+msgstr ""
 
 #: hk_classes/hk_report.cpp:1438
 msgid "No such report!"
-msgstr "Report inesistente"
+msgstr ""
 
-# c-format
 #: hk_classes/hk_report.cpp:1779
-#, fuzzy, c-format
+#, c-format
 msgid "Borders too large! At least 20% have to be left for the data section"
 msgstr ""
-"Margini troppo ampi! Almeno il 20% deve restare per lo spazio dati (data "
-"section)"
 
 #: hk_classes/hk_report.cpp:1788
 msgid "Borders too large!"
-msgstr "Margini troppo ampi!"
+msgstr ""
 
 #: hk_classes/hk_report.cpp:2103
 msgid "Reportconfigurefunction not found"
-msgstr "Impossibile reperire il file di configurazione del Report"
+msgstr ""
 
 #: hk_classes/hk_report.cpp:2134
 msgid "Reporttype not found"
-msgstr "Impossibile reperire il Tipo del Report"
+msgstr ""
 
 #: hk_classes/hk_report.cpp:2202
 msgid "Recodetype not found"
-msgstr "Impossibile reperire il Recodetype"
+msgstr ""
 
 #: hk_classes/hk_report.cpp:2227
 msgid "Replacefunctiontype not found"
-msgstr "Impossibile reperire la funzione di modifica della tipologia del campo"
+msgstr ""
 
 #: hk_classes/hk_report.cpp:2613
 msgid "Error calling print command. Perhaps you have to add the full path."
 msgstr ""
-"Errore nell'impartire il comando di stampa. Probabilmente e stato posto il "
-"percorso completo (path)"
 
 #: hk_classes/hk_reportdata.cpp:475
-#, fuzzy
 msgid "replacefunction '%1' not found"
-msgstr "Funzione di sostituzione irreperibile"
+msgstr ""
 
 #: hk_classes/hk_reportdata.cpp:502
 msgid "Data Countfunction not found"
-msgstr "Funzione di conteggio non reperibile"
+msgstr ""
 
 #: hk_classes/hk_reportdata.cpp:838
 msgid "Dataconfigurefunction not found"
-msgstr "Funzione di configurazione non reperibile"
+msgstr ""
 
 #: hk_classes/hk_reportsection.cpp:276
 msgid "sectionreplacefunction not found"
-msgstr "Sezione di sostituzione della funzione non reperibile"
+msgstr ""
 
 #: hk_classes/hk_reportsection.cpp:301
 msgid "Section Countfunction not found"
-msgstr "Non è possiblie reperire la sezione di conteggio"
+msgstr ""
 
 #: hk_classes/hk_storagedatasource.cpp:303
 msgid ""
 "Datasource too big. Try to limit the number of rows by defining a filter."
 msgstr ""
-"Datasource troppo grande. Provare a limitare il numero di righe (records) "
-"attraverso un filtro "
 
 #: hk_classes/hk_visible.cpp:455 hk_classes/hk_visible.cpp:463
 msgid "Identifier '%1' already in use"
-msgstr "Identificatore %1 già in uso "
+msgstr ""
 
 #: hk_dbaseclasses/hk_dbasedatabase.cpp:123
 #: hk_paradoxclasses/hk_paradoxdatabase.cpp:125
-#, fuzzy
 msgid "Delete table \"%TBLNAME%\"?"
-msgstr "Eliminare la Tabella \"%TBLNAME%\"?"
+msgstr ""
 
 #: hk_dbaseclasses/hk_dbasedatasource.cpp:63
 #: hk_firebirdclasses/hk_firebirddatasource.cpp:71
@@ -1234,9 +1155,8 @@ msgstr "Eliminare la Tabella \"%TBLNAME%\"?"
 #: hk_xbaseclasses/hk_xbasedatasource.cpp:67
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:1014
 #: hk_kdeclasses/hk_kdetablepartwidget.cpp:428
-#, fuzzy
 msgid "Executing query ..."
-msgstr "Esegue Interrogazione (Query) di comando"
+msgstr ""
 
 #: hk_firebirdclasses/hk_firebirdtable.cpp:475
 #: hk_mysqlclasses/hk_mysqltable.cpp:132 hk_odbcclasses/hk_odbctable.cpp:138
@@ -1245,7 +1165,7 @@ msgstr "Esegue Interrogazione (Query) di comando"
 #: hk_sqliteclasses/hk_sqlitetable.cpp:127
 #: hk_xbaseclasses/hk_xbasetable.cpp:178
 msgid "Warning: Column with no name!"
-msgstr "Attenzione! il Campo (Colonna) non ha nome!"
+msgstr ""
 
 #: hk_firebirdclasses/hk_firebirdview.cpp:43
 #: hk_mysqlclasses/hk_mysqlview.cpp:44
@@ -1253,52 +1173,43 @@ msgstr "Attenzione! il Campo (Colonna) non ha nome!"
 #: hk_sqlite3classes/hk_sqlite3view.cpp:43
 #: hk_sqliteclasses/hk_sqliteview.cpp:43
 msgid "View definition could not be loaded"
-msgstr "Le definizioni della Vista non possono essere caricate"
+msgstr ""
 
 #: hk_mdbclasses/hk_mdbdatabase.cpp:93
 #: hk_sqlite3classes/hk_sqlite3database.cpp:148
 #: hk_sqliteclasses/hk_sqlitedatabase.cpp:152
 msgid "Driver error!\n"
-msgstr "Errore driver!\n"
+msgstr ""
 
 #: hk_mdbclasses/hk_mdbdatabase.cpp:100
-#, fuzzy
 msgid "File does not appear to be an Access database"
 msgstr ""
-"Il Driver con contempla gli strumenti per la creazione di un nuovo Database"
 
 #: hk_mdbclasses/hk_mdbtable.cpp:261
-#, fuzzy
 msgid "MDBTools - Table could not be opened!"
-msgstr "La Tabella non può essere eliminata!"
+msgstr ""
 
 #: hk_odbcclasses/hk_odbcconnection.cpp:83
 msgid "Connection not possible (wrong user and/or password?)"
-msgstr "Connessione impossibile (Errati codice d'accesso o utente)"
+msgstr ""
 
 #: hk_odbcclasses/hk_odbcview.cpp:57
 msgid "View definition could not be loaded,no such column 'viewselect'"
 msgstr ""
-"Le definizioni della Vista non possono essere caricate, non come campo "
-"'seleziona vista'"
 
 #: hk_postgresclasses/hk_postgresqltable.cpp:202
-#, fuzzy
 msgid "Error: Postgres does not have the ability to modify the primary key!"
 msgstr ""
-"Errore: Postgres non può modificare il tipo di Campo nè la chiave primaria e "
-"non può eliminare un Campo"
 
-# c-format
 #: hk_postgresclasses/hk_postgresqltable.cpp:323
-#, fuzzy, c-format
+#, c-format
 msgid "Column '%COLUMN%' could not be renamed"
-msgstr "Campo '%COLUMN%' non può essere  rinominato"
+msgstr ""
 
 #: hk_postgresclasses/hk_postgresqltable.cpp:342
 #, c-format
 msgid "Column '%COLUMN%' has NULL values, so NOTNULL is not possible"
-msgstr "Campo %COLUMN% ha un valore nullo, così NON NULLO non è possibile.e"
+msgstr ""
 
 #: hk_sqlite3classes/hk_sqlite3table.cpp:188
 msgid "hk_sqlite3table::  Driver does not support the deletion of columns!\n"
@@ -1312,120 +1223,106 @@ msgstr ""
 #: hk_sqliteclasses/hk_sqlitetable.cpp:248
 msgid "ERROR hk_sqlitetable::driver_specific_indices System columns not found!"
 msgstr ""
-"ERROR hk_sqlitetable::driver_specific_indices Sistema Campi non trovato!"
 
 #: hk_xbaseclasses/hk_xbasedatasource.cpp:276
 msgid "Query is no valid SELECT query!"
 msgstr ""
 
 #: hk_xbaseclasses/hk_xbasedatasource.cpp:281
-#, fuzzy
 msgid "Error! Query could not be executed!"
-msgstr "L'Interrogazione (Query) non può essere eseguita "
+msgstr ""
 
 #: utilities/hk_actionqueryutility.cpp:90 utilities/hk_dbcopyutility.cpp:184
 #: utilities/hk_exportcsvutility.cpp:121
 #: utilities/hk_exporthtmlutility.cpp:102 utilities/hk_exportxmlutility.cpp:96
 #: utilities/hk_importcsvutility.cpp:138 utilities/hk_reportutility.cpp:78
-#, fuzzy
 msgid "Error creating connection"
-msgstr "Salvare connessione"
+msgstr ""
 
 #: utilities/hk_actionqueryutility.cpp:106 utilities/hk_dbcopyutility.cpp:201
 #: utilities/hk_exportcsvutility.cpp:137
 #: utilities/hk_exporthtmlutility.cpp:118
 #: utilities/hk_exportxmlutility.cpp:112 utilities/hk_importcsvutility.cpp:154
 #: utilities/hk_reportutility.cpp:94
-#, fuzzy
 msgid "No such database"
-msgstr "Non esiste il database %1"
+msgstr ""
 
 #: utilities/hk_actionqueryutility.cpp:115
-#, fuzzy
 msgid "query could not be created"
-msgstr "La Vista non può esser creata!"
+msgstr ""
 
 #: utilities/hk_actionqueryutility.cpp:132
 msgid "Queryfile couldn't be loaded or is empty"
 msgstr ""
 
 #: utilities/hk_actionqueryutility.cpp:142
-#, fuzzy
 msgid "Query couldn't be executed"
-msgstr "L'Interrogazione (Query) non può essere eseguita "
+msgstr ""
 
 #: utilities/hk_exportcsvutility.cpp:145
 #: utilities/hk_exporthtmlutility.cpp:129
 #: utilities/hk_exportxmlutility.cpp:120 utilities/hk_reportutility.cpp:102
-#, fuzzy
 msgid "Report couldn't be created"
-msgstr "La Vista non può esser creata!"
+msgstr ""
 
 #: utilities/hk_exportcsvutility.cpp:163 utilities/hk_importcsvutility.cpp:181
-#, fuzzy
 msgid "csv couldn't be executed"
-msgstr "L'Interrogazione (Query) non può essere eseguita "
+msgstr ""
 
 #: utilities/hk_exporthtmlutility.cpp:156
-#, fuzzy
 msgid "HTML couldn't be executed"
-msgstr "L'Interrogazione (Query) non può essere eseguita "
+msgstr ""
 
 #: utilities/hk_exportxmlutility.cpp:139
-#, fuzzy
 msgid "XML couldn't be executed"
-msgstr "L'Interrogazione (Query) non può essere eseguita "
+msgstr ""
 
 #: utilities/hk_importcsvutility.cpp:162
-#, fuzzy
 msgid "IMPORTCSV couldn't be created"
-msgstr "La Vista non può esser creata!"
+msgstr ""
 
 #: utilities/hk_importcsvutility.cpp:168
-#, fuzzy
 msgid "Datasource couldn't be created"
-msgstr "Il Datasource non può essere abilitato"
+msgstr ""
 
 #: utilities/hk_reportutility.cpp:115
-#, fuzzy
 msgid "Reportfile couldn't be loaded"
-msgstr "Il Database non può essere caricato"
+msgstr ""
 
 #: utilities/hk_reportutility.cpp:131
-#, fuzzy
 msgid "Report couldn't be executed"
-msgstr "L'Interrogazione (Query) non può essere eseguita "
+msgstr ""
 
 #: hk_kdeclasses/hk_kde4simplegrid.cpp:138
 msgid "Page"
-msgstr "Pagina"
+msgstr ""
 
 #: hk_kdeclasses/hk_kde4simplegrid.cpp:147
 msgid "Query: "
-msgstr "Interrogazione:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kde4simplegrid.cpp:147
 msgid "Table: "
-msgstr "Tabella:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kde4simplegrid.cpp:151
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:168
 msgid "Database: "
-msgstr "Database:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeaddtabledialogbase.cpp:99
 msgid "Add-table dialog"
-msgstr "Aggiunge tabella di dialogo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeaddtabledialogbase.cpp:100
 #: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:346
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:89
 msgid "&Add"
-msgstr "&Aggiungi"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeaddtabledialogbase.cpp:101
 msgid "Alt+A"
-msgstr "Alt+A"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeaddtabledialogbase.cpp:102
 #: hk_kdeclasses/hk_kdedbdesigner.cpp:1388 hk_kdeclasses/hk_kdeform.cpp:96
@@ -1434,7 +1331,7 @@ msgstr "Alt+A"
 #: hk_kdeclasses/hk_kdereport.cpp:82 hk_kdeclasses/hk_kdetable.cpp:72
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:158
 msgid "&Close"
-msgstr "&Chiudi"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeaddtabledialogbase.cpp:103
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:312
@@ -1444,7 +1341,7 @@ msgstr "&Chiudi"
 #: hk_kdeclasses/hk_kdetaborderbase.cpp:207
 #: knoda/hk_kdedriverselectbase.cpp:131
 msgid "Alt+C"
-msgstr "Alt+C"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeaddtabledialog.cpp:47
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:71
@@ -1452,7 +1349,7 @@ msgstr "Alt+C"
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:550
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:71
 msgid "table"
-msgstr "Tabella"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeaddtabledialog.cpp:49
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:73
@@ -1461,7 +1358,7 @@ msgstr "Tabella"
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:552
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:73
 msgid "view"
-msgstr "Vista"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeaddtabledialog.cpp:51
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:72
@@ -1471,25 +1368,25 @@ msgstr "Vista"
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:551
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:72
 msgid "query"
-msgstr "Interrogazione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeboolean.cpp:289 hk_kdeclasses/hk_kdelabel.cpp:55
 msgid "label"
-msgstr "Etichetta"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:80
 #: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:118
 msgid "Entry"
-msgstr "Immissione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:82
 #: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:119
 msgid "1"
-msgstr "1"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:113
 msgid "Combobox textlist dialog"
-msgstr "Lista elementi Casella Combinata (Combobox)"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:114
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:309
@@ -1509,7 +1406,7 @@ msgstr "Lista elementi Casella Combinata (Combobox)"
 #: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:204
 #: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:224
 msgid "&OK"
-msgstr "&Ok"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:116
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:311
@@ -1537,25 +1434,25 @@ msgstr "&Ok"
 #: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:226
 #: knoda/hk_kdedriverselectbase.cpp:130
 msgid "&Cancel"
-msgstr "&Annulla"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecomboboxtextlistbase.cpp:120
 msgid "Combobox sourcetextlist"
-msgstr "Origine (Source) lista elementi Casella Combinata (Combobox)"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:287
 msgid "Text File Export Dialog"
-msgstr "Ambito esportazione files di testo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:288
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:364
 msgid "Filename"
-msgstr "Nome del File"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:289
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:365
 msgid "The data to import."
-msgstr "I dati da importare"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:290
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:366
@@ -1571,61 +1468,61 @@ msgstr "I dati da importare"
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:607
 #: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:220
 msgid "..."
-msgstr "..."
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:291
 #: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:215
 msgid "Datasource type"
-msgstr "Tipo di origine dati (Datasource)"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:292
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:357
 msgid "Tablename"
-msgstr "Nome della Tabella"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:293
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:368
 msgid "Pick the character that separates columns in text file."
-msgstr "Pone i caratteri di differenti campi (colonne) in un file di testo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:294
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:367
 #: hk_kdeclasses/hk_kdecsvimportdialog.cpp:70
 msgid "Column Separator"
-msgstr "Separatore dei Campi (Colonne)"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:296
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:344
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:361
 msgid "First row contains field names."
-msgstr "La prima riga (record) contiene il nome del campo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:297
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:355
 #: hk_kdeclasses/hk_kdecsvimportdialog.cpp:67
 msgid "Text delimiter"
-msgstr "Delimitatore stringhe di testo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:298
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:354
 #: hk_kdeclasses/hk_kdecsvimportdialog.cpp:68
 msgid "Field names in first row"
-msgstr "Nome del campo nella prima ricca (record)"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:299
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:358
 msgid "\""
-msgstr "\""
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:300
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:359
 msgid "The character that surrounds text (can be blank)."
-msgstr "I caratteri che racchiudono il testo (potrebbero essere spazi vuoti) "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:301
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:353
 msgid "Date format"
-msgstr "Formato Data"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:302
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:303
@@ -1634,27 +1531,27 @@ msgstr "Formato Data"
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:346
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:349
 msgid "Name of new or existing table."
-msgstr "Nome di una Tabella nuova o preesistente."
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:305
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:350
 msgid "Charset"
-msgstr "Set dei caratteri"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:306
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:348
 msgid "Locale"
-msgstr "Locale"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:307
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:351
 msgid "Time format"
-msgstr "Formato Orario"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:308
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:347
 msgid "Datetime format"
-msgstr "Formato Data-Ora"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:310
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:335
@@ -1663,19 +1560,19 @@ msgstr "Formato Data-Ora"
 #: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:225
 #: knoda/hk_kdedriverselectbase.cpp:129
 msgid "Alt+O"
-msgstr "Alt+O"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:313
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:338
 #: knoda/hk_kdedriverselectbase.cpp:134
 msgid "O&ptions"
-msgstr "O&pzioni"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:314
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:339
 #: knoda/hk_kdedriverselectbase.cpp:135
 msgid "Alt+P"
-msgstr "Alt+P"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:315
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:340
@@ -1686,7 +1583,7 @@ msgstr "Alt+P"
 #: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:227
 #: knoda/hk_kdedriverselectbase.cpp:136
 msgid "&Help"
-msgstr "&Aiuto"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialogbase.cpp:316
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:341
@@ -1694,151 +1591,150 @@ msgstr "&Aiuto"
 #: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:228
 #: knoda/hk_kdedriverselectbase.cpp:137
 msgid "Alt+H"
-msgstr "Alt+H"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialog.cpp:58
 msgid "CSV export Dialog"
-msgstr "Ambito di esportazione CSV"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialog.cpp:80
 #: hk_kdeclasses/hk_kdecsvimportdialog.cpp:71
 msgid "Tab"
-msgstr "Tab"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialog.cpp:154
 #: hk_kdeclasses/hk_kdexmlexportdialog.cpp:79
 msgid "Exporting data..."
-msgstr "Esportazione dati"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialog.cpp:188
 #: hk_kdeclasses/hk_kdecsvimportdialog.cpp:183
 msgid "Select a CSV file"
-msgstr "Selezionare file CSv"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialog.cpp:227
 #: hk_kdeclasses/hk_kdexmlexportdialog.cpp:198
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:209
 #: hk_kdeclasses/knodamaindockwindow.cpp:487
 msgid "Table"
-msgstr "Tabella"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialog.cpp:228
 #: hk_kdeclasses/hk_kdexmlexportdialog.cpp:199
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:212
 #: hk_kdeclasses/knodamaindockwindow.cpp:516
 msgid "Query"
-msgstr "Interrogazione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvexportdialog.cpp:232
 #: hk_kdeclasses/hk_kdexmlexportdialog.cpp:203
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:215
 msgid "View"
-msgstr "Vista"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:333
 msgid "Text File Import Dialog"
-msgstr "Ambito di importazione dei files di testo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:342
 msgid "Preview:"
-msgstr "Anteprima:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:352
 msgid "Detect \"Autoincrement\" "
-msgstr "Diagnostica \"Autoincrement\""
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:356
 msgid "Append data"
-msgstr "Aggiungi dati"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvimportdialogbase.cpp:363
 msgid "Don't overwrite data in table."
-msgstr "Non sovrascrivere i dati nella tabella"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvimportdialog.cpp:65
 msgid "CSV Import Dialog"
-msgstr "Ambito importazione CSV"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvimportdialog.cpp:66
 #: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:219
 msgid "Filename:"
-msgstr "Nome del File"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvimportdialog.cpp:69
 #: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:217
 #: hk_kdeclasses/hk_kdexmlexportdialog.cpp:153
 msgid "Tablename:"
-msgstr "Nome della Tabella"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdecsvimportdialog.cpp:207
 msgid "Importing data..."
-msgstr "Dati in importazione..."
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:272
 msgid "Database settings"
-msgstr "Impostazioni Database"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:273
 #: hk_kdeclasses/hk_kdedatabasesetting.cpp:161
 msgid "Open and store files:"
-msgstr "Aprire e memorizzare i files:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:275
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:497
 msgid "F1"
-msgstr "F1"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:281
 msgid "Create system table:"
-msgstr "Crea sistema tabelle:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:282
 msgid "C&reate"
-msgstr "C&rea"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:283
 msgid "Alt+R"
-msgstr "Alt+R"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:285
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:466
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:491
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:85 hk_kdeclasses/hk_kdeqbe.cpp:56
 msgid "Yes"
-msgstr "Si"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:286
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:467
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:492
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:86 hk_kdeclasses/hk_kdeqbe.cpp:56
 msgid "No"
-msgstr "No"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:287
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:464
 msgid "Automatic data update:"
-msgstr "Aggiornamento automatico:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:288
-#, fuzzy
 msgid "Load/Store"
-msgstr "Apri/Salva"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:289
 msgid "Queries:"
-msgstr "Interrogazioni:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:290
 msgid "Forms:"
-msgstr "Schede (Forms):"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:291
 msgid "Set all:"
-msgstr "Poni tutti:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:292
 msgid "Reports:"
-msgstr "Resoconti (Reports):"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:293
 msgid "Modules:"
@@ -1846,95 +1742,93 @@ msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesettingbase.cpp:294
 msgid "Encoding:"
-msgstr "Codificando:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesetting.cpp:46
 #: hk_kdeclasses/hk_kdeobjecthandler.cpp:50
 msgid "Local"
-msgstr "Locale"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesetting.cpp:47
 #: hk_kdeclasses/hk_kdeobjecthandler.cpp:49
 msgid "Central"
-msgstr "Centrale"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesetting.cpp:61
 msgid "Load/Save"
-msgstr "Apri/Salva"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesetting.cpp:66
 #: hk_kdeclasses/hk_kdedatabasesetting.cpp:161
 msgid "Regional"
-msgstr "Regionale"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedatabasesetting.cpp:118
 msgid ""
 "Error: could not create central storage table\n"
 " Check your permissions"
 msgstr ""
-"Errore: impossibile creare una tabella di registro centralizzata\n"
-". Controllare i diritti di accesso"
 
 #: hk_kdeclasses/hk_kdedbdesigner.cpp:78
 msgid "Add datasource"
-msgstr "Aggiungere datasource"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedbdesigner.cpp:372
 #: hk_kdeclasses/hk_kdedbdesigner.cpp:1341
 msgid "Edit"
-msgstr "Elabora"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedbdesigner.cpp:374
 #: hk_kdeclasses/hk_kdedbdesigner.cpp:1343
 msgid "Delete"
-msgstr "Elimina"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedbdesigner.cpp:439
 msgid "Remove datasource '%1'?"
-msgstr "Elimina il datasource%1?"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedbdesigner.cpp:1193
 #: hk_kdeclasses/hk_kderelationdialogbase.cpp:192
 msgid "On update:"
-msgstr "In aggiornamento:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedbdesigner.cpp:1193
 #: hk_kdeclasses/hk_kdedbdesigner.cpp:1194
 #: hk_kdeclasses/hk_kderelationdialog.cpp:99
 msgid "Cascade"
-msgstr "A catena"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedbdesigner.cpp:1193
 #: hk_kdeclasses/hk_kdedbdesigner.cpp:1194
 #: hk_kdeclasses/hk_kderelationdialog.cpp:100
 msgid "Restrict"
-msgstr "Delimitato"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedbdesigner.cpp:1194
 #: hk_kdeclasses/hk_kderelationdialogbase.cpp:193
 msgid "On delete:"
-msgstr "In eliminazione:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedblistview.cpp:52
 msgid "Please select"
-msgstr "Selezionare, prego"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedblistview.cpp:196
 msgid "&Schema only"
-msgstr "Solo &Schema "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedblistview.cpp:197
 msgid "Schema and &data"
-msgstr "Schema e &Dati"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedblistview.cpp:201
 msgid "Active database:"
-msgstr "Database attivo:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedblistview.cpp:233
 #: hk_kdeclasses/hk_kdedblistview.cpp:318
 msgid "<No database>"
-msgstr "<No database>"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedblistview.cpp:236
 #: hk_kdeclasses/hk_kdedblistview.cpp:463
@@ -1944,208 +1838,203 @@ msgstr ""
 #: hk_kdeclasses/hk_kdedblistview.cpp:240
 #: hk_kdeclasses/hk_kdedblistview.cpp:432
 msgid "Reports"
-msgstr "Prospetto"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedblistview.cpp:244
 #: hk_kdeclasses/hk_kdedblistview.cpp:397
 msgid "Forms"
-msgstr "Scheda"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedblistview.cpp:250
 #: hk_kdeclasses/hk_kdedblistview.cpp:363
 msgid "Queries"
-msgstr "Interrogazione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedblistview.cpp:260
 msgid "Views"
-msgstr "Vista"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedblistview.cpp:268
 msgid "Tables"
-msgstr "Tabella"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedblistview.cpp:369
 #: hk_kdeclasses/hk_kdedblistview.cpp:403
 #: hk_kdeclasses/hk_kdedblistview.cpp:438
 #: hk_kdeclasses/hk_kdedblistview.cpp:469
 msgid " (Central)"
-msgstr "(Centrale)"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedriverdialog.cpp:62
 msgid "Directory"
-msgstr "Cartella"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedriverdialog.cpp:78
 msgid "Found database drivers:"
-msgstr "Trovati i drivers del Database:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedriverdialog.cpp:79
 msgid "SQL Driver Selection"
-msgstr "Selezione del driver SQL"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedriverdialog.cpp:110
 msgid "Connect"
-msgstr "Connessione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedriverdialog.cpp:111
 #: hk_kdeclasses/hk_kdeindexeditwindow.cpp:168
 msgid "Exit"
-msgstr "Esci"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdedriverdialog.cpp:147
 msgid "Please select a driver"
-msgstr "Selezionare il driver"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:209
 #: hk_kdeclasses/hk_kdeobjecthandlerbase.cpp:120
 msgid "Form1"
-msgstr "Form1"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:210
 #: hk_kdeclasses/hk_kdeobjecthandlerbase.cpp:123
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:155
 msgid "E&xit"
-msgstr "E&sci"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:211
 msgid "Alt+X"
-msgstr "Alt+X"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:212
 msgid "Copy structure and data"
-msgstr "Copia dati e struttura"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeeximportdatabasebase.cpp:216
 msgid "Overwrite"
-msgstr "Sovrascrivi"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeeximportdatabase.cpp:80
 msgid ""
 "Error while creating export/importdb dialog!\n"
 "Database or connection not set!"
 msgstr ""
-"Errore in ambito di importazione/esportazione\n"
-"Database o connessione non attivati!"
 
 #: hk_kdeclasses/hk_kdeeximportdatabase.cpp:109
 msgid "Import database dialog"
-msgstr "Ambito di importazione database"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeeximportdatabase.cpp:109
 msgid "Export database dialog"
-msgstr "Ambito di esportazione database"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeeximportdatabase.cpp:133
 #: hk_kdeclasses/hk_kdeeximportdatabase.cpp:379
 #: hk_kdeclasses/knodamaindockwindow.cpp:146
 msgid "Driver does not support creating new tables"
 msgstr ""
-"Il Driver con contempla gli strumenti per la creazione di una nuova Tabella"
 
 #: hk_kdeclasses/hk_kdeeximportdatabase.cpp:146
 #: hk_kdeclasses/knodamaindockwindow.cpp:270
 msgid "Driver does not support creating new views"
 msgstr ""
-"Il Driver con contempla gli strumenti per la creazione di una nuova Vista"
 
 #: hk_kdeclasses/hk_kdeeximportdatabase.cpp:344
 msgid "Driver does not support creating new databases"
 msgstr ""
-"Il Driver con contempla gli strumenti per la creazione di un nuovo Database"
 
 #: hk_kdeclasses/hk_kdeeximportdatabase.cpp:347
 msgid "Copy whole database?"
-msgstr "Copiare l'intero Database?"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeeximportdatabase.cpp:358
 msgid "Copy whole database failed!"
-msgstr "Copia no riuscita dell'intero Database"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeeximportdatabase.cpp:382
 msgid "Copy all tables?"
-msgstr "Copiare tutte le Tabelle? "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeeximportdatabase.cpp:423
 msgid "Copy all queries?"
-msgstr "Copiare tutte le Interrogazioni (Queries)?"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeeximportdatabase.cpp:424
 msgid "Copy all forms?"
-msgstr "Copiare tutte le Schede?  "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeeximportdatabase.cpp:425
 msgid "Copy all reports?"
-msgstr "Copiare tutti i Prospetti?"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeeximportdatabase.cpp:468
 msgid "Target database does not support views!"
-msgstr "Il Database di destinazione non contempla le Viste!"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeeximportdatabase.cpp:471
 msgid "Copy all views?"
-msgstr "Copiare tutte le Viste?"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeeximportdatabase.cpp:564
 #: hk_kdeclasses/knodamaindockwindow.cpp:122
 msgid "Database could not be created"
-msgstr "Il Database non può esser creato"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdefilterdialogbase.cpp:97
 #: hk_kdeclasses/hk_kdefinddialogbase.cpp:135
 #: hk_kdeclasses/hk_kdemessages.cpp:133
 msgid "MyDialog"
-msgstr "Comunicazione interna"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdefilterdialog.cpp:32
 msgid "Filter Dialog"
-msgstr "Ambito di selezione (filtro)"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdefilterdialog.cpp:33
 #: hk_kdeclasses/hk_kdefinddialog.cpp:38
 #: hk_kdeclasses/hk_kdetaborderbase.cpp:204
 msgid "&Ok"
-msgstr "&Ok"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdefilterdialog.cpp:43
 msgid "Editor"
-msgstr "Elaboratore di testi"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdefinddialogbase.cpp:136
 #: hk_kdeclasses/hk_kdefinddialog.cpp:31
 msgid "Search"
-msgstr "Cerca"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdefinddialogbase.cpp:139
 #: hk_kdeclasses/hk_kdefinddialog.cpp:32
 msgid "Options"
-msgstr "Opzioni"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdefinddialogbase.cpp:140
 #: hk_kdeclasses/hk_kdefinddialog.cpp:33
 msgid "C&ase sensitive"
-msgstr "Consider&a le maiuscole"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdefinddialogbase.cpp:141
 msgid "All &columns"
-msgstr "Tutte le &Colonne"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdefinddialogbase.cpp:142
 #: hk_kdeclasses/hk_kdefinddialog.cpp:30
 msgid "&Part of column"
-msgstr "&Parte del Campo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdefinddialogbase.cpp:143
 #: hk_kdeclasses/hk_kdefinddialog.cpp:35
 msgid "Find &backwards"
-msgstr "Cerca a &ritroso"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdefinddialog.cpp:34
 msgid "All c&olumns"
-msgstr "Tutte le C&olonne"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdefinddialog.cpp:37
 msgid "Search Dialog"
-msgstr "Ambito di ricerca "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeform.cpp:86 hk_kdeclasses/hk_kdemodule.cpp:84
 #: hk_kdeclasses/knodamaindockwindow.cpp:532
@@ -2154,22 +2043,19 @@ msgid ""
 "This is a installation error. Check your installation! Did you install knoda "
 "into the correct directory? Program will exit now..."
 msgstr ""
-"Errore! La parte della Scheda non può essere caricata!\n"
-"Questo è un errore di installazione. Controllate di aver installato Knoda "
-"nella directory esatta! Il programma verrà terminato... "
 
 #: hk_kdeclasses/hk_kdeform.cpp:437 hk_kdeclasses/hk_kdeformpartwidget.cpp:822
 msgid "Form - "
-msgstr "Scheda (Form) - "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:345
 msgid "new formdatasource dialog"
-msgstr "Ambito per un nuovo Datasource di Scheda"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:347
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:90
 msgid "A&lter"
-msgstr "Sal&va (Alter)"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:348
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:91
@@ -2183,167 +2069,161 @@ msgstr "Sal&va (Alter)"
 #: hk_kdeclasses/hk_kdesubreportdialog.cpp:56
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:237
 msgid "&Delete"
-msgstr "Elimi&na"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:350
 msgid "based on:"
-msgstr "Basato su:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:351
 msgid "Sql:"
-msgstr "Sql:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:352
 msgid "filter:"
-msgstr "Filtro:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:354
 msgid "sortingfield"
-msgstr "Campo di ordinamento:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:356
 msgid "depending mode:"
-msgstr "Specifiche di relazione:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:358
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:84
 msgid "depending on"
-msgstr "Dipendente da"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:359
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:70
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:86
 msgid "thisfield"
-msgstr "Obbedisce alla relazione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:360
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:70
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:85
 #: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:343
 msgid "masterfield"
-msgstr "Guida la relazione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:361
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:81
 msgid "react on master changes?"
-msgstr "Sensibile alla relazione di dipendenza?"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:362
 msgid "Is read only?"
-msgstr "Sola lettura?"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialogbase.cpp:363
 msgid "Automatic data update?"
-msgstr "Aggiornamento automatico dei dati"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:75
 msgid "standard"
-msgstr "Standard"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:76
 msgid "no handle"
-msgstr "Non modificabile"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:77
 msgid "change"
-msgstr "Modifica"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:78
 msgid "delete"
-msgstr "Elimina"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:79
 msgid "change+delete"
-msgstr "Modifica ed elimina"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:80
 msgid "depending mode"
-msgstr "Specifiche di relazione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:82
 msgid "is readonly?"
-msgstr "E' di sola lettura?"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:83
 msgid "based on"
-msgstr "Specifiche di impostazione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:87
 msgid "filter"
-msgstr "Filtro"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:88
 msgid "sorting"
-msgstr "Ordinamento"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformdatasourcedialog.cpp:97
 msgid "Datasource dialog"
-msgstr "Ambito specifiche Datasource"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:84
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:218
 #: hk_kdeclasses/knodamaindockwindow.cpp:544
 msgid "Form"
-msgstr "Scheda (Form)"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:118
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:193
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:169
 #: hk_kdeclasses/hk_kdetablepartwidget.cpp:131
 msgid "&Design mode"
-msgstr "&Struttura"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:122
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:197
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:173
 #: hk_kdeclasses/hk_kdetablepartwidget.cpp:136
 msgid "&View mode"
-msgstr "&Visualizza"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:130
 #: hk_kdeclasses/hk_kdemodulepartwidget.cpp:121
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:220
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:189
 msgid "&Save"
-msgstr "&Salva"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:135
 #: hk_kdeclasses/hk_kdemodulepartwidget.cpp:127
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:225
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:193
 msgid "Save &as"
-msgstr "Salva &con nome"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:140
-#, fuzzy
 msgid "Lineedit"
-msgstr "Campo "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:143
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:198
-#, fuzzy
 msgid "Pointer"
-msgstr "Stam&pante"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:146
-#, fuzzy
 msgid "Label"
-msgstr "Etichetta:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:149
-#, fuzzy
 msgid "Multiline"
-msgstr "Files  multipli:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:152
-#, fuzzy
 msgid "Boolean"
-msgstr "Si/No"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:155
-#, fuzzy
 msgid "Combobox"
-msgstr "&Casella Combinata"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:158
 msgid "Grid"
@@ -2352,22 +2232,19 @@ msgstr ""
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:161
 #: hk_kdeclasses/hk_kdeproperty.cpp:539
 msgid "Selector"
-msgstr "Selettore"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:164
-#, fuzzy
 msgid "Button"
-msgstr ">Pulsante"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:167
-#, fuzzy
 msgid "Subform"
-msgstr "Sub Scheda (SubForm)"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:170
-#, fuzzy
 msgid "Image"
-msgstr "Indirizzo Immagine"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:173
 msgid "Tabwidget"
@@ -2380,55 +2257,55 @@ msgstr ""
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:195
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:204
 msgid "select"
-msgstr "Seleziona"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:196
 msgid "textlabel"
-msgstr "Casella di testo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:197
 msgid "lineeditfield"
-msgstr "Campo "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:198
 msgid "memofield"
-msgstr "Memo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:199
 msgid "booleanfield"
-msgstr "Si/No"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:200
 msgid "comboboxfield"
-msgstr "Casella Combinata"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:201
 msgid "gridfield"
-msgstr "Casella di riepilogo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:202
 #: hk_kdeclasses/hk_kdetaborder.cpp:84 hk_kdeclasses/hk_kdetaborder.cpp:148
 msgid "rowselector"
-msgstr "Selettore righe"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:203
 #: hk_kdeclasses/hk_kdetaborder.cpp:83 hk_kdeclasses/hk_kdetaborder.cpp:147
 msgid "button"
-msgstr ">Pulsante"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:207
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:211
 #: hk_kdeclasses/hk_kdesimpleform.cpp:1237
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1187
 msgid "Set to all"
-msgstr "Imposta tutto..."
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:209
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:213
 #: hk_kdeclasses/hk_kdesimpleform.cpp:1239
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1188
 msgid "Font"
-msgstr "Carattere"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:212
 #: hk_kdeclasses/hk_kdeproperty.cpp:188
@@ -2436,7 +2313,7 @@ msgstr "Carattere"
 #: hk_kdeclasses/hk_kdesimpleform.cpp:1243
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1190
 msgid "Foregroundcolour"
-msgstr "Colore testo:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:215
 #: hk_kdeclasses/hk_kdeproperty.cpp:189
@@ -2444,11 +2321,11 @@ msgstr "Colore testo:"
 #: hk_kdeclasses/hk_kdesimpleform.cpp:1247
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1192
 msgid "Backgroundcolour"
-msgstr "Colore sfondo:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:223
 msgid "Tab order"
-msgstr "Ordine di Tabulazione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:227 hk_kdeclasses/hk_kdegrid.cpp:531
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:208
@@ -2466,7 +2343,7 @@ msgstr ""
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:283
 #: hk_kdegridpart/hk_kdegridpart.cpp:59
 msgid "&Copy"
-msgstr "&Copia"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:242
 #: hk_kdeclasses/hk_kdemodulepartwidget.cpp:177
@@ -2478,7 +2355,7 @@ msgstr "&Copia"
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:287
 #: hk_kdegridpart/hk_kdegridpart.cpp:64
 msgid "&Paste"
-msgstr "&Incolla"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:246
 #: hk_kdeclasses/hk_kdemodulepartwidget.cpp:133
@@ -2487,13 +2364,13 @@ msgstr "&Incolla"
 #: hk_kdeclasses/hk_kdesimpleform.cpp:1608
 #: hk_kdeclasses/hk_kdesimplereport.cpp:224
 msgid "Cu&t"
-msgstr "&Taglia"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:250
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:236
 #: hk_kdeclasses/hk_kdesimpleform.cpp:1610
 msgid "&Propertyeditor"
-msgstr "Finestra &proprietà"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:254
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:256
@@ -2501,7 +2378,7 @@ msgstr "Finestra &proprietà"
 #: hk_kdeclasses/hk_kdesimplereport.cpp:228
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1163
 msgid "Adjust &size"
-msgstr "Impo&sta dimensioni"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:256
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:258
@@ -2509,7 +2386,7 @@ msgstr "Impo&sta dimensioni"
 #: hk_kdeclasses/hk_kdesimplereport.cpp:230
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1166
 msgid "Minimum width"
-msgstr "Larghezza minima"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:259
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:261
@@ -2517,7 +2394,7 @@ msgstr "Larghezza minima"
 #: hk_kdeclasses/hk_kdesimplereport.cpp:233
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1168
 msgid "Maximum width"
-msgstr "Larghezza massima"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:262
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:264
@@ -2525,7 +2402,7 @@ msgstr "Larghezza massima"
 #: hk_kdeclasses/hk_kdesimplereport.cpp:236
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1170
 msgid "Minimum height"
-msgstr "Altezza minima"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:265
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:267
@@ -2533,7 +2410,7 @@ msgstr "Altezza minima"
 #: hk_kdeclasses/hk_kdesimplereport.cpp:239
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1172
 msgid "Maximum height"
-msgstr "Altezza massima"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:268
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:270
@@ -2541,7 +2418,7 @@ msgstr "Altezza massima"
 #: hk_kdeclasses/hk_kdesimplereport.cpp:242
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1174
 msgid "Minimum size"
-msgstr "Dimensione minima"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:271
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:273
@@ -2549,7 +2426,7 @@ msgstr "Dimensione minima"
 #: hk_kdeclasses/hk_kdesimplereport.cpp:245
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1176
 msgid "Maximum size"
-msgstr "Dimensione massima"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:281
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:283
@@ -2557,7 +2434,7 @@ msgstr "Dimensione massima"
 #: hk_kdeclasses/hk_kdesimplereport.cpp:255
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1164
 msgid "&Align"
-msgstr "&Allineamento"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:283
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:285
@@ -2565,7 +2442,7 @@ msgstr "&Allineamento"
 #: hk_kdeclasses/hk_kdesimplereport.cpp:257
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1178
 msgid "&Left"
-msgstr "&Sinistra"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:286
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:288
@@ -2573,7 +2450,7 @@ msgstr "&Sinistra"
 #: hk_kdeclasses/hk_kdesimplereport.cpp:260
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1180
 msgid "&Right"
-msgstr "&Destra"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:289
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:291
@@ -2581,7 +2458,7 @@ msgstr "&Destra"
 #: hk_kdeclasses/hk_kdesimplereport.cpp:263
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1182
 msgid "&Top"
-msgstr "S&uperiore"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:292
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:294
@@ -2589,76 +2466,74 @@ msgstr "S&uperiore"
 #: hk_kdeclasses/hk_kdesimplereport.cpp:266
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1184
 msgid "&Bottom"
-msgstr "&Inferiore"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:299
 #: hk_kdeclasses/hk_kdesimpleform.cpp:1637
 msgid "Database designer"
-msgstr "Configurazione Database"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:303
 msgid "with label"
-msgstr "Con etichetta"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:307 hk_kdeclasses/hk_kdegrid.cpp:529
 #: hk_kdeclasses/hk_kdesimpleform.cpp:1294
 msgid "Define columns"
-msgstr "Specifiche colonne "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:313
 #: hk_kdeclasses/hk_kdetablepartwidget.cpp:154
 msgid "Filterdefinition"
-msgstr "Specifiche filtro"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:316
 #: hk_kdeclasses/hk_kdetablepartwidget.cpp:158
 msgid "Filterexecution"
-msgstr "Esegui filtro"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:321
-#, fuzzy
 msgid "Clear filter"
-msgstr "Filtro"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeformpartwidget.cpp:923
 msgid ""
 "hk_kdeformpartwidget::taborder_clicked error: taborder dialog could not be "
 "created!"
 msgstr ""
-"Errore la finestra di dialogo ordine di Tabulazione non può essere creata! "
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:581
 msgid "Column Select"
-msgstr "Selezionare il Campo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:582
 msgid "Visible columns:"
-msgstr "Colonna visibile:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:583
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:56
 msgid "Invisible columns:"
-msgstr "Colonna nascosta:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:586
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:86
 msgid "Columndefinition:"
-msgstr "Specifiche Colonna:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:590
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:83
 msgid "Displayname:"
-msgstr "Intestazione:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:591
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:84
 msgid "Columntype:"
-msgstr "Tipo Colonna:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:592
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:85
 msgid "Digits:"
-msgstr "Cifre:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:593
 #: hk_kdeclasses/hk_kdepropertybase.cpp:988
@@ -2667,28 +2542,28 @@ msgstr "Cifre:"
 #: hk_kdeclasses/hk_kdereportproperty.cpp:520
 #: hk_kdeclasses/hk_kdereportproperty.cpp:532
 msgid "Alignment:"
-msgstr "Allineamento:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:594
 msgid "Separators:"
-msgstr "Separatore:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:595
 #: hk_kdeclasses/hk_kdepropertybase.cpp:966
 msgid "Readonly:"
-msgstr "Sola lettura:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:596
 #: hk_kdeclasses/hk_kdepropertybase.cpp:954
 #: hk_kdeclasses/hk_kdeproperty.cpp:144 hk_kdeclasses/hk_kdeproperty.cpp:507
 msgid "Default value:"
-msgstr "Valore pre-impostato:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:597
 #: hk_kdeclasses/hk_kdepropertybase.cpp:959
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:610
 msgid "Identifier:"
-msgstr "Identificatore:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:598
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:88
@@ -2698,119 +2573,119 @@ msgstr "Identificatore:"
 #: hk_kdeclasses/hk_kdereportproperty.cpp:166
 #: hk_kdeclasses/hk_kdereportproperty.cpp:217
 msgid "&Format"
-msgstr "&Formato"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:599
 #: hk_kdeclasses/hk_kdepropertybase.cpp:965
 #: hk_kdeclasses/hk_kdeproperty.cpp:153
 msgid "Viewcolumn:"
-msgstr "Campo mostrato"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:600
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:87
 msgid "Listdatasourcetype:"
-msgstr "Datasource Casella combinata:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:601
 #: hk_kdeclasses/hk_kdepropertybase.cpp:962
 #: hk_kdeclasses/hk_kdeproperty.cpp:152
 msgid "Listcolumn:"
-msgstr "Campo Casella Combinata"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:602
 #: hk_kdeclasses/hk_kdepropertybase.cpp:964
 #: hk_kdeclasses/hk_kdeproperty.cpp:151
 msgid "Listdatasource:"
-msgstr "Tabella Casella Combinata"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:603
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:89
 msgid "&Combobox"
-msgstr "&Casella Combinata"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:604
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1007
 msgid "On click:"
-msgstr "Su Clic:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:607
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1008
 msgid "On doubleclick:"
-msgstr "Su doppio clic:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:608
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1030
 msgid "On loosefocus:"
-msgstr "In uscita dal campo:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:611
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1010
 msgid "On getfocus:"
-msgstr "Entrati nel campo:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:614
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1021
 msgid "Before insert:"
-msgstr "Prima di inserire:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:616
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1017
 msgid "Before update:"
-msgstr "Dopo inserimento:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:617
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1029
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:648
 msgid "On open:"
-msgstr "In apertura:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:620
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1012
 msgid "Before delete:"
-msgstr "Prima di eliminare"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:621
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1016
 msgid "After update:"
-msgstr "Dopo aggiornamento:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:622
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1018
 msgid "After delete:"
-msgstr "Dopo aver eliminato:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:623
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1028
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:646
 msgid "Before row change:"
-msgstr "Prima di cambiare riga:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:624
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1024
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:649
 msgid "On close:"
-msgstr "Su chiusura:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:629
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1019
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:645
 msgid "After row change:"
-msgstr "Dopo aver cambiato riga:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:631
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1033
 msgid "On key:"
-msgstr "Su pressione tasto:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:632
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1036
 msgid "After insert:"
-msgstr "Dopo aver inserito:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:634
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1034
 msgid "On select:"
-msgstr "Su selezione:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialogbase.cpp:636
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1040
@@ -2818,7 +2693,7 @@ msgstr "Su selezione:"
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:655
 #: hk_kdeclasses/hk_kdereportproperty.cpp:219
 msgid "&Action"
-msgstr "&Evento"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:51
 #: hk_kdeclasses/hk_kdepassworddialog.cpp:342
@@ -2832,7 +2707,7 @@ msgstr "&Evento"
 #: hk_kdeclasses/hk_kdetabledesign.cpp:832
 #: hk_kdeclasses/hk_kdetabledesign.cpp:956
 msgid "no"
-msgstr "No"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:52
 #: hk_kdeclasses/hk_kdepassworddialog.cpp:341
@@ -2846,197 +2721,196 @@ msgstr "No"
 #: hk_kdeclasses/hk_kdetabledesign.cpp:832
 #: hk_kdeclasses/hk_kdetabledesign.cpp:956
 msgid "yes"
-msgstr "Si"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:57
 msgid "Shown columns:"
-msgstr "Mostra colonne: "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:59
 msgid "Column"
-msgstr "Campo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:59
 msgid "Columntype"
-msgstr "Tipo di Campo:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:62
 msgid "Column select"
-msgstr "Campo selezionato"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:65
 #: hk_kdeclasses/hk_kdeproperty.cpp:206
 #: hk_kdeclasses/hk_kdereportproperty.cpp:207
 msgid "set"
-msgstr "Assegnato"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:66
 #: hk_kdeclasses/hk_kdegrid.cpp:116 hk_kdeclasses/hk_kdegrid.cpp:120
 #: hk_kdeclasses/hk_kdeproperty.cpp:207
 #: hk_kdeclasses/hk_kdereportproperty.cpp:208
 msgid "not set"
-msgstr "Non assegnato"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:68
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:122
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:272
 msgid "edit"
-msgstr "Elabora"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:69
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:268
 msgid "bool"
-msgstr "si/no"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:70
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:270
 msgid "combo"
-msgstr "Casella Combinata"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:74
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:71
 #: hk_kdeclasses/hk_kdeproperty.cpp:174
 #: hk_kdeclasses/hk_kdereportproperty.cpp:525
 msgid "Left"
-msgstr "Sinistra"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:75
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:73
 #: hk_kdeclasses/hk_kdeproperty.cpp:175
 #: hk_kdeclasses/hk_kdereportproperty.cpp:525
 msgid "Center"
-msgstr "Centro"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:76
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:72
 #: hk_kdeclasses/hk_kdeproperty.cpp:176
 #: hk_kdeclasses/hk_kdereportproperty.cpp:526
 msgid "Right"
-msgstr "Destra"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:81
 msgid "Read only:"
-msgstr "Sola lettura:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegridcolumndialog.cpp:82
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:476
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:83
 #: hk_kdeclasses/hk_kdeproperty.cpp:181
 msgid "Separator:"
-msgstr "Separatore:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegrid.cpp:66 hk_kdeclasses/hk_kdegrid.cpp:544
 msgid "Copy"
-msgstr "Copia"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegrid.cpp:101
 msgid "Datasource: "
-msgstr "Datasource: "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegrid.cpp:107 hk_kdeclasses/hk_kdegrid.cpp:114
 msgid "readonly"
-msgstr "Sola lettura"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegrid.cpp:109 hk_kdeclasses/hk_kdegrid.cpp:114
 msgid "readwrite"
-msgstr "Lettura/Scrittura "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegrid.cpp:110
 msgid " Column: "
-msgstr "Campo "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegrid.cpp:533 hk_kdeclasses/hk_kdeproperty.cpp:126
 #: hk_kdeclasses/hk_kderowselector.cpp:79
 msgid "Delete row"
-msgstr "Elimina riga"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegrid.cpp:535 hk_kdeclasses/hk_kdelineedit.cpp:418
 msgid "Find"
-msgstr "Cerca"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegrid.cpp:537 hk_kdeclasses/hk_kdelineedit.cpp:420
 #: hk_kdeclasses/hk_kdememo.cpp:419
 msgid "set 'NULL' value"
-msgstr "Imposta il valore a 'NULL'"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegrid.cpp:540
 msgid "Load from file"
-msgstr "Leggi dal file"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegrid.cpp:542
 msgid "Save to file"
-msgstr "Salva su file"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegrid.cpp:547
 msgid "Paste"
-msgstr "Incolla"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdegrid.cpp:725 hk_kdeclasses/hk_kdelineedit.cpp:509
 #: hk_kdeclasses/hk_kdememo.cpp:495
 msgid "Not found."
-msgstr "Non trovato"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeimage.cpp:49
 msgid "&Fit to size"
-msgstr "A&datta alla misura"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeimage.cpp:50
 msgid "O&riginal size"
-msgstr "Dimensione o&riginale"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeimage.cpp:51
 msgid "Zoom &in"
-msgstr "Zoom &in"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeimage.cpp:52
 msgid "Zoom &out"
-msgstr "Zoom &out"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeimage.cpp:56
 msgid "&Load image"
-msgstr "Ca&rica Immagine"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeimage.cpp:58
 msgid "&Save image"
-msgstr "&Salva immagine"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeimage.cpp:183 hk_kdeclasses/hk_kdeimage.cpp:300
 msgid "No image"
-msgstr "Nessuna immagine"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeimage.cpp:354 hk_kdeclasses/hk_kdeimage.cpp:365
-#, fuzzy
 msgid "No image "
-msgstr "Nessuna immagine"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeindexeditwindow.cpp:50
 msgid "Index Edit - Table:"
-msgstr "Assegnazione Indice - Tabella:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeindexeditwindow.cpp:62
 msgid "Free fields:"
-msgstr "Campo libero:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeindexeditwindow.cpp:101
 msgid "Used fields:"
-msgstr "Campo utilizzato:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeindexeditwindow.cpp:120
 msgid "Indexname:"
-msgstr "Nome dell'indice"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeindexeditwindow.cpp:134
 #: hk_kdeclasses/hk_kdetabledesign.cpp:72
 msgid "Unique"
-msgstr "Unico"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeindexeditwindow.cpp:162
 msgid "OK"
-msgstr "Ok"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeindexeditwindow.cpp:237
 msgid "Index could not be altered"
-msgstr "L'indice non può essere salvato"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeinterpreterdialog.cpp:89
 #: hk_kdeclasses/hk_kdemodulepartwidget.cpp:95
@@ -3049,15 +2923,15 @@ msgstr ""
 
 #: hk_kdeclasses/hk_kdemessages.cpp:134
 msgid "Please enter:"
-msgstr "Invio prego:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdemessages.cpp:149
 msgid "Information"
-msgstr "Informazioni"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdemessages.cpp:156
 msgid "Please decide"
-msgstr "Sciegliere:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdemodule.cpp:253
 #: hk_kdeclasses/hk_kdemodulepartwidget.cpp:360
@@ -3069,12 +2943,12 @@ msgstr ""
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:181
 #: hk_kdeclasses/hk_kdetablepartwidget.cpp:120
 msgid "&Print"
-msgstr "&Stampa"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdemodulepartwidget.cpp:144
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:253
 msgid "&Undo"
-msgstr "&Annulla"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdemodulepartwidget.cpp:155
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:261
@@ -3088,9 +2962,8 @@ msgstr ""
 
 #: hk_kdeclasses/hk_kdemodulepartwidget.cpp:199
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:290
-#, fuzzy
 msgid "&Find"
-msgstr "Cerca"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdemodulepartwidget.cpp:210
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:298
@@ -3099,297 +2972,294 @@ msgstr ""
 
 #: hk_kdeclasses/hk_kdemodulepartwidget.cpp:221
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:305
-#, fuzzy
 msgid "Find Pre&vious"
-msgstr "Tro&va nel Campo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdemodulepartwidget.cpp:232
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:313
-#, fuzzy
 msgid "Select &All"
-msgstr "Selettore"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdemodulepartwidget.cpp:243
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:321
-#, fuzzy
 msgid "Configure &editor"
-msgstr "Imposta Datasource"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdenewdatabasebase.cpp:123
 msgid "New database dialog"
-msgstr "Nuovo ambito database"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdenewdatabasebase.cpp:124
 msgid "New database name:"
-msgstr "Nuovo nome Database:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdenewdatabase.cpp:73
 msgid "New local database file"
-msgstr "Nuovo file  Database locale"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdenewpassworddialogbase.cpp:137
 #: hk_kdeclasses/hk_kdenewpassworddialog.cpp:36
 msgid "Password dialog"
-msgstr "Ambito Parola di accesso"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdenewpassworddialogbase.cpp:138
 msgid "Repeat: "
-msgstr "Ripetere:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdenewpassworddialogbase.cpp:139
 msgid "New Password: "
-msgstr "Nuova parola di accesso:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdenewpassworddialogbase.cpp:142
 #: hk_kdeclasses/hk_kdenewpassworddialog.cpp:33
 msgid "Enter new password"
-msgstr "Digitare la nuova parola di accesso"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdenewpassworddialog.cpp:34
 msgid "New password:"
-msgstr "Nuova parola di accesso:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdenewpassworddialog.cpp:35
 msgid "Repeat:"
-msgstr "Ripetere:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdenewpassworddialog.cpp:64
 msgid "The two entries are different!"
-msgstr "I due dati inseriti sono differenti|"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeobjecthandler.cpp:51
 msgid "Database object handler"
-msgstr "Navigatore oggetti Database"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepassworddialog.cpp:128
 msgid "Password Dialog"
-msgstr "Ambito Parola di Accesso"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepassworddialog.cpp:135
 msgid "Mandatory login details:"
-msgstr "Dettagli Mandatory login: "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepassworddialog.cpp:172
 msgid "&Host:"
-msgstr "&Host"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepassworddialog.cpp:194
 msgid "Database &name:"
-msgstr "&Nome Database"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepassworddialog.cpp:235
 msgid "&User:"
-msgstr "&Utilizzatore (User)"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepassworddialog.cpp:267
 msgid "&Password:"
-msgstr "&Parola d'Accesso"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepassworddialog.cpp:290
 msgid "&TCP Port:"
-msgstr "Porta &TCP"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepassworddialog.cpp:313
 msgid "S&QL Delimiter:"
-msgstr "Delimitatore S&QL"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepassworddialog.cpp:338
 msgid "&Emulate Boolean:"
-msgstr "&Emulatore Si/No:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepassworddialog.cpp:366
 msgid "&Save settings"
-msgstr "&Salva impostazioni"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:453
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:47
 msgid "Preferences"
-msgstr "Preferenze:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:454
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:51
 msgid "Driverpath:"
-msgstr "Indirizzo Driver:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:456
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:57
 msgid "Default driver:"
-msgstr "Default driver:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:457
 msgid "Snap to grid x:"
-msgstr "Passo in x griglia:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:458
 msgid "Snap to grid y:"
-msgstr "Passo in y griglia:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:459
 msgid "Metric system:"
-msgstr "Sistema di misura:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:461
 msgid "Relative"
-msgstr "Relativo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:462
 msgid "Absolute"
-msgstr "Assoluto"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:463
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:55
 msgid "Store password:"
-msgstr "Salva Codice d'Accesso"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:468
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:50
 msgid "&General"
-msgstr "&Generale"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:469
 msgid "show maximized: "
-msgstr "Mostra ingrandito:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:470
 msgid "be pedantic:"
-msgstr "insistere:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:471
 msgid "Use single click:"
-msgstr "Singolo click"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:472
 msgid "&Appearance"
-msgstr "&Aspetto"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:473
 msgid "Default font:"
-msgstr "Carattere preimpostato:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:474
 msgid "Textalignment:"
-msgstr "Allineamento del testo:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:475
 msgid "Numberalignment:"
-msgstr "Allineamento dei numeri:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:477
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:84
 #: hk_kdeclasses/hk_kdeproperty.cpp:180
 #: hk_kdeclasses/hk_kdereportproperty.cpp:169
 msgid "Precision:"
-msgstr "Cifre decimali:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:478
 msgid "&Defaults"
-msgstr "&Defaults"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:479
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:44
 msgid "Date format:"
-msgstr "Formattazione Data:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:480
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:45
 msgid "Time format:"
-msgstr "Formattazione ora:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:481
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:46
 msgid "Date&Time format:"
-msgstr "Formattazione Data-Ora:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:483
 msgid "cm"
-msgstr "Cm"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:484
 msgid "inch"
-msgstr "Pollici"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:485
 msgid "Measure system:"
-msgstr "Sistema di misura:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:486
 msgid "Locale:"
-msgstr "Local:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:487
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:48
 msgid "&Regional"
-msgstr "&Nazionale:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:488
 msgid "Print command:"
-msgstr "Comando di stampa:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:494
 msgid "Embed fonts:"
-msgstr "Fonts interni: "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialogbase.cpp:495
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:49
 msgid "&Printer"
-msgstr "Stam&pante"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:52
 msgid "Printcommand:"
-msgstr "Comando di stampa:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:53
 msgid "Show all questions:"
-msgstr "Chiedi sempre conferma:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:54
 msgid "Show maximized:"
-msgstr "Mostra ingrandito:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:56
 msgid "Default Font:"
-msgstr "Font preimpostato:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:81
 msgid "Text alignment:"
-msgstr "Allineamento del testo:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:82
 msgid "Number alignment:"
-msgstr "Allineamento dei numeri:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:96
 msgid "Singleclick"
-msgstr "Singolo click "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepreferencesdialog.cpp:97
 msgid "Doubleclick"
-msgstr "Doppio click"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:951
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:605
 msgid "Property Editor"
-msgstr "Finestra porpietà"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:952
 #: hk_kdeclasses/hk_kdeproperty.cpp:534
 msgid "Combomode:"
-msgstr "Casella combinata"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:953
 #: hk_kdeclasses/hk_kdeproperty.cpp:133
 msgid "Label:"
-msgstr "Etichetta:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:956
 #: hk_kdeclasses/hk_kdeproperty.cpp:140
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:614
 msgid "Datasource:"
-msgstr "Datasource: "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:957
 msgid "Tooltip:"
-msgstr "Commento a comparsa:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:958
 #: hk_kdeclasses/hk_kdeproperty.cpp:141
@@ -3398,7 +3268,7 @@ msgstr "Commento a comparsa:"
 #: hk_kdeclasses/hk_kdetaborderbase.cpp:194
 #: hk_kdeclasses/hk_kdetaborderbase.cpp:203
 msgid "Column:"
-msgstr "Campo (Colonna): "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:960
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:615
@@ -3406,15 +3276,15 @@ msgstr "Campo (Colonna): "
 #: hk_kdeclasses/hk_kdetaborderbase.cpp:191
 #: hk_kdeclasses/hk_kdetaborderbase.cpp:200
 msgid "Id:"
-msgstr "Id:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:961
 msgid "Subform:"
-msgstr "Sub Scheda (SubForm)"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:967
 msgid "Use textlist:"
-msgstr "Utilizza un elenco"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:970
 #: hk_kdeclasses/hk_kdeproperty.cpp:77
@@ -3422,43 +3292,43 @@ msgstr "Utilizza un elenco"
 #: hk_kdeclasses/hk_kdereportproperty.cpp:167
 #: hk_kdeclasses/hk_kdereportproperty.cpp:218
 msgid "&Data"
-msgstr "&Data"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:972
 #: hk_kdeclasses/hk_kdeproperty.cpp:134
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:625
 #: hk_kdeclasses/hk_kdereportproperty.cpp:505
 msgid "X:"
-msgstr "X:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:973
 #: hk_kdeclasses/hk_kdeproperty.cpp:186
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:623
 msgid "Bold:"
-msgstr "Grassetto:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:974
 #: hk_kdeclasses/hk_kdereportproperty.cpp:191
 msgid "Backgroundcolour:"
-msgstr "Colore dello sfondo:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:975
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:628
 #: hk_kdeclasses/hk_kdereportsectiondialogbase.cpp:187
 msgid "TextLabel2"
-msgstr "Etichetta di testo 2"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:976
 #: hk_kdeclasses/hk_kdeproperty.cpp:139
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:620
 msgid "Fontsize:"
-msgstr "Dimensione carattere:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:977
 #: hk_kdeclasses/hk_kdeproperty.cpp:138
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:618
 msgid "Font:"
-msgstr "Carattere:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:978
 #: hk_kdeclasses/hk_kdeproperty.cpp:137 hk_kdeclasses/hk_kdeproperty.cpp:470
@@ -3466,98 +3336,98 @@ msgstr "Carattere:"
 #: hk_kdeclasses/hk_kdereportproperty.cpp:172
 #: hk_kdeclasses/hk_kdereportproperty.cpp:478
 msgid "Height:"
-msgstr "Altezza:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:979
 #: hk_kdeclasses/hk_kdeproperty.cpp:135
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:619
 #: hk_kdeclasses/hk_kdereportproperty.cpp:517
 msgid "Y:"
-msgstr "Y:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:981
 #: hk_kdeclasses/hk_kdereportproperty.cpp:178
 msgid "Foregroundcolour:"
-msgstr "Colore carattere:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:982
 #: hk_kdeclasses/hk_kdeproperty.cpp:136 hk_kdeclasses/hk_kdeproperty.cpp:469
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:617
 msgid "Width:"
-msgstr "Larghezza:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:983
 #: hk_kdeclasses/hk_kdeproperty.cpp:187
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:624
 msgid "Italic:"
-msgstr "Italico:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:984
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:627
 #: hk_kdeclasses/hk_kdereportsectiondialogbase.cpp:182
 msgid "TextLabel1"
-msgstr "Etichetta di testo 1"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:985
 msgid "Scale:"
-msgstr "Scala:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:986
 msgid "%"
-msgstr "%"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:987
 msgid "Fit to frame"
-msgstr "Adatta al frame:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:989
 msgid "Enabled:"
-msgstr "Abilitato:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:990
 #: hk_kdeclasses/hk_kdeproperty.cpp:643
 msgid "Local image:"
-msgstr "Immagine locale:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:992
 msgid "Is togglebutton:"
-msgstr "Is togglebutton:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:993
 msgid "Is pushed:"
-msgstr "Se premuto:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:995
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:632
 msgid "TopLine:"
-msgstr "Linea superiore:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:996
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:633
 msgid "BottomLine:"
-msgstr "Linea superiore:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:997
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:636
 #: hk_kdeclasses/hk_kdereportproperty.cpp:155
 msgid "DiagonalLURO:"
-msgstr "Diagonale disc."
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:998
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:637
 #: hk_kdeclasses/hk_kdereportproperty.cpp:156
 msgid "DiagonalLORU:"
-msgstr "Diagonale asc."
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:999
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:634
 msgid "LeftLine:"
-msgstr "Linea sx"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1000
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:635
 msgid "RightLine:"
-msgstr "Linea dx"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1001
 #: hk_kdeclasses/hk_kdeproperty.cpp:92
@@ -3565,226 +3435,226 @@ msgstr "Linea dx"
 #: hk_kdeclasses/hk_kdereportproperty.cpp:168
 #: hk_kdeclasses/hk_kdereportproperty.cpp:220
 msgid "F&rame"
-msgstr "F&rame"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1002
 msgid "Action"
-msgstr "Azione Evento"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1003
 msgid "Object"
-msgstr "Oggetto"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1005
 #: hk_kdeclasses/hk_kdeproperty.cpp:155
 msgid "show maximized:"
-msgstr "Mostra ingrandito:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdepropertybase.cpp:1038
 msgid "On value changed:"
-msgstr "Su cambiamento"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:115
 msgid "Open form"
-msgstr "Apertura Scheda (Form)"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:116
 msgid "Close form"
-msgstr "Chiusura Scheda (Form)"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:117
 msgid "Open table"
-msgstr "Apertura Tabella"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:118
 msgid "Open query"
-msgstr "Apre Interrogazione "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:119
 msgid "Preview report"
-msgstr "Anteprima Prospetto"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:120
 msgid "Print report"
-msgstr "Stampa Prospetto"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:121
 msgid "Goto first row"
-msgstr "Prima riga"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:122
 msgid "Goto last row"
-msgstr "Ultima riga"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:123
 msgid "Goto next row"
-msgstr "Prossima riga"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:124
 msgid "Goto previous row"
-msgstr "Riga precedente"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:125
 msgid "Insert row"
-msgstr "Inserisci riga"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:127
 msgid "Store row"
-msgstr "Salva riga"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:128
 msgid "Execute actionquery"
-msgstr "Esegue Interrogazione (Query) di comando"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:129
 msgid "Close application"
-msgstr "Chiudi applicazione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:130
 msgid "Open view"
-msgstr "Apri Vista"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:142
 msgid "Action:"
-msgstr "Azione (Evento):"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:143
 msgid "Object:"
-msgstr "Oggetto:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:177
 #: hk_kdeclasses/hk_kdereportproperty.cpp:526
 msgid "Default"
-msgstr "Default:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:213
 #: hk_kdeclasses/hk_kdereportproperty.cpp:213
 msgid "Press <F2> for a larger editor window"
-msgstr "Premi <F2> per aprire la finestra di elaborazione estesa"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:441
 #: hk_kdeclasses/hk_kdereportproperty.cpp:445
 msgid "Property editor ("
-msgstr "Finestra delle proprietà"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:537
 msgid "Combo"
-msgstr "Casella Combinata"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:538
 msgid "Combo (nonwritable)"
-msgstr "Casella Combinata (Sola lettura)"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:582
 #: hk_kdeclasses/hk_kdereportproperty.cpp:563
 msgid "relative"
-msgstr "Relativo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:583
 #: hk_kdeclasses/hk_kdereportproperty.cpp:564
 msgid "absolute"
-msgstr "Assoluto"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:584
 #: hk_kdeclasses/hk_kdereportproperty.cpp:568
 msgid "Sizetype:"
-msgstr "Tipo di misura:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:593
 msgid "Form width:"
-msgstr "Larghezza della Scheda (Form)"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:594
 msgid "Form height:"
-msgstr "Altezza della Scheda (Form)"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:614
 msgid "Icon:"
-msgstr "Icona:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:653
 msgid "Image path:"
-msgstr "Indirizzo Immagine"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeproperty.cpp:2149
 msgid "Image '%1' could not be loaded"
-msgstr "Immagine %1 non può essere caricata"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeqbe.cpp:53
 msgid "Group"
-msgstr "Gruppo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeqbe.cpp:53
 msgid "Sum"
-msgstr "Somma"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeqbe.cpp:53
 msgid "Count"
-msgstr "Conta"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeqbe.cpp:53
 msgid "Min"
-msgstr "Min"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeqbe.cpp:54
 msgid "Max"
-msgstr "Max"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeqbe.cpp:54
 msgid "Average"
-msgstr "Media"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeqbe.cpp:54
 msgid "Condition"
-msgstr "Condizione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeqbe.cpp:55
 msgid "none"
-msgstr "Nessuno"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeqbe.cpp:55
 msgid "ascending"
-msgstr "Crescente"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeqbe.cpp:55
 msgid "descending"
-msgstr "Decrescente"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeqbe.cpp:302
 msgid "Table:"
-msgstr "Tabella:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeqbe.cpp:303 hk_kdeclasses/hk_kdetabledesign.cpp:173
 msgid "Fieldname:"
-msgstr "Nome del Campo (Colonna):"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeqbe.cpp:304
 msgid "Alias:"
-msgstr "Intestazione Colonna:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeqbe.cpp:305
 msgid "Function:"
-msgstr "Funzione:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeqbe.cpp:306
 msgid "Order:"
-msgstr "Ordine:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeqbe.cpp:307
 msgid "Show:"
-msgstr "Mostra:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeqbe.cpp:308
 msgid "Updatevalue:"
-msgstr "Aggiorna valori:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeqbe.cpp:309
 msgid "Criteria:"
-msgstr "Criteri:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdeqbe.cpp:310
 msgid "Or:"
-msgstr "Oppure:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdequery.cpp:67 hk_kdeclasses/knodamaindockwindow.cpp:501
 msgid ""
@@ -3792,19 +3662,16 @@ msgid ""
 "This is a installation error. Check your installation! Did you install knoda "
 "into the correct directory? Program will exit now..."
 msgstr ""
-"Errore grave! L'interrogazione (Query) non può essere caricata\n"
-"Errore di installazione: controllatela! Avete installato knoda nella "
-"corretta directory? Il programma verrà chiuso."
 
 #: hk_kdeclasses/hk_kdequery.cpp:194
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:759
 msgid "View - "
-msgstr "Vista -"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdequery.cpp:194
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:759
 msgid "Query - "
-msgstr "Interrogazione (Query) - "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:119
 #: hk_kdeclasses/hk_kdesimpleform.cpp:218
@@ -3814,20 +3681,13 @@ msgid ""
 "This is a installation error. Check your installation! Did you install knoda "
 "into the correct directory? Program will exit now..."
 msgstr ""
-"Errore grave! La Casella di Riepilogo non può essere caricata\n"
-"Errore di installazione: controllatela! Avete installato knoda nella "
-"corretta directory? Il programma verrà chiuso."
 
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:127
-#, fuzzy
 msgid ""
 "Fatal error! QBE part could not be loaded!\n"
 "This is a installation error. Check your installation! Did you install knoda "
 "into the correct directory? Program will exit now..."
 msgstr ""
-"Errore grave! L'interrogazione (Query) non può essere caricata\n"
-"Errore di installazione: controllatela! Avete installato knoda nella "
-"corretta directory? Il programma verrà chiuso."
 
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:212
 msgid "use &QBE"
@@ -3838,46 +3698,45 @@ msgstr ""
 #: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:63
 #: hk_kdeqbepart/hk_kdeqbepart.cpp:69 hk_kdeqbepart/hk_kdeqbepart.cpp:81
 msgid "&Add datasource"
-msgstr "&Aggiungi Datasource"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:231
 msgid "&Copy backend SQL"
 msgstr ""
 
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:236
-#, fuzzy
 msgid "Store result"
-msgstr "Salva riga"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:240
 #: hk_kdeqbepart/hk_kdeqbepart.cpp:72
 msgid "&Distinct rows"
-msgstr "Senza righe &duplicate"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:328
 #: hk_kdeqbepart/hk_kdeqbepart.cpp:77
 msgid "Select query"
-msgstr "Interrogazione (Query) di selezione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:329
 #: hk_kdeqbepart/hk_kdeqbepart.cpp:78
 msgid "Groupselect query"
-msgstr "Interrogazione (Query) di selezione con raggruppamenti"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:330
 #: hk_kdeqbepart/hk_kdeqbepart.cpp:79
 msgid "Update query"
-msgstr "Interrogazione (Query) di aggiornamento"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:331
 #: hk_kdeqbepart/hk_kdeqbepart.cpp:80
 msgid "Delete query"
-msgstr "Interrogazione (Query) di eliminazione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:534
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:564
 msgid "Query could not be executed"
-msgstr "L'Interrogazione (Query) non può essere eseguita "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:555
 msgid ""
@@ -3885,138 +3744,134 @@ msgid ""
 "Are you sure that you want to execute the following SQL code?\n"
 "\n"
 msgstr ""
-"Attenzione: questa funzione non è stabile\n"
-"si è sicuri di voler eseguire il seguente codice SQL?\n"
-"\n"
 
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:562
 msgid "Query was successful"
-msgstr "Interrogazione (Query) eseguita"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdequerypartwidget.cpp:838
 msgid ""
 "If you change to the QBE window your SQL statement will be lost. Continue?"
 msgstr ""
-"Se cambiate il finestra QBE il codice SQL potrebbe andar perso. Continuare? "
 
 #: hk_kdeclasses/hk_kderelationdialogbase.cpp:163
 #: hk_kdeclasses/hk_kderelationdialogbase.cpp:202
 msgid "Master"
-msgstr "Di riferimento"
+msgstr ""
 
 #: hk_kdeclasses/hk_kderelationdialogbase.cpp:163
 #: hk_kdeclasses/hk_kderelationdialogbase.cpp:201
 msgid "Slave"
-msgstr "Dipendente"
+msgstr ""
 
 #: hk_kdeclasses/hk_kderelationdialogbase.cpp:190
 msgid "hk_kderelationdialog"
-msgstr "Ambito kde relazioni"
+msgstr ""
 
 #: hk_kdeclasses/hk_kderelationdialogbase.cpp:191
 msgid "Referential Integrity"
-msgstr "Integrità referenziale"
+msgstr ""
 
 #: hk_kdeclasses/hk_kderelationdialogbase.cpp:194
 msgid "Relationship method"
-msgstr "Metodo di interdipendenza"
+msgstr ""
 
 #: hk_kdeclasses/hk_kderelationdialogbase.cpp:195
 msgid "Equivalent rows in both datasources"
-msgstr "Medesima riga in entrambi i datasource"
+msgstr ""
 
 #: hk_kdeclasses/hk_kderelationdialogbase.cpp:196
 msgid "All of 'master' and equivalent rows of 'slave'"
-msgstr "Tutti quelli di Riferimento e le relative righe Dipendenti"
+msgstr ""
 
 #: hk_kdeclasses/hk_kderelationdialog.cpp:58
 msgid "All of '%1' and equivalent rows of '%2'"
-msgstr "Tutti quelli di %1 e le equivalenti righe di %2"
+msgstr ""
 
 #: hk_kdeclasses/hk_kderelationdialog.cpp:280
 msgid "The relation between '%1' and '%2' is in the way. Remove it?"
-msgstr "La relazione tra %1 e %2 è ovvia. Rimuoverla?"
+msgstr ""
 
 #: hk_kdeclasses/hk_kderelationdialog.cpp:313
 msgid "Error: could not delete old reference"
-msgstr "Errore: non possono essere rimossi i vecchi riferimenti"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:203
 msgid "hk_kdereportconditiondialogbase"
-msgstr "hk_report ambito condizionale di base"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:209
 #: hk_kdeclasses/hk_kdereportconditiondialog.cpp:88
 msgid "Condition:"
-msgstr "Condizioni:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:212
 msgid "="
-msgstr "="
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:213
 msgid "<"
-msgstr "<"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:214
 msgid "<="
-msgstr "<="
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:215
 msgid ">"
-msgstr ">"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:216
 msgid ">="
-msgstr ">="
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:217
 msgid "<>"
-msgstr "<>"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:218
 #: hk_kdeclasses/hk_kdereportconditiondialog.cpp:89
 msgid "Reportfield:"
-msgstr "Campo del Prospetto:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:219
 #: hk_kdeclasses/hk_kdereportconditiondialog.cpp:37
 msgid "Formdatasource:"
-msgstr "Datasource della Scheda: "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportconditiondialogbase.cpp:220
 #: hk_kdeclasses/hk_kdereportconditiondialog.cpp:38
 msgid "Formfield:"
-msgstr "Campo della Scheda:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportconditiondialog.cpp:84
 #: hk_kdeclasses/hk_kdereportconditiondialog.cpp:89
 msgid "Masterfield"
-msgstr "Campo di riferimento "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportconditiondialog.cpp:85
 msgid "Reportfield"
-msgstr "Campo del Prospetto "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportconditiondialog.cpp:85
 msgid "condition"
-msgstr "condizione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportconditiondialog.cpp:86
 msgid "formdatasource"
-msgstr "Datasource della Scheda"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportconditiondialog.cpp:86
 msgid "formfield"
-msgstr "Campo della Scheda "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportconditiondialog.cpp:87
 msgid "Formconditiondialog"
-msgstr "Ambito condizionale della Scheda"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportconditiondialog.cpp:87
 msgid "Reportconditiondialog"
-msgstr "Ambito condizionale del Prospetto"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereport.cpp:73 hk_kdeclasses/knodamaindockwindow.cpp:562
 msgid ""
@@ -4024,14 +3879,11 @@ msgid ""
 "This is a installation error. Check your installation! Did you install knoda "
 "into the correct directory? Program will exit now..."
 msgstr ""
-"Errore grave! Il Prospetto (Report) non può essere caricata\n"
-"Errore di installazione: controllatela! Avete installato knoda nella "
-"corretta directory? Il programma verrà chiuso...."
 
 #: hk_kdeclasses/hk_kdereport.cpp:251
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:645
 msgid "Report - "
-msgstr "Prospetto -"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:111
 msgid "Could not find a preview part!"
@@ -4039,324 +3891,318 @@ msgstr ""
 
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:185
 msgid "Sectionselect"
-msgstr "Selezione Sezione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:188
 msgid "sections"
-msgstr "Sezione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:201
-#, fuzzy
 msgid "Field"
-msgstr "Campo_"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:208
 msgid "new field"
-msgstr "Nuovo Campo "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportpartwidget.cpp:401
 msgid "Cannot close now, because the report '%1' is executing. Cancel it first"
 msgstr ""
-"Non è possibile chiudere adesso a causa del Prospetto %1 in esecuzione. "
-"Prima cancellatelo."
 
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:606
 #: hk_kdeclasses/hk_kdereportproperty.cpp:162
 #: hk_kdeclasses/hk_kdesubreportdialog.cpp:54
 msgid "Subreport:"
-msgstr "SubProspetto"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:611
 msgid "RunningCount:"
-msgstr "RunningCount:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:612
 #: hk_kdeclasses/hk_kdereportproperty.cpp:163
 msgid "Value:"
-msgstr "Valore:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:613
 #: hk_kdeclasses/hk_kdereportproperty.cpp:171
 msgid "Sorting:"
-msgstr "Ordinamento:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:621
 #: hk_kdeclasses/hk_kdereportproperty.cpp:161
 msgid "Reporttype:"
-msgstr "Tipo di Prospetto:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:629
 msgid "Linebreak:"
-msgstr "Interlinea:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:630
 msgid "Dynamic height:"
-msgstr "Altezza dinamica:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:638
 #: hk_kdeclasses/hk_kdereportproperty.cpp:160
 msgid "Border Right:"
-msgstr "Margine Destro:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:639
 #: hk_kdeclasses/hk_kdereportproperty.cpp:159
 msgid "Border Left:"
-msgstr "Margine Sinistro:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:640
 #: hk_kdeclasses/hk_kdereportproperty.cpp:158
 msgid "Border Bottom:"
-msgstr "Piè di pagina:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:641
 #: hk_kdeclasses/hk_kdereportproperty.cpp:157
 msgid "Border Top:"
-msgstr "Intestazione:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:643
 msgid "On print:"
-msgstr "Su stampa:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportpropertybase.cpp:650
 msgid "On new page:"
-msgstr "Su nuova pagina:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportproperty.cpp:137
 msgid "Ascending"
-msgstr "Crescente"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportproperty.cpp:138
 msgid "Descending"
-msgstr "Decrescente"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportproperty.cpp:151
 msgid "Top line:"
-msgstr "Linea superiore:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportproperty.cpp:152
 msgid "Bottom line:"
-msgstr "Linea inferiore:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportproperty.cpp:153
 msgid "Left line:"
-msgstr "Linea sinistra: "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportproperty.cpp:154
 msgid "Right line:"
-msgstr "Linea destra:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportproperty.cpp:164
 #: hk_kdeclasses/hk_kdereportproperty.cpp:535
 msgid "Wordbreak:"
-msgstr "Interlinea:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportproperty.cpp:165
 #: hk_kdeclasses/hk_kdereportproperty.cpp:493
 #: hk_kdeclasses/hk_kdereportproperty.cpp:536
 msgid "Running count:"
-msgstr "Running Count:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportproperty.cpp:543
 msgid "New page:"
-msgstr "Nuova pagina"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportproperty.cpp:544
 msgid "Offset:"
-msgstr "Intervallo:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportproperty.cpp:575
 msgid "Userdefined"
-msgstr "Definizioni utente"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportproperty.cpp:581
 msgid "Pageformat:"
-msgstr "Formato della Pagina:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportproperty.cpp:588
 msgid "Portrait"
-msgstr "Verticale"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportproperty.cpp:589
 msgid "Landscape"
-msgstr "Orizzontale"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportproperty.cpp:609
 msgid "First pagenumber:"
-msgstr "Numero della prima pagina:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportproperty.cpp:610
 msgid "Orientation:"
-msgstr "Orientamento:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportproperty.cpp:613
 msgid "Multiple files:"
-msgstr "Files  multipli:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportproperty.cpp:852
 #: hk_kdeclasses/hk_kdereportproperty.cpp:1195
 msgid "None"
-msgstr "Nessuno:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportsectiondialogbase.cpp:181
 msgid "hk_kdereportsectiondialogbase"
-msgstr "Ambito sezione hk_report"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportsectiondialogbase.cpp:188
 msgid "&Exit"
-msgstr "&Esci"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportsectiondialog.cpp:38
 msgid "Section to add:"
-msgstr "Sezione da aggiungere:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdereportsectiondialog.cpp:39
 msgid "Existing sections"
-msgstr "Sezione esistente"
+msgstr ""
 
 #: hk_kdeclasses/hk_kderowselector.cpp:74
 msgid "Goto first"
-msgstr "Vai all'inizio"
+msgstr ""
 
 #: hk_kdeclasses/hk_kderowselector.cpp:75
 msgid "Goto previous"
-msgstr "Vai al precedente"
+msgstr ""
 
 #: hk_kdeclasses/hk_kderowselector.cpp:76
 msgid "Goto next"
-msgstr "Vai al prossimo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kderowselector.cpp:77
 msgid "Goto last"
-msgstr "Vai all'ultimo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kderowselector.cpp:78
 msgid "Store changes"
-msgstr "Salva modifiche"
+msgstr ""
 
 #: hk_kdeclasses/hk_kderowselector.cpp:80
 msgid "Insert new row"
-msgstr "Inserisci nuova riga"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesimpleform.cpp:1257
-#, fuzzy
 msgid "Don't debug"
-msgstr "debug"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesimpleform.cpp:1257
-#, fuzzy
 msgid "Debug"
-msgstr "debug"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesimpleform.cpp:1285
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1200
 msgid "Into background"
-msgstr "sullo sfondo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesimpleform.cpp:1289
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1202
 msgid "Into foreground"
-msgstr "Sul primo piano"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesimpleform.cpp:1301
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1206
 msgid "Show &property editor"
-msgstr "Mostra navigatore delle &proprietà"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesimpleform.cpp:1305
 msgid "&Save form"
-msgstr "&Salva la Scheda"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesimpleform.cpp:2044
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1775
 msgid "Line %LINENUMBER%: "
-msgstr "Linea %LINENUMBER%"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesimpleform.cpp:2050
 msgid "Gridcolumn '%1':\n"
-msgstr "Cas. Riepliogo col. %1\n"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1020
 msgid "Sectionheader"
-msgstr "Intestazione sezione:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1036
 msgid "Datasection"
-msgstr "Corpo:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1051
 msgid "Sectionfooter"
-msgstr "Piede Corpo:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1069
 msgid "Pageheader"
-msgstr "Intestazione Pagina:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1072
 msgid "Pagefooter"
-msgstr "Piede Pagina"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1075
 msgid "Reportheader"
-msgstr "Intestazione Prospetto:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1078
 msgid "Reportfooter"
-msgstr "Piede Prospetto"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1112
 msgid "Generating report..."
-msgstr "Generazione Prospetto"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1208
 msgid "&Save report"
-msgstr "&Salvataggio Prospetto"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesimplereport.cpp:1552
 msgid "Error while paste action: No reportsection!!!"
 msgstr ""
-"Errore durante l'operazione di aggiunta. Non vi è una Sezione Prospetto!!!"
 
 #: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:337
 msgid "subreport dialog"
-msgstr "Ambito Sub Prospetto"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:338
 #: hk_kdeclasses/hk_kdesubreportdialog.cpp:55
 msgid "&Set"
-msgstr "&Impostazione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:341
 msgid "subreport:"
-msgstr "SubProspetto"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:344
 #: hk_kdeclasses/hk_kdesubreportdialog.cpp:49
 msgid "subreportfield"
-msgstr "Campo SubProspetto"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesubreportdialogbase.cpp:346
 msgid "CheckBox1"
-msgstr "Casella di Controllo 1"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesubreportdialog.cpp:49
 msgid "masterreportfield"
-msgstr "Campo di riferimento del Prospetto "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesubreportdialog.cpp:52
 msgid "masterreportfield:"
-msgstr "Campo di riferimento del Prospetto "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesubreportdialog.cpp:53
 msgid "subreportfield:"
-msgstr "Campo dipendente del Prospetto "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesubreportdialog.cpp:58
 msgid "Before sectiondata?"
-msgstr "Prima della sezione Dati?"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdesubreportdialog.cpp:66
 msgid "Subreport dialog"
-msgstr "Ambito SubProspetto"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetable.cpp:64 hk_kdeclasses/knodamaindockwindow.cpp:476
 msgid ""
@@ -4364,185 +4210,170 @@ msgid ""
 "This is a installation error. Check your installation! Did you install knoda "
 "into the correct directory? Program will exit now..."
 msgstr ""
-"Errore grave! a Tabella  non può essere caricata\n"
-"Errore di installazione: controllatela! Avete installato knoda nella "
-"corretta directory? Il programma verrà chiuso...."
 
 #: hk_kdeclasses/hk_kdetable.cpp:137
 #: hk_kdeclasses/hk_kdetablepartwidget.cpp:355
 msgid "Table - "
-msgstr "Tabella -"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:63
 msgid "Tabledesign"
-msgstr "Definizione Tabella"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:72
 msgid "Index"
-msgstr "Indice"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:82
 msgid "Name"
-msgstr "Nome"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:82
 msgid "Type"
-msgstr "Tipo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:82
 msgid "Size"
-msgstr "Dimensione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:82
 msgid "Primary"
-msgstr "Primaria"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:82
 #: hk_kdeclasses/hk_kdetabledesign.cpp:193
 msgid "Not Null"
-msgstr "Non nullo:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:118
 msgid "Alter Table"
-msgstr "Salva Tabella"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:123
 msgid "New Field"
-msgstr "Nuovo Campo "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:128
 msgid "Delete Field"
-msgstr "Elimina Campo "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:138
 msgid "New Index"
-msgstr "Nuovo Indice"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:144
 msgid "Delete Index"
-msgstr "Elimina Indice"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:150
 msgid "Alter Index"
-msgstr "Salva Indice"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:178
 msgid "columntype:"
-msgstr "Tipo di Campo (Colonna) "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:184
 msgid "Size:"
-msgstr "Dimensione:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:189
 msgid "Primary Index"
-msgstr "Chiave primaria:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:489
 msgid "Do you want to alter the table?"
-msgstr "Si vuole slavare la tebella?"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:497
 msgid "Please enter the tablename: "
-msgstr "Inserire il nome della Tabella"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:561
 msgid "Table %NAME% could not be changed!"
-msgstr "La Tabella %NAME% non può essere cambiata!"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:613
 msgid "newfield_"
-msgstr "Nuovo Campo_"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetabledesign.cpp:737
 msgid "Fieldname already exists or is of length 0. Alter it to a unique one!"
 msgstr ""
-"Il Nome del Campo esiste già o la sua lunghezza è pari a zero. Salvarlo con "
-"un nome unico ed univoco!"
 
 #: hk_kdeclasses/hk_kdetablepartwidget.cpp:144
-#, fuzzy
 msgid "Save"
-msgstr "&Salva"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetablepartwidget.cpp:164
 #: hk_kdegridpart/hk_kdegridpart.cpp:54
 msgid "&Gridcolumns"
-msgstr "&Griglia di riepilogo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetablepartwidget.cpp:179
 #: hk_kdegridpart/hk_kdegridpart.cpp:69
 msgid "&Find in columns"
-msgstr "Tro&va nel Campo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetablepartwidget.cpp:256
-#, fuzzy
 msgid "Table could not be executed"
-msgstr "La Tabella non può essere eliminata!"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetablepartwidget.cpp:358
 msgid "Unnamed"
-msgstr "Senza nome"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetaborderbase.cpp:83
 #: hk_kdeclasses/hk_kdetaborderbase.cpp:192
 #: hk_kdeclasses/hk_kdetaborderbase.cpp:201
 msgid "Name:"
-msgstr "Nome:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetaborderbase.cpp:83
 #: hk_kdeclasses/hk_kdetaborderbase.cpp:193
 #: hk_kdeclasses/hk_kdetaborderbase.cpp:202
-#, fuzzy
 msgid "Type:"
-msgstr "Tipo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetaborderbase.cpp:189
 msgid "Taborder selection dialog"
-msgstr "ambito di assegnazione dell'ordine di tabulazione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetaborderbase.cpp:190
 msgid "Base list:"
-msgstr "Elenco Base:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetaborderbase.cpp:199
 msgid "Taborder list:"
-msgstr "Elenco ordine tabulazione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetaborder.cpp:85 hk_kdeclasses/hk_kdetaborder.cpp:149
-#, fuzzy
 msgid "boolean"
-msgstr "Si/No"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetaborder.cpp:86 hk_kdeclasses/hk_kdetaborder.cpp:150
-#, fuzzy
 msgid "lineedit"
-msgstr "Campo "
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetaborder.cpp:87 hk_kdeclasses/hk_kdetaborder.cpp:151
-#, fuzzy
 msgid "memo"
-msgstr "Memo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetaborder.cpp:88 hk_kdeclasses/hk_kdetaborder.cpp:152
-#, fuzzy
 msgid "combobox"
-msgstr "&Casella Combinata"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetaborder.cpp:89 hk_kdeclasses/hk_kdetaborder.cpp:153
-#, fuzzy
 msgid "grid"
-msgstr "Casella di riepilogo"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetaborder.cpp:90 hk_kdeclasses/hk_kdetaborder.cpp:154
-#, fuzzy
 msgid "subform"
-msgstr "Sub Scheda (SubForm)"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetaborder.cpp:91 hk_kdeclasses/hk_kdetaborder.cpp:155
-#, fuzzy
 msgid "image"
-msgstr "Nessuna immagine"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetaborder.cpp:92 hk_kdeclasses/hk_kdetaborder.cpp:156
 msgid "tabvisible"
@@ -4554,32 +4385,32 @@ msgstr ""
 
 #: hk_kdeclasses/hk_kdetoolbar.cpp:258
 msgid "Filter definition"
-msgstr "Definizione dei filtri"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdetoolbar.cpp:261
 msgid "Filter execution"
-msgstr "Esecuzione di filtri"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:213
 msgid "XML Export Dialog"
-msgstr "XML ambito di esportazione"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:216
 msgid "Main document tag:"
-msgstr "Tag del documento principale:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:218
 msgid "Row element tag:"
-msgstr "Elementi Tag della riga:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:221
 #: hk_kdeclasses/hk_kdexmlexportdialog.cpp:51
 msgid "include tableschema?"
-msgstr "Include schema di tabella?"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:222
 msgid "fieldname as attribute?"
-msgstr "Nome del campo come attributo?"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdexmlexportdialogbase.cpp:223
 msgid "Export as Excel XML?"
@@ -4587,54 +4418,54 @@ msgstr ""
 
 #: hk_kdeclasses/hk_kdexmlexportdialog.cpp:115
 msgid "Select a XML file"
-msgstr "Selezionare file XML"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdexmlexportdialog.cpp:159
 msgid "Queryname:"
-msgstr "Nome dell'Interrogazione:"
+msgstr ""
 
 #: hk_kdeclasses/hk_kdexmlexportdialog.cpp:165
 msgid "Viewname:"
-msgstr "Nome della Vista:"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:140
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:142
 msgid "Elements"
-msgstr "Elementi"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:172
 msgid "Select database"
-msgstr "Selezionare Database"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:182
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:235
 msgid "&New"
-msgstr "&Nuovo"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:187
 msgid "&Connect to"
-msgstr "&Connettersi a"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:189
 msgid "Disconnect"
-msgstr "Disconnettere"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:200
 msgid "Load connection"
-msgstr "Caricare connessione"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:203
 msgid "Store connection"
-msgstr "Salvare connessione"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:206
 msgid "Database"
-msgstr "Database"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:221
 #: hk_kdeclasses/knodamaindockwindow.cpp:573
 msgid "Report"
-msgstr "Prospetto"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:224
 #: hk_kdeclasses/knodamaindockwindow.cpp:602
@@ -4643,118 +4474,111 @@ msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:239
 msgid "&Start"
-msgstr "&Esegui"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:241
 msgid "&Modify"
-msgstr "&Modifica"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:248
 msgid "&Rename"
-msgstr "&Rinomina"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:252
 msgid "E&xport"
-msgstr "E&sporta"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:254
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:270
 msgid "&CSV"
-msgstr "&CSV"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:257
 msgid "&XML"
-msgstr "&XML"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:262
 msgid "To &database"
-msgstr "Al &database"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:268
 msgid "I&mport"
-msgstr "I&mporta"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:274
 msgid "From &database"
-msgstr "Dal &Database"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:280
 msgid "&Change password"
-msgstr "&Cambia Parola d'Accesso"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:291
 msgid "&Database settings"
-msgstr "Impostazini &Database"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:294
 msgid "&Object handler"
-msgstr "Impostazioni &Oggetti"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:298
 msgid "&New databasewindow"
-msgstr "&Nuova finestra Database"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:301
 msgid "&Options"
-msgstr "&Opzioni"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:304
 msgid "Open &local database"
-msgstr "Aprire Database &locale"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:308
 msgid "Referential integrity"
-msgstr "Integrità referenziale"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindowbase.cpp:480
 msgid "Database '%1' not found"
-msgstr "Database %1 non trovato"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindow.cpp:482
 msgid "Warning! Tablepartwiget could not be created!"
-msgstr "Attenzione Tablepartwiget non può essere creato!"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindow.cpp:508
 msgid "Warning! Querypartwiget could not be created!"
-msgstr "Attenzione Querypartwiget non può essere creato!"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindow.cpp:539
 msgid "Warning! Formpartwiget could not be created!"
-msgstr "Attenzione Formpartwiget non può essere creato!"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindow.cpp:569
 msgid "Warning! Reportpartwiget could not be created!"
-msgstr "Attenzione Reportpartwiget non può essere creato!"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindow.cpp:590
-#, fuzzy
 msgid ""
 "Fatal error! Module part could not be loaded!\n"
 "This is a installation error. Check your installation! Did you install knoda "
 "into the correct directory? Program will exit now..."
 msgstr ""
-"Errore grave! a Tabella  non può essere caricata\n"
-"Errore di installazione: controllatela! Avete installato knoda nella "
-"corretta directory? Il programma verrà chiuso...."
 
 #: hk_kdeclasses/knodamaindockwindow.cpp:597
-#, fuzzy
 msgid "Warning! Modulepartwiget could not be created!"
-msgstr "Attenzione Tablepartwiget non può essere creato!"
+msgstr ""
 
 #: hk_kdeclasses/knodamaindockwindow.cpp:635
 msgid "Could not rename object!"
-msgstr "Non è possiblie rinominare l'oggetto!"
+msgstr ""
 
 #: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:110
-#, fuzzy
 msgid "hk_kde5dbdesignerpart"
-msgstr "hk_kdeqbepart"
+msgstr ""
 
 #: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:111
-#, fuzzy
 msgid "Database editor"
-msgstr "Imposta Datasource"
+msgstr ""
 
 #: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:113
 #: hk_kdeformpart/hk_kdeformpart.cpp:135 hk_kdeqbepart/hk_kdeqbepart.cpp:170
@@ -4807,23 +4631,20 @@ msgid "Author of KDE5 port"
 msgstr ""
 
 #: hk_kdeformpart/hk_kdeformpart.cpp:132
-#, fuzzy
 msgid "hk_kde5formpart"
-msgstr "hk_kdegridpart"
+msgstr ""
 
 #: hk_kdeformpart/hk_kdeformpart.cpp:133
-#, fuzzy
 msgid "database form editor"
-msgstr "Imposta Datasource"
+msgstr ""
 
 #: hk_kdegridpart/hk_kdegridpart.cpp:146
-#, fuzzy
 msgid "hk_kde5gridpart"
-msgstr "hk_kdegridpart"
+msgstr ""
 
 #: hk_kdegridpart/hk_kdegridpart.cpp:147
 msgid "Datasource editor"
-msgstr "Imposta Datasource"
+msgstr ""
 
 #: hk_kdegridpart/hk_kdegridpart.cpp:149
 msgid ""
@@ -4832,14 +4653,12 @@ msgid ""
 msgstr ""
 
 #: hk_kdemodulepart/hk_kdemodulepart.cpp:113
-#, fuzzy
 msgid "hk_kde5modulepart"
-msgstr "hk_kdeqbepart"
+msgstr ""
 
 #: hk_kdemodulepart/hk_kdemodulepart.cpp:114
-#, fuzzy
 msgid "database module editor"
-msgstr "Imposta Datasource"
+msgstr ""
 
 #: hk_kdemodulepart/hk_kdemodulepart.cpp:116
 msgid ""
@@ -4848,69 +4667,60 @@ msgid ""
 msgstr ""
 
 #: hk_kdeqbepart/hk_kdeqbepart.cpp:167
-#, fuzzy
 msgid "hk_kde5qbepart"
-msgstr "hk_kdeqbepart"
+msgstr ""
 
 #: hk_kdeqbepart/hk_kdeqbepart.cpp:168
 msgid "Query by Example editor"
-msgstr "Elaboratore di Interrogazioni tipo (Query by Example)"
+msgstr ""
 
 #: hk_kdequerypart/hk_kdequerypart.cpp:165
-#, fuzzy
 msgid "hk_kde5querypart"
-msgstr "hk_kdeqbepart"
+msgstr ""
 
 #: hk_kdequerypart/hk_kdequerypart.cpp:166
-#, fuzzy
 msgid "database query editor"
-msgstr "Imposta Datasource"
+msgstr ""
 
 #: hk_kdereportpart/hk_kdereportpart.cpp:126
-#, fuzzy
 msgid "hk_kde5reportpart"
-msgstr "hk_kdeqbepart"
+msgstr ""
 
 #: hk_kdereportpart/hk_kdereportpart.cpp:127
-#, fuzzy
 msgid "database report editor"
-msgstr "Imposta Datasource"
+msgstr ""
 
 #: hk_kdetablepart/hk_kdetablepart.cpp:111
-#, fuzzy
 msgid "hk_kde5tablepart"
-msgstr "hk_kdeqbepart"
+msgstr ""
 
 #: hk_kdetablepart/hk_kdetablepart.cpp:112
-#, fuzzy
 msgid "database table editor"
-msgstr "Imposta Datasource"
+msgstr ""
 
 #: knoda/hk_kdedriverselectbase.cpp:127
 msgid "Driver select dialog"
-msgstr "Ambito scelta Driver"
+msgstr ""
 
 #: knoda/hk_kdedriverselectbase.cpp:128
 msgid "C&onnect"
-msgstr "C&onnetti"
+msgstr ""
 
 #: knoda/hk_kdedriverselectbase.cpp:132
 msgid "&Drivers"
-msgstr "&Drivers"
+msgstr ""
 
 #: knoda/hk_kdedriverselectbase.cpp:133
 msgid "&Connections"
-msgstr "&Connessione"
+msgstr ""
 
 #: knoda/main.cpp:45
-#, fuzzy
 msgid "knoda5"
-msgstr "knoda"
+msgstr ""
 
 #: knoda/main.cpp:46
-#, fuzzy
 msgid "knoda5 is a database management system"
-msgstr "knoda è un'interffaccia per la gestione dei databases"
+msgstr ""
 
 #: knoda/main.cpp:48
 msgid ""
@@ -4924,7 +4734,7 @@ msgstr ""
 
 #: knoda/main.cpp:52 knoda/main-rt.cpp:50
 msgid "Postgresql driver"
-msgstr "Postgresql driver"
+msgstr ""
 
 #: knoda/main.cpp:53 knoda/main-rt.cpp:51
 msgid "Tilman Linneweh"
@@ -4932,66 +4742,63 @@ msgstr ""
 
 #: knoda/main.cpp:53 knoda/main-rt.cpp:51
 msgid "FreeBSD port"
-msgstr "Porta FreeBSD"
+msgstr ""
 
 #: knoda/main.cpp:59 knoda/main-rt.cpp:56
 msgid "Specifies the database driver"
-msgstr "Specificare il database driver"
+msgstr ""
 
 #: knoda/main.cpp:60 knoda/main-rt.cpp:57
 msgid "Specifies a database"
-msgstr "Specificare il Database"
+msgstr ""
 
 #: knoda/main.cpp:61 knoda/main-rt.cpp:58
 msgid "Specifies a form (only in combination with -b)"
-msgstr "Indicare una Scheda (solo in combinazione -b)"
+msgstr ""
 
 #: knoda/main.cpp:62
 msgid "No design mode"
-msgstr "No in modo Costruzione"
+msgstr ""
 
 #: knoda/main.cpp:63
 msgid "No design mode and no database control window"
-msgstr "No in modo Costruzione come pure finestra controllo Database"
+msgstr ""
 
 #: knoda/main.cpp:64
 msgid "SDI look"
-msgstr "Aspetto SDI"
+msgstr ""
 
 #: knoda/main.cpp:65 knoda/main-rt.cpp:59
 msgid "prints the SQL statements to the standard ouput"
-msgstr "Stampa l'istruzione SQL nell'uscita standard"
+msgstr ""
 
 #: knoda/main.cpp:67 knoda/main-rt.cpp:61
 msgid "debug"
-msgstr "debug"
+msgstr ""
 
 #: knoda/main.cpp:69 knoda/main-rt.cpp:63
 msgid "local database file (SQLite)"
-msgstr "File Database locale (SQLite)"
+msgstr ""
 
 #: knoda/main.cpp:115
 msgid "Please specifiy a database driver!"
-msgstr "Indica un Database driver!"
+msgstr ""
 
 #: knoda/main.cpp:121 knoda/main-rt.cpp:111
 msgid "Specifying a form only works in combination with specifying a database"
 msgstr ""
-"Specificare una Scheda che opera in combinazione solamente con un database"
 
 #: knoda/main.cpp:142
 msgid "classic user interface is not supported anymore."
 msgstr ""
 
 #: knoda/main-rt.cpp:43
-#, fuzzy
 msgid "knoda5 - Runtime version"
-msgstr "knoda - versione Runtime"
+msgstr ""
 
 #: knoda/main-rt.cpp:44
-#, fuzzy
 msgid "knoda5-rt is the runtime version of knoda -a database management system"
-msgstr "knoda rt è la versione runtime di knoda interfaccia per databases"
+msgstr ""
 
 #: knoda/main-rt.cpp:46
 msgid ""
@@ -5013,134 +4820,3 @@ msgid ""
 "*******\n"
 "\n"
 msgstr ""
-"\n"
-"\n"
-"*******\n"
-"Indicare un database driver, un nome di database e il nome di una Scheda "
-"(Form)\n"
-"Sintassi corretta:\n"
-" knoda-rt -d mysql -b mydatabase -f myform\n"
-"\n"
-"Può essere tralasciato il nome della Scheda (Form) se il database contiene "
-"un form con nome 'Autoform'\n"
-"*******\n"
-"\n"
-
-#~ msgid "Bug: form is empty!"
-#~ msgstr "Baco: il Form è vuoto!"
-
-#~ msgid "textLabel2"
-#~ msgstr "Etichetta di Testo 2"
-
-#~ msgid "Load"
-#~ msgstr "Carica"
-
-#~ msgid "Store"
-#~ msgstr "Registra"
-
-#~ msgid "Optionen"
-#~ msgstr "Opzioni"
-
-#~ msgid "Toggle &Insert"
-#~ msgstr "Toggle&Insert"
-
-#~ msgid "Dese&lect"
-#~ msgstr "Dese&leziona"
-
-#~ msgid ""
-#~ "KGhostview could not be found!\n"
-#~ "Please install the kdegraphics package"
-#~ msgstr ""
-#~ "KGhostview non è stato trovato\n"
-#~ "Installare il pacchetto kdegraphics"
-
-#~ msgid "New"
-#~ msgstr "Nuovo"
-
-#~ msgid "Modify"
-#~ msgstr "Modifica"
-
-#~ msgid "Start"
-#~ msgstr "Esegui"
-
-#~ msgid "Displaymode"
-#~ msgstr "Visualizza"
-
-#~ msgid "IDEAL Mode"
-#~ msgstr "Modo IDEALE"
-
-#~ msgid "Tabpage Mode"
-#~ msgstr "Modo Tab Pagina"
-
-#~ msgid "Childframe Mode"
-#~ msgstr "Modo Frame Figlio"
-
-#~ msgid "New Database Dialog"
-#~ msgstr "Ambito Nuovo Database"
-
-#~ msgid "Enter name of new database:"
-#~ msgstr "Inserire il nome del Database"
-
-#~ msgid "&Connect"
-#~ msgstr "&Connetti"
-
-#~ msgid "&Load"
-#~ msgstr "Ca&rica"
-
-#~ msgid "&Quit"
-#~ msgstr "&Esci"
-
-#~ msgid "&About"
-#~ msgstr "A &proposito di..."
-
-#~ msgid "No such driver: %DRIVER%"
-#~ msgstr "Non è un driver %DRIVER% "
-
-#~ msgid "Adm&inistration"
-#~ msgstr "Amm&inistrazione"
-
-#~ msgid "&Tables"
-#~ msgstr "&Tabelle"
-
-#~ msgid "&Queries"
-#~ msgstr "&Interrogazioni"
-
-#~ msgid "F&orms"
-#~ msgstr "S&chede"
-
-#~ msgid "&Reports"
-#~ msgstr "&Prospetti"
-
-#~ msgid "Databases"
-#~ msgstr "Databases"
-
-#~ msgid "D&atabases"
-#~ msgstr "D&atabases"
-
-#~ msgid "Functions"
-#~ msgstr "Funzioni"
-
-#~ msgid "Actions"
-#~ msgstr "Eventi"
-
-#~ msgid ""
-#~ "Fatal error: File 'knodaui.rc' could not be located. Probably Knoda is "
-#~ "installed incorrectly\n"
-#~ "Are you sure you have used\n"
-#~ " ./configure --prefix=/your_KDE_directory ? \n"
-#~ " See the http://hk-classes.sourceforge.net/download.html for details. "
-#~ msgstr ""
-#~ "Errore grave! Il file 'knodaui.rc' non è stato trovato. Probabilmente "
-#~ "Knoda non è stato installato correttamente\n"
-#~ "siete sicuri di aver usato./configure-prefix=/your_KDE_directory?\n"
-#~ "Vedere http://hk-classes.sourceforge.net/download.html per maggiori "
-#~ "dettagli."
-
-#~ msgid "no object selected"
-#~ msgstr "Nessun oggetto selezionato"
-
-#~ msgid "use MDI (deprecated)"
-#~ msgstr "Modo MDI (sconsigliato)"
-
-#~ msgid "Author"
-#~ msgstr "Autore"

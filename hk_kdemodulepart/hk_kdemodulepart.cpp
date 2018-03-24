@@ -38,7 +38,7 @@
 #include <hk_datasource.h>
 
 K_PLUGIN_FACTORY(hk_kdemodulepartfactory, registerPlugin<hk_kdemodulepart>();)
-K_EXPORT_PLUGIN(hk_kdemodulepartfactory("hk_kde4modulepart","hk_kde4modulepart"))
+K_EXPORT_PLUGIN(hk_kdemodulepartfactory("hk_kde5modulepart","hk_kde5modulepart"))
 
 class hk_kdemodulepartprivate
 {
@@ -59,8 +59,8 @@ hk_kdemodulepart::hk_kdemodulepart(QWidget* pWidget, QObject* parent, const QVar
   p_private->p_module->setAttribute(Qt::WA_DeleteOnClose);
   setWidget(p_private->p_module);
   KIconLoader* loader=KIconLoader::global();
-  loader->addAppDir("hk_kde4classes");
-  setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdemodulepart.rc"));
+  loader->addAppDir("hk_kde5classes");
+  setXMLFile(KStandardDirs::locate("data","hk_kde5classes/hk_kdemodulepart.rc"));
   p_private -> p_module -> setupActions(actionCollection());
 }
 
@@ -110,13 +110,13 @@ bool hk_kdemodulepart::saveFile()
 
 KAboutData* hk_kdemodulepart::createAboutData()
 {
-    KAboutData* a= new KAboutData("hk_kde4modulepart", "hk_kde4modulepart",ki18n("hk_kde4modulepart"),
+    KAboutData* a= new KAboutData("hk_kde5modulepart", "hk_kde5modulepart",ki18n("hk_kde5modulepart"),
         "0.2", ki18n("database module editor"),
         KAboutData::License_GPL,
-     ki18n("(c) 2002-2006, Horst Knorr\n(c) 2010-2016 Patrik Hanak"),ki18n(NULL), "http://sourceforge.net/projects/knoda4/",
+     ki18n("(c) 2002-2006, Horst Knorr\n(c) 2010-2018 Patrik Hanak"),ki18n(NULL), "http://sourceforge.net/projects/knoda5/",
      "knoda4-bugs@lists.sourceforge.net");
     a -> addAuthor(ki18n("Horst Knorr"),ki18n("Author of original version"), "hk_classes@knoda.org","http://www.knoda.org");
-    a -> addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE4 port"), "knoda4-admins@lists.sourceforge.net");    
+    a -> addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE5 port"), "knoda4-admins@lists.sourceforge.net");    
     return a;
 
 }

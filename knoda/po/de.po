@@ -21,8 +21,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: newde\n"
-"Report-Msgid-Bugs-To: http://sourceforge.net/p/knoda4/bugs/\n"
-"POT-Creation-Date: 2016-08-10 16:42+0200\n"
+"Report-Msgid-Bugs-To: http://sourceforge.net/p/knoda5/tickets/\n"
+"POT-Creation-Date: 2018-03-22 22:03+0100\n"
 "PO-Revision-Date: 2006-10-03 18:59+0200\n"
 "Last-Translator: horst <hk_classes@knoda.org>\n"
 "Language-Team: deutsch <hk_classes-discuss@sourceforge.net>\n"
@@ -4700,9 +4700,8 @@ msgid "Could not rename object!"
 msgstr "Objekt konnte nicht umbenannt werden!"
 
 #: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:110
-#, fuzzy
-msgid "hk_kde4dbdesignerpart"
-msgstr "hk_kdeqbepart"
+msgid "hk_kde5dbdesignerpart"
+msgstr "hk_kde5dbdesignerpart"
 
 #: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:111
 #, fuzzy
@@ -4710,12 +4709,13 @@ msgid "Database editor"
 msgstr "Datenquelle Editor:"
 
 #: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:113
-#: hk_kdeqbepart/hk_kdeqbepart.cpp:170 hk_kdequerypart/hk_kdequerypart.cpp:168
+#: hk_kdeformpart/hk_kdeformpart.cpp:135 hk_kdeqbepart/hk_kdeqbepart.cpp:170
+#: hk_kdequerypart/hk_kdequerypart.cpp:168
 #: hk_kdereportpart/hk_kdereportpart.cpp:129
 #: hk_kdetablepart/hk_kdetablepart.cpp:114
 msgid ""
 "(c) 2002-2004, Horst Knorr\n"
-"(c) 2010-2016 Patrik Hanak"
+"(c) 2010-2018 Patrik Hanak"
 msgstr ""
 
 #: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:115
@@ -4723,7 +4723,7 @@ msgstr ""
 #: hk_kdemodulepart/hk_kdemodulepart.cpp:118
 #: hk_kdeqbepart/hk_kdeqbepart.cpp:172 hk_kdequerypart/hk_kdequerypart.cpp:170
 #: hk_kdereportpart/hk_kdereportpart.cpp:131
-#: hk_kdetablepart/hk_kdetablepart.cpp:116 knoda/main.cpp:51
+#: hk_kdetablepart/hk_kdetablepart.cpp:116 knoda/main.cpp:50
 #: knoda/main-rt.cpp:48
 msgid "Horst Knorr"
 msgstr ""
@@ -4733,7 +4733,7 @@ msgstr ""
 #: hk_kdemodulepart/hk_kdemodulepart.cpp:118
 #: hk_kdeqbepart/hk_kdeqbepart.cpp:172 hk_kdequerypart/hk_kdequerypart.cpp:170
 #: hk_kdereportpart/hk_kdereportpart.cpp:131
-#: hk_kdetablepart/hk_kdetablepart.cpp:116 knoda/main.cpp:51
+#: hk_kdetablepart/hk_kdetablepart.cpp:116 knoda/main.cpp:50
 #: knoda/main-rt.cpp:48
 msgid "Author of original version"
 msgstr ""
@@ -4743,7 +4743,7 @@ msgstr ""
 #: hk_kdemodulepart/hk_kdemodulepart.cpp:119
 #: hk_kdeqbepart/hk_kdeqbepart.cpp:173 hk_kdequerypart/hk_kdequerypart.cpp:171
 #: hk_kdereportpart/hk_kdereportpart.cpp:132
-#: hk_kdetablepart/hk_kdetablepart.cpp:117 knoda/main.cpp:52
+#: hk_kdetablepart/hk_kdetablepart.cpp:117 knoda/main.cpp:51
 #: knoda/main-rt.cpp:49
 msgid "Patrik Hanak"
 msgstr ""
@@ -4753,31 +4753,23 @@ msgstr ""
 #: hk_kdemodulepart/hk_kdemodulepart.cpp:119
 #: hk_kdeqbepart/hk_kdeqbepart.cpp:173 hk_kdequerypart/hk_kdequerypart.cpp:171
 #: hk_kdereportpart/hk_kdereportpart.cpp:132
-#: hk_kdetablepart/hk_kdetablepart.cpp:117 knoda/main.cpp:52
+#: hk_kdetablepart/hk_kdetablepart.cpp:117 knoda/main.cpp:51
 #: knoda/main-rt.cpp:49
-msgid "Author of KDE4 port"
+msgid "Author of KDE5 port"
 msgstr ""
 
 #: hk_kdeformpart/hk_kdeformpart.cpp:132
-#, fuzzy
-msgid "hk_kde4formpart"
-msgstr "hk_kdegridpart"
+msgid "hk_kde5formpart"
+msgstr "hk_kde5formpart"
 
 #: hk_kdeformpart/hk_kdeformpart.cpp:133
 #, fuzzy
 msgid "database form editor"
 msgstr "Datenquelle Editor:"
 
-#: hk_kdeformpart/hk_kdeformpart.cpp:135
-msgid ""
-"(c) 2002-2004, Horst Knorr\n"
-"(c) 2010-2015 Patrik Hanak"
-msgstr ""
-
 #: hk_kdegridpart/hk_kdegridpart.cpp:146
-#, fuzzy
-msgid "hk_kde4gridpart"
-msgstr "hk_kdegridpart"
+msgid "hk_kde5gridpart"
+msgstr "hk_kde5gridpart"
 
 #: hk_kdegridpart/hk_kdegridpart.cpp:147
 msgid "Datasource editor"
@@ -4786,13 +4778,12 @@ msgstr "Datenquelle Editor:"
 #: hk_kdegridpart/hk_kdegridpart.cpp:149
 msgid ""
 "(c) 2002-2003, Horst Knorr\n"
-"(c) 2010-2016 Patrik Hanak"
+"(c) 2010-2018 Patrik Hanak"
 msgstr ""
 
 #: hk_kdemodulepart/hk_kdemodulepart.cpp:113
-#, fuzzy
-msgid "hk_kde4modulepart"
-msgstr "hk_kdeqbepart"
+msgid "hk_kde5modulepart"
+msgstr "hk_kde5modulepart"
 
 #: hk_kdemodulepart/hk_kdemodulepart.cpp:114
 #, fuzzy
@@ -4802,22 +4793,20 @@ msgstr "Datenquelle Editor:"
 #: hk_kdemodulepart/hk_kdemodulepart.cpp:116
 msgid ""
 "(c) 2002-2006, Horst Knorr\n"
-"(c) 2010-2016 Patrik Hanak"
+"(c) 2010-2018 Patrik Hanak"
 msgstr ""
 
 #: hk_kdeqbepart/hk_kdeqbepart.cpp:167
-#, fuzzy
-msgid "hk_kde4qbepart"
-msgstr "hk_kdeqbepart"
+msgid "hk_kde5qbepart"
+msgstr "hk_kde5qbepart"
 
 #: hk_kdeqbepart/hk_kdeqbepart.cpp:168
 msgid "Query by Example editor"
 msgstr "Query by Example Editor"
 
 #: hk_kdequerypart/hk_kdequerypart.cpp:165
-#, fuzzy
-msgid "hk_kde4querypart"
-msgstr "hk_kdeqbepart"
+msgid "hk_kde5querypart"
+msgstr "hk_kde5querypart"
 
 #: hk_kdequerypart/hk_kdequerypart.cpp:166
 #, fuzzy
@@ -4825,9 +4814,8 @@ msgid "database query editor"
 msgstr "Datenquelle Editor:"
 
 #: hk_kdereportpart/hk_kdereportpart.cpp:126
-#, fuzzy
-msgid "hk_kde4reportpart"
-msgstr "hk_kdeqbepart"
+msgid "hk_kde5reportpart"
+msgstr "hk_kde5reportpart"
 
 #: hk_kdereportpart/hk_kdereportpart.cpp:127
 #, fuzzy
@@ -4835,9 +4823,8 @@ msgid "database report editor"
 msgstr "Datenquelle Editor:"
 
 #: hk_kdetablepart/hk_kdetablepart.cpp:111
-#, fuzzy
-msgid "hk_kde4tablepart"
-msgstr "hk_kdeqbepart"
+msgid "hk_kde5tablepart"
+msgstr "hk_kde5tablepart"
 
 #: hk_kdetablepart/hk_kdetablepart.cpp:112
 #, fuzzy
@@ -4860,102 +4847,102 @@ msgstr "&Treiber:"
 msgid "&Connections"
 msgstr "&Verbindungen"
 
-#: knoda/main.cpp:46
+#: knoda/main.cpp:45
 #, fuzzy
-msgid "knoda4"
+msgid "knoda5"
 msgstr "knoda"
 
-#: knoda/main.cpp:47
+#: knoda/main.cpp:46
 #, fuzzy
-msgid "knoda4 is a database management system"
+msgid "knoda5 is a database management system"
 msgstr "knoda ist ein Datenbank Management System"
 
-#: knoda/main.cpp:49
+#: knoda/main.cpp:48
 msgid ""
 "(c) 2000-2005 Horst Knorr\n"
-"(c) 2010-2016 Patrik Hanak"
+"(c) 2010-2018 Patrik Hanak"
 msgstr ""
 
-#: knoda/main.cpp:53 knoda/main-rt.cpp:50
+#: knoda/main.cpp:52 knoda/main-rt.cpp:50
 msgid "Anirban Biswas"
 msgstr ""
 
-#: knoda/main.cpp:53 knoda/main-rt.cpp:50
+#: knoda/main.cpp:52 knoda/main-rt.cpp:50
 msgid "Postgresql driver"
 msgstr "Postgresql Treiber"
 
-#: knoda/main.cpp:54 knoda/main-rt.cpp:51
+#: knoda/main.cpp:53 knoda/main-rt.cpp:51
 msgid "Tilman Linneweh"
 msgstr ""
 
-#: knoda/main.cpp:54 knoda/main-rt.cpp:51
+#: knoda/main.cpp:53 knoda/main-rt.cpp:51
 msgid "FreeBSD port"
 msgstr "FreeBSD Portierung"
 
-#: knoda/main.cpp:60 knoda/main-rt.cpp:56
+#: knoda/main.cpp:59 knoda/main-rt.cpp:56
 msgid "Specifies the database driver"
 msgstr "zu verwendender Datenbanktreiber"
 
-#: knoda/main.cpp:61 knoda/main-rt.cpp:57
+#: knoda/main.cpp:60 knoda/main-rt.cpp:57
 msgid "Specifies a database"
 msgstr "zu verwendende Datenbank:"
 
-#: knoda/main.cpp:62 knoda/main-rt.cpp:58
+#: knoda/main.cpp:61 knoda/main-rt.cpp:58
 msgid "Specifies a form (only in combination with -b)"
 msgstr "zu verwendendes Formular (nur in Verbindung mit -b)"
 
-#: knoda/main.cpp:63
+#: knoda/main.cpp:62
 msgid "No design mode"
 msgstr "kein Entwurfsmodus"
 
-#: knoda/main.cpp:64
+#: knoda/main.cpp:63
 msgid "No design mode and no database control window"
 msgstr "Ohne Entwurfsmodus und ohne Datenbankkontrollfenster"
 
-#: knoda/main.cpp:65
+#: knoda/main.cpp:64
 msgid "SDI look"
 msgstr "SDI look"
 
-#: knoda/main.cpp:66 knoda/main-rt.cpp:59
+#: knoda/main.cpp:65 knoda/main-rt.cpp:59
 msgid "prints the SQL statements to the standard ouput"
 msgstr "Zeigt die SQL Befehle auf standard output an"
 
-#: knoda/main.cpp:68 knoda/main-rt.cpp:61
+#: knoda/main.cpp:67 knoda/main-rt.cpp:61
 msgid "debug"
 msgstr "debuggen"
 
-#: knoda/main.cpp:70 knoda/main-rt.cpp:63
+#: knoda/main.cpp:69 knoda/main-rt.cpp:63
 msgid "local database file (SQLite)"
 msgstr "lokale Datenbankdatei (SQLite)"
 
-#: knoda/main.cpp:114
+#: knoda/main.cpp:115
 msgid "Please specifiy a database driver!"
 msgstr "Bitte einen Datenbanktreiber angeben!"
 
-#: knoda/main.cpp:120 knoda/main-rt.cpp:111
+#: knoda/main.cpp:121 knoda/main-rt.cpp:111
 msgid "Specifying a form only works in combination with specifying a database"
 msgstr ""
 "ein Formular kann nur in Verbindung mit einer Datenbank angegeben werden"
 
-#: knoda/main.cpp:141
+#: knoda/main.cpp:142
 msgid "classic user interface is not supported anymore."
 msgstr ""
 
 #: knoda/main-rt.cpp:43
 #, fuzzy
-msgid "knoda4 - Runtime version"
+msgid "knoda5 - Runtime version"
 msgstr "knoda - Laufzeitversion"
 
 #: knoda/main-rt.cpp:44
 #, fuzzy
-msgid "knoda4-rt is the runtime version of knoda -a database management system"
+msgid "knoda5-rt is the runtime version of knoda -a database management system"
 msgstr ""
 "knoda-rt  ist die Laufzeitversion von knoda - ein Datenbank Management System"
 
 #: knoda/main-rt.cpp:46
 msgid ""
 "(c) 2000-2004 Horst Knorr\n"
-"(c) 2010-2016 Patrik Hanak"
+"(c) 2010-2018 Patrik Hanak"
 msgstr ""
 
 #: knoda/main-rt.cpp:106

@@ -32,6 +32,8 @@
 #include <qtooltip.h>
 #include <qwhatsthis.h>
 #include "hk_kdedriverselectbase.moc"
+#include <KLocalizedString>
+
 /*
  *  Constructs a hk_kdedriverselectbase as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.
@@ -124,17 +126,17 @@ hk_kdedriverselectbase::~hk_kdedriverselectbase()
  */
 void hk_kdedriverselectbase::languageChange()
 {
-    setWindowTitle( tr( "Driver select dialog" ) );
-    connectbutton->setText( tr( "C&onnect" ) );
-    connectbutton->setShortcut( QKeySequence( tr( "Alt+O" ) ) );
-    cancelbutton->setText( tr( "&Cancel" ) );
-    cancelbutton->setShortcut( QKeySequence( tr( "Alt+C" ) ) );
-    tabwidget->setTabText( tabwidget->indexOf(tab), tr( "&Drivers" ) );
-    tabwidget->setTabText( tabwidget->indexOf(tab_2), tr( "&Connections" ) );
-    optionbutton->setText( tr( "O&ptions" ) );
-    optionbutton->setShortcut( QKeySequence( tr( "Alt+P" ) ) );
-    buttonHelp->setText( tr( "&Help" ) );
-    buttonHelp->setShortcut( QKeySequence( tr( "Alt+H" ) ) );
+    setWindowTitle(i18n("Driver select dialog"));
+    connectbutton->setText(i18n("C&onnect"));
+    connectbutton->setShortcut(QKeySequence(i18n("Alt+O")));
+    cancelbutton->setText(i18n("&Cancel"));
+    cancelbutton->setShortcut(QKeySequence(i18n("Alt+C")));
+    tabwidget->setTabText(tabwidget->indexOf(tab), i18n("&Drivers"));
+    tabwidget->setTabText(tabwidget->indexOf(tab_2), i18n("&Connections"));
+    optionbutton->setText(i18n("O&ptions"));
+    optionbutton->setShortcut(QKeySequence(i18n("Alt+P")));
+    buttonHelp->setText(i18n("&Help"));
+    buttonHelp->setShortcut(QKeySequence(i18n("Alt+H")));
 }
 
 void hk_kdedriverselectbase::list_clicked()

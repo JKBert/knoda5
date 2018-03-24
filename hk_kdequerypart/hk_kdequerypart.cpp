@@ -2,9 +2,9 @@
 // copyright (c) 2000-2005 Horst Knorr <hk_classes@knoda.org>
 // Original version of the file for hk_kdeclasses library
 // copyright (c) 2010-2016 Patrik Hanak <hanakp@users.sourceforge.net>
-// KDE 4 port of the file for hk_kde4querypart library
+// KDE 4 port of the file for hk_kde5querypart library
 //
-// This file is part of the hk_kde4querypart library.
+// This file is part of the hk_kde5querypart library.
 // This file may be distributed and/or modified under the terms of the
 // GNU Library Public License version 2 as published by the Free Software
 // Foundation and appearing in the file LGPL included in the
@@ -40,7 +40,7 @@
 #include <hk_datasource.h>
 
 K_PLUGIN_FACTORY(hk_kdequerypartfactory, registerPlugin<hk_kdequerypart>();)
-K_EXPORT_PLUGIN(hk_kdequerypartfactory("hk_kde4querypart","hk_kde4querypart"))
+K_EXPORT_PLUGIN(hk_kdequerypartfactory("hk_kde5querypart","hk_kde5querypart"))
 
 class hk_kdequerypartprivate
 {
@@ -65,8 +65,8 @@ hk_kdequerypart::hk_kdequerypart(QWidget* pWidget,QObject* parent, const QVarian
     p_private->p_query->setAttribute(Qt::WA_DeleteOnClose);
     setWidget(p_private->p_query);
     KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde4classes");
-    setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdequerypartqbe.rc"));
+    loader->addAppDir("hk_kde5classes");
+    setXMLFile(KStandardDirs::locate("data","hk_kde5classes/hk_kdequerypartqbe.rc"));
     p_private->p_query->setupActions(actionCollection());
     connect(p_private->p_query->p_addaction,SIGNAL(triggered()),this,SLOT(add_action()));
     connect(p_private->p_query->p_qbetypeselect,SIGNAL(activated(int)),this,SLOT(qbetypeselect_action(int)));
@@ -162,13 +162,13 @@ void hk_kdequerypart::distinct_action(void)
 
 KAboutData* hk_kdequerypart::createAboutData()
 {
-    KAboutData* a= new KAboutData("hk_kde4querypart", "hk_kde4querypart", ki18n("hk_kde4querypart"),
+    KAboutData* a= new KAboutData("hk_kde5querypart", "hk_kde5querypart", ki18n("hk_kde5querypart"),
         "0.2", ki18n("database query editor"),
         KAboutData::License_GPL,
-        ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2016 Patrik Hanak"),ki18n(NULL), "http://sourceforge.net/projects/knoda4/",
+        ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2018 Patrik Hanak"),ki18n(NULL), "http://sourceforge.net/projects/knoda5/",
      "knoda4-bugs@lists.sourceforge.net");
     a -> addAuthor(ki18n("Horst Knorr"),ki18n("Author of original version"), "hk_classes@knoda.org","http://www.knoda.org");
-    a -> addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE4 port"), "knoda4-admins@lists.sourceforge.net");    
+    a -> addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE5 port"), "knoda4-admins@lists.sourceforge.net");    
 
     return a;
 

@@ -34,6 +34,7 @@
 #include <qlayout.h>
 #include <qtooltip.h>
 #include <qwhatsthis.h>
+#include <KLocalizedString>
 
 void inline initSizePolicy(QWidget* w, QSizePolicy::Policy hp, QSizePolicy::Policy vp)
 {
@@ -450,55 +451,54 @@ hk_kdepreferencesdialogbase::~hk_kdepreferencesdialogbase()
  */
 void hk_kdepreferencesdialogbase::languageChange()
 {
-    setWindowTitle( tr( "Preferences" ) );
-    //TBP TBT translation tr()->i18n()
-    driverpathlabel->setText( tr( "Driverpath:" ) );
-    driverpathbutton->setText( tr( "..." ) );
-    defaultdriverlabel->setText( tr( "Default driver:" ) );
-    snap2gridxlabel->setText( tr( "Snap to grid x:" ) );
-    snap2gridylabel->setText( tr( "Snap to grid y:" ) );
-    sizetypelabel->setText( tr( "Metric system:" ) );
+    setWindowTitle(i18n("Preferences"));
+    driverpathlabel->setText(i18n("Driverpath:"));
+    driverpathbutton->setText(i18n("..."));
+    defaultdriverlabel->setText(i18n("Default driver:"));
+    snap2gridxlabel->setText(i18n("Snap to grid x:"));
+    snap2gridylabel->setText(i18n("Snap to grid y:"));
+    sizetypelabel->setText(i18n("Metric system:"));
     sizetypefield->clear();
-    sizetypefield->addItem( tr( "Relative" ) );
-    sizetypefield->addItem( tr( "Absolute" ) );
-    storepasswordlabel->setText( tr( "Store password:" ) );
-    automaticupdatelabel->setText( tr( "Automatic data update:" ) );
+    sizetypefield->addItem(i18n("Relative"));
+    sizetypefield->addItem(i18n("Absolute"));
+    storepasswordlabel->setText(i18n("Store password:"));
+    automaticupdatelabel->setText(i18n("Automatic data update:"));
     automaticupdatefield->clear();
-    automaticupdatefield->addItem( tr( "Yes" ) );
-    automaticupdatefield->addItem( tr( "No" ) );
-    regionaltab->setTabText( regionaltab->indexOf(generalpage), tr( "&General" ) );
-    maximizedlabel->setText( tr( "show maximized: " ) );
-    bepedanticlabel->setText( tr( "be pedantic:" ) );
-    use_singleclicklabel->setText( tr( "Use single click:" ) );
-    regionaltab->setTabText( regionaltab->indexOf(Appearance), tr( "&Appearance" ) );
-    fontlabel->setText( tr( "Default font:" ) );
-    textalignmentlabel->setText( tr( "Textalignment:" ) );
-    numberalignmentlabel->setText( tr( "Numberalignment:" ) );
-    separatorlabel->setText( tr( "Separator:" ) );
-    precisionlabel->setText( tr( "Precision:" ) );
-    regionaltab->setTabText( regionaltab->indexOf(defaults), tr( "&Defaults" ) );
-    datelabel->setText( tr( "Date format:" ) );
-    timelabel->setText( tr( "Time format:" ) );
-    datetimelabel->setText( tr( "Date&Time format:" ) );
+    automaticupdatefield->addItem(i18n("Yes"));
+    automaticupdatefield->addItem(i18n("No"));
+    regionaltab->setTabText( regionaltab->indexOf(generalpage), i18n( "&General"));
+    maximizedlabel->setText(i18n("show maximized: "));
+    bepedanticlabel->setText(i18n("be pedantic:"));
+    use_singleclicklabel->setText(i18n("Use single click:"));
+    regionaltab->setTabText( regionaltab->indexOf(Appearance), i18n("&Appearance"));
+    fontlabel->setText(i18n("Default font:"));
+    textalignmentlabel->setText(i18n("Textalignment:"));
+    numberalignmentlabel->setText(i18n("Numberalignment:"));
+    separatorlabel->setText(i18n("Separator:"));
+    precisionlabel->setText(i18n("Precision:"));
+    regionaltab->setTabText( regionaltab->indexOf(defaults), i18n("&Defaults"));
+    datelabel->setText(i18n("Date format:"));
+    timelabel->setText(i18n("Time format:"));
+    datetimelabel->setText(i18n("Date&Time format:"));
     measurefield->clear();
-    measurefield->addItem( tr( "cm" ) );
-    measurefield->addItem( tr( "inch" ) );
-    measurelabel->setText( tr( "Measure system:" ) );
-    localelabel->setText( tr( "Locale:" ) );
-    regionaltab->setTabText( regionaltab->indexOf(regionalpage), tr( "&Regional" ) );
-    printcommandlabel->setText( tr( "Print command:" ) );
+    measurefield->addItem(i18n("cm"));
+    measurefield->addItem(i18n("inch"));
+    measurelabel->setText(i18n("Measure system:"));
+    localelabel->setText(i18n("Locale:"));
+    regionaltab->setTabText( regionaltab->indexOf(regionalpage), i18n("&Regional"));
+    printcommandlabel->setText(i18n("Print command:"));
     printcommandfield->setText( QString::null );
     embedfontsfield->clear();
-    embedfontsfield->addItem( tr( "Yes" ) );
-    embedfontsfield->addItem( tr( "No" ) );
+    embedfontsfield->addItem(i18n("Yes"));
+    embedfontsfield->addItem(i18n("No"));
     embedfontsfield->setCurrentIndex( 1 );
-    embedfontslabel->setText( tr( "Embed fonts:" ) );
-    regionaltab->setTabText( regionaltab->indexOf(printerpage), tr( "&Printer" ) );
-    buttonHelp->setText( tr( "&Help" ) );
-    buttonHelp->setShortcut( QKeySequence( tr( "F1" ) ) );
-    buttonOk->setText( tr( "&OK" ) );
-    buttonCancel->setText( tr( "&Cancel" ) );
-    buttonCancel->setShortcut( QKeySequence( tr( "Alt+C" ) ) );
+    embedfontslabel->setText(i18n("Embed fonts:"));
+    regionaltab->setTabText( regionaltab->indexOf(printerpage), i18n("&Printer"));
+    buttonHelp->setText(i18n("&Help"));
+    buttonHelp->setShortcut( QKeySequence(i18n("F1")) );
+    buttonOk->setText(i18n("&OK"));
+    buttonCancel->setText(i18n("&Cancel"));
+    buttonCancel->setShortcut( QKeySequence(i18n("Alt+C")) );
 }
 
 void hk_kdepreferencesdialogbase::driverpathbutton_clicked()

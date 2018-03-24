@@ -38,7 +38,7 @@
 #include <hk_class.h>
 
 K_PLUGIN_FACTORY(hk_kdegridpartfactory, registerPlugin<hk_kdegridpart>();)
-K_EXPORT_PLUGIN(hk_kdegridpartfactory("hk_kde4gridpart", "hk_kde4gridpart"))
+K_EXPORT_PLUGIN(hk_kdegridpartfactory("hk_kde5gridpart", "hk_kde5gridpart"))
 
 hk_kdegridpart::hk_kdegridpart(QWidget* pWidget,QObject* parent, const QVariantList &)
 :KParts::ReadWritePart(parent)
@@ -50,7 +50,7 @@ hk_kdegridpart::hk_kdegridpart(QWidget* pWidget,QObject* parent, const QVariantL
     p_grid->setpart(this);
     setWidget(p_grid);
     KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde4classes");
+    loader->addAppDir("hk_kde5classes");
     p_columndialogaction = new KAction(KIcon("grid22x22",loader),i18n("&Gridcolumns"),actionCollection());
     actionCollection() -> addAction("gridcolumn",p_columndialogaction);
     connect(p_columndialogaction,SIGNAL(triggered()),this,SLOT(show_gridcolumndialog()));
@@ -69,7 +69,7 @@ hk_kdegridpart::hk_kdegridpart(QWidget* pWidget,QObject* parent, const QVariantL
     p_findaction = new KAction(KIcon("find",loader),i18n("&Find in columns"),actionCollection());
     actionCollection() -> addAction("findcolumn",p_findaction);
     connect(p_findaction,SIGNAL(triggered()),p_grid,SLOT(find_clicked()));     
-    setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdegridpart.rc"));
+    setXMLFile(KStandardDirs::locate("data","hk_kde5classes/hk_kdegridpart.rc"));
     p_drivermanager=NULL;
     connect (QApplication::clipboard(), SIGNAL(dataChanged()),this, SLOT(clipboarddata_has_changed()));
     clipboarddata_has_changed();
@@ -143,13 +143,13 @@ bool hk_kdegridpart::saveFile()
 
 KAboutData* hk_kdegridpart::createAboutData()
 {
-    KAboutData* a= new KAboutData("hk_kde4gridpart", "hk_kde4gridpart",ki18n("hk_kde4gridpart"),
+    KAboutData* a= new KAboutData("hk_kde5gridpart", "hk_kde5gridpart",ki18n("hk_kde5gridpart"),
         "0.2", ki18n("Datasource editor"),
         KAboutData::License_GPL,
-        ki18n("(c) 2002-2003, Horst Knorr\n(c) 2010-2016 Patrik Hanak"),ki18n(NULL), "http://sourceforge.net/projects/knoda4/",
+        ki18n("(c) 2002-2003, Horst Knorr\n(c) 2010-2018 Patrik Hanak"),ki18n(NULL), "http://sourceforge.net/projects/knoda5/",
      "knoda4-bugs@lists.sourceforge.net");
     a -> addAuthor(ki18n("Horst Knorr"),ki18n("Author of original version"), "hk_classes@knoda.org","http://www.knoda.org");
-    a -> addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE4 port"), "knoda4-admins@lists.sourceforge.net");
+    a -> addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE5 port"), "knoda4-admins@lists.sourceforge.net");
 
     return a;
 

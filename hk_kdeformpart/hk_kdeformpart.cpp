@@ -39,7 +39,7 @@
 #include "hk_kdetoolbar.h"
 
 K_PLUGIN_FACTORY(hk_kdeformpartfactory, registerPlugin<hk_kdeformpart>();)
-K_EXPORT_PLUGIN(hk_kdeformpartfactory("hk_kde4formpart","hk_kde4formpart"))
+K_EXPORT_PLUGIN(hk_kdeformpartfactory("hk_kde5formpart","hk_kde5formpart"))
 
 class hk_kdeformpartprivate
 {
@@ -58,9 +58,9 @@ hk_kdeformpart::hk_kdeformpart(QWidget* pWidget,QObject* parent, const QVariantL
 {
     p_private=new hk_kdeformpartprivate;
     setComponentData(hk_kdeformpartfactory::componentData());
-    setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdeformpartdesign.rc"));
+    setXMLFile(KStandardDirs::locate("data","hk_kde5classes/hk_kdeformpartdesign.rc"));
     KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde4classes");
+    loader->addAppDir("hk_kde5classes");
     p_private->p_form = new hk_kdeformpartwidget(this,pWidget,0);
     p_private->p_form->setAttribute(Qt::WA_DeleteOnClose);
     // to include the part into other widget, it must not be flagged with Qt::Window, 
@@ -129,13 +129,13 @@ if (manager()&&manager()->activePart()==this&&! p_private->activate)
 
 KAboutData* hk_kdeformpart::createAboutData()
 {
-    KAboutData* a= new KAboutData("hk_kde4formpart", "hk_kde4formpart", ki18n("hk_kde4formpart"),
+    KAboutData* a= new KAboutData("hk_kde5formpart", "hk_kde5formpart", ki18n("hk_kde5formpart"),
         "0.2", ki18n("database form editor"),
         KAboutData::License_GPL,
-        ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2015 Patrik Hanak"), ki18n(NULL),"http://sourceforge.net/projects/knoda4/",
+        ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2018 Patrik Hanak"), ki18n(NULL),"http://sourceforge.net/projects/knoda5/",
      "knoda4-bugs@lists.sourceforge.net");
     a -> addAuthor(ki18n("Horst Knorr"),ki18n("Author of original version"), "hk_classes@knoda.org","http://www.knoda.org");
-    a -> addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE4 port"), "knoda4-admins@lists.sourceforge.net");
+    a -> addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE5 port"), "knoda4-admins@lists.sourceforge.net");
     return a;
 
 }
