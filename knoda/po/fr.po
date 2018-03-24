@@ -4875,9 +4875,8 @@ msgid "Could not rename object!"
 msgstr "Impossible de renommer l'objet!"
 
 #: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:110
-#, fuzzy
 msgid "hk_kde5dbdesignerpart"
-msgstr "hk_kdegridpart"
+msgstr "hk_kde5dbdesignerpart"
 
 #: hk_kdedbdesigner/hk_kdedbdesignerpart.cpp:111
 #, fuzzy
@@ -4935,9 +4934,8 @@ msgid "Author of KDE5 port"
 msgstr ""
 
 #: hk_kdeformpart/hk_kdeformpart.cpp:132
-#, fuzzy
 msgid "hk_kde5formpart"
-msgstr "hk_kdegridpart"
+msgstr "hk_kde5formpart"
 
 #: hk_kdeformpart/hk_kdeformpart.cpp:133
 #, fuzzy
@@ -4945,9 +4943,8 @@ msgid "database form editor"
 msgstr "Editeur de sources de données"
 
 #: hk_kdegridpart/hk_kdegridpart.cpp:146
-#, fuzzy
 msgid "hk_kde5gridpart"
-msgstr "hk_kdegridpart"
+msgstr "hk_kde5gridpart"
 
 #: hk_kdegridpart/hk_kdegridpart.cpp:147
 msgid "Datasource editor"
@@ -4960,9 +4957,8 @@ msgid ""
 msgstr ""
 
 #: hk_kdemodulepart/hk_kdemodulepart.cpp:113
-#, fuzzy
 msgid "hk_kde5modulepart"
-msgstr "hk_kdegridpart"
+msgstr "hk_kde5modulepart"
 
 #: hk_kdemodulepart/hk_kdemodulepart.cpp:114
 #, fuzzy
@@ -4976,18 +4972,16 @@ msgid ""
 msgstr ""
 
 #: hk_kdeqbepart/hk_kdeqbepart.cpp:167
-#, fuzzy
 msgid "hk_kde5qbepart"
-msgstr "hk_kdegridpart"
+msgstr "hk_kde5qbepart"
 
 #: hk_kdeqbepart/hk_kdeqbepart.cpp:168
 msgid "Query by Example editor"
 msgstr "Editeur de requêtes visuelles"
 
 #: hk_kdequerypart/hk_kdequerypart.cpp:165
-#, fuzzy
 msgid "hk_kde5querypart"
-msgstr "hk_kdegridpart"
+msgstr "hk_kde5querypart"
 
 #: hk_kdequerypart/hk_kdequerypart.cpp:166
 #, fuzzy
@@ -4995,9 +4989,8 @@ msgid "database query editor"
 msgstr "Editeur de sources de données"
 
 #: hk_kdereportpart/hk_kdereportpart.cpp:126
-#, fuzzy
 msgid "hk_kde5reportpart"
-msgstr "hk_kdegridpart"
+msgstr "hk_kde5reportpart"
 
 #: hk_kdereportpart/hk_kdereportpart.cpp:127
 #, fuzzy
@@ -5005,9 +4998,8 @@ msgid "database report editor"
 msgstr "Editeur de sources de données"
 
 #: hk_kdetablepart/hk_kdetablepart.cpp:111
-#, fuzzy
 msgid "hk_kde5tablepart"
-msgstr "hk_kdegridpart"
+msgstr "hk_kde5tablepart"
 
 #: hk_kdetablepart/hk_kdetablepart.cpp:112
 #, fuzzy

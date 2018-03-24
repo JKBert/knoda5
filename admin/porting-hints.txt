@@ -1,0 +1,3 @@
+KToolInvocation::invokeHelp() -> KHelpClient::invokeHelp()
+tr() -> #include <KLocalizedString> , i18n()
+KAboutData -> K4AboutData
