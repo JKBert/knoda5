@@ -1,6 +1,4 @@
 
-include_directories(${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} )
-
 
 ########### install files ###############
 
@@ -9,5 +7,5 @@ install(FILES filter.png find.png filterexec.png pfeil.png
  	    editline.png grid22x22.png button.png multiline.png reportsection.png gridcursor.png
  	    propertyeditor.png  dbdesigner.png gridadd22x22.png mimage.png delete.png add.png
   	    first.png last.png previous.png next.png store.png key.png datebutton.png
- DESTINATION ${DATA_INSTALL_DIR}/hk_kde4classes/pics)
+ DESTINATION ${KDE_INSTALL_DATADIR}/hk_kde5classes/pics)
 

@@ -1,7 +1,7 @@
 
 ADD_DEFINITIONS(-DMAKE_KDECLASSES_LIB)
 
-#add_subdirectory(pics)
+add_subdirectory(pics)
 
 ########### next target ###############
 set(hk_kdeclasses_LIB_SRCS

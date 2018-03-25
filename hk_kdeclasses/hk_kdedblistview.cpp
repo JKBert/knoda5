@@ -227,7 +227,7 @@ hk_kdedblistview::~hk_kdedblistview()
 void hk_kdedblistview::init_listview()
 {
   KIconLoader* loader=KIconLoader::global();
-  loader->addAppDir("hk_kde4classes");
+  loader->addAppDir("hk_kde5classes");
   clear();
   setSortingEnabled(false);
   p_private->p_databaseitem=new QTreeWidgetItem(this,QStringList() << i18n("<No database>"));
