@@ -21,9 +21,9 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdedatabasesettingbase.cpp
     hk_kdedatasource.cpp
     hk_kdedate.cpp
-    hk_kdedbdesigner.cpp
+    hk_kdedbdesigner.cpp ]]
     hk_kdedblistview.cpp
-    hk_kdedriverdialog.cpp
+#[[ TBP    hk_kdedriverdialog.cpp
     hk_kdeeximportdatabasebase.cpp
     hk_kdeeximportdatabase.cpp
     hk_kdefilterdialogbase.cpp
@@ -45,9 +45,9 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdelineedit.cpp
     hk_kdememo.cpp
     hk_kdemodule.cpp
-    hk_kdemodulepartwidget.cpp
+    hk_kdemodulepartwidget.cpp ]]
     hk_kdemessages.cpp
-    hk_kdenewdatabase.cpp
+ #[[   hk_kdenewdatabase.cpp
     hk_kdenewdatabasebase.cpp
     hk_kdenewpassworddialog.cpp
     hk_kdenewpassworddialogbase.cpp
@@ -90,14 +90,15 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdetablepartwidget.cpp
     hk_kdetoolbar.cpp
     hk_kdexmlexportdialog.cpp
-    hk_kdexmlexportdialogbase.cpp
+    hk_kdexmlexportdialogbase.cpp ]]
     knodamaindockwindow.cpp
-    knodamaindockwindowbase.cpp ]]
+    knodamaindockwindowbase.cpp 
 )
 
 add_library(hk_kde5classes SHARED ${hk_kdeclasses_LIB_SRCS})
 
 target_link_libraries(hk_kde5classes 
+    xml2
     Qt5::Widgets
     KF5::CoreAddons
     KF5::I18n

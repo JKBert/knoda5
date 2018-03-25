@@ -22,7 +22,7 @@ class hk_kdenewpassworddialog : public hk_kdenewpassworddialogbase
     Q_OBJECT
 
         public:
-        hk_kdenewpassworddialog( QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+        hk_kdenewpassworddialog( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
         ~hk_kdenewpassworddialog();
 
     public slots:

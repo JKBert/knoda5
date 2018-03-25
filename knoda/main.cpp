@@ -25,7 +25,6 @@
 #include "hk_kdedriverselect.h"
 #include <KLocalizedString>
 #include <kconfig.h>
-#include <kurl.h>
 #include <kmimetype.h>
 #include <kdebug.h>
 #include <unistd.h>
@@ -107,7 +106,7 @@ int main(int argc,char** argv)
    }
 
 
-    // TBP if (driver=="")driver=mimetype2driver(u2l(mimename.toUtf8().data()));
+    if (driver=="")driver=mimetype2driver(u2l(mimename.toUtf8().data()));
     d=driver.size()>0;
 
     if (!d&&(db||f))
@@ -127,7 +126,7 @@ int main(int argc,char** argv)
 #ifdef HK_DEBUG
     if (args->isSet("debug")) hk_class::set_generaldebug(true);
 #endif
-    // TBP set_kdestandarddialogs();
+    set_kdestandarddialogs();
     struct_commandlinefields cp;
     cp.driver=driver;
     cp.database=u2l(database.toUtf8().data());
@@ -160,8 +159,8 @@ int main(int argc,char** argv)
       
     }
     if (result>0) return 1;
-   /*TBP knodamaindockwindow* w=new knodamaindockwindow(&cp);
-    w->show(); */
+    knodamaindockwindow* w=new knodamaindockwindow(&cp);
+    w->show();
     result=anwendung.exec();
     KGlobal::config()->sync();
 

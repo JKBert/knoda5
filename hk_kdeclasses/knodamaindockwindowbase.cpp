@@ -16,10 +16,10 @@
 #include "knodamaindockwindowbase.h"
 #include "knodamaindockwindow.h"
 #include "hk_kdedblistview.h"
-#include "hk_kdeeximportdatabase.h"
+// TBP #include "hk_kdeeximportdatabase.h"
 #include "hk_kdedbdesigner.h"
 #include "hk_kdetabledesign.h"
-#include "hk_kdetablepartwidget.h"
+// TBP #include "hk_kdetablepartwidget.h"
 
 #include <hk_connection.h>
 #include <hk_dsvisible.h>
@@ -55,6 +55,8 @@
 #include <QVBoxLayout>
 #include <ktoolbar.h>
 #include <KTabWidget>
+#include <KIcon>
+#include <KConfigGroup>
 
 
 class knodamaindockwindowbaseprivate
@@ -374,7 +376,7 @@ knodamaindockwindowbase::knodamaindockwindowbase(struct_commandlinefields* cl,
    
    KSharedConfigPtr cfg=KGlobal::config();
    KConfigGroup cg = cfg->group("knodamain");
-   applyMainWindowSettings( cg, true );
+  //TBP applyMainWindowSettings( cg, true );
 
   if (cl)
   {
@@ -611,17 +613,14 @@ void knodamaindockwindowbase::exportdbdriver_selected(int index)
 	   }
        if (con->connect())
         {
-	   hk_kdeeximportdatabase* dialog=new   hk_kdeeximportdatabase(p_database,con,hk_kdeeximportdatabase::m_export);
+	/* TBP   hk_kdeeximportdatabase* dialog=new   hk_kdeeximportdatabase(p_database,con,hk_kdeeximportdatabase::m_export);
 	   dialog->exec();
-           delete dialog; 
+           delete dialog;  */
 	}
 
    delete con;
 
    }
-
-
-
 
 }
 
@@ -658,9 +657,9 @@ void knodamaindockwindowbase::importdbdriver_selected(int index)
 	   }
        if (con->connect())
         {
-	   hk_kdeeximportdatabase* dialog=new   hk_kdeeximportdatabase(p_database,con,hk_kdeeximportdatabase::m_import);
+	   /* TBP hk_kdeeximportdatabase* dialog=new   hk_kdeeximportdatabase(p_database,con,hk_kdeeximportdatabase::m_import);
 	   dialog->exec();
-           delete dialog; 
+           delete dialog; */
 	}
 
    delete con;
@@ -722,20 +721,6 @@ knodamaindockwindow* knodamaindockwindowbase::internal_new_dockwindow(void)
   knodamaindockwindow* w=new knodamaindockwindow(&cp);
  return w;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 void knodamaindockwindowbase::set_drivername(const hk_string& dr)
 {
@@ -802,6 +787,7 @@ void knodamaindockwindowbase::slot_disconnect(void)
 
 void knodamaindockwindowbase::slot_open_localdatabase()
 {
+    /* TBP
   if (!p_connection) return;
   QStringList l;
   QString xmime=QString::fromUtf8(l2u(p_connection->mimetype()).c_str());
@@ -835,13 +821,13 @@ void knodamaindockwindowbase::slot_open_localdatabase()
       if (p_databasecombobox)
         p_databasecombobox->addItem(filename);
      internal_set_database(u2l(filename.toUtf8().data()));
-  } 
+  } */
 }
 
 
 void knodamaindockwindowbase::slot_referentialintegrity()
 {
-    if (!p_private->p_designer)
+ /* TBP   if (!p_private->p_designer)
        p_private->p_designer=new hk_kdedbdesignerwindow();
 //    connect (p_private->p_designer,SIGNAL(signal_closed()),this,SLOT(designer_deleted()));
     p_private->p_designer->designer()->set_database(p_database);
@@ -853,7 +839,7 @@ void knodamaindockwindowbase::slot_referentialintegrity()
     p_private->p_designer->show();
     //set_block_has_changed(false);
     connect (p_private->p_designer,SIGNAL(signal_closed()),this,SLOT(designer_deleted()));
-
+*/
 }
 
 void knodamaindockwindowbase::designer_deleted(void)
@@ -867,7 +853,7 @@ p_private->p_designer=NULL;
 
 void knodamaindockwindowbase::slot_load_connection()
 {
-  if (!p_private->p_drivermanager) return;
+  /* TBP if (!p_private->p_drivermanager) return;
   QStringList l;
   QString xmime="application/x-hk_connection";
   l.append(xmime);
@@ -898,13 +884,13 @@ void knodamaindockwindowbase::slot_load_connection()
     }
    }
   }
-  delete d;
+  delete d; */
 }
 
 
 void knodamaindockwindowbase::slot_store_connection()
 {
-  if (!p_database) return;
+ /* TBP if (!p_database) return;
   QStringList l;
   QString xmime="application/x-hk_connection";
   l.append(xmime);
@@ -922,7 +908,7 @@ void knodamaindockwindowbase::slot_store_connection()
     bool g=cg.readEntry("StorePassword",false);
     p_database->store_connectionfile(u2l(filename.toUtf8().data()),g);
   }
-  delete d;
+  delete d; */
 }
 
 

@@ -22,7 +22,7 @@
 #include <kapplication.h>
 #include <kglobal.h>
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kfiledialog.h>
 #include <kdirselectdialog.h>
 
@@ -44,7 +44,7 @@
 #include <qmainwindow.h>
 #include <qwidget.h>
 #include <qmenubar.h>
-#include <qmime.h>
+//TBP #include <qmime.h>
 #include <qdialog.h>
 #include <qlineedit.h>
 #include <qpushbutton.h>
@@ -58,23 +58,13 @@
 #include <hk_datasource.h>
 #include <hk_url.h>
 
-
-
-
-
-
-//TBP TBT translation tr()->i18n()
-
-
-
-
 hk_kdetextdialog::hk_kdetextdialog( QWidget* parent, const char* name, bool modal, Qt::WFlags fl )
     : QDialog( parent, fl )
 
 {
     setObjectName(QString::fromAscii(name == NULL?"hk_kdetextdialog":name));
     setModal(modal);
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled(true);
     hk_kdetextdialogLayout = new QVBoxLayout(this);
     hk_kdetextdialogLayout->setMargin(4);
     hk_kdetextdialogLayout->setSpacing(6);
@@ -98,13 +88,13 @@ hk_kdetextdialog::hk_kdetextdialog( QWidget* parent, const char* name, bool moda
 
     buttonOk = new QPushButton(this);
     buttonOk->setObjectName("buttonOk");
-    buttonOk->setAutoDefault( TRUE );
-    buttonOk->setDefault( TRUE );
+    buttonOk->setAutoDefault(true);
+    buttonOk->setDefault(true);
     Layout1->addWidget( buttonOk );
 
     buttonCancel = new QPushButton(this);
     buttonCancel->setObjectName("buttonCancel");
-    buttonCancel->setAutoDefault( TRUE );
+    buttonCancel->setAutoDefault(true);
     Layout1->addWidget( buttonCancel );
     hk_kdetextdialogLayout->addLayout( Layout1 );
     languageChange();
@@ -130,10 +120,10 @@ hk_kdetextdialog::~hk_kdetextdialog()
  */
 void hk_kdetextdialog::languageChange()
 {
-    setWindowTitle( tr( "MyDialog" ) );
-    textlabel->setText( tr( "Please enter:" ) );
-    buttonOk->setText( tr( "&OK" ) );
-    buttonCancel->setText( tr( "&Cancel" ) );
+    setWindowTitle(i18n("MyDialog"));
+    textlabel->setText(i18n("Please enter:"));
+    buttonOk->setText(i18n("&OK"));
+    buttonCancel->setText(i18n("&Cancel"));
 }
 
 
@@ -176,7 +166,7 @@ hk_string hk_kdestringvaluedialog(const hk_string& st)
 
  bool hk_kdenewpassworddlg(hk_string& s)
 {
-    hk_string np;
+  /*TBP  hk_string np;
 
     hk_kdenewpassworddialog* dlg= new hk_kdenewpassworddialog(0,0,true);
     dlg->exec();
@@ -190,7 +180,7 @@ hk_string hk_kdestringvaluedialog(const hk_string& st)
             return true;
         }
     }
-    delete dlg;
+    delete dlg; */
     return false;
 }
 
@@ -210,7 +200,7 @@ void hk_kdedatasourceenablefunction(void)
 
 hk_form* new_form(hk_database* db,hk_class* parent)
 {
-  knodamaindockwindow* knoda=dynamic_cast<knodamaindockwindow*>(parent);
+ /* TBP knodamaindockwindow* knoda=dynamic_cast<knodamaindockwindow*>(parent);
    hk_kdeformpartwidget* part=NULL;
   if (knoda)
   {
@@ -229,13 +219,12 @@ hk_form* new_form(hk_database* db,hk_class* parent)
   f->set_designmode();
   if (hk_visible::open_maximized_windows())f->showMaximized();
   else f->show();
-  return f->simpleform();
+  return f->simpleform(); */ return NULL;
 }
 
 hk_report* new_report(hk_database* db,hk_class* parent)
 {
-
-  hk_kdereport* f=NULL;
+/*TBP  hk_kdereport* f=NULL;
   knodamaindockwindow* knoda=dynamic_cast<knodamaindockwindow*>(parent);
   hk_kdereportpartwidget* part=NULL;
   if (knoda)
@@ -254,26 +243,23 @@ hk_report* new_report(hk_database* db,hk_class* parent)
   else f->show();
   f->set_designmode();
 
-  return f->simplereport();
+  return f->simplereport(); */ return NULL;
 }
 
 
 hk_form* new_dialogform(hk_database* db,hk_class* )
 {
-
-
-  hk_kdesimpleform* f=new hk_kdesimpleform(qApp->activeWindow(),0,Qt::Dialog);
-
+ /*TBP hk_kdesimpleform* f=new hk_kdesimpleform(qApp->activeWindow(),0,Qt::Dialog);
 
   if (!f) return NULL;
   f->set_database(db);
   f->set_designmode();
-  return f;
+  return f; */ return NULL;
 }
 
 hk_dstable* new_table(hk_class* parent)
 {
-  hk_kdetablepartwidget* part=NULL;
+  /* TBP hk_kdetablepartwidget* part=NULL;
   knodamaindockwindow* knoda=dynamic_cast<knodamaindockwindow*>(parent);
   if (knoda)
   {
@@ -290,13 +276,12 @@ hk_dstable* new_table(hk_class* parent)
   else f->show();
 
   return f;
-  }
+  } */ return NULL;
 }
 
 hk_dsquery* new_query(hk_class* parent)
 {
-
-  hk_kdequerypartwidget* part=NULL;
+/*TBP   hk_kdequerypartwidget* part=NULL;
   knodamaindockwindow* knoda=dynamic_cast<knodamaindockwindow*>(parent);
   if (knoda)
   {
@@ -313,14 +298,14 @@ hk_dsquery* new_query(hk_class* parent)
   else f->show();
 
   return f;
-  }
+  } */ return NULL;
 }
 
 
 hk_string hk_kdefiledialog(const hk_string&  url,enum_operationmode mode)
 {
 hk_string result;
-KUrl u= KUrl(url.c_str());
+/* TBP KUrl u= KUrl(url.c_str());
 
 KFileDialog* d=new KFileDialog(u.directory().size()>0?u.directory():QString::null,
 			QString::null,NULL);
@@ -329,20 +314,20 @@ d->exec();
 QString filename=d->selectedFile();
   if (!filename.isNull())
      result=u2l(filename.toUtf8().data());
-delete d;
+delete d; */
  return result;
 }
 
 hk_string hk_kdedirectorydialog(const hk_string& url)
 {
   hk_string result;
-  KUrl u = KUrl(url.c_str());  
+ /* TBP KUrl u = KUrl(url.c_str());  
   KUrl dir = KFileDialog::getExistingDirectoryUrl(url.size()>0?u.url():QString::null);
   
   if (!dir.path().isNull())
      result=u2l(dir.path().toUtf8().data());
   else
-    result=url;
+    result=url; */
   return result;
 }
 
@@ -369,9 +354,9 @@ void set_kdestandarddialogs(void)
 
 void hk_kdepassworddlg(hk_connection* connection,struct_connectionfields* c)
 {
-    hk_kdepassworddialog* d=new hk_kdepassworddialog(connection,0,0,c);
+  /*TBP  hk_kdepassworddialog* d=new hk_kdepassworddialog(connection,0,0,c);
     d->exec();
-    delete d;
+    delete d; */
 }
 
 
@@ -384,11 +369,11 @@ hk_string hk_kdetranslate(const hk_string& t)
 
  hk_string hk_kdedriverselectdialog(void)
 {
-    hk_kdedriverdialog* c = new hk_kdedriverdialog();
+  /*TBP  hk_kdedriverdialog* c = new hk_kdedriverdialog();
     c->exec();
     hk_string p=c->drivername();
     delete c;
-    return p;
+    return p; */ return "";
 }
 
 

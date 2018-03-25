@@ -23,7 +23,7 @@ class hk_kdenewdatabase : public hk_kdenewdatabasedialogbase
     Q_OBJECT
 
 public:
-    hk_kdenewdatabase( const hk_string& drivername,QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+    hk_kdenewdatabase( const hk_string& drivername,QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kdenewdatabase();
 static hk_string show_dialog(const hk_string& drivername,bool local);
 

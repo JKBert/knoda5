@@ -50,7 +50,7 @@ hk_kdeschemadialog::hk_kdeschemadialog( QWidget* parent,  const char* name, bool
     setModal(modal);
     resize( 253, 100 );
     setWindowTitle( i18n( "Please select" ) );
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled( true );
     hk_kdeschemadialogLayout = new QHBoxLayout(this);
     hk_kdeschemadialogLayout->setMargin(11);
     hk_kdeschemadialogLayout->setSpacing(6);
@@ -64,7 +64,7 @@ hk_kdeschemadialog::hk_kdeschemadialog( QWidget* parent,  const char* name, bool
 
     schemaonlyfield = new QRadioButton(ButtonGroup1);
     schemaonlyfield->setObjectName(QString::fromAscii("schemaonlyfield"));
-    schemaonlyfield->setChecked( TRUE );
+    schemaonlyfield->setChecked( true );
     ButtonGroup1Layout->addWidget( schemaonlyfield );
     datafield = new QRadioButton( ButtonGroup1);
     datafield->setObjectName(QString::fromAscii("datafield" ));
@@ -82,15 +82,15 @@ hk_kdeschemadialog::hk_kdeschemadialog( QWidget* parent,  const char* name, bool
     buttonOk->setObjectName(QString::fromAscii("buttonOk"));
     buttonOk->setText( i18n( "&OK" ) );
     buttonOk->setShortcut( 0 );
-    buttonOk->setAutoDefault( TRUE );
-    buttonOk->setDefault( TRUE );
+    buttonOk->setAutoDefault( true );
+    buttonOk->setDefault( true );
     Layout2->addWidget( buttonOk );
 
     buttonCancel = new QPushButton(this);
     buttonCancel->setObjectName(QString::fromAscii("buttonCancel"));
     buttonCancel->setText( i18n( "&Cancel" ) );
     buttonCancel->setShortcut( 0 );
-    buttonCancel->setAutoDefault( TRUE );
+    buttonCancel->setAutoDefault( true );
     Layout2->addWidget( buttonCancel );
     QSpacerItem* spacer = new QSpacerItem( 20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding );
     Layout2->addItem( spacer );
