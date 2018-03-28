@@ -1,36 +1,43 @@
 #!/bin/bash
 
 IFS=':'
-read -r USERDATADIR EXT <<< "`kde4-config --path data`"
-read -r USERICONDIR EXT <<< "`kde4-config --path icon`"
+read -r USERDATADIR EXT <<< "`kf5-config --path data`"
+read -r USERICONDIR EXT <<< "`kf5-config --path icon`"
 read -r USERMODULEDIR EXT <<< "`kde4-config --path module`"
 read -r USERSERVICESDIR EXT <<< "`kde4-config --path services`"
 
 echo Package root directory: ${CMAKE_SOURCE_DIR}
-echo KDE user data directory: "$USERDATADIR"
-echo KDE user icon directory: "$USERICONDIR"
-echo KDE user module directory: "$USERMODULEDIR"
-echo KDE user services directory: "$USERSERVICESDIR"
+echo KF5 user data directory: "$USERDATADIR"
+echo KF5 user icon directory: "$USERICONDIR"
+echo KDE4 user module directory: "$USERMODULEDIR"
+echo KDE4 user services directory: "$USERSERVICESDIR"
 
 case "$1" in
     link)
-        ln -s ${CMAKE_SOURCE_DIR}/knoda/ $USERDATADIR/knoda4
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeclasses/ $USERDATADIR/hk_kde4classes
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdemodulepart/hk_kdemodulepart.rc $USERDATADIR/hk_kde4classes/hk_kdemodulepart.rc
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdetablepart/hk_kdetablepart.rc $USERDATADIR/hk_kde4classes/hk_kdetablepart.rc
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdegridpart/hk_kdegridpart.rc $USERDATADIR/hk_kde4classes/hk_kdegridpart.rc
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeformpart/hk_kdeformpartdesign.rc $USERDATADIR/hk_kde4classes/hk_kdeformpartdesign.rc
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeformpart/hk_kdeformpartview.rc $USERDATADIR/hk_kde4classes/hk_kdeformpartview.rc
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdereportpart/hk_kdereportpartdesign.rc $USERDATADIR/hk_kde4classes/hk_kdereportpartdesign.rc
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdereportpart/hk_kdereportpartview.rc $USERDATADIR/hk_kde4classes/hk_kdereportpartview.rc
+        ln -s ${CMAKE_SOURCE_DIR}/knoda/ $USERDATADIR/knoda5
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeclasses/ $USERDATADIR/hk_kde5classes
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdemodulepart/hk_kdemodulepart.rc $USERDATADIR/hk_kde5classes/hk_kdemodulepart.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdetablepart/hk_kdetablepart.rc $USERDATADIR/hk_kde5classes/hk_kdetablepart.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdegridpart/hk_kdegridpart.rc $USERDATADIR/hk_kde5classes/hk_kdegridpart.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeformpart/hk_kdeformpartdesign.rc $USERDATADIR/hk_kde5classes/hk_kdeformpartdesign.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeformpart/hk_kdeformpartview.rc $USERDATADIR/hk_kde5classes/hk_kdeformpartview.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdereportpart/hk_kdereportpartdesign.rc $USERDATADIR/hk_kde5classes/hk_kdereportpartdesign.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdereportpart/hk_kdereportpartview.rc $USERDATADIR/hk_kde5classes/hk_kdereportpartview.rc
 # no need to link hk_kdeform.rc as it is located in hk_kdeclasses directory
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdedbdesigner/hk_kdedbdesignerpart.rc $USERDATADIR/hk_kde4classes/hk_kdedbdesignerpart.rc
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdequerypart/hk_kdequerypartqbe.rc $USERDATADIR/hk_kde4classes/hk_kdequerypartqbe.rc
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdequerypart/hk_kdequerypart.rc $USERDATADIR/hk_kde4classes/hk_kdequerypart.rc
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdequerypart/hk_kdequerypartsql.rc $USERDATADIR/hk_kde4classes/hk_kdequerypartsql.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdedbdesigner/hk_kdedbdesignerpart.rc $USERDATADIR/hk_kde5classes/hk_kdedbdesignerpart.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdequerypart/hk_kdequerypartqbe.rc $USERDATADIR/hk_kde5classes/hk_kdequerypartqbe.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdequerypart/hk_kdequerypart.rc $USERDATADIR/hk_kde5classes/hk_kdequerypart.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdequerypart/hk_kdequerypartsql.rc $USERDATADIR/hk_kde5classes/hk_kdequerypartsql.rc
 # icons
         ! [ -d $USERICONDIR/hicolor/32x32/apps ] && mkdir -p $USERICONDIR/hicolor/32x32/apps
-        ln -s ${CMAKE_SOURCE_DIR}/knoda/hi32-app-knoda.png $USERICONDIR/hicolor/32x32/apps/knoda.png
+        ! [ -d $USERICONDIR/hicolor/16x16/apps ] && mkdir -p $USERICONDIR/hicolor/16x16/apps
+        ! [ -d $USERICONDIR/locolor/32x32/apps ] && mkdir -p $USERICONDIR/locolor/32x32/apps
+        ! [ -d $USERICONDIR/locolor/16x16/apps ] && mkdir -p $USERICONDIR/locolor/16x16/apps
+        ln -s ${CMAKE_SOURCE_DIR}/knoda/pics/icons/hicolor/32-apps-knoda5.png $USERICONDIR/hicolor/32x32/apps/knoda5.png
+        ln -s ${CMAKE_SOURCE_DIR}/knoda/pics/icons/hicolor/16-apps-knoda5.png $USERICONDIR/hicolor/16x16/apps/knoda5.png
+        ln -s ${CMAKE_SOURCE_DIR}/knoda/pics/icons/locolor/32-apps-knoda5.png $USERICONDIR/locolor/32x32/apps/knoda5.png
+        ln -s ${CMAKE_SOURCE_DIR}/knoda/pics/icons/locolor/16-apps-knoda5.png $USERICONDIR/locolor/16x16/apps/knoda5.png
+: << 'COMMENT' TBP
 # services
         ! [ -d $USERMODULEDIR ] && mkdir -p $USERMODULEDIR
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdegridpart/hk_kde4gridpart.desktop $USERSERVICESDIR/hk_kde4gridpart.desktop
@@ -54,24 +61,29 @@ case "$1" in
         ln -s ~/.kde4/share/mime ~/.local/share/mime
         ln -s ${CMAKE_SOURCE_DIR}/knoda/knoda4-mime.xml ~/.kde4/share/mime/packages/knoda4-mime.xml
         update-mime-database ~/.local/share/mime/
+COMMENT
         exit 0
         ;;
     unlink)
-        unlink $USERDATADIR/hk_kde4classes/hk_kdereportpartdesign.rc
-        unlink $USERDATADIR/hk_kde4classes/hk_kdereportpartview.rc
-        unlink $USERDATADIR/hk_kde4classes/hk_kdeformpartdesign.rc
-        unlink $USERDATADIR/hk_kde4classes/hk_kdeformpartview.rc
-        unlink $USERDATADIR/hk_kde4classes/hk_kdemodulepart.rc	
-        unlink $USERDATADIR/hk_kde4classes/hk_kdetablepart.rc
-        unlink $USERDATADIR/hk_kde4classes/hk_kdegridpart.rc
-        unlink $USERDATADIR/hk_kde4classes/hk_kdedbdesignerpart.rc
-        unlink $USERDATADIR/hk_kde4classes/hk_kdequerypartqbe.rc
-        unlink $USERDATADIR/hk_kde4classes/hk_kdequerypart.rc
-        unlink $USERDATADIR/hk_kde4classes/hk_kdequerypartsql.rc
-        unlink $USERDATADIR/knoda4
-        unlink $USERDATADIR/hk_kde4classes
+        unlink $USERDATADIR/hk_kde5classes/hk_kdereportpartdesign.rc
+        unlink $USERDATADIR/hk_kde5classes/hk_kdereportpartview.rc
+        unlink $USERDATADIR/hk_kde5classes/hk_kdeformpartdesign.rc
+        unlink $USERDATADIR/hk_kde5classes/hk_kdeformpartview.rc	
+        unlink $USERDATADIR/hk_kde5classes/hk_kdetablepart.rc
+        unlink $USERDATADIR/hk_kde5classes/hk_kdegridpart.rc
+        unlink $USERDATADIR/hk_kde5classes/hk_kdedbdesignerpart.rc
+        unlink $USERDATADIR/hk_kde5classes/hk_kdequerypartqbe.rc
+        unlink $USERDATADIR/hk_kde5classes/hk_kdequerypart.rc
+        unlink $USERDATADIR/hk_kde5classes/hk_kdequerypartsql.rc
+        unlink $USERDATADIR/hk_kde5classes/hk_kdemodulepart.rc
+        unlink $USERDATADIR/knoda5
+        unlink $USERDATADIR/hk_kde5classes
 # icons
-        unlink $USERICONDIR/hicolor/32x32/apps/knoda.png
+        unlink $USERICONDIR/hicolor/32x32/apps/knoda5.png
+        unlink $USERICONDIR/hicolor/16x16/apps/knoda5.png
+        unlink $USERICONDIR/locolor/32x32/apps/knoda5.png
+        unlink $USERICONDIR/locolor/16x16/apps/knoda5.png
+: << 'COMMENT' TBP
 # services
         unlink $USERSERVICESDIR/hk_kde4gridpart.desktop
         unlink $USERMODULEDIR/libhk_kde4gridpart.so
@@ -93,6 +105,7 @@ case "$1" in
         unlink ~/.kde4/share/mime/packages/knoda4-mime.xml
         update-mime-database ~/.local/share/mime/
         unlink ~/.local/share/mime
+COMMENT
         exit 0
         ;;
     *)
