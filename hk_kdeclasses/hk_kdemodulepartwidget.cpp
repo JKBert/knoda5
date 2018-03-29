@@ -44,7 +44,7 @@
 #include "../hk_kdemodulepart/hk_kdemodulepart.h"
 #include <kactioncollection.h>
 #include <kmessagebox.h>
-
+// TBP icons
 class hk_kdemodulepartwidgetprivate
 {
 public:

@@ -51,7 +51,7 @@
 #include <KTabWidget>
 #include <KPushButton>
 #include <KToolBar>
-
+//TBP icons
 knodamaindockwindow::knodamaindockwindow(
         struct_commandlinefields* commandline,
  	QWidget* parent,const char* name, Qt::WFlags f,

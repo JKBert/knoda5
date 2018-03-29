@@ -28,7 +28,7 @@
 #include <KConfigGroup>
 #include <kapplication.h>
 #include <kglobal.h>
-
+//TBP icons
 /* 
  *  Constructs a hk_kdetaborder which is a child of 'parent', with the 
  *  name 'name' and widget flags set to 'f' 

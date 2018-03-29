@@ -64,7 +64,7 @@
 #include <kservice.h>
 
 
-
+//TBP icons
 class hk_kdesimpleformprivate
 {
 public:

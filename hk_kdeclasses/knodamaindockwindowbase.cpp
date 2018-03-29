@@ -88,6 +88,7 @@ knodamaindockwindowbase::knodamaindockwindowbase(struct_commandlinefields* cl,
   p_partmanager=new KParts::PartManager(this);
   i18n("&Database");
 
+  QIcon::setThemeName("oxygen");
   connect(p_partmanager,SIGNAL(partAdded(KParts::Part*))
   ,this,SLOT(slot_activate_closeaction()));
   connect(p_partmanager,SIGNAL(partRemoved(KParts::Part*))
@@ -154,10 +155,10 @@ knodamaindockwindowbase::knodamaindockwindowbase(struct_commandlinefields* cl,
    connect(p_tabs,SIGNAL(closeRequest(QWidget*)),this, SLOT(slot_closeTab(QWidget*)));
    connect(p_tabs,SIGNAL(currentChanged(int)),this, SLOT(slot_focusCurrent(int)));
    
-   p_quitaction=new KAction(KIcon("application-exit"),i18n("E&xit"),actionCollection());
+   p_quitaction=new KAction(QIcon::fromTheme("application-exit"),i18n("E&xit"),actionCollection());
    actionCollection()-> addAction("quit",p_quitaction);
    connect(p_quitaction,SIGNAL(triggered()),this,SLOT(close()));
-   p_closeaction=new KAction(KIcon("window-close"),i18n("&Close"),actionCollection());
+   p_closeaction=new KAction(QIcon::fromTheme("window-close"),i18n("&Close"),actionCollection());
    actionCollection()-> addAction("close",p_closeaction);
    connect(p_closeaction,SIGNAL(triggered()),this,SLOT(slot_closewindow()));
    p_closeaction->setEnabled(false);
@@ -186,9 +187,9 @@ knodamaindockwindowbase::knodamaindockwindowbase(struct_commandlinefields* cl,
 
   if ( !cl || (cl && cl->p_guicommands->p_showlistwindow) )
   {
-    p_newconnectionaction= new KActionMenu(KIcon("network-connect"),i18n("&Connect to"),actionCollection());
+    p_newconnectionaction= new KActionMenu(QIcon::fromTheme("network-connect"),i18n("&Connect to"),actionCollection());
     actionCollection()-> addAction("newconnection",p_newconnectionaction);
-    p_disconnectaction= new KAction(KIcon("network-disconnect"),i18n("Disconnect"),actionCollection());
+    p_disconnectaction= new KAction(QIcon::fromTheme("network-disconnect"),i18n("Disconnect"),actionCollection());
     actionCollection()-> addAction("disconnect",p_disconnectaction);
     connect(p_disconnectaction,SIGNAL(triggered()),this,SLOT(slot_disconnect()));
     connect(p_newconnectionaction->menu(),SIGNAL(aboutToShow()),this,SLOT(show_drivers()));
@@ -199,31 +200,31 @@ knodamaindockwindowbase::knodamaindockwindowbase(struct_commandlinefields* cl,
     p_disconnectaction=NULL;
   }
 
-    p_loadconnection= new KAction(KIcon("folder-documents"),i18n("Load connection"),actionCollection());
+    p_loadconnection= new KAction(QIcon::fromTheme("folder-documents"),i18n("Load connection"),actionCollection());
     actionCollection()-> addAction("loadconnection",p_loadconnection);
     connect(p_loadconnection,SIGNAL(triggered()),this,SLOT(slot_load_connection()));
-    p_storeconnection= new KAction(KIcon("document-save"),i18n("Store connection"),actionCollection());
+    p_storeconnection= new KAction(QIcon::fromTheme("document-save"),i18n("Store connection"),actionCollection());
     actionCollection()-> addAction("storeconnection",p_storeconnection);
     connect(p_storeconnection,SIGNAL(triggered()),this,SLOT(slot_store_connection()));
-    p_newdatabaseaction= new KAction(KIcon("folder-documents"),i18n("Database"),actionCollection());
+    p_newdatabaseaction= new KAction(QIcon::fromTheme("folder-documents"),i18n("Database"),actionCollection());
     actionCollection()-> addAction("newdatabase",p_newdatabaseaction);
     connect(p_newdatabaseaction,SIGNAL(triggered()),this,SLOT(slot_new_database()));
-    p_newtableaction= new KAction(KIcon("view-form-table"),i18n("Table"),actionCollection());
+    p_newtableaction= new KAction(QIcon::fromTheme("view-form-table"),i18n("Table"),actionCollection());
     actionCollection()-> addAction("newtable",p_newtableaction);
     connect(p_newtableaction,SIGNAL(triggered()),this,SLOT(slot_new_table()));
-    p_newqueryaction= new KAction(KIcon("document-preview"),i18n("Query"),actionCollection());
+    p_newqueryaction= new KAction(QIcon::fromTheme("document-preview"),i18n("Query"),actionCollection());
     actionCollection()-> addAction("newquery",p_newqueryaction);
     connect(p_newqueryaction,SIGNAL(triggered()),this,SLOT(slot_new_query()));
-    p_newviewaction= new KAction(KIcon("document-preview"),i18n("View"),actionCollection());
+    p_newviewaction= new KAction(QIcon::fromTheme("document-preview"),i18n("View"),actionCollection());
     actionCollection()-> addAction("newview",p_newviewaction);
     connect(p_newviewaction,SIGNAL(triggered()),this,SLOT(slot_new_view()));
-    p_newformaction= new KAction(KIcon("utilities-terminal"),i18n("Form"),actionCollection());
+    p_newformaction= new KAction(QIcon::fromTheme("utilities-terminal"),i18n("Form"),actionCollection());
     actionCollection()-> addAction("newform",p_newformaction);
     connect(p_newformaction,SIGNAL(triggered()),this,SLOT(slot_new_form()));    
-    p_newreportaction= new KAction(KIcon("printer"),i18n("Report"),actionCollection());
+    p_newreportaction= new KAction(QIcon::fromTheme("printer"),i18n("Report"),actionCollection());
     actionCollection()-> addAction("newreport",p_newreportaction);
     connect(p_newreportaction,SIGNAL(triggered()),this,SLOT(slot_new_report()));    
-    p_newmoduleaction= new KAction(KIcon("document-edit"),i18n("Module"),actionCollection());
+    p_newmoduleaction= new KAction(QIcon::fromTheme("document-edit"),i18n("Module"),actionCollection());
     actionCollection()-> addAction("newmodule",p_newmoduleaction);
     connect(p_newmoduleaction,SIGNAL(triggered()),this,SLOT(slot_new_module()));
     p_newobjectaction->addAction(p_newdatabaseaction);
@@ -234,13 +235,13 @@ knodamaindockwindowbase::knodamaindockwindowbase(struct_commandlinefields* cl,
     p_newobjectaction->addAction(p_newreportaction);
     p_newobjectaction->addAction(p_newmoduleaction); 
 
-    p_newaction= new KAction(KIcon("document-new"),i18n("&New"),actionCollection());
+    p_newaction= new KAction(QIcon::fromTheme("document-new"),i18n("&New"),actionCollection());
     actionCollection()-> addAction("newclicked",p_newaction);   
-    p_deleteaction= new KAction(KIcon("document-close"),i18n("&Delete"),actionCollection());
+    p_deleteaction= new KAction(QIcon::fromTheme("document-close"),i18n("&Delete"),actionCollection());
     actionCollection()-> addAction("deleteclicked",p_deleteaction);       
-    p_startaction= new KAction(KIcon("system-run"),i18n("&Start"),actionCollection());
+    p_startaction= new KAction(QIcon::fromTheme("system-run"),i18n("&Start"),actionCollection());
     actionCollection()-> addAction("startclicked",p_startaction);    
-    p_alteraction= new KAction(KIcon("document-edit"), i18n("&Modify"),actionCollection());
+    p_alteraction= new KAction(QIcon::fromTheme("document-edit"), i18n("&Modify"),actionCollection());
     actionCollection()-> addAction("alterclicked",p_alteraction);
       
     p_alteraction->setEnabled(false);
@@ -282,11 +283,11 @@ knodamaindockwindowbase::knodamaindockwindowbase(struct_commandlinefields* cl,
     p_passwordaction= new KAction(i18n("&Change password"),actionCollection());
     actionCollection()-> addAction("changepassword",p_passwordaction);
     connect(p_passwordaction,SIGNAL(triggered()),this,SLOT(newpassworddialog_selected()));
-    p_copyaction= new KAction(KIcon("edit-copy"),i18n("&Copy"),actionCollection());
+    p_copyaction= new KAction(QIcon::fromTheme("edit-copy"),i18n("&Copy"),actionCollection());
     actionCollection()-> addAction("copy",p_copyaction);
     connect(p_copyaction,SIGNAL(triggered()),this,SLOT(copy_clicked()));
     p_copyaction -> setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_C);
-    p_pasteaction= new KAction(KIcon("edit-paste"),i18n("&Paste"),actionCollection());
+    p_pasteaction= new KAction(QIcon::fromTheme("edit-paste"),i18n("&Paste"),actionCollection());
     actionCollection()-> addAction("paste",p_pasteaction);
     connect(p_pasteaction,SIGNAL(triggered()),this,SLOT(paste_clicked()));
     p_pasteaction -> setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_V);
@@ -300,10 +301,10 @@ knodamaindockwindowbase::knodamaindockwindowbase(struct_commandlinefields* cl,
     p_newwindowaction= new KAction(i18n("&New databasewindow"),actionCollection());
     actionCollection()-> addAction("newwindow",p_newwindowaction);
     connect(p_newwindowaction,SIGNAL(triggered()),this,SLOT(newwindow_clicked()));
-    p_settingsaction= new KAction(KIcon("configure"),i18n("&Options"),actionCollection());
+    p_settingsaction= new KAction(QIcon::fromTheme("configure"),i18n("&Options"),actionCollection());
     actionCollection()-> addAction("settings",p_settingsaction);
     connect(p_settingsaction,SIGNAL(triggered()),this,SLOT(settings_clicked()));
-    p_openlocaldbaction=  new KAction(KIcon("document-open-folder"),i18n("Open &local database"),actionCollection());
+    p_openlocaldbaction=  new KAction(QIcon::fromTheme("document-open-folder"),i18n("Open &local database"),actionCollection());
     actionCollection()-> addAction("openlocaldb",p_openlocaldbaction);
     connect(p_openlocaldbaction,SIGNAL(triggered()),this,SLOT(slot_open_localdatabase()));
     p_openlocaldbaction->setEnabled(false);
@@ -314,7 +315,7 @@ knodamaindockwindowbase::knodamaindockwindowbase(struct_commandlinefields* cl,
 
    set_connection(NULL);
 
-  connect (QApplication::clipboard(), SIGNAL(dataChanged()),this, SLOT(clipboarddata_has_changed()));
+   connect (QApplication::clipboard(), SIGNAL(dataChanged()),this, SLOT(clipboarddata_has_changed()));
 
    if(p_databasecombobox)
    connect(p_databasecombobox,SIGNAL(activated(int)),this,SLOT(slot_database_selected(int)));

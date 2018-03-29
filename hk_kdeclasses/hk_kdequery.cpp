@@ -40,7 +40,7 @@
 #include <kstandarddirs.h>
 #include <kservice.h>
 
-
+// TBP icons
 /*
  *  Constructs a hk_kdequery which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'

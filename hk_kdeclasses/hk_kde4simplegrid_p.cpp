@@ -25,7 +25,7 @@
 #include "hk_kdegrid.h"
 #include "hk_kdecombobox.h"
 #include "hk_database.h"
-
+//TBP icons
 int const hk_kdegridmodel::ColumnTypeRole = Qt::UserRole;
 int const hk_kdegridmodel::PasteRole = Qt::UserRole + 1;
 

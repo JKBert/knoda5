@@ -1,3 +1,5 @@
 KToolInvocation::invokeHelp() -> KHelpClient::invokeHelp()
 tr() -> #include <KLocalizedString> , i18n()
 KAboutData -> K4AboutData
+
+icons from oxygen: QIcon::setThemeName("oxygen") and load icon by QIcon::fromTheme(<iconname>)

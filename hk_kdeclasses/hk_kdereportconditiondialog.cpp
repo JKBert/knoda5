@@ -26,7 +26,7 @@
 #include <kiconloader.h>
 #include <klocale.h>
 #include <qheaderview.h>
-
+//TBP icons
 hk_kdereportconditiondialog::hk_kdereportconditiondialog( QWidget* parent,  const char* name, bool modal, Qt::WFlags fl )
 : hk_kdereportconditiondialogbase( parent, name, modal, fl )
 {

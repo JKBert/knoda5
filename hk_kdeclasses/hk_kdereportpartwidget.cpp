@@ -56,7 +56,7 @@
 #include <kactionmenu.h>
 #include <kxmlguifactory.h>
 
-
+//TBP icons
  class hk_kdepreviewwindow: public KMainWindow
 {
 public:

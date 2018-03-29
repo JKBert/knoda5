@@ -50,7 +50,7 @@
 #include <kxmlguifactory.h>
 #include <kactioncollection.h>
 #include <kmessagebox.h>
-
+// TBP icons
 class hk_kdeinterpreterdialogprivate
 {
 public:

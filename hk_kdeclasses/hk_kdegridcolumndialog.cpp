@@ -37,7 +37,7 @@
 #include <qspinbox.h>
 #include <qscrollarea.h>
 #include <qheaderview.h>
-
+//TBP icons
 /*
  *  Constructs a hk_kdegridcolumndialog which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'

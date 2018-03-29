@@ -52,7 +52,7 @@
 #include <kactioncollection.h>
 #include <kservice.h>
 
-
+//TBP icons
 const int designwidth=3000;
 const int designheight=3000;
 

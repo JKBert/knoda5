@@ -35,7 +35,7 @@
 #include <kglobal.h>
 #include <kiconloader.h>
 #include <klocale.h>
-
+// TBP icons
 /*
  *  Constructs a hk_kdeindexeditdialog which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'

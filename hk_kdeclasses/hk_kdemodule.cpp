@@ -46,7 +46,7 @@
 #include <kapplication.h>
 #include <kactioncollection.h>
 #include <kservice.h>
-
+//TBP icons
 /*
  *  Constructs a hk_kdemodule which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'

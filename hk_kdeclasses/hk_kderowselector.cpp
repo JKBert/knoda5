@@ -30,7 +30,7 @@
 #include <kiconloader.h>
 #include <kicon.h>
 
-
+//TBP icons
 class rowselectorbutton:public QPushButton
 {
     public:

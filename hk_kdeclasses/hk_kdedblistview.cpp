@@ -18,7 +18,6 @@
 #include <kapplication.h>
 #include <kstandarddirs.h>
 #include <kglobalsettings.h>
-#include <kiconloader.h>
 #include <kconfig.h>
 #include <qprogressdialog.h>
 #include <qpushbutton.h>
@@ -213,9 +212,6 @@ QTreeWidget(parent), hk_dbvisible()
 
 }
 
-
-
-
 hk_kdedblistview::~hk_kdedblistview()
 {
  delete p_private->p_schemadialog;
@@ -226,29 +222,29 @@ hk_kdedblistview::~hk_kdedblistview()
 
 void hk_kdedblistview::init_listview()
 {
-  KIconLoader* loader=KIconLoader::global();
-  loader->addAppDir("hk_kde5classes");
   clear();
   setSortingEnabled(false);
+  QIcon::setThemeName("oxygen");
+  
   p_private->p_databaseitem=new QTreeWidgetItem(this,QStringList() << i18n("<No database>"));
-  p_private->p_databaseitem->setIcon(0,loader->loadIcon("document-open-folder",KIconLoader::NoGroup,KIconLoader::SizeSmall));
+  p_private->p_databaseitem->setIcon(0,QIcon::fromTheme("document-open-folder"));
   
   p_private->p_moduleitem=new QTreeWidgetItem(QStringList() << i18n("Modules"));
-  p_private->p_moduleitem->setIcon(0,loader->loadIcon("document-edit",KIconLoader::NoGroup,KIconLoader::SizeSmall));
+  p_private->p_moduleitem->setIcon(0,QIcon::fromTheme("document-edit"));
   p_private->p_databaseitem -> insertChild(0,p_private->p_moduleitem);
   
   p_private->p_reportitem=new QTreeWidgetItem(QStringList() << i18n("Reports"));
-  p_private->p_reportitem->setIcon(0,loader->loadIcon("printer",KIconLoader::NoGroup,KIconLoader::SizeSmall));
+  p_private->p_reportitem->setIcon(0,QIcon::fromTheme("printer"));
   p_private->p_databaseitem -> insertChild(0,p_private->p_reportitem);
 
   p_private->p_formitem=new QTreeWidgetItem(QStringList() << i18n("Forms"));
-  p_private->p_formitem->setIcon(0,loader->loadIcon("utilities-terminal",KIconLoader::NoGroup,KIconLoader::SizeSmall));
+  p_private->p_formitem->setIcon(0,QIcon::fromTheme("utilities-terminal"));
   p_private->p_databaseitem -> insertChild(0,p_private->p_formitem);  
 
   if (database() && database()->connection()->server_supports(hk_connection::SUPPORTS_SQL))
    {
     p_private->p_queryitem=new QTreeWidgetItem(QStringList() << i18n("Queries"));
-    p_private->p_queryitem->setIcon(0,loader->loadIcon("document-edit-verify",KIconLoader::NoGroup,KIconLoader::SizeSmall));
+    p_private->p_queryitem->setIcon(0,QIcon::fromTheme("document-edit-verify"));
     p_private->p_databaseitem -> insertChild(0,p_private->p_queryitem);
    }
    else
@@ -258,15 +254,15 @@ void hk_kdedblistview::init_listview()
   if (database() && database()->connection()->server_supports(hk_connection::SUPPORTS_VIEWS))
    {
      p_private->p_viewitem=new QTreeWidgetItem(QStringList() << i18n("Views"));
-     p_private->p_viewitem->setIcon(0,loader->loadIcon("document-preview",KIconLoader::NoGroup,KIconLoader::SizeSmall));
-       p_private->p_databaseitem -> insertChild(0,p_private->p_viewitem);
+     p_private->p_viewitem->setIcon(0,QIcon::fromTheme("document-preview"));
+     p_private->p_databaseitem -> insertChild(0,p_private->p_viewitem);
    }
    else
    {
    p_private->p_viewitem=NULL;
    }
   p_private->p_tableitem=new QTreeWidgetItem(QStringList() << i18n("Tables"));
-  p_private->p_tableitem->setIcon(0,loader->loadIcon("view-form-table",KIconLoader::NoGroup,KIconLoader::SizeSmall));
+  p_private->p_tableitem->setIcon(0,QIcon::fromTheme("view-form-table"));
   p_private->p_databaseitem -> insertChild(0,p_private->p_tableitem);
 
   }

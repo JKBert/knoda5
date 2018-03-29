@@ -37,7 +37,7 @@
 #include <hk_connection.h>
 #include <kglobal.h>
 //TBP TBT translation tr()->i18n()
-
+//TBP icons
 hk_kdedatabasesetting::hk_kdedatabasesetting( hk_database*db, QWidget* parent,  const char* name, bool modal, Qt::WFlags fl )
     : hk_kdedatabasesettingbase( parent, name, modal, fl )
 {

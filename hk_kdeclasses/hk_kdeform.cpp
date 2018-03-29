@@ -54,7 +54,7 @@
 #include <kconfig.h>
 #include <kapplication.h>
 #include <kservice.h>
-
+// TBP icons
 /*
  *  Constructs a hk_kdeform which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'

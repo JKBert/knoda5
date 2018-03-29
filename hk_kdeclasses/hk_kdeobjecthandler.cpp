@@ -31,7 +31,7 @@
 #include <klocale.h>
 #include <kglobal.h>
 #include <kconfiggroup.h>
-
+//TBP icons
 
 hk_kdeobjecthandler::hk_kdeobjecthandler( hk_database* db,QWidget* parent,  const char* name, bool modal, Qt::WFlags fl )
     : hk_kdeobjecthandlerbase( parent, name, modal, fl )

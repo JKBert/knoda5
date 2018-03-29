@@ -13,7 +13,7 @@
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
 //$Revision: 1.12 $
-
+//TBP icons
 #include "hk_kdetablepartwidget.h"
 #include <hk_datasource.h>
 #include <hk_database.h>

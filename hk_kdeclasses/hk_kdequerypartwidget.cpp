@@ -52,7 +52,7 @@
 #include <ktexteditor/view.h>
 #include <ktexteditor/highlightinterface.h>
 #include <kmessagebox.h>
-
+//TBP icons
 class hk_kdequerypartwidgetprivate
 {
 public:

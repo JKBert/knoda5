@@ -32,6 +32,7 @@
 #include <kiconloader.h>
 #include <klocale.h>
 
+// TBP icons
 hk_kdereportsectiondialog::hk_kdereportsectiondialog( hk_kdesimplereport* r,QWidget* parent,  const char* name, bool modal, Qt::WFlags fl )
 : hk_kdereportsectiondialogbase( parent, name, modal, fl )
 {

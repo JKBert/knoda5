@@ -40,7 +40,7 @@
 
 #include "hk_kdedblistview.h"
 #include "hk_kdenewdatabase.h"
-
+// TBP icons
 bool hk_kdeeximportdatabase::p_cancelcopying=false;
 QProgressDialog* hk_kdeeximportdatabase::p_progressdialog=NULL;
 

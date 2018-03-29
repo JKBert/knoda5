@@ -39,7 +39,7 @@
 
 K_PLUGIN_FACTORY(hk_kdegridpartfactory, registerPlugin<hk_kdegridpart>();)
 K_EXPORT_PLUGIN(hk_kdegridpartfactory("hk_kde5gridpart", "hk_kde5gridpart"))
-
+// TBP fix icons
 hk_kdegridpart::hk_kdegridpart(QWidget* pWidget,QObject* parent, const QVariantList &)
 :KParts::ReadWritePart(parent)
 {

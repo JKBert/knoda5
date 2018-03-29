@@ -45,7 +45,7 @@
 #include <kapplication.h>
 #include <kactioncollection.h>
 #include <kservice.h>
-
+//TBP icons
 hk_kdereport::hk_kdereport (QWidget* parent,  const char* /* name */, Qt::WFlags fl )
 : KParts::MainWindow( parent, fl ) ,hk_class()
 {

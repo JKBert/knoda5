@@ -36,7 +36,7 @@
 #include <kstandarddirs.h>
 #include <klocale.h>
 #include <kservice.h>
-
+//TBP icons
 /*
  *  Constructs a hk_kdetable which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'

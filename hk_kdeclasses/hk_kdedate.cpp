@@ -31,7 +31,7 @@
 #include <QKeyEvent>
 
 #include <hk_datetime.h>
-
+// TBP icons
 
 class datepopupprivate
 {
