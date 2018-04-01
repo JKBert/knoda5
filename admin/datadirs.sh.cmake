@@ -3,14 +3,14 @@
 IFS=':'
 read -r USERDATADIR EXT <<< "`kf5-config --path data`"
 read -r USERICONDIR EXT <<< "`kf5-config --path icon`"
-read -r USERMODULEDIR EXT <<< "`kde4-config --path module`"
-read -r USERSERVICESDIR EXT <<< "`kde4-config --path services`"
+read -r USERMODULEDIR EXT <<< "`kf5-config --path module`"
+read -r USERSERVICESDIR EXT <<< "`kf5-config --path services`"
 
 echo Package root directory: ${CMAKE_SOURCE_DIR}
 echo KF5 user data directory: "$USERDATADIR"
 echo KF5 user icon directory: "$USERICONDIR"
-echo KDE4 user module directory: "$USERMODULEDIR"
-echo KDE4 user services directory: "$USERSERVICESDIR"
+echo KF5 user module directory: "$USERMODULEDIR"
+echo KF5 user services directory: "$USERSERVICESDIR"
 
 case "$1" in
     link)
@@ -40,22 +40,25 @@ case "$1" in
 : << 'COMMENT' TBP
 # services
         ! [ -d $USERMODULEDIR ] && mkdir -p $USERMODULEDIR
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdegridpart/hk_kde4gridpart.desktop $USERSERVICESDIR/hk_kde4gridpart.desktop
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4gridpart.so $USERMODULEDIR/libhk_kde4gridpart.so
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdedbdesigner/hk_kde4dbdesignerpart.desktop $USERSERVICESDIR/hk_kde4dbdesignerpart.desktop
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4dbdesignerpart.so $USERMODULEDIR/libhk_kde4dbdesignerpart.so
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeformpart/hk_kde4formpart.desktop $USERSERVICESDIR/hk_kde4formpart.desktop
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4formpart.so $USERMODULEDIR/libhk_kde4formpart.so
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdemodulepart/hk_kde4modulepart.desktop $USERSERVICESDIR/hk_kde4modulepart.desktop
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4modulepart.so $USERMODULEDIR/libhk_kde4modulepart.so
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeqbepart/hk_kde4qbepart.desktop $USERSERVICESDIR/hk_kde4qbepart.desktop
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4qbepart.so $USERMODULEDIR/libhk_kde4qbepart.so
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdequerypart/hk_kde4querypart.desktop $USERSERVICESDIR/hk_kde4querypart.desktop
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4querypart.so $USERMODULEDIR/libhk_kde4querypart.so
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdereportpart/hk_kde4reportpart.desktop $USERSERVICESDIR/hk_kde4reportpart.desktop
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4reportpart.so $USERMODULEDIR/libhk_kde4reportpart.so
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdetablepart/hk_kde4tablepart.desktop $USERSERVICESDIR/hk_kde4tablepart.desktop
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4tablepart.so $USERMODULEDIR/libhk_kde4tablepart.so
+COMMENT
+        ! [ -d $USERSERVICESDIR ] && mkdir -p $USERSERVICESDIR
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdegridpart/hk_kde5gridpart.desktop $USERSERVICESDIR/hk_kde5gridpart.desktop
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdedbdesigner/hk_kde5dbdesignerpart.desktop $USERSERVICESDIR/hk_kde5dbdesignerpart.desktop
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeformpart/hk_kde5formpart.desktop $USERSERVICESDIR/hk_kde5formpart.desktop
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdemodulepart/hk_kde5modulepart.desktop $USERSERVICESDIR/hk_kde5modulepart.desktop
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeqbepart/hk_kde5qbepart.desktop $USERSERVICESDIR/hk_kde5qbepart.desktop
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdequerypart/hk_kde5querypart.desktop $USERSERVICESDIR/hk_kde5querypart.desktop
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdereportpart/hk_kde5reportpart.desktop $USERSERVICESDIR/hk_kde5reportpart.desktop
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdetablepart/hk_kde5tablepart.desktop $USERSERVICESDIR/hk_kde5tablepart.desktop
+: << 'COMMENT' TBP
 # to use user mime types
         ! [ -d ~/.kde4/share/mime ] && mkdir -p ~/.kde4/share/mime/packages
         ln -s ~/.kde4/share/mime ~/.local/share/mime
@@ -84,23 +87,25 @@ COMMENT
         unlink $USERICONDIR/locolor/32x32/apps/knoda5.png
         unlink $USERICONDIR/locolor/16x16/apps/knoda5.png
 : << 'COMMENT' TBP
-# services
-        unlink $USERSERVICESDIR/hk_kde4gridpart.desktop
-        unlink $USERMODULEDIR/libhk_kde4gridpart.so
-        unlink $USERSERVICESDIR/hk_kde4dbdesignerpart.desktop
-        unlink $USERMODULEDIR/libhk_kde4dbdesignerpart.so
-        unlink $USERSERVICESDIR/hk_kde4formpart.desktop
-        unlink $USERMODULEDIR/libhk_kde4formpart.so
-        unlink $USERSERVICESDIR/hk_kde4modulepart.desktop
-        unlink $USERMODULEDIR/libhk_kde4modulepart.so
-        unlink $USERSERVICESDIR/hk_kde4qbepart.desktop
-        unlink $USERMODULEDIR/libhk_kde4qbepart.so
-        unlink $USERSERVICESDIR/hk_kde4querypart.desktop
-        unlink $USERMODULEDIR/libhk_kde4querypart.so
-        unlink $USERSERVICESDIR/hk_kde4reportpart.desktop
-        unlink $USERMODULEDIR/libhk_kde4reportpart.so
-        unlink $USERSERVICESDIR/hk_kde4tablepart.desktop
-        unlink $USERMODULEDIR/libhk_kde4tablepart.so
+# services       
+        unlink $USERMODULEDIR/libhk_kde5gridpart.so
+        unlink $USERMODULEDIR/libhk_kde5dbdesignerpart.so
+        unlink $USERMODULEDIR/libhk_kde5formpart.so
+        unlink $USERMODULEDIR/libhk_kde5modulepart.so
+        unlink $USERMODULEDIR/libhk_kde5qbepart.so
+        unlink $USERMODULEDIR/libhk_kde5querypart.so
+        unlink $USERMODULEDIR/libhk_kde5reportpart.so
+        unlink $USERMODULEDIR/libhk_kde5tablepart.so
+COMMENT
+        unlink $USERSERVICESDIR/hk_kde5gridpart.desktop
+        unlink $USERSERVICESDIR/hk_kde5dbdesignerpart.desktop
+        unlink $USERSERVICESDIR/hk_kde5formpart.desktop
+        unlink $USERSERVICESDIR/hk_kde5modulepart.desktop
+        unlink $USERSERVICESDIR/hk_kde5qbepart.desktop
+        unlink $USERSERVICESDIR/hk_kde5querypart.desktop
+        unlink $USERSERVICESDIR/hk_kde5reportpart.desktop
+        unlink $USERSERVICESDIR/hk_kde5tablepart.desktop
+: << 'COMMENT' TBP
 # user mime types
         unlink ~/.kde4/share/mime/packages/knoda4-mime.xml
         update-mime-database ~/.local/share/mime/

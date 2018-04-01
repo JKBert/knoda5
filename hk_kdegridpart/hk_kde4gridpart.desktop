@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Service
-Name=hk_kde4classes grid
-MimeType=database/grid;
-ServiceTypes=KParts/ReadWritePart
-X-KDE-Library=libhk_kde4gridpart

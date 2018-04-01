@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Service
-Name=hk_kde4classes report
-MimeType=database/report;
-ServiceTypes=KParts/ReadWritePart
-X-KDE-Library=libhk_kde4reportpart

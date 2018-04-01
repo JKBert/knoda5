@@ -24,8 +24,8 @@
 /* TBP #include "hk_kdetablepartwidget.h"
 #include "hk_kdequerypartwidget.h"
 #include "hk_kdeformpartwidget.h"
-#include "hk_kdereportpartwidget.h"
-#include "hk_kdemodulepartwidget.h" */
+#include "hk_kdereportpartwidget.h" */
+#include "hk_kdemodulepartwidget.h" 
 #include "hk_kdenewdatabase.h"
 #include "hk_kdedblistview.h"
 
@@ -42,7 +42,7 @@
 #include <qmenu.h>
 #include <kcombobox.h>
 #include <klocale.h>
-#include <kservice.h>
+//TBP #include <kservice.h>
 #include <kiconloader.h>
 #include <kapplication.h>
 #include <kactionmenu.h>
@@ -51,6 +51,9 @@
 #include <KTabWidget>
 #include <KPushButton>
 #include <KToolBar>
+#include <KService>
+#include <KParts/ReadWritePart>
+
 //TBP icons
 knodamaindockwindow::knodamaindockwindow(
         struct_commandlinefields* commandline,
@@ -433,15 +436,15 @@ knodamaindockwindow::~knodamaindockwindow()
      w->set_viewmode(); */
   }
 
-  void knodamaindockwindow::slot_new_module(void)
-  {
-  /* TBP   if (!p_database) return;
+void knodamaindockwindow::slot_new_module(void)
+{
+    if (!p_database) return;
     hk_kdemodulepartwidget* w=new_module();
     if (!w)return;
     w->set_database(p_database);
     w->setFocus(); 
-//     w->set_designmode(); */
-  }
+//     w->set_designmode(); 
+}
 
 void knodamaindockwindow::slot_delete_module(const QString& t)
 {
@@ -451,7 +454,7 @@ void knodamaindockwindow::slot_delete_module(const QString& t)
 
 void knodamaindockwindow::slot_designmode_module(const QString&t)
 {
- /* TBP if (!p_database) return;
+  if (!p_database) return;
   hk_kdemodulepartwidget* w=find_existing_module(u2l(t.toUtf8().data()));
   if (w) {
     tabs()->setCurrentWidget(w);
@@ -462,7 +465,7 @@ void knodamaindockwindow::slot_designmode_module(const QString&t)
     w->set_database(p_database);
     w->load_module(u2l(t.toUtf8().data()));   
   }
-  w->setFocus(); */
+  w->setFocus();
 }
 
 hk_kdetablepartwidget* knodamaindockwindow::new_table(void)
@@ -580,7 +583,7 @@ hk_kdereportpartwidget* knodamaindockwindow::new_report(void)
 
 hk_kdemodulepartwidget* knodamaindockwindow::new_module(void)
 {   
-  /* TBP KService::Ptr service = KService::serviceByDesktopName("hk_kde4modulepart");
+  KService::Ptr service = KService::serviceByDesktopName("hk_kde5modulepart");
   KParts::ReadWritePart* p_part;
   
   if (!service ||
@@ -599,23 +602,22 @@ hk_kdemodulepartwidget* knodamaindockwindow::new_module(void)
    
   p_partmanager->addPart(p_part);
   int i = tabs() -> addTab(module,i18n("Module"));
-  tabs() -> setTabIcon(i,KIcon("document-edit"));
+  QIcon::setThemeName("oxygen");
+  tabs() -> setTabIcon(i,QIcon::fromTheme("document-edit"));
   connect(module, SIGNAL(signal_captionChanged(QWidget*,QString)), this, SLOT(slot_captionChanged(QWidget*,QString)));
   tabs() -> setCurrentIndex(i);
   module->setFocus();
-  return module; */ return NULL;
+  return module;
 }   
 
 void knodamaindockwindow::rename_clicked()
 {
-if (!p_listview) return;
-if (!p_listview->currentItem()||p_listview->is_headeritem())
-return;
+  if (!p_listview) return;
+  if (!p_listview->currentItem()||p_listview->is_headeritem())
+    return;
 
-
-
-hk_string newname=trim(show_stringvaluedialog(hk_translate("Enter new name:")));
-if (newname.size()==0) return;
+  hk_string newname=trim(show_stringvaluedialog(hk_translate("Enter new name:")));
+  if (newname.size()==0) return;
     filetype f;
     if (p_listview->is_tableitem())
        f=ft_table;
@@ -628,11 +630,9 @@ if (newname.size()==0) return;
     else
        f=ft_report;
 
-
     if (!p_database->rename_file(u2l(p_listview->currentItem()->text(0).toUtf8().data())
     ,newname,f))
     show_warningmessage(hk_translate("Could not rename object!"));
-
 }
 
 void knodamaindockwindow::importcsv_clicked()
@@ -906,12 +906,12 @@ hk_kdequerypartwidget* knodamaindockwindow::find_existing_query(const hk_string&
 
 hk_kdemodulepartwidget* knodamaindockwindow::find_existing_module(const hk_string& n)
 {
- /*TBP hk_kdemodulepartwidget* w = NULL;
+  hk_kdemodulepartwidget* w = NULL;
   
   for(int i = 0;i < tabs()->count();i++){
     w=dynamic_cast<hk_kdemodulepartwidget*>(tabs() -> widget(i));
     if (w &&  w->hk_module::name()==n) return w;
-  }*/
+  }
   return NULL;
 }
 

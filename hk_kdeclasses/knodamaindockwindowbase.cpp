@@ -88,7 +88,6 @@ knodamaindockwindowbase::knodamaindockwindowbase(struct_commandlinefields* cl,
   p_partmanager=new KParts::PartManager(this);
   i18n("&Database");
 
-  QIcon::setThemeName("oxygen");
   connect(p_partmanager,SIGNAL(partAdded(KParts::Part*))
   ,this,SLOT(slot_activate_closeaction()));
   connect(p_partmanager,SIGNAL(partRemoved(KParts::Part*))

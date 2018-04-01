@@ -31,7 +31,9 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     WidgetsAddons   # KMessageBox
     KDELibs4Support # Porting from KDE4
     DocTools        # Handbook
-    ConfigWidgets # Help invokation
+    ConfigWidgets   # Help invokation
+    TextEditor      # Text Editor part
+    Parts           # KParts
 )
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
@@ -56,11 +58,6 @@ include_directories(${LIBXML2_INCLUDE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/hk_kdeclasses
     ${CMAKE_CURRENT_BINARY_DIR})
 
-#TBP if(KDE4_KTEXTEDITOR_LIBS)
-#  message(STATUS "Found ktexteditor libraries: " ${KDE4_KTEXTEDITOR_LIBS})
-#else()
-#  message(FATAL_ERROR "ktexteditor libraries not found !")
-#endif()
 
 find_path(HK_CLASSES_INCLUDE "hk_class.h" PATHS "/usr/include/hk_classes" )
 
@@ -96,7 +93,7 @@ add_subdirectory(hk_kdeclasses)
 #TBP add_subdirectory(hk_kdedbdesigner)
 #TBP add_subdirectory(hk_kdeformpart)
 #TBP add_subdirectory(hk_kdegridpart)
-#TBP add_subdirectory(hk_kdemodulepart)
+add_subdirectory(hk_kdemodulepart)
 #TBP add_subdirectory(hk_kdeqbepart)
 #TBP add_subdirectory(hk_kdequerypart)
 #TBP add_subdirectory(hk_kdereportpart)

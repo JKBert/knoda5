@@ -19,7 +19,7 @@
 //***********************************************
 #include "hk_kdemodulepart.h"
 #include <kcomponentdata.h>
-#include <kaboutdata.h>
+#include <KAboutData>
 #include <kstandardaction.h>
 #include <kstandarddirs.h>
 #include <kiconloader.h>
@@ -28,7 +28,6 @@
 #include <klocale.h>
 #include <kurl.h>
 
-#include <kparts/partmanager.h>
 #include <qapplication.h>
 #include <qclipboard.h>
 #include <qcombobox.h>
@@ -37,8 +36,7 @@
 #include <hk_database.h>
 #include <hk_datasource.h>
 
-K_PLUGIN_FACTORY(hk_kdemodulepartfactory, registerPlugin<hk_kdemodulepart>();)
-K_EXPORT_PLUGIN(hk_kdemodulepartfactory("hk_kde5modulepart","hk_kde5modulepart"))
+K_PLUGIN_FACTORY_DEFINITION(hk_kdemodulepartfactory, registerPlugin<hk_kdemodulepart>();)
 
 class hk_kdemodulepartprivate
 {
@@ -47,21 +45,43 @@ class hk_kdemodulepartprivate
       { }
     hk_kdemodulepartwidget* p_module;
     bool activate;
+    static KAboutData* p_aData;
+    static KAboutData& getAboutData(); 
 };
+
+KAboutData* hk_kdemodulepartprivate::p_aData = NULL; 
+
+KAboutData& hk_kdemodulepartprivate::getAboutData()
+{
+    if ( p_aData == NULL) {
+        p_aData = new KAboutData("hk_kde5modulepart", ki18n("hk_kde5modulepart").toString(),
+            "0.2", ki18n("database module editor").toString(),
+            KAboutLicense::GPL,
+            ki18n("(c) 2002-2006, Horst Knorr\n(c) 2010-2018 Patrik Hanak").toString(),QString(), 
+            "http://sourceforge.net/projects/knoda5/",
+            "knoda4-bugs@lists.sourceforge.net");
+        p_aData->addAuthor(ki18n("Horst Knorr").toString(), ki18n("Author of original version").toString(),
+            "hk_classes@knoda.org","http://www.knoda.org");
+        p_aData->addAuthor(ki18n("Patrik Hanak").toString(),ki18n("Author of KDE5 port").toString(),
+            "knoda4-admins@lists.sourceforge.net");    
+    }
+    return *p_aData; 
+}
+
 
 hk_kdemodulepart::hk_kdemodulepart(QWidget* pWidget, QObject* parent, const QVariantList &)
 :KParts::ReadWritePart(parent)
 {
   setObjectName("hk_kdemodulepart");
   p_private=new hk_kdemodulepartprivate;
-  setComponentData(hk_kdemodulepartfactory::componentData());
+  setComponentData(hk_kdemodulepartprivate::getAboutData());
   p_private->p_module = new hk_kdemodulepartwidget(this,pWidget,0);
   p_private->p_module->setAttribute(Qt::WA_DeleteOnClose);
   setWidget(p_private->p_module);
   KIconLoader* loader=KIconLoader::global();
   loader->addAppDir("hk_kde5classes");
   setXMLFile(KStandardDirs::locate("data","hk_kde5classes/hk_kdemodulepart.rc"));
-  p_private -> p_module -> setupActions(actionCollection());
+  p_private->p_module->setupActions(actionCollection());
 }
 
 hk_kdemodulepart::~hk_kdemodulepart()
@@ -74,8 +94,6 @@ hk_kdemodulepart::~hk_kdemodulepart()
   delete p_private;
 }
 
-
-
 /*void hk_kdemodulepart::show_dbdesignercolumndialog(void)
 {
     p_private->p_table->simpledbdesigner()->show_dbdesignercolumndialog();
@@ -87,7 +105,6 @@ void hk_kdemodulepart::setReadWrite(bool rw)
     KParts::ReadWritePart::setReadWrite(rw);
 }
 
-
 bool hk_kdemodulepart::openFile()
 {
  // URL handling:   mysql:/user:password@host:port/databasename/datasourcetype/datasourcename
@@ -97,31 +114,10 @@ bool hk_kdemodulepart::openFile()
     return true;
 }
 
-
 bool hk_kdemodulepart::saveFile()
 {
     return true;
 }
-
-
-
-
-
-
-KAboutData* hk_kdemodulepart::createAboutData()
-{
-    KAboutData* a= new KAboutData("hk_kde5modulepart", "hk_kde5modulepart",ki18n("hk_kde5modulepart"),
-        "0.2", ki18n("database module editor"),
-        KAboutData::License_GPL,
-     ki18n("(c) 2002-2006, Horst Knorr\n(c) 2010-2018 Patrik Hanak"),ki18n(NULL), "http://sourceforge.net/projects/knoda5/",
-     "knoda4-bugs@lists.sourceforge.net");
-    a -> addAuthor(ki18n("Horst Knorr"),ki18n("Author of original version"), "hk_classes@knoda.org","http://www.knoda.org");
-    a -> addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE5 port"), "knoda4-admins@lists.sourceforge.net");    
-    return a;
-
-}
-
-
 
 
 

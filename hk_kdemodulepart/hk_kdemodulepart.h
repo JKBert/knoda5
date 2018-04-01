@@ -15,8 +15,10 @@
 
 #ifndef HK_KDEMODULEPART
 #define HK_KDEMODULEPART
-#include <kparts/part.h>
-#include <kparts/factory.h>
+
+#include <KParts/ReadWritePart>
+#include <KParts/Factory>
+#include <KPluginFactory>
 #include "../hk_kdeclasses/hk_kdemodulepartwidget.h"
 
 class hk_drivermanager;
@@ -30,7 +32,6 @@ friend class hk_kdemodulepartwidget;
         public:
         hk_kdemodulepart(QWidget* parentWidget, QObject* parent,  const QVariantList &args);
         virtual ~hk_kdemodulepart();
-        static KAboutData* createAboutData();
         virtual void setReadWrite(bool rw);
     protected:
         virtual bool openFile();
@@ -40,5 +41,6 @@ friend class hk_kdemodulepartwidget;
       hk_kdemodulepartprivate* p_private;
 };
 
+K_PLUGIN_FACTORY_DECLARATION(hk_kdemodulepartfactory)
 
 #endif

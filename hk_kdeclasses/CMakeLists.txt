@@ -44,10 +44,10 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdelabel.cpp
     hk_kdelineedit.cpp
     hk_kdememo.cpp
-    hk_kdemodule.cpp
-    hk_kdemodulepartwidget.cpp ]]
+    hk_kdemodule.cpp ]]
+    hk_kdemodulepartwidget.cpp 
     hk_kdemessages.cpp
- #[[   hk_kdenewdatabase.cpp
+ #[[ TBP  hk_kdenewdatabase.cpp
     hk_kdenewdatabasebase.cpp
     hk_kdenewpassworddialog.cpp
     hk_kdenewpassworddialogbase.cpp
@@ -102,6 +102,7 @@ target_link_libraries(hk_kde5classes
     Qt5::Widgets
     KF5::CoreAddons
     KF5::I18n
+    KF5::TextEditor
     KF5::KDELibs4Support
     ${HK_CLASSES_LIB})
 

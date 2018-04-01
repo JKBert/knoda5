@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Service
-Name=hk_kde4classes table
-MimeType=database/hk_kdetable;
-ServiceTypes=KParts/ReadWritePart
-X-KDE-Library=libhk_kde4tablepart
