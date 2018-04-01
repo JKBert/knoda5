@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Service
+Name=hk_kde5classes module
+MimeType=database/module;
+ServiceTypes=KParts/ReadWritePart
+X-KDE-Library=hk_kde5modulepart
+X-KDE-ServiceTypes=KParts/ReadWritePart
