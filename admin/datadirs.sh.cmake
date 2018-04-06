@@ -12,6 +12,7 @@ echo KF5 user icon directory: "$USERICONDIR"
 echo KF5 user module directory: "$USERMODULEDIR"
 echo KF5 user services directory: "$USERSERVICESDIR"
 
+
 case "$1" in
     link)
         ln -s ${CMAKE_SOURCE_DIR}/knoda/ $USERDATADIR/knoda5
@@ -43,12 +44,13 @@ case "$1" in
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4gridpart.so $USERMODULEDIR/libhk_kde4gridpart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4dbdesignerpart.so $USERMODULEDIR/libhk_kde4dbdesignerpart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4formpart.so $USERMODULEDIR/libhk_kde4formpart.so
-        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4modulepart.so $USERMODULEDIR/libhk_kde4modulepart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4qbepart.so $USERMODULEDIR/libhk_kde4qbepart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4querypart.so $USERMODULEDIR/libhk_kde4querypart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4reportpart.so $USERMODULEDIR/libhk_kde4reportpart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4tablepart.so $USERMODULEDIR/libhk_kde4tablepart.so
 COMMENT
+        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5modulepart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5modulepart.so
+
         ! [ -d $USERSERVICESDIR ] && mkdir -p $USERSERVICESDIR
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdegridpart/hk_kde5gridpart.desktop $USERSERVICESDIR/hk_kde5gridpart.desktop
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdedbdesigner/hk_kde5dbdesignerpart.desktop $USERSERVICESDIR/hk_kde5dbdesignerpart.desktop
@@ -91,12 +93,13 @@ COMMENT
         unlink $USERMODULEDIR/libhk_kde5gridpart.so
         unlink $USERMODULEDIR/libhk_kde5dbdesignerpart.so
         unlink $USERMODULEDIR/libhk_kde5formpart.so
-        unlink $USERMODULEDIR/libhk_kde5modulepart.so
         unlink $USERMODULEDIR/libhk_kde5qbepart.so
         unlink $USERMODULEDIR/libhk_kde5querypart.so
         unlink $USERMODULEDIR/libhk_kde5reportpart.so
         unlink $USERMODULEDIR/libhk_kde5tablepart.so
 COMMENT
+        unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5modulepart.so
+
         unlink $USERSERVICESDIR/hk_kde5gridpart.desktop
         unlink $USERSERVICESDIR/hk_kde5dbdesignerpart.desktop
         unlink $USERSERVICESDIR/hk_kde5formpart.desktop

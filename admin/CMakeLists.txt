@@ -1,6 +1,4 @@
 
-include_directories(${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} )
-
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/datadirs.sh.cmake ${CMAKE_CURRENT_BINARY_DIR}/datadirs.sh)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/extract-messages.sh.cmake ${CMAKE_CURRENT_BINARY_DIR}/extract-messages.sh @ONLY)
 

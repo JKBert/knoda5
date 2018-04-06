@@ -54,7 +54,7 @@ KAboutData* hk_kdemodulepartprivate::p_aData = NULL;
 KAboutData& hk_kdemodulepartprivate::getAboutData()
 {
     if ( p_aData == NULL) {
-        p_aData = new KAboutData("hk_kde5modulepart", ki18n("hk_kde5modulepart").toString(),
+        p_aData = new KAboutData("hk_kde5classes", ki18n("hk_kde5modulepart").toString(),
             "0.2", ki18n("database module editor").toString(),
             KAboutLicense::GPL,
             ki18n("(c) 2002-2006, Horst Knorr\n(c) 2010-2018 Patrik Hanak").toString(),QString(), 
@@ -78,9 +78,7 @@ hk_kdemodulepart::hk_kdemodulepart(QWidget* pWidget, QObject* parent, const QVar
   p_private->p_module = new hk_kdemodulepartwidget(this,pWidget,0);
   p_private->p_module->setAttribute(Qt::WA_DeleteOnClose);
   setWidget(p_private->p_module);
-  KIconLoader* loader=KIconLoader::global();
-  loader->addAppDir("hk_kde5classes");
-  setXMLFile(KStandardDirs::locate("data","hk_kde5classes/hk_kdemodulepart.rc"));
+  setXMLFile("hk_kdemodulepart.rc");
   p_private->p_module->setupActions(actionCollection());
 }
 
@@ -94,12 +92,6 @@ hk_kdemodulepart::~hk_kdemodulepart()
   delete p_private;
 }
 
-/*void hk_kdemodulepart::show_dbdesignercolumndialog(void)
-{
-    p_private->p_table->simpledbdesigner()->show_dbdesignercolumndialog();
-}*/
-
-
 void hk_kdemodulepart::setReadWrite(bool rw)
 {
     KParts::ReadWritePart::setReadWrite(rw);
@@ -109,8 +101,6 @@ bool hk_kdemodulepart::openFile()
 {
  // URL handling:   mysql:/user:password@host:port/databasename/datasourcetype/datasourcename
  // where datasourcetype is either tables or queries
-
-
     return true;
 }
 
@@ -118,6 +108,3 @@ bool hk_kdemodulepart::saveFile()
 {
     return true;
 }
-
-
-

@@ -110,30 +110,36 @@ hk_kdemodulepartwidget::~hk_kdemodulepartwidget()
 
 void hk_kdemodulepartwidget::setupActions(KActionCollection* ac)
 {
-  if ( !p_private -> p_view ) return;
+  if ( !p_private->p_view ) return;
   
   QAction* pAct;
+  KActionCollection *viewActions = p_private->p_view->actionCollection();
+  
   QIcon::setThemeName("oxygen");
   
+  // remove colliding actions
+  viewActions->removeAction(viewActions->action(KStandardAction::stdName(KStandardAction::Save)));
+  viewActions->removeAction(viewActions->action(KStandardAction::stdName(KStandardAction::SaveAs)));
+  
   p_printaction=new KAction(QIcon::fromTheme("document-print"),i18n("&Print"),ac);
-  ac-> addAction("print",p_printaction);
+  ac->addAction("print",p_printaction);
   connect(p_printaction,SIGNAL(triggered()),this,SLOT(print()));    
    
   p_saveaction=new KAction(QIcon::fromTheme("document-save"),i18n("&Save"),ac);
-  //TBP p_saveaction -> setShortcut(KShortcut("filesave")); 
-  ac-> addAction("save",p_saveaction);
+  p_saveaction -> setShortcut(QKeySequence(QKeySequence::Save)); 
+  ac->addAction("save",p_saveaction);
   connect(p_saveaction,SIGNAL(triggered()),this,SLOT(savebutton_clicked()));
   p_saveaction->setEnabled(false);
  
   p_saveasaction=new KAction(QIcon::fromTheme("document-save-as"),i18n("Save &as"),ac);
-  // TBP p_saveasaction -> setShortcut(KShortcut("filesaveas")); 
-  ac-> addAction("saveas",p_saveasaction);
+  p_saveasaction -> setShortcut(QKeySequence(QKeySequence::SaveAs));
+  ac->addAction("saveas",p_saveasaction);
   connect(p_saveasaction,SIGNAL(triggered()),this,SLOT(saveasbutton_clicked()));
   p_saveasaction->setEnabled(!runtime_only());
 
   p_cutaction=new KAction(QIcon::fromTheme("edit-cut"),i18n("Cu&t"),ac);
-  p_cutaction -> setShortcut(Qt::CTRL+Qt::Key_X); 
-  ac-> addAction("cut",p_cutaction);
+  p_cutaction->setShortcut(Qt::CTRL+Qt::Key_X); 
+  ac->addAction("cut",p_cutaction);
   pAct = p_private -> p_view->action("edit_cut");
   if(pAct) {
     pAct-> setShortcut(QKeySequence());
@@ -144,7 +150,7 @@ void hk_kdemodulepartwidget::setupActions(KActionCollection* ac)
 
   p_undoaction=new KAction(QIcon::fromTheme("edit-undo"),i18n("&Undo"),ac);
   p_undoaction -> setShortcut(Qt::CTRL+Qt::Key_Z); 
-  ac-> addAction("undo",p_undoaction);
+  ac->addAction("undo",p_undoaction);
   pAct = p_private -> p_view->action("edit_undo");
   if(pAct) {
     pAct-> setShortcut(QKeySequence());
@@ -156,7 +162,7 @@ void hk_kdemodulepartwidget::setupActions(KActionCollection* ac)
   p_redoaction=new KAction(QIcon::fromTheme("edit-redo"),i18n("Re&do"),ac);
   p_redoaction -> setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_Z); 
   ac-> addAction("redo",p_redoaction);
-  pAct = p_private -> p_view->action("edit_redo");
+  pAct = p_private->p_view->action("edit_redo");
   if(pAct) {
     pAct-> setShortcut(QKeySequence());
     connect(p_redoaction,SIGNAL(triggered()),pAct,SLOT(trigger()));
@@ -198,7 +204,7 @@ void hk_kdemodulepartwidget::setupActions(KActionCollection* ac)
     p_pasteaction->setEnabled(false);
 
   p_findaction=new KAction(QIcon::fromTheme("edit-find"),i18n("&Find"),ac); 
-  p_findaction -> setShortcut(Qt::CTRL+Qt::Key_F); 
+  p_findaction->setShortcut(Qt::CTRL+Qt::Key_F); 
   ac-> addAction("find",p_findaction);
   pAct = p_private -> p_view -> action("edit_find");
   if(pAct){

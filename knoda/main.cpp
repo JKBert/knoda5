@@ -72,6 +72,7 @@ int main(int argc,char** argv)
 
     KApplication anwendung;
     struct_commands commands;
+    anwendung.setOrganizationDomain("sourceforge.net");
     KLocalizedString::setApplicationDomain("knoda5");
     anwendung.setWindowIcon(QIcon::fromTheme(QStringLiteral("knoda5")));
     bool d =args->isSet("d");
