@@ -23,8 +23,8 @@
 #include "hk_kdepreferencesdialog.h"
 /* TBP #include "hk_kdetablepartwidget.h"
 #include "hk_kdequerypartwidget.h"
-#include "hk_kdeformpartwidget.h"
-#include "hk_kdereportpartwidget.h" */
+#include "hk_kdeformpartwidget.h" */
+#include "hk_kdereportpartwidget.h" 
 #include "hk_kdemodulepartwidget.h" 
 #include "hk_kdenewdatabase.h"
 #include "hk_kdedblistview.h"
@@ -32,6 +32,7 @@
 #include <hk_connection.h>
 #include <hk_drivermanager.h>
 #include <hk_database.h>
+#include <hk_report.h>
 
 #include <qlayout.h>
 #include <qclipboard.h>
@@ -385,12 +386,12 @@ knodamaindockwindow::~knodamaindockwindow()
 
   void knodamaindockwindow::slot_new_report(void)
   {
-   /*TBP if (!p_database) return;
+    if (!p_database) return;
     hk_kdereportpartwidget* w=new_report();
     if (w) {
       w->set_database(p_database);
       w->set_designmode();
-    } */
+    } 
   }
 
   void knodamaindockwindow::slot_delete_report(const QString& t)
@@ -402,7 +403,7 @@ knodamaindockwindow::~knodamaindockwindow()
 
   void knodamaindockwindow::slot_designmode_report(const QString&t)
   {
-   /*TBP if (!p_database) return;
+    if (!p_database) return;
     hk_kdereportpartwidget* w=find_existing_report(u2l(t.toUtf8().data()));
     if (w)
     {
@@ -415,12 +416,12 @@ knodamaindockwindow::~knodamaindockwindow()
     if (!w)return;
     w->set_database(p_database);
     w->load_report(u2l(t.toUtf8().data()));
-    w->set_designmode(); */
+    w->set_designmode();
   }
 
   void knodamaindockwindow::slot_viewmode_report(const QString& t)
   {
-   /*TBP if (!p_database) return;
+    if (!p_database) return;
     hk_kdereportpartwidget* w=find_existing_report(u2l(t.toUtf8().data()));
     if (w)
     {
@@ -430,10 +431,10 @@ knodamaindockwindow::~knodamaindockwindow()
     }
           
     w=new_report();
-    if (!w)return;
-     w->set_database(p_database);
-     w->load_report(u2l(t.toUtf8().data()));
-     w->set_viewmode(); */
+    if (!w) return;
+    w->set_database(p_database);
+    w->load_report(u2l(t.toUtf8().data()));
+    w->set_viewmode();
   }
 
 void knodamaindockwindow::slot_new_module(void)
@@ -555,7 +556,7 @@ hk_kdetablepartwidget* knodamaindockwindow::new_table(void)
 
 hk_kdereportpartwidget* knodamaindockwindow::new_report(void)
 {
-   /* TBP KService::Ptr service = KService::serviceByDesktopName("hk_kde4reportpart");
+    KService::Ptr service = KService::serviceByDesktopName("hk_kde5reportpart");
     KParts::ReadWritePart* p_part;
         
     if (!service ||
@@ -573,12 +574,13 @@ hk_kdereportpartwidget* knodamaindockwindow::new_report(void)
     }
     p_partmanager->addPart(p_part);
     int i = tabs() -> addTab(report,i18n("Report"));
-    tabs() -> setTabIcon(i,KIcon("document-print"));
+    QIcon::setThemeName("oxygen");
+    tabs()->setTabIcon(i,QIcon::fromTheme("document-print"));
     connect(report, SIGNAL(signal_captionChanged(QWidget*,QString)), this, SLOT(slot_captionChanged(QWidget*,QString)));
     connect(report,SIGNAL(signal_raise_form(const hk_string&)),this,SLOT(slot_raise_form(const hk_string&)));
-    tabs() -> setCurrentIndex(i);
-    report-> setFocus();
-    return report; */ return NULL;
+    tabs()->setCurrentIndex(i);
+    report->setFocus();
+    return report;
 }
 
 hk_kdemodulepartwidget* knodamaindockwindow::new_module(void)
@@ -856,12 +858,10 @@ hk_kdeformpartwidget* knodamaindockwindow::find_existing_form(const hk_string& n
 
 void knodamaindockwindow::setCaption(const QString& c)
 {
-
   if (p_connection)
     {
         hk_string s=p_connection->drivername()+" "+p_connection->user()+"@"+p_connection->host()+":"+ulongint2string(p_connection->tcp_port());
         knodamaindockwindowbase::setCaption(QString::fromUtf8(l2u(s).c_str()));
-
     }
     else  knodamaindockwindowbase::setCaption(c);
 }
@@ -870,15 +870,15 @@ hk_kdereportpartwidget* knodamaindockwindow::find_existing_report(const hk_strin
 {
   if (!p_database) return NULL;
   hk_kdereportpartwidget* w = NULL;
- /*TBP QWidget* sf=dynamic_cast<QWidget*>(p_database->existing_report(n));
+  QWidget* sf=dynamic_cast<QWidget*>(p_database->existing_report(n));
 
   while (sf!=NULL && w==NULL) {
     sf=sf->parentWidget();
     hk_report* r=dynamic_cast<hk_report*>(sf);
     if (r && r->is_subreport())sf=NULL;
     w= dynamic_cast <hk_kdereportpartwidget*> (sf);
-  } */
-  return w;
+  }
+  return w; 
 }
 
 hk_kdetablepartwidget* knodamaindockwindow::find_existing_table(const hk_string& n)

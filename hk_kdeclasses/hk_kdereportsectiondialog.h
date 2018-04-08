@@ -24,7 +24,7 @@ class hk_kdereportsectiondialog : public hk_kdereportsectiondialogbase
     Q_OBJECT
 
         public:
-        hk_kdereportsectiondialog( hk_kdesimplereport*,QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+        hk_kdereportsectiondialog( hk_kdesimplereport*,QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
         ~hk_kdereportsectiondialog();
 
     public slots:

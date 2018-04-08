@@ -39,6 +39,7 @@
 #include <qfile.h>
 #include <qactiongroup.h>
 #include <QCloseEvent>
+#include <QDomNodeList>
 
 #include <kmenubar.h>
 #include <kmenu.h>
@@ -55,88 +56,88 @@
 #include <kmainwindow.h>
 #include <kactionmenu.h>
 #include <kxmlguifactory.h>
+#include <KParts/ReadWritePart>
 
 //TBP icons
  class hk_kdepreviewwindow: public KMainWindow
 {
 public:
-hk_kdepreviewwindow(QWidget * parent , const char * name = 0)
-:KMainWindow(parent)
-
-     {
+    hk_kdepreviewwindow(QWidget * parent , const char * name = 0)
+      :KMainWindow(parent)
+    {
         if (name)
-          setObjectName(QString::fromAscii(name));
+            setObjectName(QString::fromAscii(name));
         p_toolbar = toolBar("gvtoolbar");
-	create_previewpart();
+        create_previewpart();
         add_actions();
-     }
+    }
 virtual ~hk_kdepreviewwindow()
-        {
-	  delete p_previewpart;
+    {
+	    delete p_previewpart;
 	}
+    
 void add_actions(void)
-  {
-   if(!p_previewpart) return;
-   QDomNodeList l= p_previewpart->domDocument().elementsByTagName("ToolBar");
-   if (l.length()==0) return;
-   QDomNodeList a=l.item(0).toElement().elementsByTagName("Action");
-   for (uint i=0;i<a.length();++i)
-   {
-     QDomElement n=a.item(i).toElement();
-     QAction* newact=p_previewpart->action(n);
-     if (newact) p_toolbar -> addAction(newact);
-   }
-  } 
-  
-  
-  void create_previewpart()
-  {
-	QSizePolicy policy2(QSizePolicy::Expanding,QSizePolicy::Expanding);   
+    {
+        if(!p_previewpart) return;
+        QDomNodeList l= p_previewpart->domDocument().elementsByTagName("ToolBar");
+        if (l.length()==0) return;
+        QDomNodeList a=l.item(0).toElement().elementsByTagName("Action");
+        for (int i=0;i<a.length();++i)
+        {
+            QDomElement n=a.item(i).toElement();
+            QAction* newact=p_previewpart->action(n);
+            if (newact) p_toolbar -> addAction(newact);
+        }
+    }
+
+void create_previewpart()
+    {
+	    QSizePolicy policy2(QSizePolicy::Expanding,QSizePolicy::Expanding);   
         KService::List offers=KMimeTypeTrader::self()->query("application/postscript","KParts/ReadOnlyPart"/* in ServiceTypes"*/);
         KService::List::Iterator it(offers.begin());
         
         for (;it!=offers.end();++it)
         {
-          KService::Ptr service=(*it);
-	  p_previewpart = service -> createInstance<KParts::ReadOnlyPart>(0);
-          if (p_previewpart) break;
+            KService::Ptr service=(*it);
+	        p_previewpart = service -> createInstance<KParts::ReadOnlyPart>(0);
+            if (p_previewpart) break;
         }
-	
-       if (p_previewpart)
-	{
-        setCentralWidget(p_previewpart->widget());
-	p_previewpart->widget()->setSizePolicy(policy2);
-	}
-       else
-        show_warningmessage(hk_class::hk_translate("Could not find a preview part!"));
-  }
 
-  KParts::ReadOnlyPart* p_previewpart;
-  KToolBar* p_toolbar;
+        if (p_previewpart)
+	    {
+            setCentralWidget(p_previewpart->widget());
+	        p_previewpart->widget()->setSizePolicy(policy2);
+	    }
+        else
+            show_warningmessage(hk_class::hk_translate("Could not find a preview part!"));
+    }
+
+    KParts::ReadOnlyPart* p_previewpart;
+    KToolBar* p_toolbar;
 };
-
 
 
 class hk_kdereportpartwidgetscrollview :public QScrollArea
 {
-    public:
-        hk_kdereportpartwidgetscrollview ( QWidget * parent=0 )
+public:
+    hk_kdereportpartwidgetscrollview ( QWidget * parent=0 )
             :QScrollArea(parent),p_report(NULL)
-        {
+    {
             
-        }
+    }
 	~hk_kdereportpartwidgetscrollview()
 	{
 
 	}
-        void set_report(hk_kdesimplereport* r){p_report=r;}
-    protected:
+    
+    void set_report(hk_kdesimplereport* r){ p_report=r; }
 
-        virtual void viewportMousePressEvent ( QMouseEvent * )
-        {
-          if (p_report!=NULL) p_report->set_focus2property();
-        }
-        hk_kdesimplereport* p_report;
+protected:
+     virtual void viewportMousePressEvent ( QMouseEvent * )
+     {
+         if (p_report!=NULL) p_report->set_focus2property();
+     }
+     hk_kdesimplereport* p_report;
 }; 
 
 hk_kdereportpartwidget::hk_kdereportpartwidget (hk_kdereportpart* reportpart,QWidget* parent,  const char* name, Qt::WFlags fl )
@@ -158,6 +159,7 @@ hk_kdereportpartwidget::hk_kdereportpartwidget (hk_kdereportpart* reportpart,QWi
     p_whilepreview=false;
     p_closewindow=false;
     QActionGroup* pag;
+    QIcon::setThemeName("oxygen");
     
     if (runtime_only())
     {
@@ -166,11 +168,11 @@ hk_kdereportpartwidget::hk_kdereportpartwidget (hk_kdereportpart* reportpart,QWi
     }
     else
     {
-      p_designaction=new KToggleAction(KIcon("document-edit"),i18n("&Design mode"),p_reportpart->actionCollection());
-      p_reportpart->actionCollection() -> addAction("designmode",p_designaction); 
+      p_designaction=new KToggleAction(QIcon::fromTheme("document-edit"),i18n("&Design mode"),p_reportpart->actionCollection());
+      p_reportpart->actionCollection()->addAction("designmode",p_designaction); 
       connect(p_designaction,SIGNAL(triggered()),this,SLOT(set_designmode()));
       p_designaction->setEnabled(!runtime_only());
-      p_viewaction=new KToggleAction(KIcon("system-run"),i18n("&View mode"),p_reportpart->actionCollection());
+      p_viewaction=new KToggleAction(QIcon::fromTheme("system-run"),i18n("&View mode"),p_reportpart->actionCollection());
       p_reportpart -> actionCollection() -> addAction("viewmode", p_viewaction);
       connect(p_viewaction,SIGNAL(triggered()),this,SLOT(set_viewmode()));
       pag = new QActionGroup(this);
@@ -178,27 +180,30 @@ hk_kdereportpartwidget::hk_kdereportpartwidget (hk_kdereportpart* reportpart,QWi
       p_viewaction -> setActionGroup(pag);
       p_designaction->setChecked(true);
     }
-    p_printaction=new KAction(KIcon("document-print"),i18n("&Print"),p_reportpart->actionCollection());
+    p_printaction=new KAction(QIcon::fromTheme("document-print"),i18n("&Print"),p_reportpart->actionCollection());
     p_reportpart->actionCollection() -> addAction("printreport",p_printaction);
     connect(p_printaction,SIGNAL(triggered()),this,SLOT(print_report()));
     p_printaction->setEnabled(false);
-    p_sectionaction=new KAction(KIcon("reportsection",KIconLoader::global()),i18n("Sectionselect"),p_reportpart->actionCollection());
+    // TBP opravit ikonu p_sectionaction=new KAction(KIcon("reportsection",KIconLoader::global()),i18n("Sectionselect"),p_reportpart->actionCollection());
+    p_sectionaction=new KAction(QIcon(),i18n("Sectionselect"),p_reportpart->actionCollection());
     p_reportpart->actionCollection() -> addAction("sectionselect",p_sectionaction);
     connect(p_sectionaction,SIGNAL(triggered()),SLOT(select_section()));
     p_sectionaction->setToolTip(i18n("sections"));
-    p_saveaction=new KAction(KIcon("document-save"),i18n("&Save"),p_reportpart->actionCollection());
+    p_saveaction=new KAction(QIcon::fromTheme("document-save"),i18n("&Save"),p_reportpart->actionCollection());
     p_reportpart->actionCollection() -> addAction("savereport",p_saveaction);
     connect(p_saveaction,SIGNAL(triggered()),this,SLOT(save_report()));
     p_saveaction->setEnabled(!runtime_only());
-    p_saveasaction=new KAction(KIcon("document-save-as"),i18n("Save &as"),p_reportpart->actionCollection());
+    p_saveasaction=new KAction(QIcon::fromTheme("document-save-as"),i18n("Save &as"),p_reportpart->actionCollection());
     p_reportpart->actionCollection() -> addAction("saveas",p_saveasaction);
     connect(p_saveasaction,SIGNAL(triggered()),this,SLOT(saveas_report()));
     p_saveasaction->setEnabled(!runtime_only());
 
-    p_pointeraction=new KToggleAction(KIcon("pfeil",KIconLoader::global()),i18n("Pointer"),p_reportpart->actionCollection());
+    // TBP opravit ikonu p_pointeraction=new KToggleAction(KIcon("pfeil",KIconLoader::global()),i18n("Pointer"),p_reportpart->actionCollection());
+    p_pointeraction=new KToggleAction(QIcon(),i18n("Pointer"),p_reportpart->actionCollection());
     p_reportpart->actionCollection() -> addAction("pointer",p_pointeraction);
     connect(p_pointeraction,SIGNAL(triggered()),this,SLOT(pointerbutton_clicked()));
-    p_fieldaction=new KToggleAction(KIcon("editline",KIconLoader::global()),i18n("Field"),p_reportpart->actionCollection());
+// TBP opravit ikonu    p_fieldaction=new KToggleAction(KIcon("editline",KIconLoader::global()),i18n("Field"),p_reportpart->actionCollection());
+    p_fieldaction=new KToggleAction(QIcon(),i18n("Field"),p_reportpart->actionCollection());
     p_reportpart->actionCollection() -> addAction("fieldbutton",p_fieldaction);
     connect(p_fieldaction,SIGNAL(triggered()),this,SLOT(fieldbutton_clicked()));
     p_pointeraction->setToolTip(i18n("select"));
@@ -233,7 +238,8 @@ hk_kdereportpartwidget::hk_kdereportpartwidget (hk_kdereportpart* reportpart,QWi
     p_report->set_reportpartwidget(this); 
     p_scrollview->set_report(p_report);
     set_caption();
-    p_reportpropertyaction=new KAction(KIcon("propertyeditor",KIconLoader::global()),i18n("&Propertyeditor"),p_reportpart->actionCollection());
+// TBP opravit ikonu    p_reportpropertyaction=new KAction(KIcon("propertyeditor",KIconLoader::global()),i18n("&Propertyeditor"),p_reportpart->actionCollection());
+    p_reportpropertyaction=new KAction(QIcon(),i18n("&Propertyeditor"),p_reportpart->actionCollection());
     p_reportpart->actionCollection() -> addAction("viewproperty",p_reportpropertyaction);
     connect(p_reportpropertyaction,SIGNAL(triggered()),p_report,SLOT(show_property()));
 
@@ -421,12 +427,10 @@ void hk_kdereportpartwidget::closeEvent ( QCloseEvent* e)
    emit signal_closed(this);
 }
 
-
 void hk_kdereportpartwidget::fieldbutton_clicked(void)
 {
-   p_report->set_field2create(p_fieldaction->isChecked());
+    p_report->set_field2create(p_fieldaction->isChecked());
 }
-
 
 void hk_kdereportpartwidget::set_nodesignmode(bool d)
 {
@@ -446,95 +450,94 @@ hk_presentation::enum_mode  hk_kdereportpartwidget::mode(void)
 void    hk_kdereportpartwidget::set_mode(hk_presentation::enum_mode s)
 {
 #ifdef HK_DEBUG
-  hkdebug("hk_kdereportpartwidget::set_mode(s)");
+    hkdebug("hk_kdereportpartwidget::set_mode(s)");
 #endif
     //if (s==p_report->mode()&&!runtime_only())return
-  if (p_report->while_executing() && s==hk_presentation::designmode) {
-    if (p_viewaction) p_viewaction->setChecked(true);
-    return;
-  }
-  if (p_report->while_executing() && s==hk_presentation::viewmode) return;
-  if (s==hk_presentation::viewmode) {
-    if (!p_report->set_mode(s)) {
-      if (p_designaction) p_designaction->setChecked(true);
-      return;
+    if (p_report->while_executing() && s==hk_presentation::designmode) {
+        if (p_viewaction) p_viewaction->setChecked(true);
+        return;
     }
+    if (p_report->while_executing() && s==hk_presentation::viewmode) return;
+    if (s==hk_presentation::viewmode) {
+        if (!p_report->set_mode(s)) {
+            if (p_designaction) p_designaction->setChecked(true);
+            return;
+        }
         //toolBar("designtoolbar")->hide();
-    p_reportpropertyaction->setEnabled(false);
-    p_pointeraction->setEnabled(false);
-    p_fieldaction->setEnabled(false);
-    p_sectionaction->setEnabled(false);
+        p_reportpropertyaction->setEnabled(false);
+        p_pointeraction->setEnabled(false);
+        p_fieldaction->setEnabled(false);
+        p_sectionaction->setEnabled(false);
 
-    if (p_viewaction) p_viewaction->setChecked(true);
-      if (p_previewwindow!=NULL) {
-	//createGUI(0L);
-	p_stack->removeWidget(p_previewwindow);
-	delete p_previewwindow;
-	p_previewwindow=NULL;
-      }
-      p_previewwindow=new hk_kdepreviewwindow(this);
-      if (p_previewwindow!=NULL) {
-        p_previewwindow->setAttribute(Qt::WA_DeleteOnClose);
-        p_whilepreview=true;
-        p_stack->addWidget(p_previewwindow);
-	p_stack->setCurrentWidget(p_previewwindow);
-        //createGUI(p_previewpart);
-        if (p_previewwindow->p_previewpart) {
-	  p_previewwindow->p_previewpart->openUrl(QString::fromUtf8(l2u(p_report->outputfile()).c_str()));
-	}  
-        p_previewwindow->show();
-	//hkdebug("preview after show");
-        p_whilepreview=false;
-        if (p_closewindow) close();
-        p_printaction->setEnabled(true);
-        set_caption();
-	//hkdebug("preview after set caption");
-      }
+        if (p_viewaction) p_viewaction->setChecked(true);
+        if (p_previewwindow!=NULL) {
+	        //createGUI(0L);
+	        p_stack->removeWidget(p_previewwindow);
+	        delete p_previewwindow;
+	        p_previewwindow=NULL;
+        }
+        p_previewwindow=new hk_kdepreviewwindow(this);
+        if (p_previewwindow!=NULL) {
+            p_previewwindow->setAttribute(Qt::WA_DeleteOnClose);
+            p_whilepreview=true;
+            p_stack->addWidget(p_previewwindow);
+	        p_stack->setCurrentWidget(p_previewwindow);
+            //createGUI(p_previewpart);
+            if (p_previewwindow->p_previewpart) {
+                p_previewwindow->p_previewpart->openUrl(QUrl::fromLocalFile(
+                    QString::fromUtf8(l2u(p_report->outputfile()).c_str())) );
+	        }  
+            p_previewwindow->show();
+	     //hkdebug("preview after show");
+            p_whilepreview=false;
+          if (p_closewindow) close();
+          p_printaction->setEnabled(true);
+          set_caption();
+	     //hkdebug("preview after set caption");
+        }
 
-      if (p_reportpart -> factory()){
-	KMenu* p_editmenu = dynamic_cast<KMenu*>(p_reportpart -> factory() ->container("edit",p_reportpart));
+        if (p_reportpart -> factory()){
+	        KMenu* p_editmenu = dynamic_cast<KMenu*>(p_reportpart -> factory() ->container("edit",p_reportpart));
 	
-	if (p_editmenu) p_editmenu->menuAction()->setVisible(false);
-	p_reportpropertyaction -> setVisible(false);
-	p_pointeraction -> setVisible(false);
-	p_fieldaction -> setVisible(false);
-	p_sectionaction -> setVisible(false);
-      }
-      p_copyaction->setEnabled(false);
-      p_cutaction->setEnabled(false);
-      p_pasteaction->setEnabled(false);
-      p_deleteaction->setEnabled(false);
-
-      p_bulkaction->setEnabled(false); 
-    
-  }
-  else {                                             //design mode
-    if (p_report->while_executing())
-      p_report->stop_execution();
-    p_report->set_mode(s);
-    p_printaction->setEnabled(false);
-        //createGUI(NULL);
-    p_reportpart->setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdereportpartdesign.rc"));
-    if (p_reportpart -> factory()){
-      KMenu* p_editmenu = dynamic_cast<KMenu*>(p_reportpart -> factory() ->container("edit",p_reportpart));
-	
-      if (p_editmenu)  p_editmenu->menuAction()->setVisible(true);
-      p_reportpropertyaction -> setVisible(true);
-      p_pointeraction -> setVisible(true);
-      p_fieldaction -> setVisible(true);
-      p_sectionaction -> setVisible(true);
+	        if (p_editmenu) p_editmenu->menuAction()->setVisible(false);
+	        p_reportpropertyaction -> setVisible(false);
+	        p_pointeraction -> setVisible(false);
+	        p_fieldaction -> setVisible(false);
+	        p_sectionaction -> setVisible(false);
+        }
+        p_copyaction->setEnabled(false);
+        p_cutaction->setEnabled(false);
+        p_pasteaction->setEnabled(false);
+        p_deleteaction->setEnabled(false);
+        p_bulkaction->setEnabled(false); 
     }
-
+    else {                                             //design mode
+        if (p_report->while_executing())
+        p_report->stop_execution();
+        p_report->set_mode(s);
+        p_printaction->setEnabled(false);
+        //createGUI(NULL);
+        p_reportpart->setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdereportpartdesign.rc"));
+        if (p_reportpart -> factory()) {
+            KMenu* p_editmenu = dynamic_cast<KMenu*>(p_reportpart -> factory() ->container("edit",p_reportpart));
+	
+        if (p_editmenu) p_editmenu->menuAction()->setVisible(true);
+        p_reportpropertyaction -> setVisible(true);
+        p_pointeraction -> setVisible(true);
+        p_fieldaction -> setVisible(true);
+        p_sectionaction -> setVisible(true);
+    }
+ 
     if (p_designaction) p_designaction->setChecked(true);
-      p_bulkaction->setEnabled(true);
+        p_bulkaction->setEnabled(true);
     if (!p_whilepreview) {
-            //toolBar("designtoolbar")->show();
+        //toolBar("designtoolbar")->show();
       p_reportpropertyaction->setEnabled(true);
       p_pointeraction->setEnabled(true);
       p_fieldaction->setEnabled(true);
       p_sectionaction->setEnabled(true);
       p_stack->setCurrentWidget(p_scrollview);
-            //p_report->set_mode(s);
+     //p_report->set_mode(s);
     }
     else if (p_viewaction) p_viewaction->setChecked(true);
       p_copyaction->setEnabled(p_report->formfocus()&&p_report->formfocus()->widget());
@@ -632,10 +635,10 @@ void hk_kdereportpartwidget::print_report(void)
 void hk_kdereportpartwidget::select_section(void)
 {
     p_report->clearfocus();
-    hk_kdereportsectiondialog* d= new hk_kdereportsectiondialog(p_report,this,0,true);
+    /* TBP hk_kdereportsectiondialog* d= new hk_kdereportsectiondialog(p_report,this,0,true);
     d->exec();
 
-    delete d;
+    delete d; */
 }
 
 
@@ -659,15 +662,13 @@ void hk_kdereportpartwidget::bulkfont_clicked(void)
 
 void hk_kdereportpartwidget::bulkforegroundcolour_clicked(void)
 {
-  p_report->set_for_all(hk_presentation::bulkforeground);
-
+    p_report->set_for_all(hk_presentation::bulkforeground);
 }
 
 
 void hk_kdereportpartwidget::bulkbackgroundcolour_clicked(void)
 {
-   p_report->set_for_all(hk_presentation::bulkbackground);
-
+    p_report->set_for_all(hk_presentation::bulkbackground);
 }
 
 
@@ -679,19 +680,19 @@ void hk_kdereportpartwidget::slot_has_changed()
 
 void hk_kdereportpartwidget::clipboard_changed()
 {
-  if (p_pasteaction)
+    if (p_pasteaction)
     p_pasteaction->setEnabled(p_report->canProcessClipboard());
 }
 
 
 void hk_kdereportpartwidget::slot_focuswidget_changed(void)
 {
-   p_copyaction->setEnabled(p_report->formfocus()&&p_report->formfocus()->widget());
-   p_cutaction->setEnabled(p_report->formfocus()&&p_report->formfocus()->widget()); 
-   p_deleteaction->setEnabled(p_report->formfocus()&&p_report->formfocus()->widget());
-  if (p_resizeaction)
-      p_resizeaction->setEnabled(p_report->mode()==hk_presentation::designmode&&p_report->focus_multipleselected());
-  if (p_alignaction)
+    p_copyaction->setEnabled(p_report->formfocus()&&p_report->formfocus()->widget());
+    p_cutaction->setEnabled(p_report->formfocus()&&p_report->formfocus()->widget()); 
+    p_deleteaction->setEnabled(p_report->formfocus()&&p_report->formfocus()->widget());
+    if (p_resizeaction)
+        p_resizeaction->setEnabled(p_report->mode()==hk_presentation::designmode&&p_report->focus_multipleselected());
+    if (p_alignaction)
       p_alignaction->setEnabled(p_report->mode()==hk_presentation::designmode&&p_report->focus_multipleselected());
 }
 

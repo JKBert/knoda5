@@ -32,9 +32,9 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdefinddialogbase.cpp
     hk_kdeform.cpp
     hk_kdeformdatasourcedialog.cpp
-    hk_kdeformdatasourcedialogbase.cpp
+    hk_kdeformdatasourcedialogbase.cpp ]]
     hk_kdeformfocus.cpp
-    hk_kdeformpartwidget.cpp
+ #[[ TBP   hk_kdeformpartwidget.cpp
     hk_kdegrid.cpp
     hk_kdegridcolumndialogbase.cpp
     hk_kdegridcolumndialog.cpp
@@ -65,20 +65,20 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kderelationdialog.cpp
     hk_kdereport.cpp
     hk_kdereportconditiondialog.cpp
-    hk_kdereportconditiondialogbase.cpp
-    hk_kdereportdata.cpp
+    hk_kdereportconditiondialogbase.cpp ]]
+    hk_kdereportdata.cpp 
     hk_kdereportpartwidget.cpp
-    hk_kdereportproperty.cpp
-    hk_kdereportpropertybase.cpp
+#TBP  hk_kdereportproperty.cpp
+#TBP  hk_kdereportpropertybase.cpp
     hk_kdereportsection.cpp
-    hk_kdereportsectiondialog.cpp
+#[[  TBP    hk_kdereportsectiondialog.cpp
     hk_kdereportsectiondialogbase.cpp
     hk_kderowselector.cpp
     hk_kdesimpleform.cpp
     hk_kde4simplegrid.cpp
-    hk_kde4simplegrid_p.cpp
+    hk_kde4simplegrid_p.cpp ]]
     hk_kdesimplereport.cpp
-    hk_kdespinbox.cpp
+#[[  TBP    hk_kdespinbox.cpp
     hk_kdesubform.cpp
     hk_kdesubformdialog.cpp
     hk_kdesubreportdialog.cpp

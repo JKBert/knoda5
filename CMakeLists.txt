@@ -96,7 +96,7 @@ add_subdirectory(hk_kdeclasses)
 add_subdirectory(hk_kdemodulepart)
 #TBP add_subdirectory(hk_kdeqbepart)
 #TBP add_subdirectory(hk_kdequerypart)
-#TBP add_subdirectory(hk_kdereportpart)
+add_subdirectory(hk_kdereportpart)
 #TBP add_subdirectory(hk_kdetablepart)
 add_subdirectory(knoda)
 

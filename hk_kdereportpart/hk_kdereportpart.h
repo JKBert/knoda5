@@ -15,8 +15,11 @@
 
 #ifndef HK_KDEREPORTPART
 #define HK_KDEREPORTPART
-#include <kparts/part.h>
-#include <kparts/factory.h>
+
+//TBP #include <kparts/part.h>
+#include <KParts/ReadWritePart>
+//TBP #include <kparts/factory.h>
+#include <KParts/Factory>
 #include "../hk_kdeclasses/hk_kdereportpartwidget.h"
 
 class hk_drivermanager;
@@ -30,7 +33,7 @@ friend class hk_kdereportpartwidget;
         public:
         hk_kdereportpart(QWidget* parentWidget, QObject* parent, const QVariantList &args);
         virtual ~hk_kdereportpart();
-        static KAboutData* createAboutData();
+        //TBP static KAboutData* createAboutData();
         virtual void setReadWrite(bool rw);
     protected:
         virtual bool openFile();
@@ -43,5 +46,6 @@ friend class hk_kdereportpartwidget;
       hk_kdereportpartprivate* p_private;
 };
 
+K_PLUGIN_FACTORY_DECLARATION(hk_kdereportpartfactory)
 
 #endif

@@ -46,9 +46,9 @@ case "$1" in
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4formpart.so $USERMODULEDIR/libhk_kde4formpart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4qbepart.so $USERMODULEDIR/libhk_kde4qbepart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4querypart.so $USERMODULEDIR/libhk_kde4querypart.so
-        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4reportpart.so $USERMODULEDIR/libhk_kde4reportpart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4tablepart.so $USERMODULEDIR/libhk_kde4tablepart.so
 COMMENT
+        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5reportpart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5reportpart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5modulepart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5modulepart.so
 
         ! [ -d $USERSERVICESDIR ] && mkdir -p $USERSERVICESDIR
@@ -95,9 +95,9 @@ COMMENT
         unlink $USERMODULEDIR/libhk_kde5formpart.so
         unlink $USERMODULEDIR/libhk_kde5qbepart.so
         unlink $USERMODULEDIR/libhk_kde5querypart.so
-        unlink $USERMODULEDIR/libhk_kde5reportpart.so
         unlink $USERMODULEDIR/libhk_kde5tablepart.so
 COMMENT
+        unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5reportpart.so
         unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5modulepart.so
 
         unlink $USERSERVICESDIR/hk_kde5gridpart.desktop

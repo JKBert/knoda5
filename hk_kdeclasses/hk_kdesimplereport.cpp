@@ -38,6 +38,7 @@
 #include <qapplication.h>
 #include <qdesktopwidget.h>
 #include <qevent.h>
+#include <QMimeData>
 
 const int headerheight=20;
 class hk_kdesimplereportprivate
@@ -175,13 +176,13 @@ void hk_kdesimplereport::set_reportpartwidget(hk_kdereportpartwidget* w)
 {
 
   p_private->p_reportpartwidget=w;
-    if (p_private->p_property)
+ /*TBP   if (p_private->p_property)
       {
        delete p_private->p_property;
        p_private->p_property=NULL;
       }
 
-  show_property();
+  show_property(); */
 }
 
 
@@ -317,7 +318,7 @@ hk_reportsection* hk_kdesimplereport::widget_specific_new_section(void)
 #ifdef HK_DEBUG
     hkdebug("hk_kdesimplereport::widget_specific_new_section");
 #endif
-   hk_reportsection* s=new hk_kdereportsection(this);
+    hk_reportsection* s=new hk_kdereportsection(this);
     return s;
 }
 
@@ -498,7 +499,7 @@ bool hk_kdesimplereport::reporteventFilter(QObject* object,QEvent* event)
                 }
 
                 p_private->p_focus->set_positions();
-                p_private->p_property->focus_resized();
+             //TBP   p_private->p_property->focus_resized();
             }
             break;
         };
@@ -745,10 +746,11 @@ bool hk_kdesimplereport::set_mode(enum_mode m)
    if (m==viewmode&&!r)
    		{
 		hk_report::set_mode(designmode);
- 		p_private->p_kdereport->set_mode(designmode);
+ 	//TBP	p_private->p_kdereport->set_mode(designmode);
 		}
-		else
- 		p_private->p_kdereport->set_mode(m);
+		else {
+ 	//TBP	p_private->p_kdereport->set_mode(m);
+        }
     }
     else
     if (p_private->p_reportpartwidget)
@@ -1434,8 +1436,7 @@ bool hk_kdesimplereport::is_reportobject(QWidget* v)
 
 void hk_kdesimplereport::show_property(void)
 {
-
-    if (mode()!=hk_presentation::designmode)return;
+   /*TBP if (mode()!=hk_presentation::designmode)return;
     bool newproperty=false;
     if (p_private->p_property==NULL)
     {
@@ -1481,7 +1482,7 @@ void hk_kdesimplereport::show_property(void)
 			 screenheight-p_private->p_property->frameGeometry().height());
 	}
     }
-
+*/
 }
 
 
@@ -1689,7 +1690,6 @@ void hk_kdesimplereport::widget_specific_presentationresize(void)
             ++it;
         }
     }
-
 }
 
 
@@ -1765,71 +1765,70 @@ return p_private->p_kdereport;
 
 void hk_kdesimplereport::script_error(hk_visible* v, hk_interpreter::enum_action a)
 {
-   if (!v)
-   {
-    cerr<<"hk_kdesimplereport::script_error called without visible object!"<<endl;
-    return;
-
-   }
+    if (!v)
+    {
+        cerr<<"hk_kdesimplereport::script_error called without visible object!"<<endl;
+        return;
+    }
 
     hk_string error=replace_all("%LINENUMBER%",hk_translate("Line %LINENUMBER%: "),longint2string(interpreter()->error_rownumber()))
     				+interpreter()->errormessage();
 
-hk_dsvisible* dv=dynamic_cast<hk_dsvisible*>(v);
-if (dv)
-   {
-	hk_datasource* ds=dv->datasource();
-	if (ds) ds->set_ignore_changed_data();
-   }
+    hk_dsvisible* dv=dynamic_cast<hk_dsvisible*>(v);
+    if (dv)
+    {
+	    hk_datasource* ds=dv->datasource();
+	    if (ds) ds->set_ignore_changed_data();
+    }
 
-if (!runtime_only())
-   {
-      if (kdereport())kdereport()->set_mode(hk_presentation::designmode);
-      if (p_private->p_reportpartwidget)
-         p_private->p_reportpartwidget->set_mode(hk_presentation::designmode);
-      if (p_private->p_property)
+    if (!runtime_only())
+    {
+        //TBP if (kdereport()) kdereport()->set_mode(hk_presentation::designmode);
+        if (p_private->p_reportpartwidget)
+            p_private->p_reportpartwidget->set_mode(hk_presentation::designmode);
+        if (p_private->p_property)
 	    {
-
-                hk_kdereportsection* s=NULL;
-                hk_kdereportdata* d=dynamic_cast<hk_kdereportdata*>(v);
-                if (d!=NULL) s=d->section();
-	       set_focus(d,s,false);
-	     switch (a)
-	     {
-		case hk_interpreter::a_on_open :
-				p_private->p_property->openactionbutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
+            hk_kdereportsection* s=NULL;
+            hk_kdereportdata* d=dynamic_cast<hk_kdereportdata*>(v);
+            if (d!=NULL) s=d->section();
+	        set_focus(d,s,false);
+	        /* TBP switch (a)
+	        {
+		    case hk_interpreter::a_on_open :
+				p_private->p_property->openactionbutton_clicked(presentation()->interpreter()->error_rownumber()-1,
+                    error);
 				break;
-		case hk_interpreter::a_on_close :
-				p_private->p_property->closeactionbutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
+            case hk_interpreter::a_on_close :
+				p_private->p_property->closeactionbutton_clicked(presentation()->interpreter()->error_rownumber()-1,
+                    error);
 				break;
-		case hk_interpreter::a_after_row_change :
-				p_private->p_property->afterrowchange_action_clicked(presentation()->interpreter()->error_rownumber()-1,error);
+            case hk_interpreter::a_after_row_change :
+				p_private->p_property->afterrowchange_action_clicked(presentation()->interpreter()->error_rownumber()-1,
+                   error);
 				break;
-		case hk_interpreter::a_before_row_change :
-				p_private->p_property->beforerowchange_action_clicked(presentation()->interpreter()->error_rownumber()-1,error);
+            case hk_interpreter::a_before_row_change :
+				p_private->p_property->beforerowchange_action_clicked(presentation()->interpreter()->error_rownumber()-1,
+                    error);
 				break;
-		case hk_interpreter::a_on_print_data :
-				p_private->p_property->onprint_action_clicked(presentation()->interpreter()->error_rownumber()-1,error);
+            case hk_interpreter::a_on_print_data :
+				p_private->p_property->onprint_action_clicked(presentation()->interpreter()->error_rownumber()-1,
+                    error);
 				break;
-		case hk_interpreter::a_on_print_new_page :
-				p_private->p_property->onprintnewpage_action_clicked(presentation()->interpreter()->error_rownumber()-1,error);
+            case hk_interpreter::a_on_print_new_page :
+				p_private->p_property->onprintnewpage_action_clicked(presentation()->interpreter()->error_rownumber()-1,
+                    error);
 				break;
 			default:;
-
-	     } 
-           } 
-
-   }
-   else     show_warningmessage(error);
-
-
-
+            } */
+        } 
+    }
+    else     show_warningmessage(error);
 }
 
 void    hk_kdesimplereport::widget_specific_fieldresize(hk_visible* v)
 {
- if (!v||!p_private->p_property) return;
- if (v==p_private->p_property->object()) p_private->p_property->set_object(v);
+ /* TBP if (!v||!p_private->p_property) return;
+ if (v==p_private->p_property->object()) p_private->p_property->set_object(v); */
 }
 
 

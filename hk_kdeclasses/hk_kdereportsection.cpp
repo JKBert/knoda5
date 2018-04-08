@@ -291,7 +291,6 @@ void hk_kdereportsection::adjust_sectionsize(void)
       m=MINSECTIONSIZE;
     
     setFixedHeight(m);
-
 }
 
 
