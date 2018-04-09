@@ -743,29 +743,28 @@ bool hk_kdesimplereport::set_mode(enum_mode m)
     bool r=hk_report::set_mode(m);
     if (p_private->p_kdereport)
     {
-   if (m==viewmode&&!r)
-   		{
-		hk_report::set_mode(designmode);
- 	//TBP	p_private->p_kdereport->set_mode(designmode);
-		}
-		else {
- 	//TBP	p_private->p_kdereport->set_mode(m);
+        if (m==viewmode&&!r)
+        {
+	        hk_report::set_mode(designmode);
+ 	        p_private->p_kdereport->set_mode(designmode);
+	    }
+	    else {
+ 	        p_private->p_kdereport->set_mode(m);
         }
     }
     else
     if (p_private->p_reportpartwidget)
     {
-   if (m==viewmode&&!r)
+        if (m==viewmode&&!r)
    		{
-		hk_report::set_mode(designmode);
- 		p_private->p_reportpartwidget->set_mode(designmode);
+		    hk_report::set_mode(designmode);
+ 		    p_private->p_reportpartwidget->set_mode(designmode);
 		}
 		else
- 		p_private->p_reportpartwidget->set_mode(m);
+ 		    p_private->p_reportpartwidget->set_mode(m);
     }
     p_private->while_modechange=false;
-     return r;
-
+    return r;
 }
 
 void hk_kdesimplereport::widget_specific_modechanges(enum_mode s)
@@ -1783,7 +1782,7 @@ void hk_kdesimplereport::script_error(hk_visible* v, hk_interpreter::enum_action
 
     if (!runtime_only())
     {
-        //TBP if (kdereport()) kdereport()->set_mode(hk_presentation::designmode);
+        if (kdereport()) kdereport()->set_mode(hk_presentation::designmode);
         if (p_private->p_reportpartwidget)
             p_private->p_reportpartwidget->set_mode(hk_presentation::designmode);
         if (p_private->p_property)

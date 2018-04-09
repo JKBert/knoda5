@@ -1,13 +1,8 @@
-
 ########### next target ###############
 
 set(hk_kdereportpart_PART_SRCS hk_kdereportpart.cpp)
 
 add_library(hk_kde5reportpart ${hk_kdereportpart_PART_SRCS})
-
-# TBP kde4_add_plugin(hk_kde4reportpart WITH_PREFIX ${hk_kdereportpart_PART_SRCS})
-
-# TBP target_link_libraries(hk_kde4reportpart ${KDE4_KDECORE_LIBS} ${KDE4_KPARTS_LIBS} ${HK_CLASSES_LIB} hk_kde4classes)
 
 target_link_libraries(hk_kde5reportpart 
     KF5::CoreAddons

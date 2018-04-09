@@ -45,7 +45,7 @@
 #include <kapplication.h>
 #include <kactioncollection.h>
 #include <kservice.h>
-//TBP icons
+
 hk_kdereport::hk_kdereport (QWidget* parent,  const char* /* name */, Qt::WFlags fl )
 : KParts::MainWindow( parent, fl ) ,hk_class()
 {
@@ -58,15 +58,16 @@ hk_kdereport::hk_kdereport (QWidget* parent,  const char* /* name */, Qt::WFlags
     const QRect& rrect=QRect(0,0,800,600);    
     KConfigGroup cg = c->group("Report-SDI");
     QRect g;
+    QIcon::setThemeName("oxygen");
     
     g=cg.readEntry("Geometry",rrect);
     setGeometry(g);
     
     KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde4classes");
-    setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdereport.rc"));
+    loader->addAppDir("hk_kde5classes");
+    setXMLFile("hk_kdereport.rc");
     
-    KService::Ptr service = KService::serviceByDesktopName("hk_kde4reportpart");
+    KService::Ptr service = KService::serviceByDesktopName("hk_kde5reportpart");
     if (!service ||
       !(p_part=service->createInstance<KParts::ReadWritePart>(this, this, QVariantList())))
     {
@@ -79,7 +80,7 @@ hk_kdereport::hk_kdereport (QWidget* parent,  const char* /* name */, Qt::WFlags
     setCentralWidget(p_report);
     connect(p_partmanager,SIGNAL(partRemoved(KParts::Part*)),this, SLOT(part_removed()));
     connect(p_partmanager,SIGNAL(activePartChanged(KParts::Part*)),this, SLOT(createGUI(KParts::Part*)));
-    p_closeaction=new KAction(KIcon("window-close"),i18n("&Close"),actionCollection());
+    p_closeaction=new KAction(QIcon::fromTheme("window-close"),i18n("&Close"),actionCollection());
     actionCollection()->addAction("closereport",p_closeaction);
     connect(p_closeaction,SIGNAL(triggered()),this,SLOT(close_report()));
     createGUI(p_part);
@@ -95,13 +96,7 @@ hk_kdereport::~hk_kdereport(void)
  if (p_report) delete p_report;
  p_report=NULL;
  delete p_partmanager;
-
-
 }
-
-
-
-
 
 bool    hk_kdereport::set_presentationdatasource(long n, bool r)
 {
@@ -113,7 +108,6 @@ bool    hk_kdereport::set_presentationdatasource(long n, bool r)
     return res;
 }
 
-
 long    hk_kdereport::presentationdatasource(void)
 {
 #ifdef HK_DEBUG
@@ -122,7 +116,6 @@ long    hk_kdereport::presentationdatasource(void)
     return p_report->presentationdatasource();
 }
 
-
 void hk_kdereport::set_database(hk_database* db)
 {
     if (!p_report) return;
@@ -130,13 +123,11 @@ void hk_kdereport::set_database(hk_database* db)
     set_caption();
 }
 
-
 hk_database* hk_kdereport::database(void)
 {
     if (!p_report) return NULL;
     return p_report->database();
 }
-
 
 void hk_kdereport::closeEvent ( QCloseEvent* e)
 {
@@ -155,45 +146,33 @@ void hk_kdereport::closeEvent ( QCloseEvent* e)
   KParts::MainWindow::closeEvent(e);
 }
 
-
-
-
 void hk_kdereport::set_nodesignmode(bool d)
 {
-p_report->set_nodesignmode(d);
-
+    p_report->set_nodesignmode(d);
 }
-
 
 void    hk_kdereport::set_mode(hk_presentation::enum_mode s)
 {
 #ifdef HK_DEBUG
     hkdebug("hk_kdereport::set_mode(s)");
 #endif
-
-p_report->set_mode(s);
+    p_report->set_mode(s);
 }
-
 
 void hk_kdereport::set_designmode(void)
 {
     set_mode(hk_presentation::designmode);
 }
 
-
 void hk_kdereport::set_viewmode(void)
 {
     set_mode(hk_presentation::viewmode);
 }
 
-
-
-
 hk_kdesimplereport* hk_kdereport::simplereport(void)
 {
     return p_report->simplereport();
 }
-
 
 void    hk_kdereport::save_report(void)
 {
@@ -201,12 +180,10 @@ void    hk_kdereport::save_report(void)
     set_caption();
 }
 
-
 void hk_kdereport::saveas_report(void)
 {
-p_report->saveas_report();
+    p_report->saveas_report();
 }
-
 
 bool hk_kdereport::load_report(const hk_string& name)
 {
@@ -215,7 +192,6 @@ bool hk_kdereport::load_report(const hk_string& name)
     return res;
 }
 
-
 void hk_kdereport::close_report(void)
 {
     if (p_report->while_executing())
@@ -223,13 +199,10 @@ void hk_kdereport::close_report(void)
     close();
 }
 
-
 void hk_kdereport::slot_showtoolbar(void)
 {
 
 }
-
-
 
 void hk_kdereport::part_removed(void)
 {
@@ -241,25 +214,17 @@ void hk_kdereport::part_removed(void)
    close();
 }
 
-
-
-
-
 void hk_kdereport::set_caption(void)
 {
- 
     QString reportname=i18n( "Report - "  );
     hk_database* db=database();
-        reportname+=QString::fromUtf8 (l2u(p_report->simplereport()->hk_presentation::name()).c_str());
-        reportname+=" (";
-        hk_string driver;
+    reportname+=QString::fromUtf8 (l2u(p_report->simplereport()->hk_presentation::name()).c_str());
+    reportname+=" (";
+    hk_string driver;
 	if (db) driver=db->name();
         reportname+=QString::fromUtf8(l2u(driver).c_str());
         reportname+=")";
 
     setWindowTitle( reportname  );
-   emit signal_setcaption(reportname);
-
+    emit signal_setcaption(reportname);
 }
-
-

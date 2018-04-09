@@ -58,7 +58,7 @@
 #include <kxmlguifactory.h>
 #include <KParts/ReadWritePart>
 
-//TBP icons
+
  class hk_kdepreviewwindow: public KMainWindow
 {
 public:
