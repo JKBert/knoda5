@@ -16,9 +16,7 @@
 #ifndef HK_KDEREPORTPART
 #define HK_KDEREPORTPART
 
-//TBP #include <kparts/part.h>
 #include <KParts/ReadWritePart>
-//TBP #include <kparts/factory.h>
 #include <KParts/Factory>
 #include "../hk_kdeclasses/hk_kdereportpartwidget.h"
 
@@ -33,7 +31,6 @@ friend class hk_kdereportpartwidget;
         public:
         hk_kdereportpart(QWidget* parentWidget, QObject* parent, const QVariantList &args);
         virtual ~hk_kdereportpart();
-        //TBP static KAboutData* createAboutData();
         virtual void setReadWrite(bool rw);
     protected:
         virtual bool openFile();

@@ -22,8 +22,7 @@ case "$1" in
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdegridpart/hk_kdegridpart.rc $USERDATADIR/hk_kde5classes/hk_kdegridpart.rc
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdeformpart/hk_kdeformpartdesign.rc $USERDATADIR/hk_kde5classes/hk_kdeformpartdesign.rc
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdeformpart/hk_kdeformpartview.rc $USERDATADIR/hk_kde5classes/hk_kdeformpartview.rc
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdereportpart/hk_kdereportpartdesign.rc $USERDATADIR/hk_kde5classes/hk_kdereportpartdesign.rc
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdereportpart/hk_kdereportpartview.rc $USERDATADIR/hk_kde5classes/hk_kdereportpartview.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdereportpart/hk_kdereportpart.rc $USERDATADIR/hk_kde5classes/hk_kdereportpart.rc
 # no need to link hk_kdeform.rc as it is located in hk_kdeclasses directory
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdedbdesigner/hk_kdedbdesignerpart.rc $USERDATADIR/hk_kde5classes/hk_kdedbdesignerpart.rc
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdequerypart/hk_kdequerypartqbe.rc $USERDATADIR/hk_kde5classes/hk_kdequerypartqbe.rc
@@ -70,8 +69,7 @@ COMMENT
         exit 0
         ;;
     unlink)
-        unlink $USERDATADIR/hk_kde5classes/hk_kdereportpartdesign.rc
-        unlink $USERDATADIR/hk_kde5classes/hk_kdereportpartview.rc
+        unlink $USERDATADIR/hk_kde5classes/hk_kdereportpart.rc
         unlink $USERDATADIR/hk_kde5classes/hk_kdeformpartdesign.rc
         unlink $USERDATADIR/hk_kde5classes/hk_kdeformpartview.rc	
         unlink $USERDATADIR/hk_kde5classes/hk_kdetablepart.rc

@@ -37,10 +37,7 @@
 #include <hk_database.h>
 #include <hk_datasource.h>
 
-
 K_PLUGIN_FACTORY_DEFINITION(hk_kdereportpartfactory, registerPlugin<hk_kdereportpart>();)
-//TBP K_PLUGIN_FACTORY(hk_kdereportpartfactory,registerPlugin<hk_kdereportpart>();)
-//TBP K_EXPORT_PLUGIN(hk_kdereportpartfactory("hk_kde5reportpart","hk_kde5reportpart"))
  
 class hk_kdereportpartprivate
 {
@@ -86,7 +83,7 @@ hk_kdereportpart::hk_kdereportpart(QWidget* pWidget, QObject* parent, const QVar
     // so we explicitly flag it with Qt::Widget
     p_private->p_report -> setWindowFlags(Qt::Widget);    
     setWidget(p_private->p_report);
-    setXMLFile("hk_kdereportpartdesign.rc");
+    setXMLFile("hk_kdereportpart.rc");
 }
 
 hk_kdereportpart::~hk_kdereportpart()
@@ -99,29 +96,17 @@ hk_kdereportpart::~hk_kdereportpart()
   delete p_private;
 }
 
-
-
-/*void hk_kdereportpart::show_dbdesignercolumndialog(void)
-{
-    p_private->p_table->simpledbdesigner()->show_dbdesignercolumndialog();
-}*/
-
-
 void hk_kdereportpart::setReadWrite(bool rw)
 {
     KParts::ReadWritePart::setReadWrite(rw);
 }
 
-
 bool hk_kdereportpart::openFile()
 {
  // URL handling:   mysql:/user:password@host:port/databasename/datasourcetype/datasourcename
  // where datasourcetype is either tables or queries
-
-
     return true;
 }
-
 
 bool hk_kdereportpart::saveFile()
 {
@@ -142,16 +127,3 @@ void hk_kdereportpart::setXMLFile(const QString& file,bool merge,bool setxmldoc)
         p_private->activate=false;
     } 
 }
-
-/* TBP
-KAboutData* hk_kdereportpart::createAboutData()
-{
-
-
-}
-
-
-*/
-
-
-

@@ -496,14 +496,14 @@ void    hk_kdereportpartwidget::set_mode(hk_presentation::enum_mode s)
 	     //hkdebug("preview after set caption");
         }
 
-        if (p_reportpart -> factory()){
-	        KMenu* p_editmenu = dynamic_cast<KMenu*>(p_reportpart -> factory() ->container("edit",p_reportpart));
+        if (p_reportpart -> factory()) {
+	        QMenu* p_editmenu = dynamic_cast<QMenu*>(p_reportpart->factory()->container("edit",p_reportpart));
 	
 	        if (p_editmenu) p_editmenu->menuAction()->setVisible(false);
-	        p_reportpropertyaction -> setVisible(false);
-	        p_pointeraction -> setVisible(false);
-	        p_fieldaction -> setVisible(false);
-	        p_sectionaction -> setVisible(false);
+	        p_reportpropertyaction->setVisible(false);
+	        p_pointeraction->setVisible(false);
+	        p_fieldaction->setVisible(false);
+	        p_sectionaction->setVisible(false);
         }
         p_copyaction->setEnabled(false);
         p_cutaction->setEnabled(false);
@@ -517,16 +517,16 @@ void    hk_kdereportpartwidget::set_mode(hk_presentation::enum_mode s)
         p_report->set_mode(s);
         p_printaction->setEnabled(false);
         //createGUI(NULL);
-        p_reportpart->setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdereportpartdesign.rc"));
+        p_reportpart->setXMLFile("hk_kdereportpart.rc");
         if (p_reportpart -> factory()) {
-            KMenu* p_editmenu = dynamic_cast<KMenu*>(p_reportpart -> factory() ->container("edit",p_reportpart));
+            QMenu* p_editmenu = dynamic_cast<QMenu*>(p_reportpart->factory()->container("edit",p_reportpart));
 	
-        if (p_editmenu) p_editmenu->menuAction()->setVisible(true);
-        p_reportpropertyaction -> setVisible(true);
-        p_pointeraction -> setVisible(true);
-        p_fieldaction -> setVisible(true);
-        p_sectionaction -> setVisible(true);
-    }
+            if (p_editmenu) p_editmenu->menuAction()->setVisible(true);
+            p_reportpropertyaction -> setVisible(true);
+            p_pointeraction -> setVisible(true);
+            p_fieldaction -> setVisible(true);
+            p_sectionaction -> setVisible(true);
+        }
  
     if (p_designaction) p_designaction->setChecked(true);
         p_bulkaction->setEnabled(true);
