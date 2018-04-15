@@ -145,9 +145,9 @@ hk_kdereportpropertybase::hk_kdereportpropertybase( QWidget* parent, const char*
 
     columnfield = new QComboBox(datatab);
     columnfield->setObjectName(QString::fromAscii("columnfield"));
-    columnfield->setEditable( TRUE );
-    columnfield->setAutoCompletion( TRUE );
-    columnfield->setDuplicatesEnabled( FALSE );
+    columnfield->setEditable(true);
+    columnfield->setAutoCompletion(true);
+    columnfield->setDuplicatesEnabled(false);
 
     datatabLayout->addWidget( columnfield, 4, 1 );
 
@@ -164,7 +164,7 @@ hk_kdereportpropertybase::hk_kdereportpropertybase( QWidget* parent, const char*
 
     idfield = new QLineEdit(datatab);
     idfield->setObjectName("idfield");
-    idfield->setEnabled( FALSE );
+    idfield->setEnabled(false);
 
     datatabLayout->addWidget( idfield, 0, 1 );
     tab->addTab( datatab, QString::fromLatin1("") );
@@ -191,9 +191,9 @@ hk_kdereportpropertybase::hk_kdereportpropertybase( QWidget* parent, const char*
     fontfield = new QComboBox(formattab);
     fontfield->setObjectName(QString::fromAscii("fontfield"));
     initSizePolicy(fontfield, QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
-    fontfield->setEditable( TRUE );
-    fontfield->setAutoCompletion( TRUE );
-    fontfield->setDuplicatesEnabled( FALSE );
+    fontfield->setEditable(true);
+    fontfield->setAutoCompletion(true);
+    fontfield->setDuplicatesEnabled(false);
 
     formattabLayout->addWidget( fontfield, 5, 1 );
 

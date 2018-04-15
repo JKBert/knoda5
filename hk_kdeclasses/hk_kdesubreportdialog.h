@@ -24,7 +24,7 @@ class hk_kdesubreportdialog : public hk_kdesubreportdialogbase
     Q_OBJECT
 
         public:
-        hk_kdesubreportdialog( hk_reportsection* s, QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+        hk_kdesubreportdialog( hk_reportsection* s, QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
         ~hk_kdesubreportdialog();
         void set_reportsection(hk_reportsection* s);
     public slots:

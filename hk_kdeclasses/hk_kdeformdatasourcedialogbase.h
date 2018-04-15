@@ -46,7 +46,7 @@ class hk_kdeformdatasourcebasedialog : public QDialog
     Q_OBJECT
 
 public:
-    hk_kdeformdatasourcebasedialog( QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+    hk_kdeformdatasourcebasedialog( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kdeformdatasourcebasedialog();
 
     QPushButton* Addbutton;

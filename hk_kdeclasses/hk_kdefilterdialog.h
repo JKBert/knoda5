@@ -25,7 +25,7 @@ class hk_kdefilterdialog : public hk_kdefilterdialogbase
     public:
        
        enum enum_type {filter,editor};
-        hk_kdefilterdialog(enum_type type=filter, QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+        hk_kdefilterdialog(enum_type type=filter, QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
         ~hk_kdefilterdialog();
 
     protected slots:

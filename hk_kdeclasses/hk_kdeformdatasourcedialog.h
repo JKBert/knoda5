@@ -23,7 +23,7 @@ class hk_kdeformdatasourcedialog : public hk_kdeformdatasourcebasedialog
     Q_OBJECT
 
         public:
-        hk_kdeformdatasourcedialog( hk_presentation* form, QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+        hk_kdeformdatasourcedialog( hk_presentation* form, QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
         ~hk_kdeformdatasourcedialog();
         void set_datasource(hk_datasource*);
 	hk_datasource* datasource(void);

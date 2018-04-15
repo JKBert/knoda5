@@ -174,15 +174,14 @@ hk_kdesimplereport::~hk_kdesimplereport(void)
 
 void hk_kdesimplereport::set_reportpartwidget(hk_kdereportpartwidget* w)
 {
-
   p_private->p_reportpartwidget=w;
- /*TBP   if (p_private->p_property)
-      {
+  if (p_private->p_property)
+    {
        delete p_private->p_property;
        p_private->p_property=NULL;
-      }
+    }
 
-  show_property(); */
+  show_property();
 }
 
 
@@ -499,7 +498,7 @@ bool hk_kdesimplereport::reporteventFilter(QObject* object,QEvent* event)
                 }
 
                 p_private->p_focus->set_positions();
-             //TBP   p_private->p_property->focus_resized();
+                p_private->p_property->focus_resized();
             }
             break;
         };
@@ -1435,7 +1434,7 @@ bool hk_kdesimplereport::is_reportobject(QWidget* v)
 
 void hk_kdesimplereport::show_property(void)
 {
-   /*TBP if (mode()!=hk_presentation::designmode)return;
+    if (mode()!=hk_presentation::designmode)return;
     bool newproperty=false;
     if (p_private->p_property==NULL)
     {
@@ -1481,7 +1480,6 @@ void hk_kdesimplereport::show_property(void)
 			 screenheight-p_private->p_property->frameGeometry().height());
 	}
     }
-*/
 }
 
 
@@ -1791,7 +1789,7 @@ void hk_kdesimplereport::script_error(hk_visible* v, hk_interpreter::enum_action
             hk_kdereportdata* d=dynamic_cast<hk_kdereportdata*>(v);
             if (d!=NULL) s=d->section();
 	        set_focus(d,s,false);
-	        /* TBP switch (a)
+	        switch (a)
 	        {
 		    case hk_interpreter::a_on_open :
 				p_private->p_property->openactionbutton_clicked(presentation()->interpreter()->error_rownumber()-1,
@@ -1818,7 +1816,7 @@ void hk_kdesimplereport::script_error(hk_visible* v, hk_interpreter::enum_action
                     error);
 				break;
 			default:;
-            } */
+            }
         } 
     }
     else     show_warningmessage(error);
@@ -1826,8 +1824,9 @@ void hk_kdesimplereport::script_error(hk_visible* v, hk_interpreter::enum_action
 
 void    hk_kdesimplereport::widget_specific_fieldresize(hk_visible* v)
 {
- /* TBP if (!v||!p_private->p_property) return;
- if (v==p_private->p_property->object()) p_private->p_property->set_object(v); */
+  if (!v||!p_private->p_property) return;
+  if (v==p_private->p_property->object())
+    p_private->p_property->set_object(v);
 }
 
 

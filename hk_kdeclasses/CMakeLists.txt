@@ -68,8 +68,8 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdereportconditiondialogbase.cpp ]]
     hk_kdereportdata.cpp 
     hk_kdereportpartwidget.cpp
-#TBP  hk_kdereportproperty.cpp
-#TBP  hk_kdereportpropertybase.cpp
+    hk_kdereportproperty.cpp
+    hk_kdereportpropertybase.cpp
     hk_kdereportsection.cpp
     hk_kdereportsectiondialog.cpp
     hk_kdereportsectiondialogbase.cpp
@@ -78,8 +78,8 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kde4simplegrid.cpp
     hk_kde4simplegrid_p.cpp ]]
     hk_kdesimplereport.cpp
-#[[  TBP    hk_kdespinbox.cpp
-    hk_kdesubform.cpp
+    hk_kdespinbox.cpp
+ #[[  TBP    hk_kdesubform.cpp
     hk_kdesubformdialog.cpp
     hk_kdesubreportdialog.cpp
     hk_kdesubreportdialogbase.cpp

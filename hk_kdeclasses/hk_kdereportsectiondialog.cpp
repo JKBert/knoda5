@@ -38,7 +38,6 @@ hk_kdereportsectiondialog::hk_kdereportsectiondialog( hk_kdesimplereport* r,QWid
     fieldlabel->setText(i18n("Section to add:"));
     boxlabel->setText(i18n("Existing sections"));
     p_report=r;
-    KIconLoader* loader=KIconLoader::global();
     QIcon::setThemeName("oxygen");
     
     deletebutton->setIcon(QIcon::fromTheme("trash-empty"));
