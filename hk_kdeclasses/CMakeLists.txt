@@ -71,9 +71,9 @@ set(hk_kdeclasses_LIB_SRCS
 #TBP  hk_kdereportproperty.cpp
 #TBP  hk_kdereportpropertybase.cpp
     hk_kdereportsection.cpp
-#[[  TBP    hk_kdereportsectiondialog.cpp
+    hk_kdereportsectiondialog.cpp
     hk_kdereportsectiondialogbase.cpp
-    hk_kderowselector.cpp
+ #[[  TBP    hk_kderowselector.cpp
     hk_kdesimpleform.cpp
     hk_kde4simplegrid.cpp
     hk_kde4simplegrid_p.cpp ]]

@@ -32,7 +32,6 @@
 #include <kiconloader.h>
 #include <klocale.h>
 
-// TBP icons
 hk_kdereportsectiondialog::hk_kdereportsectiondialog( hk_kdesimplereport* r,QWidget* parent,  const char* name, bool modal, Qt::WFlags fl )
 : hk_kdereportsectiondialogbase( parent, name, modal, fl )
 {
@@ -40,11 +39,12 @@ hk_kdereportsectiondialog::hk_kdereportsectiondialog( hk_kdesimplereport* r,QWid
     boxlabel->setText(i18n("Existing sections"));
     p_report=r;
     KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde4classes");
-    deletebutton->setIcon(  loader->loadIcon("trash-empty",KIconLoader::NoGroup,KIconLoader::SizeSmall));
-    addbutton->setIcon(loader->loadIcon("go-next",KIconLoader::NoGroup,KIconLoader::SizeSmall));
-    upbutton->setIcon(loader->loadIcon("go-up",KIconLoader::NoGroup,KIconLoader::SizeSmall) );
-    downbutton->setIcon(loader->loadIcon("go-down",KIconLoader::NoGroup,KIconLoader::SizeSmall) );
+    QIcon::setThemeName("oxygen");
+    
+    deletebutton->setIcon(QIcon::fromTheme("trash-empty"));
+    addbutton->setIcon(QIcon::fromTheme("go-next"));
+    upbutton->setIcon(QIcon::fromTheme("go-up"));
+    downbutton->setIcon(QIcon::fromTheme("go-down"));
 
     set_sectionlist();
     set_fieldlist();
@@ -58,7 +58,6 @@ hk_kdereportsectiondialog::~hk_kdereportsectiondialog()
 
 void hk_kdereportsectiondialog::add_clicked()
 {
-
     int p=sectionbox->currentRow();
     if (p<0)p=0;
     hk_reportsectionpair* s=p_report->new_sectionpair_at(p);
@@ -119,7 +118,7 @@ void hk_kdereportsectiondialog::set_sectionlist(void)
     vector<hk_reportsectionpair*>::iterator it=p->begin();
     while(it!=p->end())
     {
-	sectionbox->addItem(QString::fromUtf8(l2u((*it)->columnname()).c_str()));
+	    sectionbox->addItem(QString::fromUtf8(l2u((*it)->columnname()).c_str()));
         it++;
     }
 }

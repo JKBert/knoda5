@@ -376,7 +376,7 @@ knodamaindockwindowbase::knodamaindockwindowbase(struct_commandlinefields* cl,
    
    KSharedConfigPtr cfg=KGlobal::config();
    KConfigGroup cg = cfg->group("knodamain");
-  //TBP applyMainWindowSettings( cg, true );
+   applyMainWindowSettings(cg);
 
   if (cl)
   {

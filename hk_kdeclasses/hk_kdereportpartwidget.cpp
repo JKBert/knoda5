@@ -57,6 +57,7 @@
 #include <kactionmenu.h>
 #include <kxmlguifactory.h>
 #include <KParts/ReadWritePart>
+#include <KIconEngine>
 
 
  class hk_kdepreviewwindow: public KMainWindow
@@ -148,19 +149,20 @@ hk_kdereportpartwidget::hk_kdereportpartwidget (hk_kdereportpart* reportpart,QWi
     hkclassname("hk_kdereportpartwidget");
     hkdebug("hk_kdereportpartwidget::hk_kdereportpartwidget");
 #endif
+    QActionGroup* pag;
+    KIconLoader* loader=KIconLoader::global();
+    
     if (name)
         setObjectName(QString::fromAscii(name));
     setFocusPolicy(Qt::StrongFocus);
     p_reportpart=reportpart;
     p_previewwindow=NULL;
     resize( 800, 600 );
-    KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde4classes");
     p_whilepreview=false;
     p_closewindow=false;
-    QActionGroup* pag;
-    QIcon::setThemeName("oxygen");
     
+    QIcon::setThemeName("oxygen");
+     
     if (runtime_only())
     {
       p_designaction=NULL;
@@ -184,8 +186,7 @@ hk_kdereportpartwidget::hk_kdereportpartwidget (hk_kdereportpart* reportpart,QWi
     p_reportpart->actionCollection() -> addAction("printreport",p_printaction);
     connect(p_printaction,SIGNAL(triggered()),this,SLOT(print_report()));
     p_printaction->setEnabled(false);
-    // TBP opravit ikonu p_sectionaction=new KAction(KIcon("reportsection",KIconLoader::global()),i18n("Sectionselect"),p_reportpart->actionCollection());
-    p_sectionaction=new KAction(QIcon(),i18n("Sectionselect"),p_reportpart->actionCollection());
+    p_sectionaction=new KAction(QIcon( new KIconEngine("reportsection",loader)),i18n("Sectionselect"),p_reportpart->actionCollection());
     p_reportpart->actionCollection() -> addAction("sectionselect",p_sectionaction);
     connect(p_sectionaction,SIGNAL(triggered()),SLOT(select_section()));
     p_sectionaction->setToolTip(i18n("sections"));
@@ -198,12 +199,10 @@ hk_kdereportpartwidget::hk_kdereportpartwidget (hk_kdereportpart* reportpart,QWi
     connect(p_saveasaction,SIGNAL(triggered()),this,SLOT(saveas_report()));
     p_saveasaction->setEnabled(!runtime_only());
 
-    // TBP opravit ikonu p_pointeraction=new KToggleAction(KIcon("pfeil",KIconLoader::global()),i18n("Pointer"),p_reportpart->actionCollection());
-    p_pointeraction=new KToggleAction(QIcon(),i18n("Pointer"),p_reportpart->actionCollection());
+    p_pointeraction=new KToggleAction(QIcon(new KIconEngine("pfeil",loader)),i18n("Pointer"),p_reportpart->actionCollection());
     p_reportpart->actionCollection() -> addAction("pointer",p_pointeraction);
     connect(p_pointeraction,SIGNAL(triggered()),this,SLOT(pointerbutton_clicked()));
-// TBP opravit ikonu    p_fieldaction=new KToggleAction(KIcon("editline",KIconLoader::global()),i18n("Field"),p_reportpart->actionCollection());
-    p_fieldaction=new KToggleAction(QIcon(),i18n("Field"),p_reportpart->actionCollection());
+    p_fieldaction=new KToggleAction(QIcon(new KIconEngine("editline",loader)),i18n("Field"),p_reportpart->actionCollection());
     p_reportpart->actionCollection() -> addAction("fieldbutton",p_fieldaction);
     connect(p_fieldaction,SIGNAL(triggered()),this,SLOT(fieldbutton_clicked()));
     p_pointeraction->setToolTip(i18n("select"));
@@ -238,8 +237,7 @@ hk_kdereportpartwidget::hk_kdereportpartwidget (hk_kdereportpart* reportpart,QWi
     p_report->set_reportpartwidget(this); 
     p_scrollview->set_report(p_report);
     set_caption();
-// TBP opravit ikonu    p_reportpropertyaction=new KAction(KIcon("propertyeditor",KIconLoader::global()),i18n("&Propertyeditor"),p_reportpart->actionCollection());
-    p_reportpropertyaction=new KAction(QIcon(),i18n("&Propertyeditor"),p_reportpart->actionCollection());
+    p_reportpropertyaction=new KAction(QIcon(new KIconEngine("propertyeditor",loader)),i18n("&Propertyeditor"),p_reportpart->actionCollection());
     p_reportpart->actionCollection() -> addAction("viewproperty",p_reportpropertyaction);
     connect(p_reportpropertyaction,SIGNAL(triggered()),p_report,SLOT(show_property()));
 
@@ -516,8 +514,6 @@ void    hk_kdereportpartwidget::set_mode(hk_presentation::enum_mode s)
         p_report->stop_execution();
         p_report->set_mode(s);
         p_printaction->setEnabled(false);
-        //createGUI(NULL);
-        p_reportpart->setXMLFile("hk_kdereportpart.rc");
         if (p_reportpart -> factory()) {
             QMenu* p_editmenu = dynamic_cast<QMenu*>(p_reportpart->factory()->container("edit",p_reportpart));
 	
@@ -635,10 +631,10 @@ void hk_kdereportpartwidget::print_report(void)
 void hk_kdereportpartwidget::select_section(void)
 {
     p_report->clearfocus();
-    /* TBP hk_kdereportsectiondialog* d= new hk_kdereportsectiondialog(p_report,this,0,true);
+    hk_kdereportsectiondialog* d= new hk_kdereportsectiondialog(p_report,this,0,true);
     d->exec();
 
-    delete d; */
+    delete d;
 }
 
 

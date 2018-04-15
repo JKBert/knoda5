@@ -54,7 +54,7 @@ hk_kdereportsectiondialogbase::hk_kdereportsectiondialogbase( QWidget* parent, c
 {
     setObjectName(QString::fromAscii(name == NULL?"hk_kdereportsectiondialogbase":name));
     setModal(modal);
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled( true );
     hk_kdereportsectiondialogbaseLayout = new QHBoxLayout(this);
     hk_kdereportsectiondialogbaseLayout->setMargin(11);
     hk_kdereportsectiondialogbaseLayout->setSpacing(6);
@@ -84,7 +84,7 @@ hk_kdereportsectiondialogbase::hk_kdereportsectiondialogbase( QWidget* parent, c
     sectionfield = new QComboBox(Frame14);
     sectionfield->setObjectName(QString::fromAscii("sectionfield"));
     initSizePolicy(sectionfield, QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
-    sectionfield->setEditable( TRUE );
+    sectionfield->setEditable( true );
     Layout5->addWidget( sectionfield );
     Spacer3 = new QSpacerItem( 20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding );
     Layout5->addItem( Spacer3 );
@@ -103,17 +103,17 @@ hk_kdereportsectiondialogbase::hk_kdereportsectiondialogbase( QWidget* parent, c
 
     deletebutton = new QToolButton( Frame14);
     deletebutton->setObjectName(QString::fromAscii("deletebutton"));
-    deletebutton->setEnabled( FALSE );
+    deletebutton->setEnabled( false );
     Layout4->addWidget( deletebutton );
 
     upbutton = new QToolButton(Frame14);
     upbutton->setObjectName(QString::fromAscii("upbutton"));
-    upbutton->setEnabled( FALSE );
+    upbutton->setEnabled( false );
     Layout4->addWidget( upbutton );
 
     downbutton = new QToolButton(Frame14);
     downbutton->setObjectName(QString::fromAscii("downbutton"));
-    downbutton->setEnabled( FALSE );
+    downbutton->setEnabled( false );
     Layout4->addWidget( downbutton );
     Spacer1_2 = new QSpacerItem( 20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding );
     Layout4->addItem( Spacer1_2 );
@@ -145,8 +145,8 @@ hk_kdereportsectiondialogbase::hk_kdereportsectiondialogbase( QWidget* parent, c
 
     exitbutton = new QPushButton(this);
     exitbutton->setObjectName("exitbutton");
-    exitbutton->setAutoDefault( TRUE );
-    exitbutton->setDefault( TRUE );
+    exitbutton->setAutoDefault( true );
+    exitbutton->setDefault( true );
     Layout11->addWidget( exitbutton );
     Spacer1 = new QSpacerItem( 20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding );
     Layout11->addItem( Spacer1 );
@@ -160,7 +160,7 @@ hk_kdereportsectiondialogbase::hk_kdereportsectiondialogbase( QWidget* parent, c
     connect( deletebutton, SIGNAL( clicked() ), this, SLOT( delete_clicked() ) );
     connect( upbutton, SIGNAL( clicked() ), this, SLOT( up_clicked() ) );
     connect( sectionbox, SIGNAL( itemSelectionChanged() ), this, SLOT( check_buttons() ) );
-    connect( sectionfield, SIGNAL( textChanged(const QString&) ), this, SLOT( check_buttons() ) );
+    connect( sectionfield, SIGNAL( currentTextChanged(const QString&) ), this, SLOT( check_buttons() ) );
     connect( downbutton, SIGNAL( clicked() ), this, SLOT( down_clicked() ) );
 }
 
@@ -178,15 +178,14 @@ hk_kdereportsectiondialogbase::~hk_kdereportsectiondialogbase()
  */
 void hk_kdereportsectiondialogbase::languageChange()
 {
-    setWindowTitle( tr( "hk_kdereportsectiondialogbase" ) );
-    //TBP TBT translation tr()->i18n()
-    fieldlabel->setText( tr( "TextLabel1" ) );
+    setWindowTitle(tr("hk_kdereportsectiondialogbase"));
+    fieldlabel->setText(tr("TextLabel1"));
     addbutton->setText( QString::null );
     deletebutton->setText( QString::null );
     upbutton->setText( QString::null );
     downbutton->setText( QString::null );
-    boxlabel->setText( tr( "TextLabel2" ) );
-    exitbutton->setText( tr( "&Exit" ) );
+    boxlabel->setText(tr("TextLabel2"));
+    exitbutton->setText(tr("&Exit"));
 }
 
 void hk_kdereportsectiondialogbase::add_clicked()
@@ -213,4 +212,3 @@ void hk_kdereportsectiondialogbase::up_clicked()
 {
     qWarning( "hk_kdereportsectiondialogbase::up_clicked(): Not implemented yet" );
 }
-
