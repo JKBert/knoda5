@@ -170,7 +170,7 @@ hk_kdesubreportdialogbase::hk_kdesubreportdialogbase( QWidget* parent, const cha
     image1 = QPixmap::fromImage(img);
     setObjectName(QString::fromAscii(name == NULL?"hk_kdesubreportdialogbase":name));
     setModal(modal);
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled(true);
     hk_kdesubreportdialogbaseLayout = new QGridLayout(this);
     hk_kdesubreportdialogbaseLayout->setMargin(11);
     hk_kdesubreportdialogbaseLayout->setSpacing(6);
@@ -183,19 +183,19 @@ hk_kdesubreportdialogbase::hk_kdesubreportdialogbase( QWidget* parent, const cha
 
     setbutton = new QPushButton(this);
     setbutton->setObjectName("setbutton");
-    setbutton->setEnabled( FALSE );
-    setbutton->setAutoDefault( TRUE );
-    setbutton->setDefault( TRUE );
+    setbutton->setEnabled(false);
+    setbutton->setAutoDefault(true);
+    setbutton->setDefault(true);
     Layout8->addWidget( setbutton );
 
     deletebutton = new QPushButton(this);
     deletebutton->setObjectName("deletebutton");
-    deletebutton->setEnabled( FALSE );
+    deletebutton->setEnabled(false);
     Layout8->addWidget( deletebutton );
 
     buttonCancel = new QPushButton(this);
     buttonCancel->setObjectName("buttonCancel");
-    buttonCancel->setAutoDefault( TRUE );
+    buttonCancel->setAutoDefault(true);
     Layout8->addWidget( buttonCancel );
     Spacer1 = new QSpacerItem( 20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding );
     Layout8->addItem( Spacer1 );
@@ -237,7 +237,7 @@ hk_kdesubreportdialogbase::hk_kdesubreportdialogbase( QWidget* parent, const cha
 
     deletefieldbutton = new QToolButton(Frame3);
     deletefieldbutton->setObjectName(QString::fromAscii("deletefieldbutton"));
-    deletefieldbutton->setEnabled( FALSE );
+    deletefieldbutton->setEnabled( false );
     initSizePolicy(deletefieldbutton, QSizePolicy::Fixed, QSizePolicy::Fixed);
     deletefieldbutton->setIcon( QIcon( image0 ) );
 
@@ -259,15 +259,15 @@ hk_kdesubreportdialogbase::hk_kdesubreportdialogbase( QWidget* parent, const cha
     thisfield->setObjectName(QString::fromAscii("thisfield"));
     initSizePolicy(thisfield, QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
     thisfield->setMinimumSize( QSize( 90, 0 ) );
-    thisfield->setEditable( TRUE );
+    thisfield->setEditable(true);
     thisfield->setInsertPolicy( QComboBox::NoInsert );
-    thisfield->setAutoCompletion( TRUE );
+    thisfield->setAutoCompletion(true);
 
     Layout3->addWidget(thisfield, 1, 1, 1, 2 );
 
     addfieldbutton = new QToolButton(Frame3);
     addfieldbutton->setObjectName(QString::fromAscii("addfieldbutton"));
-    addfieldbutton->setEnabled( FALSE );
+    addfieldbutton->setEnabled(false);
     initSizePolicy(addfieldbutton, QSizePolicy::Fixed, QSizePolicy::Fixed);
     addfieldbutton->setIcon( QIcon( image1 ) );
 
@@ -286,9 +286,9 @@ hk_kdesubreportdialogbase::hk_kdesubreportdialogbase( QWidget* parent, const cha
     masterfield->setObjectName(QString::fromAscii("masterfield"));
     initSizePolicy(masterfield, QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
     masterfield->setMinimumSize( QSize( 130, 0 ) );
-    masterfield->setEditable( TRUE );
+    masterfield->setEditable(true);
     masterfield->setInsertPolicy( QComboBox::NoInsert );
-    masterfield->setAutoCompletion( TRUE );
+    masterfield->setAutoCompletion( true );
 
     Layout3->addWidget( masterfield, 0, 1, 1, 2 );
     Frame3Layout->addLayout( Layout3 );
@@ -298,7 +298,7 @@ hk_kdesubreportdialogbase::hk_kdesubreportdialogbase( QWidget* parent, const cha
     initSizePolicy(dependingfieldlist, QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
     dependingfieldlist->setMinimumSize( QSize( 200, 0 ) );
     dependingfieldlist -> setSelectionMode(QAbstractItemView::SingleSelection);
-    dependingfieldlist->setAllColumnsShowFocus( TRUE );
+    dependingfieldlist->setAllColumnsShowFocus( true );
     dependingfieldlist -> setRootIsDecorated(false);
     Frame3Layout->addWidget( dependingfieldlist );
 
@@ -311,9 +311,9 @@ hk_kdesubreportdialogbase::hk_kdesubreportdialogbase( QWidget* parent, const cha
     connect( addfieldbutton, SIGNAL( clicked() ), this, SLOT( add_dependingfields() ) );
     connect( deletefieldbutton, SIGNAL( clicked() ), this, SLOT( delete_dependingfields() ) );
     connect( dependingfieldlist, SIGNAL( itemSelectionChanged()) , this, SLOT( check_buttons() ) );
-    connect( masterfield, SIGNAL( textChanged(const QString&) ), this, SLOT( check_buttons() ) );
+    connect( masterfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( check_buttons() ) );
     connect( masterfield, SIGNAL( activated(int) ), this, SLOT( check_buttons() ) );
-    connect( thisfield, SIGNAL( textChanged(const QString&) ), this, SLOT( check_buttons() ) );
+    connect( thisfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( check_buttons() ) );
     connect( thisfield, SIGNAL( highlighted(int) ), this, SLOT( check_buttons() ) );
     connect( subreportfield, SIGNAL( activated(int) ), this, SLOT( subreport_selected() ) );
     connect( setbutton, SIGNAL( clicked() ), this, SLOT( set_subreport() ) );
@@ -335,7 +335,6 @@ hk_kdesubreportdialogbase::~hk_kdesubreportdialogbase()
 void hk_kdesubreportdialogbase::languageChange()
 {
     setWindowTitle( tr( "subreport dialog" ) );
-    //TBP TBT translation tr()->i18n()
     setbutton->setText( tr( "&Set" ) );
     deletebutton->setText( tr( "&Delete" ) );
     buttonCancel->setText( tr( "&Cancel" ) );

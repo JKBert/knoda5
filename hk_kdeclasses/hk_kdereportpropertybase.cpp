@@ -538,54 +538,54 @@ hk_kdereportpropertybase::hk_kdereportpropertybase( QWidget* parent, const char*
     // signals and slots connections
     connect( afterrowchangeaction, SIGNAL( clicked() ), this, SLOT( afterrowchange_action_clicked() ) );
     connect( alignmentfield, SIGNAL( activated(const QString&) ), this, SLOT( format_changes() ) );
-    connect( alignmentfield, SIGNAL( textChanged(const QString&) ), this, SLOT( format_changes() ) );
+    connect( alignmentfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( format_changes() ) );
     connect( beforerowchangeaction, SIGNAL( clicked() ), this, SLOT( beforerowchange_action_clicked() ) );
     connect( boldfield, SIGNAL( activated(int) ), this, SLOT( font_changes() ) );
     connect( borderbottomfield, SIGNAL( valueChanged(int) ), this, SLOT( data_changes() ) );
     connect( borderleftfield, SIGNAL( valueChanged(int) ), this, SLOT( data_changes() ) );
     connect( borderrightfield, SIGNAL( valueChanged(int) ), this, SLOT( data_changes() ) );
     connect( bordertopfield, SIGNAL( valueChanged(int) ), this, SLOT( data_changes() ) );
-    connect( bottomlinefield, SIGNAL( textChanged(const QString&) ), this, SLOT( format_changes() ) );
+    connect( bottomlinefield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( format_changes() ) );
     connect( bottomlinefield, SIGNAL( activated(int) ), this, SLOT( format_changes() ) );
     connect( columnfield, SIGNAL( activated(const QString&) ), this, SLOT( data_changes() ) );
-    connect( columnfield, SIGNAL( textChanged(const QString&) ), this, SLOT( data_changes() ) );
+    connect( columnfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( data_changes() ) );
     connect( datasourcebutton, SIGNAL( clicked() ), this, SLOT( datasourcebutton_clicked() ) );
-    connect( datasourcefield, SIGNAL( textChanged(const QString&) ), this, SLOT( datasource_selected() ) );
+    connect( datasourcefield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( datasource_selected() ) );
     connect( datasourcefield, SIGNAL( activated(int) ), this, SLOT( datasource_selected() ) );
     connect( datasourcefield, SIGNAL( activated(const QString&) ), this, SLOT( data_changes() ) );
     connect( diagonallorufield, SIGNAL( activated(int) ), this, SLOT( format_changes() ) );
-    connect( diagonallorufield, SIGNAL( textChanged(const QString&) ), this, SLOT( format_changes() ) );
+    connect( diagonallorufield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( format_changes() ) );
     connect( diagonallurofield, SIGNAL( activated(int) ), this, SLOT( format_changes() ) );
-    connect( diagonallurofield, SIGNAL( textChanged(const QString&) ), this, SLOT( format_changes() ) );
+    connect( diagonallurofield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( format_changes() ) );
     connect( digitfield, SIGNAL( valueChanged(int) ), this, SLOT( format_changes() ) );
-    connect( fontfield, SIGNAL( textChanged(const QString&) ), this, SLOT( font_changes() ) );
+    connect( fontfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( font_changes() ) );
     connect( fontsizefield, SIGNAL( valueChanged(int) ), this, SLOT( font_changes() ) );
     connect( heightfield, SIGNAL( valueChanged(int) ), this, SLOT( size_changes() ) );
     connect( identifierfield, SIGNAL( returnPressed() ), this, SLOT( identifier_changed() ) );
-    connect( identifierfield, SIGNAL( lostFocus() ), this, SLOT( identifier_changed() ) );
+    connect( identifierfield, SIGNAL( editingFinished() ), this, SLOT( identifier_changed() ) );
     connect( italicfield, SIGNAL( activated(int) ), this, SLOT( font_changes() ) );
     connect( leftlinefield, SIGNAL( activated(int) ), this, SLOT( format_changes() ) );
-    connect( leftlinefield, SIGNAL( textChanged(const QString&) ), this, SLOT( format_changes() ) );
+    connect( leftlinefield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( format_changes() ) );
     connect( oncloseactionbutton, SIGNAL( clicked() ), this, SLOT( closeactionbutton_clicked() ) );
     connect( onnewpageaction, SIGNAL( clicked() ), this, SLOT( onprintnewpage_action_clicked() ) );
     connect( onopenactionbutton, SIGNAL( clicked() ), this, SLOT( openactionbutton_clicked() ) );
     connect( onprintaction, SIGNAL( clicked() ), this, SLOT( onprint_action_clicked() ) );
-    connect( rightlinefield, SIGNAL( textChanged(const QString&) ), this, SLOT( format_changes() ) );
+    connect( rightlinefield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( format_changes() ) );
     connect( rightlinefield, SIGNAL( activated(int) ), this, SLOT( format_changes() ) );
     connect( runningcountfield, SIGNAL( activated(const QString&) ), this, SLOT( data_changes() ) );
     connect( separatorfield, SIGNAL( activated(int) ), this, SLOT( format_changes() ) );
     connect( sortingfield, SIGNAL( activated(int) ), this, SLOT( data_changes() ) );
     connect( subreportbutton, SIGNAL( clicked() ), this, SLOT( subreportbutton_clicked() ) );
     connect( toplinefield, SIGNAL( activated(int) ), this, SLOT( format_changes() ) );
-    connect( toplinefield, SIGNAL( textChanged(const QString&) ), this, SLOT( format_changes() ) );
+    connect( toplinefield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( format_changes() ) );
     connect( valuefield, SIGNAL( textChanged(const QString&) ), this, SLOT( data_changes() ) );
     connect( widthfield, SIGNAL( valueChanged(int) ), this, SLOT( size_changes() ) );
     connect( wordbreakfield, SIGNAL( activated(int) ), this, SLOT( format_changes() ) );
-    connect( wordbreakfield, SIGNAL( textChanged(const QString&) ), this, SLOT( format_changes() ) );
+    connect( wordbreakfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( format_changes() ) );
     connect( xfield, SIGNAL( valueChanged(int) ), this, SLOT( position_changes() ) );
     connect( yfield, SIGNAL( valueChanged(int) ), this, SLOT( position_changes() ) );
     connect( dynamicheightfield, SIGNAL( activated(int) ), this, SLOT( format_changes() ) );
-    connect( dynamicheightfield, SIGNAL( textChanged(const QString&) ), this, SLOT( format_changes() ) );
+    connect( dynamicheightfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( format_changes() ) );
 }
 
 /*
@@ -603,7 +603,6 @@ hk_kdereportpropertybase::~hk_kdereportpropertybase()
 void hk_kdereportpropertybase::languageChange()
 {
     setWindowTitle( tr( "Property Editor" ) );
-    //TBP TBT translation tr()->i18n()
     subreportlabel->setText( tr( "Subreport:" ) );
     datasourcebutton->setText( tr( "..." ) );
     columnlabel->setText( tr( "Column:" ) );

@@ -6,3 +6,7 @@ icons from oxygen: QIcon::setThemeName("oxygen") and load icon by QIcon::fromThe
   "document-edit-verify", "document-preview", "view-form-table"
 
 KShortcut()->QKeySequence()
+
+QComboBox::textChanged()->QComboBox::editTextChanged()
+
+QLineEdit::lostFocus()->QLineEdit::editingFinished()

@@ -526,7 +526,7 @@ void hk_kdereportproperty::set_object(hk_visible* v)
                     << i18n("Right") << i18n("Default"));
                 formattabLayout->addWidget( alignmentfield, 9, 1 );
                 connect( alignmentfield, SIGNAL( activated(const QString&) ), this, SLOT( data_changes() ) );
-                connect( alignmentfield, SIGNAL( textChanged(const QString&) ), this, SLOT( data_changes() ) );
+                connect( alignmentfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( data_changes() ) );
                 alignmentfield->show();
             }
             alignmentlabel->setText(i18n("Alignment:"));
@@ -574,7 +574,7 @@ void hk_kdereportproperty::set_object(hk_visible* v)
                     << "A7" << "A8" << "A9" << "A10" << "letter" << "legal" << "executive"
                     << "tabloid" << i18n("Userdefined"));
                 connect( pageformatfield, SIGNAL( activated(const QString&) ), this, SLOT( data_changes() ) );
-                connect( pageformatfield, SIGNAL( textChanged(const QString&) ), this, SLOT( data_changes() ) );
+                connect( pageformatfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( data_changes() ) );
                 pageformatfield->show();
                 
             }
@@ -589,7 +589,7 @@ void hk_kdereportproperty::set_object(hk_visible* v)
                 orientationfield->addItem(i18n("Landscape"));
                 orientationfield->show();
                 connect( orientationfield, SIGNAL( activated(const QString&) ), this, SLOT( data_changes() ) );
-                connect( orientationfield, SIGNAL( textChanged(const QString&) ), this, SLOT( data_changes() ) );
+                connect( orientationfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( data_changes() ) );
             }
 
             orientationfield->setEnabled(p_report->pageformat()!=hk_report::userdefined);
@@ -1186,14 +1186,14 @@ void hk_kdereportproperty::set_objectreportdatavisible(void)
 
 void hk_kdereportproperty::subreportbutton_clicked()
 {
-   /*TBP hk_reportsection* s=dynamic_cast<hk_reportsection*>(p_visible);
+    hk_reportsection* s=dynamic_cast<hk_reportsection*>(p_visible);
+    
     if (s==NULL) return;
     hk_kdesubreportdialog* d = new hk_kdesubreportdialog(s,p_report,0,true);
     d->exec();
     delete d;
     QString n=QString::fromUtf8(l2u(s->subreportname()).c_str());
     subreportbutton->setText(s->subreportname().size()>0?n:i18n("None"));
-*/
 }
 
 void hk_kdereportproperty::set_bordervisible(void)

@@ -33,7 +33,7 @@
 #include <kglobal.h>
 #include <kiconloader.h>
 #include <klocale.h>
-//TBP icons
+
 /*
  *  Constructs a hk_kdesubreportdialog which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'
@@ -44,8 +44,6 @@
 hk_kdesubreportdialog::hk_kdesubreportdialog( hk_reportsection* s,QWidget* parent,  const char* name, bool modal, Qt::WFlags fl )
 : hk_kdesubreportdialogbase( parent, name, modal, fl )
 {
-    KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde4classes");
     dependingfieldlist -> setHeaderLabels(QStringList() << i18n("subreportfield") << i18n("masterreportfield"));
     dependingfieldlist -> header() -> resizeSections(QHeaderView::ResizeToContents);
     dependingfieldlist -> header() -> setStretchLastSection(false);
@@ -71,9 +69,9 @@ hk_kdesubreportdialog::hk_kdesubreportdialog( hk_reportsection* s,QWidget* paren
     }
     setWindowTitle(buffer);
 
-    deletefieldbutton->setIcon(  loader->loadIcon("trash-empty",KIconLoader::NoGroup,KIconLoader::SizeSmall));
-    addfieldbutton->setIcon(loader->loadIcon("go-next",KIconLoader::NoGroup,KIconLoader::SizeSmall ) );
-
+    QIcon::setThemeName("oxygen");
+    deletefieldbutton->setIcon(QIcon::fromTheme("trash-empty"));
+    addfieldbutton->setIcon(QIcon::fromTheme("go-next"));
 }
 
 

@@ -79,11 +79,11 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kde4simplegrid_p.cpp ]]
     hk_kdesimplereport.cpp
     hk_kdespinbox.cpp
- #[[  TBP    hk_kdesubform.cpp
-    hk_kdesubformdialog.cpp
+ #TBP    hk_kdesubform.cpp
+ #TBP   hk_kdesubformdialog.cpp
     hk_kdesubreportdialog.cpp
     hk_kdesubreportdialogbase.cpp
-    hk_kdetable.cpp
+ #[[  TBP   hk_kdetable.cpp
     hk_kdetaborder.cpp
     hk_kdetaborderbase.cpp
     hk_kdetabledesign.cpp
