@@ -39,9 +39,9 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdegridcolumndialogbase.cpp
     hk_kdegridcolumndialog.cpp
     hk_kdeimage.cpp
-    hk_kdeindexeditwindow.cpp
+    hk_kdeindexeditwindow.cpp ]]
     hk_kdeinterpreterdialog.cpp
-    hk_kdelabel.cpp
+  #[[ TBP  hk_kdelabel.cpp
     hk_kdelineedit.cpp
     hk_kdememo.cpp
     hk_kdemodule.cpp ]]
@@ -112,8 +112,10 @@ install(TARGETS hk_kde5classes ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 
+#TBP install(FILES  hk_kdereport.rc hk_kdeform.rc hk_kdetable.rc hk_kdequery.rc hk_kdeinterpreterdialog.rc hk_kdedbdesigner.rc
+#               knodamaindockwindowbase.rc hk_kdemodule.rc DESTINATION ${DATA_INSTALL_DIR}/hk_kde5classes)
 install(FILES  hk_kdereport.rc hk_kdeform.rc hk_kdetable.rc hk_kdequery.rc hk_kdeinterpreterdialog.rc hk_kdedbdesigner.rc
-               knodamaindockwindowbase.rc hk_kdemodule.rc DESTINATION ${DATA_INSTALL_DIR}/hk_kde5classes)
+               knodamaindockwindowbase.rc hk_kdemodule.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/hk_kde5classes)
 install(FILES  hk_kdedbdesigner.h hk_kdeformpartwidget.h hk_kdegrid.h hk_kdemessages.h 
                hk_kdemodulepartwidget.h hk_kdepreferencesdialog.h hk_kdeqbe.h hk_kdequerypartwidget.h
                hk_kdereportpartwidget.h hk_kdesimpleform.h hk_kdetablepartwidget.h 

@@ -1242,35 +1242,29 @@ if (p_visible->identifier()!=t) p_visible->set_identifier(t);
 
 void hk_kdereportproperty::beforerowchange_action_clicked(void)
 {
-beforerowchange_action_clicked(0,"");
+  beforerowchange_action_clicked(0,"");
 }
 
 void hk_kdereportproperty::beforerowchange_action_clicked(int rownumber,const hk_string& warningmessage)
 {
-
-/*TBP
-hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
+  hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
   if (!ds) return;
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(ds->before_row_change_action(),false);
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      ds->set_before_row_change_action(d->code());
-    }
-
-   set_dsvisible();
-
-    delete d;
-
-*/
+  hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
+  d->setWindowModality(Qt::ApplicationModal);
+  d->set_code(ds->before_row_change_action(),false);
+  int r=d->exec(rownumber,warningmessage);
+  if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
+  {
+    ds->set_before_row_change_action(d->code());
+  }
+  set_dsvisible();
+  delete d;
 }
 
 
 void hk_kdereportproperty::afterrowchange_action_clicked(int rownumber,const hk_string& warningmessage)
 {
-  /*TBP  hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
+    hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
     if (!ds) return;
     hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
     d->setWindowModality(Qt::ApplicationModal);
@@ -1280,46 +1274,40 @@ void hk_kdereportproperty::afterrowchange_action_clicked(int rownumber,const hk_
     {
       ds->set_after_row_change_action(d->code());
     }
-
     set_dsvisible();
-
     delete d;
-*/
 }
 
 void hk_kdereportproperty::afterrowchange_action_clicked(void)
 {
-afterrowchange_action_clicked(0,"");
+  afterrowchange_action_clicked(0,"");
 }
 
 void hk_kdereportproperty::onprint_action_clicked(int rownumber,const hk_string& warningmessage)
-{ /*TBP
-hk_reportdata* ds=dynamic_cast<hk_reportdata*>(p_visible);
+{
+  hk_reportdata* ds=dynamic_cast<hk_reportdata*>(p_visible);
   if (!ds) return;
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(ds->on_print_action(),false);
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      ds->set_on_print_action(d->code());
-    }
-
-   set_dsvisible();
-   set_reportdatavisible();
-    delete d;
-*/
+  hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
+  d->setWindowModality(Qt::ApplicationModal);
+  d->set_code(ds->on_print_action(),false);
+  int r=d->exec(rownumber,warningmessage);
+  if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
+  {
+    ds->set_on_print_action(d->code());
+  }
+  set_dsvisible();
+  set_reportdatavisible();
+  delete d;
 }
 
 void hk_kdereportproperty::onprint_action_clicked(void)
 {
- onprint_action_clicked(0,"");
+  onprint_action_clicked(0,"");
 }
-
 
 void hk_kdereportproperty::onprintnewpage_action_clicked(int rownumber, const hk_string& warningmessage)
 {
-  /*TBP  hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
+    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
     d->setWindowModality(Qt::ApplicationModal);
     d->set_code(p_report->on_new_page_action(),false);
     int r=d->exec(rownumber,warningmessage);
@@ -1327,25 +1315,23 @@ void hk_kdereportproperty::onprintnewpage_action_clicked(int rownumber, const hk
     {
       p_report->set_on_new_page_action(d->code());
     }
-
-   set_reportvisible();
-
+    set_reportvisible();
     delete d;
-*/
 }
+
 void hk_kdereportproperty::onprintnewpage_action_clicked(void)
 {
-onprintnewpage_action_clicked(0,"");
+  onprintnewpage_action_clicked(0,"");
 }
 
 void hk_kdereportproperty::closeactionbutton_clicked(void)
 {
-closeactionbutton_clicked(0,"");
+  closeactionbutton_clicked(0,"");
 }
 
 void hk_kdereportproperty::closeactionbutton_clicked(int rownumber,const hk_string& warningmessage)
 {
-  /*TBP  hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
+    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
     d->setWindowModality(Qt::ApplicationModal);
     d->set_code(p_visible->on_close_action(),false);
     int r=d->exec(rownumber,warningmessage);
@@ -1353,20 +1339,18 @@ void hk_kdereportproperty::closeactionbutton_clicked(int rownumber,const hk_stri
     {
       p_visible->set_on_close_action(d->code());
     }
-
-   set_visible();
+    set_visible();
     delete d;
-*/
 }
 
 void hk_kdereportproperty::openactionbutton_clicked(void)
 {
-openactionbutton_clicked(0,"");
+  openactionbutton_clicked(0,"");
 }
 
 void hk_kdereportproperty::openactionbutton_clicked(int rownumber,const hk_string& warningmessage)
 {
-  /*TBP  hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
+    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
     d->setWindowModality(Qt::ApplicationModal);
     d->set_code(p_visible->on_open_action(),false);
     int r=d->exec(rownumber,warningmessage);
@@ -1374,21 +1358,18 @@ void hk_kdereportproperty::openactionbutton_clicked(int rownumber,const hk_strin
     {
       p_visible->set_on_open_action(d->code());
     }
-
-   set_visible();
+    set_visible();
     delete d;
-*/
 }
 
 hk_visible* hk_kdereportproperty::object()
 {
-return p_visible;
+  return p_visible;
 }
 
 
 bool hk_kdereportproperty::eventFilter(QObject* object,QEvent* event)
 {
-
    QLineEdit* edit=dynamic_cast<QLineEdit*>(object);
    
    if (edit&&event->type()==QEvent::KeyPress)
@@ -1397,10 +1378,9 @@ bool hk_kdereportproperty::eventFilter(QObject* object,QEvent* event)
      if (ev->key()==Qt::Key_F2)
        use_editor(edit);
    } 
-  
+
    return hk_kdereportpropertybase::eventFilter(object,event);
 }
-
 
 void hk_kdereportproperty::use_editor(QLineEdit* e)
 {
@@ -1412,6 +1392,6 @@ void hk_kdereportproperty::use_editor(QLineEdit* e)
         e->setText(f->textfield->toPlainText());
 
     delete f;
-*/
+    */
 }
 

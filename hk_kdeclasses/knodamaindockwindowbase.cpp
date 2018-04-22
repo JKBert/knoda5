@@ -44,8 +44,6 @@
 #include <klocale.h>
 #include <kapplication.h>
 #include <kaction.h>
-#include <kiconloader.h>
-#include <kstandarddirs.h>
 #include <kmenu.h>
 #include <kparts/part.h>
 #include <kglobal.h>
@@ -94,9 +92,8 @@ knodamaindockwindowbase::knodamaindockwindowbase(struct_commandlinefields* cl,
   ,this,SLOT(slot_activate_closeaction()));
   connect(p_partmanager,SIGNAL(activePartChanged(KParts::Part*))
    ,this,SLOT(createGUI(KParts::Part*)));
-  setXMLFile(KStandardDirs::locate("data","hk_kde5classes/knodamaindockwindowbase.rc"));
-  KIconLoader* loader=KIconLoader::global();
-  loader->addAppDir("hk_kde5classes");
+  setComponentName("hk_kde5classes", "Main Window");
+  setXMLFile("knodamaindockwindowbase.rc");
   resize( 700, 480 );
 
   p_private=new knodamaindockwindowbaseprivate;

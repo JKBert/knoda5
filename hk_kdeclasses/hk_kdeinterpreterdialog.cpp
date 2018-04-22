@@ -42,14 +42,14 @@
 #include <kstandarddirs.h>
 #include <kglobal.h>
 #include <ktoolinvocation.h>
-#include <ktexteditor/editorchooser.h>
-#include <ktexteditor/editor.h>
-#include <ktexteditor/document.h>
-#include <ktexteditor/view.h>
+#include <KTextEditor/Editor>
+#include <KTextEditor/Document>
+#include <KTextEditor/View>
 #include <ktexteditor/highlightinterface.h>
 #include <kxmlguifactory.h>
 #include <kactioncollection.h>
 #include <kmessagebox.h>
+#include <KHelpClient>
 // TBP icons
 class hk_kdeinterpreterdialogprivate
 {
@@ -72,13 +72,11 @@ p_autoclose(true),p_has_changed(false), rescode(Accepted), p_private(new hk_kdei
 {
   setAttribute(Qt::WA_DeleteOnClose,false);
   setObjectName( "hk_kdeinterpreterdialog" );
-  KIconLoader* loader=KIconLoader::global();
-  loader->addAppDir("hk_kde4classes");
-
-  setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdeinterpreterdialog.rc"));
+  setComponentName("hk_kde5classes", "Script editor");
+  setXMLFile("hk_kdeinterpreterdialog.rc");
   setWindowModality(Qt::ApplicationModal);
 
-  KTextEditor::Editor* p_ed = KTextEditor::EditorChooser::editor();
+  KTextEditor::Editor* p_ed = KTextEditor::Editor::instance();
   if (p_ed != NULL) {
       p_private->p_document = p_ed->createDocument(0);
       if (p_private->p_document != NULL) {
@@ -88,7 +86,8 @@ p_autoclose(true),p_has_changed(false), rescode(Accepted), p_private(new hk_kdei
   } else
       KMessageBox::error(w,i18n("A KDE text-editor component could not be found;\n"
                                   "please check your KDE installation."));
-  p_private->p_closeaction=new KAction(KIcon("window-close"),i18n("&Close"),actionCollection());
+  QIcon::setThemeName("oxygen");
+  p_private->p_closeaction=new KAction(QIcon::fromTheme("window-close"),i18n("&Close"),actionCollection());
   actionCollection() -> addAction("closedialog",p_private->p_closeaction);
   connect(p_private->p_closeaction,SIGNAL(triggered()),this,SLOT(accept()));  
   createGUI(NULL);
@@ -272,7 +271,8 @@ void hk_kdeinterpreterdialog::slot_undo_changed(void)
 
 void hk_kdeinterpreterdialog::help_clicked()
 {
-    KToolInvocation::invokeHelp("pschapter1");
+    //TBP TBT KToolInvocation::invokeHelp("pschapter1");
+    KHelpClient::invokeHelp("pschapter1");
 }
 
 

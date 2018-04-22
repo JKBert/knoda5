@@ -12,22 +12,23 @@ echo KF5 user icon directory: "$USERICONDIR"
 echo KF5 user module directory: "$USERMODULEDIR"
 echo KF5 user services directory: "$USERSERVICESDIR"
 
+RCDATADIR=$USERDATADIR/kxmlgui5/hk_kde5classes
 
 case "$1" in
     link)
         ln -s ${CMAKE_SOURCE_DIR}/knoda/ $USERDATADIR/knoda5
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeclasses/ $USERDATADIR/hk_kde5classes
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdemodulepart/hk_kdemodulepart.rc $USERDATADIR/hk_kde5classes/hk_kdemodulepart.rc
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdetablepart/hk_kdetablepart.rc $USERDATADIR/hk_kde5classes/hk_kdetablepart.rc
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdegridpart/hk_kdegridpart.rc $USERDATADIR/hk_kde5classes/hk_kdegridpart.rc
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeformpart/hk_kdeformpartdesign.rc $USERDATADIR/hk_kde5classes/hk_kdeformpartdesign.rc
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeformpart/hk_kdeformpartview.rc $USERDATADIR/hk_kde5classes/hk_kdeformpartview.rc
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdereportpart/hk_kdereportpart.rc $USERDATADIR/hk_kde5classes/hk_kdereportpart.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeclasses/ $RCDATADIR
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdemodulepart/hk_kdemodulepart.rc $RCDATADIR/hk_kdemodulepart.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdetablepart/hk_kdetablepart.rc $RCDATADIR/hk_kdetablepart.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdegridpart/hk_kdegridpart.rc $RCDATADIR/hk_kdegridpart.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeformpart/hk_kdeformpartdesign.rc $RCDATADIR/hk_kdeformpartdesign.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeformpart/hk_kdeformpartview.rc $RCDATADIR/hk_kdeformpartview.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdereportpart/hk_kdereportpart.rc $RCDATADIR/hk_kdereportpart.rc
 # no need to link hk_kdeform.rc as it is located in hk_kdeclasses directory
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdedbdesigner/hk_kdedbdesignerpart.rc $USERDATADIR/hk_kde5classes/hk_kdedbdesignerpart.rc
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdequerypart/hk_kdequerypartqbe.rc $USERDATADIR/hk_kde5classes/hk_kdequerypartqbe.rc
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdequerypart/hk_kdequerypart.rc $USERDATADIR/hk_kde5classes/hk_kdequerypart.rc
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdequerypart/hk_kdequerypartsql.rc $USERDATADIR/hk_kde5classes/hk_kdequerypartsql.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdedbdesigner/hk_kdedbdesignerpart.rc $RCDATADIR/hk_kdedbdesignerpart.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdequerypart/hk_kdequerypartqbe.rc $RCDATADIR/hk_kdequerypartqbe.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdequerypart/hk_kdequerypart.rc $RCDATADIR/hk_kdequerypart.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdequerypart/hk_kdequerypartsql.rc $RCDATADIR/hk_kdequerypartsql.rc
 # icons
         ! [ -d $USERICONDIR/hicolor/32x32/apps ] && mkdir -p $USERICONDIR/hicolor/32x32/apps
         ! [ -d $USERICONDIR/hicolor/16x16/apps ] && mkdir -p $USERICONDIR/hicolor/16x16/apps
@@ -69,18 +70,18 @@ COMMENT
         exit 0
         ;;
     unlink)
-        unlink $USERDATADIR/hk_kde5classes/hk_kdereportpart.rc
-        unlink $USERDATADIR/hk_kde5classes/hk_kdeformpartdesign.rc
-        unlink $USERDATADIR/hk_kde5classes/hk_kdeformpartview.rc	
-        unlink $USERDATADIR/hk_kde5classes/hk_kdetablepart.rc
-        unlink $USERDATADIR/hk_kde5classes/hk_kdegridpart.rc
-        unlink $USERDATADIR/hk_kde5classes/hk_kdedbdesignerpart.rc
-        unlink $USERDATADIR/hk_kde5classes/hk_kdequerypartqbe.rc
-        unlink $USERDATADIR/hk_kde5classes/hk_kdequerypart.rc
-        unlink $USERDATADIR/hk_kde5classes/hk_kdequerypartsql.rc
-        unlink $USERDATADIR/hk_kde5classes/hk_kdemodulepart.rc
+        unlink $RCDATADIR/hk_kdereportpart.rc
+        unlink $RCDATADIR/hk_kdeformpartdesign.rc
+        unlink $RCDATADIR/hk_kdeformpartview.rc	
+        unlink $RCDATADIR/hk_kdetablepart.rc
+        unlink $RCDATADIR/hk_kdegridpart.rc
+        unlink $RCDATADIR/hk_kdedbdesignerpart.rc
+        unlink $RCDATADIR/hk_kdequerypartqbe.rc
+        unlink $RCDATADIR/hk_kdequerypart.rc
+        unlink $RCDATADIR/hk_kdequerypartsql.rc
+        unlink $RCDATADIR/hk_kdemodulepart.rc
         unlink $USERDATADIR/knoda5
-        unlink $USERDATADIR/hk_kde5classes
+        unlink $RCDATADIR
 # icons
         unlink $USERICONDIR/hicolor/32x32/apps/knoda5.png
         unlink $USERICONDIR/hicolor/16x16/apps/knoda5.png
