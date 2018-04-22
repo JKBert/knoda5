@@ -53,10 +53,7 @@ protected:
 
 protected slots:
     virtual void languageChange();
-
     virtual void text_changed();
-
-
 };
 
 #endif // HK_KDEFILTERDIALOGBASE_H

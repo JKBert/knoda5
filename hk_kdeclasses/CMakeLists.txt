@@ -23,16 +23,16 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdedate.cpp
     hk_kdedbdesigner.cpp ]]
     hk_kdedblistview.cpp
-#[[ TBP    hk_kdedriverdialog.cpp
-    hk_kdeeximportdatabasebase.cpp
-    hk_kdeeximportdatabase.cpp
+#TBP    hk_kdedriverdialog.cpp
+#TBP    hk_kdeeximportdatabasebase.cpp
+#TBP    hk_kdeeximportdatabase.cpp
     hk_kdefilterdialogbase.cpp
     hk_kdefilterdialog.cpp
-    hk_kdefinddialog.cpp
-    hk_kdefinddialogbase.cpp
-    hk_kdeform.cpp
+#TBP    hk_kdefinddialog.cpp
+#TBP    hk_kdefinddialogbase.cpp
+#TBP    hk_kdeform.cpp
     hk_kdeformdatasourcedialog.cpp
-    hk_kdeformdatasourcedialogbase.cpp ]]
+    hk_kdeformdatasourcedialogbase.cpp
     hk_kdeformfocus.cpp
  #[[ TBP   hk_kdeformpartwidget.cpp
     hk_kdegrid.cpp
@@ -41,10 +41,10 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdeimage.cpp
     hk_kdeindexeditwindow.cpp ]]
     hk_kdeinterpreterdialog.cpp
-  #[[ TBP  hk_kdelabel.cpp
-    hk_kdelineedit.cpp
-    hk_kdememo.cpp
-    hk_kdemodule.cpp ]]
+  #TBP  hk_kdelabel.cpp
+  #TBP  hk_kdelineedit.cpp
+  #TBP  hk_kdememo.cpp
+    hk_kdemodule.cpp
     hk_kdemodulepartwidget.cpp 
     hk_kdemessages.cpp
  #[[ TBP  hk_kdenewdatabase.cpp
@@ -64,8 +64,8 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kderelationdialogbase.cpp
     hk_kderelationdialog.cpp ]]
     hk_kdereport.cpp
- #[[ TBP   hk_kdereportconditiondialog.cpp
-    hk_kdereportconditiondialogbase.cpp ]]
+ #TBP   hk_kdereportconditiondialog.cpp
+ #TBP   hk_kdereportconditiondialogbase.cpp
     hk_kdereportdata.cpp 
     hk_kdereportpartwidget.cpp
     hk_kdereportproperty.cpp

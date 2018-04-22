@@ -22,24 +22,21 @@ class hk_kdefilterdialog : public hk_kdefilterdialogbase
 {
     Q_OBJECT
         
-    public:
-       
-       enum enum_type {filter,editor};
-        hk_kdefilterdialog(enum_type type=filter, QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
-        ~hk_kdefilterdialog();
+public:
+    enum enum_type {filter,editor};
+    hk_kdefilterdialog(enum_type type=filter, QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
+    ~hk_kdefilterdialog();
 
-    protected slots:
-        void text_changed();
+protected slots:
+    void text_changed();
     
-    protected:
-    
+protected:
     void closeEvent(QCloseEvent*);
     void accept(void);
     void reject(void);
     
-    private:
+private:
     void store_size();
 	enum_type p_type;
-
 };
 #endif                                            // HK_KDEFILTERDIALOG_H

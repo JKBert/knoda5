@@ -36,7 +36,6 @@
 #include <locale.h>
 
 #include <kmenubar.h>
-#include <kiconloader.h>
 #include <kaction.h>
 #include <kstandardaction.h>
 #include <kstandarddirs.h>
@@ -50,7 +49,7 @@
 #include <kactioncollection.h>
 #include <kmessagebox.h>
 #include <KHelpClient>
-// TBP icons
+
 class hk_kdeinterpreterdialogprivate
 {
 public:
@@ -271,7 +270,6 @@ void hk_kdeinterpreterdialog::slot_undo_changed(void)
 
 void hk_kdeinterpreterdialog::help_clicked()
 {
-    //TBP TBT KToolInvocation::invokeHelp("pschapter1");
     KHelpClient::invokeHelp("pschapter1");
 }
 

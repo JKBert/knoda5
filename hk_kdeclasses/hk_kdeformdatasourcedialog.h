@@ -15,17 +15,19 @@
 #ifndef HK_KDEFORMDATASOURCEDIALOG_H
 #define HK_KDEFORMDATASOURCEDIALOG_H
 #include "hk_kdeformdatasourcedialogbase.h"
+
 class hk_presentation;
 class hk_datasource;
 class hk_kdeformdatasourcedialogprivate;
+
 class hk_kdeformdatasourcedialog : public hk_kdeformdatasourcebasedialog
 {
     Q_OBJECT
 
-        public:
-        hk_kdeformdatasourcedialog( hk_presentation* form, QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
-        ~hk_kdeformdatasourcedialog();
-        void set_datasource(hk_datasource*);
+public:
+    hk_kdeformdatasourcedialog( hk_presentation* form, QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
+    ~hk_kdeformdatasourcedialog();
+    void set_datasource(hk_datasource*);
 	hk_datasource* datasource(void);
 	enum enum_displaytype{d_form,d_report,d_query};
 	void set_displaytype(enum_displaytype);
@@ -38,21 +40,21 @@ class hk_kdeformdatasourcedialog : public hk_kdeformdatasourcebasedialog
 	void set_allow_delete_datasource(bool);
 	bool allow_delete_datasource(void) const;
 
-    protected slots:
-        virtual void add_dependingfields();
-        virtual void delete_dependingfields();
-        virtual void datasource_selected();
-        virtual void set_datasourcelist();
-        virtual void dependingon_selected();
-        virtual void check_buttons();
-        virtual void delete_datasource();
-        virtual void new_datasource(void);
+protected slots:
+    virtual void add_dependingfields();
+    virtual void delete_dependingfields();
+    virtual void datasource_selected();
+    virtual void set_datasourcelist();
+    virtual void dependingon_selected();
+    virtual void check_buttons();
+    virtual void delete_datasource();
+    virtual void new_datasource(void);
 	virtual void sql_changed(void);
 
-    private:
-        void alter_datasource(void);
-        void set_datasourceinfos(bool existingdatasource);
-        void set_formdatasources();
+private:
+    void alter_datasource(void);
+    void set_datasourceinfos(bool existingdatasource);
+    void set_formdatasources();
 	void init(void);
 	hk_kdeformdatasourcedialogprivate* p_private;
 };

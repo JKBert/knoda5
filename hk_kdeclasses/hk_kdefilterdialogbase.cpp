@@ -29,7 +29,7 @@
 #include <qlayout.h>
 #include <qtooltip.h>
 #include <qwhatsthis.h>
-//TBP TBT translation tr()->i18n()
+
 /*
  *  Constructs a hk_kdefilterdialogbase as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.
@@ -42,7 +42,7 @@ hk_kdefilterdialogbase::hk_kdefilterdialogbase( QWidget* parent, const char* nam
 {
     setObjectName(QString::fromAscii(name == NULL?"hk_kdefilterdialogbase":name));
     setModal(modal);
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled( true );
     hk_kdefilterdialogbaseLayout = new QHBoxLayout(this);
     hk_kdefilterdialogbaseLayout->setMargin(11);
     hk_kdefilterdialogbaseLayout->setSpacing(6);
@@ -59,14 +59,14 @@ hk_kdefilterdialogbase::hk_kdefilterdialogbase( QWidget* parent, const char* nam
 
     buttonOk = new QPushButton(this);
     buttonOk->setObjectName("buttonOk");
-    buttonOk->setAutoDefault( TRUE );
-    buttonOk->setDefault( TRUE );
-    buttonOk->setEnabled( FALSE );
+    buttonOk->setAutoDefault( true );
+    buttonOk->setDefault( true );
+    buttonOk->setEnabled( false );
     Layout5->addWidget( buttonOk );
 
     buttonCancel = new QPushButton(this);
     buttonCancel->setObjectName("buttonCancel");
-    buttonCancel->setAutoDefault( TRUE );
+    buttonCancel->setAutoDefault( true );
     Layout5->addWidget( buttonCancel );
     Spacer1 = new QSpacerItem( 20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding );
     Layout5->addItem( Spacer1 );
@@ -96,7 +96,7 @@ void hk_kdefilterdialogbase::languageChange()
 {
     setWindowTitle( tr( "MyDialog" ) );
     textfield->setText( QString::null );
-    textfield -> setToolTip( QString::null );
+    textfield->setToolTip( QString::null );
     buttonOk->setText( tr( "&OK" ) );
     buttonCancel->setText( tr( "&Cancel" ) );
 }

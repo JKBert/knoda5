@@ -34,20 +34,18 @@
 #include <kglobal.h>
 #include <kiconloader.h>
 #include <klocale.h>
-// TBP icons
+
 class hk_kdeformdatasourcedialogprivate
 {
 public:
-        hk_presentation* p_presentation;
-        hk_datasource* p_datasource;
+    hk_presentation* p_presentation;
+    hk_datasource* p_datasource;
 	hk_kdeformdatasourcedialog::enum_displaytype p_displaytype;
 	hk_kdeformdatasourcedialog::enum_edittype p_edittype;
 	hk_kdeformdatasourcedialog::enum_clickedbutton p_clickedbutton;
 	bool p_allow_delete_datasource;
 
 };
-
-
 
 hk_kdeformdatasourcedialog::hk_kdeformdatasourcedialog( hk_presentation* p, QWidget* parent, const char* name, bool modal, Qt::WFlags fl )
 : hk_kdeformdatasourcebasedialog( parent, name, modal, fl )
@@ -61,11 +59,9 @@ hk_kdeformdatasourcedialog::hk_kdeformdatasourcedialog( hk_presentation* p, QWid
     set_datasource(NULL);
     hk_database* db=p_private->p_presentation->database();
     if (db)
-    automaticupdatefield->setChecked(db->is_automatic_data_update());
+        automaticupdatefield->setChecked(db->is_automatic_data_update());
     else
-    automaticupdatefield->setChecked(true);
-    KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde4classes");
+        automaticupdatefield->setChecked(true);
     dependingfieldlist -> setColumnCount(2);
     dependingfieldlist -> setHeaderLabels(QStringList() << i18n("thisfield") << i18n("masterfield"));
     sourcetypefield->addItem(i18n("table"));
@@ -90,8 +86,9 @@ hk_kdeformdatasourcedialog::hk_kdeformdatasourcedialog( hk_presentation* p, QWid
     alterbutton->setText(i18n("A&lter"));
     deletebutton->setText(i18n("&Delete"));
     buttonCancel->setText(i18n("&Cancel"));
-    deletefieldbutton->setIcon(  loader->loadIcon("trash-empty",KIconLoader::NoGroup,KIconLoader::SizeSmall   ));
-    addfieldbutton->setIcon(loader->loadIcon("go-next",KIconLoader::NoGroup,KIconLoader::SizeSmall   ) );
+    QIcon::setThemeName("oxygen");
+    deletefieldbutton->setIcon(QIcon::fromTheme("trash-empty"));
+    addfieldbutton->setIcon(QIcon::fromTheme("go-next"));
     
     sourcetypefield->setCurrentIndex(0);
     setWindowTitle(i18n("Datasource dialog"));    

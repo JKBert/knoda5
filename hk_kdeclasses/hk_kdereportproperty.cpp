@@ -392,7 +392,7 @@ void hk_kdereportproperty::datasourcebutton_clicked()
 #ifdef HK_DEBUG
     hkdebug("hk_kdereportproperty::datasourcebutton_clicked");
 #endif
- /*TBP   hk_kdeformdatasourcedialog* d = new hk_kdeformdatasourcedialog(p_report,this,0,true);
+    hk_kdeformdatasourcedialog* d = new hk_kdeformdatasourcedialog(p_report,this,0,true);
     d->set_displaytype(hk_kdeformdatasourcedialog::d_report);
     hk_datasource* ds=p_report->get_datasource(u2l(datasourcefield->currentText().toUtf8().data()));
     d->set_datasource(ds);
@@ -406,7 +406,6 @@ void hk_kdereportproperty::datasourcebutton_clicked()
     set_datasourcelist();
     if (datasourcefield->currentIndex()==-1)
         datasourcefield->setCurrentIndex(0);
-*/
 }
 
 
@@ -1384,14 +1383,12 @@ bool hk_kdereportproperty::eventFilter(QObject* object,QEvent* event)
 
 void hk_kdereportproperty::use_editor(QLineEdit* e)
 {
-   /*TBP if (!e) return;
+    if (!e) return;
     hk_kdefilterdialog* f = new hk_kdefilterdialog(hk_kdefilterdialog::editor,this,0,true);
     
     f->textfield->setPlainText(e->text());
     if (f->exec()==QDialog::Accepted)
         e->setText(f->textfield->toPlainText());
-
     delete f;
-    */
 }
 

@@ -37,7 +37,7 @@
 #include <qtooltip.h>
 #include <qwhatsthis.h>
 #include <qheaderview.h>
-//TBP TBT translation tr()->i18n()
+
 /*
  *  Constructs a hk_kdeformdatasourcebasedialog as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.
@@ -50,7 +50,7 @@ hk_kdeformdatasourcebasedialog::hk_kdeformdatasourcebasedialog( QWidget* parent,
 {
     setObjectName(QString::fromAscii(name == NULL?"hk_kdeformdatasourcebasedialog":name));
     setModal(modal);
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled( true );
     hk_kdeformdatasourcebasedialogLayout = new QGridLayout(this);
     hk_kdeformdatasourcebasedialogLayout->setMargin(3);
     hk_kdeformdatasourcebasedialogLayout->setSpacing(6);
@@ -63,24 +63,24 @@ hk_kdeformdatasourcebasedialog::hk_kdeformdatasourcebasedialog( QWidget* parent,
 
     Addbutton = new QPushButton(this);
     Addbutton->setObjectName("Addbutton");
-    Addbutton->setEnabled( FALSE );
-    Addbutton->setAutoDefault( TRUE );
-    Addbutton->setDefault( TRUE );
+    Addbutton->setEnabled( false );
+    Addbutton->setAutoDefault( true );
+    Addbutton->setDefault( true );
     Layout8->addWidget( Addbutton );
 
     alterbutton = new QPushButton(this);
     alterbutton->setObjectName("alterbutton");
-    alterbutton->setEnabled( FALSE );
+    alterbutton->setEnabled( false );
     Layout8->addWidget( alterbutton );
 
     deletebutton = new QPushButton(this);
     deletebutton->setObjectName("deletebutton");
-    deletebutton->setEnabled( FALSE );
+    deletebutton->setEnabled( false );
     Layout8->addWidget( deletebutton );
 
     buttonCancel = new QPushButton(this);
     buttonCancel->setObjectName("buttonCancel");
-    buttonCancel->setAutoDefault( TRUE );
+    buttonCancel->setAutoDefault( true );
     Layout8->addWidget( buttonCancel );
     Spacer1 = new QSpacerItem( 20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding );
     Layout8->addItem( Spacer1 );
@@ -177,7 +177,7 @@ hk_kdeformdatasourcebasedialog::hk_kdeformdatasourcebasedialog( QWidget* parent,
 
     deletefieldbutton = new QToolButton(Frame3);
     deletefieldbutton->setObjectName(QString::fromAscii("deletefieldbutton"));
-    deletefieldbutton->setEnabled( FALSE );
+    deletefieldbutton->setEnabled( false );
     QSizePolicy policy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     policy.setHeightForWidth(deletefieldbutton->sizePolicy().hasHeightForWidth());
     deletefieldbutton->setSizePolicy(policy);
@@ -194,7 +194,7 @@ hk_kdeformdatasourcebasedialog::hk_kdeformdatasourcebasedialog( QWidget* parent,
 
     addfieldbutton = new QToolButton(Frame3);
     addfieldbutton->setObjectName(QString::fromAscii("addfieldbutton"));
-    addfieldbutton->setEnabled( FALSE );
+    addfieldbutton->setEnabled( false );
     policy.setHorizontalPolicy(QSizePolicy::Fixed);
     policy.setVerticalPolicy(QSizePolicy::Fixed);
     policy.setHeightForWidth(addfieldbutton->sizePolicy().hasHeightForWidth());
@@ -231,9 +231,9 @@ hk_kdeformdatasourcebasedialog::hk_kdeformdatasourcebasedialog( QWidget* parent,
     policy.setVerticalPolicy(QSizePolicy::Fixed);
     policy.setHeightForWidth(thisfield->sizePolicy().hasHeightForWidth());    
     thisfield->setSizePolicy(policy);
-    thisfield->setEditable( TRUE );
+    thisfield->setEditable( true );
     thisfield->setInsertPolicy( QComboBox::NoInsert );
-    thisfield->setAutoCompletion( TRUE );
+    thisfield->setAutoCompletion( true );
 
     Layout12->addWidget(thisfield, 2, 1, 2, 1 );
 
@@ -243,9 +243,9 @@ hk_kdeformdatasourcebasedialog::hk_kdeformdatasourcebasedialog( QWidget* parent,
     policy.setVerticalPolicy(QSizePolicy::Fixed);
     policy.setHeightForWidth(masterfield->sizePolicy().hasHeightForWidth());     
     masterfield->setSizePolicy(policy);
-    masterfield->setEditable( TRUE );
+    masterfield->setEditable( true );
     masterfield->setInsertPolicy( QComboBox::NoInsert );
-    masterfield->setAutoCompletion( TRUE );
+    masterfield->setAutoCompletion( true );
 
     Layout12->addWidget( masterfield, 1, 1 );
 
@@ -256,9 +256,9 @@ hk_kdeformdatasourcebasedialog::hk_kdeformdatasourcebasedialog( QWidget* parent,
     policy.setHeightForWidth(dependingonfield->sizePolicy().hasHeightForWidth());     
     dependingonfield->setSizePolicy(policy);
     dependingonfield->setMinimumSize( QSize( 125, 0 ) );
-    dependingonfield->setEditable( TRUE );
+    dependingonfield->setEditable( true );
     dependingonfield->setInsertPolicy( QComboBox::NoInsert );
-    dependingonfield->setAutoCompletion( TRUE );
+    dependingonfield->setAutoCompletion( true );
 
     Layout12->addWidget( dependingonfield, 0, 1 );
 
@@ -291,7 +291,7 @@ hk_kdeformdatasourcebasedialog::hk_kdeformdatasourcebasedialog( QWidget* parent,
     dependingfieldlist->setSizePolicy(policy);
     dependingfieldlist->setMinimumSize( QSize( 200, 0 ) );
     dependingfieldlist->setSelectionMode(QAbstractItemView::SingleSelection);
-    dependingfieldlist->setAllColumnsShowFocus( TRUE );
+    dependingfieldlist->setAllColumnsShowFocus( true );
     dependingfieldlist->setRootIsDecorated(false);
     dependingfieldlist->header()->setMovable(false);
     Frame3Layout->addWidget(dependingfieldlist, 0, 1, 4, 1 );
@@ -318,12 +318,12 @@ hk_kdeformdatasourcebasedialog::hk_kdeformdatasourcebasedialog( QWidget* parent,
     connect( sourcetypefield, SIGNAL( activated(const QString&) ), this, SLOT( set_datasourcelist() ) );
     connect( datasourcefield, SIGNAL( activated(const QString&) ), this, SLOT( datasource_selected() ) );
     connect( dependingonfield, SIGNAL( activated(const QString&) ), this, SLOT( dependingon_selected() ) );
-    connect( dependingonfield, SIGNAL( textChanged(const QString&) ), this, SLOT( check_buttons() ) );
+    connect( dependingonfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( check_buttons() ) );
     connect( dependingonfield, SIGNAL( activated(int) ), this, SLOT( check_buttons() ) );
-    connect( dependingonfield, SIGNAL( textChanged(const QString&) ), this, SLOT( dependingon_selected() ) );
-    connect( masterfield, SIGNAL( textChanged(const QString&) ), this, SLOT( check_buttons() ) );
+    connect( dependingonfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( dependingon_selected() ) );
+    connect( masterfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( check_buttons() ) );
     connect( masterfield, SIGNAL( activated(int) ), this, SLOT( check_buttons() ) );
-    connect( thisfield, SIGNAL( textChanged(const QString&) ), this, SLOT( check_buttons() ) );
+    connect( thisfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( check_buttons() ) );
     connect( thisfield, SIGNAL( highlighted(int) ), this, SLOT( check_buttons() ) );
     connect( sqlfield, SIGNAL( textChanged() ), this, SLOT( sql_changed() ) );
 }

@@ -9,7 +9,7 @@
 // GNU Library Public License version 2 as published by the Free Software
 // Foundation and appearing in the file LGPL included in the
 // packaging of this file.
-// This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+// This file is provided ASp IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
 //$Revision: 1.1 $
@@ -30,7 +30,6 @@
 #include <qimage.h>
 #include <qpixmap.h>
 #include <kglobal.h>
-#include <kiconloader.h>
 #include <qpushbutton.h>
 
 #include <hk_class.h>
@@ -46,7 +45,7 @@
 #include <kapplication.h>
 #include <kactioncollection.h>
 #include <kservice.h>
-//TBP icons
+
 /*
  *  Constructs a hk_kdemodule which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'
@@ -71,12 +70,10 @@ hk_kdemodule::hk_kdemodule( QWidget* parent,  const char* name, Qt::WFlags fl )
     g=cg.readEntry("Geometry",rrect);
     setGeometry(g);
 
-    KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde4classes");
-    setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdemodule.rc"));
+    QIcon::setThemeName("oxygen");
+    setXMLFile("hk_kdemodule.rc");
 
-    //KLibFactory* p_factory= KLibLoader::self()->factory( "libhk_kde4modulepart" );
-    KService::Ptr service = KService::serviceByDesktopName("hk_kde4modulepart");
+    KService::Ptr service = KService::serviceByDesktopName("hk_kde5modulepart");
     
     if (!service || 
       !(p_part=service->createInstance<KParts::ReadWritePart>(this,this, QVariantList())))
@@ -90,7 +87,7 @@ hk_kdemodule::hk_kdemodule( QWidget* parent,  const char* name, Qt::WFlags fl )
     setCentralWidget(p_module);
     connect(p_partmanager,SIGNAL(partRemoved(KParts::Part*)),this, SLOT(part_removed()));
     connect(p_partmanager,SIGNAL(activePartChanged(KParts::Part*)),this, SLOT(createGUI(KParts::Part*)));
-    p_closeaction=new KAction(KIcon("window-close"),i18n("&Close"),actionCollection());
+    p_closeaction=new KAction(QIcon::fromTheme("window-close"),i18n("&Close"),actionCollection());
     actionCollection()->addAction("closemodule",p_closeaction);
     connect(p_closeaction,SIGNAL(triggered()),this,SLOT(close_module()));
     createGUI(p_part);

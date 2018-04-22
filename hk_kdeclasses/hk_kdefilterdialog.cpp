@@ -41,7 +41,6 @@ hk_kdefilterdialog::hk_kdefilterdialog(enum_type type, QWidget* parent,  const c
     g = cg.readEntry("Geometry",rrect);
     setGeometry(g);
    if (type==editor) setWindowTitle(i18n("Editor"));
-    
 }
 
 
@@ -56,11 +55,8 @@ void hk_kdefilterdialog::text_changed()
 
 }
 
-
 void hk_kdefilterdialog::closeEvent(QCloseEvent*e)
 {
-
-
  hk_kdefilterdialogbase::closeEvent(e);
 }
 
@@ -69,7 +65,6 @@ void hk_kdefilterdialog::accept()
   store_size();
   hk_kdefilterdialogbase::accept();
 }
-
 
 void hk_kdefilterdialog::reject()
 {

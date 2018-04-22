@@ -20,8 +20,8 @@
 #include <qwidget.h>
 #include <hk_presentation.h>
 #include <hk_class.h>
+#include <KParts/ReadWritePart>
 #include <kparts/partmanager.h>
-
 #include "hk_kdemodulepartwidget.h"
 #include <kparts/mainwindow.h>
 
@@ -53,39 +53,35 @@ class hk_kdemodule : public KParts::MainWindow,public hk_class
 {
     Q_OBJECT
      friend class hk_kdesimplemodule;
-        public:
-        hk_kdemodule( QWidget* parent = 0, const char* name = 0, Qt::WFlags fl = 0 );
-        virtual    ~hk_kdemodule();
-
-        void            set_database(hk_database* db);
-        hk_database*        database(void);
-        void        loaddata(xmlNodePtr);
-        void        savedata(ofstream& s);
-        void        load_module(const hk_string& n);
+public:
+    hk_kdemodule( QWidget* parent = 0, const char* name = 0, Qt::WFlags fl = 0 );
+    virtual    ~hk_kdemodule();
+    void            set_database(hk_database* db);
+    hk_database*        database(void);
+    void        loaddata(xmlNodePtr);
+    void        savedata(ofstream& s);
+    void        load_module(const hk_string& n);
 /**
  *when the datasource vanishes (i.e. will be destroyed) and autoclose is true, the hk_kdemodule will be
  *closed otherwise it still is on your screen.
  */
-
-        void set_autoclose(bool c);
+    void set_autoclose(bool c);
 /**
  *if the designwindow should not be shown set this true. Default is false.
  */
-    signals:
-        void signal_closed(QWidget*);
+signals:
+    void signal_closed(QWidget*);
     
-	
-
-    protected:
-        virtual void closeEvent ( QCloseEvent* e);
-        virtual void        mousePressEvent(QMouseEvent*);
+protected:
+    virtual void closeEvent ( QCloseEvent* e);
+    virtual void        mousePressEvent(QMouseEvent*);
 	KAction * p_closeaction;
 	void save_module_when_changed();
     protected slots:
 	void part_removed(void);
-        void close_module(void);
+    void close_module(void);
     private:
-        void set_caption(void);
+    void set_caption(void);
 	KParts::ReadWritePart* p_part;
 	KParts::PartManager* p_partmanager;
 	hk_kdemodulepartwidget*  p_module;

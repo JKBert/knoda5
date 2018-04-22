@@ -30,15 +30,12 @@
 #include <qlayout.h>
 #include <qevent.h>
 
-//#include <klibloader.h>
-//#include <kparts/factory.h>
 #include <kmenubar.h>
 #include <kaction.h>
 #include <kstandardaction.h>
 #include <kstandarddirs.h>
 #include <klocale.h>
 #include <kglobal.h>
-#include <kiconloader.h>
 
 #include <kconfig.h>
 #include <kconfiggroup.h>
@@ -63,8 +60,6 @@ hk_kdereport::hk_kdereport (QWidget* parent,  const char* /* name */, Qt::WFlags
     g=cg.readEntry("Geometry",rrect);
     setGeometry(g);
     
-    KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde5classes");
     setXMLFile("hk_kdereport.rc");
     
     KService::Ptr service = KService::serviceByDesktopName("hk_kde5reportpart");

@@ -50,42 +50,39 @@ class hk_kdereport:public KParts::MainWindow, public hk_class
 
     Q_OBJECT
 
-        public:
-        hk_kdereport( QWidget* parent = 0, const char* name = 0, Qt::WFlags fl = 0 );
-        virtual    ~hk_kdereport();
-        bool        set_presentationdatasource(long n,bool r=true);
-        long        presentationdatasource(void);
-        void set_database(hk_database*);
-        hk_database* database(void);
-        void set_nodesignmode(bool);
-        void set_mode(hk_presentation::enum_mode s);
-        hk_kdesimplereport* simplereport(void);
-        bool load_report(const hk_string& name="");
-    signals:
-        void signal_closed(QWidget*);
+public:
+    hk_kdereport( QWidget* parent = 0, const char* name = 0, Qt::WFlags fl = 0 );
+    virtual    ~hk_kdereport();
+    bool        set_presentationdatasource(long n,bool r=true);
+    long        presentationdatasource(void);
+    void set_database(hk_database*);
+    hk_database* database(void);
+    void set_nodesignmode(bool);
+    void set_mode(hk_presentation::enum_mode s);
+    hk_kdesimplereport* simplereport(void);
+    bool load_report(const hk_string& name="");
+signals:
+    void signal_closed(QWidget*);
 	void signal_setcaption(const QString&);
 
-    public slots:
-        void set_designmode(void);
-        void set_viewmode(void);
-        void    save_report(void);
-        void    saveas_report(void);
-        void    close_report(void);
-        void    slot_showtoolbar(void);
-    protected:
-        void closeEvent ( QCloseEvent* e);
+public slots:
+    void set_designmode(void);
+    void set_viewmode(void);
+    void    save_report(void);
+    void    saveas_report(void);
+    void    close_report(void);
+    void    slot_showtoolbar(void);
+protected:
+    void closeEvent ( QCloseEvent* e);
 
-    protected slots:
+protected slots:
    	void part_removed(void);
 	
-
-    private:
-
-        KAction*  p_closeaction;
+private:
+    KAction*  p_closeaction;
 	KParts::ReadWritePart* p_part;
 	KParts::PartManager* p_partmanager;
 	hk_kdereportpartwidget*  p_report;
-        void set_caption(void);
-
+    void set_caption(void);
 };
 #endif
