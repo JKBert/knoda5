@@ -23,7 +23,7 @@ class hk_kdefinddialog : public hk_kdefinddialogbase
     Q_OBJECT
 
         public:
-        hk_kdefinddialog( QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+        hk_kdefinddialog( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
         ~hk_kdefinddialog();
     public slots:
         virtual void find_slot();

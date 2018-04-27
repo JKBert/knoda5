@@ -12,11 +12,13 @@ echo KF5 user icon directory: "$USERICONDIR"
 echo KF5 user module directory: "$USERMODULEDIR"
 echo KF5 user services directory: "$USERSERVICESDIR"
 
-RCDATADIR=$USERDATADIR/kxmlgui5/hk_kde5classes
+KXMLGUIDIR=$USERDATADIR/kxmlgui5
+RCDATADIR=$KXMLGUIDIR/hk_kde5classes
 
 case "$1" in
     link)
         ln -s ${CMAKE_SOURCE_DIR}/knoda/ $USERDATADIR/knoda5
+        mkdir -p $KXMLGUIDIR
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdeclasses/ $RCDATADIR
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdemodulepart/hk_kdemodulepart.rc $RCDATADIR/hk_kdemodulepart.rc
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdetablepart/hk_kdetablepart.rc $RCDATADIR/hk_kdetablepart.rc
@@ -41,13 +43,13 @@ case "$1" in
 : << 'COMMENT' TBP
 # services
         ! [ -d $USERMODULEDIR ] && mkdir -p $USERMODULEDIR
-        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4gridpart.so $USERMODULEDIR/libhk_kde4gridpart.so
-        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4dbdesignerpart.so $USERMODULEDIR/libhk_kde4dbdesignerpart.so
-        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4formpart.so $USERMODULEDIR/libhk_kde4formpart.so
-        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4qbepart.so $USERMODULEDIR/libhk_kde4qbepart.so
-        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4querypart.so $USERMODULEDIR/libhk_kde4querypart.so
-        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde4tablepart.so $USERMODULEDIR/libhk_kde4tablepart.so
+        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5dbdesignerpart.so $USERMODULEDIR/libhk_kde5dbdesignerpart.so
+        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5formpart.so $USERMODULEDIR/libhk_kde5formpart.so
+        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5qbepart.so $USERMODULEDIR/libhk_kde5qbepart.so
+        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5querypart.so $USERMODULEDIR/libhk_kde5querypart.so
 COMMENT
+        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5tablepart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5tablepart.so
+        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5gridpart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5gridpart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5reportpart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5reportpart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5modulepart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5modulepart.so
 
@@ -89,13 +91,14 @@ COMMENT
         unlink $USERICONDIR/locolor/16x16/apps/knoda5.png
 : << 'COMMENT' TBP
 # services       
-        unlink $USERMODULEDIR/libhk_kde5gridpart.so
         unlink $USERMODULEDIR/libhk_kde5dbdesignerpart.so
         unlink $USERMODULEDIR/libhk_kde5formpart.so
         unlink $USERMODULEDIR/libhk_kde5qbepart.so
         unlink $USERMODULEDIR/libhk_kde5querypart.so
-        unlink $USERMODULEDIR/libhk_kde5tablepart.so
+        
 COMMENT
+        unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5tablepart.so
+        unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5gridpart.so
         unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5reportpart.so
         unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5modulepart.so
 

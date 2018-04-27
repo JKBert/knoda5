@@ -29,7 +29,7 @@
 #include <qapplication.h>
 #include <kmenu.h>
 #include <QKeyEvent>
-#include <qiconset.h>
+//TBP #include <qiconset.h>
 #include <qtooltip.h>
 #include <qlistview.h>
 #include <qstyle.h>
@@ -49,6 +49,7 @@
 #include <kcolorscheme.h>
 #include <kmessagebox.h>
 #include <kdebug.h>
+#include <QDrag>
 
 class sectionclass
 {

@@ -21,55 +21,77 @@
 #include "hk_kdesimpleform.h"
 #include "hk_kde4simplegrid.h"
 #include <kcomponentdata.h>
-#include <kaboutdata.h>
+#include <KAboutData>
 #include <kstandardaction.h>
 #include <kstandarddirs.h>
 #include <kiconloader.h>
-#include <kaction.h>
+#include <KAction>
+#include <KIconEngine>
 #include <klocale.h>
 #include <kurl.h>
 #include <kactioncollection.h>
 #include <qapplication.h>
 #include <qclipboard.h>
+#include <QIcon>
 #include <hk_drivermanager.h>
 #include <hk_connection.h>
 #include <hk_database.h>
 #include <hk_datasource.h>
 #include <hk_class.h>
 
-K_PLUGIN_FACTORY(hk_kdegridpartfactory, registerPlugin<hk_kdegridpart>();)
-K_EXPORT_PLUGIN(hk_kdegridpartfactory("hk_kde5gridpart", "hk_kde5gridpart"))
-// TBP fix icons
+K_PLUGIN_FACTORY_DEFINITION(hk_kdegridpartfactory, registerPlugin<hk_kdegridpart>();)
+
+KAboutData* p_aData = NULL; 
+
+KAboutData& getAboutData()
+{
+  if ( p_aData == NULL) {
+    p_aData = new KAboutData("hk_kde5classes", ki18n("hk_kde5gridpart").toString(),
+      "0.2", ki18n("Datasource editor").toString(),
+      KAboutLicense::GPL,
+      ki18n("(c) 2002-2003, Horst Knorr\n(c) 2010-2018 Patrik Hanak").toString(),QString(),
+      "http://sourceforge.net/projects/knoda5/",
+     "knoda4-bugs@lists.sourceforge.net");
+    p_aData->addAuthor(ki18n("Horst Knorr").toString(), ki18n("Author of original version").toString(),
+      "hk_classes@knoda.org","http://www.knoda.org");
+    p_aData->addAuthor(ki18n("Patrik Hanak").toString(),ki18n("Author of KDE5 port").toString(),
+      "knoda4-admins@lists.sourceforge.net");   
+  }
+  return *p_aData; 
+}
+
 hk_kdegridpart::hk_kdegridpart(QWidget* pWidget,QObject* parent, const QVariantList &)
 :KParts::ReadWritePart(parent)
 {
   setObjectName("hk_kdegridpart");  
-  setComponentData(hk_kdegridpartfactory::componentData());
-  hk_kdesimpleform* form=dynamic_cast<hk_kdesimpleform*>(pWidget);
+  setComponentData(getAboutData());
+  //TBP hk_kdesimpleform* form=dynamic_cast<hk_kdesimpleform*>(pWidget);
+    hk_kdesimpleform* form = NULL;
     p_grid = new hk_kdegrid(pWidget,"hk_kdegridpart",0,form);   
     p_grid->setpart(this);
     setWidget(p_grid);
     KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde5classes");
-    p_columndialogaction = new KAction(KIcon("grid22x22",loader),i18n("&Gridcolumns"),actionCollection());
+    QIcon::setThemeName("oxygen");
+    
+    p_columndialogaction = new KAction(QIcon(new KIconEngine("grid22x22",loader)),i18n("&Gridcolumns"),actionCollection());
     actionCollection() -> addAction("gridcolumn",p_columndialogaction);
     connect(p_columndialogaction,SIGNAL(triggered()),this,SLOT(show_gridcolumndialog()));
     p_columndialogaction->setEnabled(!hk_class::runtime_only());
     
-    p_copyaction = new KAction(KIcon("edit-copy"),i18n("&Copy"),actionCollection());
+    p_copyaction = new KAction(QIcon::fromTheme("edit-copy"),i18n("&Copy"),actionCollection());
     p_copyaction -> setShortcut(Qt::CTRL+Qt::Key_C);
     actionCollection() -> addAction("copy",p_copyaction);
     connect(p_copyaction,SIGNAL(triggered()),p_grid->simplegrid(),SLOT(copy()));
     
-    p_pasteaction = new KAction(KIcon("edit-paste"),i18n("&Paste"),actionCollection());
+    p_pasteaction = new KAction(QIcon::fromTheme("edit-paste"),i18n("&Paste"),actionCollection());
     p_pasteaction -> setShortcut(Qt::CTRL+Qt::Key_V);
     actionCollection() -> addAction("paste",p_pasteaction);
     connect(p_pasteaction,SIGNAL(triggered()),p_grid->simplegrid(),SLOT(paste()));
     
-    p_findaction = new KAction(KIcon("find",loader),i18n("&Find in columns"),actionCollection());
+    p_findaction = new KAction(QIcon(new KIconEngine("find",loader)),i18n("&Find in columns"),actionCollection());
     actionCollection() -> addAction("findcolumn",p_findaction);
     connect(p_findaction,SIGNAL(triggered()),p_grid,SLOT(find_clicked()));     
-    setXMLFile(KStandardDirs::locate("data","hk_kde5classes/hk_kdegridpart.rc"));
+    setXMLFile("hk_kdegridpart.rc");
     p_drivermanager=NULL;
     connect (QApplication::clipboard(), SIGNAL(dataChanged()),this, SLOT(clipboarddata_has_changed()));
     clipboarddata_has_changed();
@@ -80,8 +102,6 @@ hk_kdegridpart::~hk_kdegridpart()
   if (p_drivermanager) delete p_drivermanager;
 
 }
-
-
 
 void hk_kdegridpart::show_gridcolumndialog(void)
 {
@@ -138,21 +158,6 @@ bool hk_kdegridpart::openFile()
 bool hk_kdegridpart::saveFile()
 {
     return true;
-}
-
-
-KAboutData* hk_kdegridpart::createAboutData()
-{
-    KAboutData* a= new KAboutData("hk_kde5gridpart", "hk_kde5gridpart",ki18n("hk_kde5gridpart"),
-        "0.2", ki18n("Datasource editor"),
-        KAboutData::License_GPL,
-        ki18n("(c) 2002-2003, Horst Knorr\n(c) 2010-2018 Patrik Hanak"),ki18n(NULL), "http://sourceforge.net/projects/knoda5/",
-     "knoda4-bugs@lists.sourceforge.net");
-    a -> addAuthor(ki18n("Horst Knorr"),ki18n("Author of original version"), "hk_classes@knoda.org","http://www.knoda.org");
-    a -> addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE5 port"), "knoda4-admins@lists.sourceforge.net");
-
-    return a;
-
 }
 
 void  hk_kdegridpart::clipboarddata_has_changed(void)

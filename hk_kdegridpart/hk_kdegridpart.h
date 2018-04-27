@@ -15,21 +15,20 @@
 
 #ifndef HK_KDEGRIDPART
 #define HK_KDEGRIDPART
-#include <kparts/factory.h>
-#include <kparts/part.h>
+#include <KParts/ReadWritePart>
+#include <KParts/Factory>
+#include <KPluginFactory>
 #include "hk_kdegrid.h"
 
 class hk_drivermanager;
 class KAction;
-class KAboutData;
 
 class hk_kdegridpart : public KParts::ReadWritePart
 {
     Q_OBJECT
-        public:
+    public:
         hk_kdegridpart(QWidget* parentWidget, QObject* parent, const QVariantList &args);
         virtual ~hk_kdegridpart();
-        static KAboutData* createAboutData();
         virtual void setReadWrite(bool rw);
         hk_kdegrid* grid(void){return p_grid;}
     protected:
@@ -49,5 +48,6 @@ class hk_kdegridpart : public KParts::ReadWritePart
 	hk_drivermanager* p_drivermanager;
 };
 
+K_PLUGIN_FACTORY_DECLARATION(hk_kdegridpartfactory)
 
 #endif

@@ -21,8 +21,8 @@
 #include "hk_kdedatabasesetting.h"
 // TBP #include "hk_kdeobjecthandler.h"
 #include "hk_kdepreferencesdialog.h"
-/* TBP #include "hk_kdetablepartwidget.h"
-#include "hk_kdequerypartwidget.h"
+#include "hk_kdetablepartwidget.h"
+/* TBP#include "hk_kdequerypartwidget.h"
 #include "hk_kdeformpartwidget.h" */
 #include "hk_kdereportpartwidget.h" 
 #include "hk_kdemodulepartwidget.h" 
@@ -145,18 +145,18 @@ knodamaindockwindow::~knodamaindockwindow()
 
   void knodamaindockwindow::slot_new_table(void)
   {
-   /*TBP if (!p_connection->server_supports(hk_connection::SUPPORTS_NEW_TABLE))
-   {
-     show_warningmessage(hk_translate("Driver does not support creating new tables"));
-     return;
-   }
-   hk_kdetablepartwidget* o=new_table();
-   hk_datasource* d=p_database->new_table();
-   if (o)
-   {
-   o->set_datasource(d);
-   o->set_designmode();
-   } */
+    if (!p_connection->server_supports(hk_connection::SUPPORTS_NEW_TABLE))
+    {
+      show_warningmessage(hk_translate("Driver does not support creating new tables"));
+      return;
+    }
+    hk_kdetablepartwidget* o=new_table();
+    hk_datasource* d=p_database->new_table();
+    if (o)
+    {
+      o->set_datasource(d);
+      o->set_designmode();
+    } 
   }
 
   void knodamaindockwindow::slot_delete_table(const QString& t)
@@ -167,7 +167,7 @@ knodamaindockwindow::~knodamaindockwindow()
 
   void knodamaindockwindow::slot_designmode_table(const QString& t)
   {
-   /*TBP hk_kdetablepartwidget* w=find_existing_table(u2l(t.toUtf8().data()));
+    hk_kdetablepartwidget* w=find_existing_table(u2l(t.toUtf8().data()));
     if (w)
     {
       tabs()->setCurrentWidget(w);
@@ -175,20 +175,20 @@ knodamaindockwindow::~knodamaindockwindow()
       return;
     }
 
-   hk_kdetablepartwidget* o=new_table();
-   hk_datasource* d=p_database->new_table();
-   if (d)d->set_name(u2l(t.toUtf8().data()));
-   if (o)
-   {
-   o->set_datasource(d);
-   o->set_designmode();
-   }*/
+    hk_kdetablepartwidget* o=new_table();
+    hk_datasource* d=p_database->new_table();
+    if (d) d->set_name(u2l(t.toUtf8().data()));
+    if (o)
+    {
+      o->set_datasource(d);
+      o->set_designmode();
+    }
   }
 
 
   void knodamaindockwindow::slot_viewmode_table(const QString& t)
   {
-   /*TBP hk_kdetablepartwidget* w=find_existing_table(u2l(t.toUtf8().data()));
+    hk_kdetablepartwidget* w=find_existing_table(u2l(t.toUtf8().data()));
     
     if (w)
     {
@@ -197,14 +197,14 @@ knodamaindockwindow::~knodamaindockwindow()
       return;
     }
 
-   hk_kdetablepartwidget* o=new_table();
-   hk_datasource* d=p_database->new_table();
-   if (d)d->set_name(u2l(t.toUtf8().data()));
-   if (o)
-   {
-   o->set_datasource(d);
-   o->set_viewmode();
-   } */
+    hk_kdetablepartwidget* o=new_table();
+    hk_datasource* d=p_database->new_table();
+    if (d) d->set_name(u2l(t.toUtf8().data()));
+    if (o)
+    {
+      o->set_datasource(d);
+      o->set_viewmode();
+    }
   }
 
   void knodamaindockwindow::slot_new_query(void)
@@ -471,7 +471,7 @@ void knodamaindockwindow::slot_designmode_module(const QString&t)
 
 hk_kdetablepartwidget* knodamaindockwindow::new_table(void)
 {
-  /* TBP KService::Ptr service = KService::serviceByDesktopName("hk_kde4tablepart");
+  KService::Ptr service = KService::serviceByDesktopName("hk_kde5tablepart");
   KParts::ReadWritePart* p_part;
 
   if (!service ||
@@ -487,11 +487,12 @@ hk_kdetablepartwidget* knodamaindockwindow::new_table(void)
   }
   p_partmanager->addPart(p_part);
   connect(table, SIGNAL(signal_captionChanged(QWidget*,QString)), this, SLOT(slot_captionChanged(QWidget*,QString)));
-  int i = tabs() -> addTab(table,i18n("Table"));
-  tabs() -> setTabIcon(i,KIcon("view-form-table"));
-  tabs() -> setCurrentIndex(i);
+  int i = tabs()->addTab(table,i18n("Table"));
+  QIcon::setThemeName("oxygen");
+  tabs()->setTabIcon(i, QIcon::fromTheme("view-form-table"));
+  tabs()->setCurrentIndex(i);
   table->setFocus();
-  return table; */ return NULL;
+  return table;
 }
 
   hk_kdequerypartwidget* knodamaindockwindow::new_query(bool as_view)
@@ -573,7 +574,7 @@ hk_kdereportpartwidget* knodamaindockwindow::new_report(void)
         return NULL;
     }
     p_partmanager->addPart(p_part);
-    int i = tabs() -> addTab(report,i18n("Report"));
+    int i = tabs()->addTab(report,i18n("Report"));
     QIcon::setThemeName("oxygen");
     tabs()->setTabIcon(i,QIcon::fromTheme("document-print"));
     connect(report, SIGNAL(signal_captionChanged(QWidget*,QString)), this, SLOT(slot_captionChanged(QWidget*,QString)));
@@ -883,12 +884,12 @@ hk_kdereportpartwidget* knodamaindockwindow::find_existing_report(const hk_strin
 
 hk_kdetablepartwidget* knodamaindockwindow::find_existing_table(const hk_string& n)
 {
- /*TBP hk_kdetablepartwidget* w = NULL;
+  hk_kdetablepartwidget* w = NULL;
   
   for(int i = 0;i < tabs()->count();i++){
     w=dynamic_cast<hk_kdetablepartwidget*>(tabs() -> widget(i));
     if (w &&  w->datasource() && w->datasource()->name()==n) return w;   
-  } */
+  }
   return NULL;
 }
 

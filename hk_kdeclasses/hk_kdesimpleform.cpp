@@ -62,7 +62,7 @@
 #include <kmenu.h>
 #include <kactioncollection.h>
 #include <kservice.h>
-
+#include <KIconEngine>
 
 //TBP icons
 class hk_kdesimpleformprivate
@@ -102,7 +102,12 @@ public:
 const QString hk_kdesimpleformprivate::mimeCopyFormat = QString::fromAscii("application/x-hk_kdesimpleformcopy");
 
 static void unplugAll(KAction* p_a){
-  foreach(QWidget* w, p_a -> associatedWidgets())
+  foreach(QWidget* w, p_a->associatedWidgets())
+    w->removeAction(p_a);
+}
+
+static void unplugAll(KActionMenu* p_a){
+  foreach(QWidget* w, p_a->associatedWidgets())
     w->removeAction(p_a);
 }
 
@@ -111,7 +116,7 @@ static KAction* createAction(const QString& lbl, const QString& p_name, KActionC
   Q_UNUSED(action_hander);  
   KAction * p_a = new KAction(lbl,p_ac);
   
-  p_ac -> addAction(p_name,p_a);
+  p_ac->addAction(p_name,p_a);
   QObject::connect(p_ac,SIGNAL(triggered()),tgt, SLOT(*action_handler));
   return p_a;
 }
@@ -1608,7 +1613,7 @@ void hk_kdesimpleform::set_actions(KActionCollection* collection)
     p_cutaction=createAction(i18n("Cu&t"),"cutclicked",collection,this,&hk_kdesimpleform::cut);
     p_cutaction->setShortcut(Qt::CTRL+Qt::Key_X);
     p_formpropertyaction=createAction(i18n("&Propertyeditor"),"viewproperty",collection,this,&hk_kdesimpleform::show_property);
-    p_formpropertyaction->setIcon(KIcon("propertyeditor",KIconLoader::global()));
+    p_formpropertyaction->setIcon(QIcon(new KIconEngine("propertyeditor",loader)));
     
     p_resizeaction=new KActionMenu(i18n("Adjust &size"),collection);
     collection->addAction("size",p_resizeaction);
@@ -1635,7 +1640,7 @@ void hk_kdesimpleform::set_actions(KActionCollection* collection)
     p_alignaction->addAction(p_aligntopaction);
     p_alignaction->addAction(p_alignbottomaction);
     p_private->p_dbdesigneraction=createAction(i18n("Database designer"),"dbdesigner",collection,this,&hk_kdesimpleform::dbdesignaction);
-    p_private->p_dbdesigneraction->setIcon(KIcon("dbdesigner",KIconLoader::global()));
+    p_private->p_dbdesigneraction->setIcon(QIcon(new KIconEngine("dbdesigner",loader)));
    }
    else
    {

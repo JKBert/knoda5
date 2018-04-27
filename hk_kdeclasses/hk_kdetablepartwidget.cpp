@@ -18,7 +18,7 @@
 #include <hk_datasource.h>
 #include <hk_database.h>
 #include <hk_connection.h>
-#include "hk_kdetablepartwidget.moc"
+//TBP #include "hk_kdetablepartwidget.moc"
 #include "hk_kdetabledesign.h"
 #include "hk_kdegrid.h"
 #include <qbuttongroup.h>
@@ -40,7 +40,9 @@
 #include <kstandarddirs.h>
 #include <klocale.h>
 #include <kactioncollection.h>
-#include <kservice.h>
+#include <KService>
+#include <KIconLoader>
+#include <KIconEngine>
 
 bool    hk_kdetablepartwidget::p_cancel=false;
 QProgressDialog* hk_kdetablepartwidget::p_progressdialog=NULL;
@@ -72,7 +74,7 @@ hk_kdetablepartwidget::hk_kdetablepartwidget(QWidget* w,const char* n,Qt::WFlags
     p_reloadaction=NULL;
     p_saveaction=NULL;
     p_autoclose=true;
-    KService::Ptr service = KService::serviceByDesktopName("hk_kde4gridpart");
+    KService::Ptr service = KService::serviceByDesktopName("hk_kde5gridpart");
     
     if ( !service || 
       !(p_gridpart=service->createInstance<KParts::ReadWritePart>(this,this, QVariantList())))
@@ -117,7 +119,10 @@ hk_kdetablepartwidget::~hk_kdetablepartwidget()
 
 void hk_kdetablepartwidget::setupActions(KActionCollection* ac)
 {
-    p_printaction=new KAction(KIcon("document-print"),i18n("&Print"), ac);
+	KIconLoader* loader = KIconLoader::global();
+	QIcon::setThemeName("oxygen");
+	
+    p_printaction=new KAction(QIcon::fromTheme("document-print"),i18n("&Print"), ac);
     ac-> addAction("print",p_printaction);
     connect(p_printaction,SIGNAL(triggered()),kdegrid(),SLOT(print_grid()));     
     p_printaction->setEnabled(false);
@@ -128,12 +133,12 @@ void hk_kdetablepartwidget::setupActions(KActionCollection* ac)
      p_saveaction=NULL;     
     }
     else {
-      p_designaction=new KToggleAction(KIcon("document-edit"),i18n("&Design mode"),ac);
+      p_designaction=new KToggleAction(QIcon::fromTheme("document-edit"),i18n("&Design mode"),ac);
       ac-> addAction("designmode",p_designaction);
       connect(p_designaction,SIGNAL(triggered()),this,SLOT(designbutton_clicked()));         
       p_designaction->setEnabled(!runtime_only());
       
-      p_viewaction=new KToggleAction(KIcon("system-run"),i18n("&View mode"),ac);
+      p_viewaction=new KToggleAction(QIcon::fromTheme("system-run"),i18n("&View mode"),ac);
       ac-> addAction("viewmode",p_viewaction);
       connect(p_viewaction,SIGNAL(triggered()),this,SLOT(tablebutton_clicked())); 
       
@@ -141,42 +146,42 @@ void hk_kdetablepartwidget::setupActions(KActionCollection* ac)
       p_designaction->setActionGroup(pGroup);
       p_viewaction->setActionGroup(pGroup); 
       
-      p_saveaction=new KAction(KIcon("document-save"),i18n("Save"),ac);
+      p_saveaction=new KAction(QIcon::fromTheme("document-save"),i18n("Save"),ac);
       ac-> addAction("save",p_saveaction);
       connect(p_saveaction,SIGNAL(triggered()),this,SLOT(save_table()));       
       p_saveaction->setEnabled(false);
     } 
    
-  p_reloadaction=new KAction(KIcon("view-refresh"),i18n("Reload"),ac);
+  p_reloadaction=new KAction(QIcon::fromTheme("view-refresh"),i18n("Reload"),ac);
   ac-> addAction("reload",p_reloadaction);
   connect(p_reloadaction,SIGNAL(triggered()),this,SLOT(reload_table()));    
     
-  p_filterdefinitionaction=new KToggleAction(KIcon("filter",KIconLoader::global()),i18n("Filterdefinition"),ac);
+  p_filterdefinitionaction=new KToggleAction(QIcon(new KIconEngine("filter",loader)),i18n("Filterdefinition"),ac);
   ac-> addAction("filterdefinition",p_filterdefinitionaction);
   connect(p_filterdefinitionaction,SIGNAL(triggered()),toolbar(),SLOT(filterdefinebutton_clicked()));    
 
-  p_filterexecaction=new KToggleAction(KIcon("filterexec",KIconLoader::global()),i18n("Filterexecution"),ac);
+  p_filterexecaction=new KToggleAction(QIcon(new KIconEngine("filterexec",loader)),i18n("Filterexecution"),ac);
   ac-> addAction("filterexec",p_filterexecaction);
   connect(p_filterexecaction,SIGNAL(triggered()),toolbar(),SLOT(filterexecbutton_clicked())); 
   
   toolbar()->set_filteractions(p_filterdefinitionaction,p_filterexecaction);
       
-  p_columndialogaction = new KAction(KIcon("grid22x22",KIconLoader::global()),i18n("&Gridcolumns"),ac);
+  p_columndialogaction = new KAction(QIcon(new KIconEngine("grid22x22",loader)),i18n("&Gridcolumns"),ac);
   ac-> addAction("gridcolumn",p_columndialogaction);
   connect(p_columndialogaction,SIGNAL(triggered()),(const QObject *) kdegrid(),SLOT(show_gridcolumndialog())); 
   p_columndialogaction->setEnabled(!hk_class::runtime_only());
     
-  p_copyaction = new KAction(KIcon("edit-copy"),i18n("&Copy"),ac);
+  p_copyaction = new KAction(QIcon::fromTheme("edit-copy"),i18n("&Copy"),ac);
   p_copyaction -> setShortcut(Qt::CTRL+Qt::Key_C);
   ac-> addAction("copy",p_copyaction);
   connect(p_copyaction,SIGNAL(triggered()),(const QObject *) kdegrid()->simplegrid(),SLOT(copy()));
   
-  p_pasteaction = new KAction(KIcon("edit-paste"),i18n("&Paste"),ac);
+  p_pasteaction = new KAction(QIcon::fromTheme("edit-paste"),i18n("&Paste"),ac);
   p_pasteaction -> setShortcut(Qt::CTRL+Qt::Key_V);
   ac-> addAction("paste",p_pasteaction);
   connect(p_pasteaction,SIGNAL(triggered()),(const QObject *) kdegrid()->simplegrid(),SLOT(paste()));
 
-  p_findaction = new KAction(KIcon("find",KIconLoader::global()),i18n("&Find in columns"),ac);
+  p_findaction = new KAction(QIcon(new KIconEngine("find",loader)),i18n("&Find in columns"),ac);
   ac-> addAction("findcolumn",p_findaction);
   connect(p_findaction,SIGNAL(triggered()),kdegrid(),SLOT(find_clicked()));
 }

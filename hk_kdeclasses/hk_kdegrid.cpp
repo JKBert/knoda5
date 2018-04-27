@@ -604,12 +604,12 @@ void    hk_kdegrid::load_column_from_file(void)
 #ifdef HK_DEBUG
     hkdebug("hk_kdegrid::load_column_from_file");
 #endif
-    hk_column *c = gridcolumn(p->p_view->currentIndex().column()) ?
+    /*TBP hk_column *c = gridcolumn(p->p_view->currentIndex().column()) ?
                    gridcolumn(p->p_view->currentIndex().column())->column() : NULL;
     QString s = KFileDialog::getOpenFileName(KUrl("kfiledialog:///bin"), QString::null, this);
 
     if (!s.isEmpty())
-        c->load_from_file(u2l(s.toUtf8().data()));
+        c->load_from_file(u2l(s.toUtf8().data())); */
 }
 
 void    hk_kdegrid::save_column_to_file(void)
@@ -617,11 +617,11 @@ void    hk_kdegrid::save_column_to_file(void)
 #ifdef HK_DEBUG
     hkdebug("hk_kdegrid::save_column_to_file");
 #endif
-    hk_column *c = gridcolumn(p->p_view->currentIndex().column()) ?
+    /*TBP hk_column *c = gridcolumn(p->p_view->currentIndex().column()) ?
                    gridcolumn(p->p_view->currentIndex().column())->column() : NULL;
     QString s = KFileDialog::getSaveFileName(KUrl("kfiledialog:///bin"), QString::null, this);
 
-    if (!s.isEmpty()) c->save_to_file(u2l(s.toUtf8().data()));
+    if (!s.isEmpty()) c->save_to_file(u2l(s.toUtf8().data())); */
 }
 
 void    hk_kdegrid::show_gridcolumndialog(void)
@@ -629,7 +629,7 @@ void    hk_kdegrid::show_gridcolumndialog(void)
 #ifdef HK_DEBUG
     hkdebug("hk_kdegrid::show_gridcolumndialog");
 #endif
-    if (p->columnmergeneeded)
+   /*TBP if (p->columnmergeneeded)
         p->mergeColumnOrder();
     
     hk_kdegridcolumndialog *dialog = new hk_kdegridcolumndialog(this, 0, true);
@@ -637,7 +637,7 @@ void    hk_kdegrid::show_gridcolumndialog(void)
     if (dialog->exec() == QDialog::Accepted)
         has_changed(true, forcesetting);
     widget_specific_enable_disable();
-    delete dialog;
+    delete dialog; */
 }
 
 void    hk_kdegrid::delete_selected_rows(void)
@@ -669,7 +669,7 @@ void hk_kdegrid::find_clicked(void)
 #ifdef HK_DEBUG
     hkdebug("kdegrid::find_clicked");
 #endif
-    if (p->p_finddialog == NULL) {
+  /*TBP  if (p->p_finddialog == NULL) {
         p->p_finddialog = new hk_kdefinddialog(this, 0, false);
         connect(p->p_finddialog, SIGNAL(signal_findbutton_clicked()), this, SLOT(find_next()));
         connect(p->p_finddialog, SIGNAL(signal_findargument_changed()), this, SLOT(findargument_changed()));
@@ -677,7 +677,7 @@ void hk_kdegrid::find_clicked(void)
 
     p->p_findfirstview = true;
     findargument_changed();
-    p->p_finddialog->show();
+    p->p_finddialog->show(); */
 }
 
 

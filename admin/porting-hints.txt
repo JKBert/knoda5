@@ -10,3 +10,5 @@ KShortcut()->QKeySequence()
 QComboBox::textChanged()->QComboBox::editTextChanged()
 
 QLineEdit::lostFocus()->QLineEdit::editingFinished()
+
+Icon from pics folder: KIconLoader* loader=KIconLoader::global();QIcon(new KIconEngine("dbdesigner",loader));

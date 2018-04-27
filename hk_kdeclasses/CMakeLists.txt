@@ -8,9 +8,9 @@ set(hk_kdeclasses_LIB_SRCS
 #[[  TBP  hk_kdeaddtabledialog.cpp
     hk_kdeaddtabledialogbase.cpp
     hk_kdeboolean.cpp
-    hk_kdebutton.cpp
+    hk_kdebutton.cpp ]]
     hk_kdecombobox.cpp
-    hk_kdecomboboxtextlist.cpp
+#[[  TBP     hk_kdecomboboxtextlist.cpp
     hk_kdecomboboxtextlistbase.cpp
     hk_kdecolumn.cpp
     hk_kdecsvexportdialog.cpp
@@ -34,16 +34,16 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdeformdatasourcedialog.cpp
     hk_kdeformdatasourcedialogbase.cpp
     hk_kdeformfocus.cpp
- #[[ TBP   hk_kdeformpartwidget.cpp
+ #TBP   hk_kdeformpartwidget.cpp
     hk_kdegrid.cpp
-    hk_kdegridcolumndialogbase.cpp
+ #[[ TBP     hk_kdegridcolumndialogbase.cpp
     hk_kdegridcolumndialog.cpp
     hk_kdeimage.cpp
     hk_kdeindexeditwindow.cpp ]]
     hk_kdeinterpreterdialog.cpp
   #TBP  hk_kdelabel.cpp
-  #TBP  hk_kdelineedit.cpp
-  #TBP  hk_kdememo.cpp
+    hk_kdelineedit.cpp
+    hk_kdememo.cpp
     hk_kdemodule.cpp
     hk_kdemodulepartwidget.cpp 
     hk_kdemessages.cpp
@@ -73,10 +73,10 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdereportsection.cpp
     hk_kdereportsectiondialog.cpp
     hk_kdereportsectiondialogbase.cpp
- #[[  TBP    hk_kderowselector.cpp
-    hk_kdesimpleform.cpp
+    hk_kderowselector.cpp
+ #TBP   hk_kdesimpleform.cpp
     hk_kde4simplegrid.cpp
-    hk_kde4simplegrid_p.cpp ]]
+    hk_kde4simplegrid_p.cpp 
     hk_kdesimplereport.cpp
     hk_kdespinbox.cpp
  #TBP    hk_kdesubform.cpp
@@ -85,11 +85,11 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdesubreportdialogbase.cpp
  #[[  TBP   hk_kdetable.cpp
     hk_kdetaborder.cpp
-    hk_kdetaborderbase.cpp
-    hk_kdetabledesign.cpp
+    hk_kdetaborderbase.cpp ]]
+    hk_kdetabledesign.cpp 
     hk_kdetablepartwidget.cpp
     hk_kdetoolbar.cpp
-    hk_kdexmlexportdialog.cpp
+ #[[  TBP     hk_kdexmlexportdialog.cpp
     hk_kdexmlexportdialogbase.cpp ]]
     knodamaindockwindow.cpp
     knodamaindockwindowbase.cpp 

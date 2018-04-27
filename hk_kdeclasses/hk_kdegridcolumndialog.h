@@ -36,20 +36,19 @@ class hk_kdegridcolumndialog : public hk_kdegridcolumndialogbase
 {
     Q_OBJECT
 
-        public:
-        hk_kdegridcolumndialog( hk_kdegrid* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
-        ~hk_kdegridcolumndialog();
+  public:
+    hk_kdegridcolumndialog( hk_kdegrid* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
+    ~hk_kdegridcolumndialog();
 
-    public slots:
-        void addbutton_clicked();
-        void deletebutton_clicked();
-        void exitbutton_clicked();
-        void okbutton_clicked();
-        void defaultvalue_changed();
-        void columntype_changed();
-        void rightbox_selectionchanged(QTreeWidgetItem*);
-
-        void alignment_changed();
+  public slots:
+    void addbutton_clicked();
+    void deletebutton_clicked();
+    void exitbutton_clicked();
+    void okbutton_clicked();
+    void defaultvalue_changed();
+    void columntype_changed();
+    void rightbox_selectionchanged(QTreeWidgetItem*);
+    void alignment_changed();
         void displayname_changed();
         void identifier_changed();
         void listcolumn_changed();
@@ -59,9 +58,6 @@ class hk_kdegridcolumndialog : public hk_kdegridcolumndialogbase
         void readonly_changed();
         void separator_changed();
         void viewcolumn_changed();
-
-
-
     virtual void onclickaction_clicked();
     virtual void ondoubleclickaction_clicked();
     virtual void onopenaction_clicked();
@@ -79,28 +75,19 @@ class hk_kdegridcolumndialog : public hk_kdegridcolumndialogbase
     virtual void onkeybutton_clicked();
     virtual void onselectaction_clicked();
 
-
-
-
-
-
-
-
-
-
-    private:
-        typedef  class  fieldstruct
+  private:
+    typedef  class  fieldstruct
+    {
+      public:
+        fieldstruct(void)
         {
-            public:
-                fieldstruct(void)
-                {
-                    use_separators=false;
-                    readonly=false;
-                    listdatasourcetype=dt_table;
-                    digits=-1;
-                    columntype=hk_dsgridcolumn::columnedit;
-                    alignment=hk_dsdatavisible::alignleft;
-                }
+         use_separators=false;
+         readonly=false;
+         listdatasourcetype=dt_table;
+         digits=-1;
+         columntype=hk_dsgridcolumn::columnedit;
+         alignment=hk_dsdatavisible::alignleft;
+         }
                 hk_string name;
                 hk_string defaultvalue;
                 hk_string identifier;

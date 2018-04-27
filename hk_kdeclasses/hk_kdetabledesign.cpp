@@ -126,7 +126,7 @@ hk_kdetabledesign::hk_kdetabledesign( QWidget* parent,  const char* name, Qt::WF
     deletebutton = new QPushButton(this);
     deletebutton->setObjectName("deletebutton");
     deletebutton->setText( i18n( "Delete Field"  ) );
-    deletebutton->setEnabled( FALSE );
+    deletebutton->setEnabled( false );
     fieldbuttonlayout->addWidget( deletebutton );
 
     QLabel* b = new QLabel(this);
@@ -142,13 +142,13 @@ hk_kdetabledesign::hk_kdetabledesign( QWidget* parent,  const char* name, Qt::WF
     indexdeletebutton = new QPushButton(this);
     indexdeletebutton->setObjectName("indexdeletebutton");
     indexdeletebutton->setText( i18n( "Delete Index"  ) );
-    indexdeletebutton->setEnabled( FALSE );
+    indexdeletebutton->setEnabled( false );
     buttonlayout->addWidget( indexdeletebutton );
 
     indexalterbutton = new QPushButton(this);
     indexalterbutton->setObjectName("indexalterbutton");
     indexalterbutton->setText( i18n( "Alter Index"  ) );
-    indexalterbutton->setEnabled( FALSE );
+    indexalterbutton->setEnabled( false );
     buttonlayout->addWidget( indexalterbutton );
 
     Layoutindexwindow->addLayout( buttonlayout );
@@ -714,8 +714,8 @@ void hk_kdetabledesign::indexselection_changed()
     
     if (i==NULL)
     {
-        indexdeletebutton->setEnabled( FALSE );
-        indexalterbutton->setEnabled( FALSE );
+        indexdeletebutton->setEnabled( false );
+        indexalterbutton->setEnabled( false );
         return;
     }
     indexdeletebutton->setEnabled( true );
@@ -886,7 +886,7 @@ void hk_kdetabledesign::load_fieldinfo()
 
 void hk_kdetabledesign::alter_index()
 {
-    if (datasource()==NULL){ return; }
+   /* TBP if (datasource()==NULL){ return; }
     list<hk_datasource::indexclass>* ilist =datasource()->indices();
     if (ilist==NULL){return; }
     list<hk_datasource::indexclass>::iterator it=ilist->begin();
@@ -907,7 +907,7 @@ void hk_kdetabledesign::alter_index()
         d->set_datasource(datasource());
         if (it!=ilist->end())d->set_indexvalues((*it).name,(*it).unique,(*it).fields,false);
         d->show(); 
-    }
+    } */
 }
 
 
@@ -922,7 +922,7 @@ void hk_kdetabledesign::delete_index()
 
 void hk_kdetabledesign::new_index()
 {
-
+/* TBP
     if (datasource()==NULL){ return; }
 
     hk_kdeindexeditdialog* d = new hk_kdeindexeditdialog(0,0);
@@ -931,7 +931,7 @@ void hk_kdetabledesign::new_index()
     d->set_datasource(datasource());
     list<hk_string> f;
     d->set_indexvalues("",false,f,true);
-    d->show(); 
+    d->show(); */
 }
 
 

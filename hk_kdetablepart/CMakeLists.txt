@@ -1,7 +1,3 @@
-
-include_directories(${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} )
-
-
 ########### next target ###############
 
 set(hk_kdetablepart_PART_SRCS hk_kdetablepart.cpp)

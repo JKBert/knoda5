@@ -439,7 +439,7 @@ void hk_kdelineedit::find_clicked(void)
 #ifdef HK_DEBUG
     hkdebug("kdelineedit::find_clicked");
 #endif
-    if (!column()) return;
+ /*TBP   if (!column()) return;
     if (p_finddialog==NULL)
     {
         p_finddialog=new hk_kdefinddialog(this,0,false);
@@ -449,7 +449,7 @@ void hk_kdelineedit::find_clicked(void)
 
     p_findfirstview=true;
     findargument_changed();
-    p_finddialog->show(); 
+    p_finddialog->show(); */
 }
 
 

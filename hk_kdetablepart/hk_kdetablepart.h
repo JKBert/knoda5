@@ -16,8 +16,8 @@
 #ifndef HK_KDETABLEPART
 #define HK_KDETABLEPART
 
-#include <kparts/part.h>
-#include <kparts/factory.h>
+#include <KParts/ReadWritePart>
+#include <KParts/Factory>
 #include "../hk_kdeclasses/hk_kdetablepartwidget.h"
 
 class hk_drivermanager;
