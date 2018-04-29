@@ -12,9 +12,11 @@
 
 #include <qpainter.h>
 #include <QKeyEvent>
+#include <QStandardPaths>
 #include <qheaderview.h>
 #include <kapplication.h>
 #include <kiconloader.h>
+#include <KIconEngine>
 #include <hk_datasource.h>
 
 #include "hk_kde4simplegrid.h"
@@ -25,7 +27,7 @@
 #include "hk_kdegrid.h"
 #include "hk_kdecombobox.h"
 #include "hk_database.h"
-//TBP icons
+
 int const hk_kdegridmodel::ColumnTypeRole = Qt::UserRole;
 int const hk_kdegridmodel::PasteRole = Qt::UserRole + 1;
 
@@ -38,7 +40,9 @@ hk_kdegridmodel::hk_kdegridmodel(hk_kdegrid *parent): QAbstractTableModel(parent
 {
     Q_ASSERT(p_grid);
     columnlabelcache = p_grid->gridcolumn(0) != NULL ? columnlabel(0) : " ";
-    arrow_image = KIconLoader::global()->loadIcon("gridcursor", KIconLoader::User);
+    KIconLoader loader ("hk_kde5classes");
+    
+    arrow_image.load(loader.iconPath("gridcursor", KIconLoader::User));
     no_image = QPixmap(arrow_image.width(), arrow_image.height());
     no_image.fill(Qt::transparent);
 }

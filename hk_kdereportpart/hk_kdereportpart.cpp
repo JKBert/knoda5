@@ -36,6 +36,8 @@
 #include <hk_connection.h>
 #include <hk_database.h>
 #include <hk_datasource.h>
+#include "../hk_kdeclasses/hk_kdereportpartwidget.h"
+
 
 K_PLUGIN_FACTORY_DEFINITION(hk_kdereportpartfactory, registerPlugin<hk_kdereportpart>();)
  

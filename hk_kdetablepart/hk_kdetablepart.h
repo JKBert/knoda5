@@ -18,30 +18,30 @@
 
 #include <KParts/ReadWritePart>
 #include <KParts/Factory>
-#include "../hk_kdeclasses/hk_kdetablepartwidget.h"
+//TBP #include "../hk_kdeclasses/hk_kdetablepartwidget.h"
 
 class hk_drivermanager;
 class hk_kdetablepartprivate;
-class KAboutData;
+// TBP class KAboutData;
 
 class hk_kdetablepart : public KParts::ReadWritePart
 {
     Q_OBJECT
-        public:
-        hk_kdetablepart(QWidget* parentWidget, QObject* parent, const QVariantList &args);
-        virtual ~hk_kdetablepart();
-        static KAboutData* createAboutData();
-        virtual void setReadWrite(bool rw);
-    protected:
-        virtual bool openFile();
-        virtual bool saveFile();
-
-    public slots:
+  public:
+    hk_kdetablepart(QWidget* parentWidget, QObject* parent, const QVariantList &args);
+    virtual ~hk_kdetablepart();
+    virtual void setReadWrite(bool rw);
     
-    private:
-      hk_kdetablepartprivate* p_private;
+  protected:
+    virtual bool openFile();
+    virtual bool saveFile();
 
+  public slots:
+    
+  private:
+    hk_kdetablepartprivate* p_private;
 };
 
+K_PLUGIN_FACTORY_DECLARATION(hk_kdetablepartfactory)
 
 #endif

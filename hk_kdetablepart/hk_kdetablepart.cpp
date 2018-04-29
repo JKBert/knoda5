@@ -17,15 +17,16 @@
 //***********************************************
 //***  hk_kdetable PART definition             ***
 //***********************************************
+
 #include "hk_kdetablepart.h"
-#include <kaboutdata.h>
+#include "../hk_kdeclasses/hk_kdetablepartwidget.h"
+#include <KAboutData>
 #include <kcomponentdata.h>
 #include <kstandardaction.h>
 #include <kstandarddirs.h>
 #include <kiconloader.h>
 #include <kaction.h>
 #include <klocale.h>
-#include <kurl.h>
 
 #include <qapplication.h>
 #include <qclipboard.h>
@@ -38,32 +39,49 @@
 #include "hk_kdetabledesign.h"
 #include "hk_kdetoolbar.h"
 
-K_PLUGIN_FACTORY(hk_kdetablepartfactory, registerPlugin<hk_kdetablepart>();)
-K_EXPORT_PLUGIN(hk_kdetablepartfactory("hk_kde5tablepart","hk_kde5tablepart"))
+K_PLUGIN_FACTORY_DEFINITION(hk_kdetablepartfactory, registerPlugin<hk_kdetablepart>();)
 
 class hk_kdetablepartprivate
 {
   public:
-  hk_kdetablepartprivate()
+    hk_kdetablepartprivate(hk_kdetablepartwidget* ptable = NULL):p_table(ptable)
   	{
-		p_table=NULL;
 	}
-   hk_kdetablepartwidget* p_table;
+    static KAboutData* p_aData;
+    static KAboutData& getAboutData();
+    hk_kdetablepartwidget* p_table;
 };
 
-hk_kdetablepart::hk_kdetablepart(QWidget* pWidget, QObject* parent, const QVariantList &)
-:KParts::ReadWritePart(parent)
+KAboutData* hk_kdetablepartprivate::p_aData = NULL; 
+
+KAboutData& hk_kdetablepartprivate::getAboutData()
 {
-    p_private=new hk_kdetablepartprivate;
+    if ( p_aData == NULL) {
+        p_aData = new KAboutData("hk_kde5classes", ki18n("hk_kde5tablepart").toString(),
+            "0.2", ki18n("database table editor").toString(),
+            KAboutLicense::GPL,
+            ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2018 Patrik Hanak").toString(),QString(), 
+            "http://sourceforge.net/projects/knoda5/",
+            "knoda4-bugs@lists.sourceforge.net");
+        p_aData->addAuthor(ki18n("Horst Knorr").toString(),ki18n("Author of original version").toString(),
+            "hk_classes@knoda.org","http://www.knoda.org");
+        p_aData->addAuthor(ki18n("Patrik Hanak").toString(),ki18n("Author of KDE5 port").toString(),
+            "knoda4-admins@lists.sourceforge.net");        
+    }
+    return *p_aData; 
+}
+
+hk_kdetablepart::hk_kdetablepart(QWidget* pWidget, QObject* parent, const QVariantList &)
+:KParts::ReadWritePart(parent),p_private(new hk_kdetablepartprivate())
+{
     setObjectName("hk_kdetablepart");
-    setComponentData(hk_kdetablepartfactory::componentData());
+    setComponentData(hk_kdetablepartprivate::getAboutData());
     p_private->p_table = new hk_kdetablepartwidget(pWidget,0);
     p_private->p_table->setAttribute(Qt::WA_DeleteOnClose);
     setWidget(p_private->p_table);
-    KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde5classes");
-   
-     setXMLFile(KStandardDirs::locate("data","hk_kde5classes/hk_kdetablepart.rc"));
+    //TBP KIconLoader* loader=KIconLoader::global();
+    //TBP loader->addAppDir("hk_kde5classes");
+    setXMLFile("hk_kdetablepart.rc");
     p_private->p_table-> setupActions(actionCollection());
 }
 
@@ -106,6 +124,7 @@ bool hk_kdetablepart::saveFile()
     return true;
 }
 
+/*TBP
 KAboutData* hk_kdetablepart::createAboutData()
 {
     KAboutData* a= new KAboutData("hk_kde5tablepart", "hk_kde5tablepart",ki18n("hk_kde5tablepart"),
@@ -113,13 +132,13 @@ KAboutData* hk_kdetablepart::createAboutData()
         KAboutData::License_GPL,
         ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2018 Patrik Hanak"),ki18n(NULL), "http://sourceforge.net/projects/knoda5/",
      "knoda4-bugs@lists.sourceforge.net");
-    a -> addAuthor(ki18n("Horst Knorr"),ki18n("Author of original version"), "hk_classes@knoda.org","http://www.knoda.org");
-    a -> addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE5 port"), "knoda4-admins@lists.sourceforge.net");    
+    a->addAuthor(ki18n("Horst Knorr"),ki18n("Author of original version"), "hk_classes@knoda.org","http://www.knoda.org");
+    a->addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE5 port"), "knoda4-admins@lists.sourceforge.net");    
 
 
     return a;
 
-}
+} */
 
 
 

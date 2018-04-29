@@ -27,7 +27,6 @@ class hk_kdegridmodel: public QAbstractTableModel
     Q_OBJECT
     friend class hk_kdegrid;
 public:
-
     enum columnedittype { columnedit, columnbool, columncombo, columnmemo };
 
     hk_kdegridmodel(hk_kdegrid *parent = 0);
@@ -53,7 +52,6 @@ public:
     static int const PasteRole;
 
 protected:
-
     QPixmap arrow_image;
     QPixmap no_image;
     
@@ -69,7 +67,6 @@ protected:
     QVariant stringDataPart(int row, int col) const;
     QVariant boolDataPart(int row, int col) const;
     QString columnlabel(int col) const;    
-    
 };
 
 class SimpleGridDelegate : public QStyledItemDelegate

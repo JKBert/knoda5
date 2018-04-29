@@ -28,7 +28,7 @@
 #include <qtooltip.h>
 #include <hk_form.h>
 #include <kiconloader.h>
-#include <kicon.h>
+#include <KIconEngine>
 
 //TBP icons
 class rowselectorbutton:public QPushButton
@@ -36,16 +36,15 @@ class rowselectorbutton:public QPushButton
     public:
         rowselectorbutton( QWidget* wid,const QString& iconName):QPushButton(wid)
         {
-          setFocusPolicy(Qt::ClickFocus);
-          KIconLoader::global()->addAppDir("hk_kde4classes");
-	  setIcon(KIcon(iconName,KIconLoader::global()));
-          setIconSize(QSize(20,20));
-          setMaximumSize(QSize(22,20));
+            KIconLoader loader ("hk_kde5classes");
+            
+            setFocusPolicy(Qt::ClickFocus);
+            setIcon(QIcon(new KIconEngine(iconName, &loader)));
+            //TBP setIcon(QIcon::fromTheme("window-close"));
+            setIconSize(QSize(20,20));
+            setMaximumSize(QSize(22,20));
         }
-    protected:
-    private:
 };
-
 
 hk_kderowselector::hk_kderowselector(QWidget* wid,hk_form* form) :
 QWidget(wid),hk_dsrowselector(form)

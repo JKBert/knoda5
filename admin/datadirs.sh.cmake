@@ -18,6 +18,7 @@ RCDATADIR=$KXMLGUIDIR/hk_kde5classes
 case "$1" in
     link)
         ln -s ${CMAKE_SOURCE_DIR}/knoda/ $USERDATADIR/knoda5
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeclasses/ $USERDATADIR/hk_kde5classes
         mkdir -p $KXMLGUIDIR
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdeclasses/ $RCDATADIR
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdemodulepart/hk_kdemodulepart.rc $RCDATADIR/hk_kdemodulepart.rc
@@ -83,6 +84,7 @@ COMMENT
         unlink $RCDATADIR/hk_kdequerypartsql.rc
         unlink $RCDATADIR/hk_kdemodulepart.rc
         unlink $USERDATADIR/knoda5
+        unlink $USERDATADIR/hk_kde5classes
         unlink $RCDATADIR
 # icons
         unlink $USERICONDIR/hicolor/32x32/apps/knoda5.png

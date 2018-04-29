@@ -18,11 +18,9 @@
 
 #include <KParts/ReadWritePart>
 #include <KParts/Factory>
-#include "../hk_kdeclasses/hk_kdereportpartwidget.h"
 
 class hk_drivermanager;
 class hk_kdereportpartprivate;
-class KAboutData;
 
 class hk_kdereportpart : public KParts::ReadWritePart
 {
