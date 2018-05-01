@@ -32,7 +32,7 @@
 #include <qlayout.h>
 #include <qtooltip.h>
 #include <qwhatsthis.h>
-//TBP TBT translation tr()->i18n()
+
 /*
  *  Constructs a hk_kdefinddialogbase as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.
@@ -45,7 +45,7 @@ hk_kdefinddialogbase::hk_kdefinddialogbase( QWidget* parent, const char* name, b
 {
     setObjectName(QString::fromAscii(name == NULL?"hk_kdefinddialogbase":name));
     setModal(modal);
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled( true );
     hk_kdefinddialogbaseLayout = new QGridLayout( this);
     hk_kdefinddialogbaseLayout->setMargin(11);
     hk_kdefinddialogbaseLayout->setSpacing(6);
@@ -63,13 +63,13 @@ hk_kdefinddialogbase::hk_kdefinddialogbase( QWidget* parent, const char* name, b
 
     ok_button = new QPushButton(this);
     ok_button->setObjectName("ok_button");
-    ok_button->setAutoDefault( TRUE );
-    ok_button->setDefault( TRUE );
+    ok_button->setAutoDefault( true );
+    ok_button->setDefault( true );
     Layout5->addWidget( ok_button );
 
     cancel_button = new QPushButton(this);
     cancel_button->setObjectName("cancel_button");
-    cancel_button->setAutoDefault( TRUE );
+    cancel_button->setAutoDefault( true );
     Layout5->addWidget( cancel_button );
     Spacer1 = new QSpacerItem( 20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding );
     Layout5->addItem( Spacer1 );
@@ -106,7 +106,7 @@ hk_kdefinddialogbase::hk_kdefinddialogbase( QWidget* parent, const char* name, b
     searchfield = new QComboBox(this);
     searchfield->setObjectName(QString::fromAscii("searchfield"));
     searchfield->setMinimumSize( QSize( 200, 0 ) );
-    searchfield->setEditable( TRUE );
+    searchfield->setEditable( true );
 
     hk_kdefinddialogbaseLayout->addWidget( searchfield, 0, 1 );
     languageChange();
@@ -115,7 +115,7 @@ hk_kdefinddialogbase::hk_kdefinddialogbase( QWidget* parent, const char* name, b
     // signals and slots connections
     connect( cancel_button, SIGNAL( clicked() ), this, SLOT( reject() ) );
     connect( ok_button, SIGNAL( clicked() ), this, SLOT( find_slot() ) );
-    connect( searchfield, SIGNAL( textChanged(const QString&) ), this, SLOT( new_findargument() ) );
+    connect( searchfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( new_findargument() ) );
 }
 
 /*

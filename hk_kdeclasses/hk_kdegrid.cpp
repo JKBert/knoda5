@@ -629,7 +629,7 @@ void    hk_kdegrid::show_gridcolumndialog(void)
 #ifdef HK_DEBUG
     hkdebug("hk_kdegrid::show_gridcolumndialog");
 #endif
-   /*TBP if (p->columnmergeneeded)
+    if (p->columnmergeneeded)
         p->mergeColumnOrder();
     
     hk_kdegridcolumndialog *dialog = new hk_kdegridcolumndialog(this, 0, true);
@@ -637,7 +637,7 @@ void    hk_kdegrid::show_gridcolumndialog(void)
     if (dialog->exec() == QDialog::Accepted)
         has_changed(true, forcesetting);
     widget_specific_enable_disable();
-    delete dialog; */
+    delete dialog;
 }
 
 void    hk_kdegrid::delete_selected_rows(void)
@@ -669,7 +669,7 @@ void hk_kdegrid::find_clicked(void)
 #ifdef HK_DEBUG
     hkdebug("kdegrid::find_clicked");
 #endif
-  /*TBP  if (p->p_finddialog == NULL) {
+    if (p->p_finddialog == NULL) {
         p->p_finddialog = new hk_kdefinddialog(this, 0, false);
         connect(p->p_finddialog, SIGNAL(signal_findbutton_clicked()), this, SLOT(find_next()));
         connect(p->p_finddialog, SIGNAL(signal_findargument_changed()), this, SLOT(findargument_changed()));
@@ -677,7 +677,7 @@ void hk_kdegrid::find_clicked(void)
 
     p->p_findfirstview = true;
     findargument_changed();
-    p->p_finddialog->show(); */
+    p->p_finddialog->show();
 }
 
 

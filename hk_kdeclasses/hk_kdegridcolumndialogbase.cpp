@@ -38,7 +38,7 @@
 #include <qlayout.h>
 #include <qtooltip.h>
 #include <qwhatsthis.h>
-//TBP TBT translation tr()->i18n()
+
 /*
  *  Constructs a hk_kdegridcolumndialogbase as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.
@@ -142,7 +142,7 @@ hk_kdegridcolumndialogbase::hk_kdegridcolumndialogbase( QWidget* parent, const c
 
     storebutton = new QPushButton(ButtonGroup7);
     storebutton->setObjectName("storebutton");
-    storebutton->setEnabled( FALSE );
+    storebutton->setEnabled( false );
     ButtonGroup7Layout->addWidget( storebutton );
 
     exitbutton = new QPushButton(ButtonGroup7);
@@ -304,8 +304,8 @@ hk_kdegridcolumndialogbase::hk_kdegridcolumndialogbase( QWidget* parent, const c
 
     viewcolumnfield = new QComboBox(combotab);
     viewcolumnfield->setObjectName(QString::fromAscii("viewcolumnfield"));
-    viewcolumnfield->setEditable( TRUE );
-    viewcolumnfield->setAutoCompletion( TRUE );
+    viewcolumnfield->setEditable( true );
+    viewcolumnfield->setAutoCompletion( true );
     viewcolumnfield->setMinimumSize( QSize( 150, 0 ) );
 
     combotabLayout->addWidget( viewcolumnfield, 3, 1 );
@@ -322,8 +322,8 @@ hk_kdegridcolumndialogbase::hk_kdegridcolumndialogbase( QWidget* parent, const c
 
     listcolumnfield = new QComboBox(combotab);
     listcolumnfield->setObjectName(QString::fromAscii("listcolumnfield"));
-    listcolumnfield->setEditable( TRUE );
-    listcolumnfield->setAutoCompletion( TRUE );
+    listcolumnfield->setEditable( true );
+    listcolumnfield->setAutoCompletion( true );
 
     combotabLayout->addWidget( listcolumnfield, 2, 1 );
 
@@ -542,9 +542,9 @@ hk_kdegridcolumndialogbase::hk_kdegridcolumndialogbase( QWidget* parent, const c
     connect( listdatasourcefield, SIGNAL( activated(int) ), this, SLOT( listdatasource_changed() ) );
     connect( listdatasourcetypefield, SIGNAL( activated(int) ), this, SLOT( listdatasourcetype_changed() ) );
     connect( listcolumnfield, SIGNAL( activated(int) ), this, SLOT( listcolumn_changed() ) );
-    connect( listcolumnfield, SIGNAL( textChanged(const QString&) ), this, SLOT( listcolumn_changed() ) );
+    connect( listcolumnfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( listcolumn_changed() ) );
     connect( viewcolumnfield, SIGNAL( activated(int) ), this, SLOT( viewcolumn_changed() ) );
-    connect( viewcolumnfield, SIGNAL( textChanged(const QString&) ), this, SLOT( viewcolumn_changed() ) );
+    connect( viewcolumnfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( viewcolumn_changed() ) );
     connect( afterdeleteactionbutton, SIGNAL( clicked() ), this, SLOT( afterdeleteaction_clicked() ) );
     connect( onpushactionbutton, SIGNAL( clicked() ), this, SLOT( onclickaction_clicked() ) );
     connect( ondoubleclickactionbutton, SIGNAL( clicked() ), this, SLOT( ondoubleclickaction_clicked() ) );

@@ -15,7 +15,6 @@
 // $Revision: 1.38 $
 
 #include "hk_kdegridcolumndialog.h"
-
 #include "hk_kdegrid.h"
 #include "hk_kdeinterpreterdialog.h"
 #include <hk_datasource.h>
@@ -31,13 +30,12 @@
 #include <qimage.h>
 #include <qpixmap.h>
 #include <kglobal.h>
-#include <kiconloader.h>
 #include <klocale.h>
 #include <qcombobox.h>
 #include <qspinbox.h>
 #include <qscrollarea.h>
 #include <qheaderview.h>
-//TBP icons
+
 /*
  *  Constructs a hk_kdegridcolumndialog which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'
@@ -50,8 +48,7 @@ hk_kdegridcolumndialog::hk_kdegridcolumndialog( hk_kdegrid* parent,  const char*
 {
     QString no=i18n("no");
     QString yes=i18n("yes");
-    KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde4classes");
+    QIcon::setThemeName("oxygen");
     p_grid=parent;
     leftlabel->setText(i18n("Invisible columns:"));
     rightlabel->setText(i18n("Shown columns:"));
@@ -60,8 +57,8 @@ hk_kdegridcolumndialog::hk_kdegridcolumndialog( hk_kdegrid* parent,  const char*
     rightbox -> setSortingEnabled(false);
     rightbox -> header() -> setMovable(false);
     setWindowTitle(i18n("Column select"));
-    addbutton->setIcon( loader->loadIcon("go-next",KIconLoader::Small) );
-    deletebutton->setIcon( loader->loadIcon("go-previous",KIconLoader::Small) );
+    addbutton->setIcon( QIcon::fromTheme("go-next") );
+    deletebutton->setIcon( QIcon::fromTheme("go-previous") );
     settxt=i18n("set");
     notsettxt=i18n("not set");
 
