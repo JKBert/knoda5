@@ -11,4 +11,12 @@ QComboBox::textChanged()->QComboBox::editTextChanged()
 
 QLineEdit::lostFocus()->QLineEdit::editingFinished()
 
-Icon from pics folder: KIconLoader* loader=KIconLoader::global();QIcon(new KIconEngine("dbdesigner",loader));
+
+definition of LIB_MODULE_NAME:
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#else
+#error config.h is needed but not included 
+#endif
+
+Icon from pics folder: KIconLoader loader (LIB_MODULE_NAME);QIcon(loader.iconPath(<iconName>,KIconLoader::User));

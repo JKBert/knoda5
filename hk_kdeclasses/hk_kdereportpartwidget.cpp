@@ -14,6 +14,11 @@
 // ****************************************************************************
 //$Revision: 1.23 $
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#else
+#error config.h is needed but not included 
+#endif
 #include "hk_kdereportpartwidget.h"
 #include "hk_kdetoolbar.h"
 #include "hk_kdesimplereport.h"
@@ -150,7 +155,6 @@ hk_kdereportpartwidget::hk_kdereportpartwidget (hk_kdereportpart* reportpart,QWi
     hkdebug("hk_kdereportpartwidget::hk_kdereportpartwidget");
 #endif
     QActionGroup* pag;
-    KIconLoader* loader=KIconLoader::global();
     
     if (name)
         setObjectName(QString::fromAscii(name));
@@ -161,6 +165,7 @@ hk_kdereportpartwidget::hk_kdereportpartwidget (hk_kdereportpart* reportpart,QWi
     p_whilepreview=false;
     p_closewindow=false;
     
+    KIconLoader loader (LIB_MODULE_NAME);
     QIcon::setThemeName("oxygen");
      
     if (runtime_only())
@@ -186,7 +191,7 @@ hk_kdereportpartwidget::hk_kdereportpartwidget (hk_kdereportpart* reportpart,QWi
     p_reportpart->actionCollection() -> addAction("printreport",p_printaction);
     connect(p_printaction,SIGNAL(triggered()),this,SLOT(print_report()));
     p_printaction->setEnabled(false);
-    p_sectionaction=new KAction(QIcon( new KIconEngine("reportsection",loader)),i18n("Sectionselect"),p_reportpart->actionCollection());
+    p_sectionaction=new KAction(QIcon(loader.iconPath("reportsection",KIconLoader::User)),i18n("Sectionselect"),p_reportpart->actionCollection());
     p_reportpart->actionCollection() -> addAction("sectionselect",p_sectionaction);
     connect(p_sectionaction,SIGNAL(triggered()),SLOT(select_section()));
     p_sectionaction->setToolTip(i18n("sections"));
@@ -199,10 +204,10 @@ hk_kdereportpartwidget::hk_kdereportpartwidget (hk_kdereportpart* reportpart,QWi
     connect(p_saveasaction,SIGNAL(triggered()),this,SLOT(saveas_report()));
     p_saveasaction->setEnabled(!runtime_only());
 
-    p_pointeraction=new KToggleAction(QIcon(new KIconEngine("pfeil",loader)),i18n("Pointer"),p_reportpart->actionCollection());
+    p_pointeraction=new KToggleAction(QIcon(loader.iconPath("pfeil",KIconLoader::User)),i18n("Pointer"),p_reportpart->actionCollection());
     p_reportpart->actionCollection() -> addAction("pointer",p_pointeraction);
     connect(p_pointeraction,SIGNAL(triggered()),this,SLOT(pointerbutton_clicked()));
-    p_fieldaction=new KToggleAction(QIcon(new KIconEngine("editline",loader)),i18n("Field"),p_reportpart->actionCollection());
+    p_fieldaction=new KToggleAction(QIcon(loader.iconPath("editline",KIconLoader::User)),i18n("Field"),p_reportpart->actionCollection());
     p_reportpart->actionCollection() -> addAction("fieldbutton",p_fieldaction);
     connect(p_fieldaction,SIGNAL(triggered()),this,SLOT(fieldbutton_clicked()));
     p_pointeraction->setToolTip(i18n("select"));
@@ -237,7 +242,7 @@ hk_kdereportpartwidget::hk_kdereportpartwidget (hk_kdereportpart* reportpart,QWi
     p_report->set_reportpartwidget(this); 
     p_scrollview->set_report(p_report);
     set_caption();
-    p_reportpropertyaction=new KAction(QIcon(new KIconEngine("propertyeditor",loader)),i18n("&Propertyeditor"),p_reportpart->actionCollection());
+    p_reportpropertyaction=new KAction(QIcon(loader.iconPath("propertyeditor",KIconLoader::User)),i18n("&Propertyeditor"),p_reportpart->actionCollection());
     p_reportpart->actionCollection() -> addAction("viewproperty",p_reportpropertyaction);
     connect(p_reportpropertyaction,SIGNAL(triggered()),p_report,SLOT(show_property()));
 

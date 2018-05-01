@@ -14,8 +14,12 @@
 // ****************************************************************************
 //$Revision: 1.33 $
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#else
+#error config.h is needed but not included 
+#endif
 #include <hk_kderowselector.h>
-#include <hk_kderowselector.moc>
 #include <qtooltip.h>
 #include <qstyle.h>
 #include <qrect.h>
@@ -30,17 +34,15 @@
 #include <kiconloader.h>
 #include <KIconEngine>
 
-//TBP icons
 class rowselectorbutton:public QPushButton
 {
     public:
         rowselectorbutton( QWidget* wid,const QString& iconName):QPushButton(wid)
         {
-            KIconLoader loader ("hk_kde5classes");
+            KIconLoader loader (LIB_MODULE_NAME);
             
             setFocusPolicy(Qt::ClickFocus);
-            setIcon(QIcon(new KIconEngine(iconName, &loader)));
-            //TBP setIcon(QIcon::fromTheme("window-close"));
+            setIcon(QIcon(loader.iconPath(iconName,KIconLoader::User)));
             setIconSize(QSize(20,20));
             setMaximumSize(QSize(22,20));
         }

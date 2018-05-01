@@ -29,6 +29,8 @@
 
 #if HAVE_CONFIG_H
 #include <config.h>
+#else
+#error config.h is needed but not included 
 #endif
 static KCmdLineOptions options;
 

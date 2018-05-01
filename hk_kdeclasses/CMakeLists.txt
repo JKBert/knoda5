@@ -95,9 +95,9 @@ set(hk_kdeclasses_LIB_SRCS
     knodamaindockwindowbase.cpp 
 )
 
-add_library(hk_kde5classes SHARED ${hk_kdeclasses_LIB_SRCS})
+add_library(${LIB_MODULE_NAME} SHARED ${hk_kdeclasses_LIB_SRCS})
 
-target_link_libraries(hk_kde5classes 
+target_link_libraries(${LIB_MODULE_NAME} 
     xml2
     Qt5::Widgets
     KF5::CoreAddons
@@ -106,18 +106,18 @@ target_link_libraries(hk_kde5classes
     KF5::KDELibs4Support
     ${HK_CLASSES_LIB})
 
-set_target_properties(hk_kde5classes PROPERTIES VERSION 1.0.0 SOVERSION 1)
-install(TARGETS hk_kde5classes ${INSTALL_TARGETS_DEFAULT_ARGS})
+set_target_properties(${LIB_MODULE_NAME} PROPERTIES VERSION 1.0.0 SOVERSION 1)
+install(TARGETS ${LIB_MODULE_NAME} ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 
 ########### install files ###############
 
 #TBP install(FILES  hk_kdereport.rc hk_kdeform.rc hk_kdetable.rc hk_kdequery.rc hk_kdeinterpreterdialog.rc hk_kdedbdesigner.rc
-#               knodamaindockwindowbase.rc hk_kdemodule.rc DESTINATION ${DATA_INSTALL_DIR}/hk_kde5classes)
+#               knodamaindockwindowbase.rc hk_kdemodule.rc DESTINATION ${DATA_INSTALL_DIR}/${LIB_MODULE_NAME})
 install(FILES  hk_kdereport.rc hk_kdeform.rc hk_kdetable.rc hk_kdequery.rc hk_kdeinterpreterdialog.rc hk_kdedbdesigner.rc
-               knodamaindockwindowbase.rc hk_kdemodule.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/hk_kde5classes)
+               knodamaindockwindowbase.rc hk_kdemodule.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/${LIB_MODULE_NAME})
 install(FILES  hk_kdedbdesigner.h hk_kdeformpartwidget.h hk_kdegrid.h hk_kdemessages.h 
                hk_kdemodulepartwidget.h hk_kdepreferencesdialog.h hk_kdeqbe.h hk_kdequerypartwidget.h
                hk_kdereportpartwidget.h hk_kdesimpleform.h hk_kdetablepartwidget.h 
                hk_kde4simplegrid.h knodamaindockwindow.h
-               DESTINATION ${INCLUDE_INSTALL_DIR}/hk_kde5classes CONFIGURATIONS Debug)
+               DESTINATION ${INCLUDE_INSTALL_DIR}/${LIB_MODULE_NAME} CONFIGURATIONS Debug)

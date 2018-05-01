@@ -17,12 +17,15 @@
 //***********************************************
 //***  hk_kdemodule PART definition             ***
 //***********************************************
+
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#else
+#error config.h is needed but not included 
+#endif
 #include "hk_kdemodulepart.h"
-#include <kcomponentdata.h>
 #include <KAboutData>
 #include <kstandardaction.h>
-#include <kstandarddirs.h>
-#include <kiconloader.h>
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <klocale.h>
@@ -54,7 +57,7 @@ KAboutData* hk_kdemodulepartprivate::p_aData = NULL;
 KAboutData& hk_kdemodulepartprivate::getAboutData()
 {
     if ( p_aData == NULL) {
-        p_aData = new KAboutData("hk_kde5classes", ki18n("hk_kde5modulepart").toString(),
+        p_aData = new KAboutData(LIB_MODULE_NAME, ki18n("hk_kde5modulepart").toString(),
             "0.2", ki18n("database module editor").toString(),
             KAboutLicense::GPL,
             ki18n("(c) 2002-2006, Horst Knorr\n(c) 2010-2018 Patrik Hanak").toString(),QString(), 

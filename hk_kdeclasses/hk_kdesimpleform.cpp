@@ -1613,7 +1613,7 @@ void hk_kdesimpleform::set_actions(KActionCollection* collection)
     p_cutaction=createAction(i18n("Cu&t"),"cutclicked",collection,this,&hk_kdesimpleform::cut);
     p_cutaction->setShortcut(Qt::CTRL+Qt::Key_X);
     p_formpropertyaction=createAction(i18n("&Propertyeditor"),"viewproperty",collection,this,&hk_kdesimpleform::show_property);
-    p_formpropertyaction->setIcon(QIcon(new KIconEngine("propertyeditor",loader)));
+    p_formpropertyaction->setIcon(QIcon(opravit("propertyeditor",loader)));
     
     p_resizeaction=new KActionMenu(i18n("Adjust &size"),collection);
     collection->addAction("size",p_resizeaction);
@@ -1640,7 +1640,7 @@ void hk_kdesimpleform::set_actions(KActionCollection* collection)
     p_alignaction->addAction(p_aligntopaction);
     p_alignaction->addAction(p_alignbottomaction);
     p_private->p_dbdesigneraction=createAction(i18n("Database designer"),"dbdesigner",collection,this,&hk_kdesimpleform::dbdesignaction);
-    p_private->p_dbdesigneraction->setIcon(QIcon(new KIconEngine("dbdesigner",loader)));
+    p_private->p_dbdesigneraction->setIcon(QIcon(opravit("dbdesigner",loader)));
    }
    else
    {

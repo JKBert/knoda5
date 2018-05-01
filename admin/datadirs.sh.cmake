@@ -13,12 +13,12 @@ echo KF5 user module directory: "$USERMODULEDIR"
 echo KF5 user services directory: "$USERSERVICESDIR"
 
 KXMLGUIDIR=$USERDATADIR/kxmlgui5
-RCDATADIR=$KXMLGUIDIR/hk_kde5classes
+RCDATADIR=$KXMLGUIDIR/${LIB_MODULE_NAME}
 
 case "$1" in
     link)
-        ln -s ${CMAKE_SOURCE_DIR}/knoda/ $USERDATADIR/knoda5
-        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeclasses/ $USERDATADIR/hk_kde5classes
+        ln -s ${CMAKE_SOURCE_DIR}/knoda/ $USERDATADIR/${PROJECT_NAME}
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeclasses/ $USERDATADIR/${LIB_MODULE_NAME}
         mkdir -p $KXMLGUIDIR
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdeclasses/ $RCDATADIR
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdemodulepart/hk_kdemodulepart.rc $RCDATADIR/hk_kdemodulepart.rc
@@ -83,9 +83,9 @@ COMMENT
         unlink $RCDATADIR/hk_kdequerypart.rc
         unlink $RCDATADIR/hk_kdequerypartsql.rc
         unlink $RCDATADIR/hk_kdemodulepart.rc
-        unlink $USERDATADIR/knoda5
-        unlink $USERDATADIR/hk_kde5classes
         unlink $RCDATADIR
+        unlink $USERDATADIR/knoda5
+        unlink $USERDATADIR/${LIB_MODULE_NAME}
 # icons
         unlink $USERICONDIR/hicolor/32x32/apps/knoda5.png
         unlink $USERICONDIR/hicolor/16x16/apps/knoda5.png

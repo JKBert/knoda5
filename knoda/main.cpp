@@ -33,6 +33,8 @@
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
+#else
+#error config.h is needed but not included 
 #endif
 
 static KCmdLineOptions options;
@@ -41,7 +43,7 @@ static KCmdLineOptions options;
 int main(int argc,char** argv)
 {
     umask(0077);
-    K4AboutData aboutData("knoda5","knoda5",ki18n("knoda5"),
+    K4AboutData aboutData(PROJECT_NAME,PROJECT_NAME,ki18n("knoda5"),
         VERSION, ki18n("knoda5 is a database management system"),
 	K4AboutData::License_GPL,
         ki18n("(c) 2000-2005 Horst Knorr\n(c) 2010-2018 Patrik Hanak"),ki18n(NULL),"http://sourceforge.net/projects/knoda5/",
@@ -73,8 +75,8 @@ int main(int argc,char** argv)
     KApplication anwendung;
     struct_commands commands;
     anwendung.setOrganizationDomain("sourceforge.net");
-    KLocalizedString::setApplicationDomain("knoda5");
-    anwendung.setWindowIcon(QIcon::fromTheme(QStringLiteral("knoda5")));
+    KLocalizedString::setApplicationDomain(PROJECT_NAME);
+    anwendung.setWindowIcon(QIcon::fromTheme(QStringLiteral(PROJECT_NAME)));
     bool d =args->isSet("d");
     bool db = args->isSet("b");
     bool f  = args->isSet("f");
@@ -122,8 +124,6 @@ int main(int argc,char** argv)
         return -1;
 
     }
-
-
 #ifdef HK_DEBUG
     if (args->isSet("debug")) hk_class::set_generaldebug(true);
 #endif

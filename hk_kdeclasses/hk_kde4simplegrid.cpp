@@ -29,7 +29,6 @@
 #include <qapplication.h>
 #include <kmenu.h>
 #include <QKeyEvent>
-//TBP #include <qiconset.h>
 #include <qtooltip.h>
 #include <qlistview.h>
 #include <qstyle.h>

@@ -46,10 +46,10 @@
 
 class hk_kdemodulepartwidgetprivate
 {
-public:
-  hk_kdemodulepartwidgetprivate(): p_autoclose(true), p_document(NULL), p_view(NULL),
-     p_modulepart(NULL) {}
-        bool          p_autoclose;
+  public:
+    hk_kdemodulepartwidgetprivate(): p_autoclose(true), p_document(NULL), p_view(NULL),
+      p_modulepart(NULL) {}
+    bool          p_autoclose;
 	KTextEditor::Document* p_document;
 	KTextEditor::View*  p_view;
 	hk_kdemodulepart* p_modulepart;
@@ -71,8 +71,6 @@ hk_kdemodulepartwidget::hk_kdemodulepartwidget(hk_kdemodulepart* part,QWidget* w
   hkclassname("hk_kdemodulepartwidget");
 #endif
   p_private->p_modulepart=part;
-  KIconLoader* loader=KIconLoader::global();
-  loader->addAppDir("hk_kde5classes");
   setFocusPolicy(Qt::StrongFocus);
   setLayout(new QHBoxLayout(this));
 

@@ -13,12 +13,16 @@
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
 //$Revision: 1.12 $
-//TBP icons
+
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#else
+#error config.h is needed but not included 
+#endif
 #include "hk_kdetablepartwidget.h"
 #include <hk_datasource.h>
 #include <hk_database.h>
 #include <hk_connection.h>
-//TBP #include "hk_kdetablepartwidget.moc"
 #include "hk_kdetabledesign.h"
 #include "hk_kdegrid.h"
 #include <qbuttongroup.h>
@@ -119,7 +123,7 @@ hk_kdetablepartwidget::~hk_kdetablepartwidget()
 
 void hk_kdetablepartwidget::setupActions(KActionCollection* ac)
 {
-	KIconLoader* loader = KIconLoader::global();
+    KIconLoader loader (LIB_MODULE_NAME);
 	QIcon::setThemeName("oxygen");
 	
     p_printaction=new KAction(QIcon::fromTheme("document-print"),i18n("&Print"), ac);
@@ -128,9 +132,9 @@ void hk_kdetablepartwidget::setupActions(KActionCollection* ac)
     p_printaction->setEnabled(false);
     
     if (runtime_only()) {
-     p_designaction=NULL;
-     p_viewaction=NULL;
-     p_saveaction=NULL;     
+      p_designaction=NULL;
+      p_viewaction=NULL;
+      p_saveaction=NULL;     
     }
     else {
       p_designaction=new KToggleAction(QIcon::fromTheme("document-edit"),i18n("&Design mode"),ac);
@@ -156,17 +160,17 @@ void hk_kdetablepartwidget::setupActions(KActionCollection* ac)
   ac-> addAction("reload",p_reloadaction);
   connect(p_reloadaction,SIGNAL(triggered()),this,SLOT(reload_table()));    
     
-  p_filterdefinitionaction=new KToggleAction(QIcon(new KIconEngine("filter",loader)),i18n("Filterdefinition"),ac);
+  p_filterdefinitionaction=new KToggleAction(QIcon(loader.iconPath("filter",KIconLoader::User)),i18n("Filterdefinition"),ac);
   ac-> addAction("filterdefinition",p_filterdefinitionaction);
   connect(p_filterdefinitionaction,SIGNAL(triggered()),toolbar(),SLOT(filterdefinebutton_clicked()));    
 
-  p_filterexecaction=new KToggleAction(QIcon(new KIconEngine("filterexec",loader)),i18n("Filterexecution"),ac);
+  p_filterexecaction=new KToggleAction(QIcon(loader.iconPath("filterexec",KIconLoader::User)),i18n("Filterexecution"),ac);
   ac-> addAction("filterexec",p_filterexecaction);
   connect(p_filterexecaction,SIGNAL(triggered()),toolbar(),SLOT(filterexecbutton_clicked())); 
   
   toolbar()->set_filteractions(p_filterdefinitionaction,p_filterexecaction);
       
-  p_columndialogaction = new KAction(QIcon(new KIconEngine("grid22x22",loader)),i18n("&Gridcolumns"),ac);
+  p_columndialogaction = new KAction(QIcon(loader.iconPath("grid22x22",KIconLoader::User)),i18n("&Gridcolumns"),ac);
   ac-> addAction("gridcolumn",p_columndialogaction);
   connect(p_columndialogaction,SIGNAL(triggered()),(const QObject *) kdegrid(),SLOT(show_gridcolumndialog())); 
   p_columndialogaction->setEnabled(!hk_class::runtime_only());
@@ -181,7 +185,7 @@ void hk_kdetablepartwidget::setupActions(KActionCollection* ac)
   ac-> addAction("paste",p_pasteaction);
   connect(p_pasteaction,SIGNAL(triggered()),(const QObject *) kdegrid()->simplegrid(),SLOT(paste()));
 
-  p_findaction = new KAction(QIcon(new KIconEngine("find",loader)),i18n("&Find in columns"),ac);
+  p_findaction = new KAction(QIcon(loader.iconPath("find",KIconLoader::User)),i18n("&Find in columns"),ac);
   ac-> addAction("findcolumn",p_findaction);
   connect(p_findaction,SIGNAL(triggered()),kdegrid(),SLOT(find_clicked()));
 }

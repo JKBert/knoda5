@@ -30,7 +30,7 @@ hk_kdelineedit::hk_kdelineedit(QWidget* wid,hk_form* form)
 ,hk_dslineedit(form)
 {
     QObject::connect(this,SIGNAL(textChanged(const QString& )),this,SLOT(slot_data_changed()));
-    QObject::connect(this,SIGNAL(lostFocus()),this,SLOT(slot_focus_lost()));
+    QObject::connect(this,SIGNAL(editingFinished()),this,SLOT(slot_focus_lost()));
     connect(this,SIGNAL(aboutToShowContextMenu(QMenu*)),this, SLOT(extendContextMenu(QMenu*)));
 #ifdef HK_DEBUG
     hkclassname("hk_kdelineedit");

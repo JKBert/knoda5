@@ -8,7 +8,7 @@ target_link_libraries(hk_kde5tablepart
     KF5::CoreAddons
     KF5::Parts
     ${HK_CLASSES_LIB}
-    hk_kde5classes)
+    ${LIB_MODULE_NAME})
 
 install(TARGETS hk_kde5tablepart DESTINATION ${KDE_INSTALL_PLUGINDIR})
 
@@ -16,5 +16,5 @@ install(TARGETS hk_kde5tablepart DESTINATION ${KDE_INSTALL_PLUGINDIR})
 ########### install files ###############
 
 install(FILES  hk_kde5tablepart.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
-install(FILES  hk_kdetablepart.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/hk_kde5classes)
-install(FILES  hk_kdetablepart.h DESTINATION ${INCLUDE_INSTALL_DIR}/hk_kde5classes CONFIGURATIONS Debug)
+install(FILES  hk_kdetablepart.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/${LIB_MODULE_NAME})
+install(FILES  hk_kdetablepart.h DESTINATION ${INCLUDE_INSTALL_DIR}/${LIB_MODULE_NAME} CONFIGURATIONS Debug)

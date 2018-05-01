@@ -17,6 +17,11 @@
 //***********************************************
 //***  hk_kdegrid PART definition             ***
 //***********************************************
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#else
+#error config.h is needed but not included 
+#endif
 #include "hk_kdegridpart.h"
 #include "hk_kdesimpleform.h"
 #include "hk_kde4simplegrid.h"
@@ -46,7 +51,7 @@ KAboutData* p_aData = NULL;
 KAboutData& getAboutData()
 {
   if ( p_aData == NULL) {
-    p_aData = new KAboutData("hk_kde5classes", ki18n("hk_kde5gridpart").toString(),
+    p_aData = new KAboutData(LIB_MODULE_NAME, ki18n("hk_kde5gridpart").toString(),
       "0.2", ki18n("Datasource editor").toString(),
       KAboutLicense::GPL,
       ki18n("(c) 2002-2003, Horst Knorr\n(c) 2010-2018 Patrik Hanak").toString(),QString(),
@@ -70,10 +75,10 @@ hk_kdegridpart::hk_kdegridpart(QWidget* pWidget,QObject* parent, const QVariantL
     p_grid = new hk_kdegrid(pWidget,"hk_kdegridpart",0,form);   
     p_grid->setpart(this);
     setWidget(p_grid);
-    KIconLoader* loader=KIconLoader::global();
+    KIconLoader loader (LIB_MODULE_NAME);
     QIcon::setThemeName("oxygen");
     
-    p_columndialogaction = new KAction(QIcon(new KIconEngine("grid22x22",loader)),i18n("&Gridcolumns"),actionCollection());
+    p_columndialogaction = new KAction(QIcon(loader.iconPath("grid22x22",KIconLoader::User)),i18n("&Gridcolumns"),actionCollection());
     actionCollection() -> addAction("gridcolumn",p_columndialogaction);
     connect(p_columndialogaction,SIGNAL(triggered()),this,SLOT(show_gridcolumndialog()));
     p_columndialogaction->setEnabled(!hk_class::runtime_only());
@@ -88,7 +93,7 @@ hk_kdegridpart::hk_kdegridpart(QWidget* pWidget,QObject* parent, const QVariantL
     actionCollection() -> addAction("paste",p_pasteaction);
     connect(p_pasteaction,SIGNAL(triggered()),p_grid->simplegrid(),SLOT(paste()));
     
-    p_findaction = new KAction(QIcon(new KIconEngine("find",loader)),i18n("&Find in columns"),actionCollection());
+    p_findaction = new KAction(QIcon(loader.iconPath("find",KIconLoader::User)),i18n("&Find in columns"),actionCollection());
     actionCollection() -> addAction("findcolumn",p_findaction);
     connect(p_findaction,SIGNAL(triggered()),p_grid,SLOT(find_clicked()));     
     setXMLFile("hk_kdegridpart.rc");

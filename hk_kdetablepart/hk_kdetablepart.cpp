@@ -18,13 +18,15 @@
 //***  hk_kdetable PART definition             ***
 //***********************************************
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#else
+#error config.h is needed but not included 
+#endif
 #include "hk_kdetablepart.h"
 #include "../hk_kdeclasses/hk_kdetablepartwidget.h"
 #include <KAboutData>
-#include <kcomponentdata.h>
 #include <kstandardaction.h>
-#include <kstandarddirs.h>
-#include <kiconloader.h>
 #include <kaction.h>
 #include <klocale.h>
 
@@ -57,7 +59,7 @@ KAboutData* hk_kdetablepartprivate::p_aData = NULL;
 KAboutData& hk_kdetablepartprivate::getAboutData()
 {
     if ( p_aData == NULL) {
-        p_aData = new KAboutData("hk_kde5classes", ki18n("hk_kde5tablepart").toString(),
+        p_aData = new KAboutData(LIB_MODULE_NAME, ki18n("hk_kde5tablepart").toString(),
             "0.2", ki18n("database table editor").toString(),
             KAboutLicense::GPL,
             ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2018 Patrik Hanak").toString(),QString(), 
@@ -79,8 +81,6 @@ hk_kdetablepart::hk_kdetablepart(QWidget* pWidget, QObject* parent, const QVaria
     p_private->p_table = new hk_kdetablepartwidget(pWidget,0);
     p_private->p_table->setAttribute(Qt::WA_DeleteOnClose);
     setWidget(p_private->p_table);
-    //TBP KIconLoader* loader=KIconLoader::global();
-    //TBP loader->addAppDir("hk_kde5classes");
     setXMLFile("hk_kdetablepart.rc");
     p_private->p_table-> setupActions(actionCollection());
 }
@@ -95,19 +95,10 @@ hk_kdetablepart::~hk_kdetablepart()
   delete p_private;
 }
 
-
-
-/*void hk_kdetablepart::show_dbdesignercolumndialog(void)
-{
-    p_private->p_table->simpledbdesigner()->show_dbdesignercolumndialog();
-}*/
-
-
 void hk_kdetablepart::setReadWrite(bool rw)
 {
     KParts::ReadWritePart::setReadWrite(rw);
 }
-
 
 bool hk_kdetablepart::openFile()
 {
@@ -118,27 +109,11 @@ bool hk_kdetablepart::openFile()
     return true;
 }
 
-
 bool hk_kdetablepart::saveFile()
 {
     return true;
 }
 
-/*TBP
-KAboutData* hk_kdetablepart::createAboutData()
-{
-    KAboutData* a= new KAboutData("hk_kde5tablepart", "hk_kde5tablepart",ki18n("hk_kde5tablepart"),
-        "0.2", ki18n("database table editor"),
-        KAboutData::License_GPL,
-        ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2018 Patrik Hanak"),ki18n(NULL), "http://sourceforge.net/projects/knoda5/",
-     "knoda4-bugs@lists.sourceforge.net");
-    a->addAuthor(ki18n("Horst Knorr"),ki18n("Author of original version"), "hk_classes@knoda.org","http://www.knoda.org");
-    a->addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE5 port"), "knoda4-admins@lists.sourceforge.net");    
-
-
-    return a;
-
-} */
 
 
 

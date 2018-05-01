@@ -44,7 +44,6 @@
 #include <kcombobox.h>
 #include <klocale.h>
 //TBP #include <kservice.h>
-#include <kiconloader.h>
 #include <kapplication.h>
 #include <kactionmenu.h>
 #include <kmenu.h>
@@ -513,9 +512,6 @@ hk_kdetablepartwidget* knodamaindockwindow::new_table(void)
       return NULL;
 
     }
-    KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde4classes");
-
     p_partmanager->addPart(p_part);
     int i = tabs() -> addTab(query,i18n("Query"));
     tabs() -> setTabIcon(i,KIcon(as_view?"document-preview":"document-edit-verify"));

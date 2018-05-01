@@ -23,7 +23,7 @@ target_link_libraries(knoda5
     KF5::I18n
     KF5::KDELibs4Support
     ${HK_CLASSES_LIB}
-    ${LIBRARY_OUTPUT_PATH}/libhk_kde5classes.so)
+    ${LIBRARY_OUTPUT_PATH}/lib${LIB_MODULE_NAME}.so)
 
 
 install(TARGETS knoda5 ${INSTALL_TARGETS_DEFAULT_ARGS})
