@@ -68,10 +68,9 @@ KAboutData& getAboutData()
 hk_kdegridpart::hk_kdegridpart(QWidget* pWidget,QObject* parent, const QVariantList &)
 :KParts::ReadWritePart(parent)
 {
-  setObjectName("hk_kdegridpart");  
-  setComponentData(getAboutData());
-  //TBP hk_kdesimpleform* form=dynamic_cast<hk_kdesimpleform*>(pWidget);
-    hk_kdesimpleform* form = NULL;
+    setObjectName("hk_kdegridpart");  
+    setComponentData(getAboutData());
+    hk_kdesimpleform* form=dynamic_cast<hk_kdesimpleform*>(pWidget);
     p_grid = new hk_kdegrid(pWidget,"hk_kdegridpart",0,form);   
     p_grid->setpart(this);
     setWidget(p_grid);

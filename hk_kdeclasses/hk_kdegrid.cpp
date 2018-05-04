@@ -16,7 +16,6 @@
 #include "hk_class.h"
 #include <hk_kdegrid.h>
 #include <hk_database.h>
-#include <hk_kdegrid.moc>
 #include <hk_kde4simplegrid.h>
 #include <hk_kde4simplegrid_p.h>
 #include <hk_kderowselector.h>
@@ -36,11 +35,7 @@
 #include <qitemselectionmodel.h>
 #include <qheaderview.h>
 #include <qclipboard.h>
-
-#include <kcomponentdata.h>
 #include <kstandardaction.h>
-#include <kstandarddirs.h>
-#include <kiconloader.h>
 #include <kaction.h>
 #include <klocale.h>
 #include <kdebug.h>
@@ -50,7 +45,6 @@
 
 class hk_kdegridprivate
 {
-    
  public:
      
     enum Source
@@ -604,12 +598,12 @@ void    hk_kdegrid::load_column_from_file(void)
 #ifdef HK_DEBUG
     hkdebug("hk_kdegrid::load_column_from_file");
 #endif
-    /*TBP hk_column *c = gridcolumn(p->p_view->currentIndex().column()) ?
+    hk_column *c = gridcolumn(p->p_view->currentIndex().column()) ?
                    gridcolumn(p->p_view->currentIndex().column())->column() : NULL;
-    QString s = KFileDialog::getOpenFileName(KUrl("kfiledialog:///bin"), QString::null, this);
+    QString s = KFileDialog::getOpenFileName(QUrl("kfiledialog:///bin"), QString::null, this);
 
     if (!s.isEmpty())
-        c->load_from_file(u2l(s.toUtf8().data())); */
+        c->load_from_file(u2l(s.toUtf8().data()));
 }
 
 void    hk_kdegrid::save_column_to_file(void)
@@ -617,11 +611,11 @@ void    hk_kdegrid::save_column_to_file(void)
 #ifdef HK_DEBUG
     hkdebug("hk_kdegrid::save_column_to_file");
 #endif
-    /*TBP hk_column *c = gridcolumn(p->p_view->currentIndex().column()) ?
+    hk_column *c = gridcolumn(p->p_view->currentIndex().column()) ?
                    gridcolumn(p->p_view->currentIndex().column())->column() : NULL;
-    QString s = KFileDialog::getSaveFileName(KUrl("kfiledialog:///bin"), QString::null, this);
+    QString s = KFileDialog::getSaveFileName(QUrl("kfiledialog:///bin"), QString::null, this);
 
-    if (!s.isEmpty()) c->save_to_file(u2l(s.toUtf8().data())); */
+    if (!s.isEmpty()) c->save_to_file(u2l(s.toUtf8().data()));
 }
 
 void    hk_kdegrid::show_gridcolumndialog(void)

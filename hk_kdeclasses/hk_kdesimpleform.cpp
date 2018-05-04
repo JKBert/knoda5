@@ -256,14 +256,14 @@ hk_dsboolean*       hk_kdesimpleform::widget_specific_new_bool(void)
 #ifdef HK_DEBUG
     hkdebug("hk_kdesimpleform::widget_specific_new_bool(void)");
 #endif
-    hk_kdeboolean* b=new hk_kdeboolean(this,this);
+   /* TBP  hk_kdeboolean* b=new hk_kdeboolean(this,this);
     b->show();
 #ifdef HK_DEBUG
     b->hkclassname("bool");
 #endif
     b->setBackgroundRole(backgroundRole());
 //	set_focus(b);
-    return b;
+    return b; */ return NULL;
 }
 
 
@@ -302,12 +302,12 @@ hk_button*      hk_kdesimpleform::widget_specific_new_button(void)
 #ifdef HK_DEBUG
     hkdebug("hk_kdesimpleform::widget_specific_new_button(void)");
 #endif
-    hk_kdebutton* b=new hk_kdebutton(this,this);
+    /* TBP hk_kdebutton* b=new hk_kdebutton(this,this);
     b->show();
 #ifdef HK_DEBUG
     b->hkclassname("button");
 #endif
-    return b;
+    return b; */ return NULL;
 }
 
 
@@ -330,12 +330,12 @@ hk_subform*   hk_kdesimpleform::widget_specific_new_subform(void)
 #ifdef HK_DEBUG
     hkdebug("hk_kdesimpleform::widget_specific_new_subform(void)");
 #endif
-    hk_kdesubform* s=new hk_kdesubform(this);
+    /* TBP hk_kdesubform* s=new hk_kdesubform(this);
     s->show();
 #ifdef HK_DEBUG
     s->hkclassname("subform");
 #endif
-    return s;
+    return s; */ return NULL;
 }
 
 
@@ -344,52 +344,52 @@ hk_label* hk_kdesimpleform::widget_specific_new_label(void)
 #ifdef HK_DEBUG
   hkdebug("hk_kdesimpleform::widget_specific_new_label");
 #endif
-  hk_kdelabel* s=new hk_kdelabel(this);
+  /* TBP hk_kdelabel* s=new hk_kdelabel(this);
   s->show();
 #ifdef HK_DEBUG
     s->hkclassname("label");
 #endif
     s->setBackgroundRole(backgroundRole());
-    return s; 
+    return s; */ return NULL;
 }
 
 hk_dsdate*       hk_kdesimpleform::widget_specific_new_date(void)
 {
-   hk_kdedate* l=new hk_kdedate(this,this);
+   /* TBP hk_kdedate* l=new hk_kdedate(this,this);
    l->show();
 #ifdef HK_DEBUG
     l->hkclassname("date");
 #endif
 //	set_focus(l);
-    return l;
+    return l; */ return NULL;
 }
 
 hk_dsimage*      hk_kdesimpleform::widget_specific_new_image(void)
 {
-  hk_kdeimage* i=new hk_kdeimage(this,this);
+  /* TBP hk_kdeimage* i=new hk_kdeimage(this,this);
 #ifdef HK_DEBUG
   i->hkclassname("image");
   i->show();
 #endif
-return i;
+  return i; */ return NULL;
 }
 
 
 hk_tabvisible*   hk_kdesimpleform::widget_specific_new_tabvisible(void)
 {
-return NULL;
+  return NULL;
 }
 
 
 
 void    hk_kdesimpleform::widget_specific_fieldresize(hk_visible* v)
 {
- if (!v ||!p_property) return;
-   if (v==p_property->object())
+  /* TBP if (!v ||!p_property) return;
+    if (v==p_property->object())
  	{
 	//p_property->set_visible();
-	p_property->set_geometry();
-	}
+	  p_property->set_geometry();
+	} */
 }
 
 
@@ -409,7 +409,7 @@ void hk_kdesimpleform::before_source_vanishes(void)
     hkdebug("hk_kdesimpleform::before_source_vanishes");
 #endif
     bool doemit=false;
-
+/* TBP
     if (p_kdeform) p_kdeform->save_form_when_changed();
     else 
     if (p_formpartwidget)p_formpartwidget->save_form_when_changed();
@@ -426,10 +426,10 @@ void hk_kdesimpleform::before_source_vanishes(void)
     }
     p_sourcevanishflag=true;
 
-if (doemit)
- {
-   setParent(NULL);
-   setAttribute(Qt::WA_DeleteOnClose);
+  if (doemit)
+  {
+    setParent(NULL);
+    setAttribute(Qt::WA_DeleteOnClose);
     if (p_kdeform) {
       hk_kdeform* k=p_kdeform;
       set_kdeform(NULL);
@@ -442,8 +442,8 @@ if (doemit)
        k->close();
       }
     else p->close();
-   close();
-}
+    close();
+  } */
 }
 
 
@@ -674,7 +674,7 @@ bool hk_kdesimpleform::formeventFilter(QObject* object,QEvent* event)
 #endif
     QWidget* widget= (QWidget*) object;
 // check for special widget treatment
-
+/* TBP
     if (dynamic_cast <hk_visible*>(object) == NULL)
     {
         widget = widget->parentWidget();
@@ -794,16 +794,14 @@ bool hk_kdesimpleform::formeventFilter(QObject* object,QEvent* event)
         default              :;
 
     }
-
+*/
     return QWidget::eventFilter(object,event);
 
 }
 
-
-
 void hk_kdesimpleform::move_widgets(int xdiff,int ydiff)
 {
-
+/* TBP
 //move object
   QWidget* wid=p_focus->widget();
   if (!wid) return;
@@ -893,9 +891,7 @@ void hk_kdesimpleform::move_widgets(int xdiff,int ydiff)
         if (v) v->set_movebuddylabel(true);
         it++;
        }
-  }
-
-
+  } */
 }
 
 
@@ -1105,7 +1101,7 @@ void hk_kdesimpleform::set_focus(QWidget*f, bool p_controlbutton)
 #ifdef HK_DEBUG
     hkdebug("hk_kdesimpleform::set_focus");
 #endif
-
+/* TBP
     if (f==NULL || f==this)
     {
         clearfocus();
@@ -1130,11 +1126,6 @@ void hk_kdesimpleform::set_focus(QWidget*f, bool p_controlbutton)
         }
 	if (widget) f=widget;
         }
-
-
-
-
-
     if (p_controlbutton==true)
     {
 
@@ -1158,8 +1149,8 @@ void hk_kdesimpleform::set_focus(QWidget*f, bool p_controlbutton)
         QObject::connect(p_focus,SIGNAL(size_changed()),p_property,SLOT(focus_resized()));
         set_currentobject(v);
     }
-
-emit signal_focuswidget_changed();
+*/
+  emit signal_focuswidget_changed();
 }
 
 
@@ -1411,54 +1402,50 @@ void hk_kdesimpleform::mousemenu(QMouseEvent* m)
 
 }
 
-
 void hk_kdesimpleform::show_property(void)
-{
-    if (mode()!=hk_presentation::designmode)return;
-    bool newproperty=false;
-    if (p_property==NULL)
-    {
-
-         if (p_kdeform||p_formpartwidget)
-	 {
-	   p_property =new hk_kdeproperty(this, 0, 0);
-         if (p_kdeform)
+{ /*TBP
+  if (mode()!=hk_presentation::designmode) return;
+  bool newproperty=false;
+  if (p_property==NULL)
+  {
+    if (p_kdeform||p_formpartwidget)
+	{
+	  p_property =new hk_kdeproperty(this, 0, 0);
+      if (p_kdeform)
+      {
+        QPixmap p;
+	    p_private->p_propertydock= new QDockWidget(p_kdeform);
+	    p_private->p_propertydock->setWidget(p_property);
+	  }
+	  else
+	    if (p_formpartwidget)
         {
-         QPixmap p;
-	 p_private->p_propertydock= new QDockWidget(p_kdeform);
-	 p_private->p_propertydock->setWidget(p_property);
-	}
-	else
-	if (p_formpartwidget)
-        {
-	 QPixmap p;
-	 p_private->p_propertydock=new QDockWidget(p_formpartwidget);
-	 p_private->p_propertydock->setWidget(p_property);
-	 p_formpartwidget->addDockWidget(Qt::RightDockWidgetArea,p_private->p_propertydock);
-	}
-
-       newproperty=true;
-       }
+	      QPixmap p;
+	      p_private->p_propertydock=new QDockWidget(p_formpartwidget);
+	      p_private->p_propertydock->setWidget(p_property);
+	      p_formpartwidget->addDockWidget(Qt::RightDockWidgetArea,p_private->p_propertydock);
+	    }
+      newproperty=true;
     }
-    if (p_property!=NULL &&!masterform())
-    {
+  }
+  if (p_property!=NULL &&!masterform())
+  {
      if (p_private->p_propertydock)
-        {
-          p_private->p_propertydock->show();
-	}
-
+     {
+       p_private->p_propertydock->show();
+	 }
      else
-     p_property->show();
+       p_property->show();
      //qApp->processEvents();
-       if (newproperty)
-       {
-	int screenwidth=qApp->desktop()->availableGeometry(this).width();
-	int screenheight=qApp->desktop()->availableGeometry(this).height();
-	     if (!p_private->p_propertydock)
-		p_property->move(screenwidth-p_property->frameGeometry().width(),
-			 screenheight-p_property->frameGeometry().height());
-	}
-    }
+     if (newproperty)
+     {
+	   int screenwidth=qApp->desktop()->availableGeometry(this).width();
+	   int screenheight=qApp->desktop()->availableGeometry(this).height();
+	   if (!p_private->p_propertydock)
+	     p_property->move(screenwidth-p_property->frameGeometry().width(),
+	   screenheight-p_property->frameGeometry().height());
+	 }
+  } */
 }
 
 
@@ -1572,10 +1559,9 @@ void hk_kdesimpleform::widget_specific_presentationdatasource(long p)
 #ifdef HK_DEBUG
     hkdebug("hk_kdesimpleform::widget_specific_new_presentationdatasource");
 #endif
-    if (p_kdeform!=NULL) p_kdeform->set_presentationdatasource(p,false);
+  /* TBP  if (p_kdeform!=NULL) p_kdeform->set_presentationdatasource(p,false);
     else
-    if (p_formpartwidget!=NULL) p_formpartwidget->set_presentationdatasource(p,false);
-
+    if (p_formpartwidget!=NULL) p_formpartwidget->set_presentationdatasource(p,false); */
 }
 
 
@@ -1613,7 +1599,7 @@ void hk_kdesimpleform::set_actions(KActionCollection* collection)
     p_cutaction=createAction(i18n("Cu&t"),"cutclicked",collection,this,&hk_kdesimpleform::cut);
     p_cutaction->setShortcut(Qt::CTRL+Qt::Key_X);
     p_formpropertyaction=createAction(i18n("&Propertyeditor"),"viewproperty",collection,this,&hk_kdesimpleform::show_property);
-    p_formpropertyaction->setIcon(QIcon(opravit("propertyeditor",loader)));
+    //TBP p_formpropertyaction->setIcon(QIcon(opravit("propertyeditor",loader)));
     
     p_resizeaction=new KActionMenu(i18n("Adjust &size"),collection);
     collection->addAction("size",p_resizeaction);
@@ -1640,7 +1626,7 @@ void hk_kdesimpleform::set_actions(KActionCollection* collection)
     p_alignaction->addAction(p_aligntopaction);
     p_alignaction->addAction(p_alignbottomaction);
     p_private->p_dbdesigneraction=createAction(i18n("Database designer"),"dbdesigner",collection,this,&hk_kdesimpleform::dbdesignaction);
-    p_private->p_dbdesigneraction->setIcon(QIcon(opravit("dbdesigner",loader)));
+    // TBP p_private->p_dbdesigneraction->setIcon(QIcon(opravit("dbdesigner",loader)));
    }
    else
    {
@@ -1853,7 +1839,7 @@ bool    hk_kdesimpleform::set_mode(enum_mode s)
     interpreter()->set_block_execution(s==filtermode);
     p_private->while_modechange=true;
     bool r=hk_form::set_mode(s);
-    if (!r) {  
+    /* TBP if (!r) {  
         p_private->while_modechange=false;
         return false;
     }
@@ -1889,7 +1875,7 @@ bool    hk_kdesimpleform::set_mode(enum_mode s)
     else
         if (p_formpartwidget) p_formpartwidget->set_mode(s);
     p_private->while_modechange=false;
-
+*/
     return r;
 }
 
@@ -2036,86 +2022,79 @@ return  p_formpartwidget;
 }
 
 void hk_kdesimpleform::script_error(hk_visible* v, hk_interpreter::enum_action a)
-{
-   if (!v)
-   {
+{ /* TBP
+  if (!v)
+  {
     cerr<<"hk_kdesimpleform::script_error called without visible object!"<<endl;
     return;
-
-   }
-
-p_while_errorhandling=true;
-
-    hk_string error=replace_all("%LINENUMBER%",hk_translate("Line %LINENUMBER%: "),longint2string(interpreter()->error_rownumber()))
-    				+interpreter()->errormessage();
-
-hk_dsgridcolumn* gc=dynamic_cast<hk_dsgridcolumn*>(v);
-if (gc)
-  {
-    error=replace_all("%1",hk_translate("Gridcolumn '%1':\n"),gc->columnname())+error;
-
-
   }
 
-hk_dsvisible* dv=dynamic_cast<hk_dsvisible*>(v);
-if (dv)
-   {
-	hk_datasource* ds=dv->datasource();
+  p_while_errorhandling=true;
+
+  hk_string error=replace_all("%LINENUMBER%",hk_translate("Line %LINENUMBER%: "),longint2string(interpreter()->error_rownumber()))
+    				+interpreter()->errormessage();
+
+  hk_dsgridcolumn* gc=dynamic_cast<hk_dsgridcolumn*>(v);
+  if (gc)
+  {
+    error=replace_all("%1",hk_translate("Gridcolumn '%1':\n"),gc->columnname())+error;
+  }
+
+  hk_dsvisible* dv=dynamic_cast<hk_dsvisible*>(v);
+  if (dv)
+  {
+    hk_datasource* ds=dv->datasource();
 	if (ds) ds->set_ignore_changed_data();
-   }
+  }
 
-if (!runtime_only())
-   {
-
-     if (!gc||(gc &&!a==hk_interpreter::a_on_key))
-     {
-       if (a==hk_interpreter::a_on_open) p_private->while_modechange=false;
-       if (kdeform()) kdeform()->set_mode(hk_presentation::designmode);
-        else  
-	  set_mode(hk_presentation::designmode);
-     }
-     else
-     {
-       show_warningmessage(error);
-       return;
-     }
+  if (!runtime_only())
+  {
+    if (!gc||(gc &&!a==hk_interpreter::a_on_key))
+    {
+      if (a==hk_interpreter::a_on_open) p_private->while_modechange=false;
+      if (kdeform()) kdeform()->set_mode(hk_presentation::designmode);
+      else  
+	    set_mode(hk_presentation::designmode);
+    }
+    else
+    {
+      show_warningmessage(error);
+      return;
+    }
     if (p_property)
-	    {
-	     if (mode()==hk_form::designmode)
-	       set_focus(dynamic_cast<QWidget*>(v),false);
-	     set_currentobject(v);
-	     switch (a)
-	     {
-		case hk_interpreter::a_click :
-				p_property->pushactionbutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
-				break;
+	{
+	  if (mode()==hk_form::designmode)
+	    set_focus(dynamic_cast<QWidget*>(v),false);
+	  set_currentobject(v);
+	  switch (a)
+	  {
+	    case hk_interpreter::a_click :
+		  p_property->pushactionbutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
+		  break;
 		case hk_interpreter::a_doubleclick :
-				p_property->doubleclickactionbutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
-				break;
+		  p_property->doubleclickactionbutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
+		  break;
 		case hk_interpreter::a_on_open :
-				p_property->openactionbutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
-				break;
+		  p_property->openactionbutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
+		  break;
 		case hk_interpreter::a_on_close :
-				p_property->closeactionbutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
-				break;
-
+		  p_property->closeactionbutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
+		  break;
 		case hk_interpreter::a_on_getfocus :
-				p_property->ongetfocusbutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
-				break;
+		  p_property->ongetfocusbutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
+		  break;
 		case hk_interpreter::a_on_loosefocus :
-				p_property->onloosefocusbutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
-				break;
-
+		  p_property->onloosefocusbutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
+		  break;
 		case hk_interpreter::a_on_key :
-				p_property->onkeybutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
-				break;
-
+		  p_property->onkeybutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
+		  break;
 		case hk_interpreter::a_after_row_change :
-				p_property->afterrowchangebutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
-				break;
+		  p_property->afterrowchangebutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
+		  break;
 		case hk_interpreter::a_before_row_change :
-				p_property->beforerowchangebutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
-				break;
+		  p_property->beforerowchangebutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
+		  break;
 		case hk_interpreter::a_after_update :
 				p_property->afterupdatebutton_clicked(presentation()->interpreter()->error_rownumber()-1,error);
 				break;
@@ -2142,58 +2121,48 @@ if (!runtime_only())
 				break;
 			default:;
 
-	     } 
-           } else 
-               show_warningmessage(hk_string("No Property editor: ") + error);
+	    } 
+      } else 
+        show_warningmessage(hk_string("No Property editor: ") + error);
 
    }
-   else     show_warningmessage(error);
-
-
-
+   else
+     show_warningmessage(error); */
 }
-
 
 /*bool hk_kdesimpleform::ctrl_key_pressed(void) const
 {
 return p_controlbutton;
 }*/
 
-
 void hk_kdesimpleform::grid_partinfocus(hk_kdegridpart* p)
 {
-  if (p_kdeform) p_kdeform->grid_partinfocus(p);
+/*TBP  if (p_kdeform) p_kdeform->grid_partinfocus(p);
   else
-  if (p_formpartwidget) p_formpartwidget->grid_partinfocus(p);
-
+  if (p_formpartwidget) p_formpartwidget->grid_partinfocus(p); */
 }
 
 void hk_kdesimpleform::grid_partoutfocus(hk_kdegridpart* g,QFocusEvent* e)
 {
- if (g)
-{
-  hk_kdegrid* grid=g->grid();
-  if (e->reason()==Qt::TabFocusReason || e->reason()==Qt::BacktabFocusReason )
+  /* TBP if (g)
   {
-  QWidget* w=dynamic_cast<QWidget*>(e->reason()==Qt::BacktabFocusReason
-  		?taborder_previous(grid)
-	      	:taborder_next(grid));
+    hk_kdegrid* grid=g->grid();
+    if (e->reason()==Qt::TabFocusReason || e->reason()==Qt::BacktabFocusReason )
+    {
+      QWidget* w=dynamic_cast<QWidget*>(e->reason()==Qt::BacktabFocusReason
+  		?taborder_previous(grid) :taborder_next(grid));
 
-  if (w) w->setFocus();
+      if (w) w->setFocus();
+    }
   }
-}
 
-if (p_kdeform)p_kdeform->grid_partoutfocus(0L);
-else
-if (p_formpartwidget)p_formpartwidget->grid_partoutfocus(0L);
+  if (p_kdeform) p_kdeform->grid_partoutfocus(0L);
+  else
+    if (p_formpartwidget)p_formpartwidget->grid_partoutfocus(0L);
+ */   
 /*p_copyaction->setEnabled(false);
 p_pasteaction->setEnabled(false);*/
-
 }
-
-
-
-
 
 void hk_kdesimpleform::copy(void)
 {
@@ -2267,7 +2236,7 @@ if (mode()==designmode)
 
 void hk_kdesimpleform::dbdesignaction(void)
 {
-     if (p_private->p_designer)
+ /*TBP    if (p_private->p_designer)
      	{
 	 p_private->p_designer->raise();
 	 return;
@@ -2279,13 +2248,13 @@ void hk_kdesimpleform::dbdesignaction(void)
     p_private->p_designer->designer()->set_presentation(this);
     set_block_has_changed(true);
     p_private->p_designer->show();
-    set_block_has_changed(false); 
+    set_block_has_changed(false); */
 }
 
 void hk_kdesimpleform::designer_deleted(void)
 {
-  set_currentobject(p_property->object());
-  p_private->p_designer=NULL;
+  /*TBP set_currentobject(p_property->object());
+  p_private->p_designer=NULL; */
 }
 
 bool hk_kdesimpleform::focus_multipleselected(void) const
@@ -2311,10 +2280,10 @@ emit signal_has_changed();
 
 void hk_kdesimpleform::load_form(const hk_string& name)
 {
-  p_private -> while_loading = true;
+ /*TBP p_private -> while_loading = true;
   hk_form::load_form(name);
   if (p_formpartwidget) p_formpartwidget->set_caption();   
-  p_private->while_loading = false;
+  p_private->while_loading = false; */
 }
 
 
@@ -2386,8 +2355,6 @@ void hk_kdesimpleform::goto_taborder_last()
    {
    w->setFocus();
    }
-
-
 }
 
 void hk_kdesimpleform::set_focus(hk_visible* v)
@@ -2395,7 +2362,6 @@ void hk_kdesimpleform::set_focus(hk_visible* v)
   if (!v) return;
   QWidget* w=dynamic_cast<QWidget*>(v);
   if (w) w->setFocus();
-
 }
 
 
