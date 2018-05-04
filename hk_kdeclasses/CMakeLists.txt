@@ -28,18 +28,18 @@ set(hk_kdeclasses_LIB_SRCS
 #TBP    hk_kdeeximportdatabase.cpp
     hk_kdefilterdialogbase.cpp
     hk_kdefilterdialog.cpp
-#TBP    hk_kdefinddialog.cpp
-#TBP    hk_kdefinddialogbase.cpp
+    hk_kdefinddialog.cpp
+    hk_kdefinddialogbase.cpp
 #TBP    hk_kdeform.cpp
     hk_kdeformdatasourcedialog.cpp
     hk_kdeformdatasourcedialogbase.cpp
     hk_kdeformfocus.cpp
  #TBP   hk_kdeformpartwidget.cpp
     hk_kdegrid.cpp
- #[[ TBP     hk_kdegridcolumndialogbase.cpp
+    hk_kdegridcolumndialogbase.cpp
     hk_kdegridcolumndialog.cpp
-    hk_kdeimage.cpp
-    hk_kdeindexeditwindow.cpp ]]
+  #TBP   hk_kdeimage.cpp
+  #TBP  hk_kdeindexeditwindow.cpp
     hk_kdeinterpreterdialog.cpp
   #TBP  hk_kdelabel.cpp
     hk_kdelineedit.cpp
@@ -74,7 +74,7 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdereportsectiondialog.cpp
     hk_kdereportsectiondialogbase.cpp
     hk_kderowselector.cpp
- #TBP   hk_kdesimpleform.cpp
+    hk_kdesimpleform.cpp
     hk_kde4simplegrid.cpp
     hk_kde4simplegrid_p.cpp 
     hk_kdesimplereport.cpp
@@ -89,8 +89,8 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdetabledesign.cpp 
     hk_kdetablepartwidget.cpp
     hk_kdetoolbar.cpp
- #[[  TBP     hk_kdexmlexportdialog.cpp
-    hk_kdexmlexportdialogbase.cpp ]]
+ #TBP     hk_kdexmlexportdialog.cpp
+ #TBP   hk_kdexmlexportdialogbase.cpp
     knodamaindockwindow.cpp
     knodamaindockwindowbase.cpp 
 )
