@@ -35,7 +35,7 @@
 #include <kglobal.h>
 #include <kiconloader.h>
 #include <klocale.h>
-// TBP icons
+
 /*
  *  Constructs a hk_kdeindexeditdialog which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'
@@ -43,8 +43,7 @@
 hk_kdeindexeditdialog::hk_kdeindexeditdialog( QWidget* parent,  const char* name, Qt::WFlags fl )
 : QWidget( parent, fl ), hk_dsvisible()
 {
-    KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde4classes");
+    QIcon::setThemeName("oxygen");
     setObjectName( QString::fromAscii(name == NULL? "hk_kdeindexeditdialog":name ) );
     resize( 486, 245 );
     setWindowTitle( i18n( "Index Edit - Table:"  ) );
@@ -79,12 +78,12 @@ hk_kdeindexeditdialog::hk_kdeindexeditdialog( QWidget* parent,  const char* name
 
     addbutton = new QToolButton(this);
     addbutton->setObjectName(QString::fromAscii("addbutton"));
-    addbutton->setIcon( loader->loadIcon("go-next",KIconLoader::Small));
+    addbutton->setIcon(QIcon::fromTheme("go-next"));
     Layout2->addWidget( addbutton );
 
     deletebutton = new QToolButton(this);
     deletebutton->setObjectName(QString::fromAscii("deletebutton"));
-    deletebutton->setIcon( loader->loadIcon("go-previous",KIconLoader::Small));
+    deletebutton->setIcon(QIcon::fromTheme("go-previous"));
     deletebutton->setEnabled(false);
     Layout2->addWidget( deletebutton );
     Layout7->addLayout( Layout2 );
@@ -160,7 +159,7 @@ hk_kdeindexeditdialog::hk_kdeindexeditdialog( QWidget* parent,  const char* name
     storebutton = new QPushButton(ButtonGroup7);
     storebutton->setObjectName("storebutton");
     storebutton->setText( i18n( "OK"  ));
-    storebutton->setEnabled( FALSE );
+    storebutton->setEnabled( false );
     ButtonGroup7Layout->addWidget( storebutton );
 
     exitbutton = new QPushButton(ButtonGroup7);

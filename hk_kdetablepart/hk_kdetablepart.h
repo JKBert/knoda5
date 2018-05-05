@@ -18,11 +18,9 @@
 
 #include <KParts/ReadWritePart>
 #include <KParts/Factory>
-//TBP #include "../hk_kdeclasses/hk_kdetablepartwidget.h"
 
 class hk_drivermanager;
 class hk_kdetablepartprivate;
-// TBP class KAboutData;
 
 class hk_kdetablepart : public KParts::ReadWritePart
 {

@@ -886,7 +886,7 @@ void hk_kdetabledesign::load_fieldinfo()
 
 void hk_kdetabledesign::alter_index()
 {
-   /* TBP if (datasource()==NULL){ return; }
+    if (datasource()==NULL) { return; }
     list<hk_datasource::indexclass>* ilist =datasource()->indices();
     if (ilist==NULL){return; }
     list<hk_datasource::indexclass>::iterator it=ilist->begin();
@@ -900,14 +900,13 @@ void hk_kdetabledesign::alter_index()
     }
     if (found)
     {
-
         hk_kdeindexeditdialog* d = new hk_kdeindexeditdialog(0,0);
         if (d==NULL) return;
         d->setAttribute(Qt::WA_DeleteOnClose);
         d->set_datasource(datasource());
         if (it!=ilist->end())d->set_indexvalues((*it).name,(*it).unique,(*it).fields,false);
         d->show(); 
-    } */
+    }
 }
 
 
@@ -922,7 +921,6 @@ void hk_kdetabledesign::delete_index()
 
 void hk_kdetabledesign::new_index()
 {
-/* TBP
     if (datasource()==NULL){ return; }
 
     hk_kdeindexeditdialog* d = new hk_kdeindexeditdialog(0,0);
@@ -931,13 +929,12 @@ void hk_kdetabledesign::new_index()
     d->set_datasource(datasource());
     list<hk_string> f;
     d->set_indexvalues("",false,f,true);
-    d->show(); */
+    d->show();
 }
 
 
 void hk_kdetabledesign::set_indexlist(void)
 {
-
     indexwindow->clear();
     hk_datasource* d=datasource();
     if (d==NULL)
@@ -957,7 +954,6 @@ void hk_kdetabledesign::set_indexlist(void)
      it++;
     }
     indexwindow->setCurrentItem(indexwindow->invisibleRootItem()->child(0));
-
 }
 
 

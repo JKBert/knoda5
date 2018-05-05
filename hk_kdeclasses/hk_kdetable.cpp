@@ -18,7 +18,6 @@
 #include <hk_datasource.h>
 #include <hk_database.h>
 #include <hk_connection.h>
-#include "hk_kdetable.moc"
 #include <qbuttongroup.h>
 #include <qpushbutton.h>
 #include <qlayout.h>
@@ -27,16 +26,14 @@
 #include <qwhatsthis.h>
 #include <qimage.h>
 #include <qpixmap.h>
-
 #include <kmenubar.h>
-#include <kiconloader.h>
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <kstandardaction.h>
 #include <kstandarddirs.h>
 #include <klocale.h>
 #include <kservice.h>
-//TBP icons
+
 /*
  *  Constructs a hk_kdetable which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'
@@ -50,14 +47,10 @@ hk_kdetable::hk_kdetable(QWidget* w,const char* /* n */,Qt::WFlags f):KParts::Ma
 #endif
     setObjectName( "hk_kdetable" );
     resize( 596, 480 );
-    
-    KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde4classes");
     p_partmanager=new KParts::PartManager(this);
-    
-    setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdetable.rc"));
-
-    KService::Ptr service = KService::serviceByDesktopName("hk_kde4tablepart");
+    setXMLFile("hk_kdetable.rc");
+    QIcon::setThemeName("oxygen");
+    KService::Ptr service = KService::serviceByDesktopName("hk_kde5tablepart");
     if (!service || 
       !(p_part=service->createInstance<KParts::ReadWritePart>(this,this, QVariantList())))
     {
@@ -65,16 +58,15 @@ hk_kdetable::hk_kdetable(QWidget* w,const char* /* n */,Qt::WFlags f):KParts::Ma
  Did you install knoda into the correct directory? Program will exit now...")); 
      exit(1);
     } 
-     p_partmanager->addPart(p_part);
-     p_table = (hk_kdetablepartwidget*)p_part->widget();
-     setCentralWidget(p_table);
+    p_partmanager->addPart(p_part);
+    p_table = (hk_kdetablepartwidget*)p_part->widget();
+    setCentralWidget(p_table);
     connect(p_partmanager,SIGNAL(partRemoved(KParts::Part*)),this, SLOT(part_removed()));
-    p_closeaction=new KAction(KIcon("window-close"),i18n("&Close"),actionCollection());
+    p_closeaction=new KAction(QIcon::fromTheme("window-close"),i18n("&Close"),actionCollection());
     actionCollection()->addAction("closetable",p_closeaction);
     connect(p_closeaction,SIGNAL(triggered()),this,SLOT(close_table()));
     createGUI(p_part);
 }
-
 
 /*
  *  Destroys the object and frees any allocated resources
@@ -82,14 +74,10 @@ hk_kdetable::hk_kdetable(QWidget* w,const char* /* n */,Qt::WFlags f):KParts::Ma
 hk_kdetable::~hk_kdetable()
 {
 // no need to delete child widgets, Qt does it all for us
-
- if (p_table) delete p_table;
- p_table=NULL;
- delete p_partmanager;
-
-
+  if (p_table) delete p_table;
+  p_table=NULL;
+  delete p_partmanager;
 }
-
 
 void hk_kdetable::set_datasource(hk_datasource* d)
 {
@@ -98,21 +86,11 @@ void hk_kdetable::set_datasource(hk_datasource* d)
     set_caption();
 }
 
-
-
-
-
-
-
-
-
 bool  hk_kdetable::set_mode(enum_mode s)
 {
   if (!p_table) return false;
   return p_table->set_mode(s);
-
 }
-
 
 void hk_kdetable::closeEvent ( QCloseEvent* e)
 {
@@ -120,13 +98,10 @@ void hk_kdetable::closeEvent ( QCloseEvent* e)
    emit signal_closed(this);
 }
 
-
-
 void hk_kdetable::close_table(void)
 {
     close();
 }
-
 
 void hk_kdetable::set_caption(void)
 {
@@ -142,9 +117,7 @@ void hk_kdetable::set_caption(void)
         n+=")";
         setWindowTitle(QString::fromUtf8(l2u(d->database()->connection()->drivername()).c_str())+" "+n);
     }
-
 }
-
 
 void hk_kdetable::part_removed(void)
 {
@@ -153,10 +126,7 @@ void hk_kdetable::part_removed(void)
    p_part=NULL;
    p_table=NULL;
    close();
-   
-   
 }
-
 
 void hk_kdetable::set_autoclose(bool a)
 {

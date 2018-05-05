@@ -39,7 +39,7 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdegridcolumndialogbase.cpp
     hk_kdegridcolumndialog.cpp
   #TBP   hk_kdeimage.cpp
-  #TBP  hk_kdeindexeditwindow.cpp
+    hk_kdeindexeditwindow.cpp
     hk_kdeinterpreterdialog.cpp
   #TBP  hk_kdelabel.cpp
     hk_kdelineedit.cpp
@@ -83,8 +83,8 @@ set(hk_kdeclasses_LIB_SRCS
  #TBP   hk_kdesubformdialog.cpp
     hk_kdesubreportdialog.cpp
     hk_kdesubreportdialogbase.cpp
- #[[  TBP   hk_kdetable.cpp
-    hk_kdetaborder.cpp
+    hk_kdetable.cpp
+  #[[  TBP  hk_kdetaborder.cpp
     hk_kdetaborderbase.cpp ]]
     hk_kdetabledesign.cpp 
     hk_kdetablepartwidget.cpp
