@@ -23,19 +23,19 @@ Q_OBJECT
 public:
   hk_kdedate(QWidget* wid,hk_form* form=NULL);
   virtual ~hk_kdedate();
-virtual void show_widget(void);
-virtual void hide_widget(void);
-virtual bool close_widget(void);
-	virtual void set_value(const hk_string&);
-	virtual hk_string value(void);
-        virtual void update_filter(void);
+  virtual void show_widget(void);
+  virtual void hide_widget(void);
+  virtual bool close_widget(void);
+  virtual void set_value(const hk_string&);
+  virtual hk_string value(void);
+  virtual void update_filter(void);
 public slots:
-	virtual void slot_date_selected(QDate);
-    signals:
-        void lostFocus();
+  virtual void slot_date_selected(QDate);
+signals:
+  void lostFocus();
 
 protected:
-        virtual void  resizeEvent (QResizeEvent *);
+  virtual void  resizeEvent (QResizeEvent *);
         virtual void  moveEvent ( QMoveEvent * ) ;
         virtual bool  widget_specific_coordinates(uint px,uint py,uint pwidth,uint pheight);
         virtual bool  widget_specific_row_change(void);

@@ -2104,11 +2104,11 @@ void hk_kdeproperty::use_textlist_changed()
 
 void hk_kdeproperty::use_textlistbutton_clicked()
 {
-  /* TBP hk_dscombobox* c=dynamic_cast<hk_dscombobox*>(p_visible);
+  hk_dscombobox* c=dynamic_cast<hk_dscombobox*>(p_visible);
   if (!c) return;
   hk_kdecomboboxtextlist* d = new hk_kdecomboboxtextlist(this,c);
   d->exec();
-  delete d;*/
+  delete d;
 }
 
 

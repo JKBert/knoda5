@@ -12,6 +12,12 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
+
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#else
+#error config.h is needed but not included 
+#endif
 #include "hk_kdedate.h"
 #include "hk_kdesimpleform.h"
 
@@ -31,23 +37,22 @@
 #include <QKeyEvent>
 
 #include <hk_datetime.h>
-// TBP icons
 
 class datepopupprivate
 {
 public:
-datepopupprivate():p_picker(NULL), p_layout(NULL),p_firstrelease(true),
-p_eventloop(NULL)
-{
-}
+  datepopupprivate():p_picker(NULL), p_layout(NULL),p_firstrelease(true),
+    p_eventloop(NULL)
+  {
+  }
 
-KDatePicker* p_picker;
-QHBoxLayout* p_layout;
-bool p_firstrelease;
-hk_kdedate* p_date;
-QEventLoop* p_eventloop;
-
+  KDatePicker* p_picker;
+  QHBoxLayout* p_layout;
+  bool p_firstrelease;
+  hk_kdedate* p_date;
+  QEventLoop* p_eventloop;
 };
+
 datepopup::datepopup(QWidget* wid,hk_kdedate* d):QFrame(wid,Qt::Popup)
 {
 p_private=new datepopupprivate;
@@ -158,73 +163,47 @@ void datepopup::keyPressEvent(QKeyEvent*e)
   p_private->p_eventloop -> quit();
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class hk_kdedateprivate
 {
 public:
-hk_kdedateprivate()
-{
-p_lineedit=NULL;
-p_button=NULL;
-p_layout=NULL;
-p_filter_has_changed=false;
-
-}
-QLineEdit* p_lineedit;
-QPushButton* p_button;
-QHBoxLayout* p_layout;
-        bool p_filter_has_changed;
+  hk_kdedateprivate():p_layout(NULL), p_lineedit(NULL), p_button(NULL),
+    p_filter_has_changed(false)
+  {
+  }
+  QHBoxLayout* p_layout;
+  QLineEdit* p_lineedit;
+  QPushButton* p_button;
+  bool p_filter_has_changed;
 };
 
-hk_kdedate::hk_kdedate(QWidget* wid,hk_form* form):QFrame(wid),hk_dsdate(form)
+hk_kdedate::hk_kdedate(QWidget* wid,hk_form* form):QFrame(wid),hk_dsdate(form),
+  p_widget_specific_row_change(false), p_private(new hk_kdedateprivate)
 {
-p_private=new hk_kdedateprivate;
-p_widget_specific_row_change=false;
+  QSizePolicy lineeditpolicy(QSizePolicy::Preferred,QSizePolicy::Preferred);
+  p_private->p_layout=new QHBoxLayout(this);
+  p_private->p_lineedit=new QLineEdit(this);
+  p_private->p_lineedit->setSizePolicy(lineeditpolicy);
+  p_private->p_button=new QPushButton(this);
+  p_private->p_button->setFocusPolicy(Qt::ClickFocus);
+  QSizePolicy buttonpolicy(QSizePolicy::Preferred,QSizePolicy::Preferred);
+  p_private->p_button->setSizePolicy(buttonpolicy);
+  p_private->p_button->setMaximumWidth(25);
+  p_private->p_button->setMinimumWidth(25);
+  KIconLoader loader (LIB_MODULE_NAME);
+  p_private->p_button->setIcon(QIcon(loader.iconPath("datebutton",KIconLoader::User)));
 
- QSizePolicy lineeditpolicy(QSizePolicy::Preferred,QSizePolicy::Preferred);
-p_private->p_layout=new QHBoxLayout(this);
-p_private->p_lineedit=new QLineEdit(this);
-p_private->p_lineedit->setSizePolicy(lineeditpolicy);
-p_private->p_button=new QPushButton(this);
-p_private->p_button->setFocusPolicy(Qt::ClickFocus);
- QSizePolicy buttonpolicy(QSizePolicy::Preferred,QSizePolicy::Preferred);
-p_private->p_button->setSizePolicy(buttonpolicy);
-p_private->p_button->setMaximumWidth(25);
-p_private->p_button->setMinimumWidth(25);
-KIconLoader* loader=KIconLoader::global();
-loader->addAppDir("hk_kde4classes");
-p_private->p_button->setIcon(KIcon("datebutton",KIconLoader::global()));
+  p_private->p_layout->addWidget(p_private->p_lineedit);
+  p_private->p_layout->addWidget(p_private->p_button);
+  setFocusProxy(p_private->p_lineedit);
 
-p_private->p_layout->addWidget(p_private->p_lineedit);
-p_private->p_layout->addWidget(p_private->p_button);
-setFocusProxy(p_private->p_lineedit);
+  widget_specific_font_changed();
 
-    widget_specific_font_changed();
-
-    QObject::connect(p_private->p_lineedit,SIGNAL(textChanged(const QString& )),this,SLOT(slot_data_changed()));
-    QObject::connect(p_private->p_button,SIGNAL(pressed()),this,SLOT(button_clicked()));
+  QObject::connect(p_private->p_lineedit,SIGNAL(textChanged(const QString& )),this,SLOT(slot_data_changed()));
+  QObject::connect(p_private->p_button,SIGNAL(pressed()),this,SLOT(button_clicked()));
 
 //     QObject::connect(this,SIGNAL(dateSelected(QDate )),this,SLOT(slot_data_changed()));
 //     QObject::connect(this,SIGNAL(tableClicked( )),this,SLOT(slot_table_clicked()));
-    QObject::connect(p_private->p_lineedit,SIGNAL(lostFocus()),this,SLOT(slot_focus_lost()));
-
+  QObject::connect(p_private->p_lineedit,SIGNAL(editingFinished()),this,SLOT(slot_focus_lost()));
 }
 
 hk_kdedate::~hk_kdedate()

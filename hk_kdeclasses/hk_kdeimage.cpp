@@ -20,8 +20,7 @@
 #include <kapplication.h>
 #include <klocale.h>
 #include <kfiledialog.h>
-#include <kurl.h>
-
+#include <KUrl>
 #include <qlabel.h>
 #include <qscrollarea.h>
 #include <QMouseEvent>
@@ -69,7 +68,7 @@ void internal_kdelabel::slot_set_image(void)
   if (p_image->column()&&p_image->column()->columntype()==hk_column::binarycolumn) {
     dir="kfiledialog:///image";
   }
-  KUrl url = KFileDialog::getImageOpenUrl(dir , this );
+  KUrl url = KFileDialog::getImageOpenUrl(dir, this );
   if (!url.fileName().isEmpty()) {
     hk_string v=u2l(url.directory()==dir?
                                url.fileName().toUtf8().data():
@@ -93,9 +92,8 @@ void internal_kdelabel::slot_set_image(void)
 void internal_kdelabel::slot_save_image(void)
 {
   if (!p_image->column()) return;
-  QString s=KFileDialog::getSaveFileName(KUrl("kfiledialog:///image"),QString::null,this);
+  QString s=KFileDialog::getSaveFileName(QUrl("kfiledialog:///image"),QString::null,this);
   if (!s.isEmpty()) p_image->column()->save_to_file(u2l(s.toUtf8().data()));
-
 }
 
 void  internal_kdelabel::slot_fit2size(void)
@@ -149,22 +147,18 @@ void  internal_kdelabel::mouseDoubleClickEvent(QMouseEvent* event)
 class hk_kdeimageprivate
 {
 public:
-hk_kdeimageprivate()
-   {
+  hk_kdeimageprivate()
+  {
     p_label=NULL;
-   }
+  }
 
-internal_kdelabel* p_label;
-QPixmap p_pixmap;
-QImage  p_image;
-QScrollArea* p_scrollview;
-int cm_x;
-int cm_y;
+  internal_kdelabel* p_label;
+  QPixmap p_pixmap;
+  QImage  p_image;
+  QScrollArea* p_scrollview;
+  int cm_x;
+  int cm_y;
 };
-
-
-
-
 
 hk_kdeimage::hk_kdeimage(QWidget* wid,hk_form*f ):QFrame(wid),hk_dsimage(f)
 {
@@ -199,7 +193,7 @@ hk_kdeimage::hk_kdeimage(QWidget* wid,hk_form*f ):QFrame(wid),hk_dsimage(f)
 
 hk_kdeimage::~hk_kdeimage()
 {
-delete p_private;
+  delete p_private;
 }
 
 void hk_kdeimage::resizeEvent ( QResizeEvent * event )
@@ -257,48 +251,42 @@ return hk_dsdatavisible::widget_specific_row_change();
 
 void hk_kdeimage::show_image()
 {
-if (column() && column()->columntype()==hk_column::binarycolumn)
- {
- const struct_raw_data* d=(column()->has_changed()?column()->changed_data():column()->asbinary());
- if (!d) return;
-if ((zoom()==100?
+  if (column() && column()->columntype()==hk_column::binarycolumn)
+  {
+    const struct_raw_data* d=(column()->has_changed()?column()->changed_data():column()->asbinary());
+    if (!d) return;
+    if ((zoom()==100?
          p_private->p_pixmap.loadFromData((const uchar*)d->data,(uint)d->length)
         :p_private->p_image.loadFromData((const uchar*)d->data,(uint)d->length))
-    )
- {
-   zoom_image();
-   return;
- }
+       )
+    {
+      zoom_image();
+      return;
+    }
+  }// end binary column
 
- }// end binary column
-
-
-if ((zoom()==100?
-         p_private->p_pixmap.load(QString::fromUtf8(l2u(value()).c_str()))
-        :p_private->p_image.load(QString::fromUtf8(l2u(value()).c_str())))
-    )
- {
-   zoom_image();
-   return;
- }
-
-if (localimage() &&localimage()->data)
-  {
   if ((zoom()==100?
+     p_private->p_pixmap.load(QString::fromUtf8(l2u(value()).c_str()))
+     :p_private->p_image.load(QString::fromUtf8(l2u(value()).c_str())))
+    )
+  {
+    zoom_image();
+    return;
+  }
+
+  if (localimage() &&localimage()->data)
+  {
+    if ((zoom()==100?
          p_private->p_pixmap.loadFromData((const uchar*)localimage()->data,(uint)localimage()->length)
         :p_private->p_image.loadFromData((const uchar*)localimage()->data,(uint)localimage()->length))
     )
- {
-   zoom_image();
-   return;
- }
-
-
+    {
+      zoom_image();
+      return;
+    }
   }
-
   p_private->p_label->setGeometry(0,0,QWidget::width()-p_private->cm_x,QWidget::height()-p_private->cm_y);
   p_private->p_label->setText(i18n("No image"));
-
 }
 
 
@@ -355,9 +343,6 @@ void   hk_kdeimage::widget_specific_enable_disable(void)
         show_image();
         //blockSignals(false);
     }
-
-
-
 }
 
 void    hk_kdeimage::widget_specific_insert_mode(void)

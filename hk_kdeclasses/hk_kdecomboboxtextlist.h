@@ -21,7 +21,6 @@ class hk_dscombobox;
 class hk_kdecomboboxtextlist : public hk_kdecomboboxtextlistbase
 {
     Q_OBJECT
-
 public:
     hk_kdecomboboxtextlist( QWidget* parent ,hk_dscombobox*, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kdecomboboxtextlist();

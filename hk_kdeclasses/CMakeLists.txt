@@ -10,18 +10,18 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdeboolean.cpp
     hk_kdebutton.cpp 
     hk_kdecombobox.cpp
-#[[  TBP     hk_kdecomboboxtextlist.cpp
+    hk_kdecomboboxtextlist.cpp
     hk_kdecomboboxtextlistbase.cpp
-    hk_kdecolumn.cpp
+  #[[  TBP  hk_kdecolumn.cpp
     hk_kdecsvexportdialog.cpp
     hk_kdecsvexportdialogbase.cpp
     hk_kdecsvimportdialog.cpp
     hk_kdecsvimportdialogbase.cpp
     hk_kdedatabasesetting.cpp
     hk_kdedatabasesettingbase.cpp
-    hk_kdedatasource.cpp
+    hk_kdedatasource.cpp ]]
     hk_kdedate.cpp
-    hk_kdedbdesigner.cpp ]]
+#TBP    hk_kdedbdesigner.cpp 
     hk_kdedblistview.cpp
 #TBP    hk_kdedriverdialog.cpp
 #TBP    hk_kdeeximportdatabasebase.cpp
@@ -38,7 +38,7 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdegrid.cpp
     hk_kdegridcolumndialogbase.cpp
     hk_kdegridcolumndialog.cpp
-  #TBP   hk_kdeimage.cpp
+    hk_kdeimage.cpp
     hk_kdeindexeditwindow.cpp
     hk_kdeinterpreterdialog.cpp
     hk_kdelabel.cpp

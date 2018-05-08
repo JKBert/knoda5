@@ -23,7 +23,7 @@
 ****************************************************************************/
 
 #include "hk_kdecomboboxtextlistbase.h"
-
+#include <KLocalizedString>
 #include <qvariant.h>
 #include <qpushbutton.h>
 #include <qtablewidget.h>
@@ -35,7 +35,6 @@
 #include <qimage.h>
 #include <qpixmap.h>
 
-//TBP TBT translation tr()->i18n()
 /*
  *  Constructs a hk_kdecomboboxtextlistbase as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.
@@ -48,7 +47,7 @@ hk_kdecomboboxtextlistbase::hk_kdecomboboxtextlistbase( QWidget* parent, const c
 {
     setObjectName( QString::fromAscii(name == NULL ? "hk_kdecomboboxtextlistbase":name) );
     setModal(modal);
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled( true );
     hk_kdecomboboxtextlistbaseLayout = new QGridLayout(this);
     hk_kdecomboboxtextlistbaseLayout->setMargin(11);
     hk_kdecomboboxtextlistbaseLayout->setSpacing(6);
@@ -61,13 +60,13 @@ hk_kdecomboboxtextlistbase::hk_kdecomboboxtextlistbase( QWidget* parent, const c
 
     ok_button = new QPushButton(this);
     ok_button->setObjectName(QString::fromAscii("ok_button"));
-    ok_button->setAutoDefault( TRUE );
-    ok_button->setDefault( TRUE );
+    ok_button->setAutoDefault( true );
+    ok_button->setDefault( true );
     Layout5->addWidget( ok_button );
 
     cancel_button = new QPushButton(this);
     cancel_button->setObjectName(QString::fromAscii("cancel_button"));
-    cancel_button->setAutoDefault( TRUE );
+    cancel_button->setAutoDefault( true );
     Layout5->addWidget( cancel_button );
     Spacer1 = new QSpacerItem( 20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding );
     Layout5->addItem( Spacer1 );
@@ -77,9 +76,9 @@ hk_kdecomboboxtextlistbase::hk_kdecomboboxtextlistbase( QWidget* parent, const c
     grid = new QTableWidget(this);
     grid -> setObjectName("grid");
     grid->setColumnCount(1);
-    grid->setHorizontalHeaderLabels(QStringList() << tr( "Entry" ));
+    grid->setHorizontalHeaderLabels(QStringList() << i18n( "Entry" ));
     grid->setRowCount(1);
-    grid->setHorizontalHeaderLabels(QStringList() << tr( "1" ));
+    grid->setHorizontalHeaderLabels(QStringList() << i18n( "1" ));
 
     hk_kdecomboboxtextlistbaseLayout->addWidget( grid, 1, 0 );
 
@@ -110,14 +109,14 @@ hk_kdecomboboxtextlistbase::~hk_kdecomboboxtextlistbase()
  */
 void hk_kdecomboboxtextlistbase::languageChange()
 {
-    setWindowTitle( tr( "Combobox textlist dialog" ) );
-    ok_button->setText( tr( "&OK" ) );
+    setWindowTitle( i18n( "Combobox textlist dialog" ) );
+    ok_button->setText( i18n( "&OK" ) );
     ok_button->setShortcut( QKeySequence( QString::null ) );
-    cancel_button->setText( tr( "&Cancel" ) );
+    cancel_button->setText( i18n( "&Cancel" ) );
     cancel_button->setShortcut( QKeySequence( QString::null ) );
-    grid->setHorizontalHeaderLabels(QStringList() << tr( "Entry" ));
-    grid->setVerticalHeaderLabels(QStringList() << tr( "1" ));
-    descriptionlabel->setText( tr( "Combobox sourcetextlist" ) );
+    grid->setHorizontalHeaderLabels(QStringList() << i18n( "Entry" ));
+    grid->setVerticalHeaderLabels(QStringList() << i18n( "1" ));
+    descriptionlabel->setText( i18n( "Combobox sourcetextlist" ) );
 }
 
 void hk_kdecomboboxtextlistbase::slot_data_changed(int,int)

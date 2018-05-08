@@ -425,7 +425,7 @@ void hk_kdememo::find_clicked(void)
 #ifdef HK_DEBUG
     hkdebug("kdememo::find_clicked");
 #endif
-  /*TBP  if (!column()) return;
+    if (!column()) return;
     if (p_finddialog==NULL)
     {
         p_finddialog=new hk_kdefinddialog(this,0,false);
@@ -435,7 +435,7 @@ void hk_kdememo::find_clicked(void)
 
     p_findfirstview=true;
     findargument_changed();
-    p_finddialog->show(); */
+    p_finddialog->show();
 }
 
 

@@ -20,3 +20,6 @@ definition of LIB_MODULE_NAME:
 #endif
 
 Icon from pics folder: KIconLoader loader (LIB_MODULE_NAME);QIcon(loader.iconPath(<iconName>,KIconLoader::User));
+
+ssh -t hanakp,knoda5@shell.sourceforge.net create
+rm /home/git/p/knoda5/code.git/refs/heads/master.lock

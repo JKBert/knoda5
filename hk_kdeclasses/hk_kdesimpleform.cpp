@@ -358,23 +358,23 @@ hk_label* hk_kdesimpleform::widget_specific_new_label(void)
 
 hk_dsdate*       hk_kdesimpleform::widget_specific_new_date(void)
 {
-   /* TBP hk_kdedate* l=new hk_kdedate(this,this);
+   hk_kdedate* l=new hk_kdedate(this,this);
    l->show();
 #ifdef HK_DEBUG
     l->hkclassname("date");
 #endif
 //	set_focus(l);
-    return l; */ return NULL;
+    return l;
 }
 
 hk_dsimage*      hk_kdesimpleform::widget_specific_new_image(void)
 {
-  /* TBP hk_kdeimage* i=new hk_kdeimage(this,this);
+  hk_kdeimage* i=new hk_kdeimage(this,this);
 #ifdef HK_DEBUG
   i->hkclassname("image");
   i->show();
 #endif
-  return i; */ return NULL;
+  return i;
 }
 
 
