@@ -22,7 +22,7 @@
 ****************************************************************************/
 
 #include "hk_kderelationdialogbase.h"
-
+#include <KLocalizedString>
 #include <qvariant.h>
 #include <qpushbutton.h>
 #include <qstackedwidget.h>
@@ -59,7 +59,7 @@ hk_kderelationdialogbase::hk_kderelationdialogbase( QWidget* parent, const char*
     setModal(modal);
     initSizePolicy(this, QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
     setMinimumSize( QSize( 490, 245 ) );
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled( true );
     hk_kderelationdialogbaseLayout = new QGridLayout(this); 
     hk_kderelationdialogbaseLayout->setMargin(2);
     hk_kderelationdialogbaseLayout->setSpacing(3);
@@ -125,12 +125,12 @@ hk_kderelationdialogbase::hk_kderelationdialogbase( QWidget* parent, const char*
 
     button_all = new QRadioButton(joingroup);
     button_all->setObjectName(QString::fromAscii("button_all"));
-    button_all->setChecked( TRUE );
+    button_all->setChecked( true );
     joingroupLayout->addWidget( button_all );
 
     button_equivalent = new QRadioButton(joingroup);
     button_equivalent->setObjectName(QString::fromAscii("button_equivalent"));
-    button_equivalent->setEnabled( FALSE );
+    button_equivalent->setEnabled( false );
     joingroupLayout->addWidget( button_equivalent );
     WStackPageLayout_2->addWidget( joingroup );
     detailbox->addWidget( WStackPage_2);
@@ -144,13 +144,13 @@ hk_kderelationdialogbase::hk_kderelationdialogbase( QWidget* parent, const char*
 
     ok_button = new QPushButton(this);
     ok_button->setObjectName("ok_button");
-    ok_button->setAutoDefault( TRUE );
-    ok_button->setDefault( TRUE );
+    ok_button->setAutoDefault( true );
+    ok_button->setDefault( true );
     Layout5->addWidget( ok_button );
 
     cancel_button = new QPushButton(this);
     cancel_button->setObjectName("cancel_button");
-    cancel_button->setAutoDefault( TRUE );
+    cancel_button->setAutoDefault( true );
     Layout5->addWidget( cancel_button );
     Spacer1 = new QSpacerItem( 20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding );
     Layout5->addItem( Spacer1 );
@@ -160,8 +160,7 @@ hk_kderelationdialogbase::hk_kderelationdialogbase( QWidget* parent, const char*
     grid = new QTableWidget( this );
     grid -> setObjectName( "grid" );
     grid->setColumnCount( grid->columnCount() + 2 );
-    grid->setHorizontalHeaderLabels(QStringList() << tr( "Master" )<< tr( "Slave" ) );
-    //TBP TBT translation tr()->i18n()
+    grid->setHorizontalHeaderLabels(QStringList() << i18n( "Master" )<< i18n( "Slave" ) );
     grid->setRowCount( 0 );
     grid->setColumnCount( 2 );
 
@@ -188,19 +187,19 @@ hk_kderelationdialogbase::~hk_kderelationdialogbase()
  */
 void hk_kderelationdialogbase::languageChange()
 {
-    setWindowTitle( tr( "hk_kderelationdialog" ) );
-    integritybox->setTitle( tr( "Referential Integrity" ) );
-    onupdatelabel->setText( tr( "On update:" ) );
-    ondeletelabel->setText( tr( "On delete:" ) );
-    joingroup->setTitle( tr( "Relationship method" ) );
-    button_all->setText( tr( "Equivalent rows in both datasources" ) );
-    button_equivalent->setText( tr( "All of 'master' and equivalent rows of 'slave'" ) );
-    ok_button->setText( tr( "&OK" ) );
+    setWindowTitle( i18n( "hk_kderelationdialog" ) );
+    integritybox->setTitle( i18n( "Referential Integrity" ) );
+    onupdatelabel->setText( i18n( "On update:" ) );
+    ondeletelabel->setText( i18n( "On delete:" ) );
+    joingroup->setTitle( i18n( "Relationship method" ) );
+    button_all->setText( i18n( "Equivalent rows in both datasources" ) );
+    button_equivalent->setText( i18n( "All of 'master' and equivalent rows of 'slave'" ) );
+    ok_button->setText( i18n( "&OK" ) );
     ok_button->setShortcut( QKeySequence( QString::null ) );
-    cancel_button->setText( tr( "&Cancel" ) );
+    cancel_button->setText( i18n( "&Cancel" ) );
     cancel_button->setShortcut( QKeySequence( QString::null ) );
-    grid->horizontalHeaderItem(SLAVE_COL)->setText(tr( "Slave" ) );
-    grid->horizontalHeaderItem(MASTER_COL)->setText(tr( "Master" ) );
+    grid->horizontalHeaderItem(SLAVE_COL)->setText(i18n( "Slave" ) );
+    grid->horizontalHeaderItem(MASTER_COL)->setText(i18n( "Master" ) );
 }
 
 void hk_kderelationdialogbase::ok_button_clicked()

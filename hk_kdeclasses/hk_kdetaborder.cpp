@@ -22,13 +22,12 @@
 #include <qtoolbutton.h>
 #include <qtreewidget.h>
 
-#include <kiconloader.h>
 #include <klocale.h>
 #include <kconfig.h>
 #include <KConfigGroup>
 #include <kapplication.h>
 #include <kglobal.h>
-//TBP icons
+
 /* 
  *  Constructs a hk_kdetaborder which is a child of 'parent', with the 
  *  name 'name' and widget flags set to 'f' 
@@ -40,12 +39,11 @@ hk_kdetaborder::hk_kdetaborder( hk_kdesimpleform*f, QWidget* parent,  const char
     : hk_kdetaborderdialogbase( parent, name, modal, fl )
 {
   p_form=f;
-  KIconLoader* loader=KIconLoader::global();
-  loader->addAppDir("hk_kde4classes");
-  upbutton->setIcon( loader->loadIcon("go-up",KIconLoader::Small) );
-  downbutton->setIcon( loader->loadIcon("go-down",KIconLoader::Small) );
-  addbutton->setIcon( loader->loadIcon("go-next",KIconLoader::Small) );
-  deletebutton->setIcon( loader->loadIcon("go-previous",KIconLoader::Small) );
+  QIcon::setThemeName("oxygen");
+  upbutton->setIcon( QIcon::fromTheme("go-up") );
+  downbutton->setIcon( QIcon::fromTheme("go-down") );
+  addbutton->setIcon( QIcon::fromTheme("go-next") );
+  deletebutton->setIcon( QIcon::fromTheme("go-previous") );
 
   taborderlist -> setSortingEnabled(false);
   if (!p_form) hk_class::show_warningmessage("hk_kdetaborder ERROR form is NULL!!!");

@@ -25,30 +25,30 @@
 
 class qlineedit:public QLineEdit
 {
-public:
-   qlineedit(hk_kdecombobox* c):QLineEdit(c){p_combobox=c;}
-  virtual ~qlineedit(){}
-        virtual void            mousePressEvent(QMouseEvent* e)
+  public:
+    qlineedit(hk_kdecombobox* c):QLineEdit(c){p_combobox=c;}
+    virtual ~qlineedit(){}
+    virtual void  mousePressEvent(QMouseEvent* e)
 	{
-                  p_combobox->mousePressEvent(e);
+      p_combobox->mousePressEvent(e);
 	}
-        virtual void            mouseDoubleClickEvent(QMouseEvent*e)
+    virtual void  mouseDoubleClickEvent(QMouseEvent*e)
 	{
-                 p_combobox->mouseDoubleClickEvent(e);
+      p_combobox->mouseDoubleClickEvent(e);
 	}
 
-hk_kdecombobox* p_combobox;
+    hk_kdecombobox* p_combobox;
 };
 
 
 class hk_kdecomboboxprivate
 {
 public:
-hk_kdecomboboxprivate()
+  hk_kdecomboboxprivate()
   {
-  p_while_load_listitems=false;
+    p_while_load_listitems=false;
   }
-bool p_while_load_listitems;
+  bool p_while_load_listitems;
 };
 
 
@@ -77,12 +77,11 @@ hk_kdecombobox::hk_kdecombobox(QWidget* wid,hk_form* form):QComboBox(wid),hk_dsc
     colour.set_colour(qcolor.red(),qcolor.green(),qcolor.red());
     set_foregroundcolour(colour,false,true);
 
-    connect(this,SIGNAL(textChanged( const QString& )),this,SLOT(slot_text_changed()));
+    connect(this,SIGNAL(editTextChanged( const QString& )),this,SLOT(slot_text_changed()));
     connect(this,SIGNAL(activated(int)),this,SLOT(slot_data_changed(int)));
 
     widget_specific_font_changed();
     setLineEdit( new qlineedit(this));
-
 }
 
 
@@ -91,7 +90,7 @@ hk_kdecombobox::~hk_kdecombobox()
 #ifdef HK_DEBUG
     hkdebug("hk_kdecombobox::~hk_kdecombobox");
 #endif
-delete p_private;
+    delete p_private;
 }
 
 

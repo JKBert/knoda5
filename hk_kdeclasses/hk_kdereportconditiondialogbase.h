@@ -42,7 +42,7 @@ class hk_kdereportconditiondialogbase : public QDialog
     Q_OBJECT
 
 public:
-    hk_kdereportconditiondialogbase( QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+    hk_kdereportconditiondialogbase( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kdereportconditiondialogbase();
 
     QPushButton* buttonOk;

@@ -5,10 +5,10 @@ add_subdirectory(pics)
 
 ########### next target ###############
 set(hk_kdeclasses_LIB_SRCS
-#[[  TBP  hk_kdeaddtabledialog.cpp
-    hk_kdeaddtabledialogbase.cpp
+# TBP  hk_kdeaddtabledialog.cpp
+  #TBP  hk_kdeaddtabledialogbase.cpp
     hk_kdeboolean.cpp
-    hk_kdebutton.cpp ]]
+    hk_kdebutton.cpp 
     hk_kdecombobox.cpp
 #[[  TBP     hk_kdecomboboxtextlist.cpp
     hk_kdecomboboxtextlistbase.cpp
@@ -30,18 +30,18 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdefilterdialog.cpp
     hk_kdefinddialog.cpp
     hk_kdefinddialogbase.cpp
-#TBP    hk_kdeform.cpp
+    hk_kdeform.cpp
     hk_kdeformdatasourcedialog.cpp
     hk_kdeformdatasourcedialogbase.cpp
     hk_kdeformfocus.cpp
- #TBP   hk_kdeformpartwidget.cpp
+    hk_kdeformpartwidget.cpp
     hk_kdegrid.cpp
     hk_kdegridcolumndialogbase.cpp
     hk_kdegridcolumndialog.cpp
   #TBP   hk_kdeimage.cpp
     hk_kdeindexeditwindow.cpp
     hk_kdeinterpreterdialog.cpp
-  #TBP  hk_kdelabel.cpp
+    hk_kdelabel.cpp
     hk_kdelineedit.cpp
     hk_kdememo.cpp
     hk_kdemodule.cpp
@@ -56,16 +56,16 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdepassworddialog.cpp ]]
     hk_kdepreferencesdialog.cpp
     hk_kdepreferencesdialogbase.cpp
- #[[  TBP hk_kdeproperty.cpp
+    hk_kdeproperty.cpp
     hk_kdepropertybase.cpp
-    hk_kdeqbe.cpp
+ #[[  TBP    hk_kdeqbe.cpp
     hk_kdequery.cpp
-    hk_kdequerypartwidget.cpp
+    hk_kdequerypartwidget.cpp ]]
     hk_kderelationdialogbase.cpp
-    hk_kderelationdialog.cpp ]]
+  #TBP  hk_kderelationdialog.cpp 
     hk_kdereport.cpp
- #TBP   hk_kdereportconditiondialog.cpp
- #TBP   hk_kdereportconditiondialogbase.cpp
+    hk_kdereportconditiondialog.cpp
+    hk_kdereportconditiondialogbase.cpp
     hk_kdereportdata.cpp 
     hk_kdereportpartwidget.cpp
     hk_kdereportproperty.cpp
@@ -79,13 +79,13 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kde4simplegrid_p.cpp 
     hk_kdesimplereport.cpp
     hk_kdespinbox.cpp
- #TBP    hk_kdesubform.cpp
- #TBP   hk_kdesubformdialog.cpp
+    hk_kdesubform.cpp
+    hk_kdesubformdialog.cpp
     hk_kdesubreportdialog.cpp
     hk_kdesubreportdialogbase.cpp
     hk_kdetable.cpp
-  #[[  TBP  hk_kdetaborder.cpp
-    hk_kdetaborderbase.cpp ]]
+    hk_kdetaborder.cpp
+    hk_kdetaborderbase.cpp
     hk_kdetabledesign.cpp 
     hk_kdetablepartwidget.cpp
     hk_kdetoolbar.cpp

@@ -14,6 +14,11 @@
 // ****************************************************************************
 //$Revision: 1.39 $
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#else
+#error config.h is needed but not included 
+#endif
 #include "hk_kdeformpartwidget.h"
 #include "hk_kdetoolbar.h"
 #include "hk_kdesimpleform.h"
@@ -38,7 +43,6 @@
 #include <qwhatsthis.h>
 #include <qimage.h>
 #include <qpixmap.h>
-#include <QMimeSource>
 #include <qscrollarea.h>
 #include <qevent.h>
 
@@ -63,7 +67,6 @@
 #include <kstandarddirs.h>
 #include <klocale.h>
 
-// TBP icons
 /*
  *  Constructs a hk_kdeformpartwidget which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'
@@ -78,8 +81,8 @@ hk_kdeformpartwidget::hk_kdeformpartwidget( hk_kdeformpart* formpart,QWidget* pa
     p_formpart=formpart;
     p_dontclose=false;
     setFocusPolicy(Qt::StrongFocus);
-    KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde4classes");
+    KIconLoader loader  (LIB_MODULE_NAME);
+    QIcon::setThemeName("oxygen");
     setObjectName( name == NULL ? "hk_kdeformpartwidget":name );
     setWindowTitle( i18n( "Form"  ) );
     resize( 800, 600 );
@@ -115,65 +118,65 @@ hk_kdeformpartwidget::hk_kdeformpartwidget( hk_kdeformpart* formpart,QWidget* pa
     }
     else
     {
-      p_designaction=new KToggleAction(KIcon("document-edit"),i18n("&Design mode"),formpart->actionCollection());
-      formpart->actionCollection() -> addAction("designmode",p_designaction);
+      p_designaction=new KToggleAction(QIcon::fromTheme("document-edit"),i18n("&Design mode"),formpart->actionCollection());
+      formpart->actionCollection()->addAction("designmode",p_designaction);
       connect(p_designaction,SIGNAL(triggered()),this,SLOT(designbutton_clicked()));
       p_designaction->setEnabled(!runtime_only());
-      p_viewaction=new KToggleAction(KIcon("system-run"),i18n("&View mode"),formpart->actionCollection());
-      formpart->actionCollection() -> addAction("viewmode",p_viewaction);
+      p_viewaction=new KToggleAction(QIcon::fromTheme("system-run"),i18n("&View mode"),formpart->actionCollection());
+      formpart->actionCollection()->addAction("viewmode",p_viewaction);
       connect(p_viewaction,SIGNAL(triggered()),this,SLOT(formbutton_clicked()));
       pag = new QActionGroup(this);
-      p_designaction -> setActionGroup(pag);
-      p_viewaction ->setActionGroup(pag);
+      p_designaction->setActionGroup(pag);
+      p_viewaction->setActionGroup(pag);
       p_designaction->setChecked(true);
     }
-    p_saveaction=new KAction(KIcon("document-save"),i18n("&Save"),formpart->actionCollection());
-    formpart->actionCollection() -> addAction("save",p_saveaction);
+    p_saveaction=new KAction(QIcon::fromTheme("document-save"),i18n("&Save"),formpart->actionCollection());
+    formpart->actionCollection()->addAction("save",p_saveaction);
     connect(p_saveaction,SIGNAL(triggered()),this,SLOT(save_form()));
     p_saveaction->setEnabled(!runtime_only());
     
-    p_saveasaction=new KAction(KIcon("document-save-as"),i18n("Save &as"),formpart->actionCollection());
-    formpart->actionCollection() -> addAction("saveas",p_saveasaction);
+    p_saveasaction=new KAction(QIcon::fromTheme("document-save-as"),i18n("Save &as"),formpart->actionCollection());
+    formpart->actionCollection()->addAction("saveas",p_saveasaction);
     connect(p_saveasaction,SIGNAL(triggered()),this,SLOT(saveas_form()));
     p_saveasaction->setEnabled(!runtime_only());
 
-    p_lineeditaction=new KToggleAction(KIcon("editline",loader),i18n("Lineedit"),formpart->actionCollection());
-    formpart->actionCollection() -> addAction("lineedit", p_lineeditaction);
+    p_lineeditaction=new KToggleAction(QIcon(loader.iconPath("editline",KIconLoader::User)),i18n("Lineedit"),formpart->actionCollection());
+    formpart->actionCollection()->addAction("lineedit", p_lineeditaction);
     connect(p_lineeditaction,SIGNAL(triggered()),this,SLOT(fieldbutton_clicked()));
-    p_pointeraction=new KToggleAction(KIcon("pfeil",KIconLoader::global()),i18n("Pointer"),formpart->actionCollection());
+    p_pointeraction=new KToggleAction(QIcon(loader.iconPath("pfeil",KIconLoader::User)),i18n("Pointer"),formpart->actionCollection());
     formpart->actionCollection()->addAction("pointer",p_pointeraction);
     connect(p_pointeraction,SIGNAL(triggered()),this,SLOT(fieldbutton_clicked()));
-    p_labelaction=new KToggleAction(KIcon("label",KIconLoader::global()),i18n("Label"),formpart->actionCollection());
+    p_labelaction=new KToggleAction(QIcon(loader.iconPath("label",KIconLoader::User)),i18n("Label"),formpart->actionCollection());
     formpart->actionCollection()->addAction("label",p_labelaction);
     connect(p_labelaction,SIGNAL(triggered()),this,SLOT(fieldbutton_clicked()));
-    p_multilineeditaction=new KToggleAction(KIcon("multiline",KIconLoader::global()),i18n("Multiline"),formpart->actionCollection());
+    p_multilineeditaction=new KToggleAction(QIcon(loader.iconPath("multiline",KIconLoader::User)),i18n("Multiline"),formpart->actionCollection());
     formpart->actionCollection()->addAction("multiline",p_multilineeditaction);
     connect(p_multilineeditaction,SIGNAL(triggered()),this,SLOT(fieldbutton_clicked()));
-    p_booleanaction=new KToggleAction(KIcon("boolean22x22",KIconLoader::global()),i18n("Boolean"),formpart->actionCollection());
+    p_booleanaction=new KToggleAction(QIcon(loader.iconPath("boolean22x22",KIconLoader::User)),i18n("Boolean"),formpart->actionCollection());
     formpart->actionCollection()->addAction("boolean",p_booleanaction);
     connect(p_booleanaction,SIGNAL(triggered()),this,SLOT(fieldbutton_clicked()));
-    p_comboboxaction=new KToggleAction(KIcon("combobox22x22",KIconLoader::global()),i18n("Combobox"),formpart->actionCollection());
+    p_comboboxaction=new KToggleAction(QIcon(loader.iconPath("combobox22x22",KIconLoader::User)),i18n("Combobox"),formpart->actionCollection());
     formpart->actionCollection()->addAction("combobox",p_comboboxaction);
     connect(p_comboboxaction,SIGNAL(triggered()),this,SLOT(fieldbutton_clicked()));
-    p_gridaction=new KToggleAction(KIcon("grid22x22",KIconLoader::global()),i18n("Grid"),formpart->actionCollection());
+    p_gridaction=new KToggleAction(QIcon(loader.iconPath("grid22x22",KIconLoader::User)),i18n("Grid"),formpart->actionCollection());
     formpart->actionCollection()->addAction("grid",p_gridaction);
     connect(p_gridaction,SIGNAL(triggered()),this,SLOT(fieldbutton_clicked()));
-    p_selectoraction=new KToggleAction(KIcon("rowselector22x22",KIconLoader::global()),i18n("Selector"),formpart->actionCollection());
+    p_selectoraction=new KToggleAction(QIcon(loader.iconPath("rowselector22x22",KIconLoader::User)),i18n("Selector"),formpart->actionCollection());
     formpart->actionCollection()->addAction("selector",p_selectoraction);
     connect(p_selectoraction,SIGNAL(triggered()),this,SLOT(fieldbutton_clicked()));
-    p_buttonaction=new KToggleAction(KIcon("button",KIconLoader::global()),i18n("Button"),formpart->actionCollection());
+    p_buttonaction=new KToggleAction(QIcon(loader.iconPath("button",KIconLoader::User)),i18n("Button"),formpart->actionCollection());
     formpart->actionCollection()->addAction("button",p_buttonaction);
     connect(p_buttonaction,SIGNAL(triggered()),this,SLOT(fieldbutton_clicked()));
-    p_subformaction=new KToggleAction(KIcon("utilities-terminal"),i18n("Subform"),formpart->actionCollection());
+    p_subformaction=new KToggleAction(QIcon::fromTheme("utilities-terminal"),i18n("Subform"),formpart->actionCollection());
     formpart->actionCollection()->addAction("subform",p_subformaction);
     connect(p_subformaction,SIGNAL(triggered()),this,SLOT(fieldbutton_clicked()));
-    p_imageaction=new KToggleAction(KIcon("mimage",KIconLoader::global()),i18n("Image"),formpart->actionCollection());
+    p_imageaction=new KToggleAction(QIcon(loader.iconPath("mimage",KIconLoader::User)),i18n("Image"),formpart->actionCollection());
     formpart->actionCollection()->addAction("image",p_imageaction);
     connect(p_imageaction,SIGNAL(triggered()),this,SLOT(fieldbutton_clicked()));
-    p_tabwidgetaction=new KToggleAction(KIcon(""),i18n("Tabwidget"),formpart->actionCollection());
+    p_tabwidgetaction=new KToggleAction(QIcon(""),i18n("Tabwidget"),formpart->actionCollection());
     formpart->actionCollection()->addAction("tabwidget",p_tabwidgetaction);
     connect(p_tabwidgetaction,SIGNAL(triggered()),this,SLOT(fieldbutton_clicked()));
-    p_dateaction=new KToggleAction(KIcon("view-pim-calendar"),i18n("date"),formpart->actionCollection());
+    p_dateaction=new KToggleAction(QIcon::fromTheme("view-pim-calendar"),i18n("date"),formpart->actionCollection());
     formpart->actionCollection()->addAction("date",p_dateaction);
     connect(p_dateaction,SIGNAL(triggered()),this,SLOT(fieldbutton_clicked()));
 
@@ -220,20 +223,20 @@ hk_kdeformpartwidget::hk_kdeformpartwidget( hk_kdeformpart* formpart,QWidget* pa
     p_bulkaction->addAction(p_bulkforegroundcolouraction);
     p_bulkaction->addAction(p_bulkbackgroundcolouraction);    
     
-    p_taborderaction=new KAction(KIcon("go-bottom"),i18n("Tab order"),formpart->actionCollection());
-    formpart->actionCollection() ->addAction("taborder",p_taborderaction);
+    p_taborderaction=new KAction(QIcon::fromTheme("go-bottom"),i18n("Tab order"),formpart->actionCollection());
+    formpart->actionCollection()->addAction("taborder",p_taborderaction);
     connect(p_taborderaction,SIGNAL(triggered()),this,SLOT(taborder_clicked()));
 
-    p_reloadaction=new KAction(KIcon("view-refresh"),i18n("Reload"),formpart->actionCollection());
-    formpart->actionCollection() -> addAction("reload",p_reloadaction);
+    p_reloadaction=new KAction(QIcon::fromTheme("view-refresh"),i18n("Reload"),formpart->actionCollection());
+    formpart->actionCollection()->addAction("reload",p_reloadaction);
     connect(p_reloadaction,SIGNAL(triggered()),this,SLOT(reload_form()));
 
     connect( p_form, SIGNAL( field_created() ), this, SLOT( field_created() ) );
     connect( p_form, SIGNAL( signal_focuswidget_changed() ), this, SLOT( slot_focuswidget_changed() ) );
 
     p_deleteaction=new KAction(i18n("&Delete"),formpart->actionCollection());
-    formpart->actionCollection() -> addAction("deleteclicked",p_deleteaction);
-    p_deleteaction -> setShortcut(Qt::Key_Delete);
+    formpart->actionCollection()->addAction("deleteclicked",p_deleteaction);
+    p_deleteaction->setShortcut(Qt::Key_Delete);
     connect(p_deleteaction,SIGNAL(triggered()),p_form,SLOT(delete_widgets()));
     p_copyaction=new KAction(i18n("&Copy"),formpart->actionCollection());
     formpart->actionCollection()->addAction("copy",p_copyaction);
@@ -247,26 +250,26 @@ hk_kdeformpartwidget::hk_kdeformpartwidget( hk_kdeformpart* formpart,QWidget* pa
     formpart->actionCollection()->addAction("cutclicked",p_cutaction);
     p_cutaction->setShortcut(Qt::ControlModifier+Qt::Key_X);
     connect(p_cutaction,SIGNAL(triggered()),p_form,SLOT(cut()));
-    p_formpropertyaction=new KAction(KIcon("propertyeditor",KIconLoader::global()),i18n("&Propertyeditor"),formpart->actionCollection());
-    formpart->actionCollection()-> addAction("viewproperty",p_formpropertyaction);
+    p_formpropertyaction=new KAction(QIcon(loader.iconPath("propertyeditor",KIconLoader::User)),i18n("&Propertyeditor"),formpart->actionCollection());
+    formpart->actionCollection()->addAction("viewproperty",p_formpropertyaction);
     connect(p_formpropertyaction,SIGNAL(triggered()),p_form,SLOT(show_property()));
 
     p_resizeaction=new KActionMenu(i18n("Adjust &size"),formpart->actionCollection());
     formpart->actionCollection()->addAction("size",p_resizeaction);
     p_minwidthaction=new KAction(i18n("Minimum width"),formpart->actionCollection());
-    formpart->actionCollection() -> addAction("minwidth",p_minwidthaction);
+    formpart->actionCollection()->addAction("minwidth",p_minwidthaction);
     connect(p_minwidthaction,SIGNAL(triggered()),p_form,SLOT(adjust_minw()));
     p_maxwidthaction=new KAction(i18n("Maximum width"),formpart->actionCollection());
     formpart->actionCollection()->addAction("maxwidth",p_maxwidthaction);
     connect(p_maxwidthaction,SIGNAL(triggered()),p_form,SLOT(adjust_maxw()));
     p_minheightaction=new KAction(i18n("Minimum height"),formpart->actionCollection());
-    formpart->actionCollection() -> addAction("minheight",p_minheightaction);
+    formpart->actionCollection()->addAction("minheight",p_minheightaction);
     connect(p_minheightaction,SIGNAL(triggered()),p_form,SLOT(adjust_minh()));
     p_maxheightaction=new KAction(i18n("Maximum height"),formpart->actionCollection());
-    formpart->actionCollection() -> addAction("maxheight",p_maxheightaction);
+    formpart->actionCollection()->addAction("maxheight",p_maxheightaction);
     connect(p_maxheightaction,SIGNAL(triggered()),p_form,SLOT(adjust_maxh()));
     p_minsizeaction=new KAction(i18n("Minimum size"),formpart->actionCollection());
-    formpart->actionCollection()-> addAction("minsize",p_minsizeaction);
+    formpart->actionCollection()->addAction("minsize",p_minsizeaction);
     connect(p_minsizeaction,SIGNAL(triggered()),p_form,SLOT(adjust_mins()));
     p_maxsizeaction=new KAction(i18n("Maximum size"),formpart->actionCollection());
     formpart->actionCollection()->addAction("maxsize",p_maxsizeaction);
@@ -281,45 +284,45 @@ hk_kdeformpartwidget::hk_kdeformpartwidget( hk_kdeformpart* formpart,QWidget* pa
     p_alignaction=new KActionMenu(i18n("&Align"),formpart->actionCollection());
     formpart->actionCollection()->addAction("align",p_alignaction);
     p_alignleftaction=new KAction(i18n("&Left"),formpart->actionCollection());
-    formpart->actionCollection() -> addAction("alignleft",p_alignleftaction);
+    formpart->actionCollection()->addAction("alignleft",p_alignleftaction);
     connect(p_alignleftaction,SIGNAL(triggered()),p_form,SLOT(align_left()));
     p_alignrightaction=new KAction(i18n("&Right"),formpart->actionCollection());
     formpart->actionCollection()->addAction("alignright",p_alignrightaction);
     connect(p_alignrightaction,SIGNAL(triggered()),p_form,SLOT(align_right()));
     p_aligntopaction=new KAction(i18n("&Top"),formpart->actionCollection());
-    formpart->actionCollection()-> addAction("aligntop",p_aligntopaction);
+    formpart->actionCollection()->addAction("aligntop",p_aligntopaction);
     connect(p_aligntopaction,SIGNAL(triggered()),p_form,SLOT(align_top()));
     p_alignbottomaction=new KAction(i18n("&Bottom"),formpart->actionCollection());
-    formpart->actionCollection() -> addAction("alignbottom",p_alignbottomaction);
+    formpart->actionCollection()->addAction("alignbottom",p_alignbottomaction);
     connect(p_alignbottomaction,SIGNAL(triggered()),p_form,SLOT(align_bottom()));
     p_alignaction->addAction(p_alignleftaction);
     p_alignaction->addAction(p_alignrightaction);
     p_alignaction->addAction(p_aligntopaction);
     p_alignaction->addAction(p_alignbottomaction);
-    p_dbdesigneraction=new KAction(KIcon("dbdesigner",KIconLoader::global()),i18n("Database designer"),formpart->actionCollection());
+    p_dbdesigneraction=new KAction(QIcon(loader.iconPath("dbdesigner",KIconLoader::User)),i18n("Database designer"),formpart->actionCollection());
     formpart->actionCollection()->addAction("dbdesigner",p_dbdesigneraction);
     connect(p_dbdesigneraction,SIGNAL(triggered()),p_form,SLOT(dbdesignaction()));
 
-    p_withlabelaction=new KToggleAction(KIcon("mail-attachment"),i18n("with label"),formpart->actionCollection());
-    formpart->actionCollection() -> addAction("withlabel",p_withlabelaction);
+    p_withlabelaction=new KToggleAction(QIcon::fromTheme("mail-attachment"),i18n("with label"),formpart->actionCollection());
+    formpart->actionCollection()->addAction("withlabel",p_withlabelaction);
     connect(p_withlabelaction,SIGNAL(triggered()),this,SLOT(withlabelbutton_clicked()));
 
     p_definegridcolumnaction=new KAction(i18n("Define columns"),formpart->actionCollection());
-    formpart->actionCollection() -> addAction("gridcolumndialog",p_definegridcolumnaction);
+    formpart->actionCollection()->addAction("gridcolumndialog",p_definegridcolumnaction);
     connect(p_definegridcolumnaction,SIGNAL(triggered()),this,SLOT(show_gridcolumndialog()));
     p_definegridcolumnaction->setEnabled(false);
 
     toolbar = new hk_kdetoolbar( this, "toolbar" );
-    p_filterdefinitionaction=new KToggleAction(KIcon("filter",KIconLoader::global()),i18n("Filterdefinition"),formpart->actionCollection());
-    formpart->actionCollection() -> addAction("filterdefinition",p_filterdefinitionaction);
+    p_filterdefinitionaction=new KToggleAction(QIcon(loader.iconPath("filter",KIconLoader::User)),i18n("Filterdefinition"),formpart->actionCollection());
+    formpart->actionCollection()->addAction("filterdefinition",p_filterdefinitionaction);
     connect(p_filterdefinitionaction,SIGNAL(triggered()),this,SLOT(filterdefinebutton_clicked()));
-    p_filterexecaction=new KToggleAction(KIcon("filterexec",KIconLoader::global()),i18n("Filterexecution"),formpart->actionCollection());
-    formpart->actionCollection() -> addAction("filterexec",p_filterexecaction);
+    p_filterexecaction=new KToggleAction(QIcon(loader.iconPath("filterexec",KIconLoader::User)),i18n("Filterexecution"),formpart->actionCollection());
+    formpart->actionCollection()->addAction("filterexec",p_filterexecaction);
     connect(p_filterexecaction,SIGNAL(triggered()),toolbar,SLOT(filterexecbutton_clicked()));
     toolbar->set_filteractions(p_filterdefinitionaction,p_filterexecaction);
     
     p_clearfilteraction=new KAction(i18n("Clear filter"),formpart->actionCollection());
-    formpart->actionCollection() -> addAction("filterclear",p_clearfilteraction);
+    formpart->actionCollection()->addAction("filterclear",p_clearfilteraction);
     connect(p_clearfilteraction,SIGNAL(triggered()),this,SLOT(clear_filter()));
 
     set_nodesignmode(runtime_only());
@@ -400,7 +403,7 @@ p_clearfilteraction->setEnabled(s==hk_presentation::filtermode);
         if (p_viewaction)p_viewaction->setChecked(true);
         if (s==hk_presentation::viewmode )toolbar->set_viewmode();
         p_bulkaction->setEnabled(false);
-        p_formpart->setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdeformpartview.rc"));
+        p_formpart->setXMLFile("hk_kdeformpartview.rc");
         p_pointeraction->setEnabled(false);
         p_lineeditaction->setEnabled(false);
         p_labelaction->setEnabled(false);
@@ -413,7 +416,6 @@ p_clearfilteraction->setEnabled(s==hk_presentation::filtermode);
         p_subformaction->setEnabled(false);
 	p_formpropertyaction->setEnabled(false);
 	p_taborderaction->setEnabled(false);
-
     }
     else
     {
@@ -421,7 +423,7 @@ p_clearfilteraction->setEnabled(s==hk_presentation::filtermode);
         if (p_designaction)p_designaction->setChecked(true);
         toolbar->set_designmode();
         p_bulkaction->setEnabled(true);
-        p_formpart->setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdeformpartdesign.rc"));
+        p_formpart->setXMLFile("hk_kdeformpartdesign.rc");
         p_pointeraction->setEnabled(true);
         p_lineeditaction->setEnabled(true);
         p_labelaction->setEnabled(true);

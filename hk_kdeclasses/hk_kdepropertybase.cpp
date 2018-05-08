@@ -23,6 +23,7 @@
 
 #include "hk_kdepropertybase.h"
 
+#include <KLocalizedString>
 #include <qvariant.h>
 #include <hk_kdespinbox.h>
 #include <qpushbutton.h>
@@ -89,7 +90,7 @@ hk_kdepropertyeditorbase::hk_kdepropertyeditorbase( QWidget* parent, const char*
 
     combomodefield = new QComboBox(tab_2);
     combomodefield->setObjectName(QString::fromAscii("combomodefield"));
-    combomodefield->setEnabled( TRUE );
+    combomodefield->setEnabled( true );
     initSizePolicy(combomodefield, QSizePolicy::Preferred, QSizePolicy::Fixed);
 
 
@@ -130,9 +131,9 @@ hk_kdepropertyeditorbase::hk_kdepropertyeditorbase( QWidget* parent, const char*
     columnfield = new QComboBox(tab_2);
     columnfield->setObjectName(QString::fromAscii("columnfield"));
     initSizePolicy(columnfield, QSizePolicy::Preferred, QSizePolicy::Fixed);
-    columnfield->setEditable( TRUE );
-    columnfield->setAutoCompletion( TRUE );
-    columnfield->setDuplicatesEnabled( FALSE );
+    columnfield->setEditable( true );
+    columnfield->setAutoCompletion( true );
+    columnfield->setDuplicatesEnabled( false );
 
     tabLayout->addWidget( columnfield, 2, 1 );
 
@@ -172,7 +173,7 @@ hk_kdepropertyeditorbase::hk_kdepropertyeditorbase( QWidget* parent, const char*
 
     idfield = new QLineEdit(tab_2);
     idfield->setObjectName("idfield");
-    idfield->setEnabled( FALSE );
+    idfield->setEnabled( false );
 
     tabLayout->addWidget( idfield, 0, 1 );
 
@@ -184,15 +185,15 @@ hk_kdepropertyeditorbase::hk_kdepropertyeditorbase( QWidget* parent, const char*
 
     listcolumnfield = new QComboBox(tab_2);
     listcolumnfield->setObjectName(QString::fromAscii("listcolumnfield"));
-    listcolumnfield->setEnabled( TRUE );
-    listcolumnfield->setEditable( TRUE );
-    listcolumnfield->setAutoCompletion( TRUE );
+    listcolumnfield->setEnabled( true );
+    listcolumnfield->setEditable( true );
+    listcolumnfield->setAutoCompletion( true );
 
     tabLayout->addWidget( listcolumnfield, 11, 1 );
 
     listdatasourcefield = new QComboBox(tab_2);
     listdatasourcefield->setObjectName(QString::fromAscii("listdatasourcefield"));
-    listdatasourcefield->setEnabled( TRUE );
+    listdatasourcefield->setEnabled( true );
     initSizePolicy(listdatasourcefield, QSizePolicy::Preferred, QSizePolicy::Fixed);
 
     tabLayout->addWidget( listdatasourcefield, 10, 1 );
@@ -224,15 +225,15 @@ hk_kdepropertyeditorbase::hk_kdepropertyeditorbase( QWidget* parent, const char*
 
     viewcolumnfield = new QComboBox(tab_2);
     viewcolumnfield->setObjectName(QString::fromAscii("viewcolumnfield"));
-    viewcolumnfield->setEnabled( TRUE );
-    viewcolumnfield->setEditable( TRUE );
-    viewcolumnfield->setAutoCompletion( TRUE );
+    viewcolumnfield->setEnabled( true );
+    viewcolumnfield->setEditable( true );
+    viewcolumnfield->setAutoCompletion( true );
 
     tabLayout->addWidget( viewcolumnfield, 12, 1 );
 
     subformfield = new QComboBox(tab_2);
     subformfield->setObjectName(QString::fromAscii("subformfield"));
-    subformfield->setEnabled( TRUE );
+    subformfield->setEnabled( true );
     initSizePolicy(subformfield, QSizePolicy::Preferred, QSizePolicy::Fixed);
 
     tabLayout->addWidget( subformfield, 13, 1 );
@@ -251,7 +252,7 @@ hk_kdepropertyeditorbase::hk_kdepropertyeditorbase( QWidget* parent, const char*
 
     usetextlistfield = new QComboBox(tab_2);
     usetextlistfield->setObjectName(QString::fromAscii("usetextlistfield"));
-    usetextlistfield->setEnabled( TRUE );
+    usetextlistfield->setEnabled( true );
     initSizePolicy(usetextlistfield, QSizePolicy::Preferred, QSizePolicy::Fixed);
 
     tabLayout->addWidget( usetextlistfield, 9, 1 );
@@ -271,7 +272,7 @@ hk_kdepropertyeditorbase::hk_kdepropertyeditorbase( QWidget* parent, const char*
 
     usetextlistbutton = new QToolButton(tab_2);
     usetextlistbutton->setObjectName(QString::fromAscii("usetextlistbutton"));
-    usetextlistbutton->setEnabled( FALSE );
+    usetextlistbutton->setEnabled( false );
     usetextlistbutton->setMinimumSize( QSize( 20, 21 ) );
     usetextlistbutton->setMaximumSize( QSize( 20, 21 ) );
 
@@ -326,9 +327,9 @@ hk_kdepropertyeditorbase::hk_kdepropertyeditorbase( QWidget* parent, const char*
     fontfield->setObjectName(QString::fromAscii("fontfield"));
     initSizePolicy(fontfield, QSizePolicy::Preferred, QSizePolicy::Fixed);
     fontfield->setMaximumSize( QSize( 300, 32767 ) );
-    fontfield->setEditable( TRUE );
-    fontfield->setAutoCompletion( TRUE );
-    fontfield->setDuplicatesEnabled( FALSE );
+    fontfield->setEditable( true );
+    fontfield->setAutoCompletion( true );
+    fontfield->setDuplicatesEnabled( false );
 
     tabLayout_2->addWidget( fontfield, 4, 1 );
 
@@ -620,13 +621,13 @@ hk_kdepropertyeditorbase::hk_kdepropertyeditorbase( QWidget* parent, const char*
 
     showmaximizedfield = new QComboBox(tab_4);
     showmaximizedfield->setObjectName(QString::fromAscii("showmaximizedfield"));
-    showmaximizedfield->setDuplicatesEnabled( FALSE );
+    showmaximizedfield->setDuplicatesEnabled( false );
 
     tabLayout_3->addWidget( showmaximizedfield, 2, 1 );
 
     conditionbutton = new QPushButton(tab_4);
     conditionbutton->setObjectName("conditionbutton");
-    conditionbutton->setEnabled( TRUE );
+    conditionbutton->setEnabled( true );
     initSizePolicy(conditionbutton, QSizePolicy::Minimum, QSizePolicy::Minimum);
     conditionbutton->setMinimumSize( QSize( 20, 21 ) );
     conditionbutton->setMaximumSize( QSize( 20, 21 ) );
@@ -831,19 +832,19 @@ hk_kdepropertyeditorbase::hk_kdepropertyeditorbase( QWidget* parent, const char*
     connect( boldfield, SIGNAL( activated(int) ), this, SLOT( format_changes() ) );
     connect( bottomlinefield, SIGNAL( valueChanged(int) ), this, SLOT( border_changes() ) );
     connect( columnfield, SIGNAL( activated(const QString&) ), this, SLOT( data_changes() ) );
-    connect( columnfield, SIGNAL( textChanged(const QString&) ), this, SLOT( data_changes() ) );
+    connect( columnfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( data_changes() ) );
     connect( combomodefield, SIGNAL( activated(int) ), this, SLOT( combomode_changed() ) );
     connect( combomodefield, SIGNAL( activated(int) ), this, SLOT( data_changes() ) );
     connect( conditionbutton, SIGNAL( clicked() ), this, SLOT( conditionbutton_clicked() ) );
     connect( datasourcebutton, SIGNAL( clicked() ), this, SLOT( add_formdatasource() ) );
-    connect( datasourcefield, SIGNAL( textChanged(const QString&) ), this, SLOT( datasource_selected() ) );
+    connect( datasourcefield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( datasource_selected() ) );
     connect( datasourcefield, SIGNAL( activated(int) ), this, SLOT( datasource_selected() ) );
     connect( datasourcefield, SIGNAL( activated(const QString&) ), this, SLOT( data_changes() ) );
     connect( defaultfield, SIGNAL( textChanged(const QString&) ), this, SLOT( data_changes() ) );
     connect( diagonallorufield, SIGNAL( valueChanged(int) ), this, SLOT( border_changes() ) );
     connect( diagonallurofield, SIGNAL( valueChanged(int) ), this, SLOT( border_changes() ) );
     connect( digitfield, SIGNAL( valueChanged(int) ), this, SLOT( data_changes() ) );
-    connect( fontfield, SIGNAL( textChanged(const QString&) ), this, SLOT( format_changes() ) );
+    connect( fontfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( format_changes() ) );
     connect( fontsizefield, SIGNAL( valueChanged(int) ), this, SLOT( format_changes() ) );
     connect( heightfield, SIGNAL( valueChanged(int) ), this, SLOT( geometry_changes() ) );
     connect( identifierfield, SIGNAL( returnPressed() ), this, SLOT( identifier_changed() ) );
@@ -851,12 +852,12 @@ hk_kdepropertyeditorbase::hk_kdepropertyeditorbase( QWidget* parent, const char*
     connect( labelfield, SIGNAL( textChanged(const QString&) ), this, SLOT( format_changes() ) );
     connect( leftlinefield, SIGNAL( valueChanged(int) ), this, SLOT( border_changes() ) );
     connect( listcolumnfield, SIGNAL( activated(const QString&) ), this, SLOT( data_changes() ) );
-    connect( listcolumnfield, SIGNAL( textChanged(const QString&) ), this, SLOT( data_changes() ) );
+    connect( listcolumnfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( data_changes() ) );
     connect( listdatasourcebutton, SIGNAL( clicked() ), this, SLOT( add_listformdatasource() ) );
     connect( listdatasourcefield, SIGNAL( activated(const QString&) ), this, SLOT( data_changes() ) );
     connect( listdatasourcefield, SIGNAL( activated(const QString&) ), this, SLOT( listdatasource_selected() ) );
-    connect( listdatasourcefield, SIGNAL( textChanged(const QString&) ), this, SLOT( listdatasource_selected() ) );
-    connect( listdatasourcefield, SIGNAL( textChanged(const QString&) ), this, SLOT( data_changes() ) );
+    connect( listdatasourcefield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( listdatasource_selected() ) );
+    connect( listdatasourcefield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( data_changes() ) );
     connect( objectfield, SIGNAL( activated(int) ), this, SLOT( actionobject_changes() ) );
     connect( oncloseactionbutton, SIGNAL( clicked() ), this, SLOT( closeactionbutton_clicked() ) );
     connect( ondoubleclickactionbutton, SIGNAL( clicked() ), this, SLOT( doubleclickactionbutton_clicked() ) );
@@ -867,10 +868,10 @@ hk_kdepropertyeditorbase::hk_kdepropertyeditorbase( QWidget* parent, const char*
     connect( separatorfield, SIGNAL( activated(int) ), this, SLOT( data_changes() ) );
     connect( showmaximizedfield, SIGNAL( activated(int) ), this, SLOT( actionobject_changes() ) );
     connect( subformbutton, SIGNAL( clicked() ), this, SLOT( subformbutton_clicked() ) );
-    connect( subformfield, SIGNAL( textChanged(const QString&) ), this, SLOT( data_changes() ) );
+    connect( subformfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( data_changes() ) );
     connect( toplinefield, SIGNAL( valueChanged(int) ), this, SLOT( border_changes() ) );
     connect( viewcolumnfield, SIGNAL( activated(const QString&) ), this, SLOT( data_changes() ) );
-    connect( viewcolumnfield, SIGNAL( textChanged(const QString&) ), this, SLOT( data_changes() ) );
+    connect( viewcolumnfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( data_changes() ) );
     connect( widthfield, SIGNAL( valueChanged(int) ), this, SLOT( geometry_changes() ) );
     connect( xfield, SIGNAL( valueChanged(int) ), this, SLOT( geometry_changes() ) );
     connect( yfield, SIGNAL( valueChanged(int) ), this, SLOT( geometry_changes() ) );
@@ -948,97 +949,96 @@ hk_kdepropertyeditorbase::~hk_kdepropertyeditorbase()
  */
 void hk_kdepropertyeditorbase::languageChange()
 {
-    setWindowTitle( tr( "Property Editor" ) );
-    //TBP TBT translation tr()->i18n()
-    combomodelabel->setText( tr( "Combomode:" ) );
-    labellabel->setText( tr( "Label:" ) );
-    defaultlabel->setText( tr( "Default value:" ) );
-    datasourcebutton->setText( tr( "..." ) );
-    datasourcelabel->setText( tr( "Datasource:" ) );
-    tooltiplabel->setText( tr( "Tooltip:" ) );
-    columnlabel->setText( tr( "Column:" ) );
-    identifierlabel->setText( tr( "Identifier:" ) );
-    Idlabel->setText( tr( "Id:" ) );
-    subformlabel->setText( tr( "Subform:" ) );
-    listcolumnlabel->setText( tr( "Listcolumn:" ) );
-    subformbutton->setText( tr( "..." ) );
-    listdatasourcelabel->setText( tr( "Listdatasource:" ) );
-    viewcolumnlabel->setText( tr( "Viewcolumn:" ) );
-    readonlylabel->setText( tr( "Readonly:" ) );
-    usetextlistlabel->setText( tr( "Use textlist:" ) );
-    listdatasourcebutton->setText( tr( "..." ) );
-    usetextlistbutton->setText( tr( "..." ) );
-    tab->setTabText( tab->indexOf(tab_2), tr( "&Data" ) );
+    setWindowTitle( i18n( "Property Editor" ) );
+    combomodelabel->setText( i18n( "Combomode:" ) );
+    labellabel->setText( i18n( "Label:" ) );
+    defaultlabel->setText( i18n( "Default value:" ) );
+    datasourcebutton->setText( i18n( "..." ) );
+    datasourcelabel->setText( i18n( "Datasource:" ) );
+    tooltiplabel->setText( i18n( "Tooltip:" ) );
+    columnlabel->setText( i18n( "Column:" ) );
+    identifierlabel->setText( i18n( "Identifier:" ) );
+    Idlabel->setText( i18n( "Id:" ) );
+    subformlabel->setText( i18n( "Subform:" ) );
+    listcolumnlabel->setText( i18n( "Listcolumn:" ) );
+    subformbutton->setText( i18n( "..." ) );
+    listdatasourcelabel->setText( i18n( "Listdatasource:" ) );
+    viewcolumnlabel->setText( i18n( "Viewcolumn:" ) );
+    readonlylabel->setText( i18n( "Readonly:" ) );
+    usetextlistlabel->setText( i18n( "Use textlist:" ) );
+    listdatasourcebutton->setText( i18n( "..." ) );
+    usetextlistbutton->setText( i18n( "..." ) );
+    tab->setTabText( tab->indexOf(tab_2), i18n( "&Data" ) );
     p_backgroundcolourbutton->setText( QString::null );
-    xlabel->setText( tr( "X:" ) );
-    boldlabel->setText( tr( "Bold:" ) );
-    p_backgroundcolourlabel->setText( tr( "Backgroundcolour:" ) );
-    separatorlabel->setText( tr( "TextLabel2" ) );
-    fontsizelabel->setText( tr( "Fontsize:" ) );
-    fontlabel->setText( tr( "Font:" ) );
-    heightlabel->setText( tr( "Height:" ) );
-    ylabel->setText( tr( "Y:" ) );
+    xlabel->setText( i18n( "X:" ) );
+    boldlabel->setText( i18n( "Bold:" ) );
+    p_backgroundcolourlabel->setText( i18n( "Backgroundcolour:" ) );
+    separatorlabel->setText( i18n( "TextLabel2" ) );
+    fontsizelabel->setText( i18n( "Fontsize:" ) );
+    fontlabel->setText( i18n( "Font:" ) );
+    heightlabel->setText( i18n( "Height:" ) );
+    ylabel->setText( i18n( "Y:" ) );
     p_foregroundcolourbutton->setText( QString::null );
-    p_foregroundcolourlabel->setText( tr( "Foregroundcolour:" ) );
-    widthlabel->setText( tr( "Width:" ) );
-    italiclabel->setText( tr( "Italic:" ) );
-    digitlabel->setText( tr( "TextLabel1" ) );
-    scalelabel->setText( tr( "Scale:" ) );
-    scalefield->setSuffix( tr( "%" ) );
-    scalefield->setSpecialValueText( tr( "Fit to frame" ) );
-    alignmentlabel->setText( tr( "Alignment:" ) );
-    enabledlabel->setText( tr( "Enabled:" ) );
-    localimagelabel->setText( tr( "Local image:" ) );
+    p_foregroundcolourlabel->setText( i18n( "Foregroundcolour:" ) );
+    widthlabel->setText( i18n( "Width:" ) );
+    italiclabel->setText( i18n( "Italic:" ) );
+    digitlabel->setText( i18n( "TextLabel1" ) );
+    scalelabel->setText( i18n( "Scale:" ) );
+    scalefield->setSuffix( i18n( "%" ) );
+    scalefield->setSpecialValueText( i18n( "Fit to frame" ) );
+    alignmentlabel->setText( i18n( "Alignment:" ) );
+    enabledlabel->setText( i18n( "Enabled:" ) );
+    localimagelabel->setText( i18n( "Local image:" ) );
     localimagebutton->setText( QString::null );
-    istogglebuttonlabel->setText( tr( "Is togglebutton:" ) );
-    togglepushedlabel->setText( tr( "Is pushed:" ) );
-    tab->setTabText( tab->indexOf(tab_3), tr( "&Format" ) );
-    toplinelabel->setText( tr( "TopLine:" ) );
-    bottomlinelabel->setText( tr( "BottomLine:" ) );
-    diagonallurolabel->setText( tr( "DiagonalLURO:" ) );
-    diagonallorulabel->setText( tr( "DiagonalLORU:" ) );
-    leftlinelabel->setText( tr( "LeftLine:" ) );
-    rightlinelabel->setText( tr( "RightLine:" ) );
-    tab->setTabText( tab->indexOf(frametab), tr( "F&rame" ) );
-    actionlabel->setText( tr( "Action" ) );
-    objectlabel->setText( tr( "Object" ) );
-    conditionbutton->setText( tr( "..." ) );
-    showmaximizedlabel->setText( tr( "show maximized:" ) );
+    istogglebuttonlabel->setText( i18n( "Is togglebutton:" ) );
+    togglepushedlabel->setText( i18n( "Is pushed:" ) );
+    tab->setTabText( tab->indexOf(tab_3), i18n( "&Format" ) );
+    toplinelabel->setText( i18n( "TopLine:" ) );
+    bottomlinelabel->setText( i18n( "BottomLine:" ) );
+    diagonallurolabel->setText( i18n( "DiagonalLURO:" ) );
+    diagonallorulabel->setText( i18n( "DiagonalLORU:" ) );
+    leftlinelabel->setText( i18n( "LeftLine:" ) );
+    rightlinelabel->setText( i18n( "RightLine:" ) );
+    tab->setTabText( tab->indexOf(frametab), i18n( "F&rame" ) );
+    actionlabel->setText( i18n( "Action" ) );
+    objectlabel->setText( i18n( "Object" ) );
+    conditionbutton->setText( i18n( "..." ) );
+    showmaximizedlabel->setText( i18n( "show maximized:" ) );
     onpushactionbutton->setText( QString::null );
-    pushactionlabel->setText( tr( "On click:" ) );
-    doubleclickactionlabel->setText( tr( "On doubleclick:" ) );
+    pushactionlabel->setText( i18n( "On click:" ) );
+    doubleclickactionlabel->setText( i18n( "On doubleclick:" ) );
     ondoubleclickactionbutton->setText( QString::null );
-    ongetfocuslabel->setText( tr( "On getfocus:" ) );
+    ongetfocuslabel->setText( i18n( "On getfocus:" ) );
     ongetfocusbutton->setText( QString::null );
-    beforedeletelabel->setText( tr( "Before delete:" ) );
+    beforedeletelabel->setText( i18n( "Before delete:" ) );
     oncloseactionbutton->setText( QString::null );
     beforeupdateactionbutton->setText( QString::null );
     afterupdateactionbutton->setText( QString::null );
-    afterupdatelabel->setText( tr( "After update:" ) );
-    beforeupdateactionlabel->setText( tr( "Before update:" ) );
-    afterdeletelabel->setText( tr( "After delete:" ) );
-    afterrowchangelabel->setText( tr( "After row change:" ) );
+    afterupdatelabel->setText( i18n( "After update:" ) );
+    beforeupdateactionlabel->setText( i18n( "Before update:" ) );
+    afterdeletelabel->setText( i18n( "After delete:" ) );
+    afterrowchangelabel->setText( i18n( "After row change:" ) );
     afterrowchangeactionbutton->setText( QString::null );
-    beforeinsertlabel->setText( tr( "Before insert:" ) );
+    beforeinsertlabel->setText( i18n( "Before insert:" ) );
     beforeinsertactionbutton->setText( QString::null );
     afterdeleteactionbutton->setText( QString::null );
-    closeactionlabel->setText( tr( "On close:" ) );
+    closeactionlabel->setText( i18n( "On close:" ) );
     beforedeleteactionbutton->setText( QString::null );
     onopenactionbutton->setText( QString::null );
     beforerowchangeactionbutton->setText( QString::null );
-    beforerowchangelabel->setText( tr( "Before row change:" ) );
-    openactionlabel->setText( tr( "On open:" ) );
-    onloosefocuslabel->setText( tr( "On loosefocus:" ) );
+    beforerowchangelabel->setText( i18n( "Before row change:" ) );
+    openactionlabel->setText( i18n( "On open:" ) );
+    onloosefocuslabel->setText( i18n( "On loosefocus:" ) );
     onloosefocusbutton->setText( QString::null );
     onkeybutton->setText( QString::null );
-    onkeylabel->setText( tr( "On key:" ) );
-    onselectlabel->setText( tr( "On select:" ) );
+    onkeylabel->setText( i18n( "On key:" ) );
+    onselectlabel->setText( i18n( "On select:" ) );
     onselectactionbutton->setText( QString::null );
-    afterinsertlabel->setText( tr( "After insert:" ) );
+    afterinsertlabel->setText( i18n( "After insert:" ) );
     afterinsertactionbutton->setText( QString::null );
-    onvaluechangedactionlabel->setText( tr( "On value changed:" ) );
+    onvaluechangedactionlabel->setText( i18n( "On value changed:" ) );
     onvaluechangedactionbutton->setText( QString::null );
-    tab->setTabText( tab->indexOf(tab_4), tr( "&Action" ) );
+    tab->setTabText( tab->indexOf(tab_4), i18n( "&Action" ) );
 }
 
 void hk_kdepropertyeditorbase::pushactionbutton_clicked()

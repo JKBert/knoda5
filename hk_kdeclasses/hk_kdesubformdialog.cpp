@@ -57,16 +57,10 @@ hk_kdesubformdialog::hk_kdesubformdialog( hk_subform* subform,QWidget* parent,  
     connect(p_signalmerge,SIGNAL(mapped(QWidget*)),this,SLOT(slot_data_changed(QWidget*)));
 }
 
-
-
 hk_kdesubformdialog::~hk_kdesubformdialog()
 {
     delete p_form;
 }
-
-
-
-
 
 void hk_kdesubformdialog::add_row(void)
 {
@@ -91,10 +85,6 @@ void hk_kdesubformdialog::add_row(void)
   p_signalmerge->setMapping(slaveitem,masteritem);    
 }
 
-
-
-
-
 void hk_kdesubformdialog::set_stringlist(QStringList* strlist,list<hk_column*>* collist)
 {
     strlist->clear();
@@ -106,10 +96,6 @@ void hk_kdesubformdialog::set_stringlist(QStringList* strlist,list<hk_column*>* 
         ++it;
     }
 }
-
-
-
-
 
 void hk_kdesubformdialog::set_existing_fields(void)
 { 
@@ -129,31 +115,20 @@ void hk_kdesubformdialog::set_existing_fields(void)
   }
 }
 
-
-
-
 int hk_kdesubformdialog::textposition(QStringList* thelist,const hk_string& txt )
 {
     return thelist->indexOf(QString::fromUtf8(l2u(txt).c_str()));
 }
-
-
 
 int hk_kdesubformdialog::masterindex(const QString& string)
 {
     return textposition(&p_mastercollist,u2l(string.toUtf8().data()));
 }
 
-
-
-
 int hk_kdesubformdialog::slaveindex(const QString& string)
 {
     return textposition(&p_slavecollist,u2l(string.toUtf8().data()));
 }
-
-
-
 
 void hk_kdesubformdialog::ok_button_clicked(void)
 {
@@ -184,12 +159,9 @@ void hk_kdesubformdialog::slot_data_changed(QWidget* pcur)
   grid->selectionModel()->clearSelection();
 }
 
-
 void hk_kdesubformdialog::keyPressEvent(QKeyEvent* /*event*/)
 {
 }
-
-
 
 void hk_kdesubformdialog::delete_rows(void)
 { 
@@ -211,9 +183,6 @@ void hk_kdesubformdialog::delete_rows(void)
   }
 }
 
-
-
-
 bool hk_kdesubformdialog::eventFilter(QObject* object,QEvent* e)
 {
     QKeyEvent* event=dynamic_cast<QKeyEvent*>(e);
@@ -227,5 +196,3 @@ bool hk_kdesubformdialog::eventFilter(QObject* object,QEvent* e)
     }
     else return hk_kderelationdialogbase::eventFilter(object,e);
 }
-
-

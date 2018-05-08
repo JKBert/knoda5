@@ -22,7 +22,7 @@
 ****************************************************************************/
 
 #include "hk_kdereportconditiondialogbase.h"
-
+#include <KLocalizedString> 
 #include <qvariant.h>
 #include <qpushbutton.h>
 #include <qgroupbox.h>
@@ -54,7 +54,7 @@ hk_kdereportconditiondialogbase::hk_kdereportconditiondialogbase( QWidget* paren
 {
     setObjectName(QString::fromAscii(name == NULL?"hk_kdereportconditiondialogbase":name));
     setModal(modal);
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled( true );
     hk_kdereportconditiondialogbaseLayout = new QGridLayout(this);
     hk_kdereportconditiondialogbaseLayout->setMargin(11);
     hk_kdereportconditiondialogbaseLayout->setSpacing(6);
@@ -67,13 +67,13 @@ hk_kdereportconditiondialogbase::hk_kdereportconditiondialogbase( QWidget* paren
 
     buttonOk = new QPushButton(this);
     buttonOk->setObjectName("buttonOk");
-    buttonOk->setAutoDefault( TRUE );
-    buttonOk->setDefault( TRUE );
+    buttonOk->setAutoDefault( true );
+    buttonOk->setDefault( true );
     Layout5->addWidget( buttonOk );
 
     buttonCancel = new QPushButton(this);
     buttonCancel->setObjectName("buttonCancel");
-    buttonCancel->setAutoDefault( TRUE );
+    buttonCancel->setAutoDefault( true );
     Layout5->addWidget( buttonCancel );
     Spacer1 = new QSpacerItem( 20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding );
     Layout5->addItem( Spacer1 );
@@ -91,10 +91,10 @@ hk_kdereportconditiondialogbase::hk_kdereportconditiondialogbase( QWidget* paren
     conditionlist = new QTreeWidget( GroupBox2 );
     conditionlist->setObjectName("conditionlist" );
     conditionlist->setMinimumSize( QSize( 300, 200 ) );
-    conditionlist->setAllColumnsShowFocus( TRUE );
+    conditionlist->setAllColumnsShowFocus( true );
     conditionlist->setRootIsDecorated(false);
-    conditionlist->header() -> setStretchLastSection(false);
-    conditionlist->header() -> setMovable(false);
+    conditionlist->header()->setStretchLastSection(false);
+    conditionlist->header()->setMovable(false);
 
     GroupBox2Layout->addWidget( conditionlist, 0, 1 );
 
@@ -139,7 +139,7 @@ hk_kdereportconditiondialogbase::hk_kdereportconditiondialogbase( QWidget* paren
     reportfield->setObjectName(QString::fromAscii("reportfield"));
     initSizePolicy(reportfield, QSizePolicy::Expanding, QSizePolicy::Fixed);
     reportfield->setMinimumSize( QSize( 150, 0 ) );
-    reportfield->setEditable( TRUE );
+    reportfield->setEditable( true );
 
     Layout17->addWidget( reportfield, 1, 0 );
 
@@ -162,7 +162,7 @@ hk_kdereportconditiondialogbase::hk_kdereportconditiondialogbase( QWidget* paren
     formfieldfield = new QComboBox(GroupBox2);
     formfieldfield->setObjectName(QString::fromAscii("formfieldfield"));
     initSizePolicy(formfieldfield, QSizePolicy::Expanding, QSizePolicy::Fixed);
-    formfieldfield->setEditable( TRUE );
+    formfieldfield->setEditable( true );
 
     Layout17->addWidget( formfieldfield, 7, 0 );
     Spacer23 = new QSpacerItem( 20, 20, QSizePolicy::Expanding, QSizePolicy::Minimum );
@@ -181,7 +181,7 @@ hk_kdereportconditiondialogbase::hk_kdereportconditiondialogbase( QWidget* paren
     connect( deletebutton, SIGNAL( pressed() ), this, SLOT( delete_clicked() ) );
     connect( formdatasourcefield, SIGNAL( activated(int) ), this, SLOT( formdatasource_changed() ) );
     connect( reportfield, SIGNAL( activated(int) ), this, SLOT( reportfield_changed() ) );
-    connect( formfieldfield, SIGNAL( textChanged(const QString&) ), this, SLOT( formfield_change() ) );
+    connect( formfieldfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( formfield_change() ) );
     connect( formfieldfield, SIGNAL( activated(int) ), this, SLOT( formfield_change() ) );
     connect( conditionlist, SIGNAL( itemSelectionChanged()) , this, SLOT( check_buttons() ) );
 }
@@ -200,25 +200,24 @@ hk_kdereportconditiondialogbase::~hk_kdereportconditiondialogbase()
  */
 void hk_kdereportconditiondialogbase::languageChange()
 {
-    setWindowTitle( tr( "hk_kdereportconditiondialogbase" ) );
-    //TBP TBT translation tr()->i18n()
-    buttonOk->setText( tr( "&OK" ) );
-    buttonOk->setShortcut( QKeySequence( tr( "Alt+O" ) ) );
-    buttonCancel->setText( tr( "&Cancel" ) );
-    buttonCancel->setShortcut( QKeySequence( tr( "Alt+C" ) ) );
+    setWindowTitle( i18n( "hk_kdereportconditiondialogbase" ) );
+    buttonOk->setText( i18n( "&OK" ) );
+    buttonOk->setShortcut( QKeySequence( i18n( "Alt+O" ) ) );
+    buttonCancel->setText( i18n( "&Cancel" ) );
+    buttonCancel->setShortcut( QKeySequence( i18n( "Alt+C" ) ) );
     GroupBox2->setTitle( QString::null );
-    conditionlabel->setText( tr( "Condition:" ) );
+    conditionlabel->setText( i18n( "Condition:" ) );
     addbutton->setText( QString::null );
     conditionfield->clear();
-    conditionfield->addItem( tr( "=" ) );
-    conditionfield->addItem( tr( "<" ) );
-    conditionfield->addItem( tr( "<=" ) );
-    conditionfield->addItem( tr( ">" ) );
-    conditionfield->addItem( tr( ">=" ) );
-    conditionfield->addItem( tr( "<>" ) );
-    reportlabel->setText( tr( "Reportfield:" ) );
-    formdatasourcelabel->setText( tr( "Formdatasource:" ) );
-    formfieldlabel->setText( tr( "Formfield:" ) );
+    conditionfield->addItem( i18n( "=" ) );
+    conditionfield->addItem( i18n( "<" ) );
+    conditionfield->addItem( i18n( "<=" ) );
+    conditionfield->addItem( i18n( ">" ) );
+    conditionfield->addItem( i18n( ">=" ) );
+    conditionfield->addItem( i18n( "<>" ) );
+    reportlabel->setText( i18n( "Reportfield:" ) );
+    formdatasourcelabel->setText( i18n( "Formdatasource:" ) );
+    formfieldlabel->setText( i18n( "Formfield:" ) );
     deletebutton->setText( QString::null );
 }
 

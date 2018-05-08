@@ -15,21 +15,21 @@
 
 #ifndef HK_KDEFORMPART
 #define HK_KDEFORMPART
-#include <kparts/part.h>
-#include <kparts/factory.h>
+#include <KParts/ReadWritePart>
+#include <KParts/Factory>
+#include <KPluginFactory>
 #include <kaction.h>
 #include "../hk_kdeclasses/hk_kdeformpartwidget.h"
 
 class hk_drivermanager;
 class hk_kdeformpartprivate;
 class hk_kdetoolbar;
-class KAboutData;
 
 class hk_kdeformpart : public KParts::ReadWritePart
 {
 friend class hk_kdeformpartwidget;
     Q_OBJECT
-        public:
+    public:
         hk_kdeformpart(QWidget* parentWidget,QObject* parent, const QVariantList &args);
         virtual ~hk_kdeformpart();
         static KAboutData* createAboutData();
@@ -44,5 +44,6 @@ friend class hk_kdeformpartwidget;
       hk_kdeformpartprivate* p_private;
 };
 
+K_PLUGIN_FACTORY_DECLARATION(hk_kdeformpartfactory)
 
 #endif

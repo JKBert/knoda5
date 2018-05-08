@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Service
-Name=hk_kde4classes form
+Name=hk_kde5classes form
 MimeType=database/form;
 ServiceTypes=KParts/ReadWritePart
-X-KDE-Library=libhk_kde4formpart
+X-KDE-Library=hk_kde5formpart
+X-KDE-ServiceTypes=KParts/ReadWritePart

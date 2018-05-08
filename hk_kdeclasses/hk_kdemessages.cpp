@@ -200,8 +200,8 @@ void hk_kdedatasourceenablefunction(void)
 
 hk_form* new_form(hk_database* db,hk_class* parent)
 {
- /* TBP knodamaindockwindow* knoda=dynamic_cast<knodamaindockwindow*>(parent);
-   hk_kdeformpartwidget* part=NULL;
+  knodamaindockwindow* knoda=dynamic_cast<knodamaindockwindow*>(parent);
+  hk_kdeformpartwidget* part=NULL;
   if (knoda)
   {
    part=knoda->new_form();
@@ -212,19 +212,18 @@ hk_form* new_form(hk_database* db,hk_class* parent)
 
   hk_kdeform* f=new hk_kdeform(dynamic_cast<QWidget*>(parent),0);
 
-
   if (!f) return NULL;
   f->setAttribute(Qt::WA_DeleteOnClose);
   f->set_database(db);
   f->set_designmode();
-  if (hk_visible::open_maximized_windows())f->showMaximized();
+  if (hk_visible::open_maximized_windows()) f->showMaximized();
   else f->show();
-  return f->simpleform(); */ return NULL;
+  return f->simpleform();
 }
 
 hk_report* new_report(hk_database* db,hk_class* parent)
 {
-/*TBP  hk_kdereport* f=NULL;
+  hk_kdereport* f=NULL;
   knodamaindockwindow* knoda=dynamic_cast<knodamaindockwindow*>(parent);
   hk_kdereportpartwidget* part=NULL;
   if (knoda)
@@ -239,44 +238,44 @@ hk_report* new_report(hk_database* db,hk_class* parent)
   if (!f) return NULL;
   f->setAttribute(Qt::WA_DeleteOnClose);
   f->set_database(db);
-  if (hk_visible::open_maximized_windows())f->showMaximized();
+  if (hk_visible::open_maximized_windows()) f->showMaximized();
   else f->show();
   f->set_designmode();
 
-  return f->simplereport(); */ return NULL;
+  return f->simplereport();
 }
 
 
 hk_form* new_dialogform(hk_database* db,hk_class* )
 {
- /*TBP hk_kdesimpleform* f=new hk_kdesimpleform(qApp->activeWindow(),0,Qt::Dialog);
+  hk_kdesimpleform* f=new hk_kdesimpleform(qApp->activeWindow(),0,Qt::Dialog);
 
   if (!f) return NULL;
   f->set_database(db);
   f->set_designmode();
-  return f; */ return NULL;
+  return f;
 }
 
 hk_dstable* new_table(hk_class* parent)
 {
-  /* TBP hk_kdetablepartwidget* part=NULL;
+  hk_kdetablepartwidget* part=NULL;
   knodamaindockwindow* knoda=dynamic_cast<knodamaindockwindow*>(parent);
   if (knoda)
   {
-   part=knoda->new_table();
-   part->show();
-   return part;
+    part=knoda->new_table();
+    part->show();
+    return part;
   }
   else
   {
-  hk_kdetable* f= new hk_kdetable(dynamic_cast<QWidget*>(parent),0);
-  if (!f) return NULL;
-  f->setAttribute(Qt::WA_DeleteOnClose);
-  if (hk_visible::open_maximized_windows())f->showMaximized();
-  else f->show();
+    hk_kdetable* f= new hk_kdetable(dynamic_cast<QWidget*>(parent),0);
+    if (!f) return NULL;
+    f->setAttribute(Qt::WA_DeleteOnClose);
+    if (hk_visible::open_maximized_windows()) f->showMaximized();
+    else f->show();
 
-  return f;
-  } */ return NULL;
+    return f;
+  }
 }
 
 hk_dsquery* new_query(hk_class* parent)

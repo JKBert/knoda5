@@ -28,7 +28,7 @@ class hk_kdesubformdialog : public hk_kderelationdialogbase
     Q_OBJECT
 
 public:
-    hk_kdesubformdialog( hk_subform*, QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+    hk_kdesubformdialog( hk_subform*, QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kdesubformdialog();
     int masterindex(const QString&);
     int slaveindex(const QString&);
@@ -36,26 +36,24 @@ public:
 public slots:
     virtual void ok_button_clicked();
     virtual void slot_data_changed(QWidget*);
-  void add_row(void);
+    void add_row(void);
 
 protected:
-void keyPressEvent(QKeyEvent * );
-bool eventFilter(QObject* object,QEvent* event);
-  
-  
+    void keyPressEvent(QKeyEvent * );
+    bool eventFilter(QObject* object,QEvent* event);
   
 private:
-  void set_stringlist(QStringList* strlist,list<hk_column*>*);
-  void set_existing_fields(void);
-  int    textposition(QStringList* ,const hk_string&  );
-void delete_rows(void);
-hk_datasource* p_masterds;
-hk_datasource* p_slaveds;
-hk_subform* p_subform;
-hk_form* p_form;
-QStringList		p_mastercollist;
-QStringList		p_slavecollist;
-QSignalMapper*          p_signalmerge;
+    void set_stringlist(QStringList* strlist,list<hk_column*>*);
+    void set_existing_fields(void);
+    int    textposition(QStringList* ,const hk_string&  );
+    void delete_rows(void);
+    hk_datasource* p_masterds;
+    hk_datasource* p_slaveds;
+    hk_subform* p_subform;
+    hk_form* p_form;
+    QStringList		p_mastercollist;
+    QStringList		p_slavecollist;
+    QSignalMapper*          p_signalmerge;
 };
 
 #endif // hk_kdesubformdialog_H

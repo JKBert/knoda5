@@ -23,18 +23,18 @@ class hk_kdecomboboxtextlist : public hk_kdecomboboxtextlistbase
     Q_OBJECT
 
 public:
-    hk_kdecomboboxtextlist( QWidget* parent ,hk_dscombobox*, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+    hk_kdecomboboxtextlist( QWidget* parent ,hk_dscombobox*, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kdecomboboxtextlist();
 public slots:
-void slot_data_changed(int , int );
-void add_row(void);
-void ok_clicked(void);
+    void slot_data_changed(int , int );
+    void add_row(void);
+    void ok_clicked(void);
 protected:
-bool eventFilter(QObject* object,QEvent* e);
-void delete_rows(void);
+    bool eventFilter(QObject* object,QEvent* e);
+    void delete_rows(void);
 private:
-void set_existing_fields();
-hk_dscombobox* p_combobox;
+    void set_existing_fields();
+    hk_dscombobox* p_combobox;
 };
 
 #endif // HK_KDECOMBOBOXTEXTLIST_H

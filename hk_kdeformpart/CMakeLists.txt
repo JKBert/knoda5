@@ -1,20 +1,20 @@
-
-include_directories(${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} )
-
-
 ########### next target ###############
 
 set(hk_kdeformpart_PART_SRCS hk_kdeformpart.cpp)
 
-kde4_add_plugin(hk_kde4formpart WITH_PREFIX ${hk_kdeformpart_PART_SRCS})
+add_library(hk_kde5formpart ${hk_kdeformpart_PART_SRCS})
 
-target_link_libraries(hk_kde4formpart ${KDE4_KDECORE_LIBS} ${KDE4_KPARTS_LIBS} ${HK_CLASSES_LIB} hk_kde4classes)
+target_link_libraries(hk_kde5formpart
+    KF5::CoreAddons
+    KF5::Parts
+    ${HK_CLASSES_LIB} 
+    ${LIB_MODULE_NAME})
 
-install(TARGETS hk_kde4formpart DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS hk_kde5formpart DESTINATION ${KDE_INSTALL_PLUGINDIR})
 
 
 ########### install files ###############
 
-install(FILES  hk_kde4formpart.desktop DESTINATION ${SERVICES_INSTALL_DIR})
-install(FILES  hk_kdeformpartdesign.rc hk_kdeformpartview.rc  DESTINATION ${DATA_INSTALL_DIR}/hk_kde4classes)
-install(FILES  hk_kdeformpart.h DESTINATION ${INCLUDE_INSTALL_DIR}/hk_kde4classes CONFIGURATIONS Debug)
+install(FILES  hk_kde5formpart.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
+install(FILES  hk_kdeformpartdesign.rc hk_kdeformpartview.rc  DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/${LIB_MODULE_NAME})
+install(FILES  hk_kdeformpart.h DESTINATION ${INCLUDE_INSTALL_DIR}/${LIB_MODULE_NAME} CONFIGURATIONS Debug)

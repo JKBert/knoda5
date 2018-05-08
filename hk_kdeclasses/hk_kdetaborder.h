@@ -24,7 +24,7 @@ class hk_kdetaborder : public hk_kdetaborderdialogbase
     Q_OBJECT
 
 public:
-    hk_kdetaborder( hk_kdesimpleform* ,QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+    hk_kdetaborder( hk_kdesimpleform* ,QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kdetaborder();
 
 public slots:

@@ -92,7 +92,7 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.cmake ${CMAKE_CURRENT_BINARY
 add_subdirectory(admin)
 add_subdirectory(hk_kdeclasses)
 #TBP add_subdirectory(hk_kdedbdesigner)
-#TBP add_subdirectory(hk_kdeformpart)
+add_subdirectory(hk_kdeformpart)
 add_subdirectory(hk_kdegridpart)
 add_subdirectory(hk_kdemodulepart)
 #TBP add_subdirectory(hk_kdeqbepart)

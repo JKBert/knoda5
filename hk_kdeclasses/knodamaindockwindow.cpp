@@ -22,8 +22,8 @@
 // TBP #include "hk_kdeobjecthandler.h"
 #include "hk_kdepreferencesdialog.h"
 #include "hk_kdetablepartwidget.h"
-/* TBP#include "hk_kdequerypartwidget.h"
-#include "hk_kdeformpartwidget.h" */
+// TBP#include "hk_kdequerypartwidget.h"
+#include "hk_kdeformpartwidget.h"
 #include "hk_kdereportpartwidget.h" 
 #include "hk_kdemodulepartwidget.h" 
 #include "hk_kdenewdatabase.h"
@@ -335,13 +335,13 @@ knodamaindockwindow::~knodamaindockwindow()
 
   void knodamaindockwindow::slot_new_form(void)
   {
-    /* TBP if (!p_database) return;
+    if (!p_database) return;
     hk_kdeformpartwidget* w=new_form();
     if (w)
     {
-    w->set_database(p_database);
-    w->set_designmode();
-    } */
+      w->set_database(p_database);
+      w->set_designmode();
+    }
  }
 
   void knodamaindockwindow::slot_delete_form(const QString& t)
@@ -351,7 +351,7 @@ knodamaindockwindow::~knodamaindockwindow()
 
   void knodamaindockwindow::slot_designmode_form(const QString& t)
  {
-   /*TBP if (!p_database) return;
+    if (!p_database) return;
     hk_kdeformpartwidget* w=find_existing_form(u2l(t.toUtf8().data()));
     if (w) {
       tabs()->setCurrentWidget(w);    
@@ -362,12 +362,12 @@ knodamaindockwindow::~knodamaindockwindow()
       w->set_database(p_database);
       w->load_form(u2l(t.toUtf8().data()));
     }
-    if (w->mode()!=hk_form::designmode) w->set_designmode(); */
+    if (w->mode()!=hk_form::designmode) w->set_designmode();
 }
     
   void knodamaindockwindow::slot_viewmode_form(const QString& t)
  {
-  /* TBP  if (!p_database) return;
+    if (!p_database) return;
     hk_kdeformpartwidget* w=find_existing_form(u2l(t.toUtf8().data())); 
     if (w) {
       tabs()->setCurrentWidget(w);    
@@ -380,7 +380,7 @@ knodamaindockwindow::~knodamaindockwindow()
     }
     if (w->mode()!=hk_form::viewmode) { 
       w->set_viewmode();
-    } */
+    }
 }
 
   void knodamaindockwindow::slot_new_report(void)
@@ -396,7 +396,6 @@ knodamaindockwindow::~knodamaindockwindow()
   void knodamaindockwindow::slot_delete_report(const QString& t)
   {
       p_database->delete_file(u2l(t.toUtf8().data()),ft_report);
-
   }
 
 
@@ -521,9 +520,9 @@ hk_kdetablepartwidget* knodamaindockwindow::new_table(void)
   }
 
 
-  hk_kdeformpartwidget* knodamaindockwindow::new_form(void)
-  {
-    /* TBP KService::Ptr service = KService::serviceByDesktopName("hk_kde4formpart");
+hk_kdeformpartwidget* knodamaindockwindow::new_form(void)
+{
+    KService::Ptr service = KService::serviceByDesktopName("hk_kde5formpart");
     KParts::ReadWritePart* p_part;
     
     if (!service || 
@@ -542,14 +541,14 @@ hk_kdetablepartwidget* knodamaindockwindow::new_table(void)
       }
      p_partmanager->addPart(p_part);
      int i = tabs() -> addTab(form,i18n("Form"));
-     tabs() -> setTabIcon(i,KIcon("utilities-terminal"));
-     connect(form, SIGNAL(signal_captionChanged(QWidget*,QString)), this, SLOT(slot_captionChanged(QWidget*,QString)));
-     connect(form,SIGNAL(signal_raise_form(const hk_string&))
+   tabs()->setTabIcon(i,QIcon::fromTheme("utilities-terminal"));
+   connect(form, SIGNAL(signal_captionChanged(QWidget*,QString)), this, SLOT(slot_captionChanged(QWidget*,QString)));
+   connect(form,SIGNAL(signal_raise_form(const hk_string&))
           ,this,SLOT(slot_raise_form(const hk_string&)));
-   tabs() -> setCurrentIndex(i);
+   tabs()->setCurrentIndex(i);
    form->setFocus();   
-   return form; */ return NULL;
-  }
+   return form;
+}
 
 hk_kdereportpartwidget* knodamaindockwindow::new_report(void)
 {
@@ -841,7 +840,7 @@ void knodamaindockwindow::settings_clicked()
 
 hk_kdeformpartwidget* knodamaindockwindow::find_existing_form(const hk_string& n)
 {
-  /* TBP if (!p_database) return NULL;
+  if (!p_database) return NULL;
   hk_kdeformpartwidget* w = NULL;
   QWidget* sf=dynamic_cast<QWidget*> (p_database->existing_form(n));
   while (sf!=NULL && w==NULL) {
@@ -850,7 +849,7 @@ hk_kdeformpartwidget* knodamaindockwindow::find_existing_form(const hk_string& n
     if (f && f->is_subform()) sf=NULL;
     w= dynamic_cast <hk_kdeformpartwidget*> (sf);
   }
-  return w; */ return NULL;
+  return w;
 }
 
 void knodamaindockwindow::setCaption(const QString& c)
@@ -926,7 +925,7 @@ hk_kdequerypartwidget* knodamaindockwindow::find_existing_view(const hk_string& 
 
 void knodamaindockwindow::slot_raise_form(const hk_string& fo)
 {
- /*TBP hk_kdeformpartwidget* f=find_existing_form(fo);
+  hk_kdeformpartwidget* f=find_existing_form(fo);
   if (!f) return;
-  tabs()->setCurrentWidget(f);  */
+  tabs()->setCurrentWidget(f);
 }

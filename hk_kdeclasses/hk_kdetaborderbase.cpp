@@ -22,7 +22,7 @@
 ****************************************************************************/
 
 #include "hk_kdetaborderbase.h"
-
+#include <KLocalizedString>
 #include <qvariant.h>
 #include <qpushbutton.h>
 #include <qframe.h>
@@ -38,14 +38,14 @@
  *  name 'name' and widget flags set to 'f'.
  *
  *  The dialog will by default be modeless, unless you set 'modal' to
- *  TRUE to construct a modal dialog.
+ *  true to construct a modal dialog.
  */
 hk_kdetaborderdialogbase::hk_kdetaborderdialogbase( QWidget* parent, const char* name, bool modal, Qt::WFlags fl )
     : QDialog( parent, fl )
 {
     setObjectName(QString::fromAscii(name == NULL?"hk_kdetaborderdialogbase":name));
     setModal(modal);
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled( true );
     hk_kdetaborderdialogbaseLayout = new QHBoxLayout(this);
     hk_kdetaborderdialogbaseLayout->setMargin(11);
     hk_kdetaborderdialogbaseLayout->setSpacing(6);
@@ -81,7 +81,6 @@ hk_kdetaborderdialogbase::hk_kdetaborderdialogbase( QWidget* parent, const char*
     baselist -> setSelectionMode(QAbstractItemView::SingleSelection);    
     QStringList header;
     header << tr( "Id:" ) << tr( "Name:" ) << tr( "Type:" ) << tr( "Column:" );
-    //TBP TBT translation tr()->i18n()
     baselist -> setHeaderLabels(header);
     layout7->addWidget( baselist );
     Frame14Layout->addLayout( layout7 );
@@ -99,17 +98,17 @@ hk_kdetaborderdialogbase::hk_kdetaborderdialogbase( QWidget* parent, const char*
 
     deletebutton = new QToolButton(Frame14);
     deletebutton->setObjectName(QString::fromAscii("deletebutton"));
-    deletebutton->setEnabled( FALSE );
+    deletebutton->setEnabled( false );
     Layout4->addWidget( deletebutton );
 
     upbutton = new QToolButton(Frame14);
     upbutton->setObjectName(QString::fromAscii("upbutton"));
-    upbutton->setEnabled( FALSE );
+    upbutton->setEnabled( false );
     Layout4->addWidget( upbutton );
 
     downbutton = new QToolButton(Frame14);
     downbutton->setObjectName(QString::fromAscii("downbutton"));
-    downbutton->setEnabled( FALSE );
+    downbutton->setEnabled( false );
     Layout4->addWidget( downbutton );
     Spacer1_2 = new QSpacerItem( 20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding );
     Layout4->addItem( Spacer1_2 );
@@ -142,14 +141,14 @@ hk_kdetaborderdialogbase::hk_kdetaborderdialogbase( QWidget* parent, const char*
 
     okbutton = new QPushButton(this);
     okbutton->setObjectName("okbutton");
-    okbutton->setAutoDefault( TRUE );
-    okbutton->setDefault( TRUE );
+    okbutton->setAutoDefault( true );
+    okbutton->setDefault( true );
     layout6->addWidget( okbutton );
 
     cancelbutton = new QPushButton(this);
     cancelbutton->setObjectName("cancelbutton");
-    cancelbutton->setAutoDefault( TRUE );
-    cancelbutton->setDefault( TRUE );
+    cancelbutton->setAutoDefault( true );
+    cancelbutton->setDefault( true );
     layout6->addWidget( cancelbutton );
     Spacer1 = new QSpacerItem( 20, 130, QSizePolicy::Minimum, QSizePolicy::Expanding );
     layout6->addItem( Spacer1 );
@@ -187,25 +186,25 @@ hk_kdetaborderdialogbase::~hk_kdetaborderdialogbase()
  */
 void hk_kdetaborderdialogbase::languageChange()
 {
-    setWindowTitle( tr( "Taborder selection dialog" ) );
-    baselistlabel->setText( tr( "Base list:" ) );
-    baselist->model()->setHeaderData(0,Qt::Horizontal,tr( "Id:"),Qt::DisplayRole);
-    baselist->model()->setHeaderData(1,Qt::Horizontal,tr( "Name:"),Qt::DisplayRole);
-    baselist->model()->setHeaderData(2,Qt::Horizontal,tr( "Type:"),Qt::DisplayRole);
-    baselist->model()->setHeaderData(3,Qt::Horizontal,tr( "Column:"),Qt::DisplayRole);
+    setWindowTitle( i18n( "Taborder selection dialog" ) );
+    baselistlabel->setText( ki18n( "Base list:" ).toString() );
+    baselist->model()->setHeaderData(0,Qt::Horizontal,i18n( "Id:"),Qt::DisplayRole);
+    baselist->model()->setHeaderData(1,Qt::Horizontal,i18n( "Name:"),Qt::DisplayRole);
+    baselist->model()->setHeaderData(2,Qt::Horizontal,i18n( "Type:"),Qt::DisplayRole);
+    baselist->model()->setHeaderData(3,Qt::Horizontal,i18n( "Column:"),Qt::DisplayRole);
     addbutton->setText( QString::null );
     deletebutton->setText( QString::null );
     upbutton->setText( QString::null );
     downbutton->setText( QString::null );
-    boxlabel_2_2->setText( tr( "Taborder list:" ) );
-    taborderlist->model()->setHeaderData(0,Qt::Horizontal,tr( "Id:"),Qt::DisplayRole);
-    taborderlist->model()->setHeaderData(1,Qt::Horizontal,tr( "Name:"),Qt::DisplayRole);
-    taborderlist->model()->setHeaderData(2,Qt::Horizontal,tr( "Type:"),Qt::DisplayRole);
-    taborderlist->model()->setHeaderData(3,Qt::Horizontal,tr( "Column:"),Qt::DisplayRole);
-    okbutton->setText( tr( "&Ok" ) );
-    okbutton->setShortcut( QKeySequence( tr( "Alt+O" ) ) );
-    cancelbutton->setText( tr( "&Cancel" ) );
-    cancelbutton->setShortcut( QKeySequence( tr( "Alt+C" ) ) );
+    boxlabel_2_2->setText( i18n( "Taborder list:" ) );
+    taborderlist->model()->setHeaderData(0,Qt::Horizontal,i18n( "Id:"),Qt::DisplayRole);
+    taborderlist->model()->setHeaderData(1,Qt::Horizontal,i18n( "Name:"),Qt::DisplayRole);
+    taborderlist->model()->setHeaderData(2,Qt::Horizontal,i18n( "Type:"),Qt::DisplayRole);
+    taborderlist->model()->setHeaderData(3,Qt::Horizontal,i18n( "Column:"),Qt::DisplayRole);
+    okbutton->setText( i18n( "&Ok" ) );
+    okbutton->setShortcut( QKeySequence( i18n( "Alt+O" ) ) );
+    cancelbutton->setText( i18n( "&Cancel" ));
+    cancelbutton->setShortcut( QKeySequence( i18n( "Alt+C" ) ) );
 }
 
 void hk_kdetaborderdialogbase::add_clicked()

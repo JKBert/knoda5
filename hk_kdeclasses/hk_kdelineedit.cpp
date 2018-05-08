@@ -439,17 +439,16 @@ void hk_kdelineedit::find_clicked(void)
 #ifdef HK_DEBUG
     hkdebug("kdelineedit::find_clicked");
 #endif
- /*TBP   if (!column()) return;
+    if (!column()) return;
     if (p_finddialog==NULL)
     {
         p_finddialog=new hk_kdefinddialog(this,0,false);
         connect(p_finddialog, SIGNAL(signal_findbutton_clicked()),this,SLOT(find_next()));
         connect(p_finddialog, SIGNAL(signal_findargument_changed()),this,SLOT(findargument_changed()));
     }
-
     p_findfirstview=true;
     findargument_changed();
-    p_finddialog->show(); */
+    p_finddialog->show();
 }
 
 

@@ -13,6 +13,11 @@
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
 //$Revision: 1.141 $
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#else
+#error config.h is needed but not included 
+#endif
 #include "hk_kdesimpleform.h"
 #include "hk_kdeform.h"
 #include "hk_kdeformpartwidget.h"
@@ -62,9 +67,7 @@
 #include <kmenu.h>
 #include <kactioncollection.h>
 #include <kservice.h>
-#include <KIconEngine>
 
-//TBP icons
 class hk_kdesimpleformprivate
 {
 public:
@@ -215,7 +218,7 @@ hk_dsgrid*  hk_kdesimpleform::widget_specific_new_grid(void)
     hkdebug("hk_kdesimpleform::widget_specific_new_grid(void)");
 #endif
     KParts::ReadWritePart* p_part;
-    KService::Ptr service = KService::serviceByDesktopName("hk_kde4gridpart");   
+    KService::Ptr service = KService::serviceByDesktopName("hk_kde5gridpart");   
   
     if ( !service ||
         !(p_part = service->createInstance<KParts::ReadWritePart>(this,this, QVariantList())))
@@ -256,14 +259,14 @@ hk_dsboolean*       hk_kdesimpleform::widget_specific_new_bool(void)
 #ifdef HK_DEBUG
     hkdebug("hk_kdesimpleform::widget_specific_new_bool(void)");
 #endif
-   /* TBP  hk_kdeboolean* b=new hk_kdeboolean(this,this);
+   hk_kdeboolean* b=new hk_kdeboolean(this,this);
     b->show();
 #ifdef HK_DEBUG
     b->hkclassname("bool");
 #endif
     b->setBackgroundRole(backgroundRole());
 //	set_focus(b);
-    return b; */ return NULL;
+    return b;
 }
 
 
@@ -302,12 +305,12 @@ hk_button*      hk_kdesimpleform::widget_specific_new_button(void)
 #ifdef HK_DEBUG
     hkdebug("hk_kdesimpleform::widget_specific_new_button(void)");
 #endif
-    /* TBP hk_kdebutton* b=new hk_kdebutton(this,this);
+    hk_kdebutton* b=new hk_kdebutton(this,this);
     b->show();
 #ifdef HK_DEBUG
     b->hkclassname("button");
 #endif
-    return b; */ return NULL;
+    return b;
 }
 
 
@@ -330,12 +333,12 @@ hk_subform*   hk_kdesimpleform::widget_specific_new_subform(void)
 #ifdef HK_DEBUG
     hkdebug("hk_kdesimpleform::widget_specific_new_subform(void)");
 #endif
-    /* TBP hk_kdesubform* s=new hk_kdesubform(this);
+    hk_kdesubform* s=new hk_kdesubform(this);
     s->show();
 #ifdef HK_DEBUG
     s->hkclassname("subform");
 #endif
-    return s; */ return NULL;
+    return s;
 }
 
 
@@ -344,13 +347,13 @@ hk_label* hk_kdesimpleform::widget_specific_new_label(void)
 #ifdef HK_DEBUG
   hkdebug("hk_kdesimpleform::widget_specific_new_label");
 #endif
-  /* TBP hk_kdelabel* s=new hk_kdelabel(this);
+  hk_kdelabel* s=new hk_kdelabel(this);
   s->show();
 #ifdef HK_DEBUG
     s->hkclassname("label");
 #endif
     s->setBackgroundRole(backgroundRole());
-    return s; */ return NULL;
+    return s;
 }
 
 hk_dsdate*       hk_kdesimpleform::widget_specific_new_date(void)
@@ -384,12 +387,12 @@ hk_tabvisible*   hk_kdesimpleform::widget_specific_new_tabvisible(void)
 
 void    hk_kdesimpleform::widget_specific_fieldresize(hk_visible* v)
 {
-  /* TBP if (!v ||!p_property) return;
+    if (!v ||!p_property) return;
     if (v==p_property->object())
  	{
 	//p_property->set_visible();
 	  p_property->set_geometry();
-	} */
+	}
 }
 
 
@@ -409,7 +412,7 @@ void hk_kdesimpleform::before_source_vanishes(void)
     hkdebug("hk_kdesimpleform::before_source_vanishes");
 #endif
     bool doemit=false;
-/* TBP
+
     if (p_kdeform) p_kdeform->save_form_when_changed();
     else 
     if (p_formpartwidget)p_formpartwidget->save_form_when_changed();
@@ -443,7 +446,7 @@ void hk_kdesimpleform::before_source_vanishes(void)
       }
     else p->close();
     close();
-  } */
+  }
 }
 
 
@@ -672,136 +675,126 @@ bool hk_kdesimpleform::formeventFilter(QObject* object,QEvent* event)
 #ifdef HK_DEBUG
 //hkdebug("hk_kdesimpleform::formeventFilter");
 #endif
-    QWidget* widget= (QWidget*) object;
+  QWidget* widget= (QWidget*) object;
 // check for special widget treatment
-/* TBP
-    if (dynamic_cast <hk_visible*>(object) == NULL)
+  if (dynamic_cast <hk_visible*>(object) == NULL)
+  {
+    widget = widget->parentWidget();
+    QWidget* object =widget;
+    while (object!=NULL)
     {
-        widget = widget->parentWidget();
-        QWidget* object =widget;
-        while (object!=NULL)
-        {
-            if ( dynamic_cast <hk_kdegrid*>(object)!=NULL
+      if (dynamic_cast <hk_kdegrid*>(object)!=NULL
 	       ||dynamic_cast <hk_kdesubform*>(object)!=NULL
-	       )
-            {
-                widget=object;
-                object=NULL;
-            }
-            else    object=object->parentWidget();
-        }
+         )
+      {
+        widget=object;
+        object=NULL;
+      }
+      else    object=object->parentWidget();
     }
-    else
+  }
+  else
+  {
+    QWidget* object =widget;
+    while (object!=NULL)
     {
-        QWidget* object =widget;
-        while (object!=NULL)
-        {
-            if (dynamic_cast <hk_kdegrid*>(object)!=NULL)
-            {
-                widget=object;
-                object=NULL;
-            }
-            else    object=object->parentWidget();
-        }
+      if (dynamic_cast <hk_kdegrid*>(object)!=NULL)
+      {
+        widget=object;
+        object=NULL;
+      }
+      else   object=object->parentWidget();
     }
+  }
 
-
-    if (dynamic_cast <hk_kderowselector*>(widget)!=NULL)
-    {
-        if (dynamic_cast <hk_kdegrid*>(widget->parentWidget())!=NULL)
-            widget = widget->parentWidget();
-    }
+  if (dynamic_cast <hk_kderowselector*>(widget)!=NULL)
+  {
+    if (dynamic_cast <hk_kdegrid*>(widget->parentWidget())!=NULL)
+      widget = widget->parentWidget();
+  }
 
 // ENDE check for special widget treatment
 
-    switch (event->type())
+  switch (event->type())
+  {
+    case QEvent::KeyPress:
     {
-        case QEvent::KeyPress        :
+      keyPressEvent((QKeyEvent*)event);
+      break;
+    };
+    case QEvent::KeyRelease:
+    {
+      keyReleaseEvent((QKeyEvent*)event);
+      break;
+    };
+    case QEvent::MouseButtonRelease:
+    {
+      if (p_private->p_already_selected_widget_clicked)
+        set_focus(widget,false);
+      p_private->p_already_selected_widget_clicked=false;
+      break;
+    };
+    case QEvent::MouseButtonPress:
+    {
+      if (object==this)
+      {
+        if (((QMouseEvent*)event)->button() != Qt::RightButton)
         {
-            keyPressEvent((QKeyEvent*)event);
-            break;
-        };
-        case QEvent::KeyRelease      :
-        {
-            keyReleaseEvent((QKeyEvent*)event);
-            break;
-        };
-        case QEvent::MouseButtonRelease :
-        {
-         if (p_private->p_already_selected_widget_clicked)
-          set_focus(widget,false);
-          p_private->p_already_selected_widget_clicked=false;
-          break;
-        };
-        case QEvent::MouseButtonPress    :
-        {
-
-            if (object==this)
-            {
-                if (((QMouseEvent*)event)->button() != Qt::RightButton)
-                {
-                    mousePressEvent((QMouseEvent*) event);
-                    return true;
-                }
-            }
-            else
-            if (((QMouseEvent*)event)->button() == Qt::LeftButton)
-            {                                     //select object
+          mousePressEvent((QMouseEvent*) event);
+          return true;
+        }
+      }
+      else
+        if (((QMouseEvent*)event)->button() == Qt::LeftButton)
+        {                                     //select object
                                                   // i.e. a menu
-              if ( dynamic_cast <QMenu*>(object))
-                    return QWidget::eventFilter(object,event); 
-		p_private->p_already_selected_widget_clicked=has_already_focus(widget);
-                if (!p_private->p_already_selected_widget_clicked)
-                    set_focus(widget,((QMouseEvent*)event)->modifiers() & Qt::ControlModifier);
-                if (widget!=NULL)p_focus->show();
-                p_originalposition=mapFromGlobal(((QMouseEvent*)event)->globalPos());
-		if (snap2gridx()>0 &&(!(((QMouseEvent*)event)->modifiers()&Qt::ControlModifier)))
-		  p_originalposition.setX((p_originalposition.x()/snap2gridx())*snap2gridx());
-		if (snap2gridy()>0&&(!(((QMouseEvent*)event)->modifiers()&Qt::ControlModifier)))
-		  p_originalposition.setY((p_originalposition.y()/snap2gridy())*snap2gridy());
-                return true;
-            }
-            else
-            if (((QMouseEvent*)event)->button() == Qt::RightButton)
-            {
-                mousemenu((QMouseEvent*)event);
-                return true;
-            }
-            break;
-        };
-        case QEvent::MouseMove       :
-        {
-            if (
-                (((QMouseEvent*)event)->buttons() &  Qt::LeftButton ) == Qt::LeftButton&&
-                widget!=this
-                )
-            {
+          if ( dynamic_cast <QMenu*>(object))
+            return QWidget::eventFilter(object,event); 
+		  p_private->p_already_selected_widget_clicked=has_already_focus(widget);
+          if (!p_private->p_already_selected_widget_clicked)
+            set_focus(widget,((QMouseEvent*)event)->modifiers() & Qt::ControlModifier);
+          if (widget!=NULL) p_focus->show();
+          p_originalposition=mapFromGlobal(((QMouseEvent*)event)->globalPos());
+		  if (snap2gridx()>0 &&(!(((QMouseEvent*)event)->modifiers()&Qt::ControlModifier)))
+		    p_originalposition.setX((p_originalposition.x()/snap2gridx())*snap2gridx());
+		  if (snap2gridy()>0&&(!(((QMouseEvent*)event)->modifiers()&Qt::ControlModifier)))
+		    p_originalposition.setY((p_originalposition.y()/snap2gridy())*snap2gridy());
+          return true;
+        }
+        else
+          if (((QMouseEvent*)event)->button() == Qt::RightButton)
+          {
+            mousemenu((QMouseEvent*)event);
+            return true;
+          }
+      break;
+    };
+    case QEvent::MouseMove:
+    {
+      if ( (((QMouseEvent*)event)->buttons() &  Qt::LeftButton ) == Qt::LeftButton
+           && widget!=this )
+      {
 //move object
-                 p_private->p_already_selected_widget_clicked=false;
-                QPoint newpos=mapFromGlobal(((QMouseEvent*)event)->globalPos());
+        p_private->p_already_selected_widget_clicked=false;
+        QPoint newpos=mapFromGlobal(((QMouseEvent*)event)->globalPos());
 		if (snap2gridx()>0&&!(((QMouseEvent*)event)->modifiers() & Qt::ControlModifier))
-			newpos.setX((newpos.x()/snap2gridx())*snap2gridx());
+		  newpos.setX((newpos.x()/snap2gridx())*snap2gridx());
 		if (snap2gridy()>0&&!(((QMouseEvent*)event)->modifiers() & Qt::ControlModifier))
-			newpos.setY((newpos.y()/snap2gridy())*snap2gridy());
-		QPoint difference=p_originalposition-newpos;
-                move_widgets(difference.x(),difference.y());
-                p_originalposition=newpos;
-            }
-            break;
-        };
-
-        case QEvent::MouseButtonDblClick : return true;
-        default              :;
-
-    }
-*/
-    return QWidget::eventFilter(object,event);
-
+		  newpos.setY((newpos.y()/snap2gridy())*snap2gridy());
+        QPoint difference=p_originalposition-newpos;
+        move_widgets(difference.x(),difference.y());
+        p_originalposition=newpos;
+      }
+      break;
+    };
+    case QEvent::MouseButtonDblClick: return true;
+      default              :;
+  }
+  return QWidget::eventFilter(object,event);
 }
 
 void hk_kdesimpleform::move_widgets(int xdiff,int ydiff)
 {
-/* TBP
 //move object
   QWidget* wid=p_focus->widget();
   if (!wid) return;
@@ -891,7 +884,7 @@ void hk_kdesimpleform::move_widgets(int xdiff,int ydiff)
         if (v) v->set_movebuddylabel(true);
         it++;
        }
-  } */
+  }
 }
 
 
@@ -1091,7 +1084,7 @@ void hk_kdesimpleform::clearfocus(void)
 
 void hk_kdesimpleform::loaddata(xmlNodePtr definition)
 {
-clearfocus();
+  clearfocus();
   hk_form::loaddata(definition);
 }
 
@@ -1101,7 +1094,6 @@ void hk_kdesimpleform::set_focus(QWidget*f, bool p_controlbutton)
 #ifdef HK_DEBUG
     hkdebug("hk_kdesimpleform::set_focus");
 #endif
-/* TBP
     if (f==NULL || f==this)
     {
         clearfocus();
@@ -1116,7 +1108,7 @@ void hk_kdesimpleform::set_focus(QWidget*f, bool p_controlbutton)
         while (object!=NULL)
         {
             if ( dynamic_cast <hk_kdegrid*>(object)!=NULL
-	        ||dynamic_cast <hk_kdesubform*>(object)!=NULL
+	          ||dynamic_cast <hk_kdesubform*>(object)!=NULL
 	       )
             {
                 widget=object;
@@ -1149,7 +1141,7 @@ void hk_kdesimpleform::set_focus(QWidget*f, bool p_controlbutton)
         QObject::connect(p_focus,SIGNAL(size_changed()),p_property,SLOT(focus_resized()));
         set_currentobject(v);
     }
-*/
+
   emit signal_focuswidget_changed();
 }
 
@@ -1197,7 +1189,6 @@ void hk_kdesimpleform::delete_widgets(void)
         if (g)
         {
             delete g->part();
-
         }
         else     delete w;
     }
@@ -1207,11 +1198,10 @@ void hk_kdesimpleform::delete_widgets(void)
     hk_kdegrid* g=dynamic_cast <hk_kdegrid*>(w);
     remove_visible(dynamic_cast <hk_visible*>(del));
     set_currentobject(this);
-    if (g)delete g->part();else delete w;
+    if (g) delete g->part(); else delete w;
     clearfocus();
     set_has_changed();
 }
-
 
 void hk_kdesimpleform::mousemenu(QMouseEvent* m)
 {
@@ -1399,11 +1389,10 @@ void hk_kdesimpleform::mousemenu(QMouseEvent* m)
 
     delete p_popup;
     p_popup=NULL;
-
 }
 
 void hk_kdesimpleform::show_property(void)
-{ /*TBP
+{
   if (mode()!=hk_presentation::designmode) return;
   bool newproperty=false;
   if (p_property==NULL)
@@ -1445,7 +1434,7 @@ void hk_kdesimpleform::show_property(void)
 	     p_property->move(screenwidth-p_property->frameGeometry().width(),
 	   screenheight-p_property->frameGeometry().height());
 	 }
-  } */
+  }
 }
 
 
@@ -1559,9 +1548,9 @@ void hk_kdesimpleform::widget_specific_presentationdatasource(long p)
 #ifdef HK_DEBUG
     hkdebug("hk_kdesimpleform::widget_specific_new_presentationdatasource");
 #endif
-  /* TBP  if (p_kdeform!=NULL) p_kdeform->set_presentationdatasource(p,false);
+    if (p_kdeform!=NULL) p_kdeform->set_presentationdatasource(p,false);
     else
-    if (p_formpartwidget!=NULL) p_formpartwidget->set_presentationdatasource(p,false); */
+    if (p_formpartwidget!=NULL) p_formpartwidget->set_presentationdatasource(p,false);
 }
 
 
@@ -1588,8 +1577,7 @@ void hk_kdesimpleform::set_actions(KActionCollection* collection)
 {
    if (collection)
     {
-    KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde4classes");
+    KIconLoader loader (LIB_MODULE_NAME);
     p_deleteaction=createAction(i18n("&Delete"),"deleteclicked",collection,this,&hk_kdesimpleform::delete_widgets);
     p_deleteaction -> setShortcut(Qt::Key_Delete);
     p_copyaction=createAction(i18n("&Copy"),"copy",collection,this,&hk_kdesimpleform::copy);
@@ -1599,7 +1587,7 @@ void hk_kdesimpleform::set_actions(KActionCollection* collection)
     p_cutaction=createAction(i18n("Cu&t"),"cutclicked",collection,this,&hk_kdesimpleform::cut);
     p_cutaction->setShortcut(Qt::CTRL+Qt::Key_X);
     p_formpropertyaction=createAction(i18n("&Propertyeditor"),"viewproperty",collection,this,&hk_kdesimpleform::show_property);
-    //TBP p_formpropertyaction->setIcon(QIcon(opravit("propertyeditor",loader)));
+    p_formpropertyaction->setIcon(QIcon(loader.iconPath("propertyeditor",KIconLoader::User)));
     
     p_resizeaction=new KActionMenu(i18n("Adjust &size"),collection);
     collection->addAction("size",p_resizeaction);
@@ -1626,7 +1614,7 @@ void hk_kdesimpleform::set_actions(KActionCollection* collection)
     p_alignaction->addAction(p_aligntopaction);
     p_alignaction->addAction(p_alignbottomaction);
     p_private->p_dbdesigneraction=createAction(i18n("Database designer"),"dbdesigner",collection,this,&hk_kdesimpleform::dbdesignaction);
-    // TBP p_private->p_dbdesigneraction->setIcon(QIcon(opravit("dbdesigner",loader)));
+    p_private->p_dbdesigneraction->setIcon(QIcon(loader.iconPath("dbdesigner",KIconLoader::User)));
    }
    else
    {
@@ -1839,7 +1827,7 @@ bool    hk_kdesimpleform::set_mode(enum_mode s)
     interpreter()->set_block_execution(s==filtermode);
     p_private->while_modechange=true;
     bool r=hk_form::set_mode(s);
-    /* TBP if (!r) {  
+    if (!r) {  
         p_private->while_modechange=false;
         return false;
     }
@@ -1875,7 +1863,6 @@ bool    hk_kdesimpleform::set_mode(enum_mode s)
     else
         if (p_formpartwidget) p_formpartwidget->set_mode(s);
     p_private->while_modechange=false;
-*/
     return r;
 }
 
@@ -1978,7 +1965,6 @@ void    hk_kdesimpleform::widget_specific_foregroundcolour_changed(const hk_colo
     QPalette p(palette());
     p.setColor(foregroundRole(), newcolour);
     setPalette(p);
-
 }
 
 
@@ -2022,7 +2008,7 @@ return  p_formpartwidget;
 }
 
 void hk_kdesimpleform::script_error(hk_visible* v, hk_interpreter::enum_action a)
-{ /* TBP
+{
   if (!v)
   {
     cerr<<"hk_kdesimpleform::script_error called without visible object!"<<endl;
@@ -2121,13 +2107,13 @@ void hk_kdesimpleform::script_error(hk_visible* v, hk_interpreter::enum_action a
 				break;
 			default:;
 
-	    } 
+	    }
       } else 
         show_warningmessage(hk_string("No Property editor: ") + error);
 
    }
    else
-     show_warningmessage(error); */
+     show_warningmessage(error);
 }
 
 /*bool hk_kdesimpleform::ctrl_key_pressed(void) const
@@ -2137,14 +2123,14 @@ return p_controlbutton;
 
 void hk_kdesimpleform::grid_partinfocus(hk_kdegridpart* p)
 {
-/*TBP  if (p_kdeform) p_kdeform->grid_partinfocus(p);
+  if (p_kdeform) p_kdeform->grid_partinfocus(p);
   else
-  if (p_formpartwidget) p_formpartwidget->grid_partinfocus(p); */
+  if (p_formpartwidget) p_formpartwidget->grid_partinfocus(p);
 }
 
 void hk_kdesimpleform::grid_partoutfocus(hk_kdegridpart* g,QFocusEvent* e)
 {
-  /* TBP if (g)
+  if (g)
   {
     hk_kdegrid* grid=g->grid();
     if (e->reason()==Qt::TabFocusReason || e->reason()==Qt::BacktabFocusReason )
@@ -2159,7 +2145,7 @@ void hk_kdesimpleform::grid_partoutfocus(hk_kdegridpart* g,QFocusEvent* e)
   if (p_kdeform) p_kdeform->grid_partoutfocus(0L);
   else
     if (p_formpartwidget)p_formpartwidget->grid_partoutfocus(0L);
- */   
+   
 /*p_copyaction->setEnabled(false);
 p_pasteaction->setEnabled(false);*/
 }
@@ -2253,8 +2239,8 @@ void hk_kdesimpleform::dbdesignaction(void)
 
 void hk_kdesimpleform::designer_deleted(void)
 {
-  /*TBP set_currentobject(p_property->object());
-  p_private->p_designer=NULL; */
+  set_currentobject(p_property->object());
+  p_private->p_designer=NULL;
 }
 
 bool hk_kdesimpleform::focus_multipleselected(void) const
@@ -2277,16 +2263,13 @@ void hk_kdesimpleform::reset_has_changed(void)
 emit signal_has_changed();
 }
 
-
 void hk_kdesimpleform::load_form(const hk_string& name)
 {
- /*TBP p_private -> while_loading = true;
+  p_private -> while_loading = true;
   hk_form::load_form(name);
   if (p_formpartwidget) p_formpartwidget->set_caption();   
-  p_private->while_loading = false; */
+  p_private->while_loading = false;
 }
-
-
 
 bool hk_kdesimpleform::focusNextPrevChild(bool forward)
 {

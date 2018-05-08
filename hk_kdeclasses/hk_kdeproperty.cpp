@@ -147,7 +147,6 @@ hk_kdeproperty::hk_kdeproperty( hk_kdesimpleform* parent,  const char* name, Qt:
     listdatasourcelabel->setEnabled(true);
     listdatasourcebutton->setEnabled(true);
 
-
     listdatasourcelabel->setText(i18n("Listdatasource:"));
     listcolumnlabel->setText(i18n("Listcolumn:"));
     viewcolumnlabel->setText(i18n("Viewcolumn:"));
@@ -176,7 +175,7 @@ hk_kdeproperty::hk_kdeproperty( hk_kdesimpleform* parent,  const char* name, Qt:
     alignmentfield->addItem(i18n("Right"));
     alignmentfield->addItem(i18n("Default"));
     connect( alignmentfield, SIGNAL( activated(const QString&) ), this, SLOT( format_changes() ) );
-    connect( alignmentfield, SIGNAL( textChanged(const QString&) ), this, SLOT( format_changes() ) );
+    connect( alignmentfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( format_changes() ) );
     digitlabel->setText(i18n("Precision:"));
     separatorlabel->setText(i18n("Separator:"));
     boldfield->addItem(yes);
@@ -199,7 +198,6 @@ hk_kdeproperty::hk_kdeproperty( hk_kdesimpleform* parent,  const char* name, Qt:
     rightlinefield->setSingleStep(1);
     diagonallurofield->setSingleStep(1);
     diagonallorufield->setSingleStep(1);
-
 
     connect( p_foregroundcolourbutton, SIGNAL( changed(const QColor&) ), this, SLOT( format_changes() ) );
     connect( p_backgroundcolourbutton, SIGNAL( changed(const QColor&) ), this, SLOT( format_changes() ) );
@@ -260,7 +258,7 @@ void hk_kdeproperty::action_changes()
 #endif
 //cerr <<"action_changes"<<endl;
     if (p_form==NULL) return;
-    if (p_form->database()==NULL)return;
+    if (p_form->database()==NULL) return;
     set_actionobjectlist();
     set_objectaction();
 }
@@ -930,10 +928,8 @@ void hk_kdeproperty::set_dsdatavisible(void)
 
 void hk_kdeproperty::set_labelvisible(void)
 {
- hk_kdelabel* label=dynamic_cast<hk_kdelabel*>(p_visible);
+   hk_kdelabel* label=dynamic_cast<hk_kdelabel*>(p_visible);
    if (!label) return;
-
-
     toplinefield->blockSignals(true);
     toplinefield->setValue(label->topline());
     toplinefield->blockSignals(false);
@@ -957,7 +953,6 @@ void hk_kdeproperty::set_labelvisible(void)
     diagonallorufield->blockSignals(true);
     diagonallorufield->setValue(label->diagonalloru());
     diagonallorufield->blockSignals(false);
-
 }
 
 void hk_kdeproperty::set_gridvisible(void)
@@ -1538,16 +1533,16 @@ void hk_kdeproperty::set_viewcolumnvalues()
 
 void hk_kdeproperty::conditionbutton_clicked()
 {
-   int i = actionfield->currentIndex()-1;
-    hk_kdereportconditiondialog* d = new hk_kdereportconditiondialog(this,0);
-    d->set_values(dynamic_cast <hk_button*>(p_visible),p_form,u2l(objectfield->currentText().toUtf8().data()),(i==0?hk_kdereportconditiondialog::form:hk_kdereportconditiondialog::report));
-    d->exec();
-    delete d; 
+  int i = actionfield->currentIndex()-1;
+  hk_kdereportconditiondialog* d = new hk_kdereportconditiondialog(this,0);
+  d->set_values(dynamic_cast <hk_button*>(p_visible),p_form,u2l(objectfield->currentText().toUtf8().data()),(i==0?hk_kdereportconditiondialog::form:hk_kdereportconditiondialog::report));
+  d->exec();
+  delete d;
 }
 
 void hk_kdeproperty::pushactionbutton_clicked(void)
 {
-pushactionbutton_clicked(0,"");
+  pushactionbutton_clicked(0,"");
 }
 
 void hk_kdeproperty::pushactionbutton_clicked(int rownumber,const hk_string& warning)
@@ -2016,37 +2011,17 @@ void hk_kdeproperty::onvaluechangedbutton_clicked(void)
 onvaluechangedbutton_clicked(0,"");
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  void hk_kdeproperty::border_changes()
  {
    if (!p_visible) return;
    hk_kdelabel* label=dynamic_cast<hk_kdelabel*>(p_visible);
    if (!label) return;
-       label->set_topline(toplinefield->value());
-       label->set_bottomline(bottomlinefield->value());
-       label->set_leftline(leftlinefield->value());
-       label->set_rightline(rightlinefield->value());
-       label->set_diagonalloru(diagonallorufield->value());
-       label->set_diagonalluro(diagonallurofield->value());
-
-
+   label->set_topline(toplinefield->value());
+   label->set_bottomline(bottomlinefield->value());
+   label->set_leftline(leftlinefield->value());
+   label->set_rightline(rightlinefield->value());
+   label->set_diagonalloru(diagonallorufield->value());
+   label->set_diagonalluro(diagonallurofield->value());
  }
 
 hk_visible* hk_kdeproperty::object(void)
@@ -2099,8 +2074,8 @@ void hk_kdeproperty::use_textlist_changed()
 {
   bool e=usetextlistfield->currentIndex()==0;
 
-    if (e)
-    {
+  if (e)
+  {
   usetextlistbutton->show();
   combomodefield->hide();
   combomodelabel->hide();
@@ -2111,9 +2086,9 @@ void hk_kdeproperty::use_textlist_changed()
   listdatasourcebutton->hide();
   viewcolumnfield->hide();
   viewcolumnlabel->hide();
-    }
-    else
-    {
+  }
+  else
+  {
   usetextlistbutton->hide();
   combomodefield->show();
   combomodelabel->show();
@@ -2124,44 +2099,41 @@ void hk_kdeproperty::use_textlist_changed()
   listdatasourcebutton->show();
   viewcolumnfield->show();
   viewcolumnlabel->show();
-    }
+  }
 }
 
 void hk_kdeproperty::use_textlistbutton_clicked()
 {
-  hk_dscombobox* c=dynamic_cast<hk_dscombobox*>(p_visible);
+  /* TBP hk_dscombobox* c=dynamic_cast<hk_dscombobox*>(p_visible);
   if (!c) return;
-    hk_kdecomboboxtextlist* d = new hk_kdecomboboxtextlist(this,c);
-    d->exec();
-    delete d;
+  hk_kdecomboboxtextlist* d = new hk_kdecomboboxtextlist(this,c);
+  d->exec();
+  delete d;*/
 }
 
 
 void hk_kdeproperty::localimage_selected()
 {
-hk_dsimage* i=dynamic_cast<hk_dsimage*>(p_visible);
-hk_button* b=dynamic_cast<hk_button*>(p_visible);
-if (!i &&!b ) return;
-KUrl url = KFileDialog::getImageOpenUrl( QString((b?"kfiledialog:///icon":"kfiledialog:///image")), this );
-if (!url.fileName().isEmpty())
-{
-  hk_string v=u2l(url.path().toUtf8().data());
-  hk_string error=replace_all("%1",hk_translate("Image '%1' could not be loaded"),v);
-   if (i)
-   {
-   if (!i->load_localimage(v))
-     show_warningmessage(error);
-   }
-   else
-   if (b)
-   {
-   if (!b->load_icon(v))
-     show_warningmessage(error);
-   }
-
-}
-
-
+  hk_dsimage* i=dynamic_cast<hk_dsimage*>(p_visible);
+  hk_button* b=dynamic_cast<hk_button*>(p_visible);
+  if (!i &&!b ) return;
+  QUrl url = KFileDialog::getImageOpenUrl( QString((b?"kfiledialog:///icon":"kfiledialog:///image")), this );
+  if (!url.fileName().isEmpty())
+  {
+    hk_string v=u2l(url.path().toUtf8().data());
+    hk_string error=replace_all("%1",hk_translate("Image '%1' could not be loaded"),v);
+    if (i)
+    {
+      if (!i->load_localimage(v))
+        show_warningmessage(error);
+    }
+    else
+      if (b)
+      {
+        if (!b->load_icon(v))
+          show_warningmessage(error);
+      }
+  }
 }
 
 

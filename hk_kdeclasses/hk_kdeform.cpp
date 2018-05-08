@@ -15,8 +15,6 @@
 //$Revision: 1.73 $
 
 #include "hk_kdeform.h"
-#include "hk_kdeform.moc"
-
 #include <qbuttongroup.h>
 #include <qlabel.h>
 #include <qpushbutton.h>
@@ -33,7 +31,6 @@
 #include <kglobal.h>
 #include <kiconloader.h>
 #include <qpushbutton.h>
-
 #include "hk_kderowselector.h"
 #include "hk_kdeproperty.h"
 #include <hk_class.h>
@@ -43,18 +40,16 @@
 #include <hk_dsdatavisible.h>
 #include <hk_datasource.h>
 #include <hk_connection.h>
-
 #include <kconfiggroup.h>
 #include <kmenubar.h>
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <kstandardaction.h>
-#include <kstandarddirs.h>
 #include <klocale.h>
 #include <kconfig.h>
 #include <kapplication.h>
 #include <kservice.h>
-// TBP icons
+
 /*
  *  Constructs a hk_kdeform which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'
@@ -75,10 +70,9 @@ hk_kdeform::hk_kdeform( QWidget* parent,  const char* /* name */, Qt::WFlags fl)
     g=cg.readEntry("Geometry",rrect);
     setGeometry(g);
 
-    KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde4classes");
-    setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdeform.rc"));
-    KService::Ptr service = KService::serviceByDesktopName("hk_kde4formpart");
+    QIcon::setThemeName("oxygen");
+    setXMLFile("hk_kdeform.rc");
+    KService::Ptr service = KService::serviceByDesktopName("hk_kde5formpart");
    
     if (!service || 
       !(p_part=service->createInstance<KParts::ReadWritePart>(this,this,QVariantList())))
@@ -93,7 +87,7 @@ hk_kdeform::hk_kdeform( QWidget* parent,  const char* /* name */, Qt::WFlags fl)
     
     connect(p_partmanager,SIGNAL(partRemoved(KParts::Part*)),this, SLOT(part_removed()));
     connect(p_partmanager,SIGNAL(activePartChanged(KParts::Part*)),this, SLOT(createGUI(KParts::Part*)));
-    p_closeaction=new KAction(KIcon("window-close"),i18n("&Close"),actionCollection());
+    p_closeaction=new KAction(QIcon::fromTheme("window-close"),i18n("&Close"),actionCollection());
     actionCollection()->addAction("closeform",p_closeaction);
     connect(p_closeaction,SIGNAL(triggered()),this,SLOT(close_form()));
     createGUI(p_part);
@@ -121,8 +115,6 @@ void hk_kdeform::part_removed(void)
    p_part=NULL;
    p_form=NULL;
    close();
-
-
 }
 
 hk_presentation::enum_mode  hk_kdeform::mode(void)
@@ -130,7 +122,6 @@ hk_presentation::enum_mode  hk_kdeform::mode(void)
 #ifdef HK_DEBUG
     hkdebug("hk_kdeform::mode");
 #endif
-
     return p_form->mode();
 }
 
@@ -140,9 +131,7 @@ void    hk_kdeform::set_mode(hk_presentation::enum_mode s)
 #ifdef HK_DEBUG
     hkdebug("hk_kdeform::set_mode(s)");
 #endif
-
     p_form->set_mode(s);
-
 }
 
 

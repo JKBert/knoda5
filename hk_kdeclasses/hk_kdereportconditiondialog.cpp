@@ -26,19 +26,17 @@
 #include <kiconloader.h>
 #include <klocale.h>
 #include <qheaderview.h>
-//TBP icons
+
 hk_kdereportconditiondialog::hk_kdereportconditiondialog( QWidget* parent,  const char* name, bool modal, Qt::WFlags fl )
 : hk_kdereportconditiondialogbase( parent, name, modal, fl )
 {
-    KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde4classes");
-    deletebutton->setIcon(  loader->loadIcon("trash-empty",KIconLoader::NoGroup,KIconLoader::SizeSmall  ));
-    addbutton->setIcon(loader->loadIcon("go-next",KIconLoader::NoGroup,KIconLoader::SizeSmall ) ); 
+    QIcon::setThemeName("oxygen");
+    deletebutton->setIcon(QIcon::fromTheme("trash-empty"));
+    addbutton->setIcon(QIcon::fromTheme("go-next")); 
     formdatasourcelabel->setText( i18n( "Formdatasource:" ) );
     formfieldlabel->setText( i18n( "Formfield:" ) );
 
     check_buttons();
-
 }
 
 
@@ -152,12 +150,6 @@ void hk_kdereportconditiondialog::set_reportvalues(void)
     check_buttons();
 }
 
-
-
-
-
-
-
 void hk_kdereportconditiondialog::set_formvalues(void)
 {
 
@@ -214,17 +206,6 @@ void hk_kdereportconditiondialog::set_formvalues(void)
     delete r;
     check_buttons();
 }
-
-
-
-
-
-
-
-
-
-
-
 
 void hk_kdereportconditiondialog::set_formdatasources(void)
 {
@@ -389,5 +370,4 @@ void hk_kdereportconditiondialog::accept(void)
     }
 
     hk_kdereportconditiondialogbase::accept();
-
 }

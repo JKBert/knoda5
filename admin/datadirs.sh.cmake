@@ -45,10 +45,10 @@ case "$1" in
 # services
         ! [ -d $USERMODULEDIR ] && mkdir -p $USERMODULEDIR
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5dbdesignerpart.so $USERMODULEDIR/libhk_kde5dbdesignerpart.so
-        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5formpart.so $USERMODULEDIR/libhk_kde5formpart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5qbepart.so $USERMODULEDIR/libhk_kde5qbepart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5querypart.so $USERMODULEDIR/libhk_kde5querypart.so
 COMMENT
+        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5formpart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5formpart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5tablepart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5tablepart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5gridpart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5gridpart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5reportpart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5reportpart.so
@@ -94,11 +94,10 @@ COMMENT
 : << 'COMMENT' TBP
 # services       
         unlink $USERMODULEDIR/libhk_kde5dbdesignerpart.so
-        unlink $USERMODULEDIR/libhk_kde5formpart.so
         unlink $USERMODULEDIR/libhk_kde5qbepart.so
-        unlink $USERMODULEDIR/libhk_kde5querypart.so
-        
+        unlink $USERMODULEDIR/libhk_kde5querypart.so    
 COMMENT
+        unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5formpart.so
         unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5tablepart.so
         unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5gridpart.so
         unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5reportpart.so
