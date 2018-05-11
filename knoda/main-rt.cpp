@@ -15,7 +15,7 @@
 
 #include <hk_classes.h>
 #include <kapplication.h>
-#include <kaboutdata.h>
+#include <k4aboutdata.h>
 #include <kcmdlineargs.h>
 #include <qdialog.h>
 #include "hk_kdemessages.h"
@@ -23,6 +23,8 @@
 #include <klocale.h>
 #include <kconfig.h>
 #include <kmimetype.h>
+#include <kglobal.h>
+#include <KUrl>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -35,16 +37,14 @@
 static KCmdLineOptions options;
 
 
-
-
 int main(int argc,char** argv)
 {
-        umask(0077);
+    umask(0077);
 
-    KAboutData aboutData("knoda5-rt", "knoda5-rt",
+    K4AboutData aboutData("knoda5-rt", "knoda5-rt",
     ki18n("knoda5 - Runtime version"),
         VERSION, ki18n("knoda5-rt is the runtime version of knoda -a database management system"),
-	KAboutData::License_GPL,
+	K4AboutData::License_GPL,
         ki18n("(c) 2000-2004 Horst Knorr\n(c) 2010-2018 Patrik Hanak"),ki18n(NULL),"http://sourceforge.net/projects/knoda5/",
      "knoda4-bugs@lists.sourceforge.net");
     aboutData.addAuthor(ki18n("Horst Knorr"),ki18n("Author of original version"), "hk_classes@knoda.org","http://www.knoda.org");
@@ -68,6 +68,9 @@ int main(int argc,char** argv)
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
     KApplication anwendung;
+    anwendung.setOrganizationDomain("sourceforge.net");
+    KLocalizedString::setApplicationDomain(PROJECT_NAME);
+    anwendung.setWindowIcon(QIcon::fromTheme(QStringLiteral(PROJECT_NAME)));
     struct_commands commands;
     bool d =args->isSet("d");
     bool db = args->isSet("b");
@@ -80,32 +83,30 @@ int main(int argc,char** argv)
     if (d)  driver = args->getOption("d").toStdString();
     if (printsql)  hk_data::set_print_sqlstatements(true);
     if (args->count()>0 && !db)
-      {
+    {
         db=true;
-	database=args->arg(0);
-      }
-    KMimeType::Ptr ptr = KMimeType::findByUrl(database);
+	    database=args->arg(0);
+    }
+    KMimeType::Ptr ptr = KMimeType::findByUrl(KUrl(database));
     QString mimename = ptr.data()->name();
-     if (mimename=="application/octet-stream" && !database.isEmpty())
-      {
+    if (mimename=="application/octet-stream" && !database.isEmpty())
+    {
         ptr=KMimeType::findByFileContent(database);
-	mimename = ptr.data()->name();
-      }
+	    mimename = ptr.data()->name();
+    }
 
-   if (mimename=="application/x-hk_connection")
-   {
-   commands.p_load_connection=true;
-   driver="X";
-   }
+    if (mimename=="application/x-hk_connection")
+    {
+        commands.p_load_connection=true;
+        driver="X";
+    }
 
-
-
-    if (driver=="")driver=mimetype2driver(u2l(mimename.toUtf8().data()));
+    if (driver=="") driver=mimetype2driver(u2l(mimename.toUtf8().data()));
     d=driver.size()>0;
 
     if (!(d&& db))
     {
-        cerr <<i18n("\n\n*******\nPlease specifiy a database driver,a database name and a form name!\nCorrect syntax:\n knoda-rt -d mysql -b mydatabase -f myform\n\nYou can leave the form name away if the database contains a form named 'Autoform'\n*******\n\n").toStdString()<<endl;
+        cerr <<i18n("\n\n*******\nPlease specifiy a database driver,a database name and a form name!\nCorrect syntax:\n knoda5-rt -d mysql -b mydatabase -f myform\n\nYou can leave the form name away if the database contains a form named 'Autoform'\n*******\n\n").toStdString()<<endl;
         return -1;
     }
     if (f&&!db)

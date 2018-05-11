@@ -24,6 +24,7 @@
 #include "knodamaindockwindow.h"
 #include "hk_kdedriverselect.h"
 #include <KLocalizedString>
+#include <KUrl>
 #include <kconfig.h>
 #include <kmimetype.h>
 #include <kdebug.h>
@@ -90,39 +91,37 @@ int main(int argc,char** argv)
     if (d)  driver = args->getOption("d").toStdString();
     if (printsql)  hk_data::set_print_sqlstatements(true);
     if (args->count()>0 && !db)
-      {
+    {
         db=true;
-	database=args->arg(0);      }
-    KMimeType::Ptr ptr = KMimeType::findByUrl(database);
+	    database=args->arg(0);      
+    }
+    KMimeType::Ptr ptr = KMimeType::findByUrl(KUrl(database));
     QString mimename = ptr.data()->name(); //cerr <<"mimetype="<<mimename<<endl;
-     if (mimename=="application/octet-stream" && !database.isEmpty())
-      {
+    if (mimename=="application/octet-stream" && !database.isEmpty())
+    {
         ptr=KMimeType::findByFileContent(database);
-	mimename = ptr.data()->name();
-      }
+        mimename = ptr.data()->name();
+    }
 //    cerr <<"used mimetype="<<mimename<<endl;
 
-   if (mimename=="application/x-hk_connection")
-   {
-   commands.p_load_connection=true;
-   driver="X";
-   }
+    if (mimename=="application/x-hk_connection")
+    {
+        commands.p_load_connection=true;
+        driver="X";
+    }
 
-
-    if (driver=="")driver=mimetype2driver(u2l(mimename.toUtf8().data()));
+    if (driver=="") driver=mimetype2driver(u2l(mimename.toUtf8().data()));
     d=driver.size()>0;
 
     if (!d&&(db||f))
     {
         cerr << i18n("Please specifiy a database driver!").toStdString() <<endl;
         return -1;
-
     }
     if (f&&!db)
     {
         cerr <<i18n("Specifying a form only works in combination with specifying a database").toStdString()<<endl;
         return -1;
-
     }
 #ifdef HK_DEBUG
     if (args->isSet("debug")) hk_class::set_generaldebug(true);
@@ -133,30 +132,30 @@ int main(int argc,char** argv)
     cp.database=u2l(database.toUtf8().data());
     cp.form=u2l(form.toUtf8().data());
     cp.runtime_only=runtime;
-    if (nolistwindow)cp.runtime_only=true;
+    if (nolistwindow) cp.runtime_only=true;
     commands.p_showlistwindow=!nolistwindow;
     commands.p_classic=classic;
     cp.p_guicommands=&commands;
     int result=0;
     if (classic)
-      cerr << i18n("classic user interface is not supported anymore.").toStdString() <<endl;
+        cerr << i18n("classic user interface is not supported anymore.").toStdString() <<endl;
     
     hk_drivermanager dr;// needed as a dummy to initialize the driverlist path
     if (driver.size()==0)
     {
-      hk_kdedriverselect* select=new hk_kdedriverselect();
-      if (select->exec()==QDialog::Accepted)
-      {
-        if (select->driver_selected())
-	  cp.driver=u2l(select -> currentDriver().toUtf8().data());
-	else
-	  {
-            commands.p_load_connection=true;
-            cp.driver="X";
-            cp.database=u2l(select->selected_file().toUtf8().data());
-	   }
-  	} else result=select->driverlist->count();
-	delete select;
+        hk_kdedriverselect* select=new hk_kdedriverselect();
+        if (select->exec()==QDialog::Accepted)
+        {
+            if (select->driver_selected())
+	            cp.driver=u2l(select -> currentDriver().toUtf8().data());
+	        else
+	        {
+                commands.p_load_connection=true;
+                cp.driver="X";
+                cp.database=u2l(select->selected_file().toUtf8().data());
+	        }
+  	    } else result=select->driverlist->count();
+	    delete select;
       
     }
     if (result>0) return 1;
@@ -164,6 +163,5 @@ int main(int argc,char** argv)
     w->show();
     result=anwendung.exec();
     KGlobal::config()->sync();
-
     return  result;
 }
