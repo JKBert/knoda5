@@ -4,7 +4,7 @@ add_subdirectory(doc)
 add_subdirectory(pics)
 
 
-########### next target ###############
+########### knoda5 target ###############
 
 set(knoda_SRCS
     main.cpp
@@ -29,18 +29,24 @@ target_link_libraries(knoda5
 install(TARGETS knoda5 ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 
-########### next target ###############
+########### knoda5-rt target ###############
 
 set(knoda_rt_SRCS main-rt.cpp)
 
-#TBP kde4_add_app_icon(knoda_rt_SRCS "hi*-app-knoda4.png")
 ecm_add_app_icon(knoda_rt_SRCS ICONS ${ICONS_SRCS})
 
-#TBP kde4_add_executable(knoda4_rt ${knoda_rt_SRCS})
+add_executable(knoda5-rt ${knoda_rt_SRCS})
 
-#TBP target_link_libraries(knoda4_rt ${KDE4_KDECORE_LIBS} ${LIBRARY_OUTPUT_PATH}/libhk_kde4classes.so ${HK_CLASSES_LIB} ${KDE4_KPARTS_LIBS})
+target_link_libraries(knoda5-rt
+    Qt5::Widgets
+    KF5::CoreAddons
+    KF5::ConfigWidgets
+    KF5::I18n
+    KF5::KDELibs4Support
+    ${HK_CLASSES_LIB}
+    ${LIBRARY_OUTPUT_PATH}/lib${LIB_MODULE_NAME}.so)
 
-#TBP install(TARGETS knoda4_rt ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS knoda5-rt ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 
 ########### install files ###############
