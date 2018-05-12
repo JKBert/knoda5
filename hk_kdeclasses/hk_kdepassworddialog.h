@@ -53,10 +53,10 @@ class hk_kdepassworddialog:public QDialog
         button *ok_button;
         button *cancel_button;
         QLabel  *header;
-	QLabel   *booleanemulationlabel;
-	QComboBox* booleanemulationedit;
-	QLabel*   databasenamelabel;
-	combobox* databasenameedit;
+        QLabel   *booleanemulationlabel;
+        QComboBox* booleanemulationedit;
+        QLabel*   databasenamelabel;
+        combobox* databasenameedit;
         QCheckBox* savesettings;
         QLabel *savesettingslabel;
 
@@ -72,6 +72,5 @@ class hk_kdepassworddialog:public QDialog
     private slots:
         void ok_buttonclicked(void);
         void cancel_buttonclicked(void);
-
 };
 #endif

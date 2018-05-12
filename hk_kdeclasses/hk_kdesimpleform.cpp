@@ -2222,10 +2222,10 @@ if (mode()==designmode)
 
 void hk_kdesimpleform::dbdesignaction(void)
 {
- /*TBP    if (p_private->p_designer)
-     	{
-	 p_private->p_designer->raise();
-	 return;
+	if (p_private->p_designer)
+    {
+	     p_private->p_designer->raise();
+	     return;
 	}
 
     p_private->p_designer=new hk_kdedbdesignerwindow();
@@ -2234,7 +2234,7 @@ void hk_kdesimpleform::dbdesignaction(void)
     p_private->p_designer->designer()->set_presentation(this);
     set_block_has_changed(true);
     p_private->p_designer->show();
-    set_block_has_changed(false); */
+    set_block_has_changed(false);
 }
 
 void hk_kdesimpleform::designer_deleted(void)

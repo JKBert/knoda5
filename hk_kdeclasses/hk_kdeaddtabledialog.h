@@ -23,7 +23,8 @@ class hk_kdeaddtabledialog : public hk_kdeaddtabledialogbase
     Q_OBJECT
 
 public:
-    hk_kdeaddtabledialog(hk_kdedbdesigner*, bool allowqueries,QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+    hk_kdeaddtabledialog(hk_kdedbdesigner*, bool allowqueries,QWidget* parent = 0, const char* name = 0, 
+      bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kdeaddtabledialog();
     bool datasource_added() const{return p_added;}
 public slots:
@@ -32,13 +33,13 @@ public slots:
     virtual void check_buttons();
 
 protected slots:
-virtual void accept();
+    virtual void accept();
 
 private:
-bool already_added_table(const hk_string&);
-hk_kdedbdesigner* p_designer;
-bool p_added;
-bool p_allowqueries;
+    bool already_added_table(const hk_string&);
+    hk_kdedbdesigner* p_designer;
+    bool p_added;
+    bool p_allowqueries;
 };
 
 #endif // HK_KDEADDTABLEDIALOG_H

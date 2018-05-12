@@ -353,9 +353,9 @@ void set_kdestandarddialogs(void)
 
 void hk_kdepassworddlg(hk_connection* connection,struct_connectionfields* c)
 {
-  /*TBP  hk_kdepassworddialog* d=new hk_kdepassworddialog(connection,0,0,c);
+    hk_kdepassworddialog* d=new hk_kdepassworddialog(connection,0,0,c);
     d->exec();
-    delete d; */
+    delete d;
 }
 
 

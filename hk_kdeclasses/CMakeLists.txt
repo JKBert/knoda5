@@ -21,7 +21,7 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdedatabasesettingbase.cpp
     hk_kdedatasource.cpp ]]
     hk_kdedate.cpp
-#TBP    hk_kdedbdesigner.cpp 
+    hk_kdedbdesigner.cpp 
     hk_kdedblistview.cpp
 #TBP    hk_kdedriverdialog.cpp
 #TBP    hk_kdeeximportdatabasebase.cpp
@@ -52,8 +52,8 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdenewpassworddialog.cpp
     hk_kdenewpassworddialogbase.cpp
     hk_kdeobjecthandler.cpp
-    hk_kdeobjecthandlerbase.cpp
-    hk_kdepassworddialog.cpp ]]
+    hk_kdeobjecthandlerbase.cpp ]]
+    hk_kdepassworddialog.cpp 
     hk_kdepreferencesdialog.cpp
     hk_kdepreferencesdialogbase.cpp
     hk_kdeproperty.cpp

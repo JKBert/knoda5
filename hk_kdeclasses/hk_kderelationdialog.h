@@ -29,7 +29,8 @@ class hk_kderelationdialog : public hk_kderelationdialogbase
     Q_OBJECT
 
 public:
-    hk_kderelationdialog( hk_kdedatasourceframe* master,hk_kdedatasourceframe* slave, hk_kdedbdesigner* parent,hk_kdedbrelation* r=NULL , const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+    hk_kderelationdialog( hk_kdedatasourceframe* master,hk_kdedatasourceframe* slave, 
+      hk_kdedbdesigner* parent,hk_kdedbrelation* r=NULL , const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kderelationdialog();
     int masterindex(const QString&);
     int slaveindex(const QString&);
@@ -38,27 +39,25 @@ public:
 public slots:
     virtual void ok_button_clicked();
     virtual void slot_data_changed(QWidget*);
-  void add_row(void);
+    void add_row(void);
 
 protected:
-void keyPressEvent(QKeyEvent * );
-bool eventFilter(QObject* object,QEvent* event);
-
-
+    void keyPressEvent(QKeyEvent * );
+    bool eventFilter(QObject* object,QEvent* event);
 
 private:
   void set_stringlist(QStringList* strlist,list<hk_string>*);
   void set_existing_fields(void);
   void set_existing_refintegrityfields(void);
   int    textposition(QStringList* ,const hk_string&  );
-void delete_rows(void);
-hk_kdedatasourceframe* p_masterdsframe;
-hk_kdedatasourceframe* p_slavedsframe;
-QStringList		p_mastercollist;
-QStringList		p_slavecollist;
-hk_kdedbdesigner*     	p_designer;
-hk_kdedbrelation*	p_relation;
-QSignalMapper*          p_signalmerge;
+  void delete_rows(void);
+  hk_kdedatasourceframe* p_masterdsframe;
+  hk_kdedatasourceframe* p_slavedsframe;
+  QStringList		p_mastercollist;
+  QStringList		p_slavecollist;
+  hk_kdedbdesigner*     	p_designer;
+  hk_kdedbrelation*	p_relation;
+  QSignalMapper*          p_signalmerge;
 };
 
 #endif // HK_KDERELATIONDIALOG_H

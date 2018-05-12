@@ -51,6 +51,9 @@
 #include <kiconloader.h>
 #include <kactioncollection.h>
 #include <kservice.h>
+#include <QDrag>
+#include <KParts/ReadWritePart>
+#include <KAction>
 
 //TBP icons
 const int designwidth=3000;
@@ -135,21 +138,19 @@ public:
 
 kdedatasourcelabel::kdedatasourcelabel(hk_kdedatasourceframe* w):QLabel(w)
 {
- p_drag=false;
- p_startx=p_starty=p_offsetx=p_offsety=0;
- setFocusPolicy(Qt::ClickFocus);
- QPalette p(palette());
+  p_drag=false;
+  p_startx=p_starty=p_offsetx=p_offsety=0;
+  setFocusPolicy(Qt::ClickFocus);
+  QPalette p(palette());
 
- p.setColor(backgroundRole(),p.color(QPalette::Inactive,backgroundRole()));
- p.setColor(foregroundRole(),p.color(QPalette::Inactive,foregroundRole()));
- setPalette(p);
+  p.setColor(backgroundRole(),p.color(QPalette::Inactive,backgroundRole()));
+  p.setColor(foregroundRole(),p.color(QPalette::Inactive,foregroundRole()));
+  setPalette(p);
  
- p_datasourceframe=w;
- setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Fixed);
-#if KDE_VERSION_MAJOR >=3 && KDE_VERSION_MINOR >=4
+  p_datasourceframe=w;
+  setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Fixed);
   KAcceleratorManager::setNoAccel(this);
   setAutoFillBackground(true);
-#endif
 }
 
 
@@ -294,15 +295,14 @@ void hk_kdefieldlist::mouseMoveEvent(QMouseEvent* event)
     {
 // dragging begins
         QDrag *p_drag = new QDrag(this);
-	QMimeData *mData = new QMimeData();
-	QString n;
-	n.setNum(p_datasourceframe->datasource()->presentationnumber());
-	n="<DRAG><VUPN>"+n+"</VUPN>\n<VALUE>"+( itemAt(event->pos())?itemAt(event->pos())->text():QString("")) +"</VALUE></DRAG>\n";
-	mData -> setData("application/x-hk_kdedbdesigner",QByteArray(n.toAscii()));
-	p_drag -> setMimeData(mData);
-	p_drag -> exec(Qt::CopyAction);
+	    QMimeData *mData = new QMimeData();
+	    QString n;
+	    n.setNum(p_datasourceframe->datasource()->presentationnumber());
+	    n="<DRAG><VUPN>"+n+"</VUPN>\n<VALUE>"+( itemAt(event->pos())?itemAt(event->pos())->text():QString("")) +"</VALUE></DRAG>\n";
+	    mData -> setData("application/x-hk_kdedbdesigner",QByteArray(n.toAscii()));
+	    p_drag -> setMimeData(mData);
+	    p_drag -> exec(Qt::CopyAction);
     }
-
 }
 
 void hk_kdefieldlist::dragEnterEvent(QDragEnterEvent* event)
@@ -315,7 +315,7 @@ void hk_kdefieldlist::dragEnterEvent(QDragEnterEvent* event)
 
 void hk_kdefieldlist::dropEvent(QDropEvent* event)
 {
-  if (!event->provides("application/x-hk_kdedbdesigner")) return;
+ /*TBP if (!event->provides("application/x-hk_kdedbdesigner")) return;
  
   hk_string eventtxt=event->encodedData("application/x-hk_kdedbdesigner").data();
   xmlDocPtr doc=xmlParseMemory(eventtxt.c_str(),eventtxt.size());
@@ -360,7 +360,7 @@ void hk_kdefieldlist::dropEvent(QDropEvent* event)
         // Click on table box forces the link to be painted
 
   } 
-  delete d;
+  delete d */
 }
 
 
@@ -418,7 +418,8 @@ hk_kdedatasourceframe::hk_kdedatasourceframe(hk_kdedbdesigner* designer,QWidget*
   p_positionupdate=true;
   KIconLoader* loader=KIconLoader::global();
   loader->addAppDir("hk_kde4classes");
-  keyicon = KIcon("key",KIconLoader::global()).pixmap(8,8);
+  //TBP keyicon = KIcon("key",KIconLoader::global()).pixmap(8,8);
+  keyicon = QPixmap();
   set_fields();
   if (ds) {
     setGeometry(ds->x(),ds->y(),ds->width(),ds->height());
@@ -1020,14 +1021,14 @@ void hk_kdedbdesigner::add_datasource(void)
      show_warningmessage("No presentation set!");
      return;
    }
-   hk_kdeaddtabledialog* addtabledialog=new hk_kdeaddtabledialog(
+  /*TBP hk_kdeaddtabledialog* addtabledialog=new hk_kdeaddtabledialog(
 		this,
 		presentation()->presentationtype()!=hk_presentation::qbe,this
 		);
    addtabledialog->exec();
    if (addtabledialog->datasource_added())
          emit signal_definition_has_changed();
-   delete addtabledialog;
+   delete addtabledialog; */
 }
 
 
@@ -1355,21 +1356,19 @@ void hk_kdedbrelation::contextMenuEvent(QContextMenuEvent* event)
 
 void hk_kdedbrelation::edit(void)
 {
-  hk_kderelationdialog* d = new hk_kderelationdialog(p_masterdatasource,p_slavedatasource
+ /*TBP hk_kderelationdialog* d = new hk_kderelationdialog(p_masterdatasource,p_slavedatasource
     ,p_masterdatasource->designer(),this);
     d->exec();
   setToolTip(tooltipfields());
 
-  delete d;
+  delete d; */
 }
-
-
 
 class hk_kdedbdesignerwindowprivate
 {
-public:
-KParts::ReadWritePart* p_part;
-KAction* p_closeaction;
+  public:
+    KParts::ReadWritePart* p_part;
+    KAction* p_closeaction;
 };
 
 hk_kdedbdesignerwindow::hk_kdedbdesignerwindow( QWidget* parent, const char* name, Qt::WFlags fl )
@@ -1378,15 +1377,14 @@ hk_kdedbdesignerwindow::hk_kdedbdesignerwindow( QWidget* parent, const char* nam
   if (name)
       setObjectName(QString::fromAscii(name));
   setWindowModality(Qt::ApplicationModal);
-  KIconLoader* loader=KIconLoader::global();
-  loader->addAppDir("hk_kde4classes");
-  setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdedbdesigner.rc"));
+  QIcon::setThemeName("oxygen");
+  setXMLFile("hk_kdedbdesigner.rc");
   setGeometry(x(),y(),600,500);
   
-  KService::Ptr service = KService::serviceByDesktopName("hk_kde4dbdesignerpart");
+  KService::Ptr service = KService::serviceByDesktopName("hk_kde5dbdesignerpart");
   p_private->p_part = service->createInstance<KParts::ReadWritePart>(this, this, QVariantList());
   p_private->p_closeaction=new KAction(i18n("&Close"),actionCollection()); 
-  p_private->p_closeaction -> setIcon(loader->loadIcon("window-close",KIconLoader::NoGroup,KIconLoader::SizeSmall));
+  p_private->p_closeaction -> setIcon(QIcon::fromTheme("window-close"));
   actionCollection() -> addAction("closedesigner",p_private->p_closeaction);
   connect(p_private->p_closeaction,SIGNAL(triggered()),this,SLOT(close()));
   setCentralWidget(designer());
@@ -1471,15 +1469,13 @@ void hk_kdemovewidget::mousePressEvent(QMouseEvent* event)
 		p_starty=event->globalPos().y();
 		p_offsetx=p_offsety=0;
 	   }
-
 }
-
 
 void hk_kdemovewidget::mouseMoveEvent(QMouseEvent* event)
 {
-const int minwidth=150;
-const int minheight=150;
-if (p_drag && event->button()==Qt::LeftButton)
+  const int minwidth=150;
+  const int minheight=150;
+  if (p_drag && event->button()==Qt::LeftButton)
   {
     int xdiff=event->globalPos().x()-p_startx;
     int ydiff=event->globalPos().y()-p_starty;
