@@ -16,13 +16,13 @@
 #ifndef HK_KDEDBDESIGNERPART
 #define HK_KDEDBDESIGNERPART
 
-#include <kparts/factory.h>
-#include <kparts/part.h>
+#include <KParts/ReadWritePart>
+#include <KParts/Factory>
+#include <KPluginFactory>
 #include "../hk_kdeclasses/hk_kdedbdesigner.h"
 
 class hk_drivermanager;
 class hk_kdedbdesignerpartprivate;
-class KAboutData;
 
 class hk_kdedbdesignerpart : public KParts::ReadWritePart
 {
@@ -30,7 +30,6 @@ class hk_kdedbdesignerpart : public KParts::ReadWritePart
         public:
         hk_kdedbdesignerpart(QWidget* parentWidget, QObject* parent, const QVariantList &args);
         virtual ~hk_kdedbdesignerpart();
-        static KAboutData* createAboutData();
         virtual void setReadWrite(bool rw);
         hk_kdedbdesigner* dbdesigner(void);
     protected:
@@ -38,13 +37,12 @@ class hk_kdedbdesignerpart : public KParts::ReadWritePart
         virtual bool saveFile();
 
     protected slots:
-//        virtual void show_dbdesignercolumndialog(void);
-   	virtual void add_action(void);
+   	    virtual void add_action(void);
 
     private:
-      hk_kdedbdesignerpartprivate* p_private;
-
+        hk_kdedbdesignerpartprivate* p_private;
 };
 
+K_PLUGIN_FACTORY_DECLARATION(hk_kdedbdesignerpartfactory)
 
 #endif

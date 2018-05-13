@@ -5,8 +5,8 @@ add_subdirectory(pics)
 
 ########### next target ###############
 set(hk_kdeclasses_LIB_SRCS
-# TBP  hk_kdeaddtabledialog.cpp
-  #TBP  hk_kdeaddtabledialogbase.cpp
+    hk_kdeaddtabledialog.cpp
+    hk_kdeaddtabledialogbase.cpp
     hk_kdeboolean.cpp
     hk_kdebutton.cpp 
     hk_kdecombobox.cpp

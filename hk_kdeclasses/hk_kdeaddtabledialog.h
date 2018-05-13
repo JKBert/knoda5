@@ -17,14 +17,16 @@
 #define HK_KDEADDTABLEDIALOG_H
 #include "hk_kdeaddtabledialogbase.h"
 #include <hk_string.h>
+
 class hk_kdedbdesigner;
+
 class hk_kdeaddtabledialog : public hk_kdeaddtabledialogbase
 {
     Q_OBJECT
 
 public:
     hk_kdeaddtabledialog(hk_kdedbdesigner*, bool allowqueries,QWidget* parent = 0, const char* name = 0, 
-      bool modal = false, Qt::WFlags fl = 0 );
+    bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kdeaddtabledialog();
     bool datasource_added() const{return p_added;}
 public slots:

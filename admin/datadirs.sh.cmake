@@ -41,13 +41,11 @@ case "$1" in
         ln -s ${CMAKE_SOURCE_DIR}/knoda/pics/icons/hicolor/16-apps-knoda5.png $USERICONDIR/hicolor/16x16/apps/knoda5.png
         ln -s ${CMAKE_SOURCE_DIR}/knoda/pics/icons/locolor/32-apps-knoda5.png $USERICONDIR/locolor/32x32/apps/knoda5.png
         ln -s ${CMAKE_SOURCE_DIR}/knoda/pics/icons/locolor/16-apps-knoda5.png $USERICONDIR/locolor/16x16/apps/knoda5.png
-: << 'COMMENT' TBP
 # services
-        ! [ -d $USERMODULEDIR ] && mkdir -p $USERMODULEDIR
-        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5dbdesignerpart.so $USERMODULEDIR/libhk_kde5dbdesignerpart.so
-        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5qbepart.so $USERMODULEDIR/libhk_kde5qbepart.so
-        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5querypart.so $USERMODULEDIR/libhk_kde5querypart.so
-COMMENT
+#TBP        ! [ -d $USERMODULEDIR ] && mkdir -p $USERMODULEDIR
+#TBP        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5qbepart.so $USERMODULEDIR/libhk_kde5qbepart.so
+#TBP        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5querypart.so $USERMODULEDIR/libhk_kde5querypart.so        
+        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5dbdesignerpart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5dbdesignerpart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5formpart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5formpart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5tablepart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5tablepart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5gridpart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5gridpart.so
@@ -91,12 +89,10 @@ COMMENT
         unlink $USERICONDIR/hicolor/16x16/apps/knoda5.png
         unlink $USERICONDIR/locolor/32x32/apps/knoda5.png
         unlink $USERICONDIR/locolor/16x16/apps/knoda5.png
-: << 'COMMENT' TBP
-# services       
-        unlink $USERMODULEDIR/libhk_kde5dbdesignerpart.so
-        unlink $USERMODULEDIR/libhk_kde5qbepart.so
-        unlink $USERMODULEDIR/libhk_kde5querypart.so    
-COMMENT
+# services              
+#TBP        unlink $USERMODULEDIR/libhk_kde5qbepart.so
+#TBP        unlink $USERMODULEDIR/libhk_kde5querypart.so    
+        unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5dbdesignerpart.so
         unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5formpart.so
         unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5tablepart.so
         unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5gridpart.so

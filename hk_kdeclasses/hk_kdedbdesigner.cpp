@@ -13,6 +13,12 @@
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
 //$Revision: 1.53 $
+
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#else
+#error config.h is needed but not included 
+#endif
 #include <assert.h>
 #include <list>
 #include "hk_kdedbdesigner.h"
@@ -48,14 +54,12 @@
 #include <kconfiggroup.h>
 #include <kacceleratormanager.h>
 #include <kglobal.h>
-#include <kiconloader.h>
 #include <kactioncollection.h>
 #include <kservice.h>
 #include <QDrag>
 #include <KParts/ReadWritePart>
 #include <KAction>
 
-//TBP icons
 const int designwidth=3000;
 const int designheight=3000;
 
@@ -416,10 +420,8 @@ hk_kdedatasourceframe::hk_kdedatasourceframe(hk_kdedbdesigner* designer,QWidget*
   p_layout->addWidget(mv,2,1);
 
   p_positionupdate=true;
-  KIconLoader* loader=KIconLoader::global();
-  loader->addAppDir("hk_kde4classes");
-  //TBP keyicon = KIcon("key",KIconLoader::global()).pixmap(8,8);
-  keyicon = QPixmap();
+  KIconLoader loader (LIB_MODULE_NAME);
+  keyicon = QIcon(loader.iconPath("key", KIconLoader::User)).pixmap(8,8);
   set_fields();
   if (ds) {
     setGeometry(ds->x(),ds->y(),ds->width(),ds->height());
@@ -1021,14 +1023,14 @@ void hk_kdedbdesigner::add_datasource(void)
      show_warningmessage("No presentation set!");
      return;
    }
-  /*TBP hk_kdeaddtabledialog* addtabledialog=new hk_kdeaddtabledialog(
+   hk_kdeaddtabledialog* addtabledialog=new hk_kdeaddtabledialog(
 		this,
 		presentation()->presentationtype()!=hk_presentation::qbe,this
 		);
    addtabledialog->exec();
    if (addtabledialog->datasource_added())
          emit signal_definition_has_changed();
-   delete addtabledialog; */
+   delete addtabledialog;
 }
 
 
@@ -1377,6 +1379,7 @@ hk_kdedbdesignerwindow::hk_kdedbdesignerwindow( QWidget* parent, const char* nam
   if (name)
       setObjectName(QString::fromAscii(name));
   setWindowModality(Qt::ApplicationModal);
+  setComponentName(LIB_MODULE_NAME, componentData().displayName());
   QIcon::setThemeName("oxygen");
   setXMLFile("hk_kdedbdesigner.rc");
   setGeometry(x(),y(),600,500);

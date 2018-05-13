@@ -31,8 +31,8 @@
 #include <qlayout.h>
 #include <qtooltip.h>
 #include <qwhatsthis.h>
+#include <KLocalizedString>
 
-//TBP TBT translation tr()->i18n()
 
 /*
  *  Constructs a hk_kdeaddtabledialogbase as a child of 'parent', with the
@@ -46,7 +46,7 @@ hk_kdeaddtabledialogbase::hk_kdeaddtabledialogbase( QWidget* parent, const char*
 {
     setObjectName(QString::fromAscii(name == NULL?"hk_kdeaddtabledialogbase":name));
     setModal(modal);
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled( true );
     hk_kdeaddtabledialogbaseLayout = new QGridLayout(this);
     hk_kdeaddtabledialogbaseLayout->setMargin(11);
     hk_kdeaddtabledialogbaseLayout->setSpacing(6);
@@ -64,7 +64,7 @@ hk_kdeaddtabledialogbase::hk_kdeaddtabledialogbase( QWidget* parent, const char*
 
     addbutton = new QPushButton( this);
     addbutton->setObjectName(QString::fromAscii("addbutton"));
-    addbutton->setDefault( TRUE );
+    addbutton->setDefault( true );
 
     hk_kdeaddtabledialogbaseLayout->addWidget( addbutton, 0, 1 );
 
@@ -98,11 +98,11 @@ hk_kdeaddtabledialogbase::~hk_kdeaddtabledialogbase()
  */
 void hk_kdeaddtabledialogbase::languageChange()
 {
-    setWindowTitle( tr( "Add-table dialog" ) );
-    addbutton->setText( tr( "&Add" ) );
-    addbutton->setShortcut( QKeySequence( tr( "Alt+A" ) ) );
-    buttonClose->setText( tr( "&Close" ) );
-    buttonClose->setShortcut( QKeySequence( tr( "Alt+C" ) ) );
+    setWindowTitle( i18n( "Add-table dialog" ) );
+    addbutton->setText( i18n( "&Add" ) );
+    addbutton->setShortcut( QKeySequence( i18n( "Alt+A" ) ) );
+    buttonClose->setText( i18n( "&Close" ) );
+    buttonClose->setShortcut( QKeySequence( i18n( "Alt+C" ) ) );
 }
 
 void hk_kdeaddtabledialogbase::add_clicked()

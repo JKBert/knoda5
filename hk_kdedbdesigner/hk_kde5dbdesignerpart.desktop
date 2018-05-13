@@ -4,3 +4,4 @@ Name=hk_kde5classes dbdesigner
 MimeType=database/dbdesigner;
 ServiceTypes=KParts/ReadWritePart
 X-KDE-Library=hk_kde5dbdesignerpart
+X-KDE-ServiceTypes=KParts/ReadWritePart

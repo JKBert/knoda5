@@ -824,7 +824,7 @@ void knodamaindockwindowbase::slot_open_localdatabase()
 
 void knodamaindockwindowbase::slot_referentialintegrity()
 {
- /* TBP   if (!p_private->p_designer)
+   if (!p_private->p_designer)
        p_private->p_designer=new hk_kdedbdesignerwindow();
 //    connect (p_private->p_designer,SIGNAL(signal_closed()),this,SLOT(designer_deleted()));
     p_private->p_designer->designer()->set_database(p_database);
@@ -836,7 +836,6 @@ void knodamaindockwindowbase::slot_referentialintegrity()
     p_private->p_designer->show();
     //set_block_has_changed(false);
     connect (p_private->p_designer,SIGNAL(signal_closed()),this,SLOT(designer_deleted()));
-*/
 }
 
 void knodamaindockwindowbase::designer_deleted(void)

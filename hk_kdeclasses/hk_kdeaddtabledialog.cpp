@@ -78,12 +78,12 @@ hk_kdeaddtabledialog::~hk_kdeaddtabledialog()
 void hk_kdeaddtabledialog::add_clicked()
 {
 
-if (!addbutton->isEnabled()) return;
-   datasourcetype dt=dt_table;
+    if (!addbutton->isEnabled()) return;
+    datasourcetype dt=dt_table;
     if(datasourcetypefield->currentIndex()==2)
-    dt=dt_query;
+        dt=dt_query;
     else if(datasourcetypefield->currentIndex()==1)
-     dt=dt_view;
+             dt=dt_view;
    hk_datasource* ds=p_designer->presentation()->get_datasource(p_designer->presentation()->new_datasource(
    u2l(tablelist->currentItem()->text().toUtf8().data()) ,dt ));
    if (!ds)
@@ -101,7 +101,7 @@ if (!addbutton->isEnabled()) return;
      delete p_cur;
      p_designer->set_all_relations();
    }
-p_added=true;
+    p_added=true;
 }
 
 
@@ -153,15 +153,15 @@ void hk_kdeaddtabledialog::accept()
 
 bool hk_kdeaddtabledialog::already_added_table(const hk_string&t)
 {
-list<hk_datasource*>*l=p_designer->presentation()->datasources();
-list<hk_datasource*>::iterator it=l->begin();
-while (it!=l->end())
-{
- hk_datasource* d=(*it);
- if (d->type()==hk_datasource::ds_table && d->name()==t) return true;
-++it;
-}
+  list<hk_datasource*>*l=p_designer->presentation()->datasources();
+  list<hk_datasource*>::iterator it=l->begin();
+  while (it!=l->end())
+  {
+    hk_datasource* d=(*it);
+    if (d->type()==hk_datasource::ds_table && d->name()==t) return true;
+    ++it;
+  }
 
-return false;
+  return false;
 }
 
