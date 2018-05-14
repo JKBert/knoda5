@@ -35,8 +35,6 @@
 #include <klocale.h>
 #include <kglobal.h>
 
-
-
 hk_kderelationdialog::hk_kderelationdialog( hk_kdedatasourceframe* master, hk_kdedatasourceframe* slave,hk_kdedbdesigner* parent,hk_kdedbrelation* r,  const char* name, bool modal, Qt::WFlags fl )
     : hk_kderelationdialogbase( parent, name, modal, fl ),p_masterdsframe(master),p_slavedsframe(slave),
     p_designer(parent),p_relation(r),p_signalmerge(new QSignalMapper(grid))

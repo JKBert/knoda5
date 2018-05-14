@@ -319,14 +319,13 @@ void hk_kdefieldlist::dragEnterEvent(QDragEnterEvent* event)
 
 void hk_kdefieldlist::dropEvent(QDropEvent* event)
 {
- /*TBP if (!event->provides("application/x-hk_kdedbdesigner")) return;
- 
-  hk_string eventtxt=event->encodedData("application/x-hk_kdedbdesigner").data();
+  if(!event->mimeData()->hasFormat("application/x-hk_kdedbdesigner")) return;
+  hk_string eventtxt=event->mimeData()->data("application/x-hk_kdedbdesigner").data();
   xmlDocPtr doc=xmlParseMemory(eventtxt.c_str(),eventtxt.size());
   xmlNodePtr node=xmlDocGetRootElement(doc);
   long mastervupn;
   hk_string mastertxt;
-  if (!(     hk_class::get_tagvalue(node,"VUPN",mastervupn)
+  if (!(hk_class::get_tagvalue(node,"VUPN",mastervupn)
          && hk_class::get_tagvalue(node,"VALUE",mastertxt)))
   {
     hk_class::show_warningmessage("Error in drag&drop protocol");
@@ -362,9 +361,8 @@ void hk_kdefieldlist::dropEvent(QDropEvent* event)
     else
       p_datasourceframe->designer()->add_relation(masterds,p_datasourceframe->datasource());
         // Click on table box forces the link to be painted
-
   } 
-  delete d */
+  delete d;
 }
 
 
@@ -1358,12 +1356,11 @@ void hk_kdedbrelation::contextMenuEvent(QContextMenuEvent* event)
 
 void hk_kdedbrelation::edit(void)
 {
- /*TBP hk_kderelationdialog* d = new hk_kderelationdialog(p_masterdatasource,p_slavedatasource
-    ,p_masterdatasource->designer(),this);
-    d->exec();
+  hk_kderelationdialog* d = new hk_kderelationdialog(p_masterdatasource, p_slavedatasource,
+    p_masterdatasource->designer(), this);
+  d->exec();
   setToolTip(tooltipfields());
-
-  delete d; */
+  delete d;
 }
 
 class hk_kdedbdesignerwindowprivate

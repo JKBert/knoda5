@@ -62,7 +62,7 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdequery.cpp
     hk_kdequerypartwidget.cpp ]]
     hk_kderelationdialogbase.cpp
-  #TBP  hk_kderelationdialog.cpp 
+    hk_kderelationdialog.cpp 
     hk_kdereport.cpp
     hk_kdereportconditiondialog.cpp
     hk_kdereportconditiondialogbase.cpp
