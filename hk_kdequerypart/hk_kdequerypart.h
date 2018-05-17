@@ -15,22 +15,21 @@
 
 #ifndef HK_KDEQUERYPART
 #define HK_KDEQUERYPART
-#include <kparts/part.h>
-#include <kparts/factory.h>
+#include <KParts/ReadWritePart>
+#include <KParts/Factory>
+#include <KPluginFactory>
 #include "../hk_kdeclasses/hk_kdequerypartwidget.h"
 
 class hk_drivermanager;
 class hk_kdequerypartprivate;
-class KAboutData;
 
 class hk_kdequerypart : public KParts::ReadWritePart
 {
-friend class hk_kdequerypartwidget;
+    friend class hk_kdequerypartwidget;
     Q_OBJECT
-        public:
+    public:
         hk_kdequerypart(QWidget* parentWidget,QObject* parent, const QVariantList &args);
         virtual ~hk_kdequerypart();
-        static KAboutData* createAboutData();
         virtual void setReadWrite(bool rw);
     protected:
         virtual bool openFile();
@@ -47,5 +46,6 @@ friend class hk_kdequerypartwidget;
 
 };
 
+K_PLUGIN_FACTORY_DECLARATION(hk_kdequerypartfactory)
 
 #endif

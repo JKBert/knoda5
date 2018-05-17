@@ -23,6 +23,8 @@
 #include "hk_dsquery.h"
 #include "hk_datasource.h"
 #include "hk_database.h"
+#include <KParts/ReadWritePart>
+
 class QVBoxLayout;
 class QHBoxLayout;
 class QGridLayout;

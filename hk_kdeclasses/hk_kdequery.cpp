@@ -37,10 +37,8 @@
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <kstandardaction.h>
-#include <kstandarddirs.h>
 #include <kservice.h>
 
-// TBP icons
 /*
  *  Constructs a hk_kdequery which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'
@@ -54,13 +52,11 @@ hk_kdequery::hk_kdequery(QWidget* w,const char* /* n */,Qt::WFlags f):KParts::Ma
 #endif
     resize( 596, 480 );
     p_partmanager=new KParts::PartManager(this);
-
+    QIcon::setThemeName("oxygen");
     QPixmap p;
-    KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde4classes");
-    setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdequery.rc"));
+    setXMLFile("hk_kdequery.rc");
 
-    KService::Ptr service = KService::serviceByDesktopName("hk_kde4querypart");   
+    KService::Ptr service = KService::serviceByDesktopName("hk_kde5querypart");   
     if (!service || 
       !(p_part=service->createInstance<KParts::ReadWritePart>(this,this, QVariantList())))
     {
@@ -74,7 +70,7 @@ hk_kdequery::hk_kdequery(QWidget* w,const char* /* n */,Qt::WFlags f):KParts::Ma
     setCentralWidget(p_query);
     connect(p_partmanager,SIGNAL(partRemoved(KParts::Part*)),this, SLOT(part_removed()));
     connect(p_partmanager,SIGNAL(activePartChanged(KParts::Part*)),this, SLOT(createGUI(KParts::Part*)));
-    p_closeaction=new KAction(KIcon("window-close"),i18n("&Close"),actionCollection());
+    p_closeaction=new KAction(QIcon::fromTheme("window-close"),i18n("&Close"),actionCollection());
     actionCollection()->addAction("closequery",p_closeaction);
     connect(p_closeaction,SIGNAL(triggered()),this,SLOT(close_query()));
     set_mode(designmode);
@@ -101,13 +97,6 @@ hk_kdequery::~hk_kdequery()
 
 }
 
-
-
-
-
-
-
-
 bool  hk_kdequery::set_mode(enum_mode s)
 {
 #ifdef HK_DEBUG
@@ -116,15 +105,6 @@ bool  hk_kdequery::set_mode(enum_mode s)
  if (!p_query) return false;
 return p_query->set_mode(s);
 }
-
-
-
-
-
-
-
-
-
 
 void hk_kdequery::set_nodesignmode(bool d)
 {
@@ -162,8 +142,6 @@ void hk_kdequery::close_query(void)
     close();
 }
 
-
-
 void hk_kdequery::closeEvent ( QCloseEvent* e)
 {
 #ifdef HK_DEBUG
@@ -175,13 +153,9 @@ void hk_kdequery::closeEvent ( QCloseEvent* e)
         reset_has_changed();
 
     }
-
-
     KParts::MainWindow::closeEvent(e);
    emit signal_closed(this);
-
 }
-
 
 void hk_kdequery::set_caption(void)
 {
@@ -205,17 +179,11 @@ void hk_kdequery::set_caption(void)
 
 }
 
-
-
-
-
 bool hk_kdequery::in_designmode(void) const
 {
 if (!p_query) return false;
 return p_query->in_designmode();
 }
-
-
 
 void hk_kdequery::part_removed(void)
 {
@@ -224,10 +192,7 @@ void hk_kdequery::part_removed(void)
    p_part=NULL;
    p_query=NULL;
    close();
-
-
 }
-
 
 void hk_kdequery::set_datasource(hk_datasource* d)
 {
@@ -237,7 +202,6 @@ void hk_kdequery::set_datasource(hk_datasource* d)
  if (!p_query) return;
     hk_dsquery::set_datasource(d);
     p_query->set_datasource(d);
-
 }
 
 void hk_kdequery::set_autoclose(bool c)
@@ -245,8 +209,6 @@ void hk_kdequery::set_autoclose(bool c)
  if (!p_query) return;
   p_query->set_autoclose(c);
 }
-
-
 
 void hk_kdequery::before_source_vanishes(void)
 {
@@ -266,6 +228,3 @@ void hk_kdequery::before_source_vanishes(void)
     }
     //hk_dsquery::before_source_vanishes();
 }
-
-
-

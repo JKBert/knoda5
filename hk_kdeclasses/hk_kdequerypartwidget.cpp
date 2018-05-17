@@ -14,6 +14,11 @@
 // ****************************************************************************
 //$Revision: 1.31 $
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#else
+#error config.h is needed but not included 
+#endif
 #include "hk_kdequerypartwidget.h"
 #include "hk_kdequerypartwidget.moc"
 #include <qbuttongroup.h>
@@ -43,16 +48,14 @@
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
 #include <kstandardaction.h>
-#include <kstandarddirs.h>
 #include <kparts/partmanager.h>
 #include "../hk_kdequerypart/hk_kdequerypart.h"
-#include <ktexteditor/editorchooser.h>
-#include <ktexteditor/editor.h>
-#include <ktexteditor/document.h>
-#include <ktexteditor/view.h>
+#include <KTextEditor/Editor>
+#include <KTextEditor/Document>
+#include <KTextEditor/View>
 #include <ktexteditor/highlightinterface.h>
 #include <kmessagebox.h>
-//TBP icons
+
 class hk_kdequerypartwidgetprivate
 {
 public:
@@ -96,11 +99,9 @@ hk_kdequerypartwidget::hk_kdequerypartwidget(hk_kdequerypart* part,QWidget* w,co
     setObjectName(n);
     setWindowFlags(windowFlags() | f); 
     p_private->p_querypart=part;
-    KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde4classes");
     setFocusPolicy(Qt::StrongFocus);
     
-    KTextEditor::Editor* p_ed = KTextEditor::EditorChooser::editor();
+    KTextEditor::Editor* p_ed = KTextEditor::Editor::instance();
     if (p_ed != NULL) {
         p_private->p_document = p_ed->createDocument(0);
         if (p_private->p_document != NULL) {
@@ -112,7 +113,7 @@ hk_kdequerypartwidget::hk_kdequerypartwidget(hk_kdequerypart* part,QWidget* w,co
     
     setObjectName( "hk_kdequerypartwidget" );
     resize( 596, 480 );
-    KService::Ptr service = KService::serviceByDesktopName("hk_kde4gridpart");
+    KService::Ptr service = KService::serviceByDesktopName("hk_kde5gridpart");
     if (!service || 
       !(p_private->p_part=service->createInstance<KParts::ReadWritePart>(this, this, QVariantList())))
     {
@@ -120,7 +121,7 @@ hk_kdequerypartwidget::hk_kdequerypartwidget(hk_kdequerypart* part,QWidget* w,co
  Did you install knoda into the correct directory? Program will exit now..."));
      exit(1);
     }
-    service = KService::serviceByDesktopName("hk_kde4qbepart");
+    service = KService::serviceByDesktopName("hk_kde5qbepart");
     if (!service || 
      !(p_private->p_qbepart=service->createInstance<KParts::ReadWritePart>(w,w, QVariantList())))
     {
@@ -182,19 +183,21 @@ hk_kdequerypartwidget::~hk_kdequerypartwidget()
 void hk_kdequerypartwidget::setupActions(KActionCollection* pac)
 {
   QActionGroup* pag;
+  KIconLoader loader (LIB_MODULE_NAME);  
+  QIcon::setThemeName("oxygen");
   
-    if (runtime_only())
-    {
+  if (runtime_only())
+  {
       p_designaction=NULL;
       p_viewaction=NULL;
-    }
-    else
-    {
-      p_designaction=new KToggleAction(KIcon("document-edit"),i18n("&Design mode"),pac);
+  }
+  else
+  {
+      p_designaction=new KToggleAction(QIcon::fromTheme("document-edit"),i18n("&Design mode"),pac);
       pac->addAction("designmode",p_designaction);
       connect(p_designaction,SIGNAL(triggered()),this,SLOT(designbutton_clicked()));
       p_designaction->setEnabled(!runtime_only());
-      p_viewaction=new KToggleAction(KIcon("system-run"),i18n("&View mode"),pac);
+      p_viewaction=new KToggleAction(QIcon::fromTheme("system-run"),i18n("&View mode"),pac);
       pac->addAction("viewmode",p_viewaction);
       connect(p_viewaction,SIGNAL(triggered()),this,SLOT(querybutton_clicked()));
       pag = new QActionGroup(this); // exclusive by default
@@ -202,14 +205,14 @@ void hk_kdequerypartwidget::setupActions(KActionCollection* pac)
       p_viewaction->setActionGroup(pag); 
     }
     
-    p_printaction=new KAction(KIcon("document-print"),i18n("&Print"),pac);
+    p_printaction=new KAction(QIcon::fromTheme("document-print"),i18n("&Print"),pac);
     pac->addAction("print",p_printaction);
     connect(p_printaction,SIGNAL(triggered()),this,SLOT(print()));    
-    p_reloadaction=new KAction(KIcon("view-refresh"),i18n("Reload"),pac);
+    p_reloadaction=new KAction(QIcon::fromTheme("view-refresh"),i18n("Reload"),pac);
     pac->addAction("reload",p_reloadaction);
     connect(p_reloadaction,SIGNAL(triggered()),this,SLOT(reload_query()));
 
-    p_qbeaction=new KToggleAction(KIcon("dbdesigner",KIconLoader::global()),i18n("use &QBE"),pac);
+    p_qbeaction=new KToggleAction(QIcon(loader.iconPath("dbdesigner",KIconLoader::User)),i18n("use &QBE"),pac);
     pac->addAction("useqbemode",p_qbeaction);
     connect(p_qbeaction,SIGNAL(triggered()),this,SLOT(action_useqbe()));
     p_qbeaction->blockSignals(true);
@@ -217,32 +220,32 @@ void hk_kdequerypartwidget::setupActions(KActionCollection* pac)
     p_qbeaction->setEnabled(!runtime_only());
     p_qbeaction->blockSignals(false);
 
-    p_saveaction=new KAction(KIcon("document-save"),i18n("&Save"),pac);
+    p_saveaction=new KAction(QIcon::fromTheme("document-save"),i18n("&Save"),pac);
     pac->addAction("save",p_saveaction);
     connect(p_saveaction,SIGNAL(triggered()),this,SLOT(savebutton_clicked()));
     p_saveaction->setEnabled(false);
 
-    p_saveasaction=new KAction(KIcon("document-save-as"),i18n("Save &as"),pac);
+    p_saveasaction=new KAction(QIcon::fromTheme("document-save-as"),i18n("Save &as"),pac);
     pac->addAction("saveas",p_saveasaction);
     connect(p_saveasaction,SIGNAL(triggered()),this,SLOT(saveasbutton_clicked()));    
     p_saveasaction->setEnabled(!runtime_only());
-    p_addaction = new KAction(KIcon("gridadd22x22",KIconLoader::global()),i18n("&Add datasource"),pac);
+    p_addaction = new KAction(QIcon(loader.iconPath("gridadd22x22",KIconLoader::User)),i18n("&Add datasource"),pac);
     pac->addAction("add",p_addaction);
     p_copybackendsqlaction=new KAction(i18n("&Copy backend SQL"),pac);
     pac->addAction("copybackendsql",p_copybackendsqlaction);
     p_copybackendsqlaction->setShortcut(Qt::AltModifier+Qt::Key_C);
     connect(p_copybackendsqlaction,SIGNAL(triggered()),this,SLOT(copybackendsql_clicked()));
 
-    p_storeresultaction=new KAction(KIcon("document-save-as"),i18n("Store result"),pac);
+    p_storeresultaction=new KAction(QIcon::fromTheme("document-save-as"),i18n("Store result"),pac);
     pac->addAction("storeresult",p_storeresultaction);
     connect(p_storeresultaction,SIGNAL(triggered()),this,SLOT(storeresult_clicked()));	
     
-    p_distinctaction = new KToggleAction(KIcon("edit-table-cell-merge"),i18n("&Distinct rows"),pac);
+    p_distinctaction = new KToggleAction(QIcon::fromTheme("edit-table-cell-merge"),i18n("&Distinct rows"),pac);
     pac->addAction("distinct",p_distinctaction);
     connect(p_distinctaction,SIGNAL(triggered()),kdeqbe(),SLOT(distinct_changed()));     
 
     if (p_private->p_view != NULL) {
-        p_cutaction=new KAction(KIcon("edit-cut"),i18n("Cu&t"),pac);
+        p_cutaction=new KAction(QIcon::fromTheme("edit-cut"),i18n("Cu&t"),pac);
         pac->addAction("cut",p_cutaction);
         if (p_private->p_view->action("edit_cut") 
             && (Qt::ControlModifier+Qt::Key_X == p_private->p_view->action("edit_cut")->shortcut()))
@@ -250,7 +253,7 @@ void hk_kdequerypartwidget::setupActions(KActionCollection* pac)
         p_cutaction->setShortcut(Qt::ControlModifier+Qt::Key_X);
         connect(p_cutaction,SIGNAL(triggered()),this,SLOT(cut_clicked()));
 
-        p_undoaction=new KAction(KIcon("edit-undo"),i18n("&Undo"),pac);
+        p_undoaction=new KAction(QIcon::fromTheme("edit-undo"),i18n("&Undo"),pac);
         pac->addAction("undo",p_undoaction);
         if (p_private->p_view->action("edit_undo")
             && (Qt::ControlModifier+Qt::Key_Z == p_private->p_view->action("edit_undo")->shortcut()))
@@ -258,14 +261,14 @@ void hk_kdequerypartwidget::setupActions(KActionCollection* pac)
         p_undoaction->setShortcut(Qt::ControlModifier+Qt::Key_Z);
         connect(p_undoaction,SIGNAL(triggered()),this,SLOT(undo_clicked()));     
 
-        p_redoaction=new KAction(KIcon("edit-redo"), i18n("Re&do"),pac);
+        p_redoaction=new KAction(QIcon::fromTheme("edit-redo"), i18n("Re&do"),pac);
         pac->addAction("redo",p_redoaction);
         if (p_private->p_view->action("edit_redo")
             && (Qt::ControlModifier+Qt::ShiftModifier+Qt::Key_Z == p_private->p_view->action("edit_redo")->shortcut()))
             p_private->p_view->action("edit_redo")->setShortcut(QKeySequence());
         p_redoaction->setShortcut(Qt::ControlModifier+Qt::ShiftModifier+Qt::Key_Z);
         connect(p_redoaction,SIGNAL(triggered()),this,SLOT(redo_clicked())); 
-        p_copyaction=new KAction(KIcon("edit-copy"),i18n("&Copy"),pac);
+        p_copyaction=new KAction(QIcon::fromTheme("edit-copy"),i18n("&Copy"),pac);
         pac->addAction("copy",p_copyaction);
         if (p_private->p_view->action("edit_copy")
             && (Qt::ControlModifier+Qt::Key_C == p_private->p_view->action("edit_copy")->shortcut()))
@@ -273,7 +276,7 @@ void hk_kdequerypartwidget::setupActions(KActionCollection* pac)
         p_copyaction->setShortcut(Qt::ControlModifier+Qt::Key_C);
         connect(p_copyaction,SIGNAL(triggered()),this,SLOT(copy_clicked()));	
 	
-        p_pasteaction=new KAction(KIcon("edit-paste"),i18n("&Paste"),pac);
+        p_pasteaction=new KAction(QIcon::fromTheme("edit-paste"),i18n("&Paste"),pac);
         pac->addAction("paste",p_pasteaction);
         if (p_private->p_view->action("edit_paste")
             && (Qt::ControlModifier+Qt::Key_V == p_private->p_view->action("edit_paste")->shortcut()))
@@ -287,7 +290,7 @@ void hk_kdequerypartwidget::setupActions(KActionCollection* pac)
             p_private->p_view->action("edit_replace")->setShortcut(QKeySequence());
         p_replaceaction->setShortcut(Qt::ControlModifier+Qt::Key_R);
         connect(p_replaceaction,SIGNAL(triggered()),this,SLOT(replace_clicked()));	
-        p_findaction=new KAction(KIcon("edit-find"),i18n("&Find"),pac);
+        p_findaction=new KAction(QIcon::fromTheme("edit-find"),i18n("&Find"),pac);
         pac->addAction("find",p_findaction);
         if (p_private->p_view->action("edit_find")
             && (Qt::ControlModifier+Qt::Key_F == p_private->p_view->action("edit_find")->shortcut()))
@@ -295,14 +298,14 @@ void hk_kdequerypartwidget::setupActions(KActionCollection* pac)
         p_findaction->setShortcut(Qt::ControlModifier+Qt::Key_F);
         connect(p_findaction,SIGNAL(triggered()),this,SLOT(find_clicked()));	
 	
-        p_findnextaction=new KAction(KIcon("go-next"),i18n("Find &Next"),pac);
+        p_findnextaction=new KAction(QIcon::fromTheme("go-next"),i18n("Find &Next"),pac);
         pac->addAction("findnext",p_findnextaction);
         if (p_private->p_view->action("edit_find_next")
             && (Qt::Key_F3 == p_private->p_view->action("edit_find_next")->shortcut()))
             p_private->p_view->action("edit_find_next")->setShortcut(QKeySequence());     
         p_findnextaction->setShortcut(Qt::Key_F3);
         connect(p_findnextaction,SIGNAL(triggered()),this,SLOT(findnext_clicked()));
-        p_findpreviousaction=new KAction(KIcon("go-previous"),i18n("Find Pre&vious"),pac);
+        p_findpreviousaction=new KAction(QIcon::fromTheme("go-previous"),i18n("Find Pre&vious"),pac);
         pac->addAction("findprevious",p_findpreviousaction);
         if (p_private->p_view->action("edit_find_prev")
             && (Qt::ShiftModifier+Qt::Key_F3 == p_private -> p_view->action("edit_find_prev")->shortcut()))
@@ -408,14 +411,14 @@ void hk_kdequerypartwidget::internal_set_designmode(void)
 
     if (use_qbe())
     {
-        p_private->p_querypart->setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdequerypartqbe.rc"));
+        p_private->p_querypart->setXMLFile("hk_kdequerypartqbe.rc");
         set_block_has_changed(true);
         setCurrentWidget(p_private->p_qbe);
         set_block_has_changed(false);
     }
     else
     {
-        p_private->p_querypart->setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdequerypartsql.rc"));
+        p_private->p_querypart->setXMLFile("hk_kdequerypartsql.rc");
         setCurrentWidget(p_private->p_view);
         p_private->p_view->setFocus();
 
@@ -575,7 +578,7 @@ void hk_kdequerypartwidget::internal_set_viewmode(void)
 
     set_caption();
     if (p_viewaction)p_viewaction->setChecked(true);
-        p_private->p_querypart->setXMLFile(KStandardDirs::locate("data","hk_kde4classes/hk_kdequerypart.rc"));
+        p_private->p_querypart->setXMLFile("hk_kdequerypart.rc");
 }
 
 

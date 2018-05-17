@@ -17,18 +17,22 @@
 //***********************************************
 //***  hk_kdequery PART definition             ***
 //***********************************************
+
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#else
+#error config.h is needed but not included 
+#endif
 #include "hk_kdequerypart.h"
 #include "hk_kdeqbe.h"
 #include <hk_qbe.h>
 #include <kaboutdata.h>
 #include <kcomponentdata.h>
 #include <kstandardaction.h>
-#include <kstandarddirs.h>
 #include <kiconloader.h>
 #include <kaction.h>
 #include <ktoggleaction.h>
 #include <klocale.h>
-#include <kurl.h>
 #include <kparts/partmanager.h>
 #include <kactioncollection.h>
 #include <qapplication.h>
@@ -39,40 +43,52 @@
 #include <hk_database.h>
 #include <hk_datasource.h>
 
-K_PLUGIN_FACTORY(hk_kdequerypartfactory, registerPlugin<hk_kdequerypart>();)
-K_EXPORT_PLUGIN(hk_kdequerypartfactory("hk_kde5querypart","hk_kde5querypart"))
+K_PLUGIN_FACTORY_DEFINITION(hk_kdequerypartfactory, registerPlugin<hk_kdequerypart>();)
 
 class hk_kdequerypartprivate
 {
   public:
-  hk_kdequerypartprivate()
+    hk_kdequerypartprivate():p_query(NULL),activate(false)
   	{
-		p_query=NULL;
-		activate=false;
 	}
-   hk_kdequerypartwidget* p_query;
-   bool activate;
+    static KAboutData* p_aData;
+    static KAboutData& getAboutData(); 
+    hk_kdequerypartwidget* p_query;
+    bool activate;
 };
 
-hk_kdequerypart::hk_kdequerypart(QWidget* pWidget,QObject* parent, const QVariantList &)
-:KParts::ReadWritePart(parent)
+KAboutData* hk_kdequerypartprivate::p_aData = NULL; 
+
+KAboutData& hk_kdequerypartprivate::getAboutData()
 {
-   
-   
-    p_private=new hk_kdequerypartprivate;
-    setComponentData(hk_kdequerypartfactory::componentData());
+    if ( p_aData == NULL) {
+        p_aData = new KAboutData(LIB_MODULE_NAME, ki18n("hk_kde5querypart").toString(),
+            "0.2", ki18n("database query editor").toString(),
+            KAboutLicense::GPL,
+            ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2018 Patrik Hanak").toString(),QString(), 
+            "http://sourceforge.net/projects/knoda5/",
+            "knoda4-bugs@lists.sourceforge.net");
+        p_aData->addAuthor(ki18n("Horst Knorr").toString(),ki18n("Author of original version").toString(),
+            "hk_classes@knoda.org","http://www.knoda.org");
+        p_aData->addAuthor(ki18n("Patrik Hanak").toString(),ki18n("Author of KDE5 port").toString(),
+            "knoda4-admins@lists.sourceforge.net");        
+    }
+    return *p_aData;  
+}
+
+hk_kdequerypart::hk_kdequerypart(QWidget* pWidget,QObject* parent, const QVariantList &)
+:KParts::ReadWritePart(parent), p_private(new hk_kdequerypartprivate)
+{
+    setComponentData(hk_kdequerypartprivate::getAboutData());
     p_private->p_query = new hk_kdequerypartwidget(this,pWidget,0);
     p_private->p_query->setAttribute(Qt::WA_DeleteOnClose);
     setWidget(p_private->p_query);
-    KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde5classes");
-    setXMLFile(KStandardDirs::locate("data","hk_kde5classes/hk_kdequerypartqbe.rc"));
+    setXMLFile("hk_kdequerypartqbe.rc");
     p_private->p_query->setupActions(actionCollection());
     connect(p_private->p_query->p_addaction,SIGNAL(triggered()),this,SLOT(add_action()));
     connect(p_private->p_query->p_qbetypeselect,SIGNAL(activated(int)),this,SLOT(qbetypeselect_action(int)));
     connect(p_private->p_query->kdeqbe(),SIGNAL(signal_qbetype_has_changed()),this,SLOT(qbetypechange_action()));
     connect(p_private->p_query->kdeqbe(),SIGNAL(signal_distinct_has_changed()),this,SLOT(distinct_action()));
-
 }
 
 hk_kdequerypart::~hk_kdequerypart()
@@ -85,42 +101,27 @@ hk_kdequerypart::~hk_kdequerypart()
   delete p_private;
 }
 
-
-
-/*void hk_kdequerypart::show_dbdesignercolumndialog(void)
-{
-    p_private->p_table->simpledbdesigner()->show_dbdesignercolumndialog();
-}*/
-
-
 void hk_kdequerypart::setReadWrite(bool rw)
 {
     KParts::ReadWritePart::setReadWrite(rw);
 }
 
-
 bool hk_kdequerypart::openFile()
 {
  // URL handling:   mysql:/user:password@host:port/databasename/datasourcetype/datasourcename
  // where datasourcetype is either tables or queries
-
-
     return true;
 }
-
 
 bool hk_kdequerypart::saveFile()
 {
     return true;
 }
 
-
-
 void hk_kdequerypart::add_action(void)
 {
   p_private->p_query->kdeqbe()->add_datasource();
 }
-
 
 void hk_kdequerypart::qbetypeselect_action(int t)
 {
@@ -135,7 +136,6 @@ void hk_kdequerypart::qbetypeselect_action(int t)
 p_private->p_query->kdeqbe()->set_querytype(ntype);
 
 }
-
 
 void hk_kdequerypart::qbetypechange_action(void)
 {
@@ -155,39 +155,19 @@ p_private->p_query->p_qbetypeselect->blockSignals(false);
 void hk_kdequerypart::distinct_action(void)
 {
   p_private->p_query->p_distinctaction->setChecked(p_private->p_query->kdeqbe()->distinct());
-
 }
-
-
-
-KAboutData* hk_kdequerypart::createAboutData()
-{
-    KAboutData* a= new KAboutData("hk_kde5querypart", "hk_kde5querypart", ki18n("hk_kde5querypart"),
-        "0.2", ki18n("database query editor"),
-        KAboutData::License_GPL,
-        ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2018 Patrik Hanak"),ki18n(NULL), "http://sourceforge.net/projects/knoda5/",
-     "knoda4-bugs@lists.sourceforge.net");
-    a -> addAuthor(ki18n("Horst Knorr"),ki18n("Author of original version"), "hk_classes@knoda.org","http://www.knoda.org");
-    a -> addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE5 port"), "knoda4-admins@lists.sourceforge.net");    
-
-    return a;
-
-}
-
 
 void hk_kdequerypart::setXMLFile(const QString& file,bool merge,bool setxmldoc)
 {
 //if (manager()&&manager()->activePart()==this)
-
-KParts::ReadWritePart::setXMLFile(file,merge,setxmldoc);
-if (manager()&&manager()->activePart()==this&&! p_private->activate)
-{
-  p_private->activate=true;
-  manager()->setActivePart(NULL);
-  manager()->setActivePart(this);
-  p_private->activate=false;
-}
-
+  KParts::ReadWritePart::setXMLFile(file,merge,setxmldoc);
+  if (manager()&&manager()->activePart()==this&&! p_private->activate)
+  {
+    p_private->activate=true;
+    manager()->setActivePart(NULL);
+    manager()->setActivePart(this);
+    p_private->activate=false;
+  }
 }
 
 

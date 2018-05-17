@@ -15,8 +15,8 @@
 #include "hk_kdeqbe.h"
 #include "hk_kdedbdesigner.h"
 #include <hk_column.h>
-#include<hk_database.h>
-#include<hk_connection.h>
+#include <hk_database.h>
+#include <hk_connection.h>
 #include <qtablewidget.h>
 #include <qitemdelegate.h>
 #include <qsplitter.h>
@@ -25,6 +25,7 @@
 #include <qcombobox.h>
 #include <QKeyEvent>
 #include <QDropEvent>
+#include <QMimeData>
 #include <klocale.h>
 #include <qapplication.h>
 
@@ -215,10 +216,10 @@ void internalgrid::dragEnterEvent(QDragEnterEvent* event)
 
 void internalgrid::dropEvent(QDropEvent* event)
 {
-  if (!event->provides("application/x-hk_kdedbdesigner"))
+  if (!event->mimeData()->hasFormat("application/x-hk_kdedbdesigner"))
       return;
   
-   hk_string eventtxt=u2l(event->encodedData("application/x-hk_kdedbdesigner").data());
+   hk_string eventtxt=u2l(event->mimeData()->data("application/x-hk_kdedbdesigner").data());
 
    xmlDocPtr doc=xmlParseMemory(eventtxt.c_str(),eventtxt.size());
    xmlNodePtr node=xmlDocGetRootElement(doc);

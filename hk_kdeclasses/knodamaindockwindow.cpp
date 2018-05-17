@@ -22,7 +22,7 @@
 // TBP #include "hk_kdeobjecthandler.h"
 #include "hk_kdepreferencesdialog.h"
 #include "hk_kdetablepartwidget.h"
-// TBP#include "hk_kdequerypartwidget.h"
+#include "hk_kdequerypartwidget.h"
 #include "hk_kdeformpartwidget.h"
 #include "hk_kdereportpartwidget.h" 
 #include "hk_kdemodulepartwidget.h" 
@@ -208,13 +208,13 @@ knodamaindockwindow::~knodamaindockwindow()
 
   void knodamaindockwindow::slot_new_query(void)
   {
-   /*TBP hk_kdequerypartwidget* o=new_query(false);
+    hk_kdequerypartwidget* o=new_query(false);
     hk_datasource* d=p_database->new_resultquery();
     if (o)
     {
       o->set_datasource(d);
       o->set_designmode();
-    }*/
+    }
   }
 
   void knodamaindockwindow::slot_delete_query(const QString& t)
@@ -224,7 +224,7 @@ knodamaindockwindow::~knodamaindockwindow()
 
   void knodamaindockwindow::slot_designmode_query(const QString&t)
   {
-   /*TBP hk_kdequerypartwidget* w=find_existing_query(u2l(t.toUtf8().data()));
+    hk_kdequerypartwidget* w=find_existing_query(u2l(t.toUtf8().data()));
     
     if (w)
     {
@@ -238,15 +238,15 @@ knodamaindockwindow::~knodamaindockwindow()
    if (d)d->set_name(u2l(t.toUtf8().data()));
    if (o)
    {
-   o->set_datasource(d);
-   o->load_query();
-   o->set_designmode();
-   }*/
+     o->set_datasource(d);
+     o->load_query();
+     o->set_designmode();
+   }
 }
 
   void knodamaindockwindow::slot_viewmode_query(const QString&t)
   {
-   /*TBP hk_kdequerypartwidget* w=find_existing_query(u2l(t.toUtf8().data()));
+    hk_kdequerypartwidget* w=find_existing_query(u2l(t.toUtf8().data()));
 
     if (w)
     {
@@ -257,18 +257,18 @@ knodamaindockwindow::~knodamaindockwindow()
 
    hk_kdequerypartwidget* o=new_query(false);
    hk_datasource* d=p_database->new_resultquery();
-   if (d)d->set_name(u2l(t.toUtf8().data()));
+   if (d) d->set_name(u2l(t.toUtf8().data()));
    if (o)
    {
-   o->set_datasource(d);
-   o->load_query();
-   o->set_viewmode();
-   } */
+     o->set_datasource(d);
+     o->load_query();
+     o->set_viewmode();
+   }
 }
 
     void knodamaindockwindow::slot_new_view(void)
   {
-/* TBP   if (!p_connection->server_supports(hk_connection::SUPPORTS_VIEWS))
+    if (!p_connection->server_supports(hk_connection::SUPPORTS_VIEWS))
    {
      show_warningmessage(hk_translate("Driver does not support creating new views"));
      return;
@@ -277,9 +277,9 @@ knodamaindockwindow::~knodamaindockwindow()
    hk_datasource* d=p_database->new_view();
    if (o)
    {
-   o->set_datasource(d);
-   o->set_designmode();
-   } */
+     o->set_datasource(d);
+     o->set_designmode();
+   }
   }
 
 
@@ -291,7 +291,7 @@ knodamaindockwindow::~knodamaindockwindow()
 
   void knodamaindockwindow::slot_designmode_view(const QString&t)
   {
- /* TBP   hk_kdequerypartwidget* w=find_existing_view(u2l(t.toUtf8().data()));
+    hk_kdequerypartwidget* w=find_existing_view(u2l(t.toUtf8().data()));
     
     if (w)
     {
@@ -308,12 +308,12 @@ knodamaindockwindow::~knodamaindockwindow()
    o->set_datasource(d);
    o->set_use_qbe(false,false);
    o->set_designmode();
-   } */
+   }
 }
 
   void knodamaindockwindow::slot_viewmode_view(const QString&t)
   {
-   /*TBP hk_kdequerypartwidget* w=find_existing_view(u2l(t.toUtf8().data()));
+    hk_kdequerypartwidget* w=find_existing_view(u2l(t.toUtf8().data()));
     
     if (w)
     {
@@ -330,7 +330,7 @@ knodamaindockwindow::~knodamaindockwindow()
    o->set_datasource(d);
    o->set_use_qbe(false,false);
    o->set_viewmode();
-   } */
+   } 
 }
 
   void knodamaindockwindow::slot_new_form(void)
@@ -495,7 +495,7 @@ hk_kdetablepartwidget* knodamaindockwindow::new_table(void)
 
   hk_kdequerypartwidget* knodamaindockwindow::new_query(bool as_view)
   {
-   /* TBP KService::Ptr service = KService::serviceByDesktopName("hk_kde4querypart");
+    KService::Ptr service = KService::serviceByDesktopName("hk_kde5querypart");
     KParts::ReadWritePart* p_part;
     if (!service ||
       !(p_part = service->createInstance<KParts::ReadWritePart>(tabs(), this, QVariantList())))
@@ -513,10 +513,11 @@ hk_kdetablepartwidget* knodamaindockwindow::new_table(void)
     }
     p_partmanager->addPart(p_part);
     int i = tabs() -> addTab(query,i18n("Query"));
-    tabs() -> setTabIcon(i,KIcon(as_view?"document-preview":"document-edit-verify"));
+    QIcon::setThemeName("oxygen");
+    tabs()->setTabIcon(i,QIcon::fromTheme((as_view?"document-preview":"document-edit-verify")));
     connect(query, SIGNAL(signal_captionChanged(QWidget*,QString)), this, SLOT(slot_captionChanged(QWidget*,QString)));
-    tabs() -> setCurrentIndex(i);       
-    return query; */ return NULL;
+    tabs()->setCurrentIndex(i);       
+    return query;
   }
 
 
@@ -891,12 +892,12 @@ hk_kdetablepartwidget* knodamaindockwindow::find_existing_table(const hk_string&
 
 hk_kdequerypartwidget* knodamaindockwindow::find_existing_query(const hk_string& n)
 {
- /*TBP  hk_kdequerypartwidget* w = NULL;
+  hk_kdequerypartwidget* w = NULL;
   
   for(int i = 0;i < tabs()->count();i++){ 
     w=dynamic_cast<hk_kdequerypartwidget*>(tabs() -> widget(i));
     if (w &&  w->datasource() && w->datasource()->type()==hk_data::ds_query&& w->datasource()->name()==n) return w;
-  } */
+  }
   return NULL;
 }
 
@@ -913,12 +914,13 @@ hk_kdemodulepartwidget* knodamaindockwindow::find_existing_module(const hk_strin
 
 hk_kdequerypartwidget* knodamaindockwindow::find_existing_view(const hk_string& n)
 {
- /*TBP hk_kdequerypartwidget* w = NULL;
+  hk_kdequerypartwidget* w = NULL;
 
   for(int i = 0;i < tabs()->count();i++){
     w=dynamic_cast<hk_kdequerypartwidget*>(tabs() -> widget(i));
-    if (w &&  w->datasource() && w->datasource()->type()==hk_data::ds_view&& w->datasource()->name()==n) return w;
-  }*/
+    if (w &&  w->datasource() && w->datasource()->type()==hk_data::ds_view&& w->datasource()->name()==n)
+      return w;
+  }
   return NULL;
 }
 

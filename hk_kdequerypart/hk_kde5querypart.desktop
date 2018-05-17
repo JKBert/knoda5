@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Service
-Name=hk_kde4classes query
+Name=hk_kde5classes query
 MimeType=database/hk_query;
 ServiceTypes=KParts/ReadWritePart
-X-KDE-Library=libhk_kde4querypart
+X-KDE-Library=hk_kde5querypart
+X-KDE-ServiceTypes=KParts/ReadWritePart

@@ -15,8 +15,9 @@
 
 #ifndef HK_KDEQBEPART
 #define HK_KDEQBEPART
-#include <kparts/part.h>
-#include <kparts/factory.h>
+#include <KParts/ReadWritePart>
+#include <KParts/Factory>
+#include <KPluginFactory>
 #include "../hk_kdeclasses/hk_kdeqbe.h"
 
 class hk_drivermanager;
@@ -26,7 +27,7 @@ class KAboutData;
 class hk_kdeqbepart : public KParts::ReadWritePart
 {
     Q_OBJECT
-        public:
+    public:
         hk_kdeqbepart(QWidget* parentWidget,QObject* parent, const QVariantList &args);
         virtual ~hk_kdeqbepart();
         static KAboutData* createAboutData();
@@ -37,13 +38,14 @@ class hk_kdeqbepart : public KParts::ReadWritePart
         virtual bool saveFile();
 
     protected slots:
-   	virtual void add_action(void);
-   	virtual void qbetypeselect_action(int);
-   	virtual void distinct_action(void);
-	virtual void qbetypechange_action(void);
+   	    virtual void add_action(void);
+   	    virtual void qbetypeselect_action(int);
+   	    virtual void distinct_action(void);
+	    virtual void qbetypechange_action(void);
     private:
-      hk_kdeqbepartprivate* p_private;
+        hk_kdeqbepartprivate* p_private;
 };
 
+K_PLUGIN_FACTORY_DECLARATION(hk_kdeqbepartfactory)
 
 #endif

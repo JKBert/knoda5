@@ -11,12 +11,14 @@ echo KF5 user data directory: "$USERDATADIR"
 echo KF5 user icon directory: "$USERICONDIR"
 echo KF5 user module directory: "$USERMODULEDIR"
 echo KF5 user services directory: "$USERSERVICESDIR"
+echo 
 
 KXMLGUIDIR=$USERDATADIR/kxmlgui5
 RCDATADIR=$KXMLGUIDIR/${LIB_MODULE_NAME}
 
 case "$1" in
     link)
+        [ -e $USERSERVICESDIR/hk_kde5tablepart.desktop ] && echo "Already linked, remove links first !" && exit 1
         ln -s ${CMAKE_SOURCE_DIR}/knoda/ $USERDATADIR/${PROJECT_NAME}
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdeclasses/ $USERDATADIR/${LIB_MODULE_NAME}
         mkdir -p $KXMLGUIDIR
@@ -32,6 +34,7 @@ case "$1" in
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdequerypart/hk_kdequerypartqbe.rc $RCDATADIR/hk_kdequerypartqbe.rc
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdequerypart/hk_kdequerypart.rc $RCDATADIR/hk_kdequerypart.rc
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdequerypart/hk_kdequerypartsql.rc $RCDATADIR/hk_kdequerypartsql.rc
+        ln -s ${CMAKE_SOURCE_DIR}/hk_kdeqbepart/hk_kdeqbepart.rc $RCDATADIR/hk_kdeqbepart.rc
 # icons
         ! [ -d $USERICONDIR/hicolor/32x32/apps ] && mkdir -p $USERICONDIR/hicolor/32x32/apps
         ! [ -d $USERICONDIR/hicolor/16x16/apps ] && mkdir -p $USERICONDIR/hicolor/16x16/apps
@@ -42,9 +45,8 @@ case "$1" in
         ln -s ${CMAKE_SOURCE_DIR}/knoda/pics/icons/locolor/32-apps-knoda5.png $USERICONDIR/locolor/32x32/apps/knoda5.png
         ln -s ${CMAKE_SOURCE_DIR}/knoda/pics/icons/locolor/16-apps-knoda5.png $USERICONDIR/locolor/16x16/apps/knoda5.png
 # services
-#TBP        ! [ -d $USERMODULEDIR ] && mkdir -p $USERMODULEDIR
-#TBP        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5qbepart.so $USERMODULEDIR/libhk_kde5qbepart.so
-#TBP        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5querypart.so $USERMODULEDIR/libhk_kde5querypart.so        
+        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5qbepart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5qbepart.so
+        ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5querypart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5querypart.so        
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5dbdesignerpart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5dbdesignerpart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5formpart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5formpart.so
         ln -s ${LIBRARY_OUTPUT_PATH}/libhk_kde5tablepart.so ${CMAKE_BINARY_DIR}/knoda/libhk_kde5tablepart.so
@@ -68,9 +70,11 @@ case "$1" in
         ln -s ${CMAKE_SOURCE_DIR}/knoda/knoda4-mime.xml ~/.kde4/share/mime/packages/knoda4-mime.xml
         update-mime-database ~/.local/share/mime/
 COMMENT
+        echo Successfully linked
         exit 0
         ;;
     unlink)
+        ! [ -e $USERSERVICESDIR/hk_kde5tablepart.desktop ] && echo "Not linked, create links first !" && exit 1
         unlink $RCDATADIR/hk_kdereportpart.rc
         unlink $RCDATADIR/hk_kdeformpartdesign.rc
         unlink $RCDATADIR/hk_kdeformpartview.rc	
@@ -81,6 +85,7 @@ COMMENT
         unlink $RCDATADIR/hk_kdequerypart.rc
         unlink $RCDATADIR/hk_kdequerypartsql.rc
         unlink $RCDATADIR/hk_kdemodulepart.rc
+        unlink $RCDATADIR/hk_kdeqbepart.rc
         unlink $RCDATADIR
         unlink $USERDATADIR/knoda5
         unlink $USERDATADIR/${LIB_MODULE_NAME}
@@ -90,8 +95,8 @@ COMMENT
         unlink $USERICONDIR/locolor/32x32/apps/knoda5.png
         unlink $USERICONDIR/locolor/16x16/apps/knoda5.png
 # services              
-#TBP        unlink $USERMODULEDIR/libhk_kde5qbepart.so
-#TBP        unlink $USERMODULEDIR/libhk_kde5querypart.so    
+        unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5qbepart.so
+        unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5querypart.so    
         unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5dbdesignerpart.so
         unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5formpart.so
         unlink ${CMAKE_BINARY_DIR}/knoda/libhk_kde5tablepart.so
@@ -113,6 +118,7 @@ COMMENT
         update-mime-database ~/.local/share/mime/
         unlink ~/.local/share/mime
 COMMENT
+        echo Successfully unlinked
         exit 0
         ;;
     *)

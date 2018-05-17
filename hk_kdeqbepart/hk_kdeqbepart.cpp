@@ -17,6 +17,11 @@
 //***********************************************
 //***  hk_kdeqbe PART definition             ***
 //***********************************************
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#else
+#error config.h is needed but not included 
+#endif
 #include "hk_kdeqbepart.h"
 #include <kaboutdata.h>
 #include <kcomponentdata.h>
@@ -37,36 +42,53 @@
 #include <hk_database.h>
 #include <hk_datasource.h>
 
-K_PLUGIN_FACTORY(hk_kdeqbepartfactory, registerPlugin<hk_kdeqbepart>();)
-K_EXPORT_PLUGIN(hk_kdeqbepartfactory("hk_kde5qbepart","hk_kde5qbepart"))
+K_PLUGIN_FACTORY_DEFINITION(hk_kdeqbepartfactory, registerPlugin<hk_kdeqbepart>();)
 
 class hk_kdeqbepartprivate
 {
   public:
-  hk_kdeqbepartprivate()
+    hk_kdeqbepartprivate():p_qbe(NULL)
   	{
-		p_qbe=NULL;
 	}
-   hk_kdeqbe* p_qbe;
-   KAction* p_addaction;
-   KToggleAction* p_distinctaction;
-   KAction* p_qbetypeselectaction; 
-   QComboBox* p_qbetypeselect;
+    static KAboutData* p_aData;
+    static KAboutData& getAboutData(); 
+    hk_kdeqbe* p_qbe;
+    KAction* p_addaction;
+    KToggleAction* p_distinctaction;
+    KAction* p_qbetypeselectaction; 
+    QComboBox* p_qbetypeselect;
 };
 
-hk_kdeqbepart::hk_kdeqbepart(QWidget* pWidget,QObject* parent, const QVariantList &)
-:KParts::ReadWritePart(parent)
-{
-    p_private=new hk_kdeqbepartprivate;
-    setComponentData(hk_kdeqbepartfactory::componentData());
-    p_private->p_qbe = new hk_kdeqbe(pWidget);
-//    p_private->p_qbe->p_part=this;
-    setWidget(p_private->p_qbe);
-    KIconLoader* loader=KIconLoader::global();
-    loader->addAppDir("hk_kde5classes");
-     setXMLFile(KStandardDirs::locate("data","hk_kde5classes/hk_kdeqbepart.rc"));
+KAboutData* hk_kdeqbepartprivate::p_aData = NULL; 
 
-    p_private->p_addaction = new KAction(KIcon("gridadd22x22",loader),i18n("&Add datasource"),actionCollection());
+KAboutData& hk_kdeqbepartprivate::getAboutData()
+{
+    if ( p_aData == NULL) {
+        p_aData = new KAboutData(LIB_MODULE_NAME, ki18n("hk_kde5qbepart").toString(),
+            "0.2", ki18n("Query by Example editor").toString(),
+            KAboutLicense::GPL,
+            ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2018 Patrik Hanak").toString(),QString(), 
+            "http://sourceforge.net/projects/knoda5/",
+            "knoda4-bugs@lists.sourceforge.net");
+        p_aData->addAuthor(ki18n("Horst Knorr").toString(),ki18n("Author of original version").toString(),
+            "hk_classes@knoda.org","http://www.knoda.org");
+        p_aData->addAuthor(ki18n("Patrik Hanak").toString(),ki18n("Author of KDE5 port").toString(),
+            "knoda4-admins@lists.sourceforge.net");        
+    }
+    return *p_aData;  
+}
+
+hk_kdeqbepart::hk_kdeqbepart(QWidget* pWidget,QObject* parent, const QVariantList &)
+:KParts::ReadWritePart(parent), p_private(new hk_kdeqbepartprivate)
+{
+    setComponentData(hk_kdeqbepartprivate::getAboutData());
+    p_private->p_qbe = new hk_kdeqbe(pWidget);
+    setWidget(p_private->p_qbe);
+    KIconLoader loader (LIB_MODULE_NAME);
+    setXMLFile("hk_kdeqbepart.rc");
+
+    p_private->p_addaction = new KAction(QIcon(loader.iconPath("gridadd22x22",KIconLoader::User)),
+      i18n("&Add datasource"),actionCollection());
     actionCollection() -> addAction("add",p_private->p_addaction);
     connect(p_private->p_addaction,SIGNAL(triggered()),this,SLOT(add_action()));     
     p_private->p_distinctaction = new KToggleAction(i18n("&Distinct rows"),actionCollection());
@@ -91,29 +113,17 @@ hk_kdeqbepart::~hk_kdeqbepart()
   delete p_private;
 }
 
-
-
-/*void hk_kdeqbepart::show_dbdesignercolumndialog(void)
-{
-    p_private->p_qbe->simpledbdesigner()->show_dbdesignercolumndialog();
-}*/
-
-
 void hk_kdeqbepart::setReadWrite(bool rw)
 {
     KParts::ReadWritePart::setReadWrite(rw);
 }
 
-
 bool hk_kdeqbepart::openFile()
 {
  // URL handling:   mysql:/user:password@host:port/databasename/datasourcetype/datasourcename
  // where datasourcetype is either tables or queries
-
-
     return true;
 }
-
 
 bool hk_kdeqbepart::saveFile()
 {
@@ -122,66 +132,46 @@ bool hk_kdeqbepart::saveFile()
 
 hk_kdeqbe* hk_kdeqbepart::dbdesigner(void)
 {
- return p_private->p_qbe;
+  return p_private->p_qbe;
 }
 
 void hk_kdeqbepart::add_action(void)
 {
-p_private->p_qbe->add_datasource();
+  p_private->p_qbe->add_datasource();
 }
 
 
 void hk_kdeqbepart::qbetypeselect_action(int t)
 {
-cerr <<"hk_kdeqbepart::qbetypeselect_action"<<endl;
- hk_qbe::enum_querytype ntype=hk_qbe::qt_select;
- switch (t)
- {
+  hk_qbe::enum_querytype ntype=hk_qbe::qt_select;
+  switch (t)
+  {
     case 1 : ntype=hk_qbe::qt_groupselect;break;
     case 2 : ntype=hk_qbe::qt_update;break;
     case 3 : ntype=hk_qbe::qt_delete;break;
     default: ntype=hk_qbe::qt_select;
- }
-p_private->p_qbe->set_querytype(ntype);
-
+  }
+  p_private->p_qbe->set_querytype(ntype);
 }
-
 
 void hk_kdeqbepart::qbetypechange_action(void)
 {
-p_private->p_qbetypeselect->blockSignals(true);
-int nr=0;
-switch(p_private->p_qbe->querytype())
-{
-  case hk_qbe::qt_groupselect : nr=1;break;
-  case hk_qbe::qt_update : nr=2;break;
-  case hk_qbe::qt_delete : nr=3;break;
-  default	      :	nr=0;
+  p_private->p_qbetypeselect->blockSignals(true);
+  int nr=0;
+  switch(p_private->p_qbe->querytype())
+  {
+    case hk_qbe::qt_groupselect : nr=1;break;
+    case hk_qbe::qt_update : nr=2;break;
+    case hk_qbe::qt_delete : nr=3;break;
+    default	      :	nr=0;
+  }
+  p_private->p_qbetypeselect->setCurrentIndex(nr);
+  p_private->p_qbetypeselect->blockSignals(false);
 }
-p_private->p_qbetypeselect->setCurrentIndex(nr);
-p_private->p_qbetypeselect->blockSignals(false);
-}
-
-KAboutData* hk_kdeqbepart::createAboutData()
-{
-    KAboutData* a= new KAboutData("hk_kde5qbepart", "hk_kde5qbepart",ki18n("hk_kde5qbepart"),
-        "0.2", ki18n("Query by Example editor"),
-        KAboutData::License_GPL,
-        ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2018 Patrik Hanak"),ki18n(NULL), "http://sourceforge.net/projects/knoda5/",
-     "knoda4-bugs@lists.sourceforge.net");
-    a -> addAuthor(ki18n("Horst Knorr"),ki18n("Author of original version"), "hk_classes@knoda.org","http://www.knoda.org");
-    a -> addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE5 port"), "knoda4-admins@lists.sourceforge.net");
-
-    return a;
-
-}
-
-
 
 void hk_kdeqbepart::distinct_action(void)
 {
   p_private->p_distinctaction->setChecked(p_private->p_qbe->distinct());
-
 }
 
 

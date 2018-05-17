@@ -25,9 +25,9 @@ class KDECLASSES_EXPORT hk_kdeqbe:public KParts::MainWindow,public hk_qbe
 {
 Q_OBJECT
 public:
-        hk_kdeqbe(QWidget* w=0,const char* n=0,Qt::WFlags f=0);
+    hk_kdeqbe(QWidget* w=0,const char* n=0,Qt::WFlags f=0);
 	~hk_kdeqbe();
-        virtual void set_datasource(hk_datasource*);
+    virtual void set_datasource(hk_datasource*);
 	void set_database(hk_database*);
 	virtual void loaddata(xmlNodePtr definition);
 
@@ -56,10 +56,5 @@ void set_columnnames(int col);
 void init_column(int col);
 void init_tablenames(int col);
 };
-
-
-
-
-
 
 #endif //HK_KDEQBE

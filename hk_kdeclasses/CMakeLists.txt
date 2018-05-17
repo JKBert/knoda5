@@ -12,14 +12,14 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdecombobox.cpp
     hk_kdecomboboxtextlist.cpp
     hk_kdecomboboxtextlistbase.cpp
-  #[[  TBP  hk_kdecolumn.cpp
-    hk_kdecsvexportdialog.cpp
+    hk_kdecolumn.cpp
+ #[[  TBP   hk_kdecsvexportdialog.cpp
     hk_kdecsvexportdialogbase.cpp
     hk_kdecsvimportdialog.cpp
     hk_kdecsvimportdialogbase.cpp
     hk_kdedatabasesetting.cpp
-    hk_kdedatabasesettingbase.cpp
-    hk_kdedatasource.cpp ]]
+    hk_kdedatabasesettingbase.cpp ]]
+    hk_kdedatasource.cpp 
     hk_kdedate.cpp
     hk_kdedbdesigner.cpp 
     hk_kdedblistview.cpp
@@ -58,9 +58,9 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdepreferencesdialogbase.cpp
     hk_kdeproperty.cpp
     hk_kdepropertybase.cpp
- #[[  TBP    hk_kdeqbe.cpp
+    hk_kdeqbe.cpp
     hk_kdequery.cpp
-    hk_kdequerypartwidget.cpp ]]
+    hk_kdequerypartwidget.cpp 
     hk_kderelationdialogbase.cpp
     hk_kderelationdialog.cpp 
     hk_kdereport.cpp
