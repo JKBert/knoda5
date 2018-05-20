@@ -19,7 +19,7 @@
 #include "hk_kdecsvexportdialog.h"
 #include "hk_kdexmlexportdialog.h" */
 #include "hk_kdedatabasesetting.h"
-// TBP #include "hk_kdeobjecthandler.h"
+#include "hk_kdeobjecthandler.h"
 #include "hk_kdepreferencesdialog.h"
 #include "hk_kdetablepartwidget.h"
 #include "hk_kdequerypartwidget.h"
@@ -54,7 +54,6 @@
 #include <KService>
 #include <KParts/ReadWritePart>
 
-//TBP icons
 knodamaindockwindow::knodamaindockwindow(
         struct_commandlinefields* commandline,
  	QWidget* parent,const char* name, Qt::WFlags f,
@@ -112,35 +111,33 @@ knodamaindockwindow::~knodamaindockwindow()
 {
 }
 
-  void knodamaindockwindow::slot_new_database(void)
-  {
-   /*TBP if (!p_connection->server_supports(hk_connection::SUPPORTS_NEW_DATABASE))
+void knodamaindockwindow::slot_new_database(void)
+{
+    if (!p_connection->server_supports(hk_connection::SUPPORTS_NEW_DATABASE))
         return;
-        hk_string r=hk_kdenewdatabase::show_dialog(p_connection->drivername(),p_connection->server_supports(hk_connection::SUPPORTS_LOCAL_FILEFORMAT));
+    hk_string r=hk_kdenewdatabase::show_dialog(p_connection->drivername(),
+        p_connection->server_supports(hk_connection::SUPPORTS_LOCAL_FILEFORMAT));
 	r=trim(r);
-        if (r.size()>0)
-        {
-            if (!p_connection->create_database(r))
-	    {
-	      show_warningmessage(hk_translate("Database could not be created"));
-	    }
+    if (r.size()>0)
+    {
+        if (!p_connection->create_database(r))
+	        show_warningmessage(hk_translate("Database could not be created"));
 	    set_databases();
-        } */
-  }
+    }
+}
 
-  void knodamaindockwindow::slot_delete_database(const QString& t)
-  {
-   /*TBP if (!p_connection->server_supports(hk_connection::SUPPORTS_DELETE_DATABASE))
+void knodamaindockwindow::slot_delete_database(const QString& t)
+{
+    if (!p_connection->server_supports(hk_connection::SUPPORTS_DELETE_DATABASE))
         return;
     if (p_database && p_database->name()==u2l(t.toUtf8().data()))
-        p_database=NULL;
+       p_database=NULL;
     if (p_connection->delete_database(u2l(t.toUtf8().data())))
     {
-    set_databases();
-    slot_selection_changed();
-    } */
-  }
-
+        set_databases();
+        slot_selection_changed();
+    }
+}
 
   void knodamaindockwindow::slot_new_table(void)
   {
@@ -486,7 +483,6 @@ hk_kdetablepartwidget* knodamaindockwindow::new_table(void)
   p_partmanager->addPart(p_part);
   connect(table, SIGNAL(signal_captionChanged(QWidget*,QString)), this, SLOT(slot_captionChanged(QWidget*,QString)));
   int i = tabs()->addTab(table,i18n("Table"));
-  QIcon::setThemeName("oxygen");
   tabs()->setTabIcon(i, QIcon::fromTheme("view-form-table"));
   tabs()->setCurrentIndex(i);
   table->setFocus();
@@ -513,7 +509,6 @@ hk_kdetablepartwidget* knodamaindockwindow::new_table(void)
     }
     p_partmanager->addPart(p_part);
     int i = tabs() -> addTab(query,i18n("Query"));
-    QIcon::setThemeName("oxygen");
     tabs()->setTabIcon(i,QIcon::fromTheme((as_view?"document-preview":"document-edit-verify")));
     connect(query, SIGNAL(signal_captionChanged(QWidget*,QString)), this, SLOT(slot_captionChanged(QWidget*,QString)));
     tabs()->setCurrentIndex(i);       
@@ -571,7 +566,6 @@ hk_kdereportpartwidget* knodamaindockwindow::new_report(void)
     }
     p_partmanager->addPart(p_part);
     int i = tabs()->addTab(report,i18n("Report"));
-    QIcon::setThemeName("oxygen");
     tabs()->setTabIcon(i,QIcon::fromTheme("document-print"));
     connect(report, SIGNAL(signal_captionChanged(QWidget*,QString)), this, SLOT(slot_captionChanged(QWidget*,QString)));
     connect(report,SIGNAL(signal_raise_form(const hk_string&)),this,SLOT(slot_raise_form(const hk_string&)));
@@ -601,7 +595,6 @@ hk_kdemodulepartwidget* knodamaindockwindow::new_module(void)
    
   p_partmanager->addPart(p_part);
   int i = tabs() -> addTab(module,i18n("Module"));
-  QIcon::setThemeName("oxygen");
   tabs() -> setTabIcon(i,QIcon::fromTheme("document-edit"));
   connect(module, SIGNAL(signal_captionChanged(QWidget*,QString)), this, SLOT(slot_captionChanged(QWidget*,QString)));
   tabs() -> setCurrentIndex(i);
@@ -752,21 +745,21 @@ void knodamaindockwindow::slot_listbox_popup(QTreeWidgetItem* item,const QPoint&
 
 void knodamaindockwindow::databasesettings_clicked(void)
 {
- /*TBP hk_kdedatabasesetting* setting=new hk_kdedatabasesetting(p_database);
+  hk_kdedatabasesetting* setting=new hk_kdedatabasesetting(p_database);
   if (setting->exec()==QDialog::Accepted)
     {
       if (p_listview)p_listview->reload_lists();
     }
   p_objecthandleraction->setEnabled(p_database&& p_database->has_centralstoragetable()&&!runtime_only());
-  delete setting; */
+  delete setting;
 }
 
 void knodamaindockwindow::objecthandler_clicked(void)
 {
- /* TBP hk_kdeobjecthandler* h=new hk_kdeobjecthandler(p_database);
+  hk_kdeobjecthandler* h=new hk_kdeobjecthandler(p_database);
   h->exec();
 
-  delete h; */
+  delete h;
 }
 
 
@@ -777,9 +770,9 @@ void knodamaindockwindow::newwindow_clicked(void)
   w->show();
 }
 
-void knodamaindockwindow::show_drivers(KMenu* menu)
+void knodamaindockwindow::show_drivers(QMenu* menu)
 {
-  /*TBP  if (!menu) return;
+    if (!menu) return;
     menu->clear();
     vector<hk_string>* drv=hk_drivermanager::driverlist();
     vector<hk_string>::iterator it;
@@ -791,28 +784,28 @@ void knodamaindockwindow::show_drivers(KMenu* menu)
         menuItem = menu->addAction(QString::fromUtf8(l2u((*it)).c_str()));
         menuItem->setData(QVariant(di));
         di++;
-    } */
+    }
 }
 
 void knodamaindockwindow::show_drivers()
 {
-   /*TBP KMenu* menu= p_newconnectionaction->menu();
+    QMenu* menu= p_newconnectionaction->menu();
     
-    show_drivers(menu); */
+    show_drivers(menu);
 }
 
 void knodamaindockwindow::show_exportdbdrivers()
 {
-  /*TBP  KMenu* menu= p_exportdatabaseaction->menu();
+    QMenu* menu= p_exportdatabaseaction->menu();
     
-    show_drivers(menu); */
+    show_drivers(menu);
 }
 
 void knodamaindockwindow::show_importdbdrivers()
 {
-  /* TBP  KMenu* menu= p_importdatabaseaction->menu();
+    QMenu* menu= p_importdatabaseaction->menu();
     
-    show_drivers(menu); */
+    show_drivers(menu); 
 }
 
 void knodamaindockwindow::slot_trigger_driver(QAction* action)

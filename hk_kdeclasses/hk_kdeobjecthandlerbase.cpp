@@ -15,13 +15,14 @@
  //$Revision: 1.3 $
 
 #include "hk_kdeobjecthandlerbase.h"
-
+#include "hk_kdedblistview.h"
 #include <qvariant.h>
 #include <qpushbutton.h>
 #include <qlayout.h>
 #include <qtooltip.h>
 #include <qwhatsthis.h>
-#include "hk_kdedblistview.h"
+#include <KLocalizedString>
+
 /*
  *  Constructs a hk_kdeobjecthandlerbase as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.
@@ -117,11 +118,10 @@ hk_kdeobjecthandlerbase::~hk_kdeobjecthandlerbase()
  */
 void hk_kdeobjecthandlerbase::languageChange()
 {
-    setWindowTitle( tr( "Form1" ) );
-    //TBP TBT translation tr()->i18n()
+    setWindowTitle(i18n( "Form1" ));
     uploadbutton->setText( QString::null );
     downloadbutton->setText( QString::null );
-    exitbutton->setText( tr( "E&xit" ) );
+    exitbutton->setText(i18n( "E&xit" ));
 }
 
 void hk_kdeobjecthandlerbase::download_clicked()

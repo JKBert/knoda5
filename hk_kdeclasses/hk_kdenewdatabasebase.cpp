@@ -30,7 +30,8 @@
 #include <qlayout.h>
 #include <qtooltip.h>
 #include <qwhatsthis.h>
-//TBP TBT translation tr()->i18n()
+#include <KLocalizedString>
+
 /*
  *  Constructs a hk_kdenewdatabasedialogbase as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.
@@ -44,7 +45,7 @@ hk_kdenewdatabasedialogbase::hk_kdenewdatabasedialogbase( QWidget* parent, const
     setObjectName(QString::fromAscii(name == NULL?"hk_kdenewdatabasedialogbase":name));
     setModal(modal);
     setMinimumSize( QSize( 300, 0 ) );
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled( true );
     hk_kdenewdatabasedialogbaseLayout = new QVBoxLayout(this);
     hk_kdenewdatabasedialogbaseLayout->setMargin(11);
     hk_kdenewdatabasedialogbaseLayout->setSpacing(6);
@@ -68,7 +69,7 @@ hk_kdenewdatabasedialogbase::hk_kdenewdatabasedialogbase( QWidget* parent, const
 
     directorybutton = new QPushButton(this);
     directorybutton->setObjectName("directorybutton");
-    directorybutton->setEnabled( FALSE );
+    directorybutton->setEnabled( false );
     policy.setHorizontalPolicy(QSizePolicy::Maximum);
     policy.setVerticalPolicy(QSizePolicy::Fixed);
     policy.setHeightForWidth(directorybutton->sizePolicy().hasHeightForWidth());
@@ -86,14 +87,14 @@ hk_kdenewdatabasedialogbase::hk_kdenewdatabasedialogbase( QWidget* parent, const
 
     okbutton = new QPushButton(this);
     okbutton->setObjectName("okbutton");
-    okbutton->setEnabled( FALSE );
-    okbutton->setAutoDefault( TRUE );
-    okbutton->setDefault( TRUE );
+    okbutton->setEnabled( false );
+    okbutton->setAutoDefault( true );
+    okbutton->setDefault( true );
     Layout1->addWidget( okbutton );
 
     cancelbutton = new QPushButton(this);
     cancelbutton->setObjectName("cancelbutton");
-    cancelbutton->setAutoDefault( TRUE );
+    cancelbutton->setAutoDefault( true );
     Layout1->addWidget( cancelbutton );
     hk_kdenewdatabasedialogbaseLayout->addLayout( Layout1 );
     languageChange();
@@ -120,12 +121,12 @@ hk_kdenewdatabasedialogbase::~hk_kdenewdatabasedialogbase()
  */
 void hk_kdenewdatabasedialogbase::languageChange()
 {
-    setWindowTitle( tr( "New database dialog" ) );
-    databaselabel->setText( tr( "New database name:" ) );
-    directorybutton->setText( tr( "..." ) );
-    okbutton->setText( tr( "&OK" ) );
+    setWindowTitle( i18n( "New database dialog" ) );
+    databaselabel->setText( i18n( "New database name:" ) );
+    directorybutton->setText( i18n( "..." ) );
+    okbutton->setText( i18n( "&OK" ) );
     okbutton->setShortcut( QKeySequence( QString::null ) );
-    cancelbutton->setText( tr( "&Cancel" ) );
+    cancelbutton->setText( i18n( "&Cancel" ) );
     cancelbutton->setShortcut( QKeySequence( QString::null ) );
 }
 

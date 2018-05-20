@@ -117,7 +117,7 @@ hk_kdepreferencesdialog::hk_kdepreferencesdialog( QWidget* parent,  const char* 
     separatorfield->setCurrentIndex(hk_dsdatavisible::defaultuse_numberseparator()?0:1);
     sizetypefield->setCurrentIndex(hk_presentation::defaultsizetype()==hk_presentation::relative?0:1);
     measurefield->setCurrentIndex(hk_class::measuresystem()==hk_class::cm?0:1);
-    //TBP use_singleclickfield->setCurrentIndex(hk_kdedblistview::use_singleclick()?0:1);
+    use_singleclickfield->setCurrentIndex(hk_kdedblistview::use_singleclick()?0:1);
     snap2gridxfield->setValue(hk_presentation::snap2gridx());
     snap2gridyfield->setValue(hk_presentation::snap2gridy());
     automaticupdatefield->setCurrentIndex(hk_class::default_automatic_data_update()?0:1);
@@ -216,7 +216,7 @@ void hk_kdepreferencesdialog::accept(void)
     hk_class::set_defaultdriver(u2l(defaultdriverfield->currentText().toUtf8().data()));
 
     hk_class::save_preferences();
-    //TBP hk_kdedblistview::set_use_singleclick(use_singleclickfield->currentIndex()==0);
+    hk_kdedblistview::set_use_singleclick(use_singleclickfield->currentIndex()==0);
     cg=c->group("Preferences");
     cg.writeEntry("StorePassword",(storepasswordfield->currentIndex()==0));
     cg.writeEntry("UseSingleclick",(use_singleclickfield->currentIndex()==0));

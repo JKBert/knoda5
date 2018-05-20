@@ -17,7 +17,6 @@
 #include "hk_kdenewdatabasebase.h"
 #include <hk_string.h>
 
-
 class hk_kdenewdatabase : public hk_kdenewdatabasedialogbase
 {
     Q_OBJECT
@@ -25,15 +24,14 @@ class hk_kdenewdatabase : public hk_kdenewdatabasedialogbase
 public:
     hk_kdenewdatabase( const hk_string& drivername,QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kdenewdatabase();
-static hk_string show_dialog(const hk_string& drivername,bool local);
+    static hk_string show_dialog(const hk_string& drivername,bool local);
 
 public slots:
     virtual void ok_clicked();
     virtual void directory_clicked();
     virtual void text_changed();
 private:
-hk_string p_drivername;
-
+    hk_string p_drivername;
 };
 
 #endif // HK_KDENEWDATABASE_H

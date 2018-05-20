@@ -1377,7 +1377,6 @@ hk_kdedbdesignerwindow::hk_kdedbdesignerwindow( QWidget* parent, const char* nam
       setObjectName(QString::fromAscii(name));
   setWindowModality(Qt::ApplicationModal);
   setComponentName(LIB_MODULE_NAME, componentData().displayName());
-  QIcon::setThemeName("oxygen");
   setXMLFile("hk_kdedbdesigner.rc");
   setGeometry(x(),y(),600,500);
   

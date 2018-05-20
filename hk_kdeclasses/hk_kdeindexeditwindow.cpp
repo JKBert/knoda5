@@ -43,7 +43,6 @@
 hk_kdeindexeditdialog::hk_kdeindexeditdialog( QWidget* parent,  const char* name, Qt::WFlags fl )
 : QWidget( parent, fl ), hk_dsvisible()
 {
-    QIcon::setThemeName("oxygen");
     setObjectName( QString::fromAscii(name == NULL? "hk_kdeindexeditdialog":name ) );
     resize( 486, 245 );
     setWindowTitle( i18n( "Index Edit - Table:"  ) );

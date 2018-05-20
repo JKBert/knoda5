@@ -16,9 +16,9 @@ set(hk_kdeclasses_LIB_SRCS
  #[[  TBP   hk_kdecsvexportdialog.cpp
     hk_kdecsvexportdialogbase.cpp
     hk_kdecsvimportdialog.cpp
-    hk_kdecsvimportdialogbase.cpp
+    hk_kdecsvimportdialogbase.cpp ]]
     hk_kdedatabasesetting.cpp
-    hk_kdedatabasesettingbase.cpp ]]
+    hk_kdedatabasesettingbase.cpp 
     hk_kdedatasource.cpp 
     hk_kdedate.cpp
     hk_kdedbdesigner.cpp 
@@ -47,12 +47,12 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdemodule.cpp
     hk_kdemodulepartwidget.cpp 
     hk_kdemessages.cpp
- #[[ TBP  hk_kdenewdatabase.cpp
+    hk_kdenewdatabase.cpp
     hk_kdenewdatabasebase.cpp
     hk_kdenewpassworddialog.cpp
     hk_kdenewpassworddialogbase.cpp
     hk_kdeobjecthandler.cpp
-    hk_kdeobjecthandlerbase.cpp ]]
+    hk_kdeobjecthandlerbase.cpp 
     hk_kdepassworddialog.cpp 
     hk_kdepreferencesdialog.cpp
     hk_kdepreferencesdialogbase.cpp
@@ -111,9 +111,6 @@ install(TARGETS ${LIB_MODULE_NAME} ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 
 ########### install files ###############
-
-#TBP install(FILES  hk_kdereport.rc hk_kdeform.rc hk_kdetable.rc hk_kdequery.rc hk_kdeinterpreterdialog.rc hk_kdedbdesigner.rc
-#               knodamaindockwindowbase.rc hk_kdemodule.rc DESTINATION ${DATA_INSTALL_DIR}/${LIB_MODULE_NAME})
 install(FILES  hk_kdereport.rc hk_kdeform.rc hk_kdetable.rc hk_kdequery.rc hk_kdeinterpreterdialog.rc hk_kdedbdesigner.rc
                knodamaindockwindowbase.rc hk_kdemodule.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/${LIB_MODULE_NAME})
 install(FILES  hk_kdedbdesigner.h hk_kdeformpartwidget.h hk_kdegrid.h hk_kdemessages.h 

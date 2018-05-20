@@ -18,8 +18,6 @@
 #include "hk_kdedblistview.h"
 // TBP #include "hk_kdeeximportdatabase.h"
 #include "hk_kdedbdesigner.h"
-#include "hk_kdetabledesign.h"
-// TBP #include "hk_kdetablepartwidget.h"
 
 #include <hk_connection.h>
 #include <hk_dsvisible.h>
@@ -437,13 +435,12 @@ void knodamaindockwindowbase::slot_captionChanged(QWidget* w, const QString  & r
 void knodamaindockwindowbase::closeEvent(QCloseEvent*event)
 {
   KSharedConfigPtr c=KGlobal::config();
-  QString value="ideal";
 
-  if (!runtime_only()){
+ if (!runtime_only()){
     KConfigGroup cg = c->group("knodamain");
     saveMainWindowSettings( cg );
   } 
- for(int i = p_tabs -> count() -1;i >= 0; i--){
+  for(int i = p_tabs -> count() -1;i >= 0; i--){
     if( ! p_tabs -> widget(i) -> close()) {
       event -> ignore();
       return;

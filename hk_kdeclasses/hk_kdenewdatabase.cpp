@@ -23,6 +23,7 @@
 #include <qwhatsthis.h>
 #include <kfiledialog.h>
 #include <klocale.h>
+
 /*
  *  Constructs a hk_kdenewdatabase which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'
@@ -53,20 +54,15 @@ hk_string hk_kdenewdatabase::show_dialog(const hk_string& drivername,bool local)
    {
      if (!n->databasefield->text().isNull())
         result=u2l(n->databasefield->text().toUtf8().data());
-
    }
   delete n;
   return result;
-
 }
-
-
 
 void hk_kdenewdatabase::ok_clicked()
 {
  accept();
 }
-
 
 void hk_kdenewdatabase::directory_clicked()
 {

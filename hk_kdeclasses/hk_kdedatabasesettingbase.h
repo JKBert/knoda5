@@ -48,7 +48,6 @@ class hk_kdedatabasesettingbase : public QDialog
 public:
     hk_kdedatabasesettingbase( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kdedatabasesettingbase();
-
     QLabel* headertext;
     QLabel* textLabel2;
     QPushButton* buttonHelp;
@@ -99,7 +98,6 @@ protected:
 
 protected slots:
     virtual void languageChange();
-
 };
 
 #endif // HK_KDEDATABASESETTINGBASE_H

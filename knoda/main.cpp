@@ -77,6 +77,7 @@ int main(int argc,char** argv)
     struct_commands commands;
     anwendung.setOrganizationDomain("sourceforge.net");
     KLocalizedString::setApplicationDomain(PROJECT_NAME);
+    QIcon::setThemeName("oxygen");
     anwendung.setWindowIcon(QIcon::fromTheme(QStringLiteral(PROJECT_NAME)));
     bool d =args->isSet("d");
     bool db = args->isSet("b");

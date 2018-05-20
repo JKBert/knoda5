@@ -36,7 +36,8 @@
 #include <qwhatsthis.h>
 #include <qtreewidget.h>
 #include <qheaderview.h>
-//TBP TBT translation tr()->i18n()
+#include <KLocalizedString>
+
 /*
  *  Constructs a hk_kdedatabasesettingbase as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.
@@ -50,7 +51,7 @@ hk_kdedatabasesettingbase::hk_kdedatabasesettingbase( QWidget* parent, const cha
     setObjectName(QString::fromAscii(name == NULL?"hk_kdedatabasesettingbase":name));
     setModal(modal);
     setMinimumSize( QSize( 600, 0 ) );
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled( true );
     hk_kdedatabasesettingbaseLayout = new QGridLayout(this);
     hk_kdedatabasesettingbaseLayout->setMargin(11);
     hk_kdedatabasesettingbaseLayout->setSpacing(6);
@@ -59,7 +60,7 @@ hk_kdedatabasesettingbase::hk_kdedatabasesettingbase( QWidget* parent, const cha
     headertext = new QLabel(this);
     headertext->setObjectName("headertext");
     QFont headertext_font(  headertext->font() );
-    headertext_font.setBold( TRUE );
+    headertext_font.setBold( true );
     headertext->setFont( headertext_font ); 
 
     hk_kdedatabasesettingbaseLayout->addWidget( headertext, 0, 1 );
@@ -76,21 +77,21 @@ hk_kdedatabasesettingbase::hk_kdedatabasesettingbase( QWidget* parent, const cha
 
     buttonHelp = new QPushButton(this);
     buttonHelp->setObjectName(QString::fromAscii("buttonHelp"));
-    buttonHelp->setAutoDefault( TRUE );
+    buttonHelp->setAutoDefault( true );
     Layout1->addWidget( buttonHelp );
     Horizontal_Spacing2 = new QSpacerItem( 20, 20, QSizePolicy::Expanding, QSizePolicy::Minimum );
     Layout1->addItem( Horizontal_Spacing2 );
 
     ok_button = new QPushButton(this);
     ok_button->setObjectName(QString::fromAscii("ok_button"));
-    ok_button->setEnabled( FALSE );
-    ok_button->setAutoDefault( TRUE );
-    ok_button->setDefault( TRUE );
+    ok_button->setEnabled( false );
+    ok_button->setAutoDefault( true );
+    ok_button->setDefault( true );
     Layout1->addWidget( ok_button );
 
     cancel_button = new QPushButton(this);
     cancel_button->setObjectName(QString::fromAscii("cancel_button"));
-    cancel_button->setAutoDefault( TRUE );
+    cancel_button->setAutoDefault( true );
     Layout1->addWidget( cancel_button );
 
     hk_kdedatabasesettingbaseLayout->addLayout( Layout1, 4, 0, 1, 2 );
@@ -101,7 +102,7 @@ hk_kdedatabasesettingbase::hk_kdedatabasesettingbase( QWidget* parent, const cha
     listview -> header() -> setClickable(false);
     listview -> header() -> setResizeMode(QHeaderView::Fixed);
     QFont listview_font(  listview->font() );
-    listview_font.setBold( TRUE );
+    listview_font.setBold( true );
     listview->setFont( listview_font ); 
 
     hk_kdedatabasesettingbaseLayout->addWidget( listview, 0, 0, 4, 1 );
@@ -141,7 +142,7 @@ hk_kdedatabasesettingbase::hk_kdedatabasesettingbase( QWidget* parent, const cha
 
     storageframe = new QFrame(systemtablepage);
     storageframe->setObjectName(QString::fromAscii("storageframe"));
-    storageframe->setEnabled( FALSE );
+    storageframe->setEnabled( false );
     storageframe->setFrameShape( QFrame::StyledPanel );
     storageframe->setFrameShadow( QFrame::Sunken );
     storageframeLayout = new QGridLayout( storageframe);
@@ -222,8 +223,8 @@ hk_kdedatabasesettingbase::hk_kdedatabasesettingbase( QWidget* parent, const cha
 
     databaseencodingfield = new QComboBox(encodingpage);
     databaseencodingfield->setObjectName("databaseencodingfield");
-    databaseencodingfield->setEditable( TRUE );
-    databaseencodingfield->setAutoCompletion( TRUE );
+    databaseencodingfield->setEditable( true );
+    databaseencodingfield->setAutoCompletion( true );
 
     encodingpageLayout->addWidget( databaseencodingfield, 0, 1 );
 
@@ -250,7 +251,7 @@ hk_kdedatabasesettingbase::hk_kdedatabasesettingbase( QWidget* parent, const cha
     connect( reportload, SIGNAL( activated(int) ), this, SLOT( selection_changed() ) );
     connect( allload, SIGNAL( activated(int) ), this, SLOT( alload_changed() ) );
     connect( createbutton, SIGNAL( clicked() ), this, SLOT( create_clicked() ) );
-    connect( databaseencodingfield, SIGNAL( textChanged(const QString&) ), this, SLOT( encoding_changed() ) );
+    connect( databaseencodingfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( encoding_changed() ) );
     connect( automaticupdatefield, SIGNAL( activated(int) ), this, SLOT( selection_changed() ) );
     connect( moduleload, SIGNAL( activated(int) ), this, SLOT( selection_changed() ) );
 }
@@ -269,29 +270,29 @@ hk_kdedatabasesettingbase::~hk_kdedatabasesettingbase()
  */
 void hk_kdedatabasesettingbase::languageChange()
 {
-    setWindowTitle( tr( "Database settings" ) );
-    headertext->setText( tr( "Open and store files:" ) );
-    buttonHelp->setText( tr( "&Help" ) );
-    buttonHelp->setShortcut( QKeySequence( tr( "F1" ) ) );
-    ok_button->setText( tr( "&OK" ) );
+    setWindowTitle( i18n( "Database settings" ) );
+    headertext->setText( i18n( "Open and store files:" ) );
+    buttonHelp->setText( i18n( "&Help" ) );
+    buttonHelp->setShortcut( QKeySequence( i18n( "F1" ) ) );
+    ok_button->setText( i18n( "&OK" ) );
     ok_button->setShortcut( QKeySequence( QString::null ) );
-    cancel_button->setText( tr( "&Cancel" ) );
+    cancel_button->setText( i18n( "&Cancel" ) );
     cancel_button->setShortcut( QKeySequence( QString::null ) );
     listview -> headerItem() -> setText(0,QString::null);
-    createlabel->setText( tr( "Create system table:" ) );
-    createbutton->setText( tr( "C&reate" ) );
-    createbutton->setShortcut( QKeySequence( tr( "Alt+R" ) ) );
+    createlabel->setText( i18n( "Create system table:" ) );
+    createbutton->setText( i18n( "C&reate" ) );
+    createbutton->setShortcut( QKeySequence( i18n( "Alt+R" ) ) );
     automaticupdatefield->clear();
-    automaticupdatefield->addItem( tr( "Yes" ) );
-    automaticupdatefield->addItem( tr( "No" ) );
-    automaticupdatelabel->setText( tr( "Automatic data update:" ) );
-    loadlabel->setText( tr( "Load/Store" ) );
-    querylabel->setText( tr( "Queries:" ) );
-    formlabel->setText( tr( "Forms:" ) );
-    alllabel->setText( tr( "Set all:" ) );
-    reportlabel->setText( tr( "Reports:" ) );
-    modulelabel->setText( tr( "Modules:" ) );
-    databaseencodinglabel->setText( tr( "Encoding:" ) );
+    automaticupdatefield->addItem( i18n( "Yes" ) );
+    automaticupdatefield->addItem( i18n( "No" ) );
+    automaticupdatelabel->setText( i18n( "Automatic data update:" ) );
+    loadlabel->setText( i18n( "Load/Store" ) );
+    querylabel->setText( i18n( "Queries:" ) );
+    formlabel->setText( i18n( "Forms:" ) );
+    alllabel->setText( i18n( "Set all:" ) );
+    reportlabel->setText( i18n( "Reports:" ) );
+    modulelabel->setText( i18n( "Modules:" ) );
+    databaseencodinglabel->setText( i18n( "Encoding:" ) );
 }
 
 void hk_kdedatabasesettingbase::ok_clicked()

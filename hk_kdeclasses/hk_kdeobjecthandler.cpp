@@ -13,25 +13,20 @@
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
  //$Revision: 1.7 $
+ 
 #include "hk_kdeobjecthandler.h"
 #include "hk_kdedblistview.h"
 #include <hk_database.h>
-
 #include <qpushbutton.h>
 #include <qpixmap.h>
-#include <qiconset.h>
 #include <qwhatsthis.h>
 #include <qlabel.h>
 #include <kiconloader.h>
-#include <kicon.h>
-#include <kstandarddirs.h>
 #include <kapplication.h>
 #include <kconfig.h>
-
 #include <klocale.h>
 #include <kglobal.h>
 #include <kconfiggroup.h>
-//TBP icons
 
 hk_kdeobjecthandler::hk_kdeobjecthandler( hk_database* db,QWidget* parent,  const char* name, bool modal, Qt::WFlags fl )
     : hk_kdeobjecthandlerbase( parent, name, modal, fl )
@@ -41,13 +36,11 @@ hk_kdeobjecthandler::hk_kdeobjecthandler( hk_database* db,QWidget* parent,  cons
   centrallistview->set_showmode(hk_kdedblistview::sm_central);
   locallistview->set_database(db);
   locallistview->set_showmode(hk_kdedblistview::sm_local);
-  KIconLoader* loader=KIconLoader::global();
-  loader->addAppDir("hk_kde4classes");
   slot_selection_changed();
-  uploadbutton->setIcon( loader->loadIcon("go-next",KIconLoader::Small));
-  downloadbutton->setIcon( loader->loadIcon("go-previous",KIconLoader::Small));
-  centrallistview->headerItem() -> setText(0,i18n("Central"));
-  locallistview->headerItem() -> setText(0,i18n("Local"));
+  uploadbutton->setIcon(QIcon::fromTheme("go-next"));
+  downloadbutton->setIcon(QIcon::fromTheme("go-previous"));
+  centrallistview->headerItem()->setText(0,i18n("Central"));
+  locallistview->headerItem()->setText(0,i18n("Local"));
   setWindowTitle(i18n("Database object handler"));
   KSharedConfigPtr c=KGlobal::config();
   KConfigGroup cg = c->group("Objecthandler");

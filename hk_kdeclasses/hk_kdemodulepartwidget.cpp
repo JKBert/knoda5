@@ -113,8 +113,6 @@ void hk_kdemodulepartwidget::setupActions(KActionCollection* ac)
   QAction* pAct;
   KActionCollection *viewActions = p_private->p_view->actionCollection();
   
-  QIcon::setThemeName("oxygen");
-  
   // remove colliding actions
   viewActions->removeAction(viewActions->action(KStandardAction::stdName(KStandardAction::Save)));
   viewActions->removeAction(viewActions->action(KStandardAction::stdName(KStandardAction::SaveAs)));

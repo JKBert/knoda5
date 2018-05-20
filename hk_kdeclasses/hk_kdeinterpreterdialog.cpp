@@ -85,7 +85,6 @@ p_autoclose(true),p_has_changed(false), rescode(Accepted), p_private(new hk_kdei
   } else
       KMessageBox::error(w,i18n("A KDE text-editor component could not be found;\n"
                                   "please check your KDE installation."));
-  QIcon::setThemeName("oxygen");
   p_private->p_closeaction=new KAction(QIcon::fromTheme("window-close"),i18n("&Close"),actionCollection());
   actionCollection() -> addAction("closedialog",p_private->p_closeaction);
   connect(p_private->p_closeaction,SIGNAL(triggered()),this,SLOT(accept()));  

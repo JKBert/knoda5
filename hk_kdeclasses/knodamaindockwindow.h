@@ -107,14 +107,13 @@ virtual void show_importdbdrivers();
  
  private:
  enum enum_function{f_connect,f_exportdb,f_importdb};
- void show_drivers(KMenu* menu);
+ void show_drivers(QMenu* menu);
 hk_kdeformpartwidget* find_existing_form(const hk_string& n);
 hk_kdereportpartwidget* find_existing_report(const hk_string& n);
 hk_kdetablepartwidget* find_existing_table(const hk_string& n);
 hk_kdequerypartwidget* find_existing_query(const hk_string& n);
 hk_kdequerypartwidget* find_existing_view(const hk_string& n);
 hk_kdemodulepartwidget* find_existing_module(const hk_string& n);
-
 };
 
 

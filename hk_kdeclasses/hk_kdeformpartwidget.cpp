@@ -82,7 +82,6 @@ hk_kdeformpartwidget::hk_kdeformpartwidget( hk_kdeformpart* formpart,QWidget* pa
     p_dontclose=false;
     setFocusPolicy(Qt::StrongFocus);
     KIconLoader loader  (LIB_MODULE_NAME);
-    QIcon::setThemeName("oxygen");
     setObjectName( name == NULL ? "hk_kdeformpartwidget":name );
     setWindowTitle( i18n( "Form"  ) );
     resize( 800, 600 );

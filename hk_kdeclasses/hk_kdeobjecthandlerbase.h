@@ -34,9 +34,8 @@ class hk_kdeobjecthandlerbase : public QDialog
     Q_OBJECT
 
 public:
-    hk_kdeobjecthandlerbase( QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+    hk_kdeobjecthandlerbase( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kdeobjecthandlerbase();
-
     QPushButton* uploadbutton;
     QPushButton* downloadbutton;
     QPushButton* exitbutton;
@@ -60,7 +59,6 @@ protected:
 
 protected slots:
     virtual void languageChange();
-
 };
 
 #endif // HK_KDEOBJECTHANDLERBASE_H

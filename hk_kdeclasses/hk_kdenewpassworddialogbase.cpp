@@ -30,7 +30,8 @@
 #include <qlayout.h>
 #include <qtooltip.h>
 #include <qwhatsthis.h>
-//TBP TBT translation tr()->i18n()
+#include <KLocalizedString>
+
 /*
  *  Constructs a hk_kdenewpassworddialogbase as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.
@@ -43,7 +44,7 @@ hk_kdenewpassworddialogbase::hk_kdenewpassworddialogbase( QWidget* parent, const
 {
     setObjectName(QString::fromAscii(name == NULL?"hk_kdenewpassworddialogbase":name));
     setModal(modal);
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled( true );
     hk_kdenewpassworddialogbaseLayout = new QGridLayout(this);
     hk_kdenewpassworddialogbaseLayout->setMargin(11);
     hk_kdenewpassworddialogbaseLayout->setSpacing(6);
@@ -93,14 +94,14 @@ hk_kdenewpassworddialogbase::hk_kdenewpassworddialogbase( QWidget* parent, const
 
     buttonOk = new QPushButton(this);
     buttonOk->setObjectName("buttonOk");
-    buttonOk->setAutoDefault( TRUE );
-    buttonOk->setDefault( TRUE );
-    buttonOk->setEnabled( FALSE );
+    buttonOk->setAutoDefault( true );
+    buttonOk->setDefault( true );
+    buttonOk->setEnabled( false );
     Layout5->addWidget( buttonOk );
 
     buttonCancel = new QPushButton(this);
     buttonCancel->setObjectName("buttonCancel");
-    buttonCancel->setAutoDefault( TRUE );
+    buttonCancel->setAutoDefault( true );
     Layout5->addWidget( buttonCancel );
     Spacer1 = new QSpacerItem( 20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding );
     Layout5->addItem( Spacer1 );
@@ -134,12 +135,12 @@ hk_kdenewpassworddialogbase::~hk_kdenewpassworddialogbase()
  */
 void hk_kdenewpassworddialogbase::languageChange()
 {
-    setWindowTitle( tr( "Password dialog" ) );
-    repeatlabel->setText( tr( "Repeat: " ) );
-    passwordlabel->setText( tr( "New Password: " ) );
-    buttonOk->setText( tr( "&OK" ) );
-    buttonCancel->setText( tr( "&Cancel" ) );
-    headlinelabel->setText( tr( "Enter new password" ) );
+    setWindowTitle( i18n( "Password dialog" ) );
+    repeatlabel->setText( i18n( "Repeat: " ) );
+    passwordlabel->setText( i18n( "New Password: " ) );
+    buttonOk->setText( i18n( "&OK" ) );
+    buttonCancel->setText( i18n( "&Cancel" ) );
+    headlinelabel->setText( i18n( "Enter new password" ) );
 }
 
 void hk_kdenewpassworddialogbase::data_changed()

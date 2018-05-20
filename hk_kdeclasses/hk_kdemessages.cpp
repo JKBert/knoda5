@@ -126,8 +126,6 @@ void hk_kdetextdialog::languageChange()
     buttonCancel->setText(i18n("&Cancel"));
 }
 
-
-
 void hk_kdetextdialog::text_changed(const QString& t)
 {
 hk_string txt=trim(u2l(t.toUtf8().data()));
@@ -166,7 +164,7 @@ hk_string hk_kdestringvaluedialog(const hk_string& st)
 
  bool hk_kdenewpassworddlg(hk_string& s)
 {
-  /*TBP  hk_string np;
+    hk_string np;
 
     hk_kdenewpassworddialog* dlg= new hk_kdenewpassworddialog(0,0,true);
     dlg->exec();
@@ -180,23 +178,15 @@ hk_string hk_kdestringvaluedialog(const hk_string& st)
             return true;
         }
     }
-    delete dlg; */
+    delete dlg;
     return false;
 }
-
-
-
 
 void hk_kdedatasourceenablefunction(void)
 {
   kapp->processEvents();
   //cerr <<"hk_kdedatasourceenablefunction called!"<<endl;
 }
-
-
-
-
-
 
 hk_form* new_form(hk_database* db,hk_class* parent)
 {
@@ -280,24 +270,24 @@ hk_dstable* new_table(hk_class* parent)
 
 hk_dsquery* new_query(hk_class* parent)
 {
-/*TBP   hk_kdequerypartwidget* part=NULL;
+  hk_kdequerypartwidget* part=NULL;
   knodamaindockwindow* knoda=dynamic_cast<knodamaindockwindow*>(parent);
   if (knoda)
   {
-   part=knoda->new_query();
-   part->show();
-   return part;
+    part=knoda->new_query();
+    part->show();
+    return part;
   }
   else
   {
-  hk_kdequery* f= new hk_kdequery(dynamic_cast<QWidget*>(parent),0);
-  if (!f) return NULL;
-  f->setAttribute(Qt::WA_DeleteOnClose);
-  if (hk_visible::open_maximized_windows())f->showMaximized();
-  else f->show();
+    hk_kdequery* f= new hk_kdequery(dynamic_cast<QWidget*>(parent),0);
+    if (!f) return NULL;
+    f->setAttribute(Qt::WA_DeleteOnClose);
+    if (hk_visible::open_maximized_windows())f->showMaximized();
+    else f->show();
 
-  return f;
-  } */ return NULL;
+    return f;
+  }
 }
 
 

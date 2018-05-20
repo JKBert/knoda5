@@ -21,12 +21,12 @@ class hk_kdenewpassworddialog : public hk_kdenewpassworddialogbase
 {
     Q_OBJECT
 
-        public:
-        hk_kdenewpassworddialog( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
-        ~hk_kdenewpassworddialog();
+public:
+    hk_kdenewpassworddialog( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
+    ~hk_kdenewpassworddialog();
 
-    public slots:
-        void data_changed();
-        void ok_clicked();
+public slots:
+    void data_changed();
+    void ok_clicked();
 };
 #endif                                            // HK_KDENEWPASSWORDDIALOG_H

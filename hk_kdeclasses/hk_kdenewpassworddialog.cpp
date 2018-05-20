@@ -34,7 +34,6 @@ hk_kdenewpassworddialog::hk_kdenewpassworddialog( QWidget* parent,  const char* 
     passwordlabel->setText(i18n("New password:"));
     repeatlabel->setText(i18n("Repeat:"));
     setWindowTitle(i18n("Password dialog"));
-
 }
 
 

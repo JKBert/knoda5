@@ -86,7 +86,6 @@ hk_kdeformdatasourcedialog::hk_kdeformdatasourcedialog( hk_presentation* p, QWid
     alterbutton->setText(i18n("A&lter"));
     deletebutton->setText(i18n("&Delete"));
     buttonCancel->setText(i18n("&Cancel"));
-    QIcon::setThemeName("oxygen");
     deletefieldbutton->setIcon(QIcon::fromTheme("trash-empty"));
     addfieldbutton->setIcon(QIcon::fromTheme("go-next"));
     

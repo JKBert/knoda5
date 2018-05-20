@@ -70,7 +70,6 @@ hk_kdemodule::hk_kdemodule( QWidget* parent,  const char* name, Qt::WFlags fl )
     g=cg.readEntry("Geometry",rrect);
     setGeometry(g);
 
-    QIcon::setThemeName("oxygen");
     setXMLFile("hk_kdemodule.rc");
 
     KService::Ptr service = KService::serviceByDesktopName("hk_kde5modulepart");

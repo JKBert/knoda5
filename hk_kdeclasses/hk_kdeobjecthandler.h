@@ -24,18 +24,19 @@ class hk_kdeobjecthandler : public hk_kdeobjecthandlerbase
     Q_OBJECT
 
 public:
-    hk_kdeobjecthandler( hk_database*,QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+    hk_kdeobjecthandler( hk_database*,QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kdeobjecthandler();
 
 protected:
-void accept(void);
+    void accept(void);
+    
 protected slots:    
     virtual void download_clicked();
     virtual void upload_clicked();
     virtual void slot_selection_changed();
-private:
-hk_database* p_database;    
     
+private:
+    hk_database* p_database;    
 };
 
 #endif // HK_KDEOBJECTHANDLER_H

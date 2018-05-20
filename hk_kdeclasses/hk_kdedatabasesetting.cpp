@@ -17,11 +17,10 @@
 #include <klocale.h>
 #include <kapplication.h>
 #include <kaction.h>
-#include <kiconloader.h>
-#include <kstandarddirs.h>
 #include <kcombobox.h>
 #include <kpushbutton.h>
 #include <kconfiggroup.h>
+#include <KLocalizedString>
 
 #include <qframe.h>
 #include <qpixmap.h>
@@ -36,35 +35,30 @@
 #include <hk_database.h>
 #include <hk_connection.h>
 #include <kglobal.h>
-//TBP TBT translation tr()->i18n()
-//TBP icons
+
 hk_kdedatabasesetting::hk_kdedatabasesetting( hk_database*db, QWidget* parent,  const char* name, bool modal, Qt::WFlags fl )
     : hk_kdedatabasesettingbase( parent, name, modal, fl )
 {
- p_database=db;
- QStringList list;
- list.append(i18n("Local"));
- list.append(i18n("Central"));
+  p_database=db;
+  QStringList list;
+  list.append(i18n("Local"));
+  list.append(i18n("Central"));
  
- queryload->insertItems(queryload->count(), list);
- formload->insertItems(formload->count(), list);
- reportload->insertItems(reportload->count(), list);
- moduleload->insertItems(moduleload->count(), list);
+  queryload->insertItems(queryload->count(), list);
+  formload->insertItems(formload->count(), list);
+  reportload->insertItems(reportload->count(), list);
+  moduleload->insertItems(moduleload->count(), list);
  
-
- list.prepend("");
- allload->insertItems(allload->count(), list);
-   
-  KIconLoader* loader=KIconLoader::global();
-  loader->addAppDir("hk_kde4classes");
+  list.prepend("");
+  allload->insertItems(allload->count(), list);
   
   p_systemtableitem= new QTreeWidgetItem(listview,QStringList() << i18n("Load/Save"));
-  p_systemtableitem->setIcon(0,loader->loadIcon("document-save",KIconLoader::Dialog));
+  p_systemtableitem->setIcon(0,QIcon::fromTheme("document-save"));
   
   if (p_database && p_database->connection()->server_needs(hk_connection::NEEDS_MANUAL_CHARSET))
   {
     p_localeitem=new QTreeWidgetItem(listview,QStringList() << i18n("Regional"));
-    p_localeitem->setIcon(0,loader->loadIcon("preferences-desktop-locale",KIconLoader::Dialog));
+    p_localeitem->setIcon(0,QIcon::fromTheme("preferences-desktop-locale"));
     for (unsigned int i=0;i<sizeof(charsets)/sizeof(hk_string);++i)
       databaseencodingfield->addItem(QString::fromUtf8(l2u(charsets[i]).c_str()));
     const QString defaultText = QString::fromUtf8(l2u(p_database->databasecharset()).c_str());
@@ -82,7 +76,6 @@ hk_kdedatabasesetting::hk_kdedatabasesetting( hk_database*db, QWidget* parent,  
   p_systemtableitem->setSelected(true);
   if (!p_database) return;
   
-
   queryload->setCurrentIndex(p_database->loadmode(ft_query)==hk_database::central?1:0);
   queryload->setCurrentIndex(p_database->storagemode(ft_query)==hk_database::central?1:0);
   
@@ -158,7 +151,7 @@ ok_button->setEnabled(true);
 void hk_kdedatabasesetting::listview_changed()
 {
     widgetstack->setCurrentIndex(listview->currentItem()==p_localeitem?1:0);
-    headertext->setText( listview->currentItem()==p_localeitem?tr("Regional"):tr( "Open and store files:" ) );
+    headertext->setText( listview->currentItem()==p_localeitem? i18n("Regional"):i18n( "Open and store files:" ) );
 
 }
 

@@ -48,7 +48,6 @@ hk_kdegridcolumndialog::hk_kdegridcolumndialog( hk_kdegrid* parent,  const char*
 {
     QString no=i18n("no");
     QString yes=i18n("yes");
-    QIcon::setThemeName("oxygen");
     p_grid=parent;
     leftlabel->setText(i18n("Invisible columns:"));
     rightlabel->setText(i18n("Shown columns:"));

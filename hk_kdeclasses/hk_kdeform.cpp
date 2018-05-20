@@ -70,7 +70,6 @@ hk_kdeform::hk_kdeform( QWidget* parent,  const char* /* name */, Qt::WFlags fl)
     g=cg.readEntry("Geometry",rrect);
     setGeometry(g);
 
-    QIcon::setThemeName("oxygen");
     setXMLFile("hk_kdeform.rc");
     KService::Ptr service = KService::serviceByDesktopName("hk_kde5formpart");
    

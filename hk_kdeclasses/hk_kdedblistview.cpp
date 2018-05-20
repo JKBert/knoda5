@@ -224,7 +224,6 @@ void hk_kdedblistview::init_listview()
 {
   clear();
   setSortingEnabled(false);
-  QIcon::setThemeName("oxygen");
   
   p_private->p_databaseitem=new QTreeWidgetItem(this,QStringList() << i18n("<No database>"));
   p_private->p_databaseitem->setIcon(0,QIcon::fromTheme("document-open-folder"));
