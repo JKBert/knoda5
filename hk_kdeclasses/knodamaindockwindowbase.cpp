@@ -18,6 +18,9 @@
 #include "hk_kdedblistview.h"
 // TBP #include "hk_kdeeximportdatabase.h"
 #include "hk_kdedbdesigner.h"
+#include <KFileWidget>
+#include <KRecentDirs>
+#include <QFileDialog>
 
 #include <hk_connection.h>
 #include <hk_dsvisible.h>
@@ -36,7 +39,7 @@
 #include <QCloseEvent>
 #include <kcombobox.h>
 #include <kdebug.h>
-#include <kfiledialog.h>
+
 #include <kdirselectdialog.h>
 #include <kconfig.h>
 #include <klocale.h>
@@ -53,7 +56,7 @@
 #include <KTabWidget>
 #include <KIcon>
 #include <KConfigGroup>
-
+#include <KLocalizedString>
 
 class knodamaindockwindowbaseprivate
 {
@@ -778,44 +781,42 @@ void knodamaindockwindowbase::slot_disconnect(void)
  set_connection(NULL);
 }
 
-
 void knodamaindockwindowbase::slot_open_localdatabase()
 {
-    /* TBP
   if (!p_connection) return;
-  QStringList l;
+  QStringList l ("application/octet-stream");
   QString xmime=QString::fromUtf8(l2u(p_connection->mimetype()).c_str());
-  l.append(xmime);cerr <<"add xmime:"<<xmime.toStdString()<<endl;
-  l.append("all/allfiles");
-  QString p="kfiledialog:///"+QString::fromUtf8(l2u(p_connection->drivername()).c_str());
+  l.append(xmime);
+  QString p="kfiledialog:///" + QString::fromUtf8(l2u(p_connection->drivername()).c_str());
   QString filename;
-  filename=QString::null;
+  QString fclass;
 
   if (p_connection->server_needs(hk_connection::NEEDS_DIRECTORY_AS_DATABASE))
   {
-    KUrl seldir;
+    QFileDialog fd (this, QString(ki18n("Select directory").toString()), 
+      KFileWidget::getStartUrl(QString(p),fclass).toLocalFile());
     
-    seldir=KFileDialog::getExistingDirectoryUrl(p,this,i18n("Select directory"));
-    filename=seldir.directory(NULL);
-    if (!filename.isNull())
-      if (!seldir.fileName().isEmpty())
-      filename+=seldir.fileName();  
+    fd.setFileMode(QFileDialog::Directory);
+    fd.setOption(QFileDialog::ShowDirsOnly, true);
+    if (fd.exec() == QDialog::Accepted)
+      filename = fd.directory().absolutePath();
   }
   else
   {
-    KFileDialog* d=new KFileDialog(KUrl(p),QString::null,this);
-    d->setMimeFilter(l,xmime);
-    d->exec();
-    filename=d->selectedFile();
-    delete d;
+    QFileDialog fd (this, QString(ki18n("knoda5").toString()), 
+      KFileWidget::getStartUrl(QString(p),fclass).toLocalFile());
+    fd.setMimeTypeFilters(l);
+    fd.selectMimeTypeFilter(xmime);
+    if (fd.exec() == QDialog::Accepted)
+      filename = fd.selectedFiles().first();
   }
-  if (!filename.isNull())
+  if (!filename.isEmpty())
   {
-  cerr <<"FILENAME="<<filename.toStdString()<<endl;
-      if (p_databasecombobox)
-        p_databasecombobox->addItem(filename);
-     internal_set_database(u2l(filename.toUtf8().data()));
-  } */
+    if (p_databasecombobox)
+      p_databasecombobox->addItem(filename);
+    internal_set_database(u2l(filename.toUtf8().data()));
+    KRecentDirs::add(fclass,filename);
+  }
 }
 
 
@@ -837,72 +838,64 @@ void knodamaindockwindowbase::slot_referentialintegrity()
 
 void knodamaindockwindowbase::designer_deleted(void)
 {
-cerr<<"designer_deleted"<<endl;
+  cerr<<"designer_deleted"<<endl;
 
-p_private->p_designer=NULL;
+  p_private->p_designer=NULL;
 }
-
-
 
 void knodamaindockwindowbase::slot_load_connection()
 {
-  /* TBP if (!p_private->p_drivermanager) return;
-  QStringList l;
+  if (!p_private->p_drivermanager) return;
+  QString fclass;
+  QStringList l ("application/octet-stream");
   QString xmime="application/x-hk_connection";
-  l.append(xmime);
-  KFileDialog* d=new KFileDialog(KUrl("kfiledialog:///hkc"),QString::null,this);
-  d->setMimeFilter(l,xmime);
-  d->exec();
-  QString filename=d->selectedFile();
-  if (!filename.isNull())
+  l << xmime;
+  QFileDialog fd (this, QString(ki18n("knoda5").toString()), KFileWidget::getStartUrl(QString("kfiledialog:///hkc"),fclass).path());
+  fd.setMimeTypeFilters(l);
+  fd.selectMimeTypeFilter(xmime);
+  if (fd.exec() == QDialog::Accepted)
   {
-//execute new connection
-   hk_database* db=p_private->p_drivermanager->open_connectionfile(u2l(filename.toUtf8().data()));
-   if (db)
-   {
-     hk_string dbname=db->name();
-    if (p_connection)
+    //execute new connection
+    hk_database* db=p_private->p_drivermanager->open_connectionfile(u2l(fd.selectedFiles().first().toUtf8().data()));
+    if (db)
     {
-       knodamaindockwindow* w=internal_new_dockwindow();
+      hk_string dbname=db->name();
+      if (p_connection)
+      {
+        knodamaindockwindow* w=internal_new_dockwindow();
 
-	w->set_connection(db->connection());
-	w->internal_set_database(dbname);
-	w->show();
-
-    }
-    else
-    {
-     set_connection(db->connection());
-     internal_set_database(dbname);
-    }
-   }
+	    w->set_connection(db->connection());
+	    w->internal_set_database(dbname);
+	    w->show();
+      }
+      else
+      {
+        set_connection(db->connection());
+        internal_set_database(dbname);
+      }
+    }    
+    KRecentDirs::add(fclass,fd.directory().absolutePath());
   }
-  delete d; */
 }
-
 
 void knodamaindockwindowbase::slot_store_connection()
 {
- /* TBP if (!p_database) return;
-  QStringList l;
+  if (!p_database) return;
+  QStringList l ("application/octet-stream");
   QString xmime="application/x-hk_connection";
-  l.append(xmime);
-  cerr <<"add xmime:"<<xmime.toStdString()<<endl;
-  KFileDialog* d=new KFileDialog(KUrl("kfiledialog:///hkc"),QString::null,this);
-  d->setMimeFilter(l,xmime);
-  d->setOperationMode(KFileDialog::Saving);
-  d->exec();
-
-  QString filename=d->selectedFile();
-  if (!filename.isNull())
+  QString fclass;
+  
+  l << xmime;
+  QFileDialog fd (this, QString(ki18n("knoda5").toString()), KFileWidget::getStartUrl(QString("kfiledialog:///hkc"),fclass).path());
+  fd.setMimeTypeFilters(l);
+  fd.selectMimeTypeFilter(xmime);
+  fd.setAcceptMode(QFileDialog::AcceptSave);
+  if (fd.exec() == QDialog::Accepted)
   {
     KSharedConfigPtr c=KGlobal::config();
     KConfigGroup cg = c->group("Preferences");
     bool g=cg.readEntry("StorePassword",false);
-    p_database->store_connectionfile(u2l(filename.toUtf8().data()),g);
+    p_database->store_connectionfile(u2l(fd.selectedFiles().first().toUtf8().data()),g);
+    KRecentDirs::add(fclass,fd.directory().absolutePath());
   }
-  delete d; */
 }
-
-
-
