@@ -21,7 +21,7 @@
 #include <hk_dsvisible.h>
 #include <hk_datasource.h>
 #include <hk_reportutils.h>
-//#include <hk_string>
+
 class QVBoxLayout;
 class QHBoxLayout;
 class QGridLayout;
@@ -42,17 +42,17 @@ class hk_kdecsvexportdialog : public hk_kdecsvexportdialogbase  ,public hk_repor
 {
     Q_OBJECT
 
-        public:
-        hk_kdecsvexportdialog(const QString& table, QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
-        ~hk_kdecsvexportdialog();
+  public:
+    hk_kdecsvexportdialog(const QString& table, QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
+    ~hk_kdecsvexportdialog();
 
+    void set_usetablelist(void);
+    void set_usequerylist(void);
+    void set_useviewlist(void);
+    void set_database(hk_database* d);
 
-        void set_usetablelist(void);
-        void set_usequerylist(void);
-        void set_useviewlist(void);
-        void set_database(hk_database* d);
   public slots:
-      virtual void help_clicked();
+    virtual void help_clicked();
     virtual void listtype_changed();
     virtual void morebutton_clicked();
     
@@ -62,18 +62,18 @@ class hk_kdecsvexportdialog : public hk_kdecsvexportdialogbase  ,public hk_repor
         virtual void ok_clicked(void);
         void printing_cancelled(void);
 
-    protected:
-virtual void keyPressEvent ( QKeyEvent * e );
- static  bool set_progress(long int,long int,const hk_string&);
-    private:
-//  hk_exportcsv* p_export;
-        static bool p_cancelimport;
-static        QProgressDialog* p_progressdialog;
+  protected:
+    virtual void keyPressEvent ( QKeyEvent * e );
+    static  bool set_progress(long int,long int,const hk_string&);
+
+  private:
+
+    static bool p_cancelimport;
+    static  QProgressDialog* p_progressdialog;
         void set_datasourcelist(void);
         QString      p_file;
         QString   p_tablename;
         QString      p_tab;
 	datasourcetype p_datasourcetype;
-
 };
 #endif                                            // HK_KDECSVexportDIALOG_H

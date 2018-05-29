@@ -43,7 +43,7 @@ class hk_kdexmlexportdialogbase : public QDialog
     Q_OBJECT
 
 public:
-    hk_kdexmlexportdialogbase( QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+    hk_kdexmlexportdialogbase( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kdexmlexportdialogbase();
 
     QLineEdit* maindocumenttagfield;
@@ -82,11 +82,8 @@ protected:
 
 protected slots:
     virtual void languageChange();
-
     virtual void excel_clicked();
     virtual void filebutton_clicked();
-
-
 };
 
 #endif // HK_KDEXMLEXPORTDIALOGBASE_H

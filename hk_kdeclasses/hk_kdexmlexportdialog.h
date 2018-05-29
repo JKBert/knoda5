@@ -23,8 +23,8 @@ class hk_kdexmlexportdialog : public hk_kdexmlexportdialogbase ,public hk_report
 {
     Q_OBJECT
 
-        public:
-        hk_kdexmlexportdialog(const QString& table, QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+    public:
+        hk_kdexmlexportdialog(const QString& table, QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
         ~hk_kdexmlexportdialog();
         void set_usetablelist(void);
         void set_usequerylist(void);
@@ -44,15 +44,14 @@ class hk_kdexmlexportdialog : public hk_kdexmlexportdialogbase ,public hk_report
 
     protected:
      static  bool set_progress(long int,long int,const hk_string&);
-virtual void keyPressEvent ( QKeyEvent * e );
+    virtual void keyPressEvent ( QKeyEvent * e );
 
     private:
         void set_datasourcelist(void);
         QString      p_file;
         QString p_tablename;
 	datasourcetype p_datasourcetype;
-static        QProgressDialog* p_progressdialog;
+    static  QProgressDialog* p_progressdialog;
         static bool p_cancelimport;
-
 };
 #endif                                            // HK_KDEXMLEXPORTDIALOG_H

@@ -33,6 +33,7 @@
 #include <qlayout.h>
 #include <qtooltip.h>
 #include <qwhatsthis.h>
+#include <KLocalizedString>
 
 void inline initSizePolicy( QWidget* w, QSizePolicy::Policy hp, QSizePolicy::Policy vp)
 {
@@ -55,7 +56,7 @@ hk_kdexmlexportdialogbase::hk_kdexmlexportdialogbase( QWidget* parent, const cha
     setObjectName(QString::fromAscii(name == NULL?"hk_kdexmlexportdialogbase":name));
     setModal(modal);
     setMaximumSize( QSize( 32767, 32767 ) );
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled( true );
     hk_kdexmlexportdialogbaseLayout = new QGridLayout(this);
     hk_kdexmlexportdialogbaseLayout->setMargin(11);
     hk_kdexmlexportdialogbaseLayout->setSpacing(6);
@@ -79,7 +80,7 @@ hk_kdexmlexportdialogbase::hk_kdexmlexportdialogbase( QWidget* parent, const cha
 
     typefield = new QComboBox(this);
     typefield->setObjectName(QString::fromAscii("typefield"));
-    typefield->setAutoCompletion( TRUE );
+    typefield->setAutoCompletion( true );
 
     layout7->addWidget( typefield, 0, 1 );
 
@@ -162,20 +163,20 @@ hk_kdexmlexportdialogbase::hk_kdexmlexportdialogbase( QWidget* parent, const cha
 
     buttonOk = new QPushButton(this);
     buttonOk->setObjectName("buttonOk");
-    buttonOk->setEnabled( FALSE );
-    buttonOk->setAutoDefault( TRUE );
-    buttonOk->setDefault( TRUE );
+    buttonOk->setEnabled( false );
+    buttonOk->setAutoDefault( true );
+    buttonOk->setDefault( true );
     Layout5->addWidget( buttonOk );
 
     buttonCancel = new QPushButton(this);
     buttonCancel->setObjectName("buttonCancel");
-    buttonCancel->setAutoDefault( TRUE );
+    buttonCancel->setAutoDefault( true );
     Layout5->addWidget( buttonCancel );
 
     buttonHelp = new QPushButton(this);
     buttonHelp->setObjectName("buttonHelp");
-    buttonHelp->setEnabled( TRUE );
-    buttonHelp->setAutoDefault( TRUE );
+    buttonHelp->setEnabled( true );
+    buttonHelp->setAutoDefault( true );
     Layout5->addWidget( buttonHelp );
     Spacer1 = new QSpacerItem( 20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding );
     Layout5->addItem( Spacer1 );
@@ -188,7 +189,7 @@ hk_kdexmlexportdialogbase::hk_kdexmlexportdialogbase( QWidget* parent, const cha
     connect( buttonCancel, SIGNAL( clicked() ), this, SLOT( reject() ) );
     connect( filebutton, SIGNAL( clicked() ), this, SLOT( filebutton_clicked() ) );
     connect( filefield, SIGNAL( textChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
-    connect( tablenamefield, SIGNAL( textChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
+    connect( tablenamefield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
     connect( maindocumenttagfield, SIGNAL( textChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
     connect( buttonOk, SIGNAL( clicked() ), this, SLOT( ok_clicked() ) );
     connect( typefield, SIGNAL( activated(int) ), this, SLOT( listtype_changed() ) );
@@ -210,23 +211,22 @@ hk_kdexmlexportdialogbase::~hk_kdexmlexportdialogbase()
  */
 void hk_kdexmlexportdialogbase::languageChange()
 {
-    setWindowTitle( tr( "XML Export Dialog" ) );
-    //TBP TBT translation tr()->i18n()
+    setWindowTitle( i18n( "XML Export Dialog" ) );
     rowelementfield->setText( QString::null );
-    typelabel->setText( tr( "Datasource type" ) );
-    maindocumenttaglabel->setText( tr( "Main document tag:" ) );
-    tablenamelabel->setText( tr( "Tablename:" ) );
-    rowelementlabel->setText( tr( "Row element tag:" ) );
-    filelable->setText( tr( "Filename:" ) );
-    filebutton->setText( tr( "..." ) );
-    structurefield->setText( tr( "include tableschema?" ) );
-    attributefield->setText( tr( "fieldname as attribute?" ) );
-    excelxmlfield->setText( tr( "Export as Excel XML?" ) );
-    buttonOk->setText( tr( "&OK" ) );
-    buttonOk->setShortcut( QKeySequence( tr( "Alt+O" ) ) );
-    buttonCancel->setText( tr( "&Cancel" ) );
-    buttonHelp->setText( tr( "&Help" ) );
-    buttonHelp->setShortcut( QKeySequence( tr( "Alt+H" ) ) );
+    typelabel->setText( i18n( "Datasource type" ) );
+    maindocumenttaglabel->setText( i18n( "Main document tag:" ) );
+    tablenamelabel->setText( i18n( "Tablename:" ) );
+    rowelementlabel->setText( i18n( "Row element tag:" ) );
+    filelable->setText( i18n( "Filename:" ) );
+    filebutton->setText( i18n( "..." ) );
+    structurefield->setText( i18n( "include tableschema?" ) );
+    attributefield->setText( i18n( "fieldname as attribute?" ) );
+    excelxmlfield->setText( i18n( "Export as Excel XML?" ) );
+    buttonOk->setText( i18n( "&OK" ) );
+    buttonOk->setShortcut( QKeySequence( i18n( "Alt+O" ) ) );
+    buttonCancel->setText( i18n( "&Cancel" ) );
+    buttonHelp->setText( i18n( "&Help" ) );
+    buttonHelp->setShortcut( QKeySequence( i18n( "Alt+H" ) ) );
 }
 
 void hk_kdexmlexportdialogbase::excel_clicked()

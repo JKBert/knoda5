@@ -15,9 +15,9 @@
 //$Revision: 1.51 $
 #include "knodamaindockwindow.h"
 #include "hk_kdedblistview.h"
-/*TBP #include "hk_kdecsvimportdialog.h"
+//TBP #include "hk_kdecsvimportdialog.h"
 #include "hk_kdecsvexportdialog.h"
-#include "hk_kdexmlexportdialog.h" */
+#include "hk_kdexmlexportdialog.h"
 #include "hk_kdedatabasesetting.h"
 #include "hk_kdeobjecthandler.h"
 #include "hk_kdepreferencesdialog.h"
@@ -640,7 +640,7 @@ void knodamaindockwindow::importcsv_clicked()
 
 void knodamaindockwindow::exportcsv_clicked()
 {
-  /*TBP if (p_database==NULL||!p_listview) return;
+  if (p_database==NULL||!p_listview) return;
   hk_kdecsvexportdialog* e =new hk_kdecsvexportdialog(p_listview->currentItem()->text(0),0,0,true);
   e->set_database(p_database);
   if (p_listview->is_viewitem()) e->set_useviewlist();
@@ -649,21 +649,23 @@ void knodamaindockwindow::exportcsv_clicked()
     else
       e->set_usetablelist();
   e->exec();
-  delete e; */
+  delete e;
 }
 
 void knodamaindockwindow::exportxml_clicked()
 {
-  /* TBP if (p_database==NULL||!p_listview) return;
+  if (p_database==NULL||!p_listview) return;
   hk_kdexmlexportdialog* e =new hk_kdexmlexportdialog(p_listview->currentItem()->text(0),0,0,true);
-    e->set_database(p_database);
-    if (p_listview->is_viewitem())e->set_useviewlist();
+  e->set_database(p_database);
+  if (p_listview->is_viewitem())
+    e->set_useviewlist();
+  else
+    if (p_listview->is_queryitem())
+      e->set_usequerylist();
     else
-    if (p_listview->is_queryitem())e->set_usequerylist();
-    else
-    e->set_usetablelist();
-    e->exec();
-    delete e; */
+      e->set_usetablelist();
+  e->exec();
+  delete e;
 }
 
 void knodamaindockwindow::newpassworddialog_selected(void)

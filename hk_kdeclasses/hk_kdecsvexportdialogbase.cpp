@@ -35,7 +35,8 @@
 #include <qlayout.h>
 #include <qtooltip.h>
 #include <qwhatsthis.h>
-//TBP TBT translation tr()->i18n()
+#include <KLocalizedString>
+
 /*
  *  Constructs a hk_kdecsvexportdialogbase as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.
@@ -50,7 +51,7 @@ hk_kdecsvexportdialogbase::hk_kdecsvexportdialogbase( QWidget* parent, const cha
     setModal(modal);
     setMinimumSize( QSize( 600, 500 ) );
     setMaximumSize( QSize( 32767, 32767 ) );
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled( true );
     hk_kdecsvexportdialogbaseLayout = new QGridLayout(this);
     hk_kdecsvexportdialogbaseLayout->setMargin(11);
     hk_kdecsvexportdialogbaseLayout->setSpacing(6);
@@ -81,14 +82,14 @@ hk_kdecsvexportdialogbase::hk_kdecsvexportdialogbase( QWidget* parent, const cha
 
     tablefield = new QComboBox(this);
     tablefield->setObjectName(QString::fromAscii("tablefield"));
-    tablefield->setEditable( TRUE );
-    tablefield->setAutoCompletion( TRUE );
+    tablefield->setEditable( true );
+    tablefield->setAutoCompletion( true );
 
     hk_kdecsvexportdialogbaseLayout->addWidget( tablefield, 2, 1, 1, 2);
     
     typefield = new QComboBox(this);
     typefield->setObjectName(QString::fromAscii("typefield"));
-    typefield->setAutoCompletion( TRUE );
+    typefield->setAutoCompletion( true );
 
     hk_kdecsvexportdialogbaseLayout->addWidget(typefield, 1, 1, 1, 2);
 
@@ -118,7 +119,7 @@ hk_kdecsvexportdialogbase::hk_kdecsvexportdialogbase( QWidget* parent, const cha
 
     firstrow = new QCheckBox( this );
     firstrow->setObjectName(QString::fromAscii("firstrow"));
-    firstrow->setChecked( TRUE );
+    firstrow->setChecked( true );
 
     hk_kdecsvexportdialogbaseLayout->addWidget( firstrow, 5, 1 );
 
@@ -163,8 +164,8 @@ hk_kdecsvexportdialogbase::hk_kdecsvexportdialogbase( QWidget* parent, const cha
 
     localefield = new QComboBox(moreframe);
     localefield->setObjectName(QString::fromAscii("localefield"));
-    localefield->setEditable( TRUE );
-    localefield->setAutoCompletion( TRUE );
+    localefield->setEditable( true );
+    localefield->setAutoCompletion( true );
 
     moreframeLayout->addWidget( localefield, 4, 1 );
 
@@ -185,8 +186,8 @@ hk_kdecsvexportdialogbase::hk_kdecsvexportdialogbase( QWidget* parent, const cha
 
     charsetfield = new QComboBox(moreframe);
     charsetfield->setObjectName("charsetfield");
-    charsetfield->setEditable( TRUE );
-    charsetfield->setAutoCompletion( TRUE );
+    charsetfield->setEditable( true );
+    charsetfield->setAutoCompletion( true );
 
     moreframeLayout->addWidget( charsetfield, 3, 1 );
 
@@ -221,25 +222,25 @@ hk_kdecsvexportdialogbase::hk_kdecsvexportdialogbase( QWidget* parent, const cha
 
     buttonOk = new QPushButton(this);
     buttonOk->setObjectName(QString::fromAscii("buttonOk"));
-    buttonOk->setEnabled( FALSE );
-    buttonOk->setAutoDefault( TRUE );
-    buttonOk->setDefault( TRUE );
+    buttonOk->setEnabled( false );
+    buttonOk->setAutoDefault( true );
+    buttonOk->setDefault( true );
     layout7->addWidget( buttonOk );
 
     buttonCancel = new QPushButton( this);
     buttonCancel->setObjectName(QString::fromAscii("buttonCancel"));
-    buttonCancel->setAutoDefault( TRUE );
+    buttonCancel->setAutoDefault( true );
     layout7->addWidget( buttonCancel );
 
     morebutton = new QPushButton(this);
     morebutton->setObjectName(QString::fromAscii("morebutton"));
-    morebutton->setCheckable( TRUE );
+    morebutton->setCheckable( true );
     layout7->addWidget( morebutton );
 
     buttonHelp = new QPushButton(this);
     buttonHelp->setObjectName(QString::fromAscii("buttonHelp"));
-    buttonHelp->setEnabled( TRUE );
-    buttonHelp->setAutoDefault( TRUE );
+    buttonHelp->setEnabled( true );
+    buttonHelp->setAutoDefault( true );
     layout7->addWidget( buttonHelp );
     Spacer1 = new QSpacerItem( 20, 270, QSizePolicy::Minimum, QSizePolicy::Expanding );
     layout7->addItem( Spacer1 );
@@ -252,11 +253,11 @@ hk_kdecsvexportdialogbase::hk_kdecsvexportdialogbase( QWidget* parent, const cha
     connect( buttonCancel, SIGNAL( clicked() ), this, SLOT( reject() ) );
     connect( filebutton, SIGNAL( clicked() ), this, SLOT( filebutton_clicked() ) );
     connect( filefield, SIGNAL( textChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
-    connect( columnseparatorfield, SIGNAL( textChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
+    connect( columnseparatorfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
     connect( buttonOk, SIGNAL( clicked() ), this, SLOT( ok_clicked() ) );
     connect( buttonHelp, SIGNAL( clicked() ), this, SLOT( help_clicked() ) );
     connect( firstrow, SIGNAL( clicked() ), this, SLOT( buttons_enabled() ) );
-    connect( typefield, SIGNAL( textChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
+    connect( typefield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
     connect( textdelimiterfield, SIGNAL( textChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
     connect( typefield, SIGNAL( activated(int) ), this, SLOT( listtype_changed() ) );
     connect( morebutton, SIGNAL( toggled(bool) ), this, SLOT( morebutton_clicked() ) );
@@ -284,36 +285,36 @@ hk_kdecsvexportdialogbase::~hk_kdecsvexportdialogbase()
  */
 void hk_kdecsvexportdialogbase::languageChange()
 {
-    setWindowTitle( tr( "Text File Export Dialog" ) );
-    TextLabel1->setText( tr( "Filename" ) );
-    filefield -> setToolTip( tr( "The data to import." ) );
-    filebutton->setText( tr( "..." ) );
-    typelabel->setText( tr( "Datasource type" ) );
-    TextLabel1_2_2->setText( tr( "Tablename" ) );
-    columnseparatorfield -> setToolTip( tr( "Pick the character that separates columns in text file." ) );
-    TextLabel2->setText( tr( "Column Separator" ) );
+    setWindowTitle( i18n( "Text File Export Dialog" ) );
+    TextLabel1->setText( i18n( "Filename" ) );
+    filefield -> setToolTip( i18n( "The data to import." ) );
+    filebutton->setText( i18n( "..." ) );
+    typelabel->setText( i18n( "Datasource type" ) );
+    TextLabel1_2_2->setText( i18n( "Tablename" ) );
+    columnseparatorfield -> setToolTip( i18n( "Pick the character that separates columns in text file." ) );
+    TextLabel2->setText( i18n( "Column Separator" ) );
     firstrow->setText( QString::null );
-    firstrow -> setToolTip( tr( "First row contains field names." ) );
-    TextLabel3->setText( tr( "Text delimiter" ) );
-    TextLabel1_3->setText( tr( "Field names in first row" ) );
-    textdelimiterfield->setText( tr( "\"" ) );
-    textdelimiterfield -> setToolTip( tr( "The character that surrounds text (can be blank)." ) );
-    dateformatlabel->setText( tr( "Date format" ) );
-    timeformatfield -> setToolTip( tr( "Name of new or existing table." ) );
-    dateformatfield -> setToolTip( tr( "Name of new or existing table." ) );
-    datetimeformatfield -> setToolTip( tr( "Name of new or existing table." ) );
-    charsetlabel->setText( tr( "Charset" ) );
-    localelabel->setText( tr( "Locale" ) );
-    timeformatlabel->setText( tr( "Time format" ) );
-    datetimeformatlabel->setText( tr( "Datetime format" ) );
-    buttonOk->setText( tr( "&OK" ) );
-    buttonOk->setShortcut( QKeySequence( tr( "Alt+O" ) ) );
-    buttonCancel->setText( tr( "&Cancel" ) );
-    buttonCancel->setShortcut( QKeySequence( tr( "Alt+C" ) ) );
-    morebutton->setText( tr( "O&ptions" ) );
-    morebutton->setShortcut( QKeySequence( tr( "Alt+P" ) ) );
-    buttonHelp->setText( tr( "&Help" ) );
-    buttonHelp->setShortcut( QKeySequence( tr( "Alt+H" ) ) );
+    firstrow -> setToolTip( i18n( "First row contains field names." ) );
+    TextLabel3->setText( i18n( "Text delimiter" ) );
+    TextLabel1_3->setText( i18n( "Field names in first row" ) );
+    textdelimiterfield->setText( i18n( "\"" ) );
+    textdelimiterfield -> setToolTip( i18n( "The character that surrounds text (can be blank)." ) );
+    dateformatlabel->setText( i18n( "Date format" ) );
+    timeformatfield -> setToolTip( i18n( "Name of new or existing table." ) );
+    dateformatfield -> setToolTip( i18n( "Name of new or existing table." ) );
+    datetimeformatfield -> setToolTip( i18n( "Name of new or existing table." ) );
+    charsetlabel->setText( i18n( "Charset" ) );
+    localelabel->setText( i18n( "Locale" ) );
+    timeformatlabel->setText( i18n( "Time format" ) );
+    datetimeformatlabel->setText( i18n( "Datetime format" ) );
+    buttonOk->setText( i18n( "&OK" ) );
+    buttonOk->setShortcut( QKeySequence( i18n( "Alt+O" ) ) );
+    buttonCancel->setText( i18n( "&Cancel" ) );
+    buttonCancel->setShortcut( QKeySequence( i18n( "Alt+C" ) ) );
+    morebutton->setText( i18n( "O&ptions" ) );
+    morebutton->setShortcut( QKeySequence( i18n( "Alt+P" ) ) );
+    buttonHelp->setText( i18n( "&Help" ) );
+    buttonHelp->setShortcut( QKeySequence( i18n( "Alt+H" ) ) );
 }
 
 void hk_kdecsvexportdialogbase::buttons_enabled()

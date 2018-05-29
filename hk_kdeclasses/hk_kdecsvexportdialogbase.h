@@ -45,7 +45,7 @@ class hk_kdecsvexportdialogbase : public QDialog
     Q_OBJECT
 
 public:
-    hk_kdecsvexportdialogbase( QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+    hk_kdecsvexportdialogbase( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kdecsvexportdialogbase();
 
     QLabel* TextLabel1;

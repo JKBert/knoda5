@@ -13,9 +13,9 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdecomboboxtextlist.cpp
     hk_kdecomboboxtextlistbase.cpp
     hk_kdecolumn.cpp
- #[[  TBP   hk_kdecsvexportdialog.cpp
+    hk_kdecsvexportdialog.cpp
     hk_kdecsvexportdialogbase.cpp
-    hk_kdecsvimportdialog.cpp
+  #[[  TBP  hk_kdecsvimportdialog.cpp
     hk_kdecsvimportdialogbase.cpp ]]
     hk_kdedatabasesetting.cpp
     hk_kdedatabasesettingbase.cpp 
@@ -89,8 +89,8 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdetabledesign.cpp 
     hk_kdetablepartwidget.cpp
     hk_kdetoolbar.cpp
- #TBP     hk_kdexmlexportdialog.cpp
- #TBP   hk_kdexmlexportdialogbase.cpp
+    hk_kdexmlexportdialog.cpp
+    hk_kdexmlexportdialogbase.cpp
     knodamaindockwindow.cpp
     knodamaindockwindowbase.cpp 
 )

@@ -15,7 +15,6 @@
 //$Revision: 1.29 $
 
 #include "hk_kdecsvexportdialog.h"
-#include "hk_kdecsvexportdialog.moc"
 
 #include <qcheckbox.h>
 #include <qcombobox.h>
@@ -28,7 +27,7 @@
 #include <qtooltip.h>
 #include <qwhatsthis.h>
 #include <QKeyEvent>
-#include <kfiledialog.h>
+#include <QFileDialog>
 #include <klocale.h>
 #include <vector>
 #include <hk_database.h>
@@ -37,7 +36,10 @@
 #include <kapplication.h>
 #include <kconfig.h>
 #include <kglobal.h>
-#include <ktoolinvocation.h>
+#include <KHelpClient>
+#include <KConfigGroup>
+#include <KFileWidget>
+#include <KRecentDirs>
 
 bool    hk_kdecsvexportdialog::p_cancelimport=false;
 QProgressDialog* hk_kdecsvexportdialog::p_progressdialog=NULL;
@@ -56,7 +58,7 @@ hk_kdecsvexportdialog::hk_kdecsvexportdialog( const QString& table, QWidget* par
     resize( 328, 171 );
     p_tablename=table;
     setWindowTitle( i18n( "CSV export Dialog"  ) );
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled( true );
     setMaximumSize( QSize( 32767, 32767 ) );
  // signals and slots connections
     p_datasourcetype=dt_table;
@@ -69,8 +71,6 @@ hk_kdecsvexportdialog::hk_kdecsvexportdialog( const QString& table, QWidget* par
     firstrow->setChecked(cg.readEntry("FirstRowContainsFieldNames",true));
 
     textdelimiterfield->setText(cg.readEntry("TextDelimiter","\""));
-  
-  
     timeformatfield->setText(cg.readEntry("TimeFormat",QString::fromUtf8(l2u(defaulttimeformat()).c_str())));
     dateformatfield->setText(QString::fromUtf8(l2u(defaultdateformat()).c_str()));
     datetimeformatfield->setText(cg.readEntry("DateFormat",cg.readEntry("DateTimeFormat",QString::fromUtf8(l2u(defaultdatetimeformat()).c_str()))));
@@ -154,7 +154,7 @@ void hk_kdecsvexportdialog::ok_clicked(void)
     p_progressdialog->setWindowTitle(i18n("Exporting data..."));
     p_progressdialog->setMinimum(0);
     p_progressdialog->setMaximum(100);
-    connect(p_progressdialog,SIGNAL(cancelled()),this,SLOT(printing_cancelled()));
+    connect(p_progressdialog,SIGNAL(canceled()),this,SLOT(printing_cancelled()));
     p_progressdialog->show();
     qApp->processEvents();
   if ( execute()) accept();
@@ -180,20 +180,32 @@ void hk_kdecsvexportdialog::printing_cancelled(void)
 {
     cout <<"cancelclicked"<<endl;
     p_cancelimport=true;
-
 }
 
 void hk_kdecsvexportdialog::filebutton_clicked()
 {
-    p_file = KFileDialog::getSaveFileName( KUrl("kfiledialog:///csv"), "*.csv\n*", this,i18n("Select a CSV file"));
-    if (!p_file.isEmpty())
-      filefield->setText(p_file);
+  QStringList mimefilters ("application/octet-stream");
+  QString defaultmime="text/csv";
+  QString fclass;
+  
+  mimefilters << defaultmime;      
+  QFileDialog fd (this, QString(i18n("Select a CSV file")),
+    KFileWidget::getStartUrl(QString("kfiledialog:///csv"),fclass).toLocalFile());
+  fd.setMimeTypeFilters(mimefilters);
+  fd.selectMimeTypeFilter(defaultmime);
+  fd.setAcceptMode(QFileDialog::AcceptSave);
+  if (fd.exec() == QDialog::Accepted)
+  {
+    p_file = fd.selectedFiles().first();
+    filefield->setText(p_file);
+    KRecentDirs::add(fclass, p_file);
+  }
 }
 
 
 void hk_kdecsvexportdialog::buttons_enabled()
 {
-    if (    !filefield->text().isEmpty()
+    if ( !filefield->text().isEmpty()
         &&!columnseparatorfield->currentText().isEmpty()
         &&!tablefield->currentText().isEmpty()
         )
@@ -230,20 +242,19 @@ void hk_kdecsvexportdialog::set_database(hk_database* d)
     if (d && d->connection()->server_supports(hk_connection::SUPPORTS_VIEWS))
     {
         typefield->addItem(i18n("View"));
-
     }
     set_datasourcelist();
 }
 
 void hk_kdecsvexportdialog::listtype_changed()
 {
-switch (typefield->currentIndex())
-{
- case 1: p_datasourcetype=dt_query;break;
- case 2: p_datasourcetype=dt_view;break;
- default: p_datasourcetype=dt_table;
-}
-set_datasourcelist();
+  switch (typefield->currentIndex())
+  {
+    case 1: p_datasourcetype=dt_query;break;
+    case 2: p_datasourcetype=dt_view;break;
+    default: p_datasourcetype=dt_table;
+  }
+  set_datasourcelist();
 }
 
 
@@ -293,11 +304,9 @@ void hk_kdecsvexportdialog::keyPressEvent ( QKeyEvent * e )
   if (e->key()==Qt::Key_F1) help_clicked();
 }
 
-
-
 void hk_kdecsvexportdialog::help_clicked()
 {
-KToolInvocation::invokeHelp("exportcsv");
+  KHelpClient::invokeHelp("exportcsv");
 }
 
 

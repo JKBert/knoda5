@@ -21,7 +21,7 @@
 #include <qlineedit.h>
 #include <QKeyEvent>
 #include <qpushbutton.h>
-#include <kfiledialog.h>
+#include <QFileDialog>
 #include <klocale.h>
 #include <hk_database.h>
 #include <hk_connection.h>
@@ -29,32 +29,31 @@
 #include <kapplication.h>
 #include <kconfig.h>
 #include <kglobal.h>
-#include <ktoolinvocation.h>
-
-
+#include <KHelpClient>
+#include <KConfigGroup>
+#include <KFileWidget>
+#include <KRecentDirs>
 
 QProgressDialog* hk_kdexmlexportdialog::p_progressdialog=NULL;
 bool    hk_kdexmlexportdialog::p_cancelimport=false;
 
 
-
-
-
 hk_kdexmlexportdialog::hk_kdexmlexportdialog(const QString& table, QWidget* parent,  const char* name, bool modal, Qt::WFlags fl )
 : hk_kdexmlexportdialogbase( parent, name, modal, fl ), hk_reportxml()
 {
-    p_tablename=table;
-    p_datasourcetype=dt_table;
-    maindocumenttagfield->setText(QString::fromUtf8(l2u(maindocumenttag()).c_str()));
-    rowelementfield->setText(QString::fromUtf8(l2u(rowtag()).c_str()));
-    structurefield->setChecked(includetableschema());
-    structurefield->setText(i18n("include tableschema?"));
+  p_tablename=table;
+  p_datasourcetype=dt_table;
+  maindocumenttagfield->setText(QString::fromUtf8(l2u(maindocumenttag()).c_str()));
+  rowelementfield->setText(QString::fromUtf8(l2u(rowtag()).c_str()));
+  structurefield->setChecked(includetableschema());
+  structurefield->setText(i18n("include tableschema?"));
   KSharedConfigPtr c=KGlobal::config();
   KConfigGroup cg = c->group("XMLExport");
   QRect const &  rrect=QRect(0,0,500,300); 
   QRect g;
   
   g=cg.readEntry("Geometry",rrect);
+  filefield->setText(cg.readEntry("Filename",""));
   setGeometry(g);
 }
 
@@ -89,6 +88,7 @@ void hk_kdexmlexportdialog::ok_clicked()
   KSharedConfigPtr c=KGlobal::config();
   KConfigGroup cg= c->group("XMLExport");
   cg.writeEntry("Geometry",geometry());
+  cg.writeEntry("Filename",filefield->text());
 }
 
 void hk_kdexmlexportdialog::printing_cancelled(void)
@@ -112,11 +112,23 @@ void hk_kdexmlexportdialog::buttons_enabled()
 
 void hk_kdexmlexportdialog::filebutton_clicked()
 {
-    p_file = KFileDialog::getSaveFileName( KUrl("kfiledialog:///xml"), "*.xml|\n*", this,i18n("Select a XML file"));
-    if(!p_file.isEmpty())
-      filefield->setText(p_file);
+  QStringList mimefilters ("application/octet-stream");
+  QString xmlmime="text/xml";
+  QString fclass;
+  
+  mimefilters << xmlmime;      
+  QFileDialog fd (this, QString(i18n("Select a XML file")),
+    KFileWidget::getStartUrl(QString("kfiledialog:///xml"),fclass).toLocalFile());
+  fd.setMimeTypeFilters(mimefilters);
+  fd.selectMimeTypeFilter(xmlmime);
+  fd.setAcceptMode(QFileDialog::AcceptSave);
+  if (fd.exec() == QDialog::Accepted)
+  {
+    p_file = fd.selectedFiles().first();
+    filefield->setText(p_file);
+    KRecentDirs::add(fclass, p_file);
+  }
 }
-
 
 void hk_kdexmlexportdialog::set_usetablelist()
 {
@@ -135,9 +147,6 @@ void hk_kdexmlexportdialog::set_usequerylist()
     p_datasourcetype=dt_query;
     set_datasourcelist();
 }
-
-
-
 
 void hk_kdexmlexportdialog::set_datasourcelist(void)
 {
@@ -206,17 +215,15 @@ void hk_kdexmlexportdialog::set_database(hk_database* d)
     set_datasourcelist();
 }
 
-
 void hk_kdexmlexportdialog::help_clicked()
 {
-KToolInvocation::invokeHelp("exportxml");
+  KHelpClient::invokeHelp("exportxml");
 }
 
 bool hk_kdexmlexportdialog::set_progress(long int position,long int total,const hk_string&txt)
 {
     if (p_progressdialog)
     {
-
         p_progressdialog->setWindowTitle(QString::fromUtf8(l2u(txt).c_str()));
         p_progressdialog->setMaximum(total);
         p_progressdialog->setValue(position);
@@ -239,5 +246,4 @@ void hk_kdexmlexportdialog::keyPressEvent ( QKeyEvent * e )
   attributefield->setEnabled(!excelxmlfield->isChecked());
   set_excelxml(excelxmlfield->isChecked());
  }
- 
  

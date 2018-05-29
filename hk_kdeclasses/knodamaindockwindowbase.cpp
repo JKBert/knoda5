@@ -784,9 +784,9 @@ void knodamaindockwindowbase::slot_disconnect(void)
 void knodamaindockwindowbase::slot_open_localdatabase()
 {
   if (!p_connection) return;
-  QStringList l ("application/octet-stream");
-  QString xmime=QString::fromUtf8(l2u(p_connection->mimetype()).c_str());
-  l.append(xmime);
+  QStringList mimefilters ("application/octet-stream");
+  QString hkcmime=QString::fromUtf8(l2u(p_connection->mimetype()).c_str());
+  mimefilters << hkcmime;
   QString p="kfiledialog:///" + QString::fromUtf8(l2u(p_connection->drivername()).c_str());
   QString filename;
   QString fclass;
@@ -805,8 +805,8 @@ void knodamaindockwindowbase::slot_open_localdatabase()
   {
     QFileDialog fd (this, QString(ki18n("knoda5").toString()), 
       KFileWidget::getStartUrl(QString(p),fclass).toLocalFile());
-    fd.setMimeTypeFilters(l);
-    fd.selectMimeTypeFilter(xmime);
+    fd.setMimeTypeFilters(mimefilters);
+    fd.selectMimeTypeFilter(hkcmime);
     if (fd.exec() == QDialog::Accepted)
       filename = fd.selectedFiles().first();
   }
@@ -847,12 +847,13 @@ void knodamaindockwindowbase::slot_load_connection()
 {
   if (!p_private->p_drivermanager) return;
   QString fclass;
-  QStringList l ("application/octet-stream");
-  QString xmime="application/x-hk_connection";
-  l << xmime;
+  QStringList mimefilters ("application/octet-stream");
+  QString hkcmime="application/x-hk_connection";
+  
+  mimefilters << hkcmime;
   QFileDialog fd (this, QString(ki18n("knoda5").toString()), KFileWidget::getStartUrl(QString("kfiledialog:///hkc"),fclass).path());
-  fd.setMimeTypeFilters(l);
-  fd.selectMimeTypeFilter(xmime);
+  fd.setMimeTypeFilters(mimefilters);
+  fd.selectMimeTypeFilter(hkcmime);
   if (fd.exec() == QDialog::Accepted)
   {
     //execute new connection
@@ -881,14 +882,14 @@ void knodamaindockwindowbase::slot_load_connection()
 void knodamaindockwindowbase::slot_store_connection()
 {
   if (!p_database) return;
-  QStringList l ("application/octet-stream");
-  QString xmime="application/x-hk_connection";
+  QStringList mimefilters ("application/octet-stream");
+  QString hkcmime="application/x-hk_connection";
   QString fclass;
   
-  l << xmime;
+  mimefilters << hkcmime;
   QFileDialog fd (this, QString(ki18n("knoda5").toString()), KFileWidget::getStartUrl(QString("kfiledialog:///hkc"),fclass).path());
-  fd.setMimeTypeFilters(l);
-  fd.selectMimeTypeFilter(xmime);
+  fd.setMimeTypeFilters(mimefilters);
+  fd.selectMimeTypeFilter(hkcmime);
   fd.setAcceptMode(QFileDialog::AcceptSave);
   if (fd.exec() == QDialog::Accepted)
   {
