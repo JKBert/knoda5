@@ -15,7 +15,6 @@
 //$Revision: 1.32 $
 
 #include "hk_kdecsvimportdialog.h"
-#include "hk_kdecsvimportdialog.moc"
 #include <hk_database.h>
 
 #include <qcheckbox.h>
@@ -33,14 +32,17 @@
 #include <qwhatsthis.h>
 #include <qprogressdialog.h>
 #include <QKeyEvent>
-#include <kfiledialog.h>
+#include <QFileDialog>
+#include <KFileWidget>
 #include <klocale.h>
 #include <qapplication.h>
 #include <qframe.h>
 #include <kapplication.h>
 #include <kconfig.h>
 #include <kglobal.h>
-#include <ktoolinvocation.h>
+#include <KHelpClient>
+#include <KConfigGroup>
+#include <KRecentDirs>
 
 /*
  *  Constructs a hk_kdecsvimportdialog which is a child of 'parent', with the
@@ -83,7 +85,7 @@ hk_kdecsvimportdialog::hk_kdecsvimportdialog( QWidget* parent,  const char* name
     buttonOk->setText( i18n( "&OK"  ) );
     buttonCancel->setText( i18n( "&Cancel"  ) );
     buttonHelp->setText( i18n( "&Help"  ));
-    connect(charsetfield,SIGNAL(textChanged(const QString&)),this,SLOT(buttons_enabled()));
+    connect(charsetfield,SIGNAL(editTextChanged(const QString&)),this,SLOT(buttons_enabled()));
     
     KSharedConfigPtr c=KGlobal::config();
     KConfigGroup cg = c->group("CSVImport");
@@ -173,22 +175,29 @@ void hk_kdecsvimportdialog::ok_clicked(void)
   cg.writeEntry("Locale",localefield->currentText());
   cg.writeEntry("AppendRows",appendrows->isChecked());
   cg.writeEntry("ShowOptions",(morebutton->isChecked()));
-
 }
 
 
 void hk_kdecsvimportdialog::filebutton_clicked()
 {
-
-    p_file = KFileDialog::getOpenFileName( KUrl("kfiledialog:///csv"), "*.csv\n*", this,i18n("Select a CSV file"));
-    if (!p_file.isEmpty())
-      filefield->setText(p_file);
+  QString fclass;
+       
+  QFileDialog fd (this, QString(i18n("Select a CSV file")),
+    KFileWidget::getStartUrl(QString("kfiledialog:///csv"),fclass).toLocalFile());
+  fd.setMimeTypeFilters(QStringList("application/octet-stream") << "text/csv");
+  fd.selectMimeTypeFilter("text/csv");
+  if (fd.exec() == QDialog::Accepted)
+  {
+    p_file = fd.selectedFiles().first();
+    filefield->setText(p_file);
+    KRecentDirs::add(fclass, p_file);
+  }
 }
 
 
 void hk_kdecsvimportdialog::buttons_enabled()
 {
-    if (    !filefield->text().isEmpty()
+    if (!filefield->text().isEmpty()
         &&!columnseparatorfield->currentText().isEmpty()
         &&!tablename->currentText().isEmpty()
         )
@@ -196,7 +205,6 @@ void hk_kdecsvimportdialog::buttons_enabled()
     else buttonOk->setEnabled(false);
     autoincfield->setEnabled(!appendrows->isChecked());
     set_tablepreview();
-
 }
 
 
@@ -271,7 +279,7 @@ void hk_kdecsvimportdialog::keyPressEvent ( QKeyEvent * e )
 
 void hk_kdecsvimportdialog::help_clicked()
 {
-KToolInvocation::invokeHelp("importcsv");
+  KHelpClient::invokeHelp("importcsv");
 }
 
 

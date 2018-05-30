@@ -27,8 +27,8 @@
 #include <qlabel.h>
 #include <QKeyEvent>
 
-#include <kiconloader.h>
-#include <kstandarddirs.h>
+//tbp #include <kiconloader.h>
+//tbp #include <kstandarddirs.h>
 #include <kapplication.h>
 #include <kconfig.h>
 #include <kfiledialog.h>
@@ -36,11 +36,13 @@
 #include <klocale.h>
 #include <kconfig.h>
 #include <kglobal.h>
-#include <ktoolinvocation.h>
+// tbp #include <ktoolinvocation.h>
+#include <KConfigGroup>
+#include <KHelpClient>
 
 #include "hk_kdedblistview.h"
 #include "hk_kdenewdatabase.h"
-// TBP icons
+
 bool hk_kdeeximportdatabase::p_cancelcopying=false;
 QProgressDialog* hk_kdeeximportdatabase::p_progressdialog=NULL;
 
@@ -57,7 +59,6 @@ QProgressDialog* hk_kdeeximportdatabase::p_progressdialog=NULL;
 hk_kdeeximportdatabase::hk_kdeeximportdatabase( hk_database* db, hk_connection* con, enum_mode mode, QWidget* parent,  const char* name, bool modal, Qt::WFlags fl )
     : hk_kdeeximportdatabasebase( parent, name, modal, fl ), hk_dbvisible()
 {
-
   KSharedConfigPtr c=KGlobal::config();
   KConfigGroup cg = c->group(mode==m_import?"Importdatabase":"Exportdatabase");
   const QRect & rrect=QRect(0,0,500,300);
@@ -66,14 +67,12 @@ hk_kdeeximportdatabase::hk_kdeeximportdatabase( hk_database* db, hk_connection* 
   g=cg.readEntry("Geometry",rrect);
   setGeometry(g);
 
-
-
   p_mode=mode;
   p_connection=con;
   p_database=db;
-  KIconLoader* loader=KIconLoader::global();
-  loader->addAppDir("hk_kde4classes");
-  uploadbutton->setIcon( loader->loadIcon("go-next",KIconLoader::Small));
+  //tbp KIconLoader* loader=KIconLoader::global();
+  //tbp loader->addAppDir("hk_kde4classes");
+  uploadbutton->setIcon(QIcon::fromTheme("go-next"));
 
   if (!db ||!con)
   {
@@ -123,7 +122,8 @@ hk_kdeeximportdatabase::~hk_kdeeximportdatabase()
  * public slot
  */
 void hk_kdeeximportdatabase::upload_clicked()
-{  cerr <<"upload_clicked()"<<endl;
+{  
+    cerr <<"upload_clicked()"<<endl;
      hk_kdedblistview* lv=p_left;
      hk_connection* c=p_right->database()->connection();
      if (lv->is_tableitem())
@@ -366,11 +366,6 @@ void hk_kdeeximportdatabase::copy_whole_database(void)
     setCursor(crs);
 }
 
-
-
-
-
-
 void hk_kdeeximportdatabase::copy_all_tables(void)
 {
   hk_connection* c=p_right->database()->connection();
@@ -389,7 +384,7 @@ void hk_kdeeximportdatabase::copy_all_tables(void)
 
     p_progressdialog= new  QProgressDialog();
     p_progressdialog->resize(300,p_progressdialog->height());
-    connect(p_progressdialog,SIGNAL(cancelled()),this,SLOT(copying_cancelled()));
+    connect(p_progressdialog,SIGNAL(canceled()),this,SLOT(copying_cancelled()));
     p_progressdialog->show();
     qApp->processEvents();
 
@@ -520,7 +515,7 @@ void hk_kdeeximportdatabase::leftnewbutton_clicked()
   QString p="kfiledialog:///"+QString::fromUtf8(l2u(p_connection->drivername()).c_str());
   QString filename;
   filename=QString::null;
-  
+ /*tbp 
   if (p_connection->server_needs(hk_connection::NEEDS_DIRECTORY_AS_DATABASE))
   {
     KUrl seldir;
@@ -539,7 +534,7 @@ void hk_kdeeximportdatabase::leftnewbutton_clicked()
     filename=d->selectedFile();
     delete d;
   }
-
+*/
   
   if (!filename.isNull())
   {
@@ -586,6 +581,6 @@ void hk_kdeeximportdatabase::keyPressEvent ( QKeyEvent * e )
 
 void hk_kdeeximportdatabase::help_clicked()
 {
-KToolInvocation::invokeHelp("copy");
+  KHelpClient::invokeHelp("copy");
 }
 

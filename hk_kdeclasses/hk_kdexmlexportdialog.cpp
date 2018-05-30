@@ -100,27 +100,24 @@ void hk_kdexmlexportdialog::printing_cancelled(void)
 
 void hk_kdexmlexportdialog::buttons_enabled()
 {
-    if (    !filefield->text().isEmpty()
+    if (!filefield->text().isEmpty()
         &&!maindocumenttagfield->text().isEmpty()
         &&!rowelementfield->text().isEmpty()
-        &&!tablenamefield->currentText().isEmpty()
-        )
-        buttonOk->setEnabled(true);
-    else buttonOk->setEnabled(false);
+        &&!tablenamefield->currentText().isEmpty())
+      buttonOk->setEnabled(true);
+    else
+      buttonOk->setEnabled(false); 
 }
 
 
 void hk_kdexmlexportdialog::filebutton_clicked()
 {
-  QStringList mimefilters ("application/octet-stream");
-  QString xmlmime="text/xml";
   QString fclass;
-  
-  mimefilters << xmlmime;      
   QFileDialog fd (this, QString(i18n("Select a XML file")),
     KFileWidget::getStartUrl(QString("kfiledialog:///xml"),fclass).toLocalFile());
-  fd.setMimeTypeFilters(mimefilters);
-  fd.selectMimeTypeFilter(xmlmime);
+    
+  fd.setMimeTypeFilters(QStringList("application/octet-stream") << "text/xml");
+  fd.selectMimeTypeFilter("text/xml");
   fd.setAcceptMode(QFileDialog::AcceptSave);
   if (fd.exec() == QDialog::Accepted)
   {

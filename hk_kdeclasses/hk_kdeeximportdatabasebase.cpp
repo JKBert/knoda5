@@ -33,7 +33,8 @@
 #include <qlayout.h>
 #include <qtooltip.h>
 #include <qwhatsthis.h>
-//TBP TBT translation tr()->i18n()
+#include <KLocalizedString>
+
 /*
  *  Constructs a hk_kdeeximportdatabasebase as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.
@@ -58,7 +59,7 @@ hk_kdeeximportdatabasebase::hk_kdeeximportdatabasebase( QWidget* parent, const c
 
     copyfield = new QCheckBox(this);
     copyfield->setObjectName(QString::fromAscii("copyfield"));
-    copyfield->setChecked( TRUE );
+    copyfield->setChecked( true );
 
     hk_kdeeximportdatabasebaseLayout->addWidget( copyfield, 3, 2 );
 
@@ -82,7 +83,7 @@ hk_kdeeximportdatabasebase::hk_kdeeximportdatabasebase( QWidget* parent, const c
     QSizePolicy policy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     policy.setHeightForWidth(outputfield->sizePolicy().hasHeightForWidth());
     outputfield->setSizePolicy(policy);
-    outputfield->setReadOnly( TRUE );
+    outputfield->setReadOnly( true );
 
     hk_kdeeximportdatabasebaseLayout->addWidget( outputfield, 4, 0, 1, 3 );
 
@@ -127,7 +128,7 @@ hk_kdeeximportdatabasebase::hk_kdeeximportdatabasebase( QWidget* parent, const c
 
     overwritefield = new QCheckBox(this);
     overwritefield->setObjectName(QString::fromAscii("overwritefield"));
-    overwritefield->setChecked( TRUE );
+    overwritefield->setChecked( true );
 
     hk_kdeeximportdatabasebaseLayout->addWidget( overwritefield, 3, 0 );
 
@@ -175,8 +176,8 @@ hk_kdeeximportdatabasebase::hk_kdeeximportdatabasebase( QWidget* parent, const c
 
     buttonHelp = new QPushButton( this);
     buttonHelp->setObjectName(QString::fromAscii("buttonHelp"));
-    buttonHelp->setEnabled( TRUE );
-    buttonHelp->setAutoDefault( TRUE );
+    buttonHelp->setEnabled( true );
+    buttonHelp->setAutoDefault( true );
 
     hk_kdeeximportdatabasebaseLayout->addWidget( buttonHelp, 1, 3 );
     languageChange();
@@ -206,18 +207,18 @@ hk_kdeeximportdatabasebase::~hk_kdeeximportdatabasebase()
  */
 void hk_kdeeximportdatabasebase::languageChange()
 {
-    setWindowTitle( tr( "Form1" ) );
-    exitbutton->setText( tr( "E&xit" ) );
-    exitbutton->setShortcut( QKeySequence( tr( "Alt+X" ) ) );
-    copyfield->setText( tr( "Copy structure and data" ) );
+    setWindowTitle( i18n( "Form1" ) );
+    exitbutton->setText( i18n( "E&xit" ) );
+    exitbutton->setShortcut( QKeySequence( i18n( "Alt+X" ) ) );
+    copyfield->setText( i18n( "Copy structure and data" ) );
     uploadbutton->setText( QString::null );
     rightlabel->setText( QString::null );
-    rightnewbutton->setText( tr( "..." ) );
-    overwritefield->setText( tr( "Overwrite" ) );
+    rightnewbutton->setText( i18n( "..." ) );
+    overwritefield->setText( i18n( "Overwrite" ) );
     leftlabel->setText( QString::null );
-    leftnewbutton->setText( tr( "..." ) );
-    buttonHelp->setText( tr( "&Help" ) );
-    buttonHelp->setShortcut( QKeySequence( tr( "Alt+H" ) ) );
+    leftnewbutton->setText( i18n( "..." ) );
+    buttonHelp->setText( i18n( "&Help" ) );
+    buttonHelp->setShortcut( QKeySequence( i18n( "Alt+H" ) ) );
 }
 
 void hk_kdeeximportdatabasebase::download_clicked()

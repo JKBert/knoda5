@@ -21,6 +21,7 @@
 #include <hk_dsvisible.h>
 #include <hk_datasource.h>
 #include <hk_importcsv.h>
+
 class QVBoxLayout;
 class QHBoxLayout;
 class QGridLayout;
@@ -43,7 +44,7 @@ class hk_kdecsvimportdialog : public hk_kdecsvimportdialogbase  ,public hk_impor
 {
     Q_OBJECT
 
-        public:
+  public:
         hk_kdecsvimportdialog( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
         ~hk_kdecsvimportdialog();
         virtual void        set_datasource(hk_datasource* d);
@@ -51,7 +52,6 @@ class hk_kdecsvimportdialog : public hk_kdecsvimportdialogbase  ,public hk_impor
   public slots:
       virtual void help_clicked();
       virtual void morebutton_clicked();
-
 
     protected slots:
         virtual void filebutton_clicked();
@@ -65,13 +65,11 @@ class hk_kdecsvimportdialog : public hk_kdecsvimportdialogbase  ,public hk_impor
 virtual void keyPressEvent ( QKeyEvent * e );
  static  bool set_progress(long int,long int,const hk_string&);
     private:
-//  hk_importcsv* p_import;
         void before_execute(void);
         void after_execute(void);
         QString      p_file;
         QString      p_tab;
         static bool p_cancelimport;
-static        QProgressDialog* p_progressdialog;
-
+    static        QProgressDialog* p_progressdialog;
 };
 #endif                                            // HK_KDECSVIMPORTDIALOG_H

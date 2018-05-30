@@ -46,7 +46,7 @@ class hk_kdecsvimportdialogbase : public QDialog
     Q_OBJECT
 
 public:
-    hk_kdecsvimportdialogbase( QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+    hk_kdecsvimportdialogbase( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kdecsvimportdialogbase();
 
     QPushButton* buttonOk;
@@ -101,11 +101,8 @@ protected:
 
 protected slots:
     virtual void languageChange();
-
     virtual void buttons_enabled();
     virtual void filebutton_clicked();
-
-
 };
 
 #endif // HK_KDECSVIMPORTDIALOGBASE_H

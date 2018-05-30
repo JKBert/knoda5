@@ -253,11 +253,11 @@ hk_kdecsvexportdialogbase::hk_kdecsvexportdialogbase( QWidget* parent, const cha
     connect( buttonCancel, SIGNAL( clicked() ), this, SLOT( reject() ) );
     connect( filebutton, SIGNAL( clicked() ), this, SLOT( filebutton_clicked() ) );
     connect( filefield, SIGNAL( textChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
-    connect( columnseparatorfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
+    connect( columnseparatorfield, SIGNAL( currentTextChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
     connect( buttonOk, SIGNAL( clicked() ), this, SLOT( ok_clicked() ) );
     connect( buttonHelp, SIGNAL( clicked() ), this, SLOT( help_clicked() ) );
     connect( firstrow, SIGNAL( clicked() ), this, SLOT( buttons_enabled() ) );
-    connect( typefield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
+    connect( tablefield, SIGNAL( currentTextChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
     connect( textdelimiterfield, SIGNAL( textChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
     connect( typefield, SIGNAL( activated(int) ), this, SLOT( listtype_changed() ) );
     connect( morebutton, SIGNAL( toggled(bool) ), this, SLOT( morebutton_clicked() ) );

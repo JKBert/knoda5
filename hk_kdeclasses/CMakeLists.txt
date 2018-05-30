@@ -15,8 +15,8 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdecolumn.cpp
     hk_kdecsvexportdialog.cpp
     hk_kdecsvexportdialogbase.cpp
-  #[[  TBP  hk_kdecsvimportdialog.cpp
-    hk_kdecsvimportdialogbase.cpp ]]
+    hk_kdecsvimportdialog.cpp
+    hk_kdecsvimportdialogbase.cpp
     hk_kdedatabasesetting.cpp
     hk_kdedatabasesettingbase.cpp 
     hk_kdedatasource.cpp 
@@ -24,8 +24,8 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdedbdesigner.cpp 
     hk_kdedblistview.cpp
 #TBP    hk_kdedriverdialog.cpp
-#TBP    hk_kdeeximportdatabasebase.cpp
-#TBP    hk_kdeeximportdatabase.cpp
+    hk_kdeeximportdatabasebase.cpp
+    hk_kdeeximportdatabase.cpp
     hk_kdefilterdialogbase.cpp
     hk_kdefilterdialog.cpp
     hk_kdefinddialog.cpp
@@ -108,7 +108,6 @@ target_link_libraries(${LIB_MODULE_NAME}
 
 set_target_properties(${LIB_MODULE_NAME} PROPERTIES VERSION 1.0.0 SOVERSION 1)
 install(TARGETS ${LIB_MODULE_NAME} ${INSTALL_TARGETS_DEFAULT_ARGS})
-
 
 ########### install files ###############
 install(FILES  hk_kdereport.rc hk_kdeform.rc hk_kdetable.rc hk_kdequery.rc hk_kdeinterpreterdialog.rc hk_kdedbdesigner.rc

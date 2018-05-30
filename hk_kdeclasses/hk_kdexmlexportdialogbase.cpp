@@ -189,7 +189,7 @@ hk_kdexmlexportdialogbase::hk_kdexmlexportdialogbase( QWidget* parent, const cha
     connect( buttonCancel, SIGNAL( clicked() ), this, SLOT( reject() ) );
     connect( filebutton, SIGNAL( clicked() ), this, SLOT( filebutton_clicked() ) );
     connect( filefield, SIGNAL( textChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
-    connect( tablenamefield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
+    connect( tablenamefield, SIGNAL( currentTextChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
     connect( maindocumenttagfield, SIGNAL( textChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
     connect( buttonOk, SIGNAL( clicked() ), this, SLOT( ok_clicked() ) );
     connect( typefield, SIGNAL( activated(int) ), this, SLOT( listtype_changed() ) );

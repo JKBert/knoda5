@@ -16,6 +16,7 @@
 #define HK_KDEEXIMPORTDATABASE_H
 #include "hk_kdeeximportdatabasebase.h"
 #include <hk_dbvisible.h>
+
 class hk_connection;
 class hk_database;
 class hk_kdedblistview;
@@ -29,7 +30,7 @@ class hk_kdeeximportdatabase : public hk_kdeeximportdatabasebase, public hk_dbvi
 public:
     enum enum_mode{m_import,m_export};
     hk_kdeeximportdatabase( hk_database* db, hk_connection* con, enum_mode mode, QWidget* parent = 0, 
-			    const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
+			    const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kdeeximportdatabase();
 
 public slots:

@@ -36,7 +36,8 @@
 #include <qlayout.h>
 #include <qtooltip.h>
 #include <qwhatsthis.h>
-//TBP TBT translation tr()->i18n()
+#include <KLocalizedString>
+
 /*
  *  Constructs a hk_kdecsvimportdialogbase as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.
@@ -51,7 +52,7 @@ hk_kdecsvimportdialogbase::hk_kdecsvimportdialogbase( QWidget* parent, const cha
     setModal(modal);
     setMinimumSize( QSize( 600, 600 ) );
     setMaximumSize( QSize( 32767, 32767 ) );
-    setSizeGripEnabled( TRUE );
+    setSizeGripEnabled( true );
     hk_kdecsvimportdialogbaseLayout = new QGridLayout(this);
     hk_kdecsvimportdialogbaseLayout->setMargin(11);
     hk_kdecsvimportdialogbaseLayout->setSpacing(6);
@@ -64,25 +65,25 @@ hk_kdecsvimportdialogbase::hk_kdecsvimportdialogbase( QWidget* parent, const cha
 
     buttonOk = new QPushButton(this);
     buttonOk->setObjectName(QString::fromAscii("buttonOk"));
-    buttonOk->setEnabled( FALSE );
-    buttonOk->setAutoDefault( TRUE );
-    buttonOk->setDefault( TRUE );
+    buttonOk->setEnabled( false );
+    buttonOk->setAutoDefault( true );
+    buttonOk->setDefault( true );
     layout6->addWidget( buttonOk );
 
     buttonCancel = new QPushButton(this);
     buttonCancel->setObjectName(QString::fromAscii("buttonCancel"));
-    buttonCancel->setAutoDefault( TRUE );
+    buttonCancel->setAutoDefault( true );
     layout6->addWidget( buttonCancel );
 
     morebutton = new QPushButton(this);
     morebutton->setObjectName(QString::fromAscii("morebutton"));
-    morebutton->setCheckable( TRUE );
+    morebutton->setCheckable( true );
     layout6->addWidget( morebutton );
 
     buttonHelp = new QPushButton(this);
     buttonHelp->setObjectName(QString::fromAscii("buttonHelp"));
-    buttonHelp->setEnabled( TRUE );
-    buttonHelp->setAutoDefault( TRUE );
+    buttonHelp->setEnabled( true );
+    buttonHelp->setAutoDefault( true );
     layout6->addWidget( buttonHelp );
     Spacer1 = new QSpacerItem( 20, 290, QSizePolicy::Minimum, QSizePolicy::Expanding );
     layout6->addItem( Spacer1 );
@@ -135,7 +136,7 @@ hk_kdecsvimportdialogbase::hk_kdecsvimportdialogbase( QWidget* parent, const cha
 
     autoincfield = new QCheckBox(moreframe);
     autoincfield->setObjectName(QString::fromAscii("autoincfield"));
-    autoincfield->setChecked( TRUE );
+    autoincfield->setChecked( true );
 
     moreframeLayout->addWidget( autoincfield, 3, 1 );
 
@@ -161,15 +162,15 @@ hk_kdecsvimportdialogbase::hk_kdecsvimportdialogbase( QWidget* parent, const cha
 
     charsetfield = new QComboBox(moreframe);
     charsetfield->setObjectName(QString::fromAscii("charsetfield"));
-    charsetfield->setEditable( TRUE );
-    charsetfield->setAutoCompletion( TRUE );
+    charsetfield->setEditable( true );
+    charsetfield->setAutoCompletion( true );
 
     moreframeLayout->addWidget( charsetfield, 4, 1, 1, 2 );
 
     localefield = new QComboBox(moreframe);
     localefield->setObjectName("localefield");
-    localefield->setEditable( TRUE );
-    localefield->setAutoCompletion( TRUE );
+    localefield->setEditable( true );
+    localefield->setAutoCompletion( true );
 
     moreframeLayout->addWidget( localefield, 5, 1, 1, 2 );
 
@@ -217,8 +218,8 @@ hk_kdecsvimportdialogbase::hk_kdecsvimportdialogbase( QWidget* parent, const cha
 
     tablename = new QComboBox(this);
     tablename->setObjectName("tablename");
-    tablename->setEditable( TRUE );
-    tablename->setAutoCompletion( TRUE );
+    tablename->setEditable( true );
+    tablename->setAutoCompletion( true );
 
     layout5->addWidget( tablename, 1, 1, 1, 2 );
 
@@ -241,7 +242,7 @@ hk_kdecsvimportdialogbase::hk_kdecsvimportdialogbase( QWidget* parent, const cha
 
     firstrow = new QCheckBox(this);
     firstrow->setObjectName(QString::fromAscii("firstrow"));
-    firstrow->setChecked( TRUE );
+    firstrow->setChecked( true );
 
     layout5->addWidget( firstrow, 5, 1 );
     Spacer1_3_2 = new QSpacerItem( 475, 20, QSizePolicy::Expanding, QSizePolicy::Minimum );
@@ -249,7 +250,7 @@ hk_kdecsvimportdialogbase::hk_kdecsvimportdialogbase( QWidget* parent, const cha
 
     appendrows = new QCheckBox(this);
     appendrows->setObjectName(QString::fromAscii("appendrows"));
-    appendrows->setChecked( FALSE );
+    appendrows->setChecked( false );
 
     layout5->addWidget( appendrows, 2, 1 );
 
@@ -297,11 +298,11 @@ hk_kdecsvimportdialogbase::hk_kdecsvimportdialogbase( QWidget* parent, const cha
     connect( buttonCancel, SIGNAL( clicked() ), this, SLOT( reject() ) );
     connect( filebutton, SIGNAL( clicked() ), this, SLOT( filebutton_clicked() ) );
     connect( filefield, SIGNAL( textChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
-    connect( columnseparatorfield, SIGNAL( textChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
+    connect( columnseparatorfield, SIGNAL( editTextChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
     connect( buttonOk, SIGNAL( clicked() ), this, SLOT( ok_clicked() ) );
     connect( buttonHelp, SIGNAL( clicked() ), this, SLOT( help_clicked() ) );
     connect( firstrow, SIGNAL( clicked() ), this, SLOT( buttons_enabled() ) );
-    connect( tablename, SIGNAL( textChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
+    connect( tablename, SIGNAL( editTextChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
     connect( appendrows, SIGNAL( clicked() ), this, SLOT( buttons_enabled() ) );
     connect( textdelimiterfield, SIGNAL( textChanged(const QString&) ), this, SLOT( buttons_enabled() ) );
     connect( morebutton, SIGNAL( toggled(bool) ), this, SLOT( morebutton_clicked() ) );
@@ -330,42 +331,42 @@ hk_kdecsvimportdialogbase::~hk_kdecsvimportdialogbase()
  */
 void hk_kdecsvimportdialogbase::languageChange()
 {
-    setWindowTitle( tr( "Text File Import Dialog" ) );
-    buttonOk->setText( tr( "&OK" ) );
-    buttonOk->setShortcut( QKeySequence( tr( "Alt+O" ) ) );
-    buttonCancel->setText( tr( "&Cancel" ) );
-    buttonCancel->setShortcut( QKeySequence( tr( "Alt+C" ) ) );
-    morebutton->setText( tr( "O&ptions" ) );
-    morebutton->setShortcut( QKeySequence( tr( "Alt+P" ) ) );
-    buttonHelp->setText( tr( "&Help" ) );
-    buttonHelp->setShortcut( QKeySequence( tr( "Alt+H" ) ) );
-    textLabel1->setText( tr( "Preview:" ) );
+    setWindowTitle( i18n( "Text File Import Dialog" ) );
+    buttonOk->setText( i18n( "&OK" ) );
+    buttonOk->setShortcut( QKeySequence( i18n( "Alt+O" ) ) );
+    buttonCancel->setText( i18n( "&Cancel" ) );
+    buttonCancel->setShortcut( QKeySequence( i18n( "Alt+C" ) ) );
+    morebutton->setText( i18n( "O&ptions" ) );
+    morebutton->setShortcut( QKeySequence( i18n( "Alt+P" ) ) );
+    buttonHelp->setText( i18n( "&Help" ) );
+    buttonHelp->setShortcut( QKeySequence( i18n( "Alt+H" ) ) );
+    textLabel1->setText( i18n( "Preview:" ) );
     autoincfield->setText( QString::null );
-    autoincfield -> setToolTip( tr( "First row contains field names." ) );
-    datetimeformatfield -> setToolTip( tr( "Name of new or existing table." ) );
-    dateformatfield -> setToolTip( tr( "Name of new or existing table." ) );
-    datetimeformatlabel->setText( tr( "Datetime format" ) );
-    localelabel->setText( tr( "Locale" ) );
-    timeformatfield -> setToolTip( tr( "Name of new or existing table." ) );
-    charsetlabel->setText( tr( "Charset" ) );
-    timeformatlabel->setText( tr( "Time format" ) );
-    autoinclabel->setText( tr( "Detect \"Autoincrement\" " ) );
-    dateformatlabel->setText( tr( "Date format" ) );
-    TextLabel1_3->setText( tr( "Field names in first row" ) );
-    TextLabel3->setText( tr( "Text delimiter" ) );
-    lblAppend->setText( tr( "Append data" ) );
-    TextLabel1_2->setText( tr( "Tablename" ) );
-    textdelimiterfield->setText( tr( "\"" ) );
-    textdelimiterfield -> setToolTip( tr( "The character that surrounds text (can be blank)." ) );
+    autoincfield -> setToolTip( i18n( "First row contains field names." ) );
+    datetimeformatfield -> setToolTip( i18n( "Name of new or existing table." ) );
+    dateformatfield -> setToolTip( i18n( "Name of new or existing table." ) );
+    datetimeformatlabel->setText( i18n( "Datetime format" ) );
+    localelabel->setText( i18n( "Locale" ) );
+    timeformatfield -> setToolTip( i18n( "Name of new or existing table." ) );
+    charsetlabel->setText( i18n( "Charset" ) );
+    timeformatlabel->setText( i18n( "Time format" ) );
+    autoinclabel->setText( i18n( "Detect \"Autoincrement\" " ) );
+    dateformatlabel->setText( i18n( "Date format" ) );
+    TextLabel1_3->setText( i18n( "Field names in first row" ) );
+    TextLabel3->setText( i18n( "Text delimiter" ) );
+    lblAppend->setText( i18n( "Append data" ) );
+    TextLabel1_2->setText( i18n( "Tablename" ) );
+    textdelimiterfield->setText( i18n( "\"" ) );
+    textdelimiterfield -> setToolTip( i18n( "The character that surrounds text (can be blank)." ) );
     firstrow->setText( QString::null );
-    firstrow -> setToolTip( tr( "First row contains field names." ) );
+    firstrow -> setToolTip( i18n( "First row contains field names." ) );
     appendrows->setText( QString::null );
-    appendrows -> setToolTip( tr( "Don't overwrite data in table." ) );
-    TextLabel1->setText( tr( "Filename" ) );
-    filefield -> setToolTip( tr( "The data to import." ) );
-    filebutton->setText( tr( "..." ) );
-    TextLabel2->setText( tr( "Column Separator" ) );
-    columnseparatorfield -> setToolTip( tr( "Pick the character that separates columns in text file." ) );
+    appendrows -> setToolTip( i18n( "Don't overwrite data in table." ) );
+    TextLabel1->setText( i18n( "Filename" ) );
+    filefield -> setToolTip( i18n( "The data to import." ) );
+    filebutton->setText( i18n( "..." ) );
+    TextLabel2->setText( i18n( "Column Separator" ) );
+    columnseparatorfield -> setToolTip( i18n( "Pick the character that separates columns in text file." ) );
 }
 
 void hk_kdecsvimportdialogbase::buttons_enabled()

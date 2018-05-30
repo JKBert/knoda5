@@ -184,15 +184,12 @@ void hk_kdecsvexportdialog::printing_cancelled(void)
 
 void hk_kdecsvexportdialog::filebutton_clicked()
 {
-  QStringList mimefilters ("application/octet-stream");
-  QString defaultmime="text/csv";
   QString fclass;
   
-  mimefilters << defaultmime;      
   QFileDialog fd (this, QString(i18n("Select a CSV file")),
     KFileWidget::getStartUrl(QString("kfiledialog:///csv"),fclass).toLocalFile());
-  fd.setMimeTypeFilters(mimefilters);
-  fd.selectMimeTypeFilter(defaultmime);
+  fd.setMimeTypeFilters(QStringList("application/octet-stream") << "text/csv");
+  fd.selectMimeTypeFilter("text/csv");
   fd.setAcceptMode(QFileDialog::AcceptSave);
   if (fd.exec() == QDialog::Accepted)
   {

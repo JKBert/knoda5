@@ -15,7 +15,7 @@
 //$Revision: 1.51 $
 #include "knodamaindockwindow.h"
 #include "hk_kdedblistview.h"
-//TBP #include "hk_kdecsvimportdialog.h"
+#include "hk_kdecsvimportdialog.h"
 #include "hk_kdecsvexportdialog.h"
 #include "hk_kdexmlexportdialog.h"
 #include "hk_kdedatabasesetting.h"
@@ -629,13 +629,13 @@ void knodamaindockwindow::rename_clicked()
 
 void knodamaindockwindow::importcsv_clicked()
 {
-  /* TBP  if (p_database==NULL) return;
+    if (p_database==NULL) return;
     hk_kdecsvimportdialog* i= new hk_kdecsvimportdialog(0,0,true);
     hk_datasource* ds=p_database->new_table();
 //   ds->wanna_debug(true);
     i->set_datasource(ds);
     i->exec();
-    delete i; */
+    delete i;
 }
 
 void knodamaindockwindow::exportcsv_clicked()

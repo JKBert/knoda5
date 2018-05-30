@@ -16,7 +16,7 @@
 #include "knodamaindockwindowbase.h"
 #include "knodamaindockwindow.h"
 #include "hk_kdedblistview.h"
-// TBP #include "hk_kdeeximportdatabase.h"
+#include "hk_kdeeximportdatabase.h"
 #include "hk_kdedbdesigner.h"
 #include <KFileWidget>
 #include <KRecentDirs>
@@ -609,10 +609,10 @@ void knodamaindockwindowbase::exportdbdriver_selected(int index)
 	     //internal_set_database(con->defaultdatabase());
 	   }
        if (con->connect())
-        {
-	/* TBP   hk_kdeeximportdatabase* dialog=new   hk_kdeeximportdatabase(p_database,con,hk_kdeeximportdatabase::m_export);
-	   dialog->exec();
-           delete dialog;  */
+       {
+	     hk_kdeeximportdatabase* dialog=new   hk_kdeeximportdatabase(p_database,con,hk_kdeeximportdatabase::m_export);
+	     dialog->exec();
+         delete dialog;
 	}
 
    delete con;
@@ -653,11 +653,11 @@ void knodamaindockwindowbase::importdbdriver_selected(int index)
 	     //internal_set_database(con->defaultdatabase());
 	   }
        if (con->connect())
-        {
-	   /* TBP hk_kdeeximportdatabase* dialog=new   hk_kdeeximportdatabase(p_database,con,hk_kdeeximportdatabase::m_import);
-	   dialog->exec();
-           delete dialog; */
-	}
+       {
+	     hk_kdeeximportdatabase* dialog=new   hk_kdeeximportdatabase(p_database,con,hk_kdeeximportdatabase::m_import);
+	     dialog->exec();
+         delete dialog;
+	   }
 
    delete con;
 
@@ -784,9 +784,6 @@ void knodamaindockwindowbase::slot_disconnect(void)
 void knodamaindockwindowbase::slot_open_localdatabase()
 {
   if (!p_connection) return;
-  QStringList mimefilters ("application/octet-stream");
-  QString hkcmime=QString::fromUtf8(l2u(p_connection->mimetype()).c_str());
-  mimefilters << hkcmime;
   QString p="kfiledialog:///" + QString::fromUtf8(l2u(p_connection->drivername()).c_str());
   QString filename;
   QString fclass;
@@ -803,10 +800,12 @@ void knodamaindockwindowbase::slot_open_localdatabase()
   }
   else
   {
+    QString currentmime=QString::fromUtf8(l2u(p_connection->mimetype()).c_str());
     QFileDialog fd (this, QString(ki18n("knoda5").toString()), 
       KFileWidget::getStartUrl(QString(p),fclass).toLocalFile());
-    fd.setMimeTypeFilters(mimefilters);
-    fd.selectMimeTypeFilter(hkcmime);
+
+    fd.setMimeTypeFilters(QStringList("application/octet-stream") << currentmime );
+    fd.selectMimeTypeFilter(currentmime);
     if (fd.exec() == QDialog::Accepted)
       filename = fd.selectedFiles().first();
   }
@@ -847,13 +846,10 @@ void knodamaindockwindowbase::slot_load_connection()
 {
   if (!p_private->p_drivermanager) return;
   QString fclass;
-  QStringList mimefilters ("application/octet-stream");
-  QString hkcmime="application/x-hk_connection";
   
-  mimefilters << hkcmime;
   QFileDialog fd (this, QString(ki18n("knoda5").toString()), KFileWidget::getStartUrl(QString("kfiledialog:///hkc"),fclass).path());
-  fd.setMimeTypeFilters(mimefilters);
-  fd.selectMimeTypeFilter(hkcmime);
+  fd.setMimeTypeFilters(QStringList("application/octet-stream") << "application/x-hk_connection");
+  fd.selectMimeTypeFilter("application/x-hk_connection");
   if (fd.exec() == QDialog::Accepted)
   {
     //execute new connection
@@ -882,14 +878,11 @@ void knodamaindockwindowbase::slot_load_connection()
 void knodamaindockwindowbase::slot_store_connection()
 {
   if (!p_database) return;
-  QStringList mimefilters ("application/octet-stream");
-  QString hkcmime="application/x-hk_connection";
   QString fclass;
   
-  mimefilters << hkcmime;
   QFileDialog fd (this, QString(ki18n("knoda5").toString()), KFileWidget::getStartUrl(QString("kfiledialog:///hkc"),fclass).path());
-  fd.setMimeTypeFilters(mimefilters);
-  fd.selectMimeTypeFilter(hkcmime);
+  fd.setMimeTypeFilters(QStringList("application/octet-stream") << "application/x-hk_connection");
+  fd.selectMimeTypeFilter("application/x-hk_connection");
   fd.setAcceptMode(QFileDialog::AcceptSave);
   if (fd.exec() == QDialog::Accepted)
   {
