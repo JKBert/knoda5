@@ -3,8 +3,10 @@
 // Original version of the file for knoda -Knorr's Datenbank.
 // copyright (c) 2010-2015 Patrik Hanak <hanakp@users.sourceforge.net>
 // KDE 4 port of the file for knoda4 -Knorr's Datenbank.
+// copyright (c) 2018 Patrik Hanak <hanakp@users.sourceforge.net>
+// KDE5 port of the file for knoda5 -Knorr's Datenbank.
 //
-// This file is part of the knoda4 -Knorr's Datenbank.
+// This file is part of the knoda5 -Knorr's Datenbank.
 // This file may be distributed and/or modified under the terms of the
 // GNU General Public License version 2 as published by the Free Software
 // Foundation and appearing in the file COPYING included in the
