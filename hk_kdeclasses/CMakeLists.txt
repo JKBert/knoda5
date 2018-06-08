@@ -23,7 +23,7 @@ set(hk_kdeclasses_LIB_SRCS
     hk_kdedate.cpp
     hk_kdedbdesigner.cpp 
     hk_kdedblistview.cpp
-#TBP    hk_kdedriverdialog.cpp
+    hk_kdedriverdialog.cpp
     hk_kdeeximportdatabasebase.cpp
     hk_kdeeximportdatabase.cpp
     hk_kdefilterdialogbase.cpp

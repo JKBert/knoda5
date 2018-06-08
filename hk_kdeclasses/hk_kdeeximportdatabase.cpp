@@ -27,16 +27,14 @@
 #include <qlabel.h>
 #include <QKeyEvent>
 
-//tbp #include <kiconloader.h>
-//tbp #include <kstandarddirs.h>
 #include <kapplication.h>
 #include <kconfig.h>
-#include <kfiledialog.h>
+#include <QFileDialog>
+#include <KFileWidget>
 #include <kdirselectdialog.h>
 #include <klocale.h>
 #include <kconfig.h>
 #include <kglobal.h>
-// tbp #include <ktoolinvocation.h>
 #include <KConfigGroup>
 #include <KHelpClient>
 
@@ -70,8 +68,6 @@ hk_kdeeximportdatabase::hk_kdeeximportdatabase( hk_database* db, hk_connection* 
   p_mode=mode;
   p_connection=con;
   p_database=db;
-  //tbp KIconLoader* loader=KIconLoader::global();
-  //tbp loader->addAppDir("hk_kde4classes");
   uploadbutton->setIcon(QIcon::fromTheme("go-next"));
 
   if (!db ||!con)
@@ -508,41 +504,37 @@ void hk_kdeeximportdatabase::copy_all_reports(void)
 void hk_kdeeximportdatabase::leftnewbutton_clicked()
 {
   if (!p_connection) return;
-  QStringList l;
-  QString xmime=QString::fromUtf8(l2u(p_connection->mimetype()).c_str());
-  l.append(xmime);
-  l.append("all/allfiles");
   QString p="kfiledialog:///"+QString::fromUtf8(l2u(p_connection->drivername()).c_str());
-  QString filename;
+  QString filename, fclass;
   filename=QString::null;
- /*tbp 
+
   if (p_connection->server_needs(hk_connection::NEEDS_DIRECTORY_AS_DATABASE))
   {
-    KUrl seldir;
+    QFileDialog fd (this, QString(ki18n("Select directory").toString()), 
+      KFileWidget::getStartUrl(QString(p),fclass).toLocalFile());
     
-    seldir=KFileDialog::getExistingDirectoryUrl(p,this,i18n("Select directory"));
-    filename=seldir.directory(NULL);
-    if (!filename.isNull())
-      if (!seldir.fileName().isEmpty())
-        filename+=seldir.fileName();
+    fd.setFileMode(QFileDialog::Directory);
+    fd.setOption(QFileDialog::ShowDirsOnly, true);
+    if (fd.exec() == QDialog::Accepted)
+      filename = fd.directory().absolutePath();
   }
   else
   {
-    KFileDialog* d=new KFileDialog(KUrl(p),QString::null,this);
-    d->setMimeFilter(l,xmime);
-    d->exec();
-    filename=d->selectedFile();
-    delete d;
+    QString currentmime=QString::fromUtf8(l2u(p_connection->mimetype()).c_str());
+    QFileDialog fd (this, QString(ki18n("knoda5").toString()), 
+      KFileWidget::getStartUrl(QString(p),fclass).toLocalFile());
+
+    fd.setMimeTypeFilters(QStringList("application/octet-stream") << currentmime );
+    fd.selectMimeTypeFilter(currentmime);
+    if (fd.exec() == QDialog::Accepted)
+      filename = fd.selectedFiles().first();
   }
-*/
-  
   if (!filename.isNull())
   {
      leftdatabasefield->insertItem(0,filename);
      leftdatabasefield->setCurrentIndex(0);
      slot_database_selected(0);
   }
-
 }
 
 

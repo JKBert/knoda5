@@ -23,8 +23,7 @@
 #include <kglobal.h>
 
 #include <KLocalizedString>
-#include <kfiledialog.h>
-#include <kdirselectdialog.h>
+#include <QFileDialog>
 
 #include "hk_kdedriverdialog.h"
 #include "hk_kdeform.h"
@@ -44,7 +43,6 @@
 #include <qmainwindow.h>
 #include <qwidget.h>
 #include <qmenubar.h>
-//TBP #include <qmime.h>
 #include <qdialog.h>
 #include <qlineedit.h>
 #include <qpushbutton.h>
@@ -293,30 +291,26 @@ hk_dsquery* new_query(hk_class* parent)
 
 hk_string hk_kdefiledialog(const hk_string&  url,enum_operationmode mode)
 {
-hk_string result;
-/* TBP KUrl u= KUrl(url.c_str());
+  hk_string result;
+  QUrl u = QUrl::fromLocalFile(url.c_str());
+  QFileDialog fd (KApplication::activeWindow(), QString(i18n("knoda5")), u.path().isEmpty()?QString():u.toLocalFile());
 
-KFileDialog* d=new KFileDialog(u.directory().size()>0?u.directory():QString::null,
-			QString::null,NULL);
-if (mode==file_save) d->setOperationMode(KFileDialog::Saving);
-d->exec();
-QString filename=d->selectedFile();
-  if (!filename.isNull())
-     result=u2l(filename.toUtf8().data());
-delete d; */
- return result;
+  if (mode==file_save)
+    fd.setAcceptMode(QFileDialog::AcceptSave);
+  if (fd.exec() == QDialog::Accepted)
+      result = u2l(fd.selectedFiles().first().toUtf8().data());
+  return result;
 }
 
 hk_string hk_kdedirectorydialog(const hk_string& url)
 {
   hk_string result;
- /* TBP KUrl u = KUrl(url.c_str());  
-  KUrl dir = KFileDialog::getExistingDirectoryUrl(url.size()>0?u.url():QString::null);
+  QUrl u = QUrl::fromLocalFile(url.c_str());
   
-  if (!dir.path().isNull())
-     result=u2l(dir.path().toUtf8().data());
-  else
-    result=url; */
+  result=u2l(QFileDialog::getExistingDirectory(KApplication::activeWindow(), QString(i18n("knoda5")),
+   u.path().isEmpty()?QString():u.toLocalFile(), QFileDialog::ShowDirsOnly).toUtf8().data());
+  if (result.empty())
+    result=url;
   return result;
 }
 
@@ -337,7 +331,6 @@ void set_kdestandarddialogs(void)
     hk_database::set_filedialog(&hk_kdefiledialog);
     hk_database::set_directorydialog(&hk_kdedirectorydialog);
    // hk_datasource::set_enablefunction(&hk_kdedatasourceenablefunction,10000);
-
 }
 
 
@@ -358,11 +351,11 @@ hk_string hk_kdetranslate(const hk_string& t)
 
  hk_string hk_kdedriverselectdialog(void)
 {
-  /*TBP  hk_kdedriverdialog* c = new hk_kdedriverdialog();
+    hk_kdedriverdialog* c = new hk_kdedriverdialog();
     c->exec();
     hk_string p=c->drivername();
     delete c;
-    return p; */ return "";
+    return p;
 }
 
 

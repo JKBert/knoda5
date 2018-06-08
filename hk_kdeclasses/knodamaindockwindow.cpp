@@ -43,7 +43,6 @@
 #include <qmenu.h>
 #include <kcombobox.h>
 #include <klocale.h>
-//TBP #include <kservice.h>
 #include <kapplication.h>
 #include <kactionmenu.h>
 #include <kmenu.h>

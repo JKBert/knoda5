@@ -63,13 +63,12 @@ case "$1" in
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdequerypart/hk_kde5querypart.desktop $USERSERVICESDIR/hk_kde5querypart.desktop
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdereportpart/hk_kde5reportpart.desktop $USERSERVICESDIR/hk_kde5reportpart.desktop
         ln -s ${CMAKE_SOURCE_DIR}/hk_kdetablepart/hk_kde5tablepart.desktop $USERSERVICESDIR/hk_kde5tablepart.desktop
-: << 'COMMENT' TBP
 # to use user mime types
         ! [ -d ~/.kde4/share/mime ] && mkdir -p ~/.kde4/share/mime/packages
         ln -s ~/.kde4/share/mime ~/.local/share/mime
-        ln -s ${CMAKE_SOURCE_DIR}/knoda/knoda4-mime.xml ~/.kde4/share/mime/packages/knoda4-mime.xml
+        ln -s ${CMAKE_SOURCE_DIR}/knoda/knoda5-mime.xml ~/.kde4/share/mime/packages/knoda5-mime.xml
         update-mime-database ~/.local/share/mime/
-COMMENT
+
         echo Successfully linked
         exit 0
         ;;
@@ -112,12 +111,11 @@ COMMENT
         unlink $USERSERVICESDIR/hk_kde5querypart.desktop
         unlink $USERSERVICESDIR/hk_kde5reportpart.desktop
         unlink $USERSERVICESDIR/hk_kde5tablepart.desktop
-: << 'COMMENT' TBP
 # user mime types
-        unlink ~/.kde4/share/mime/packages/knoda4-mime.xml
+        unlink ~/.kde4/share/mime/packages/knoda5-mime.xml
         update-mime-database ~/.local/share/mime/
         unlink ~/.local/share/mime
-COMMENT
+
         echo Successfully unlinked
         exit 0
         ;;
