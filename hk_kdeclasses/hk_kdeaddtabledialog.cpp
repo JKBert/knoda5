@@ -4,7 +4,7 @@
 // copyright (c) 2010-2015 Patrik Hanak <hanakp@users.sourceforge.net>
 // KDE 4 port of the file for hk_kde4classes library
 // copyright (c) 2018 Patrik Hanak <hanakp@users.sourceforge.net>
-// KDE5 port of the file for hk_kde4classes library
+// KDE5 port of the file for hk_kde5classes library
 //
 // This file is part of the hk_kde5classes library.
 // This file may be distributed and/or modified under the terms of the
