@@ -3,12 +3,10 @@
 # prints file names with number of ocurrences
 
 C1="TB"
-C2="P"
+C2="D"
 
 for D in `find . -type f`
 do
     NM=`grep "$C1$C2" $D | wc -l`
     if [ $NM -ne 0 ] ; then echo $D $NM; fi
 done
-
-
