@@ -14,14 +14,6 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
-/****************************************************************************
-** Form interface generated from reading ui file 'propertyeditorreport.ui'
-**
-** Created: Mi Jan 25 19:10:36 2006
-**      by: The User Interface Compiler ($Id: hk_kdereportpropertybase.h,v 1.31 2006/01/25 18:44:33 knorr Exp $)
-**
-** WARNING! All changes made in this file will be lost!
-****************************************************************************/
 
 #ifndef HK_KDEREPORTPROPERTYBASE_H
 #define HK_KDEREPORTPROPERTYBASE_H

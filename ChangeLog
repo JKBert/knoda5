@@ -1,6 +1,8 @@
-XXX 2018 - Hanak Patrik <knoda4-admins@lists.sourceforge.net>
+June 2018 - Hanak Patrik <knoda4-admins@lists.sourceforge.net>
     o V 0.12.0 knoda5 & hk_kde5classes
      =============================
+        o targets renamed: knoda4 -> knoda5, hk_kde4classes -> hk_kde5classes
+        o code rewritten to use KF5 and Qt5 libraries with Qt4 support
 
 September 2016 - Hanak Patrik <knoda4-admins@lists.sourceforge.net>
     o V 0.11.1 knoda4 & hk_kde4classes

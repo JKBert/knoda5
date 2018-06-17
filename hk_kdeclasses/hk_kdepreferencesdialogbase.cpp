@@ -14,14 +14,6 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
-/****************************************************************************
-** Form implementation generated from reading ui file 'preferencesdialog.ui'
-**
-** Created: Fr Jan 6 16:47:40 2006
-**      by: The User Interface Compiler ($Id: hk_kdepreferencesdialogbase.cpp,v 1.10 2006/01/23 19:07:16 knorr Exp $)
-**
-** WARNING! All changes made in this file will be lost!
-****************************************************************************/
 
 #include "hk_kdepreferencesdialogbase.h"
 

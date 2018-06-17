@@ -14,7 +14,7 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
-//$Revision: 1.9 $
+
 #ifndef HK_KDEREPORTSECTIONDIALOG_H
 #define HK_KDEREPORTSECTIONDIALOG_H
 #include "hk_kdereportsectiondialogbase.h"

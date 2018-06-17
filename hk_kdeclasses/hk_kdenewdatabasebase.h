@@ -14,14 +14,6 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
-/****************************************************************************
-** Form interface generated from reading ui file 'newdatabasedialog.ui'
-**
-** Created: Sa Jul 30 19:25:02 2005
-**      by: The User Interface Compiler ($Id: hk_kdenewdatabasebase.h,v 1.2 2005/07/31 12:39:05 knorr Exp $)
-**
-** WARNING! All changes made in this file will be lost!
-****************************************************************************/
 
 #ifndef HK_KDENEWDATABASEDIALOGBASE_H
 #define HK_KDENEWDATABASEDIALOGBASE_H

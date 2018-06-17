@@ -14,7 +14,7 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
-//$Revision: 1.116 $
+
 #include "hk_kdeproperty.h"
 #include "hk_visible.h"
 #include "hk_dsvisible.h"

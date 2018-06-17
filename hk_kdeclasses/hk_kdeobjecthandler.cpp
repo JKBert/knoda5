@@ -14,7 +14,6 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
- //$Revision: 1.7 $
  
 #include "hk_kdeobjecthandler.h"
 #include "hk_kdedblistview.h"

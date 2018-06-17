@@ -14,14 +14,6 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
-/****************************************************************************
-** Form implementation generated from reading ui file 'reportsection.ui'
-**
-** Created: Sa Jul 30 22:09:41 2005
-**      by: The User Interface Compiler ($Id: hk_kdereportsectiondialogbase.cpp,v 1.5 2005/07/31 12:39:05 knorr Exp $)
-**
-** WARNING! All changes made in this file will be lost!
-****************************************************************************/
 
 #include "hk_kdereportsectiondialogbase.h"
 
