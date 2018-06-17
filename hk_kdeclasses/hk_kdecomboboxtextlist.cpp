@@ -1,10 +1,12 @@
 // ****************************************************************************
-// copyright (c) 2000-2005 Horst Knorr <hk_classes@knoda.org>  
+// copyright (c) 2000-2005 Horst Knorr <hk_classes@knoda.org>
 // Original version of the file for hk_kdeclasses library
-// copyright (c) 2010-2014 Patrik Hanak <hanakp@users.sourceforge.net>
+// copyright (c) 2010-2016 Patrik Hanak <hanakp@users.sourceforge.net>
 // KDE 4 port of the file for hk_kde4classes library
+// copyright (c) 2018 Patrik Hanak <hanakp@users.sourceforge.net>
+// KDE5 port of the file for hk_kde5classes library
 //
-// This file is part of the hk_kde4classes library.
+// This file is part of the hk_kde5classes library.
 // This file may be distributed and/or modified under the terms of the
 // GNU Library Public License version 2 as published by the Free Software
 // Foundation and appearing in the file LGPL included in the
@@ -12,20 +14,13 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
+
 #include "hk_kdecomboboxtextlist.h"
 #include <qtablewidget.h>
 #include <qpushbutton.h>
 #include <QKeyEvent>
 #include <hk_dscombobox.h>
 
-
-/* 
- *  Constructs a hk_kdecomboboxtextlist which is a child of 'parent', with the 
- *  name 'name' and widget flags set to 'f' 
- *
- *  The dialog will by default be modeless, unless you set 'modal' to
- *  TRUE to construct a modal dialog.
- */
 hk_kdecomboboxtextlist::hk_kdecomboboxtextlist( QWidget* parent, hk_dscombobox* c, const char* name, bool modal, Qt::WFlags fl )
     : hk_kdecomboboxtextlistbase( parent, name, modal, fl )
 {

@@ -1,7 +1,7 @@
 // ****************************************************************************
 // copyright (c) 2000-2005 Horst Knorr <hk_classes@knoda.org>
 // Original version of the file for hk_kdeclasses library
-// copyright (c) 2010-2014 Patrik Hanak <hanakp@users.sourceforge.net>
+// copyright (c) 2010-2016 Patrik Hanak <hanakp@users.sourceforge.net>
 // KDE 4 port of the file for hk_kde4classes library
 // copyright (c) 2018 Patrik Hanak <hanakp@users.sourceforge.net>
 // KDE5 port of the file for hk_kde5classes library
@@ -14,14 +14,6 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
-/****************************************************************************
-** Form interface generated from reading ui file 'hk_kdeaddtabledialogbase.ui'
-**
-** Created: Sa Jul 30 18:12:32 2005
-**      by: The User Interface Compiler ($Id: hk_kdeaddtabledialogbase.h,v 1.2 2005/07/31 12:39:05 knorr Exp $)
-**
-** WARNING! All changes made in this file will be lost!
-****************************************************************************/
 
 #ifndef HK_KDEADDTABLEDIALOGBASE_H
 #define HK_KDEADDTABLEDIALOGBASE_H

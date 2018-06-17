@@ -1,10 +1,12 @@
 // ****************************************************************************
-// copyright (c) 2000-2005 Horst Knorr <hk_classes@knoda.org>  
+// copyright (c) 2000-2005 Horst Knorr <hk_classes@knoda.org>
 // Original version of the file for hk_kdeclasses library
 // copyright (c) 2010-2016 Patrik Hanak <hanakp@users.sourceforge.net>
 // KDE 4 port of the file for hk_kde4classes library
+// copyright (c) 2018 Patrik Hanak <hanakp@users.sourceforge.net>
+// KDE5 port of the file for hk_kde5classes library
 //
-// This file is part of the hk_kde4classes library.
+// This file is part of the hk_kde5classes library.
 // This file may be distributed and/or modified under the terms of the
 // GNU Library Public License version 2 as published by the Free Software
 // Foundation and appearing in the file LGPL included in the
@@ -12,14 +14,6 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
-/****************************************************************************
-** Form implementation generated from reading ui file 'gridcolumnselect2.ui'
-**
-** Created: Fr Okt 27 08:25:04 2006
-**      by: The User Interface Compiler ($Id: hk_kdegridcolumndialogbase.cpp,v 1.16 2006/10/27 06:38:24 knorr Exp $)
-**
-** WARNING! All changes made in this file will be lost!
-****************************************************************************/
 
 #include "hk_kdegridcolumndialogbase.h"
 

@@ -1,7 +1,7 @@
 // ****************************************************************************
 // copyright (c) 2000-2005 Horst Knorr <hk_classes@knoda.org>
 // Original version of the file for hk_kdeclasses library
-// copyright (c) 2010-2013 Patrik Hanak <hanakp@users.sourceforge.net>
+// copyright (c) 2010-2016 Patrik Hanak <hanakp@users.sourceforge.net>
 // KDE 4 port of the file for hk_kde4classes library
 // copyright (c) 2018 Patrik Hanak <hanakp@users.sourceforge.net>
 // KDE5 port of the file for hk_kde5classes library
@@ -14,6 +14,7 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
+
 #ifndef HK_KDEBUTTON_H
 #define HK_KDEBUTTON_H
 #include "hk_button.h"

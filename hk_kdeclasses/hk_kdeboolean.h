@@ -1,6 +1,8 @@
 // ****************************************************************************
 // copyright (c) 2000-2005 Horst Knorr <hk_classes@knoda.org>
-// Original version of the file for hk_kdeclasses library.
+// Original version of the file for hk_kdeclasses library
+// copyright (c) 2010-2016 Patrik Hanak <hanakp@users.sourceforge.net>
+// KDE 4 port of the file for hk_kde4classes library
 // copyright (c) 2018 Patrik Hanak <hanakp@users.sourceforge.net>
 // KDE5 port of the file for hk_kde5classes library
 //

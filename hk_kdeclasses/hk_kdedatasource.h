@@ -8,6 +8,7 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
+
 #ifndef HK_KDEDATASOURCE
 #define HK_KDEDATASOURCE
 #include <hk_dsvisible.h>
