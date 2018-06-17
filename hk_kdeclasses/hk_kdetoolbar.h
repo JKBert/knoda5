@@ -8,11 +8,10 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
-//Version $Revision: 1.16 $
 
 #ifndef HK_KDETOOLBAR_H
 #define HK_KDETOOLBAR_H
-//#include <hk_kdetoolbarbase.h>
+
 #include <hk_dsvisible.h>
 #include <qstring.h>
 #include <qobject.h>

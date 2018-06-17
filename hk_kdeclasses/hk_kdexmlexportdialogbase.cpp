@@ -14,14 +14,6 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
-/****************************************************************************
-** Form implementation generated from reading ui file 'xmlexportdialog.ui'
-**
-** Created: Di Jul 4 17:49:50 2006
-**      by: The User Interface Compiler ($Id: hk_kdexmlexportdialogbase.cpp,v 1.10 2006/07/04 16:06:23 knorr Exp $)
-**
-** WARNING! All changes made in this file will be lost!
-****************************************************************************/
 
 #include "hk_kdexmlexportdialogbase.h"
 

@@ -14,16 +14,17 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
+
 #ifndef HK_KDESUBFORMDIALOG_H
 #define HK_KDESUBFORMDIALOG_H
 #include "hk_kderelationdialogbase.h"
 #include <hk_column.h>
 #include <list>
+
 class hk_kdedatasourceframe;
 class hk_subform;
 class hk_form;
 class QSignalMapper;
-
 
 class hk_kdesubformdialog : public hk_kderelationdialogbase
 {

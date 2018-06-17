@@ -14,14 +14,6 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
-/****************************************************************************
-** Form implementation generated from reading ui file 'taborder.ui'
-**
-** Created: Sa Jul 1 14:50:12 2006
-**      by: The User Interface Compiler ($Id: hk_kdetaborderbase.cpp,v 1.4 2006/07/01 13:32:21 knorr Exp $)
-**
-** WARNING! All changes made in this file will be lost!
-****************************************************************************/
 
 #include "hk_kdetaborderbase.h"
 #include <KLocalizedString>

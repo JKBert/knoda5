@@ -14,6 +14,7 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
+
 #include "hk_kdesubformdialog.h"
 #include "hk_kdedbdesigner.h"
 #include <hk_datasource.h>
@@ -25,8 +26,6 @@
 #include <qsignalmapper.h>
 #include <qpushbutton.h>
 #include <QKeyEvent>
-
-
 
 hk_kdesubformdialog::hk_kdesubformdialog( hk_subform* subform,QWidget* parent,  const char* name, bool modal, Qt::WFlags fl )
         : hk_kderelationdialogbase( parent, name, modal, fl ),p_masterds(subform->datasource()),p_subform(subform),

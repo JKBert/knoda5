@@ -14,7 +14,7 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
-//$Revision: 1.24 $
+
 #ifndef KNODAMAINDOCKWINDOWBASE_H
 #define KNODAMAINDOCKWINDOWBASE_H
 #include <KAction>
@@ -25,10 +25,7 @@
 #include <qstring.h>
 #include <KTabWidget>
 
-
-
 const QString autoform="Autoform";
-
 
  typedef class struct_commands
 {

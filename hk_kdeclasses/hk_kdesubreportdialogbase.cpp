@@ -14,14 +14,6 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
-/****************************************************************************
-** Form implementation generated from reading ui file 'subreportdialog.ui'
-**
-** Created: Don Aug 19 19:38:43 2004
-**      by: The User Interface Compiler ($Id: hk_kdesubreportdialogbase.cpp,v 1.6 2004/08/20 16:41:42 knorr Exp $)
-**
-** WARNING! All changes made in this file will be lost!
-****************************************************************************/
 
 #include "hk_kdesubreportdialogbase.h"
 
