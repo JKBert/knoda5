@@ -3,8 +3,10 @@
 // Original version of the file for hk_kdeclasses library
 // copyright (c) 2010-2016 Patrik Hanak <hanakp@users.sourceforge.net>
 // KDE 4 port of the file for hk_kde4tablepart library
+// copyright (c) 2018 Patrik Hanak <hanakp@users.sourceforge.net>
+// KDE5 port of the file for hk_kde5tablepart library
 //
-// This file is part of the hk_kde4tablepart library.
+// This file is part of the hk_kde5tablepart library.
 // This file may be distributed and/or modified under the terms of the
 // GNU Library Public License version 2 as published by the Free Software
 // Foundation and appearing in the file LGPL included in the

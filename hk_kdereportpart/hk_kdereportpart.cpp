@@ -3,6 +3,8 @@
 // Original version of the file for hk_kdeclasses library
 // copyright (c) 2010-2016 Patrik Hanak <hanakp@users.sourceforge.net>
 // KDE 4 port of the file for hk_kde5reportpart library
+// copyright (c) 2018 Patrik Hanak <hanakp@users.sourceforge.net>
+// KDE5 port of the file for hk_kde5reportpart library
 //
 // This file is part of the hk_kde5reportpart library.
 // This file may be distributed and/or modified under the terms of the
@@ -12,11 +14,7 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
-//$Revision: 1.12 $
 
-//***********************************************
-//***  hk_kdereport PART definition             ***
-//***********************************************
 #include "hk_kdereportpart.h"
 #include "hk_kdesimplereport.h"
 #include <kaboutdata.h>
