@@ -55,33 +55,37 @@ class hk_kdeformpartprivate
 		p_form=NULL;
 		activate=false;
 	}
-    static KAboutData* p_aData;
-    static KAboutData& getAboutData();    
+    static const KAboutData& getAboutData();    
     hk_kdeformpartwidget* p_form;
     bool activate;
+  private:
+    static KAboutData aboutData;
+    static bool aboutDataInitialized;
 };
 
-KAboutData* hk_kdeformpartprivate::p_aData = NULL; 
-
-KAboutData& hk_kdeformpartprivate::getAboutData()
-{
-    if ( p_aData == NULL) {
-        p_aData = new KAboutData(LIB_MODULE_NAME, ki18n("hk_kde5formpart").toString(),
+KAboutData hk_kdeformpartprivate::aboutData  (LIB_MODULE_NAME, ki18n("hk_kde5formpart").toString(),
             "0.2", ki18n("database form editor").toString(),
             KAboutLicense::GPL,
             ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2018 Patrik Hanak").toString(),QString(), 
             "http://sourceforge.net/projects/knoda5/",
             "knoda4-bugs@lists.sourceforge.net");
-        p_aData->addAuthor(ki18n("Horst Knorr").toString(),ki18n("Author of original version").toString(),
+
+bool hk_kdeformpartprivate::aboutDataInitialized = false;
+
+const KAboutData& hk_kdeformpartprivate::getAboutData()
+{
+    if (!aboutDataInitialized) {
+        aboutData.addAuthor(ki18n("Horst Knorr").toString(),ki18n("Author of original version").toString(),
             "hk_classes@knoda.org","http://www.knoda.org");
-        p_aData->addAuthor(ki18n("Patrik Hanak").toString(),ki18n("Author of KDE5 port").toString(),
-            "knoda4-admins@lists.sourceforge.net");        
+        aboutData.addAuthor(ki18n("Patrik Hanak").toString(),ki18n("Author of KDE5 port").toString(),
+            "knoda4-admins@lists.sourceforge.net");
+        aboutDataInitialized = true;   
     }
-    return *p_aData;  
+    return aboutData;  
 }
 
 hk_kdeformpart::hk_kdeformpart(QWidget* pWidget,QObject* parent, const QVariantList &)
-:KParts::ReadWritePart(parent), p_private(new hk_kdeformpartprivate)
+:KParts::ReadWritePart(parent), p_private(new hk_kdeformpartprivate())
 {
     setComponentData(hk_kdeformpartprivate::getAboutData());
     setXMLFile("hk_kdeformpartdesign.rc");

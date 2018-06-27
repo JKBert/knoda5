@@ -43,37 +43,39 @@ class hk_kdemodulepartprivate
   public:
     hk_kdemodulepartprivate():p_module(NULL), activate(false)
       { }
+    static const KAboutData& getAboutData();
     hk_kdemodulepartwidget* p_module;
     bool activate;
-    static KAboutData* p_aData;
-    static KAboutData& getAboutData(); 
+  private:
+    static KAboutData aboutData;
+    static bool aboutDataInitialized;     
 };
 
-KAboutData* hk_kdemodulepartprivate::p_aData = NULL; 
-
-KAboutData& hk_kdemodulepartprivate::getAboutData()
-{
-    if ( p_aData == NULL) {
-        p_aData = new KAboutData(LIB_MODULE_NAME, ki18n("hk_kde5modulepart").toString(),
+KAboutData hk_kdemodulepartprivate::aboutData (LIB_MODULE_NAME, ki18n("hk_kde5modulepart").toString(),
             "0.2", ki18n("database module editor").toString(),
             KAboutLicense::GPL,
             ki18n("(c) 2002-2006, Horst Knorr\n(c) 2010-2018 Patrik Hanak").toString(),QString(), 
             "http://sourceforge.net/projects/knoda5/",
             "knoda4-bugs@lists.sourceforge.net");
-        p_aData->addAuthor(ki18n("Horst Knorr").toString(), ki18n("Author of original version").toString(),
+
+bool hk_kdemodulepartprivate::aboutDataInitialized = false;
+
+const KAboutData& hk_kdemodulepartprivate::getAboutData()
+{
+    if (!aboutDataInitialized) {
+        aboutData.addAuthor(ki18n("Horst Knorr").toString(), ki18n("Author of original version").toString(),
             "hk_classes@knoda.org","http://www.knoda.org");
-        p_aData->addAuthor(ki18n("Patrik Hanak").toString(),ki18n("Author of KDE5 port").toString(),
-            "knoda4-admins@lists.sourceforge.net");    
+        aboutData.addAuthor(ki18n("Patrik Hanak").toString(),ki18n("Author of KDE5 port").toString(),
+            "knoda4-admins@lists.sourceforge.net");
+        aboutDataInitialized = true;
     }
-    return *p_aData; 
+    return aboutData; 
 }
 
-
 hk_kdemodulepart::hk_kdemodulepart(QWidget* pWidget, QObject* parent, const QVariantList &)
-:KParts::ReadWritePart(parent)
+:KParts::ReadWritePart(parent), p_private(new hk_kdemodulepartprivate())
 {
-  setObjectName("hk_kdemodulepart");
-  p_private=new hk_kdemodulepartprivate;
+  setObjectName("hk_kdemodulepart");  
   setComponentData(hk_kdemodulepartprivate::getAboutData());
   p_private->p_module = new hk_kdemodulepartwidget(this,pWidget,0);
   p_private->p_module->setAttribute(Qt::WA_DeleteOnClose);

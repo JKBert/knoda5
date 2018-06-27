@@ -15,5 +15,5 @@ install(TARGETS hk_kde5reportpart DESTINATION ${KDE_INSTALL_PLUGINDIR})
 ########### install files ###############
 
 install(FILES  hk_kde5reportpart.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
-install(FILES  hk_kdereportpart.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/hk_kde5classes)
-install(FILES  hk_kdereportpart.h DESTINATION ${INCLUDE_INSTALL_DIR}/hk_kde5classes CONFIGURATIONS Debug)
+install(FILES  hk_kdereportpart.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/${LIB_MODULE_NAME})
+install(FILES  hk_kdereportpart.h DESTINATION ${INCLUDE_INSTALL_DIR}/${LIB_MODULE_NAME} CONFIGURATIONS Debug)

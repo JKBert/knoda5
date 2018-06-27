@@ -14,11 +14,7 @@
 // This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
-//$Revision: 1.4 $
 
-//***********************************************
-//***  hk_kdedbdesigner PART definition             ***
-//***********************************************
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #else
@@ -48,33 +44,38 @@ class hk_kdedbdesignerpartprivate
     hk_kdedbdesignerpartprivate():p_dbdesigner(NULL)
   	{
 	}
-    static KAboutData* p_aData;
-    static KAboutData& getAboutData(); 
+    
+    static const KAboutData& getAboutData(); 
     hk_kdedbdesigner* p_dbdesigner;
     KAction* p_addaction;
+  private:
+    static KAboutData aboutData;
+    static bool aboutDataInitialized;
 };
 
-KAboutData* hk_kdedbdesignerpartprivate::p_aData = NULL; 
-
-KAboutData& hk_kdedbdesignerpartprivate::getAboutData()
-{
-    if ( p_aData == NULL) {
-        p_aData = new KAboutData(LIB_MODULE_NAME, ki18n("hk_kde5dbdesignerpart").toString(),
+KAboutData hk_kdedbdesignerpartprivate::aboutData (LIB_MODULE_NAME, ki18n("hk_kde5dbdesignerpart").toString(),
             "0.2", ki18n("Database editor").toString(),
             KAboutLicense::GPL,
             ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2018 Patrik Hanak").toString(),QString(), 
             "http://sourceforge.net/projects/knoda5/",
             "knoda4-bugs@lists.sourceforge.net");
-        p_aData->addAuthor(ki18n("Horst Knorr").toString(),ki18n("Author of original version").toString(),
+            
+bool hk_kdedbdesignerpartprivate::aboutDataInitialized = false;
+
+const KAboutData& hk_kdedbdesignerpartprivate::getAboutData()
+{
+    if (!aboutDataInitialized) {
+        aboutData.addAuthor(ki18n("Horst Knorr").toString(),ki18n("Author of original version").toString(),
             "hk_classes@knoda.org","http://www.knoda.org");
-        p_aData->addAuthor(ki18n("Patrik Hanak").toString(),ki18n("Author of KDE5 port").toString(),
-            "knoda4-admins@lists.sourceforge.net");        
+        aboutData.addAuthor(ki18n("Patrik Hanak").toString(),ki18n("Author of KDE5 port").toString(),
+            "knoda4-admins@lists.sourceforge.net");
+        aboutDataInitialized = true;
     }
-    return *p_aData;  
+    return aboutData;  
 }
 
 hk_kdedbdesignerpart::hk_kdedbdesignerpart(QWidget* pWidget, QObject* parent, const QVariantList &)
-:KParts::ReadWritePart(parent), p_private(new hk_kdedbdesignerpartprivate)
+:KParts::ReadWritePart(parent), p_private(new hk_kdedbdesignerpartprivate())
 {
   KIconLoader loader (LIB_MODULE_NAME);
   

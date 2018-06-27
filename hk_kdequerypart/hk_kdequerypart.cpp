@@ -48,29 +48,32 @@ class hk_kdequerypartprivate
     hk_kdequerypartprivate():p_query(NULL),activate(false)
   	{
 	}
-    static KAboutData* p_aData;
-    static KAboutData& getAboutData(); 
+    static const KAboutData& getAboutData(); 
     hk_kdequerypartwidget* p_query;
     bool activate;
+  private:
+    static KAboutData aboutData;
+    static bool aboutDataInitialized;
 };
 
-KAboutData* hk_kdequerypartprivate::p_aData = NULL; 
-
-KAboutData& hk_kdequerypartprivate::getAboutData()
-{
-    if ( p_aData == NULL) {
-        p_aData = new KAboutData(LIB_MODULE_NAME, ki18n("hk_kde5querypart").toString(),
+KAboutData hk_kdequerypartprivate::aboutData (LIB_MODULE_NAME, ki18n("hk_kde5querypart").toString(),
             "0.2", ki18n("database query editor").toString(),
             KAboutLicense::GPL,
             ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2018 Patrik Hanak").toString(),QString(), 
             "http://sourceforge.net/projects/knoda5/",
             "knoda4-bugs@lists.sourceforge.net");
-        p_aData->addAuthor(ki18n("Horst Knorr").toString(),ki18n("Author of original version").toString(),
+
+bool hk_kdequerypartprivate::aboutDataInitialized = false;
+
+const KAboutData& hk_kdequerypartprivate::getAboutData()
+{
+    if (!aboutDataInitialized) {
+        aboutData.addAuthor(ki18n("Horst Knorr").toString(),ki18n("Author of original version").toString(),
             "hk_classes@knoda.org","http://www.knoda.org");
-        p_aData->addAuthor(ki18n("Patrik Hanak").toString(),ki18n("Author of KDE5 port").toString(),
+        aboutData.addAuthor(ki18n("Patrik Hanak").toString(),ki18n("Author of KDE5 port").toString(),
             "knoda4-admins@lists.sourceforge.net");        
     }
-    return *p_aData;  
+    return aboutData;  
 }
 
 hk_kdequerypart::hk_kdequerypart(QWidget* pWidget,QObject* parent, const QVariantList &)

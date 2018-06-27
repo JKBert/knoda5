@@ -15,6 +15,11 @@
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 // ****************************************************************************
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#else
+#error config.h is needed but not included 
+#endif
 #include "hk_kdereportpart.h"
 #include "hk_kdesimplereport.h"
 #include <kaboutdata.h>
@@ -41,41 +46,44 @@ K_PLUGIN_FACTORY_DEFINITION(hk_kdereportpartfactory, registerPlugin<hk_kdereport
  
 class hk_kdereportpartprivate
 {
-public:
+  public:
     hk_kdereportpartprivate()
   	{
         p_report=NULL;
         activate=false;
 	}
+	static const KAboutData& getAboutData();
     hk_kdereportpartwidget* p_report;
     bool activate;
-    static KAboutData* p_aData;
-    static KAboutData& getAboutData(); 
+  private:
+    static KAboutData aboutData;
+    static bool aboutDataInitialized;    
 };
 
-KAboutData* hk_kdereportpartprivate::p_aData = NULL; 
-
-KAboutData& hk_kdereportpartprivate::getAboutData()
-{
-    if ( p_aData == NULL) {
-        p_aData = new KAboutData("hk_kde5classes", ki18n("hk_kde5reportpart").toString(),
+KAboutData hk_kdereportpartprivate::aboutData (LIB_MODULE_NAME, ki18n("hk_kde5reportpart").toString(),
             "0.2", ki18n("database report editor").toString(),
             KAboutLicense::GPL,
             ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2018 Patrik Hanak").toString(),QString(), 
             "http://sourceforge.net/projects/knoda5/",
-            "knoda4-bugs@lists.sourceforge.net");
-        p_aData->addAuthor(ki18n("Horst Knorr").toString(), ki18n("Author of original version").toString(),
+            "knoda4-bugs@lists.sourceforge.net"); 
+
+bool hk_kdereportpartprivate::aboutDataInitialized = false;
+
+const KAboutData& hk_kdereportpartprivate::getAboutData()
+{
+    if (!aboutDataInitialized) {
+        aboutData.addAuthor(ki18n("Horst Knorr").toString(), ki18n("Author of original version").toString(),
             "hk_classes@knoda.org","http://www.knoda.org");
-        p_aData->addAuthor(ki18n("Patrik Hanak").toString(),ki18n("Author of KDE5 port").toString(),
-            "knoda4-admins@lists.sourceforge.net");    
+        aboutData.addAuthor(ki18n("Patrik Hanak").toString(),ki18n("Author of KDE5 port").toString(),
+            "knoda4-admins@lists.sourceforge.net");
+        aboutDataInitialized = true; 
     }
-    return *p_aData; 
+    return aboutData; 
 }
 
 hk_kdereportpart::hk_kdereportpart(QWidget* pWidget, QObject* parent, const QVariantList &)
-:KParts::ReadWritePart(parent)
+:KParts::ReadWritePart(parent), p_private (new hk_kdereportpartprivate())
 {
-    p_private=new hk_kdereportpartprivate;
     setComponentData(hk_kdereportpartprivate::getAboutData());
     p_private->p_report = new hk_kdereportpartwidget(this,pWidget,0);
     p_private->p_report->setAttribute(Qt::WA_DeleteOnClose);

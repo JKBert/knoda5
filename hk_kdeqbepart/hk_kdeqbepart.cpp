@@ -48,36 +48,40 @@ class hk_kdeqbepartprivate
     hk_kdeqbepartprivate():p_qbe(NULL)
   	{
 	}
-    static KAboutData* p_aData;
-    static KAboutData& getAboutData(); 
+    static const KAboutData& getAboutData(); 
     hk_kdeqbe* p_qbe;
     KAction* p_addaction;
     KToggleAction* p_distinctaction;
     KAction* p_qbetypeselectaction; 
     QComboBox* p_qbetypeselect;
+  private:
+    static KAboutData aboutData;
+    static bool aboutDataInitialized;
 };
 
-KAboutData* hk_kdeqbepartprivate::p_aData = NULL; 
-
-KAboutData& hk_kdeqbepartprivate::getAboutData()
-{
-    if ( p_aData == NULL) {
-        p_aData = new KAboutData(LIB_MODULE_NAME, ki18n("hk_kde5qbepart").toString(),
+KAboutData hk_kdeqbepartprivate::aboutData (LIB_MODULE_NAME, ki18n("hk_kde5qbepart").toString(),
             "0.2", ki18n("Query by Example editor").toString(),
             KAboutLicense::GPL,
             ki18n("(c) 2002-2004, Horst Knorr\n(c) 2010-2018 Patrik Hanak").toString(),QString(), 
             "http://sourceforge.net/projects/knoda5/",
             "knoda4-bugs@lists.sourceforge.net");
-        p_aData->addAuthor(ki18n("Horst Knorr").toString(),ki18n("Author of original version").toString(),
+
+bool hk_kdeqbepartprivate::aboutDataInitialized = false;
+
+const KAboutData& hk_kdeqbepartprivate::getAboutData()
+{
+    if (!aboutDataInitialized) {
+        aboutData.addAuthor(ki18n("Horst Knorr").toString(),ki18n("Author of original version").toString(),
             "hk_classes@knoda.org","http://www.knoda.org");
-        p_aData->addAuthor(ki18n("Patrik Hanak").toString(),ki18n("Author of KDE5 port").toString(),
-            "knoda4-admins@lists.sourceforge.net");        
+        aboutData.addAuthor(ki18n("Patrik Hanak").toString(),ki18n("Author of KDE5 port").toString(),
+            "knoda4-admins@lists.sourceforge.net");
+        aboutDataInitialized = true;    
     }
-    return *p_aData;  
+    return aboutData;  
 }
 
 hk_kdeqbepart::hk_kdeqbepart(QWidget* pWidget,QObject* parent, const QVariantList &)
-:KParts::ReadWritePart(parent), p_private(new hk_kdeqbepartprivate)
+:KParts::ReadWritePart(parent), p_private(new hk_kdeqbepartprivate())
 {
     setComponentData(hk_kdeqbepartprivate::getAboutData());
     p_private->p_qbe = new hk_kdeqbe(pWidget);
