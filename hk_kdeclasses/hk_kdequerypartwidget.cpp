@@ -54,7 +54,6 @@
 #include <KTextEditor/Editor>
 #include <KTextEditor/Document>
 #include <KTextEditor/View>
-#include <ktexteditor/highlightinterface.h>
 #include <kmessagebox.h>
 
 class hk_kdequerypartwidgetprivate

@@ -40,7 +40,6 @@
 #include <KTextEditor/Editor>
 #include <KTextEditor/Document>
 #include <KTextEditor/View>
-#include <ktexteditor/highlightinterface.h>
 #include "../hk_kdemodulepart/hk_kdemodulepart.h"
 #include <kactioncollection.h>
 #include <kmessagebox.h>

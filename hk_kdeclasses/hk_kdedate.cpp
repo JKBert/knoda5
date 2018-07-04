@@ -24,7 +24,6 @@
 #include "hk_kdesimpleform.h"
 
 #include <kapplication.h>
-#include <kdatetable.h>
 #include <kiconloader.h>
 #include <kicon.h>
 #include <kdatepicker.h>

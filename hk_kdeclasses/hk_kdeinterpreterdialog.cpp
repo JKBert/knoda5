@@ -45,7 +45,6 @@
 #include <KTextEditor/Editor>
 #include <KTextEditor/Document>
 #include <KTextEditor/View>
-#include <ktexteditor/highlightinterface.h>
 #include <kxmlguifactory.h>
 #include <kactioncollection.h>
 #include <kmessagebox.h>
