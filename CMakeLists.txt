@@ -12,6 +12,14 @@ find_package(LibXml2 REQUIRED)
 find_package(ECM 1.0.0 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
+# qmake-qt5 is a must for KDEInstallDirs to set up directories correctly
+find_program(QMAKEQT5 qmake-qt5)
+if(QMAKEQT5)
+  message(STATUS "Found qmake-qt5: " ${QMAKEQT5})
+else()
+  message(FATAL_ERROR "Not found qmake-qt5")
+endif()
+
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
