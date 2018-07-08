@@ -1,6 +1,6 @@
 *****************************************
 *                                       *
-*               knoda4                  *
+*               knoda5                  *
 *              INSTALL                  *
 *                                       *
 *****************************************
@@ -22,8 +22,8 @@ CONTENTS
 
 
 * hk_classes (http://hk-classes.sourceforge.net)
-* KDE4
-* qt4
+* KDE5
+* qt5
 * cmake buid system (http://www.cmake.org)
 
 
