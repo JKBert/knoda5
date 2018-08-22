@@ -1189,10 +1189,9 @@ void hk_kdesimpleform::delete_widgets(void)
         hk_kdegrid* g=dynamic_cast <hk_kdegrid*>(w);
         remove_visible(dynamic_cast <hk_visible*>(del));
         if (g)
-        {
-            delete g->part();
-        }
-        else     delete w;
+            g->part()->deleteLater();
+        else     
+            w->deleteLater();
     }
     w=p_focus->widget();
     del=w;
@@ -1200,7 +1199,10 @@ void hk_kdesimpleform::delete_widgets(void)
     hk_kdegrid* g=dynamic_cast <hk_kdegrid*>(w);
     remove_visible(dynamic_cast <hk_visible*>(del));
     set_currentobject(this);
-    if (g) delete g->part(); else delete w;
+    if (g) 
+        g->part()->deleteLater();
+    else
+        w->deleteLater();
     clearfocus();
     set_has_changed();
 }

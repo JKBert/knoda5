@@ -73,15 +73,14 @@ void hk_kdereportsectiondialog::delete_clicked()
 {
     int p=sectionbox->currentRow();
     QListWidgetItem* p_cur;
+    
     if (p<0)
-    {
-        return ;
-    }
+        return;
     hk_reportsectionpair* s=(*p_report->sectionpairs())[p];
     delete s;
     p_report->set_sections();
     qApp->processEvents();
-    p_cur = sectionbox -> takeItem(p);
+    p_cur = sectionbox->takeItem(p);
     delete p_cur;
 }
 
@@ -89,12 +88,13 @@ void hk_kdereportsectiondialog::delete_clicked()
 void hk_kdereportsectiondialog::down_clicked()
 {
     int c = sectionbox->currentRow();
-    QListWidgetItem* p_cur = sectionbox -> takeItem(c);
+    QListWidgetItem* p_cur = sectionbox->takeItem(c);
 
-    p_report->move_sectionpair(sectionbox->currentRow(),1);
+    p_report->move_sectionpair(c, 1);
+    p_report->has_changed(true);
     p_report->set_sections();
-    sectionbox -> insertItem(c+1,p_cur);
-    sectionbox->setCurrentRow(c+1);
+    sectionbox->insertItem(c + 1, p_cur);
+    sectionbox->setCurrentRow(c + 1);
     qApp->processEvents(); 
 }
 
@@ -102,11 +102,13 @@ void hk_kdereportsectiondialog::down_clicked()
 void hk_kdereportsectiondialog::up_clicked()
 {
     int c = sectionbox->currentRow();
-    QListWidgetItem* p_cur = sectionbox -> takeItem(c);  
-    p_report->move_sectionpair(sectionbox->currentRow(),-1);
+    QListWidgetItem* p_cur = sectionbox->takeItem(c);
+      
+    p_report->move_sectionpair(c, -1);
+    p_report->has_changed(true);
     p_report->set_sections();
-    sectionbox -> insertItem(c-1,p_cur);
-    sectionbox->setCurrentRow(c-1);   
+    sectionbox->insertItem(c - 1,p_cur);
+    sectionbox->setCurrentRow(c - 1);   
     qApp->processEvents(); 
 }
 
