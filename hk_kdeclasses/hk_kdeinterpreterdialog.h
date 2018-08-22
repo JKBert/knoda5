@@ -24,16 +24,6 @@
 #include "hk_datasource.h"
 #include "hk_database.h"
 
-class QVBoxLayout;
-class QHBoxLayout;
-class QGridLayout;
-class QButtonGroup;
-class QTable;
-class QToolButton;
-class QMultiLineEdit;
-class hk_kdetoolbar;
-class hk_kdegrid;
-class hk_kdegridpart;
 class hk_kdeinterpreterdialogprivate;
 /**
  *
@@ -46,12 +36,21 @@ class hk_kdeinterpreterdialogprivate;
  * resulting data if there is any. hk_kdeinterpreterdialog also handles actionqueries correctly.
  */
 
+class uploadcodeiface
+{
+public:
+    virtual void upload_text(const hk_string& code) const = 0;
+    virtual const QString& get_action_text(void) const = 0;
+protected:
+    ~uploadcodeiface() {};
+};
+
 class hk_kdeinterpreterdialog : public KParts::MainWindow
 {
     Q_OBJECT
 
 public:
-    hk_kdeinterpreterdialog(QWidget* w=0,const char* n=0,Qt::WFlags f=0);
+    hk_kdeinterpreterdialog(QWidget* w=0,const char* n=0,Qt::WFlags f=0, const uploadcodeiface* psh=NULL);
     ~hk_kdeinterpreterdialog();
 enum DialogCode { Rejected, Accepted };
 /**
@@ -63,6 +62,7 @@ enum DialogCode { Rejected, Accepted };
     int result(void){return rescode;}
     hk_string code();
     void set_code(const hk_string&, bool has_changed=true);
+    void set_uploadhandler(const uploadcodeiface* sh);
     void hide();
     bool has_changed(void){return p_has_changed;}
     void set_caption(hk_visible*,const hk_string &action);
@@ -70,6 +70,7 @@ enum DialogCode { Rejected, Accepted };
 public slots:
     void print(void);
     virtual void help_clicked();
+    void upload_clicked();
 
 protected:
     virtual void closeEvent ( QCloseEvent* e);

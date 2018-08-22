@@ -35,6 +35,7 @@
 #include <kconfig.h>
 #include <kconfiggroup.h>
 #include <locale.h>
+#include "hk_kdemessages.h"
 
 #include <kmenubar.h>
 #include <kaction.h>
@@ -53,21 +54,25 @@
 class hk_kdeinterpreterdialogprivate
 {
 public:
-    hk_kdeinterpreterdialogprivate():p_closeaction(NULL), p_document(NULL), p_view(NULL)
-    , eventloop(NULL) { }
-    KAction*  p_closeaction;
+    hk_kdeinterpreterdialogprivate(const uploadcodeiface* psh = NULL):p_document(NULL), p_view(NULL)
+    , eventloop(NULL), p_uploadhandler(psh) { }
     KTextEditor::Document* p_document;
     KTextEditor::View*  p_view;
     QEventLoop* eventloop;
+    const uploadcodeiface* p_uploadhandler;
+    static QStringList actionsNotUsed;
 };
+
+QStringList hk_kdeinterpreterdialogprivate::actionsNotUsed = { "file_save", "file_save_as", "file_save_as_with_encoding",
+    "file_save_copy_as", "file_reload", "file_export_html" };
 
 /*
  *  Constructs a hk_kdeinterpreterdialog which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'
  */
 
-hk_kdeinterpreterdialog::hk_kdeinterpreterdialog(QWidget* w,const char* /* n */,Qt::WFlags f):KParts::MainWindow(w, f|Qt::Dialog),
-p_autoclose(true),p_has_changed(false), rescode(Accepted), p_private(new hk_kdeinterpreterdialogprivate)
+hk_kdeinterpreterdialog::hk_kdeinterpreterdialog(QWidget* w,const char* /* n */,Qt::WFlags f, const uploadcodeiface* psh):KParts::MainWindow(w, f|Qt::Dialog),
+p_autoclose(true),p_has_changed(false), rescode(Accepted), p_private(new hk_kdeinterpreterdialogprivate(psh))
 {
   setAttribute(Qt::WA_DeleteOnClose,false);
   setObjectName( "hk_kdeinterpreterdialog" );
@@ -85,9 +90,20 @@ p_autoclose(true),p_has_changed(false), rescode(Accepted), p_private(new hk_kdei
   } else
       KMessageBox::error(w,i18n("A KDE text-editor component could not be found;\n"
                                   "please check your KDE installation."));
-  p_private->p_closeaction=new KAction(QIcon::fromTheme("window-close"),i18n("&Close"),actionCollection());
-  actionCollection() -> addAction("closedialog",p_private->p_closeaction);
-  connect(p_private->p_closeaction,SIGNAL(triggered()),this,SLOT(accept()));  
+  // remove not used actions, null pointers are handled by KDE internally                            
+  for( QStringList::const_iterator it = p_private->actionsNotUsed.constBegin(); it != p_private->actionsNotUsed.constEnd(); it++) 
+        p_private->p_view->actionCollection()->removeAction(p_private->p_view->actionCollection()->action(*it));
+  // add new actions 
+  KAction* p_action=new KAction(QIcon::fromTheme("window-close"),i18n("&Close"),actionCollection());
+  actionCollection() -> addAction("closedialog",p_action);
+  connect(p_action,SIGNAL(triggered()),this,SLOT(accept()));  
+  
+  if (p_private->p_uploadhandler) {
+      p_action=new KAction(QIcon::fromTheme("go-next"),i18n("&Upload"),actionCollection());
+      p_action->setToolTip(p_private->p_uploadhandler->get_action_text());
+      actionCollection() -> addAction("upload",p_action);
+      connect(p_action,SIGNAL(triggered()),this,SLOT(upload_clicked())); 
+  }
   createGUI(NULL);
   if (p_private->p_view != NULL) {
       setCentralWidget(p_private->p_view);
@@ -114,9 +130,8 @@ hk_kdeinterpreterdialog::~hk_kdeinterpreterdialog()
 // no need to delete child widgets, Qt does it all for us
   hide();
   if (p_private->p_view != NULL)
-      guiFactory()->removeClient( p_private -> p_view );
+      guiFactory()->removeClient( p_private->p_view );
   setCentralWidget(NULL);
-  delete p_private->p_closeaction;
 }
 
 void hk_kdeinterpreterdialog::closeEvent ( QCloseEvent* e)
@@ -201,8 +216,7 @@ int hk_kdeinterpreterdialog::exec(int rownumber,const hk_string& w)
 
 void hk_kdeinterpreterdialog::accept()
 {
-
-    done( Accepted );
+    done(has_changed() && hk_class::show_yesnodialog(hk_class::hk_translate("Upload changes ?"),true) ? Accepted:Rejected);
 }
 
 /*!
@@ -214,8 +228,6 @@ void hk_kdeinterpreterdialog::reject()
 {
     done( Rejected );
 }
-
-
 
 hk_string hk_kdeinterpreterdialog::code(void)
 {
@@ -234,10 +246,15 @@ void hk_kdeinterpreterdialog::set_code(const hk_string& c,bool registerchange)
     if(!registerchange) p_private -> p_document->blockSignals(false);
 }
 
+void hk_kdeinterpreterdialog::set_uploadhandler(const uploadcodeiface* psh)
+{
+    p_private->p_uploadhandler = psh;
+}
+
 void hk_kdeinterpreterdialog::hide()
 {
     if ( isHidden() )
-	return;
+        return;
 
     QWidget::hide();
     if (p_private->eventloop != NULL)
@@ -246,7 +263,7 @@ void hk_kdeinterpreterdialog::hide()
 
 void hk_kdeinterpreterdialog::slot_has_changed(void)
 {
- p_has_changed=true;
+     p_has_changed=true;
 }
 
 void hk_kdeinterpreterdialog::set_caption(hk_visible* v,const hk_string& action)
@@ -272,4 +289,8 @@ void hk_kdeinterpreterdialog::help_clicked()
     KHelpClient::invokeHelp("pschapter1");
 }
 
-
+void hk_kdeinterpreterdialog::upload_clicked()
+{
+    if (p_private->p_uploadhandler)
+        p_private->p_uploadhandler->upload_text(code());
+}

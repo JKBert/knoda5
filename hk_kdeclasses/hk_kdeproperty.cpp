@@ -56,6 +56,44 @@
 #include <kfiledialog.h>
 #include <kdebug.h>
 
+class visibleuploadimp: public uploadcodeiface
+{
+public:
+    visibleuploadimp(hk_visible& pv, void (hk_visible::*p_sf) (const hk_string&, bool, bool))
+      :p_visible(pv), p_visiblesavefn(p_sf) {};
+    virtual void upload_text(const hk_string& code) const
+    {
+        (p_visible.*p_visiblesavefn)(code,true, true);
+    }
+    virtual const QString& get_action_text(void) const
+    {
+        return uploadactiontext;
+    }
+    virtual ~visibleuploadimp() {};
+    
+protected:
+    static QString uploadactiontext;
+    hk_visible& p_visible;
+    void (hk_visible::*p_visiblesavefn) (const hk_string&, bool, bool);
+};
+
+class dsvisibleuploadimp: public visibleuploadimp
+{
+public:
+    dsvisibleuploadimp(hk_dsvisible& pv, void (hk_dsvisible::*p_sf) (const hk_string&, bool, bool))
+      :visibleuploadimp(dynamic_cast<hk_visible&>(pv),NULL), p_dsvisiblesavefn(p_sf) {};
+    virtual void upload_text(const hk_string& code) const
+    {
+        ((dynamic_cast<hk_dsvisible&>(p_visible)).*p_dsvisiblesavefn)(code,true, true);
+    }
+    virtual ~dsvisibleuploadimp() {};
+    
+protected:
+    void (hk_dsvisible::*p_dsvisiblesavefn) (const hk_string&, bool, bool);
+};
+
+QString visibleuploadimp::uploadactiontext(i18n("Upload to the form"));
+
 /*
  *  Constructs a hk_kdeproperty which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'
@@ -64,7 +102,7 @@
  *  TRUE to construct a modal dialog.
  */
 hk_kdeproperty::hk_kdeproperty( hk_kdesimpleform* parent,  const char* name, Qt::WFlags fl )
-: hk_kdepropertyeditorbase( parent, name,  fl )  , hk_class()
+: hk_kdepropertyeditorbase( parent, name,  fl ), hk_class()
 {
 #ifdef HK_DEBUG
 //wanna_debug(true);
@@ -1549,21 +1587,18 @@ void hk_kdeproperty::pushactionbutton_clicked(void)
 
 void hk_kdeproperty::pushactionbutton_clicked(int rownumber,const hk_string& warning)
 {
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(p_visible->on_click_action(),false);
-    d->set_caption(p_visible,"on_click_action");
-    int r=d->exec(rownumber,warning);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      p_visible->set_on_click_action(d->code());
-    }
-   set_visible();
-   set_dsvisible();
-   set_dsdatavisible();
-    delete d;
-
-
+  visibleuploadimp u_pushbutton(*p_visible, &hk_visible::set_on_click_action);
+  hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0, 0, 0, &u_pushbutton);
+  d->setWindowModality(Qt::ApplicationModal);
+  d->set_code(p_visible->on_click_action(),false);
+  d->set_caption(p_visible,"on_click_action");
+  int r=d->exec(rownumber,warning);
+  if (r==hk_kdeinterpreterdialog::Accepted && d->has_changed())
+    p_visible->set_on_click_action(d->code());
+  set_visible();
+  set_dsvisible();
+  set_dsdatavisible();
+  delete d;
 }
 
 
@@ -1838,21 +1873,19 @@ void hk_kdeproperty::afterrowchangebutton_clicked(int rownumber,const hk_string&
 {
   hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
   if (!ds) return;
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_caption(p_visible,"after_row_change_action");
-    d->set_code(ds->after_row_change_action(),false);
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      ds->set_after_row_change_action(d->code());
-    }
+  dsvisibleuploadimp u_afterrowchange(*ds, &hk_dsvisible::set_after_row_change_action);
+  hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0, 0, 0, &u_afterrowchange);
+  d->setWindowModality(Qt::ApplicationModal);
+  d->set_caption(p_visible,"after_row_change_action");
+  d->set_code(ds->after_row_change_action(),false);
+  int r=d->exec(rownumber,warningmessage);
+  if (r==hk_kdeinterpreterdialog::Accepted && d->has_changed())
+    ds->set_after_row_change_action(d->code());
 
-   set_visible();
-   set_dsvisible();
-   set_dsdatavisible();
-    delete d;
-
+  set_visible();
+  set_dsvisible();
+  set_dsdatavisible();
+  delete d;
 }
 
 void hk_kdeproperty::afterrowchangebutton_clicked(void)
@@ -1863,60 +1896,54 @@ afterrowchangebutton_clicked(0,"");
 void hk_kdeproperty::ongetfocusbutton_clicked(int rownumber,const hk_string& warningmessage)
 {
   hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
+  
   if (!ds) return;
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(ds->on_getfocus_action(),false);
-    d->set_caption(p_visible,"on_getfocus_action");
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      ds->set_on_getfocus_action(d->code());
-    }
+  dsvisibleuploadimp u_getfocus(*ds, &hk_dsvisible::set_on_getfocus_action);
+  hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0, 0, 0, &u_getfocus);
+  d->setWindowModality(Qt::ApplicationModal);
+  d->set_code(ds->on_getfocus_action(),false);
+  d->set_caption(p_visible,"on_getfocus_action");
+  int r=d->exec(rownumber,warningmessage);
+  if (r==hk_kdeinterpreterdialog::Accepted && d->has_changed())
+    ds->set_on_getfocus_action(d->code());
 
-   set_visible();
-   set_dsvisible();
-   set_dsdatavisible();
+  set_visible();
+  set_dsvisible();
+  set_dsdatavisible();
 
-    delete d;
-
-
+  delete d;
 }
 
 void hk_kdeproperty::ongetfocusbutton_clicked(void)
 {
-ongetfocusbutton_clicked(0,"");
+  ongetfocusbutton_clicked(0,"");
 }
 
 void hk_kdeproperty::onloosefocusbutton_clicked(int rownumber,const hk_string& warningmessage)
 {
   hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
+  
   if (!ds) return;
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(ds->on_loosefocus_action(),false);
-    d->set_caption(p_visible,"on_loosefocus_action");
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      ds->set_on_loosefocus_action(d->code());
-    }
+  dsvisibleuploadimp uloosefocus(*ds, &hk_dsvisible::set_on_loosefocus_action);
+  hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0, 0, 0, &uloosefocus);
+  d->setWindowModality(Qt::ApplicationModal);
+  d->set_code(ds->on_loosefocus_action(),false);
+  d->set_caption(p_visible,"on_loosefocus_action");
+  int r=d->exec(rownumber,warningmessage);
+  if (r==hk_kdeinterpreterdialog::Accepted && d->has_changed())
+    ds->set_on_loosefocus_action(d->code());
 
-   set_visible();
-   set_dsvisible();
-   set_dsdatavisible();
+  set_visible();
+  set_dsvisible();
+  set_dsdatavisible();
 
-    delete d;
-
-
+  delete d;
 }
 
 void hk_kdeproperty::onloosefocusbutton_clicked(void)
 {
-onloosefocusbutton_clicked(0,"");
+  onloosefocusbutton_clicked(0,"");
 }
-
-
 
 void hk_kdeproperty::onselectbutton_clicked(int rownumber,const hk_string& warningmessage)
 {
@@ -1937,8 +1964,6 @@ void hk_kdeproperty::onselectbutton_clicked(int rownumber,const hk_string& warni
    set_dsdatavisible();
 
     delete d;
-
-
 }
 
 void hk_kdeproperty::onselectbutton_clicked(void)
