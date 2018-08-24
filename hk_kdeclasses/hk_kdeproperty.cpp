@@ -92,6 +92,36 @@ protected:
     void (hk_dsvisible::*p_dsvisiblesavefn) (const hk_string&, bool, bool);
 };
 
+class dsdatavisibleuploadimp: public visibleuploadimp
+{
+public:
+    dsdatavisibleuploadimp(hk_dsdatavisible& pv, void (hk_dsdatavisible::*p_sf) (const hk_string&, bool, bool))
+      :visibleuploadimp(dynamic_cast<hk_visible&>(pv),NULL), p_dsdatavisiblesavefn(p_sf) {};
+    virtual void upload_text(const hk_string& code) const
+    {
+        ((dynamic_cast<hk_dsdatavisible&>(p_visible)).*p_dsdatavisiblesavefn)(code,true, true);
+    }
+    virtual ~dsdatavisibleuploadimp() {};
+    
+protected:
+    void (hk_dsdatavisible::*p_dsdatavisiblesavefn) (const hk_string&, bool, bool);
+};
+
+class dscomboboxuploadimp: public visibleuploadimp
+{
+public:
+    dscomboboxuploadimp(hk_dscombobox& pv, void (hk_dscombobox::*p_sf) (const hk_string&, bool, bool))
+      :visibleuploadimp(dynamic_cast<hk_visible&>(pv),NULL), p_dscomboboxsavefn(p_sf) {};
+    virtual void upload_text(const hk_string& code) const
+    {
+        ((dynamic_cast<hk_dscombobox&>(p_visible)).*p_dscomboboxsavefn)(code,true, true);
+    }
+    virtual ~dscomboboxuploadimp() {};
+    
+protected:
+    void (hk_dscombobox::*p_dscomboboxsavefn) (const hk_string&, bool, bool);
+};
+
 QString visibleuploadimp::uploadactiontext(i18n("Upload to the form"));
 
 /*
@@ -1587,310 +1617,263 @@ void hk_kdeproperty::pushactionbutton_clicked(void)
 
 void hk_kdeproperty::pushactionbutton_clicked(int rownumber,const hk_string& warning)
 {
-  visibleuploadimp u_pushbutton(*p_visible, &hk_visible::set_on_click_action);
-  hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0, 0, 0, &u_pushbutton);
-  d->setWindowModality(Qt::ApplicationModal);
-  d->set_code(p_visible->on_click_action(),false);
-  d->set_caption(p_visible,"on_click_action");
-  int r=d->exec(rownumber,warning);
-  if (r==hk_kdeinterpreterdialog::Accepted && d->has_changed())
-    p_visible->set_on_click_action(d->code());
+  visibleuploadimp upushbutton(*p_visible, &hk_visible::set_on_click_action);
+  hk_kdeinterpreterdialog d(upushbutton);
+  
+  d.setWindowModality(Qt::ApplicationModal);
+  d.set_code(p_visible->on_click_action(),false);
+  d.set_caption(p_visible,"on_click_action");
+  (void) d.exec(rownumber,warning); // upload handled in the dialog
+
   set_visible();
   set_dsvisible();
   set_dsdatavisible();
-  delete d;
 }
 
 
 void hk_kdeproperty::doubleclickactionbutton_clicked(void)
 {
-doubleclickactionbutton_clicked(0,"");
+    doubleclickactionbutton_clicked(0,"");
 }
 
 void hk_kdeproperty::doubleclickactionbutton_clicked(int rownumber,const hk_string& warning)
 {
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(p_visible->on_doubleclick_action(),false);
-    d->set_caption(p_visible,"on_doubleclick_action");
-    int r=d->exec(rownumber,warning);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      p_visible->set_on_doubleclick_action(d->code());
-    }
+    visibleuploadimp udoubleclick(*p_visible, &hk_visible::set_on_doubleclick_action);
+    hk_kdeinterpreterdialog d(udoubleclick);
 
-   set_visible();
-   set_dsvisible();
-   set_dsdatavisible();
-    delete d;
+    d.setWindowModality(Qt::ApplicationModal);
+    d.set_code(p_visible->on_doubleclick_action(),false);
+    d.set_caption(p_visible,"on_doubleclick_action");
+    (void) d.exec(rownumber,warning); // upload handled in the dialog
 
-
+    set_visible();
+    set_dsvisible();
+    set_dsdatavisible();
 }
 
 
 void hk_kdeproperty::openactionbutton_clicked(int rownumber,const hk_string& warningmessage)
 {
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(p_visible->on_open_action(),false);
-    d->set_caption(p_visible,"on_open_action");
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      p_visible->set_on_open_action(d->code());
-    }
+    visibleuploadimp uopenaction(*p_visible, &hk_visible::set_on_open_action);
+    hk_kdeinterpreterdialog d(uopenaction);
 
-   set_visible();
-   set_dsvisible();
-   set_dsdatavisible();
-    delete d;
+    d.setWindowModality(Qt::ApplicationModal);
+    d.set_code(p_visible->on_open_action(),false);
+    d.set_caption(p_visible,"on_open_action");
+    (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
 
-
+    set_visible();
+    set_dsvisible();
+    set_dsdatavisible();
 }
 
 void hk_kdeproperty::openactionbutton_clicked(void)
 {
-openactionbutton_clicked(0,"");
+    openactionbutton_clicked(0,"");
 }
 
 void hk_kdeproperty::closeactionbutton_clicked(int rownumber,const hk_string& warningmessage)
 {
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(p_visible->on_close_action(),false);
-    d->set_caption(p_visible,"on_close_action");
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      p_visible->set_on_close_action(d->code());
-    }
-   set_visible();
-   set_dsvisible();
-   set_dsdatavisible();
+    visibleuploadimp ucloseaction(*p_visible, &hk_visible::set_on_close_action);
+    hk_kdeinterpreterdialog d(ucloseaction);
 
-    delete d;
+    d.setWindowModality(Qt::ApplicationModal);
+    d.set_code(p_visible->on_close_action(),false);
+    d.set_caption(p_visible,"on_close_action");
+    (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
 
-
+    set_visible();
+    set_dsvisible();
+    set_dsdatavisible();
 }
 
 void hk_kdeproperty::closeactionbutton_clicked(void)
 {
-closeactionbutton_clicked(0,"");
+    closeactionbutton_clicked(0,"");
 }
 
 void hk_kdeproperty::beforedeletebutton_clicked(int rownumber,const hk_string& warningmessage)
 {
   hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
+
   if (!ds) return;
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-  d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(ds->before_delete_action(),false);
-    d->set_caption(p_visible,"before_delete_action");
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      ds->set_before_delete_action(d->code());
-    }
+  dsvisibleuploadimp ubeforedelete(*ds, &hk_dsvisible::set_before_delete_action);
+  hk_kdeinterpreterdialog d(ubeforedelete);
 
-   set_visible();
-   set_dsvisible();
-   set_dsdatavisible();
+  d.setWindowModality(Qt::ApplicationModal);
+  d.set_code(ds->before_delete_action(),false);
+  d.set_caption(p_visible,"before_delete_action");
+  (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
 
-    delete d;
-
-
+  set_visible();
+  set_dsvisible();
+  set_dsdatavisible();
 }
 
 void hk_kdeproperty::beforedeletebutton_clicked(void)
 {
-beforedeletebutton_clicked(0,"");
+  beforedeletebutton_clicked(0,"");
 }
 
 void hk_kdeproperty::afterdeletebutton_clicked(int rownumber,const hk_string& warningmessage)
 {
   hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
+  
   if (!ds) return;
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(ds->after_delete_action(),false);
-    d->set_caption(p_visible,"after_delete_action");
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      ds->set_after_delete_action(d->code());
-    }
+  dsvisibleuploadimp uafterdelete(*ds, &hk_dsvisible::set_after_delete_action);
+  hk_kdeinterpreterdialog d(uafterdelete);
+  
+  d.setWindowModality(Qt::ApplicationModal);
+  d.set_code(ds->after_delete_action(),false);
+  d.set_caption(p_visible,"after_delete_action");
+  (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
 
-   set_visible();
-   set_dsvisible();
-   set_dsdatavisible();
-
-    delete d;
-
+  set_visible();
+  set_dsvisible();
+  set_dsdatavisible();
 }
 
 void hk_kdeproperty::afterdeletebutton_clicked(void)
 {
-afterdeletebutton_clicked(0,"");
+  afterdeletebutton_clicked(0,"");
 }
 
 void hk_kdeproperty::beforeinsertbutton_clicked(int rownumber,const hk_string& warningmessage)
 {
   hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
+  
   if (!ds) return;
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(ds->before_insert_action(),false);
-    d->set_caption(p_visible,"before_insert_action");
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      ds->set_before_insert_action(d->code());
-    }
+  dsvisibleuploadimp ubeforeinsert(*ds, &hk_dsvisible::set_before_insert_action);
+  hk_kdeinterpreterdialog d(ubeforeinsert);
+  
+  d.setWindowModality(Qt::ApplicationModal);
+  d.set_code(ds->before_insert_action(),false);
+  d.set_caption(p_visible,"before_insert_action");
+  (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
 
-   set_visible();
-   set_dsvisible();
-   set_dsdatavisible();
-
-    delete d;
-
-
+  set_visible();
+  set_dsvisible();
+  set_dsdatavisible();
 }
 
 void hk_kdeproperty::beforeinsertbutton_clicked(void)
 {
-beforeinsertbutton_clicked(0,"");
+  beforeinsertbutton_clicked(0,"");
 }
 
 void hk_kdeproperty::afterinsertbutton_clicked(int rownumber,const hk_string& warningmessage)
 {
-  hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
-  if (!ds) return;
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(ds->after_insert_action(),false);
-    d->set_caption(p_visible,"after_insert_action");
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      ds->set_after_insert_action(d->code());
-    }
+    hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
+    
+    if (!ds) return;
+    dsvisibleuploadimp uafterinsert(*ds, &hk_dsvisible::set_after_insert_action);
+    hk_kdeinterpreterdialog d(uafterinsert);
+    
+    d.setWindowModality(Qt::ApplicationModal);
+    d.set_code(ds->after_insert_action(),false);
+    d.set_caption(p_visible,"after_insert_action");
+    (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
 
-   set_visible();
-   set_dsvisible();
-   set_dsdatavisible();
-
-    delete d;
-
+    set_visible();
+    set_dsvisible();
+    set_dsdatavisible();
 }
 
 void hk_kdeproperty::afterinsertbutton_clicked(void)
 {
-afterinsertbutton_clicked(0,"");
+    afterinsertbutton_clicked(0,"");
 }
 
 void hk_kdeproperty::beforeupdatebutton_clicked(int rownumber,const hk_string& warningmessage)
 {
   hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
+  
   if (!ds) return;
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(ds->before_update_action(),false);
-    d->set_caption(p_visible,"before_update_action");
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      ds->set_before_update_action(d->code());
-    }
+  dsvisibleuploadimp ubeforeupdate(*ds, &hk_dsvisible::set_before_update_action);
+  hk_kdeinterpreterdialog d(ubeforeupdate);
+  
+  d.setWindowModality(Qt::ApplicationModal);
+  d.set_code(ds->before_update_action(),false);
+  d.set_caption(p_visible,"before_update_action");
+  (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
 
-   set_visible();
-   set_dsvisible();
-   set_dsdatavisible();
-
-    delete d;
-
+  set_visible();
+  set_dsvisible();
+  set_dsdatavisible();
 }
 
 void hk_kdeproperty::beforeupdatebutton_clicked(void)
 {
-beforeupdatebutton_clicked(0,"");
+  beforeupdatebutton_clicked(0,"");
 }
 
 void hk_kdeproperty::afterupdatebutton_clicked(int rownumber,const hk_string& warningmessage)
 {
   hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
+  
   if (!ds) return;
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(ds->after_update_action(),false);
-    d->set_caption(p_visible,"after_update_action");
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      ds->set_after_update_action(d->code());
-    }
-   set_visible();
-   set_dsvisible();
-   set_dsdatavisible();
+  dsvisibleuploadimp uafterupdate(*ds, &hk_dsvisible::set_after_update_action);
+  hk_kdeinterpreterdialog d(uafterupdate);
+  
+  d.setWindowModality(Qt::ApplicationModal);
+  d.set_code(ds->after_update_action(),false);
+  d.set_caption(p_visible,"after_update_action");
+  (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
 
-
-    delete d;
-
+  set_visible();
+  set_dsvisible();
+  set_dsdatavisible();
 }
 
 void hk_kdeproperty::afterupdatebutton_clicked(void)
 {
-afterupdatebutton_clicked(0,"");
+  afterupdatebutton_clicked(0,"");
 }
 
 void hk_kdeproperty::beforerowchangebutton_clicked(int rownumber,const hk_string& warningmessage)
 {
   hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
+  
   if (!ds) return;
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(ds->before_row_change_action(),false);
-    d->set_caption(p_visible,"before_row_change_action");
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      ds->set_before_row_change_action(d->code());
-    }
+  dsvisibleuploadimp ubeforerow(*ds, &hk_dsvisible::set_before_row_change_action);
+  hk_kdeinterpreterdialog d(ubeforerow);
+  
+  d.setWindowModality(Qt::ApplicationModal);
+  d.set_code(ds->before_row_change_action(),false);
+  d.set_caption(p_visible,"before_row_change_action");
+  (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
 
-   set_visible();
-   set_dsvisible();
-   set_dsdatavisible();
-
-    delete d;
-
+  set_visible();
+  set_dsvisible();
+  set_dsdatavisible();
 }
 
 void hk_kdeproperty::beforerowchangebutton_clicked(void)
 {
-beforerowchangebutton_clicked(0,"");
+  beforerowchangebutton_clicked(0,"");
 }
 
 void hk_kdeproperty::afterrowchangebutton_clicked(int rownumber,const hk_string& warningmessage)
 {
   hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
+  
   if (!ds) return;
-  dsvisibleuploadimp u_afterrowchange(*ds, &hk_dsvisible::set_after_row_change_action);
-  hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0, 0, 0, &u_afterrowchange);
-  d->setWindowModality(Qt::ApplicationModal);
-  d->set_caption(p_visible,"after_row_change_action");
-  d->set_code(ds->after_row_change_action(),false);
-  int r=d->exec(rownumber,warningmessage);
-  if (r==hk_kdeinterpreterdialog::Accepted && d->has_changed())
-    ds->set_after_row_change_action(d->code());
+  dsvisibleuploadimp uafterrowchange(*ds, &hk_dsvisible::set_after_row_change_action);
+  hk_kdeinterpreterdialog d(uafterrowchange);
+  
+  d.setWindowModality(Qt::ApplicationModal);
+  d.set_caption(p_visible,"after_row_change_action");
+  d.set_code(ds->after_row_change_action(),false);
+  (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
 
   set_visible();
   set_dsvisible();
   set_dsdatavisible();
-  delete d;
 }
 
 void hk_kdeproperty::afterrowchangebutton_clicked(void)
 {
-afterrowchangebutton_clicked(0,"");
+  afterrowchangebutton_clicked(0,"");
 }
 
 void hk_kdeproperty::ongetfocusbutton_clicked(int rownumber,const hk_string& warningmessage)
@@ -1898,20 +1881,17 @@ void hk_kdeproperty::ongetfocusbutton_clicked(int rownumber,const hk_string& war
   hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
   
   if (!ds) return;
-  dsvisibleuploadimp u_getfocus(*ds, &hk_dsvisible::set_on_getfocus_action);
-  hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0, 0, 0, &u_getfocus);
-  d->setWindowModality(Qt::ApplicationModal);
-  d->set_code(ds->on_getfocus_action(),false);
-  d->set_caption(p_visible,"on_getfocus_action");
-  int r=d->exec(rownumber,warningmessage);
-  if (r==hk_kdeinterpreterdialog::Accepted && d->has_changed())
-    ds->set_on_getfocus_action(d->code());
+  dsvisibleuploadimp ugetfocus(*ds, &hk_dsvisible::set_on_getfocus_action);
+  hk_kdeinterpreterdialog d(ugetfocus);
+  
+  d.setWindowModality(Qt::ApplicationModal);
+  d.set_code(ds->on_getfocus_action(),false);
+  d.set_caption(p_visible,"on_getfocus_action");
+  (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
 
   set_visible();
   set_dsvisible();
   set_dsdatavisible();
-
-  delete d;
 }
 
 void hk_kdeproperty::ongetfocusbutton_clicked(void)
@@ -1925,19 +1905,16 @@ void hk_kdeproperty::onloosefocusbutton_clicked(int rownumber,const hk_string& w
   
   if (!ds) return;
   dsvisibleuploadimp uloosefocus(*ds, &hk_dsvisible::set_on_loosefocus_action);
-  hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0, 0, 0, &uloosefocus);
-  d->setWindowModality(Qt::ApplicationModal);
-  d->set_code(ds->on_loosefocus_action(),false);
-  d->set_caption(p_visible,"on_loosefocus_action");
-  int r=d->exec(rownumber,warningmessage);
-  if (r==hk_kdeinterpreterdialog::Accepted && d->has_changed())
-    ds->set_on_loosefocus_action(d->code());
+  hk_kdeinterpreterdialog d(uloosefocus);
+  
+  d.setWindowModality(Qt::ApplicationModal);
+  d.set_code(ds->on_loosefocus_action(),false);
+  d.set_caption(p_visible,"on_loosefocus_action");
+  (void) d.exec(rownumber,warningmessage);  // upload handled in the dialog
 
   set_visible();
   set_dsvisible();
   set_dsdatavisible();
-
-  delete d;
 }
 
 void hk_kdeproperty::onloosefocusbutton_clicked(void)
@@ -1948,94 +1925,71 @@ void hk_kdeproperty::onloosefocusbutton_clicked(void)
 void hk_kdeproperty::onselectbutton_clicked(int rownumber,const hk_string& warningmessage)
 {
   hk_dscombobox* ds=dynamic_cast<hk_dscombobox*>(p_visible);
+  
   if (!ds) return;
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(ds->on_select_action(),false);
-    d->set_caption(p_visible,"on_select_action");
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      ds->set_on_select_action(d->code());
-    }
+  dscomboboxuploadimp uonselect(*ds, &hk_dscombobox::set_on_select_action);
+  hk_kdeinterpreterdialog d(uonselect);
+  
+  d.setWindowModality(Qt::ApplicationModal);
+  d.set_code(ds->on_select_action(),false);
+  d.set_caption(p_visible,"on_select_action");
+  (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
 
-   set_visible();
-   set_dsvisible();
-   set_dsdatavisible();
-
-    delete d;
+  set_visible();
+  set_dsvisible();
+  set_dsdatavisible();
 }
 
 void hk_kdeproperty::onselectbutton_clicked(void)
 {
-onselectbutton_clicked(0,"");
+  onselectbutton_clicked(0,"");
 }
-
-
 
 void hk_kdeproperty::onkeybutton_clicked(int rownumber,const hk_string& warningmessage)
 {
   hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
+  
   if (!ds) return;
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(ds->on_key_action(),false);
-    d->set_caption(p_visible,"on_key_action");
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      ds->set_on_key_action(d->code());
-    }
+  dsvisibleuploadimp uonkey(*ds, &hk_dsvisible::set_on_key_action);
+  hk_kdeinterpreterdialog d(uonkey);
+  
+  d.setWindowModality(Qt::ApplicationModal);
+  d.set_code(ds->on_key_action(),false);
+  d.set_caption(p_visible,"on_key_action");
+  (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
 
-   set_visible();
-   set_dsvisible();
-   set_dsdatavisible();
-
-    delete d;
-
-
+  set_visible();
+  set_dsvisible();
+  set_dsdatavisible();
 }
-
-
 
 void hk_kdeproperty::onkeybutton_clicked(void)
 {
-onkeybutton_clicked(0,"");
+  onkeybutton_clicked(0,"");
 }
-
-
-
-
-
 
 void hk_kdeproperty::onvaluechangedbutton_clicked(int rownumber,const hk_string& warningmessage)
 {
   hk_dsdatavisible* ds=dynamic_cast<hk_dsdatavisible*>(p_visible);
+  
   if (!ds) return;
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(ds->on_valuechanged_action(),false);
-    d->set_caption(p_visible,"on_valuechanged_action");
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      ds->set_on_valuechanged_action(d->code());
-    }
+  dsdatavisibleuploadimp uonvalue(*ds, &hk_dsdatavisible::set_on_valuechanged_action); 
+  hk_kdeinterpreterdialog d(uonvalue);
+  
+  d.setWindowModality(Qt::ApplicationModal);
+  d.set_code(ds->on_valuechanged_action(),false);
+  d.set_caption(p_visible,"on_valuechanged_action");
+  d.exec(rownumber,warningmessage); // upload handled in the dialog
 
-   set_visible();
-   set_dsvisible();
-   set_dsdatavisible();
-
-    delete d;
-
-
+  set_visible();
+  set_dsvisible();
+  set_dsdatavisible();
 }
-
 
 
 void hk_kdeproperty::onvaluechangedbutton_clicked(void)
 {
-onvaluechangedbutton_clicked(0,"");
+  onvaluechangedbutton_clicked(0,"");
 }
 
  void hk_kdeproperty::border_changes()
@@ -2053,7 +2007,7 @@ onvaluechangedbutton_clicked(0,"");
 
 hk_visible* hk_kdeproperty::object(void)
 {
-return p_visible;
+  return p_visible;
 }
 
 
@@ -2085,8 +2039,7 @@ void hk_kdeproperty::use_editor(QLineEdit* e)
 
 bool hk_kdeproperty::eventFilter(QObject* object,QEvent* event)
 {
-
- QLineEdit* edit=dynamic_cast<QLineEdit*>(object);
+  QLineEdit* edit=dynamic_cast<QLineEdit*>(object);
 
    if (edit&&event->type()==QEvent::KeyPress)
    {
@@ -2188,4 +2141,3 @@ void hk_kdeproperty::buttonformat_changed()
    }
 
 }
-

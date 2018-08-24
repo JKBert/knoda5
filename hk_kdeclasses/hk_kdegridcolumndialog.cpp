@@ -37,6 +37,29 @@
 #include <qscrollarea.h>
 #include <qheaderview.h>
 
+class fielduploadimp: public uploadcodeiface
+{
+public:
+    fielduploadimp(hk_kdegridcolumndialog::fieldstruct& fld, hk_string hk_kdegridcolumndialog::fieldstruct::*ph)
+      :uploadhandler(fld), phandlercode(ph) {};
+    virtual void upload_text(const hk_string& code) const
+    {
+      uploadhandler.*phandlercode = code;
+    }
+    virtual const QString& get_action_text(void) const
+    {
+        return uploadactiontext;
+    }
+    virtual ~fielduploadimp() {};
+    
+protected:
+    static QString uploadactiontext;
+    hk_kdegridcolumndialog::fieldstruct& uploadhandler;
+    hk_string hk_kdegridcolumndialog::fieldstruct::*phandlercode;
+};
+
+QString fielduploadimp::uploadactiontext(i18n("Upload to the column definition"));
+
 /*
  *  Constructs a hk_kdegridcolumndialog which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'
@@ -750,18 +773,14 @@ void hk_kdegridcolumndialog::ondoubleclickaction_clicked()
 
     hk_string warning;
     int rownumber=0;
-
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code((*p_currentfieldit).p_doubleclickaction,false);
-    d->set_caption(NULL,"ondoubleclick_action");
-    int r=d->exec(rownumber,warning);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      (*p_currentfieldit).p_doubleclickaction=d->code();
-    }
-
-    delete d;
+    fielduploadimp udoubleclick(*p_currentfieldit, &fieldstruct::p_doubleclickaction);
+    hk_kdeinterpreterdialog d(udoubleclick);
+    
+    d.setWindowModality(Qt::ApplicationModal);
+    d.set_code((*p_currentfieldit).p_doubleclickaction,false);
+    d.set_caption(NULL,"ondoubleclick_action");
+    (void) d.exec(rownumber,warning); // upload handled by the dialog
+    
     set_buttontext();
 }
 

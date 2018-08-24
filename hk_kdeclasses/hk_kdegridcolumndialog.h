@@ -25,6 +25,7 @@
 
 class QTreeWidgetItem;
 class hk_kdegrid;
+class fielduploadimp;
 /**
  *
  *@internal
@@ -37,7 +38,8 @@ class hk_kdegrid;
 class hk_kdegridcolumndialog : public hk_kdegridcolumndialogbase
 {
     Q_OBJECT
-
+    
+    friend class fielduploadimp;
   public:
     hk_kdegridcolumndialog( hk_kdegrid* parent = 0, const char* name = 0, bool modal = false, Qt::WFlags fl = 0 );
     ~hk_kdegridcolumndialog();

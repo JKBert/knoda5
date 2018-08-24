@@ -50,7 +50,8 @@ class hk_kdeinterpreterdialog : public KParts::MainWindow
     Q_OBJECT
 
 public:
-    hk_kdeinterpreterdialog(QWidget* w=0,const char* n=0,Qt::WFlags f=0, const uploadcodeiface* psh=NULL);
+    hk_kdeinterpreterdialog(const uploadcodeiface& psh, QWidget* w = 0, const char* n = 0, Qt::WFlags f = 0);
+    hk_kdeinterpreterdialog(QWidget* w=0,const char* n=0,Qt::WFlags f=0, const uploadcodeiface* psh = NULL);
     ~hk_kdeinterpreterdialog();
 enum DialogCode { Rejected, Accepted };
 /**
@@ -62,7 +63,6 @@ enum DialogCode { Rejected, Accepted };
     int result(void){return rescode;}
     hk_string code();
     void set_code(const hk_string&, bool has_changed=true);
-    void set_uploadhandler(const uploadcodeiface* sh);
     void hide();
     bool has_changed(void){return p_has_changed;}
     void set_caption(hk_visible*,const hk_string &action);
