@@ -56,6 +56,7 @@
 #include <kfiledialog.h>
 #include <kdebug.h>
 
+namespace {
 class visibleuploadimp: public uploadcodeiface
 {
 public:
@@ -123,7 +124,7 @@ protected:
 };
 
 QString visibleuploadimp::uploadactiontext(i18n("Upload to the form"));
-
+}
 /*
  *  Constructs a hk_kdeproperty which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'

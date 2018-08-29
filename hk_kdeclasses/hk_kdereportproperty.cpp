@@ -53,12 +53,55 @@
 #include <klocale.h>
 #include <kcolorbutton.h>
 
+namespace {
 void inline initSizePolicy( QWidget* w, QSizePolicy::Policy hp, QSizePolicy::Policy vp)
 {
     QSizePolicy policy(hp,vp);
     
     policy.setHeightForWidth(w->sizePolicy().hasHeightForWidth());
     w->setSizePolicy(policy);
+}
+
+class visibleuploadimp: public uploadcodeiface
+{
+public:
+    visibleuploadimp(hk_visible& pv, void (hk_visible::*p_sf) (const hk_string&, bool, bool))
+      :p_visible(pv), p_visiblesavefn(p_sf) {};
+    virtual void upload_text(const hk_string& code) const
+    {
+        (p_visible.*p_visiblesavefn)(code,true, true);
+    }
+    virtual const QString& get_action_text(void) const
+    {
+        return uploadactiontext;
+    }
+    virtual ~visibleuploadimp() {};
+    
+protected:
+    static QString uploadactiontext;
+    hk_visible& p_visible;
+    void (hk_visible::*p_visiblesavefn) (const hk_string&, bool, bool);
+};
+
+class dsvisibleuploadimp: public visibleuploadimp
+{
+public:
+    dsvisibleuploadimp(hk_dsvisible& pv, void (hk_dsvisible::*p_sf) (const hk_string&, bool, bool))
+      :visibleuploadimp(dynamic_cast<hk_visible&>(pv),NULL), p_dsvisiblesavefn(p_sf) {};
+    virtual void upload_text(const hk_string& code) const
+    {
+        ((dynamic_cast<hk_dsvisible&>(p_visible)).*p_dsvisiblesavefn)(code,true, true);
+    }
+    virtual ~dsvisibleuploadimp() {};
+    
+protected:
+    void (hk_dsvisible::*p_dsvisiblesavefn) (const hk_string&, bool, bool);
+};
+
+// dsvisible->hk_reportdata
+// dsvisible->hk_report
+
+QString visibleuploadimp::uploadactiontext(i18n("Upload to the report"));
 }
 
 hk_kdereportproperty::hk_kdereportproperty( hk_kdesimplereport* parent,  const char* name, Qt::WFlags fl )
@@ -246,7 +289,7 @@ hk_kdereportproperty::hk_kdereportproperty( hk_kdesimplereport* parent,  const c
 hk_kdereportproperty::~hk_kdereportproperty()
 {
 // no need to delete child widgets, Qt does it all for us
- delete p_fontdatabase;
+    delete p_fontdatabase;
 }
 
 
@@ -1247,7 +1290,7 @@ void hk_kdereportproperty::beforerowchange_action_clicked(void)
 }
 
 void hk_kdereportproperty::beforerowchange_action_clicked(int rownumber,const hk_string& warningmessage)
-{
+{ //TBF
   hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
   if (!ds) return;
   hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
@@ -1264,7 +1307,7 @@ void hk_kdereportproperty::beforerowchange_action_clicked(int rownumber,const hk
 
 
 void hk_kdereportproperty::afterrowchange_action_clicked(int rownumber,const hk_string& warningmessage)
-{
+{ //TBF
     hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
     if (!ds) return;
     hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
@@ -1285,7 +1328,7 @@ void hk_kdereportproperty::afterrowchange_action_clicked(void)
 }
 
 void hk_kdereportproperty::onprint_action_clicked(int rownumber,const hk_string& warningmessage)
-{
+{ //TBF
   hk_reportdata* ds=dynamic_cast<hk_reportdata*>(p_visible);
   if (!ds) return;
   hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
@@ -1307,7 +1350,7 @@ void hk_kdereportproperty::onprint_action_clicked(void)
 }
 
 void hk_kdereportproperty::onprintnewpage_action_clicked(int rownumber, const hk_string& warningmessage)
-{
+{ //TBF
     hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
     d->setWindowModality(Qt::ApplicationModal);
     d->set_code(p_report->on_new_page_action(),false);
@@ -1331,7 +1374,7 @@ void hk_kdereportproperty::closeactionbutton_clicked(void)
 }
 
 void hk_kdereportproperty::closeactionbutton_clicked(int rownumber,const hk_string& warningmessage)
-{
+{ //TBF
     hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
     d->setWindowModality(Qt::ApplicationModal);
     d->set_code(p_visible->on_close_action(),false);
@@ -1351,16 +1394,14 @@ void hk_kdereportproperty::openactionbutton_clicked(void)
 
 void hk_kdereportproperty::openactionbutton_clicked(int rownumber,const hk_string& warningmessage)
 {
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(p_visible->on_open_action(),false);
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      p_visible->set_on_open_action(d->code());
-    }
+    visibleuploadimp uonopen(*p_visible,&hk_visible::set_on_open_action);
+    hk_kdeinterpreterdialog d(uonopen);
+    
+    d.setWindowModality(Qt::ApplicationModal);
+    d.set_code(p_visible->on_open_action(),false);
+    (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
+
     set_visible();
-    delete d;
 }
 
 hk_visible* hk_kdereportproperty::object()
