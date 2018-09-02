@@ -87,7 +87,7 @@ class dsvisibleuploadimp: public visibleuploadimp
 {
 public:
     dsvisibleuploadimp(hk_dsvisible& pv, void (hk_dsvisible::*p_sf) (const hk_string&, bool, bool))
-      :visibleuploadimp(dynamic_cast<hk_visible&>(pv),NULL), p_dsvisiblesavefn(p_sf) {};
+      :visibleuploadimp(pv,NULL), p_dsvisiblesavefn(p_sf) {};
     virtual void upload_text(const hk_string& code) const
     {
         ((dynamic_cast<hk_dsvisible&>(p_visible)).*p_dsvisiblesavefn)(code,true, true);
@@ -98,8 +98,35 @@ protected:
     void (hk_dsvisible::*p_dsvisiblesavefn) (const hk_string&, bool, bool);
 };
 
-// dsvisible->hk_reportdata
-// dsvisible->hk_report
+class reportuploadimp: public visibleuploadimp
+{
+public:
+    reportuploadimp(hk_report& pv, void (hk_report::*p_sf) (const hk_string&, bool))
+      :visibleuploadimp(pv,NULL), p_reportsavefn(p_sf) {};
+    virtual void upload_text(const hk_string& code) const
+    {
+        ((dynamic_cast<hk_report&>(p_visible)).*p_reportsavefn)(code, true);
+    } 
+    virtual ~reportuploadimp() {};
+    
+protected:
+    void (hk_report::*p_reportsavefn) (const hk_string&, bool);
+};
+
+class rptdatauploadimp: public visibleuploadimp
+{
+public:
+    rptdatauploadimp(hk_reportdata& pv, void (hk_reportdata::*p_sf) (const hk_string&, bool))
+      :visibleuploadimp(pv,NULL), p_rptdatasavefn(p_sf) {};
+    virtual void upload_text(const hk_string& code) const
+    {
+        ((dynamic_cast<hk_reportdata&>(p_visible)).*p_rptdatasavefn)(code, true);
+    } 
+    virtual ~rptdatauploadimp() {};
+    
+protected:
+    void (hk_reportdata::*p_rptdatasavefn) (const hk_string&, bool);
+};
 
 QString visibleuploadimp::uploadactiontext(i18n("Upload to the report"));
 }
@@ -390,7 +417,6 @@ void hk_kdereportproperty::datasource_selected()
         tmpds->disable();
         delete tmpds;
     }
-
 }
 
 
@@ -708,7 +734,6 @@ void hk_kdereportproperty::set_visible(void)
     p_backgroundcolourbutton->blockSignals(false);
     onopenactionbutton->setText(p_visible->on_open_action().size()>0?settxt:notsettxt);
     oncloseactionbutton->setText(p_visible->on_close_action().size()>0?settxt:notsettxt);
-
 }
 
 
@@ -764,8 +789,6 @@ void hk_kdereportproperty::set_sizevisible(void)
             yfield->setValue(p_visible->y());
         yfield->blockSignals(false);
     }
- 
-
 }
 
 
@@ -791,8 +814,6 @@ void hk_kdereportproperty::set_fontvisible(void)
     italicfield->blockSignals(true);
     italicfield->setCurrentIndex(f.italic()?0:1);
     italicfield->blockSignals(false);
-
-
 }
 
 
@@ -878,7 +899,6 @@ void hk_kdereportproperty::set_reportdatavisible(void)
     digitfield->setValue(d->commadigits());
     digitfield->blockSignals(false);
     onprintaction->setText(d->on_print_action().size()>0?settxt:notsettxt);
-
 }
 
 
@@ -976,6 +996,7 @@ void hk_kdereportproperty::set_reportvisible(void)
     wordbreakfield->blockSignals(false);
     onnewpageaction->setText(p_report->on_new_page_action().size()>0?settxt:notsettxt);
     onnewpageaction->setEnabled(true);
+    onprintaction->setText(notsettxt);
 }
 
 
@@ -1271,16 +1292,14 @@ void hk_kdereportproperty::set_bordervisible(void)
     borderbottomfield->blockSignals(true);
     borderbottomfield->setValue(p_report->border_bottom());
     borderbottomfield->blockSignals(false);
-
 }
 
 void hk_kdereportproperty::identifier_changed(void)
 {
-
-hk_string t=u2l(identifierfield->text().toUtf8().data());
-if (p_visible->identifier()!=t) p_visible->set_identifier(t);
-
-
+    hk_string t=u2l(identifierfield->text().toUtf8().data());
+    
+    if (p_visible->identifier()!=t)
+        p_visible->set_identifier(t);
 }
 
 
@@ -1290,36 +1309,34 @@ void hk_kdereportproperty::beforerowchange_action_clicked(void)
 }
 
 void hk_kdereportproperty::beforerowchange_action_clicked(int rownumber,const hk_string& warningmessage)
-{ //TBF
+{
   hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
   if (!ds) return;
-  hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-  d->setWindowModality(Qt::ApplicationModal);
-  d->set_code(ds->before_row_change_action(),false);
-  int r=d->exec(rownumber,warningmessage);
-  if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-  {
-    ds->set_before_row_change_action(d->code());
-  }
+  dsvisibleuploadimp ubeforerow(*ds, &hk_dsvisible::set_before_row_change_action);
+  hk_kdeinterpreterdialog d(ubeforerow);
+  
+  d.setWindowModality(Qt::ApplicationModal);
+  d.set_caption(p_visible,"before_row_change_action");
+  d.set_code(ds->before_row_change_action(),false);
+  (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
+  
   set_dsvisible();
-  delete d;
 }
 
 
 void hk_kdereportproperty::afterrowchange_action_clicked(int rownumber,const hk_string& warningmessage)
-{ //TBF
+{
     hk_dsvisible* ds=dynamic_cast<hk_dsvisible*>(p_visible);
     if (!ds) return;
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(ds->after_row_change_action(),false);
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      ds->set_after_row_change_action(d->code());
-    }
+    dsvisibleuploadimp uafterrow(*ds, &hk_dsvisible::set_after_row_change_action);
+    hk_kdeinterpreterdialog d(uafterrow);
+    
+    d.setWindowModality(Qt::ApplicationModal);
+    d.set_caption(p_visible,"after_row_change_action");
+    d.set_code(ds->after_row_change_action(),false);
+    (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
+    
     set_dsvisible();
-    delete d;
 }
 
 void hk_kdereportproperty::afterrowchange_action_clicked(void)
@@ -1328,20 +1345,19 @@ void hk_kdereportproperty::afterrowchange_action_clicked(void)
 }
 
 void hk_kdereportproperty::onprint_action_clicked(int rownumber,const hk_string& warningmessage)
-{ //TBF
+{ 
   hk_reportdata* ds=dynamic_cast<hk_reportdata*>(p_visible);
   if (!ds) return;
-  hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-  d->setWindowModality(Qt::ApplicationModal);
-  d->set_code(ds->on_print_action(),false);
-  int r=d->exec(rownumber,warningmessage);
-  if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-  {
-    ds->set_on_print_action(d->code());
-  }
+  rptdatauploadimp uonprint(*ds, &hk_reportdata::set_on_print_action);
+  hk_kdeinterpreterdialog d(uonprint);
+  
+  d.setWindowModality(Qt::ApplicationModal);
+  d.set_caption(p_visible,"on_print_action");
+  d.set_code(ds->on_print_action(),false);
+  (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
+
   set_dsvisible();
   set_reportdatavisible();
-  delete d;
 }
 
 void hk_kdereportproperty::onprint_action_clicked(void)
@@ -1350,17 +1366,16 @@ void hk_kdereportproperty::onprint_action_clicked(void)
 }
 
 void hk_kdereportproperty::onprintnewpage_action_clicked(int rownumber, const hk_string& warningmessage)
-{ //TBF
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(p_report->on_new_page_action(),false);
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      p_report->set_on_new_page_action(d->code());
-    }
+{
+    reportuploadimp uonprint(*p_report,&hk_report::set_on_new_page_action);
+    hk_kdeinterpreterdialog d(uonprint);
+    
+    d.setWindowModality(Qt::ApplicationModal);
+    d.set_caption(NULL,"on_new_page_action");
+    d.set_code(p_report->on_new_page_action(),false);
+    (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
+
     set_reportvisible();
-    delete d;
 }
 
 void hk_kdereportproperty::onprintnewpage_action_clicked(void)
@@ -1374,17 +1389,16 @@ void hk_kdereportproperty::closeactionbutton_clicked(void)
 }
 
 void hk_kdereportproperty::closeactionbutton_clicked(int rownumber,const hk_string& warningmessage)
-{ //TBF
-    hk_kdeinterpreterdialog* d = new hk_kdeinterpreterdialog(0,0);
-    d->setWindowModality(Qt::ApplicationModal);
-    d->set_code(p_visible->on_close_action(),false);
-    int r=d->exec(rownumber,warningmessage);
-    if (r==hk_kdeinterpreterdialog::Accepted&&d->has_changed())
-    {
-      p_visible->set_on_close_action(d->code());
-    }
+{
+    visibleuploadimp uonclose(*p_visible,&hk_visible::set_on_close_action);
+    hk_kdeinterpreterdialog d(uonclose);
+    
+    d.setWindowModality(Qt::ApplicationModal);
+    d.set_caption(p_visible,"on_close_action");
+    d.set_code(p_visible->on_close_action(),false);
+    (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
+
     set_visible();
-    delete d;
 }
 
 void hk_kdereportproperty::openactionbutton_clicked(void)
@@ -1398,6 +1412,7 @@ void hk_kdereportproperty::openactionbutton_clicked(int rownumber,const hk_strin
     hk_kdeinterpreterdialog d(uonopen);
     
     d.setWindowModality(Qt::ApplicationModal);
+    d.set_caption(p_visible,"on_open_action");
     d.set_code(p_visible->on_open_action(),false);
     (void) d.exec(rownumber,warningmessage); // upload handled in the dialog
 
@@ -1434,4 +1449,3 @@ void hk_kdereportproperty::use_editor(QLineEdit* e)
         e->setText(f->textfield->toPlainText());
     delete f;
 }
-
