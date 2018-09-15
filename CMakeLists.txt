@@ -77,7 +77,7 @@ else()
   message(FATAL_ERROR "hk_classes include path not found !")
 endif()
 
-find_library(HK_CLASSES_LIB NAMES hk_classes libhk_classes  PATHS "/usr/lib/hk_classes" )
+find_library(HK_CLASSES_LIB NAMES hk_classes libhk_classes  PATHS "/usr/lib/hk_classes" "/usr/lib64/hk_classes" )
 
 if(HK_CLASSES_LIB)
   message(STATUS "Found hk_classes library: " ${HK_CLASSES_LIB})
