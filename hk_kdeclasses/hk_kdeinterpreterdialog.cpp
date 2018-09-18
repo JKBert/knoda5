@@ -51,30 +51,9 @@
 #include <kmessagebox.h>
 #include <KHelpClient>
 
-class emptyuploadiface: public uploadcodeiface
-{
-    public:
-    virtual void upload_text(const hk_string& code) const
-    {
-        std::cout << "empty upload text" << std::endl;
-    }
-    virtual const QString& get_action_text(void) const
-    {
-        std::cout << "empty get_action_text" << std::endl;
-        return "Upload to empty";
-    }
-};
-
-namespace {
-    emptyuploadiface emptyupload;
-}
-
-
 class hk_kdeinterpreterdialogprivate
 {
 public:
-    hk_kdeinterpreterdialogprivate(const uploadcodeiface* psh = NULL):p_document(NULL), p_view(NULL)
-    , eventloop(NULL), uploadhandler(emptyupload) { }
     hk_kdeinterpreterdialogprivate(const uploadcodeiface& refsh):p_document(NULL), p_view(NULL)
     , eventloop(NULL), uploadhandler(refsh) { }
     KTextEditor::Document* p_document;
@@ -139,56 +118,6 @@ p_autoclose(true),p_has_changed(false), rescode(Accepted), p_private(new hk_kdei
   g=cg.readEntry("Geometry",rrect);
   setGeometry(g);
 }
-
-hk_kdeinterpreterdialog::hk_kdeinterpreterdialog(QWidget* w,const char* /* n */,Qt::WFlags f, const uploadcodeiface* psh):KParts::MainWindow(w, f|Qt::Dialog),
-p_autoclose(true),p_has_changed(false), rescode(Accepted), p_private(new hk_kdeinterpreterdialogprivate(psh))
-{
-  setAttribute(Qt::WA_DeleteOnClose,false);
-  setObjectName( "hk_kdeinterpreterdialog" );
-  setComponentName("hk_kde5classes", "Script editor");
-  setXMLFile("hk_kdeinterpreterdialog.rc");
-  setWindowModality(Qt::ApplicationModal);
-
-  KTextEditor::Editor* p_ed = KTextEditor::Editor::instance();
-  if (p_ed != NULL) {
-      p_private->p_document = p_ed->createDocument(0);
-      if (p_private->p_document != NULL) {
-          connect( p_private -> p_document, SIGNAL( textChanged(KTextEditor::Document*)), this, SLOT( slot_has_changed() ) );
-          p_private -> p_view = p_private->p_document->createView(this);
-      }
-  } else
-      KMessageBox::error(w,i18n("A KDE text-editor component could not be found;\n"
-                                  "please check your KDE installation."));
-  // remove not used actions, null pointers are handled by KDE internally                            
-  for( QStringList::const_iterator it = p_private->actionsNotUsed.constBegin(); it != p_private->actionsNotUsed.constEnd(); it++) 
-        p_private->p_view->actionCollection()->removeAction(p_private->p_view->actionCollection()->action(*it));
-  // add new actions 
-  KAction* p_action=new KAction(QIcon::fromTheme("window-close"),i18n("&Close"),actionCollection());
-  actionCollection() -> addAction("closedialog",p_action);
-  connect(p_action,SIGNAL(triggered()),this,SLOT(accept()));  
-  
-  p_action=new KAction(QIcon::fromTheme("go-next"),i18n("Void"),actionCollection());
-  p_action->setToolTip((p_private->uploadhandler).get_action_text());
-  actionCollection()->addAction("upload",p_action);
-  connect(p_action,SIGNAL(triggered()),this,SLOT(upload_clicked())); 
-
-  createGUI(NULL);
-  if (p_private->p_view != NULL) {
-      setCentralWidget(p_private->p_view);
-      p_private -> p_view -> setFocus();
-      guiFactory()-> addClient(p_private -> p_view);
-  }
-  resize( 596, 480 );
-
-  KSharedConfigPtr c=KGlobal::config();
-  const QRect& rrect=QRect(0,0,500,300);
-  KConfigGroup cg=c->group("Interpreter");
-  QRect g;
-  
-  g=cg.readEntry("Geometry",rrect);
-  setGeometry(g);
-}
-
 
 /*
  *  oys the object and frees any allocated resources

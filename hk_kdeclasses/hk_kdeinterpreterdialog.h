@@ -51,7 +51,6 @@ class hk_kdeinterpreterdialog : public KParts::MainWindow
 
 public:
     hk_kdeinterpreterdialog(const uploadcodeiface& psh, QWidget* w = 0, const char* n = 0, Qt::WFlags f = 0);
-    hk_kdeinterpreterdialog(QWidget* w=0,const char* n=0,Qt::WFlags f=0, const uploadcodeiface* psh = NULL);
     ~hk_kdeinterpreterdialog();
 enum DialogCode { Rejected, Accepted };
 /**
