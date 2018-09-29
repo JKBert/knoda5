@@ -42,6 +42,7 @@
 #include <kstandardaction.h>
 #include <kstandarddirs.h>
 #include <kglobal.h>
+#include <kiconloader.h>
 #include <ktoolinvocation.h>
 #include <KTextEditor/Editor>
 #include <KTextEditor/Document>
@@ -73,6 +74,7 @@ QStringList hk_kdeinterpreterdialogprivate::actionsNotUsed = { "file_save", "fil
 hk_kdeinterpreterdialog::hk_kdeinterpreterdialog(const uploadcodeiface& refsh, QWidget* w,const char* /* n */,Qt::WFlags f):KParts::MainWindow(w, f|Qt::Dialog),
 p_autoclose(true),p_has_changed(false), rescode(Accepted), p_private(new hk_kdeinterpreterdialogprivate(refsh))
 {
+  KIconLoader loader  (LIB_MODULE_NAME);
   setAttribute(Qt::WA_DeleteOnClose,false);
   setObjectName( "hk_kdeinterpreterdialog" );
   setComponentName("hk_kde5classes", "Script editor");
@@ -97,7 +99,7 @@ p_autoclose(true),p_has_changed(false), rescode(Accepted), p_private(new hk_kdei
   actionCollection()->addAction("closedialog",p_action);
   connect(p_action,SIGNAL(triggered()),this,SLOT(accept()));  
   
-  p_action=new KAction(QIcon::fromTheme("go-next"),i18n("&Upload"),actionCollection());
+  p_action=new KAction(QIcon(loader.iconPath("upload",KIconLoader::User)),i18n("&Upload"),actionCollection());
   p_action->setToolTip((p_private->uploadhandler).get_action_text());
   actionCollection()->addAction("upload",p_action);
   connect(p_action,SIGNAL(triggered()),this,SLOT(upload_clicked())); 
