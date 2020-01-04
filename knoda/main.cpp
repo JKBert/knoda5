@@ -49,7 +49,7 @@ int main(int argc,char** argv)
     K4AboutData aboutData(PROJECT_NAME,PROJECT_NAME,ki18n("knoda5"),
         VERSION, ki18n("knoda5 is a database management system"),
 	K4AboutData::License_GPL,
-        ki18n("(c) 2000-2005 Horst Knorr\n(c) 2010-2018 Patrik Hanak"),ki18n(NULL),"http://sourceforge.net/projects/knoda5/",
+        ki18n("(c) 2000-2005 Horst Knorr\n(c) 2010-2020 Patrik Hanak"),ki18n(NULL),"http://sourceforge.net/projects/knoda5/",
      "knoda4-bugs@lists.sourceforge.net");
     aboutData.addAuthor(ki18n("Horst Knorr"),ki18n("Author of original version"), "hk_classes@knoda.org","http://www.knoda.org");
     aboutData.addAuthor(ki18n("Patrik Hanak"),ki18n("Author of KDE5 port"), "knoda4-admins@lists.sourceforge.net");
