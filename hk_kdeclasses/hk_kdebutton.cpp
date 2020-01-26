@@ -1,7 +1,7 @@
 // ****************************************************************************
 // copyright (c) 2000-2005 Horst Knorr <hk_classes@knoda.org>
 // Original version of the file for hk_kdeclasses library
-// copyright (c) 2010-2016 Patrik Hanak <hanakp@users.sourceforge.net>
+// copyright (c) 2010-2020 Patrik Hanak <hanakp@users.sourceforge.net>
 // KDE 4 port of the file for hk_kde4classes library
 // copyright (c) 2018 Patrik Hanak <hanakp@users.sourceforge.net>
 // KDE5 port of the file for hk_kde5classes library
@@ -376,7 +376,7 @@ bool hk_kdebutton::widget_specific_open_table(void)
         hk_dstable* w=p_presentation->database()->new_tablevisible();
         hk_datasource* d=p_presentation->database()->new_table(object());
         w->set_datasource(d);
-	QWidget* wid=(QWidget*) w;
+	QWidget* wid=dynamic_cast<QWidget*>(w);
         if (show_maximized())wid->showMaximized();
         else wid->show();
         w->set_viewmode();
@@ -396,8 +396,8 @@ bool hk_kdebutton::widget_specific_open_query(void)
         w->set_datasource(d);
         w->load_query();
         w->set_viewmode();
-        if (show_maximized())((QWidget*)w)->showMaximized();
-        else ((QWidget*)w)->show();
+        if (show_maximized())(dynamic_cast<QWidget*>(w))->showMaximized();
+        else (dynamic_cast<QWidget*>(w))->show();
     }
     return true;
 }
@@ -414,8 +414,8 @@ bool hk_kdebutton::widget_specific_open_view(void)
         w->set_datasource(d);
 	w->set_use_qbe(false,false);
         w->set_viewmode();
-        if (show_maximized())((QWidget*)w)->showMaximized();
-        else ((QWidget*)w)->show();
+        if (show_maximized())(dynamic_cast<QWidget*>(w))->showMaximized();
+        else (dynamic_cast<QWidget*>(w))->show();
     }
     return true;
 }
