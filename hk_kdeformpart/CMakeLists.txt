@@ -10,7 +10,7 @@ target_link_libraries(hk_kde5formpart
     ${HK_CLASSES_LIB} 
     ${LIB_MODULE_NAME})
 
-install(TARGETS hk_kde5formpart DESTINATION ${KDE_INSTALL_PLUGINDIR})
+install(TARGETS hk_kde5formpart DESTINATION ${QT_PLUGINS_DIR})
 
 
 ########### install files ###############

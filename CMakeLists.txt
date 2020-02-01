@@ -45,6 +45,14 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     Parts           # KParts
 )
 
+# execute the command "qmake -query QT_INSTALL_PLUGINS" to get the path of plugins dir.
+execute_process(COMMAND ${QMAKEQT5} -query QT_INSTALL_PLUGINS OUTPUT_VARIABLE QT_PLUGINS_DIR OUTPUT_STRIP_TRAILING_WHITESPACE)
+if(QT_PLUGINS_DIR) 
+  message(STATUS "Qt5 plugin directory:" "${QT_PLUGINS_DIR}")
+else() 
+  message(FATAL_ERROR "Qt5 plugin directory cannot be detected.")
+endif()
+
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 # STL needed for hk_string and assignments to/from QString

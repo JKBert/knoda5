@@ -10,7 +10,7 @@ target_link_libraries(hk_kde5reportpart
     ${HK_CLASSES_LIB}
     hk_kde5classes)
 
-install(TARGETS hk_kde5reportpart DESTINATION ${KDE_INSTALL_PLUGINDIR})
+install(TARGETS hk_kde5reportpart DESTINATION ${QT_PLUGINS_DIR})
 
 ########### install files ###############
 
