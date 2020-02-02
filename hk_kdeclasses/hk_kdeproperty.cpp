@@ -3,7 +3,7 @@
 // Original version of the file for hk_kdeclasses library
 // copyright (c) 2010-2016 Patrik Hanak <hanakp@users.sourceforge.net>
 // KDE 4 port of the file for hk_kde4classes library
-// copyright (c) 2018 Patrik Hanak <hanakp@users.sourceforge.net>
+// copyright (c) 2018-2020 Patrik Hanak <hanakp@users.sourceforge.net>
 // KDE5 port of the file for hk_kde5classes library
 //
 // This file is part of the hk_kde5classes library.
@@ -57,6 +57,45 @@
 #include <kdebug.h>
 
 namespace {
+	
+enum Actions { ID_FIRST, 
+	ID_FORM_OPEN,
+	ID_FORM_CLOSE,
+	ID_TABLE_OPEN, 
+	ID_QUERY_OPEN, 
+    ID_REPORT_PREVIEW,
+    ID_REPORT_PRINT,
+    ID_ROW_GO_FIRST,
+    ID_ROW_GO_LAST,
+    ID_ROW_GO_NEXT,
+    ID_ROW_GO_PREV,
+    ID_ROW_INSERT,
+    ID_ROW_DELETE,
+    ID_ROW_STORE,
+    ID_QUERY_EXEC,
+    ID_APP_CLOSE,
+    ID_VIEW_OPEN,
+    ID_LAST }; // ID_LAST is used as upper border for iteration. Add new actions before ID_LAST
+    
+const char* actionItems[] = { "", 
+    "Open form",
+    "Close form",
+    "Open table",
+    "Open query",
+    "Preview report",
+    "Print report",
+    "Goto first row",
+    "Goto last row",
+    "Goto next row",
+    "Goto previous row",
+    "Insert row",
+    "Delete row",
+    "Store row",
+    "Execute actionquery",
+    "Close application",
+    "Open view"
+    };
+
 class visibleuploadimp: public uploadcodeiface
 {
 public:
@@ -125,6 +164,7 @@ protected:
 
 QString visibleuploadimp::uploadactiontext(i18n("Upload to the form"));
 }
+
 /*
  *  Constructs a hk_kdeproperty which is a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'
@@ -182,23 +222,10 @@ hk_kdeproperty::hk_kdeproperty( hk_kdesimpleform* parent,  const char* name, Qt:
     yfield->setRange(0,10000);
     p_fontdatabase = new QFontDatabase();
     fontfield->insertItems(fontfield->count(),p_fontdatabase->families());
-    actionfield->addItem("");
-    actionfield->addItem(i18n("Open form"));
-    actionfield->addItem(i18n("Close form"));
-    actionfield->addItem(i18n("Open table"));
-    actionfield->addItem(i18n("Open query"));
-    actionfield->addItem(i18n("Preview report"));
-    actionfield->addItem(i18n("Print report"));
-    actionfield->addItem(i18n("Goto first row"));
-    actionfield->addItem(i18n("Goto last row"));
-    actionfield->addItem(i18n("Goto next row"));
-    actionfield->addItem(i18n("Goto previous row"));
-    actionfield->addItem(i18n("Insert row"));
-    actionfield->addItem(i18n("Delete row"));
-    actionfield->addItem(i18n("Store row"));
-    actionfield->addItem(i18n("Execute actionquery"));
-    actionfield->addItem(i18n("Close application"));
-    actionfield->addItem(i18n("Open view"));
+    
+    actionfield->addItem(actionItems[ID_FIRST]);
+    for ( int ci = ID_FIRST + 1; ci != ID_LAST; ci++)
+      actionfield->addItem(i18n(actionItems[ci]));
 
     actionfield->setCurrentIndex(0); 
     labellabel->setText(i18n("Label:"));
@@ -338,25 +365,36 @@ void hk_kdeproperty::action_changes()
 void hk_kdeproperty::set_actionobjectlist(void)
 {
     objectfield->clear();
-    int i = actionfield->currentIndex()-1; //cerr <<"set_actionobjectlist i="<<i<<endl;
+    Actions i = static_cast<Actions>(actionfield->currentIndex()); 
     vector<hk_string>* liste=NULL;
+    
     objectfield->addItem("");
-    if (i==2)  liste=p_form->database()->tablelist();
-    else
-    if (i==3||i==13)  liste=p_form->database()->querylist();
-        else
-        if (i==4||i==5)  liste=p_form->database()->reportlist();
-            else
-            if (i==0||i==1)  liste=p_form->database()->formlist();
-                if (liste==NULL) return;
-    vector<hk_string>::iterator it =  liste->begin();
-    while (it!=liste->end())
+    switch(i)
     {
-        objectfield->addItem(QString::fromUtf8 (l2u((*it)).c_str()));
-        it++;
-    }
-    objectfield->setCurrentIndex(0);
-
+		case ID_FORM_OPEN:
+		case ID_FORM_CLOSE: liste=p_form->database()->formlist();
+		    break;
+		case ID_TABLE_OPEN: liste=p_form->database()->tablelist();
+		    break;
+		case ID_QUERY_OPEN:
+		case ID_QUERY_EXEC: liste=p_form->database()->querylist();
+		    break;
+		case ID_REPORT_PREVIEW:
+		case ID_REPORT_PRINT: liste=p_form->database()->reportlist();
+		    break;
+		case ID_VIEW_OPEN: liste=p_form->database()->viewlist();
+		    break;
+		default: break;
+	}
+    
+    if (liste != NULL ) {            
+        vector<hk_string>::iterator it =  liste->begin();
+        while (it!=liste->end()) {
+            objectfield->addItem(QString::fromUtf8 (l2u((*it)).c_str()));
+            it++;
+        }
+        objectfield->setCurrentIndex(0);
+	}
 }
 
 
