@@ -1115,7 +1115,7 @@ void hk_kdeproperty::set_button(void)
 #ifdef HK_DEBUG
     hkdebug("hk_kdeproperty::set_button");
 #endif
-    if (p_visible==NULL)return;
+    if (p_visible==NULL) return;
     hk_button* bt = dynamic_cast <hk_button*>(p_visible);
     if (bt==NULL) return;
     localimagebutton->setText(bt->icon()->data?settxt:notsettxt);
@@ -1128,42 +1128,42 @@ void hk_kdeproperty::set_button(void)
     vector<hk_string>* liste=NULL;
     conditionbutton->hide();
 
-    if (i==4||i==14)  liste=p_form->database()->querylist();
-    else
-    if (i==5||i==6)
-    {
-        liste=p_form->database()->reportlist();
-
-    }
-    else
-    if (i==1||i==2)
-      {
-       liste=p_form->database()->formlist();
-      }
-        else
-            liste=p_form->database()->tablelist();
+    switch(i) {
+		case ID_FORM_OPEN:
+		case ID_FORM_CLOSE: liste=p_form->database()->formlist();
+		    break;
+		case ID_TABLE_OPEN: liste=p_form->database()->tablelist();
+		    break;
+		case ID_QUERY_OPEN:
+		case ID_QUERY_EXEC: liste=p_form->database()->querylist();
+		    break;
+		case ID_REPORT_PREVIEW:
+		case ID_REPORT_PRINT: liste=p_form->database()->reportlist();
+		    break;
+		case ID_VIEW_OPEN: liste=p_form->database()->viewlist();
+		    break;
+		default: break;
+	}
     vector<hk_string>::iterator it =  liste->begin();
     int current=1;
     while (it!=liste->end())
     {
-
         if ((*it)==bt->object())
-        {
             objectfield->setCurrentIndex(current);
-        }
         it++;  current++;
     }
- if((i==1||i==5||i==6)&&!objectfield->currentText().isEmpty())
-   conditionbutton->show();
-   else
-   conditionbutton->hide();
-   istogglebuttonfield->show();
-   istogglebuttonlabel->show();
-   if(bt->is_togglebutton())
-   {
-   togglepushedfield->show();
-   togglepushedlabel->show();
-   }
+    if((i==ID_FORM_OPEN||i==ID_REPORT_PREVIEW||i==ID_REPORT_PRINT) 
+      && !objectfield->currentText().isEmpty())
+        conditionbutton->show();
+    else
+        conditionbutton->hide();
+    istogglebuttonfield->show();
+    istogglebuttonlabel->show();
+    if(bt->is_togglebutton())
+    {
+       togglepushedfield->show();
+       togglepushedlabel->show();
+    }
     istogglebuttonfield->blockSignals(true);
     istogglebuttonfield->setCurrentIndex(bt->is_togglebutton()?0:1);
     istogglebuttonfield->blockSignals(false);
@@ -1171,7 +1171,6 @@ void hk_kdeproperty::set_button(void)
     togglepushedfield->blockSignals(true);
     togglepushedfield->setCurrentIndex(bt->is_pushed()?0:1);
     togglepushedfield->blockSignals(false);
-
 }
 
 
