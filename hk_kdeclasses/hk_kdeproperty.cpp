@@ -1,7 +1,7 @@
 // ****************************************************************************
 // copyright (c) 2000-2005 Horst Knorr <hk_classes@knoda.org>
 // Original version of the file for hk_kdeclasses library
-// copyright (c) 2010-2016 Patrik Hanak <hanakp@users.sourceforge.net>
+// copyright (c) 2010-2020 Patrik Hanak <hanakp@users.sourceforge.net>
 // KDE 4 port of the file for hk_kde4classes library
 // copyright (c) 2018-2020 Patrik Hanak <hanakp@users.sourceforge.net>
 // KDE5 port of the file for hk_kde5classes library
@@ -1132,8 +1132,6 @@ void hk_kdeproperty::set_button(void)
 		case ID_FORM_OPEN:
 		case ID_FORM_CLOSE: liste=p_form->database()->formlist();
 		    break;
-		case ID_TABLE_OPEN: liste=p_form->database()->tablelist();
-		    break;
 		case ID_QUERY_OPEN:
 		case ID_QUERY_EXEC: liste=p_form->database()->querylist();
 		    break;
@@ -1142,7 +1140,8 @@ void hk_kdeproperty::set_button(void)
 		    break;
 		case ID_VIEW_OPEN: liste=p_form->database()->viewlist();
 		    break;
-		default: break;
+		default: liste=p_form->database()->tablelist();
+            break;
 	}
     vector<hk_string>::iterator it =  liste->begin();
     int current=1;

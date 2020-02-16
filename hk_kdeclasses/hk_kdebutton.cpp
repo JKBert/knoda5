@@ -392,7 +392,6 @@ bool hk_kdebutton::widget_specific_open_query(void)
     {
         hk_dsquery* w=p_presentation->database()->new_queryvisible();
         hk_datasource* d=p_presentation->database()->new_resultquery();
-        cerr <<"query: " << object().c_str() <<endl; //PH
         d->set_name(object());
         w->set_datasource(d);
         w->load_query();
@@ -405,14 +404,12 @@ bool hk_kdebutton::widget_specific_open_query(void)
 
 
 bool hk_kdebutton::widget_specific_open_view(void)
-{  //pozor //PH funkcia ani nevolana
-	cerr <<"view: enter" << object().c_str() <<endl; //PH
+{  
     if (p_presentation==NULL) return false;
     if (p_presentation->database()!=NULL)
-    { cerr <<"view: db not nullenter" << object().c_str() <<endl; //PH
+    { 
         hk_dsquery* w=p_presentation->database()->new_queryvisible();
         hk_datasource* d=p_presentation->database()->new_view();
-        cerr <<"view: " << object().c_str() <<endl; //PH
         d->set_name(object());
         w->set_datasource(d);
 	w->set_use_qbe(false,false);
