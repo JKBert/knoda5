@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 
 project(knoda5)
-set(PACKAGE_VERSION 0.12.1dev)
+set(PACKAGE_VERSION 0.12.1r1)
 set(LIB_MODULE_NAME hk_kde5classes)
 
 set(QT_MIN_VERSION "5.3.0")

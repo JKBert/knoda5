@@ -106,7 +106,7 @@ target_link_libraries(${LIB_MODULE_NAME}
     KF5::KDELibs4Support
     ${HK_CLASSES_LIB})
 
-set_target_properties(${LIB_MODULE_NAME} PROPERTIES VERSION 1.0.0 SOVERSION 1)
+set_target_properties(${LIB_MODULE_NAME} PROPERTIES VERSION 1.0.1 SOVERSION 1.0.1)
 install(TARGETS ${LIB_MODULE_NAME} ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
